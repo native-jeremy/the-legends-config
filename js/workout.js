@@ -145,7 +145,7 @@ window.onload = async () => {
           counter--;
           if (counter < 0) {
             clearInterval(timer);
-            setTimeout(exerciseCompleted, 2000);
+            exerciseCompleted();
             console.log("Completed");
           }
           else {
