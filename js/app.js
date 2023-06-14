@@ -46,8 +46,8 @@ const plusBtn = document.getElementById("plusBtn");
 let maxLimit = 5;
 let minLimit = 1;
 let amount = 1;
-currentNum.innerHTML = amount;
-limitNum.innerHTML = maxLimit;
+//currentNum.innerHTML = amount;
+//limitNum.innerHTML = maxLimit;
 
 /* Wized Intialisation
 ----------------------------------------------------------------
@@ -69,7 +69,7 @@ window.onload = async () => {
     console.log(applyData);
     let icon = document.querySelector(".completed-icon");
       
-      applyData.forEach((icon) => {
+      applyData.forEach((complete) => {
         icon.classList.add("complete-indicator")
       });
   });
