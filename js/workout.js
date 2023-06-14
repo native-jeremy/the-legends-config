@@ -217,7 +217,7 @@ window.onload = async () => {
     prevButton.style.display = "none";
     prevButtonDisabled.style.display = "flex";
     //
-    nextButton.click();
+    setTimeout(goNext, 2000);
   }
   else {
     playButton.style.display = "flex";
@@ -250,6 +250,11 @@ window.onload = async () => {
     prevButton.style.display = "flex";
     prevButtonDisabled.style.display = "none";
   }
+    
+    function goNext ()
+    {
+      nextButton.click();
+    }
 
   if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
     Wized.data.setCookie("sirenmute", "on");
