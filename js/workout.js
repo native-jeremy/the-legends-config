@@ -46,33 +46,22 @@ const plusBtn = document.getElementById("plusBtn");
 let maxLimit = 5;
 let minLimit = 1;
 let amount = 1;
-//currentNum.innerHTML = amount;
-//limitNum.innerHTML = maxLimit;
+currentNum.innerHTML = amount;
+limitNum.innerHTML = maxLimit;
 
 /* Wized Intialisation
 ----------------------------------------------------------------
 */
 
 window.onload = async () => {
+  await Wized.data.setVariable("complete", minusBtn);
+  const value = await Wized.data.get("v.complete");
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const roundParam = await Wized.data.get("n.parameter.round");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
-
-  // Completed Data Load
-  Wized.request.await("Load Users", (response) => {
-    const getData = response;
-    let applyData = getData.data.Completed;
-    //const repAmount = repData.data[0].Amounts_Name[0];
-    console.log(applyData);
-    let icon = document.querySelector(".completed-icon");
-      
-      applyData.forEach((complete) => {
-        icon.classList.add("complete-indicator")
-      });
-  });
 
   // Rep Type Data Load
   Wized.request.await("Load Exercise", (response) => {
