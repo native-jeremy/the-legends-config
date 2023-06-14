@@ -144,10 +144,7 @@ window.onload = async () => {
         {
           counter--;
           if (counter < 0) {
-            if (counter === 1)
-            {
             playSiren();
-            }
             nextButton.click();
             clearInterval(timer);
             console.log("Completed");
