@@ -216,6 +216,8 @@ window.onload = async () => {
     //
     prevButton.style.display = "none";
     prevButtonDisabled.style.display = "flex";
+    //
+    nextButton.click();
   }
   else {
     playButton.style.display = "flex";
