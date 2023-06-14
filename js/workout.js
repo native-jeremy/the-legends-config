@@ -144,8 +144,12 @@ window.onload = async () => {
         {
           counter--;
           if (counter < 0) {
+            if (counter < 1)
+            {
             playSiren();
-            setTimeout(exerciseCompleted, 5000);
+            }
+            nextButton.click();
+            clearInterval(timer);
             console.log("Completed");
           }
           else {
@@ -153,11 +157,6 @@ window.onload = async () => {
           }
         }
       }, 1000);
-    }
-
-    function exerciseCompleted() {
-      nextButton.click();
-      clearInterval(timer);
     }
 
     function repCount() {
