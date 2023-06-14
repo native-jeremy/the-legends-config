@@ -217,6 +217,16 @@ window.onload = async () => {
     prevButton.style.display = "none";
     prevButtonDisabled.style.display = "flex";
   }
+  else if (roundParam === undefined || roundParam === "undefined" && exerciseParam === undefined || exerciseParam === "undefined") {
+    playButton.style.display = "none";
+    playButtonDisabled.style.display = "flex";
+    //
+    nextButton.style.display = "none";
+    nextButtonDisabled.style.display = "flex";
+    //
+    prevButton.style.display = "none";
+    prevButtonDisabled.style.display = "flex";
+  }
   else {
     playButton.style.display = "flex";
     playButtonDisabled.style.display = "none";
