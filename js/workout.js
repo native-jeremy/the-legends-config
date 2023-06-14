@@ -145,8 +145,7 @@ window.onload = async () => {
           counter--;
           if (counter < 0) {
             playSiren();
-            setTimeout(exerciseCompleted, 10000);
-            clearInterval(timer);
+            setTimeout(exerciseCompleted, 5000);
             console.log("Completed");
           }
           else {
@@ -157,10 +156,8 @@ window.onload = async () => {
     }
 
     function exerciseCompleted() {
-      let nextLink = nextButton.href;
-      window.location.href = nextLink;
-
-      //nextButton.click();
+      nextButton.click();
+      clearInterval(timer);
     }
 
     function repCount() {
