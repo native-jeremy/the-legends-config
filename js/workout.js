@@ -144,7 +144,7 @@ window.onload = async () => {
         {
           counter--;
           if (counter < 0) {
-            if (counter < 1)
+            if (counter === 1)
             {
             playSiren();
             }
