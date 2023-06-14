@@ -69,7 +69,7 @@ window.onload = async () => {
     console.log(applyData);
     let icon = document.querySelector(".completed-icon");
       
-      applyData.forEach((complete) => {
+      applyData.forEach((icon) => {
         icon.classList.add("complete-indicator")
       });
   });
