@@ -145,7 +145,7 @@ window.onload = async () => {
           counter--;
           if (counter < 0) {
             playSiren();
-            setTimeout(exerciseCompleted, 5000);
+            setTimeout(exerciseCompleted, 10000);
             clearInterval(timer);
             console.log("Completed");
           }
