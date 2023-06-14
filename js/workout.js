@@ -51,8 +51,8 @@ limitNum.innerHTML = maxLimit;
 */
 
 window.onload = async () => {
-  await Wized.data.setVariable("complete", minusBtn);
-  const value = await Wized.data.get("v.complete");
+  //await Wized.data.setVariable("complete", minusBtn);
+  //const value = await Wized.data.get("v.complete");
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const roundParam = await Wized.data.get("n.parameter.round");
@@ -211,8 +211,8 @@ window.onload = async () => {
     playButton.style.display = "none";
     playButtonDisabled.style.display = "flex";
     //
-    nextButton.style.display = "none";
-    nextButtonDisabled.style.display = "flex";
+    /*nextButton.style.display = "none";
+    nextButtonDisabled.style.display = "flex";*/
     //
     prevButton.style.display = "none";
     prevButtonDisabled.style.display = "flex";
