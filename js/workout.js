@@ -154,16 +154,15 @@ window.onload = async () => {
           }
         }
       }, 1000);
+      function exerciseCompleted() {
+        nextButton.click();
+      }
     }
 
     function repCount() {
       let counter = repAmount;
       repText.innerHTML = repType;
       timerText.innerHTML = counter;
-    }
-
-    function exerciseCompleted() {
-      nextButton.click();
     }
 
     function playVideo() {
