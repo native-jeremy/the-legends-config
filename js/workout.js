@@ -211,8 +211,8 @@ window.onload = async () => {
     playButton.style.display = "none";
     playButtonDisabled.style.display = "flex";
     //
-    /*nextButton.style.display = "none";
-    nextButtonDisabled.style.display = "flex";*/
+    nextButton.style.display = "none";
+    nextButtonDisabled.style.display = "flex";
     //
     prevButton.style.display = "none";
     prevButtonDisabled.style.display = "flex";
@@ -228,7 +228,7 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-  if (roundParam === undefined || roundParam === "undefined" && exerciseParam === undefined || exerciseParam === "undefined") {
+  if (roundParam === undefined || roundParam === "undefined") {
     playButton.style.display = "none";
     playButtonDisabled.style.display = "flex";
     //
