@@ -16,10 +16,15 @@ window.onload = async () => {
     const getData = response;
     let applyData = getData.data.Completed;
     console.log(applyData);
-    let icon = document.querySelector(".completed-icon");
-
-       applyData.forEach((complete) => {
-        icon.classList.add("complete-indicator")
-      });
+    let icon = document.querySelectorAll(".completed-icon");
+    
+    setTimeout(loopCompleted, 2000);
+    
+    function loopCompleted ()
+    {
+    for (let i = 0; i < applyData.length; i++) {
+      icon[i].classList.add("complete-indicator")
+    }
+    }
   });
 }
