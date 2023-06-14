@@ -165,7 +165,7 @@ window.onload = async () => {
       playSiren();
       repText.innerHTML = repType;
       timerText.innerHTML = counter;
-      setTimeout(nextExercise, 2000);
+      setTimeout(nextExercise, 5000);
     }
 
     function nextExercise() {
