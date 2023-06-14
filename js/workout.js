@@ -3,7 +3,6 @@
 */
 
 //Element Triggers
-//const roundTrigger = document.getElementById("roundTrigger");
 const exerciseTitle = document.getElementById("exerciseTitle");
 const exerciseHeader = document.getElementById("exerciseHeader");
 const roundPopup = document.getElementById("roundPopup");
@@ -13,14 +12,12 @@ const repText = document.getElementById("repText");
 const timerText = document.getElementById("safeTimerDisplay");
 
 // Siren = Define - Intialisation
-//const activeSiren = document.getElementById("activeSiren");
 const siren = document.getElementById("siren");
 const sirenText = document.getElementById("sirenText");
 const sirenAudio = document.getElementById("sirenAudio");
 const sirenToggleOn = document.getElementById("sirenToggleOn");
 
 // Voice = Define - Intialisation
-//const activeVoice = document.getElementById("activeVoice");
 const voice = document.getElementById("voice");
 const voiceText = document.getElementById("voiceText");
 const voiceAudio = document.getElementById("voiceAudio");
@@ -113,13 +110,6 @@ window.onload = async () => {
       {
         repCount();
       }
-        /*if (roundPopup.style.display === "flex") {
-          exerciseHeader.style.display = "flex";
-          roundHeader.style.display = "none";
-        } else {
-          exerciseHeader.style.display = "none";
-          roundPopup.style.display = "flex";
-        }*/
     }
 
 
