@@ -143,11 +143,8 @@ window.onload = async () => {
         if (!timerText.classList.contains("pausetime"))
         {
           counter--;
-          if (counter > 1 && counter < 3)
-          {
-            playSiren();
-          }
           if (counter < 0) {
+            playSiren();
             nextButton.click();
             clearInterval(timer);
             console.log("Completed");
