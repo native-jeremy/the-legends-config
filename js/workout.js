@@ -210,12 +210,22 @@ window.onload = async () => {
   if (exerciseParam === undefined || exerciseParam === "undefined") {
     playButton.style.display = "none";
     playButtonDisabled.style.display = "flex";
+    //
+    nextButton.style.display = "none";
+    nextButtonDisabled.style.display = "flex";
+    //
     prevButton.style.display = "none";
     prevButtonDisabled.style.display = "flex";
   }
   else {
     playButton.style.display = "flex";
     playButtonDisabled.style.display = "none";
+    //
+    nextButton.style.display = "flex";
+    nextButtonDisabled.style.display = "none";
+    //
+    prevButton.style.display = "flex";
+    prevButtonDisabled.style.display = "none";
   }
 
   if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
