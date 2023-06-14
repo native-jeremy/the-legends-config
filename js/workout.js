@@ -145,8 +145,7 @@ window.onload = async () => {
           counter--;
           if (counter < 0) {
             clearInterval(timer);
-            playSiren();
-            nextButton.click();
+            setTimeout(exerciseCompleted, 2000);
             console.log("Completed");
           }
           else {
@@ -160,6 +159,17 @@ window.onload = async () => {
       let counter = repAmount;
       repText.innerHTML = repType;
       timerText.innerHTML = counter;
+    }
+
+    function exerciseCompleted() {
+      playSiren();
+      repText.innerHTML = repType;
+      timerText.innerHTML = counter;
+      setTimeout(nextExercise, 2000);
+    }
+
+    function nextExercise() {
+      nextButton.click();
     }
 
     function playVideo() {
