@@ -143,7 +143,7 @@ window.onload = async () => {
         if (!timerText.classList.contains("pausetime"))
         {
           counter--;
-          if (counter > 0 && counter < 2)
+          if (counter > 1 && counter < 3)
           {
             playSiren();
           }
