@@ -191,7 +191,7 @@ window.onload = async () => {
           voiceSrc.play()
       }
       else {
-        sirenSrc.pause()
+        voiceSrc.pause()
       }
     }
   });
