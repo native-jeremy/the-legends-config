@@ -129,7 +129,7 @@ window.onload = async () => {
       exerciseHeader.style.display = "flex";
       exerciseTitle.style.display = "flex";
       roundPopup.style.display = "none";
-      //playButton.click();
+      playButton.click();
     }
 
     /*nextButton.addEventListener("click", function() {
