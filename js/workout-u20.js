@@ -6,6 +6,7 @@
 const exerciseTitle = document.getElementById("exerciseTitle");
 const exerciseHeader = document.getElementById("exerciseHeader");
 const roundPopup = document.getElementById("roundPopup");
+const roundTitle = document.getElementById("roundTitle");
 
 // Element Delarations
 const repText = document.getElementById("repText");
@@ -261,6 +262,7 @@ setTimeout(nextPage, 2000);
     if (exerciseParam === undefined || exerciseParam === "undefined" && cookieIndex !== "completed=true") {
         if (refreshNum < 1) {
           nextButton.click();
+          roundTitle.innerHTML = "Loading Next Exercise"
         }
     }
     refreshNum = refreshNum + 1;
