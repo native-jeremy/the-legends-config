@@ -253,7 +253,7 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-  /*if (exerciseParam === undefined || exerciseParam === "undefined") {
+  if (exerciseParam === undefined || exerciseParam === "undefined") {
     setTimeout(nextPage, 1000);
   }
     
@@ -263,7 +263,7 @@ window.onload = async () => {
       nextButton.click();
     }
     refreshNum = refreshNum + 1;
-  }*/
+  }
 
   if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
     Wized.data.setCookie("sirenmute", "on");
