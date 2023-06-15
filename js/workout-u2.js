@@ -46,6 +46,8 @@ let amount = 1;
 currentNum.innerHTML = amount;
 limitNum.innerHTML = maxLimit;
 
+let refreshNum = 0;
+
 /* Wized Intialisation
 ----------------------------------------------------------------
 */
@@ -58,7 +60,6 @@ window.onload = async () => {
   const roundParam = await Wized.data.get("n.parameter.round");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
-  let refreshNum = 0;
   console.log(exerciseParam);
 
   // Rep Type Data Load
@@ -253,11 +254,8 @@ window.onload = async () => {
   }
 
   if (cookieIndex === 0 && exerciseParam === undefined || exerciseParam === "undefined") {
-    if (refreshNum < 1) {
-      if (roundParam !== undefined || roundParam !== "undefined")
-      {
+    if (refreshNum < 1 &&  roundParam === undefined || roundParam === "undefined") {
         nextButton.click();
-      }
     }
     refreshNum = refreshNum + 1;
   }
