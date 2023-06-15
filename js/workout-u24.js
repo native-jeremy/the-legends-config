@@ -255,7 +255,7 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-setTimeout(nextPage, 2000);
+  setTimeout(nextPage, 2000);
     
   function nextPage ()
   {
@@ -263,6 +263,14 @@ setTimeout(nextPage, 2000);
         if (refreshNum < 1) {
           nextButton.click();
         }
+        playButton.style.display = "none";
+        playButtonDisabled.style.display = "flex";
+        //
+        nextButton.style.display = "none";
+        nextButtonDisabled.style.display = "flex";
+        //
+        prevButton.style.display = "none";
+        prevButtonDisabled.style.display = "flex";
     }
     refreshNum = refreshNum + 1;
   }
