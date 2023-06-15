@@ -200,7 +200,6 @@ window.onload = async () => {
     exerciseHeader.style.display = "none";
     roundPopup.style.display = "flex";
     exerciseTitle.style.display = "none";
-    nextButton.click();
   }
   else {
     exerciseHeader.style.display = "flex";
@@ -251,9 +250,9 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-  /*if (exerciseParam === undefined || exerciseParam === "undefined" && roundParam !== undefined || roundParam !== "undefined") {
+  if (cookieIndex === 0 && exerciseParam === undefined || exerciseParam === "undefined") {
     nextButton.click();
-  }*/
+  }
 
   if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
     Wized.data.setCookie("sirenmute", "on");
