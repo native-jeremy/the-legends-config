@@ -63,7 +63,10 @@ window.onload = async () => {
   // Rep Type Data Load
   Wized.request.await("Load Exercise", (response) => {
     const repDataInt = response;
+    if(repDataInt.data[0].Amounts_Name[0] !== undefined)
+    {
     const repAmount = repDataInt.data[0].Amounts_Name[0];
+    }
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
