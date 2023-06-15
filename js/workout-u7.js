@@ -253,24 +253,17 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-  if (exerciseParam === undefined || exerciseParam === "undefined") {
-    let redirectNext = setTimeout(nextPage, 1000);
-  }
-  else if (roundParam === undefined || roundParam === "undefined" && exerciseParam === undefined || exerciseParam === "undefined") {
-    stopPage()
+  /*if (exerciseParam === undefined || exerciseParam === "undefined") {
+    setTimeout(nextPage, 1000);
   }
     
   function nextPage ()
   {
-    if (refreshNum < 1 /*&&  roundParam !== undefined || roundParam !== "undefined"*/) {
+    if (refreshNum < 1) {
       nextButton.click();
     }
     refreshNum = refreshNum + 1;
-  }
-
-  function stopPage() {
-    clearTimeout(redirectNext);
-  }
+  }*/
 
   if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
     Wized.data.setCookie("sirenmute", "on");
