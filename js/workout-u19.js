@@ -129,12 +129,13 @@ window.onload = async () => {
       exerciseHeader.style.display = "flex";
       exerciseTitle.style.display = "flex";
       roundPopup.style.display = "none";
+      setTimeout(autoPlayVideo, 2000);
+    }
+    
+    function autoPlayVideo ()
+    {
       playButton.click();
     }
-
-    /*nextButton.addEventListener("click", function() {
-      playSiren();
-    });*/
 
 
     // Timer setup function
