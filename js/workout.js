@@ -248,6 +248,7 @@ window.onload = async () => {
     //
     prevButton.style.display = "flex";
     prevButtonDisabled.style.display = "none";
+    nextButton.click();
   }
 
   if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
