@@ -89,16 +89,6 @@ window.onload = async () => {
     	history.back()
     });
 
-    // Play click controls
-    playButton.addEventListener("click", function () {
-      if (clickNum < 1) {
-        playVoice();
-        //Conditions
-        roundType();
-      }
-      playVideo();
-      clickNum = clickNum + 1;
-    });
 
     /*
     Round Function
@@ -137,6 +127,17 @@ window.onload = async () => {
     {
       playButton.click();
     }
+
+    // Play click controls
+    playButton.addEventListener("click", function () {
+      if (clickNum < 1) {
+        playVoice();
+        //Conditions
+        roundType();
+      }
+      playVideo();
+      clickNum = clickNum + 1;
+    });
 
 
     // Timer setup function
