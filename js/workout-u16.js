@@ -253,7 +253,7 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-setTimeout(nextPage, 2000);
+setTimeout(nextPage, 1000);
     
   function nextPage ()
   {
