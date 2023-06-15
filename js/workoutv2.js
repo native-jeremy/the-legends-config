@@ -248,6 +248,9 @@ window.onload = async () => {
     //
     prevButton.style.display = "flex";
     prevButtonDisabled.style.display = "none";
+  }
+
+  if (exerciseParam === undefined || exerciseParam === "undefined" && roundParam !== undefined || roundParam !== "undefined") {
     nextButton.click();
   }
 
