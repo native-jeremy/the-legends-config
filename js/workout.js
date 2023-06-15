@@ -216,7 +216,7 @@ window.onload = async () => {
     //
     prevButton.style.display = "none";
     prevButtonDisabled.style.display = "flex";
-    nextButton.click();
+    //nextButton.click();
     console.log("Click not working")
     //
   }
