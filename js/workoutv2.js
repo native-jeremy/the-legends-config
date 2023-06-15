@@ -79,8 +79,11 @@ window.onload = async () => {
     
     //let counter = repAmount;
     console.log(cookieIndex);
-
+    
     let clickNum = 0;
+    let refreshNum = 0;
+
+
     prevButton.addEventListener("click", function(){
     	history.back()
     });
@@ -251,7 +254,10 @@ window.onload = async () => {
   }
 
   if (cookieIndex === 0 && exerciseParam === undefined || exerciseParam === "undefined") {
-    nextButton.click();
+    if (refreshNum < 1) {
+      nextButton.click();
+    }
+    refreshNum = refreshNum + 1;
   }
 
   if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
