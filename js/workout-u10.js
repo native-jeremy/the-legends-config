@@ -253,7 +253,7 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-  if (exerciseParam === undefined || exerciseParam === "undefined" && roundParam === undefined || roundParam === "undefined") {
+  if (exerciseParam === undefined || exerciseParam === "undefined" && roundParam !== undefined || roundParam !== "undefined") {
     setTimeout(nextPage, 1000);
   }
     
