@@ -254,7 +254,7 @@ window.onload = async () => {
   }
 
   if (cookieIndex === 0 && exerciseParam === undefined || exerciseParam === "undefined") {
-    if (refreshNum < 1 &&  roundParam === !undefined || !roundParam === "undefined") {
+    if (refreshNum < 1 &&  roundParam !== undefined || roundParam !== "undefined") {
         nextButton.click();
     }
     refreshNum = refreshNum + 1;
