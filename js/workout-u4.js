@@ -254,7 +254,7 @@ window.onload = async () => {
   }
 
   if (cookieIndex === 0 && exerciseParam === undefined || exerciseParam === "undefined") {
-    setTimeout(nextPage, 2000);
+    setTimeout(nextPage, 1000);
   }
     
   function nextPage ()
