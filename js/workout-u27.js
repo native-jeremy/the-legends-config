@@ -120,7 +120,7 @@ window.onload = async () => {
       exerciseHeader.style.display = "flex";
       exerciseTitle.style.display = "flex";
       roundPopup.style.display = "none";
-      setTimeout(autoPlayVideo, 3000);
+      setTimeout(autoPlayVideo, 2000);
     }
     
     function autoPlayVideo ()
