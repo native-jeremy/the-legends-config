@@ -259,8 +259,10 @@ window.onload = async () => {
     
   function nextPage ()
   {
-    if (refreshNum < 1) {
-      nextButton.click();
+    if (exerciseParam === undefined || exerciseParam === "undefined" && roundParam !== undefined || roundParam !== "undefined") {
+        if (refreshNum < 1) {
+          nextButton.click();
+        }
     }
     refreshNum = refreshNum + 1;
   }
