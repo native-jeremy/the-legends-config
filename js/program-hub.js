@@ -16,15 +16,18 @@ window.onload = async () => {
     const getData = response;
     let applyData = getData.data.Completed;
     console.log(applyData);
+    let workout = document.querySelectorAll(".workouts");
     let icon = document.querySelectorAll(".completed-icon");
     
     setTimeout(loopCompleted, 2000);
     
     function loopCompleted ()
     {
-    for (let i = 0; i < applyData.length; i++) {
-      icon[i].classList.add("complete-indicator")
-    }
+      for (let i = 0; i < applyData.length; i++) {
+        icon[i].classList.add("complete-indicator");
+        workout[i].classList.add("disabled");
+        workout[i].href = "";
+      }
     }
   });
 }
