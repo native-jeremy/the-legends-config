@@ -254,8 +254,13 @@ window.onload = async () => {
   }
 
   if (cookieIndex === 0 && exerciseParam === undefined || exerciseParam === "undefined") {
+    setTimeout(nextPage, 2000);
+  }
+    
+  function nextPage ()
+  {
     if (refreshNum < 1 &&  roundParam !== undefined || roundParam !== "undefined") {
-        nextButton.click();
+      nextButton.click();
     }
     refreshNum = refreshNum + 1;
   }
