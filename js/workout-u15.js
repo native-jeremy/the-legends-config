@@ -253,11 +253,11 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-setTimeout(nextPage, 1000);
+setTimeout(nextPage, 2000);
     
   function nextPage ()
   {
-    if (exerciseParam === undefined || exerciseParam === "undefined" && cookieIndex === 0) {
+    if (exerciseParam === undefined || exerciseParam === "undefined" && cookieIndex !== "completed=true") {
         if (refreshNum < 1) {
           nextButton.click();
         }
