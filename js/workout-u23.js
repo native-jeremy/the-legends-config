@@ -262,11 +262,7 @@ setTimeout(nextPage, 2000);
     if (exerciseParam === undefined || exerciseParam === "undefined" && cookieIndex !== "completed=true") {
         if (refreshNum < 1) {
           nextButton.click();
-          roundTitle.innerHTML = "Loading Next Exercise"
         }
-    }
-    else if (roundParam === undefined || roundParam === "undefined"){
-      roundTitle.innerHTML = "Completed"
     }
     refreshNum = refreshNum + 1;
   }
