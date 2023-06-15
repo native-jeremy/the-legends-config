@@ -265,7 +265,7 @@ setTimeout(nextPage, 2000);
           roundTitle.innerHTML = "Loading Next Exercise"
         }
     }
-    else {
+    else if (roundParam === undefined || roundParam === "undefined"){
       roundTitle.innerHTML = "Completed"
     }
     refreshNum = refreshNum + 1;
