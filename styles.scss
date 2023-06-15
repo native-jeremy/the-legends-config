@@ -43,6 +43,10 @@ a, button {
     box-shadow: none !important;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 
 .blog-image { 
 	object-fit: cover;
