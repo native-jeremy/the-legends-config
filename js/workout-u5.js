@@ -253,16 +253,23 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-  if (cookieIndex === 0 && exerciseParam === undefined || exerciseParam === "undefined") {
-    setTimeout(nextPage, 1000);
+  if (exerciseParam === undefined || exerciseParam === "undefined") {
+    let redirectNext = setTimeout(nextPage, 1000);
+  }
+  else if (roundParam === undefined || roundParam === "undefined" && exerciseParam === undefined || exerciseParam === "undefined") {
+    stopPage()
   }
     
   function nextPage ()
   {
-    if (refreshNum < 1 &&  roundParam !== undefined || roundParam !== "undefined") {
+    if (refreshNum < 1 /*&&  roundParam !== undefined || roundParam !== "undefined"*/) {
       nextButton.click();
     }
     refreshNum = refreshNum + 1;
+  }
+
+  function stopPage() {
+    clearTimeout(redirectNext);
   }
 
   if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
