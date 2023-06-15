@@ -257,7 +257,7 @@ setTimeout(nextPage, 1000);
     
   function nextPage ()
   {
-    if (exerciseParam === undefined || exerciseParam === "undefined" && roundParam !== undefined || roundParam !== "undefined") {
+    if (exerciseParam === undefined || exerciseParam === "undefined" && cookieIndex === 0) {
         if (refreshNum < 1) {
           nextButton.click();
         }
