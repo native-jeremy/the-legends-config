@@ -29,7 +29,7 @@ window.onload = async () => {
         console.log(applyData.length)
       }
       for (let index = 0; index < workout.length; index++) {
-        console.log(workout.length)
+        console.log(workout[i])
       }
     }
 
