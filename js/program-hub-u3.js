@@ -32,7 +32,7 @@ window.onload = async () => {
   });
 }
 
-const circleProgress = new CircleProgress('.circle');
+const circleProgress = new CircleProgress('.app-completion-circle');
 circleProgress.attr({
 	max: 100,
 	value: 20,
