@@ -28,10 +28,10 @@ window.onload = async () => {
         icon[i].classList.add("complete-indicator");
         console.log(applyData.length)
       }
-    }
       for (let index = 0; index < workout.length; index++) {
         console.log(workout.length)
       }
+    }
 
       let progressNum = applyData.length / workout.length * 100
       
