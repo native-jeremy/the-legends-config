@@ -7,6 +7,7 @@ const exerciseTitle = document.getElementById("exerciseTitle");
 const exerciseHeader = document.getElementById("exerciseHeader");
 const roundPopup = document.getElementById("roundPopup");
 const roundTitle = document.getElementById("roundTitle");
+const roundText = document.getElementById("roundText");
 
 // Element Delarations
 const repText = document.getElementById("repText");
@@ -116,10 +117,12 @@ window.onload = async () => {
       exerciseHeader.style.display = "none";
       exerciseTitle.style.display = "none";
       roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
     } else {
       exerciseHeader.style.display = "flex";
       exerciseTitle.style.display = "flex";
       roundPopup.style.display = "none";
+      roundText.style.display = "none";
       setTimeout(autoPlayVideo, 2000);
     }
     
@@ -205,11 +208,13 @@ window.onload = async () => {
   if (cookieIndex === 0 || exerciseParam === undefined || exerciseParam === "undefined") {
     exerciseHeader.style.display = "none";
     roundPopup.style.display = "flex";
+    roundText.style.display = "flex";
     exerciseTitle.style.display = "none";
   }
   else {
     exerciseHeader.style.display = "flex";
     roundPopup.style.display = "none";
+    roundText.style.display = "none";
     exerciseTitle.style.display = "none";
   }
 
