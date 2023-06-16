@@ -18,7 +18,7 @@ window.onload = async () => {
     console.log(applyData);
     //let workout = document.querySelectorAll(".workouts");
     let icon = document.querySelectorAll(".completed-icon");
-    let workout = document.querySelectorAll(".workout");
+    let workout = document.querySelectorAll(".workouts");
     
     setTimeout(loopCompleted, 2000);
     
