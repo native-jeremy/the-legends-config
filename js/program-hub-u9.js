@@ -26,16 +26,14 @@ window.onload = async () => {
     {
       for (let i = 0; i < applyData.length; i++) {
         icon[i].classList.add("complete-indicator");
-        let completeAmount = applyData.length
-        console.log(completeAmount)
+        console.log(applyData.length)
       }
     }
       for (let index = 0; index < workout.length; index++) {
-        let workoutAmount = workout.length;
-        console.log(workoutAmount)
+        console.log(workout.length)
       }
 
-      let progressNum = workoutAmount / completeAmount * 100
+      let progressNum = applyData.length / workout.length * 100
       
       const circleProgress = new CircleProgress('.circle-latest');
         circleProgress.attr({
