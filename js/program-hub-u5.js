@@ -29,13 +29,12 @@ window.onload = async () => {
         //workout[i].href = "";
       }
     }
+	  const circleProgress = new CircleProgress('.circle-latest');
+		circleProgress.attr({
+		max: 100,
+		value: applyData,
+   		textFormat: "percent",
+    		indeterminateText: 0
+});
   });
 }
-
-const circleProgress = new CircleProgress('.circle-latest');
-circleProgress.attr({
-	max: 100,
-	value: 20,
-    textFormat: "percent",
-    indeterminateText: 0
-});
