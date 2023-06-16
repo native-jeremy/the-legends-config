@@ -16,7 +16,7 @@ window.onload = async () => {
     const getData = response;
     let applyData = getData.data.Completed;
     console.log(applyData);
-    let workout = document.querySelectorAll(".workouts");
+    //let workout = document.querySelectorAll(".workouts");
     let icon = document.querySelectorAll(".completed-icon");
     
     setTimeout(loopCompleted, 2000);
@@ -25,9 +25,17 @@ window.onload = async () => {
     {
       for (let i = 0; i < applyData.length; i++) {
         icon[i].classList.add("complete-indicator");
-        workout[i].classList.add("disabled");
-        workout[i].href = "";
+        //workout[i].classList.add("disabled");
+        //workout[i].href = "";
       }
     }
   });
 }
+
+const circleProgress = new CircleProgress('.circle');
+circleProgress.attr({
+	max: 100,
+	value: 20,
+    textFormat: "percent",
+    indeterminateText: 0
+});
