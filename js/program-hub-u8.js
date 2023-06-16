@@ -18,6 +18,7 @@ window.onload = async () => {
     console.log(applyData);
     //let workout = document.querySelectorAll(".workouts");
     let icon = document.querySelectorAll(".completed-icon");
+    let workout = document.querySelectorAll(".workout");
     
     setTimeout(loopCompleted, 2000);
     
@@ -25,16 +26,23 @@ window.onload = async () => {
     {
       for (let i = 0; i < applyData.length; i++) {
         icon[i].classList.add("complete-indicator");
-        //workout[i].classList.add("disabled");
-        //workout[i].href = "";
+        let completeAmount = applyData.length
+        console.log(completeAmount)
       }
     }
-	  const circleProgress = new CircleProgress('.circle-latest');
-		circleProgress.attr({
-		max: 100,
-		value: applyData.length,
-   		textFormat: "percent",
-    		indeterminateText: 0
-});
+      for (let index = 0; index < workout.length; index++) {
+        let workoutAmount = workout.length;
+        console.log(workoutAmount)
+      }
+
+      let progressNum = workoutAmount / completeAmount * 100
+      
+      const circleProgress = new CircleProgress('.circle-latest');
+        circleProgress.attr({
+        max: 100,
+        value: progressNum,
+        textFormat: "percent",
+        indeterminateText: 0
+      });
   });
 }
