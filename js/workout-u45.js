@@ -76,7 +76,7 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
-    checkAmrap(checkindex)
+    checkAmrap(cookieindex)
 
 
     function checkAmrap (cookieIndex)
