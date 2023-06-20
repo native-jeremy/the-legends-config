@@ -77,9 +77,9 @@ window.onload = async () => {
 
     (async () => {
         const dataResponse = await Wized.data.get("v.response");
-        console.log(dataResponse)
-
-        loadInfo(dataResponse);
+	const response await axios.get(dataResponse);
+        console.log(response)
+        //loadInfo();
     })()
 
     let amrapBool = repDataInt.data; 
@@ -94,21 +94,9 @@ window.onload = async () => {
     }
       console.log(amrapBool)
 
-    function loadInfo(dataResponse) {
-        let xhr = new XMLHttpRequest();
-    
-        xhr.open('GET', dataResponse, true);
-    
-        xhr.onload = function () {
-            if (this.status == 200) {
-                const data = this.responseText;
-                //console.log(data.name)
-                //console.log(data.bio)
-                console.log(data)
-            }
-        }
-        xhr.send();
-    }
+    /*function loadInfo() {
+        axios.get("https://api.github.com/users/morganbrowndev");
+    }*/
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none")
