@@ -98,7 +98,7 @@ window.onload = async () => {
       let ajaxInt = new XMLHttpRequest();
 
       // OPEN [METHOD] - AJAX
-      ajaxInt.open('GET', response.data, true)
+      ajaxInt.open('GET', dataResponse, true)
 
       ajaxInt.onload = function(){
         if(this.staus == 200)
@@ -106,7 +106,7 @@ window.onload = async () => {
           console.log(this.responseText);
         }
       }
-      ajaxInt.send();
+      ajaxInt.getResponseHeader();
     }
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none")
