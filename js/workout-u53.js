@@ -89,6 +89,7 @@ window.onload = async () => {
     }
       console.log(amrapBool)
 
+    loadContent();
 
 	// AJAX Response Setup
     function loadContent()
