@@ -99,7 +99,7 @@ window.onload = async () => {
     
         xhr.onload = function () {
             if (this.status == 200) {
-                const data = JSON.parse(this.responseText);
+                const data = this.responseText;
                 //console.log(data.name)
                 //console.log(data.bio)
                 console.log(data)
