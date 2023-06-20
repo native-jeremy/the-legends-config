@@ -74,7 +74,7 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
-    const dataResponse = response;
+    const dataResponse = response.data;
     console.log(dataResponse)
 
     let amrapBool = repDataInt.data; 
