@@ -89,25 +89,23 @@ window.onload = async () => {
     }
       console.log(amrapBool)
 
-    loadContent();
+      loadInfo();
 
-	// AJAX Response Setup
-    function loadContent()
-    {
-      // Intialise - AJAX
-      let ajaxInt = new XMLHttpRequest();
-
-      // OPEN [METHOD] - AJAX
-      ajaxInt.open('GET', dataResponse, true)
-
-      ajaxInt.onload = function(){
-        if(this.staus == 200)
-        {
-          console.log(this.responseText);
+    function loadInfo() {
+        let xhr = new XMLHttpRequest();
+    
+        xhr.open('GET', 'https://api.github.com/users/morganbrowndev', true);
+    
+        xhr.onload = function () {
+            if (this.status == 200) {
+                const data = JSON.parse(this.responseText);
+                console.log(data.name)
+                console.log(data.bio)
+            }
         }
-      }
-      ajaxInt.send();
+        xhr.send();
     }
+
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none")
     {
