@@ -74,13 +74,10 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
+ //const dataResponse = await Wized.data.get("v.response");
+        //console.log(dataResponse)
 
-    (async () => {
-        const dataResponse = await Wized.data.get("v.response");
-        console.log(dataResponse)
-
-        loadInfo(dataResponse);
-    })()
+        loadInfo();
 
     let amrapBool = repDataInt.data; 
 
@@ -97,7 +94,7 @@ window.onload = async () => {
     function loadInfo(dataResponse) {
         let xhr = new XMLHttpRequest();
     
-        xhr.open('GET', dataResponse, true);
+        xhr.open('GET', 'https://server.wized.com/v2/request/airtable/get-list', true);
     
         xhr.onload = function () {
             if (this.status == 200) {
