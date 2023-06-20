@@ -91,7 +91,7 @@ window.onload = async () => {
     }
       console.log(amrapBool)
 
-    function loadInfo(dataResponse) {
+    function loadInfo() {
         let xhr = new XMLHttpRequest();
     
         xhr.open('GET', 'https://server.wized.com/v2/request/airtable/get-list', true);
