@@ -98,7 +98,7 @@ window.onload = async () => {
       let ajaxInt = new XMLHttpRequest();
 
       // OPEN [METHOD] - AJAX
-      ajaxInt.open('GET', dataResponse, true)
+      ajaxInt.open('GET', response.data, true)
 
       ajaxInt.onload = function(){
         if(this.staus == 200)
