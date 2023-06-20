@@ -106,7 +106,7 @@ window.onload = async () => {
           console.log(this.responseText);
         }
       }
-      ajaxInt.getResponseHeader();
+      ajaxInt.send();
     }
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none")
