@@ -75,6 +75,8 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
+    const amrapBool = repDataInt.data[0].Amrap[0];
+    console.log(amrapBool)
 
 
     // Enable header to show correctly (if round popup is hidden)
