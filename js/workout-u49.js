@@ -65,8 +65,6 @@ window.onload = async () => {
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
-  const dataResponse = Wized.data.get("v.response");
-  console.log(dataResponse)
 
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
@@ -75,6 +73,9 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
+
+    const dataResponse = Wized.data.get("v.response");
+    console.log(dataResponse)
 
     let amrapBool = repDataInt.data; 
 
