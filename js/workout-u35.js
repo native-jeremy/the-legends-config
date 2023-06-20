@@ -57,7 +57,9 @@ let refreshNum = 0;
 window.onload = async () => {
   //await Wized.data.setVariable("complete", minusBtn);
   //const value = await Wized.data.get("v.complete");
+  //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
+  const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const roundParam = await Wized.data.get("n.parameter.round");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
@@ -73,6 +75,8 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
+    const amrapValue = repDataInt.data[0].Amarap[exerciseIndex];
+    console.log(amrapValue)
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none")
