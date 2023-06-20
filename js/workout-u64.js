@@ -78,6 +78,8 @@ window.onload = async () => {
     (async () => {
         const dataResponse = await Wized.data.get("v.response");
         console.log(dataResponse)
+
+        loadInfo(dataResponse);
     })()
 
     let amrapBool = repDataInt.data; 
@@ -92,9 +94,7 @@ window.onload = async () => {
     }
       console.log(amrapBool)
 
-      loadInfo();
-
-    function loadInfo() {
+    function loadInfo(dataResponse) {
         let xhr = new XMLHttpRequest();
     
         xhr.open('GET', dataResponse, true);
