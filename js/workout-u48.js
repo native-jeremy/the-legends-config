@@ -76,13 +76,15 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
+    let amrapBool = repDataInt.data; 
+
     if (cookieIndex === "" || cookieIndex === undefined || cookieIndex === "undefined")
     {
-      let amrapBool = repDataInt.data[0].Amrap; 
+      amrapBool = repDataInt.data[0].Amrap; 
     }
     else 
     {
-      let amrapBool = repDataInt.data[cookieIndex].Amrap;
+      amrapBool = repDataInt.data[cookieIndex].Amrap;
     }
       console.log(amrapBool)
 
