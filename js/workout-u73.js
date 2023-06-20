@@ -75,12 +75,12 @@ window.onload = async () => {
     console.log("Rep Type: ", repType);
 
 
-    (async () => {
+    /*(async () => {
         //let dataResponse = await Wized.data.get("v.response");
 	let response = await axios.get('https://api.github.com/users/morganbrowndev');
         console.log(response)
         //loadInfo();
-    })()
+    })()*/
 
     let amrapBool = repDataInt.data; 
 
@@ -288,7 +288,7 @@ window.onload = async () => {
     prevButtonDisabled.style.display = "none";
   }
 
-  //setTimeout(nextPage, 2000);
+  setTimeout(nextPage, 2000);
     
   function nextPage ()
   {
