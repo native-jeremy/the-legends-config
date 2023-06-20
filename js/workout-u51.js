@@ -90,6 +90,22 @@ window.onload = async () => {
       console.log(amrapBool)
 
 
+	// AJAX Response Setup
+    function loadContent()
+    {
+      // Intialise - AJAX
+      let ajaxInt = new XMLHttpRequest();
+
+      // OPEN [METHOD] - AJAX
+      ajaxInt.open('GET', dataResponse, true)
+
+      ajaxInt.onload = function(){
+        if(this.staus == 200)
+        {
+          console.log(this.responseText);
+        }
+      }
+    }
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none")
     {
