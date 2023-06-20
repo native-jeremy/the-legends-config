@@ -76,8 +76,8 @@ window.onload = async () => {
 
 
     (async () => {
-        let dataResponse = await Wized.data.get("v.response");
-	let response = await axios.get(dataResponse);
+        //let dataResponse = await Wized.data.get("v.response");
+	let response = await axios.get(Wized.data.get("v.response"));
         console.log(response)
         //loadInfo();
     })()
