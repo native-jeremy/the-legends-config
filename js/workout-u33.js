@@ -63,7 +63,7 @@ window.onload = async () => {
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
-  const dataResponse = Wized.data.get("v.response");
+  const dataResponse = await Wized.data.get("v.response");
   console.log(dataResponse)
 
   // Rep Type Data Load
