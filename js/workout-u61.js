@@ -95,13 +95,14 @@ window.onload = async () => {
     function loadInfo() {
         let xhr = new XMLHttpRequest();
     
-        xhr.open('GET', 'https://api.github.com/users/morganbrowndev', true);
+        xhr.open('GET', response, true);
     
         xhr.onload = function () {
             if (this.status == 200) {
                 const data = JSON.parse(this.responseText);
-                console.log(data.name)
-                console.log(data.bio)
+                //console.log(data.name)
+                //console.log(data.bio)
+                console.log(data)
             }
         }
         xhr.send();
