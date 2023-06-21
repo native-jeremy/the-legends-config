@@ -19,12 +19,12 @@ window.onload = async () => {
     //let workout = document.querySelectorAll(".workouts");
     let icon = document.querySelectorAll(".completed-icon");
     let workout = document.querySelectorAll(".workouts");
+    app.style.filter = "blur(0px)"
     
     setTimeout(loopCompleted, 2000);
     
     function loopCompleted ()
     {
-      app.style.filter = "blur(0px)"
       
       for (let i = 0; i < applyData.length; i++) {
         icon[i].classList.add("complete-indicator");
