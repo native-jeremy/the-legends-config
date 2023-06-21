@@ -24,6 +24,8 @@ window.onload = async () => {
     
     function loopCompleted ()
     {
+      app.style.filter = "blur(0px)"
+      
       for (let i = 0; i < applyData.length; i++) {
         icon[i].classList.add("complete-indicator");
         //console.log(applyData.length)
