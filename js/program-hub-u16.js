@@ -19,10 +19,16 @@ window.onload = async () => {
     //let workout = document.querySelectorAll(".workouts");
     let icon = document.querySelectorAll(".completed-icon");
     let workout = document.querySelectorAll(".workouts");
+
+    //App Blur Reset
     app.style.filter = "blur(0px)"
-    
+
+     if (response.status === 200) {
     setTimeout(loopCompleted, 2000);
-    
+     }
+    else {
+      console.log("Response not loaded")
+    }
     function loopCompleted ()
     {
       
