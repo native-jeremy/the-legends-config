@@ -74,11 +74,16 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
+    Wized.data.listen("v.myvalue", async () => {    
+      const exerciseResponse = Wized.data.get("c.cookieindex"); // Get new value    
+      console.log("Current Index: ", exerciseResponse); // Console log new value  
+  });
+
 
     /*(async () => {
         //let dataResponse = await Wized.data.get("v.response");
-	let response = await axios.get('https://api.github.com/users/morganbrowndev');
-        console.log(response)
+	let response = await axios.get('dataResponse');
+        console.log(dataResponse)
         //loadInfo();
     })()*/
 
