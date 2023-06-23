@@ -93,7 +93,7 @@ window.onload = async () => {
 	    videoChange.style.opacity = "0"
 	       
 	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
-	    videoChangeStyle ()
+	    videoChangeSrc ()
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest[0].Video[1].url);
 	    //playButton.classList.toggle("pause")
