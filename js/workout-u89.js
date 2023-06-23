@@ -81,7 +81,7 @@ window.onload = async () => {
     const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
     const exerciseResponse = await Wized.data.get("c.sirenmute");
 
-    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + workoutParam + exercisesParam + exerciseParam);
+    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam +  "&exercise=" + exerciseParam);
 
 	  
     videoSrc.src = videoCurrentSrc;
