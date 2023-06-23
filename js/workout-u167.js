@@ -104,7 +104,7 @@ window.onload = async () => {
 	    }
 	       
 	    function exerciseChange () {
-		exerciseTitle.innerHTML = amrapRequest[0].Exercise_Title[1].url
+		exerciseTitle.innerHTML = amrapRequest[0].Exercise_Title[1]
 	    }
 	  });
 
