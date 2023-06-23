@@ -59,8 +59,9 @@ window.onload = async () => {
   //const value = await Wized.data.get("v.complete");
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
+  const dataIndex = await Wized.data.get("v.dataindex");
   const VideoSrc = document.getElementById("video");
-  let exerciseIndex = await Wized.data.get("c.exerciseindex");
+  const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const roundParam = await Wized.data.get("n.parameter.round");
@@ -76,20 +77,13 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
-
-    if (exerciseIndex === "" || isNaN(exerciseIndex) === true)
-    {
-	exerciseIndex = toString(0);    
-    }	    
-    let varExeIndex = parseInt(exerciseIndex);	
-    console.log("Update Successful", varExeIndex);
   	  
   Wized.data.listen("c.sirenmute", async () => {
+    let varExeIndex = dataIndex + 1;
     const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
     const exerciseResponse = await Wized.data.get("c.sirenmute");
 
-    exerciseIndex = parseInt(exerciseIndex) + 1;
-	  console.log("Update Successful", exerciseIndex);
+    console.log("Update Successful", varExeIndex);
     
     history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 
