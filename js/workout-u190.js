@@ -81,15 +81,14 @@ window.onload = async () => {
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
 
-
 	 if ( video.currentTime === video.duration ) {
 	    const videoContent = document.getElementById("video");
 	    varExeIndex = varExeIndex + 1;
 	    const exerciseResponse = Wized.data.get("c.sirenmute");
 	    const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
 	
-	    await Wized.request.execute("Load Amrap"); // Trigger request  
-	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
+	    Wized.request.execute("Load Amrap"); // Trigger request  
+	    const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
 	    const videoCurrentSrc = amrapRequest[0].Video[varExeIndex].url;  
 	       
 	    videoChangeSrc ()
