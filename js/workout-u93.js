@@ -83,7 +83,7 @@ window.onload = async () => {
     const exerciseResponse = await Wized.data.get("c.sirenmute");
 
     cookieUrlIndex = parseInt(cookieUrlIndex) + 1;
-	  console.log("Updated Good" cookieUrlIndex);
+	  console.log("Updated Good", cookieUrlIndex);
     
     history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 
