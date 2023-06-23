@@ -92,7 +92,7 @@ window.onload = async () => {
 	    const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
 	
 	    Wized.request.execute("Load Amrap"); // Trigger request  
-	    const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
+	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
 	    const videoCurrentSrc = amrapRequest[0].Video[1].url;  
 	       
 	    videoChangeSrc ()
