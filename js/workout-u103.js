@@ -60,7 +60,7 @@ window.onload = async () => {
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const VideoSrc = document.getElementById("video");
-  let exerciseIndex = await Wized.data.get("c.exerciseindex");
+  const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const roundParam = await Wized.data.get("n.parameter.round");
@@ -76,6 +76,9 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
+
+    let varExeIndex = ParseInt(exerciseIndex);	
+    console.log("Update Successful", varExeIndex);
   	  
   Wized.data.listen("c.sirenmute", async () => {
     const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
