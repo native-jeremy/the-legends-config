@@ -75,7 +75,7 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
-    const videoCurrentSrc = await Wized.data.get("r.36.d[0].Video[0].url");
+    const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
   	  
   Wized.data.listen("c.sirenmute", async () => {    
     const exerciseResponse = await Wized.data.get("c.sirenmute");
