@@ -79,9 +79,10 @@ window.onload = async () => {
     console.log("Rep Type: ", repType);
   	  
   Wized.data.listen("c.sirenmute", async () => {
-    let varExeIndex = dataIndex + 1;
+    let varExeIndex = parseInt(cookieIndex) + 1;
     const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
     const exerciseResponse = await Wized.data.get("c.sirenmute");
+    await Wized.data.setCookie("cookieIndex", varExeIndex); // Set value of "c.accesstoken"  
 
     console.log("Update Successful", varExeIndex);
     
