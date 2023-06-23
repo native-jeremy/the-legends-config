@@ -78,13 +78,13 @@ window.onload = async () => {
     console.log("Rep Type: ", repType);
 
    Wized.request.await("Load Amrap", (response) => { 
-      const VideoSrc = document.getElementById("video");
       const amrapData = response;
       console.log("Response: ", response);
       console.log("Response: ", amrapData.data[0].Video[0].url);
 
 
        Wized.data.listen("c.sirenmute", async () => {
+	    const VideoSrc = document.getElementById("video");
 	    let varExeIndex = parseInt(cookieIndex) + 1;
 	    const videoCurrentSrc = amrapData.data[0].Video[1].url;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
