@@ -59,6 +59,7 @@ window.onload = async () => {
   //const value = await Wized.data.get("v.complete");
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
+  const cookieUrlIndex = await Wized.data.get("c.cookieindex");
   const VideoSrc = document.getElementById("video");
   const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
@@ -81,6 +82,9 @@ window.onload = async () => {
     const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
     const exerciseResponse = await Wized.data.get("c.sirenmute");
 
+    cookieUrlIndex = parseInt(cookieUrlIndex) + 1;
+	  console.log("Updated Good" cookieUrlIndex);
+    
     history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 
 	  
