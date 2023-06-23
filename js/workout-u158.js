@@ -99,7 +99,7 @@ window.onload = async () => {
 
 	    function videoChangeStyle () {
 		videoContent.src = videoCurrentSrc;
-		videoContent.transition = "1s ease"
+		videoContent.style.transition = "1s ease"
 		videoContent.style.opacity = "1" 
 		video.play()
 	    }
