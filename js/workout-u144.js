@@ -95,7 +95,7 @@ window.onload = async () => {
 		  
 	    //videoContent.src = videoCurrentSrc;
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
-	    console.log(amrapRequest.data);
+	    console.log(amrapRequest);
 	  });
 
     /*(async () => {
