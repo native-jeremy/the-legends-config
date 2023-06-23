@@ -115,7 +115,7 @@ window.onload = async () => {
 	    function exerciseChange () {
 		 exerciseChangeTitle.style.display = "block"
 		    
-		for (let i = 0; i < amrapRequest[0].Exercise_Title.length; index++) {
+		for (let i = 0; i < amrapRequest[0].Exercise_Title.length; i++) {
 	          exerciseAmrapTitle[i].style.display = "block";
 		  exerciseAmrapTitle[i].innerHTML = amrapRequest[0].Exercise_Title[i];
     		}
