@@ -81,8 +81,13 @@ window.onload = async () => {
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
 
-	 if ( video.currentTime === video.duration ) {
-	    const videoContent = document.getElementById("video");
+
+	let interval = setInterval(checkTime, 100);
+	function checkTime(){
+	  if(Math.floor(video.currentTime) == video.duration){
+
+
+ 	    const videoContent = document.getElementById("video");
 	    varExeIndex = varExeIndex + 1;
 	    const exerciseResponse = Wized.data.get("c.sirenmute");
 	    const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
@@ -101,16 +106,12 @@ window.onload = async () => {
 		    videoContent.src = videoCurrentSrc;
 		    video.play();
 	    }
-	       
-	    /*function exerciseChange () {
-		 exerciseChangeTitle.style.display = "block"
-		    
-		for (let i = 0; i < amrapRequest[0].Exercise_Title.length; i++) {
-	          exerciseAmrapTitle[i].style.display = "block";
-		  exerciseAmrapTitle[i].innerHTML = amrapRequest[0].Exercise_Title[i];
-    		}
-	    }*/
-	  }  
+	            alert("Time reached!");
+		    clearInterval(interval);
+		}
+	}
+
+    }  
 
        /*Wized.data.listen("c.sirenmute", async () => {
 	    const videoContent = document.getElementById("video");
