@@ -95,7 +95,7 @@ window.onload = async () => {
 
 	    await Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
-	    const videoCurrentSrc = amrapRequest[cookieIndexUpdated].Video[0].url;  
+	    const videoCurrentSrc = amrapRequest[0].Video[varExeIndex].url;  
 	       
 	    //history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
 	    videoChangeSrc ()
