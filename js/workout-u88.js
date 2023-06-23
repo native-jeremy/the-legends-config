@@ -62,7 +62,9 @@ window.onload = async () => {
   const VideoSrc = document.getElementById("video");
   const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
+  const exercisesParam = await Wized.data.get("n.parameter.exercise");
   const roundParam = await Wized.data.get("n.parameter.round");
+  const workoutParam = await Wized.data.get("n.parameter.workout");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
@@ -74,11 +76,14 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
-
-    const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
   	  
-  Wized.data.listen("c.sirenmute", async () => {    
+  Wized.data.listen("c.sirenmute", async () => {
+    const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
     const exerciseResponse = await Wized.data.get("c.sirenmute");
+
+    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + workoutParam + exercisesParam + exerciseParam);
+
+	  
     videoSrc.src = videoCurrentSrc;
     console.log("Current Index: ", exerciseResponse); // Console log new value  
   });
