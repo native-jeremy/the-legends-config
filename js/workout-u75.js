@@ -74,7 +74,7 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
-    Wized.data.listen("v.myvalue", async () => {    
+    Wized.data.listen("c.cookieindex", async () => {    
       const exerciseResponse = Wized.data.get("c.cookieindex"); // Get new value    
       console.log("Current Index: ", exerciseResponse); // Console log new value  
   });
