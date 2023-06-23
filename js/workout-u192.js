@@ -151,15 +151,6 @@ window.onload = async () => {
 		  exerciseAmrapTitle[i].innerHTML = amrapRequest[0].Exercise_Title[i];
     		}
 	    }*/
-	  });
-
-    /*(async () => {
-        //let dataResponse = await Wized.data.get("v.response");
-	let response = await axios.get('dataResponse');
-        console.log(dataResponse)
-        //loadInfo();
-    })()*/
-
     let amrapBool = repDataInt.data; 
 
     if (cookieIndex === "" || cookieIndex === undefined || cookieIndex === "undefined")
