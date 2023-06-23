@@ -81,7 +81,7 @@ window.onload = async () => {
     const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
     const exerciseResponse = await Wized.data.get("c.sirenmute");
 
-    exerciseIndex = parseInt(exerciseIndex) + 1;
+    exerciseIndex = exerciseIndex + 1;
 	  console.log("Update Successful", exerciseIndex);
     
     history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
