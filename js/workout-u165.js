@@ -90,9 +90,8 @@ window.onload = async () => {
 	    await Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
 	    const videoCurrentSrc = amrapRequest[0].Video[1].url;  
-	    videoChange.style.opacity = "0"
 	       
-	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
+	    //history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
 	    videoChangeSrc ()
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest[0].Video[1].url);
@@ -101,13 +100,7 @@ window.onload = async () => {
 	    function videoChangeSrc () {
 		videoContent.src = videoCurrentSrc;
 		video.play();
-		setTimeout(videoChangeStyle, 250)
 	    }
-	       
-	    function videoChangeStyle () {
-		videoChange.style.opacity = "1";
-	    }
-	    
 	  });
 
     /*(async () => {
