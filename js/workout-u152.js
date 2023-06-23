@@ -97,7 +97,7 @@ window.onload = async () => {
 	    console.log(amrapRequest[0].Video[1].url);
 
 	    video.play()
-	    playButton.classList.toggle("pause")
+	    //playButton.classList.toggle("pause")
 	    
 	  });
 
