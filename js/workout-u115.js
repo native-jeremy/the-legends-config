@@ -77,6 +77,10 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
+
+   Wized.request.await("Load Amrap", (response) => { 
+      console.log("Response: ", response.data[0]);
+   }
   	  
   Wized.data.listen("c.sirenmute", async () => {
     let varExeIndex = parseInt(cookieIndex) + 1;
