@@ -68,7 +68,7 @@ window.onload = async () => {
 
   Wized.data.listen("c.sirenmute", async () => {    
     const exerciseResponse = await Wized.data.get("c.sirenmute"); // Get new value    
-    history.pushState({pageID: 'workout'}, 'Workout', '/workout');
+    history.pushState({pageID: 'workout'}, 'Workout', '#');
     console.log("Current Index: ", exerciseResponse); // Console log new value  
   });
 
