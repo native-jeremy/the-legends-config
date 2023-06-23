@@ -87,7 +87,7 @@ window.onload = async () => {
 	    //console.log("Update Successful", update);
 
 	    Wized.request.execute("Load Amrap");
-	    const amrapRequest = Wized.data.get("r.31.d");   
+	    const amrapRequest = await Wized.data.get("r.31.d");   
 	    const videoCurrentSrc = amrapRequest;  
 
 	       
@@ -95,7 +95,7 @@ window.onload = async () => {
 		  
 	    videoContent.src = videoCurrentSrc;
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
-	    console.log(amrapRequest);
+	    console.log(amrapRequest.data[0].Video);
 	  });
 
     /*(async () => {
