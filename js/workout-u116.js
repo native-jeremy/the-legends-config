@@ -80,7 +80,7 @@ window.onload = async () => {
 
    Wized.request.await("Load Amrap", (response) => { 
       console.log("Response: ", response.data[0]);
-   }
+   });
   	  
   Wized.data.listen("c.sirenmute", async () => {
     let varExeIndex = parseInt(cookieIndex) + 1;
