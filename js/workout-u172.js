@@ -78,21 +78,23 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
+    let varExeIndex = 0;
 
        Wized.data.listen("c.sirenmute", async () => {
 	    const videoContent = document.getElementById("video");
-	    let varExeIndex = parseInt(exerciseIndex) + 1;
+	    //let varExeIndex = parseInt(exerciseIndex) + 1;
+	    varExeIndex = varExeIndex + 1;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
 	    
-	    let update = Wized.data.setCookie("exerciseindex", varExeIndex);
-	    let exerciseUpdatedIndex = Wized.data.get("c.exerciseindex"); 
+	    //let update = Wized.data.setCookie("exerciseindex", varExeIndex);
+	    //let exerciseUpdatedIndex = Wized.data.get("c.exerciseindex"); 
 	
 	
 	    //console.log("Update Successful", update);
 
 	    await Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
-	    const videoCurrentSrc = amrapRequest[cookieIndex].Video[exerciseUpdatedIndex].url;  
+	    const videoCurrentSrc = amrapRequest[cookieIndex].Video[varExeIndex].url;  
 	       
 	    //history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
 	    videoChangeSrc ()
