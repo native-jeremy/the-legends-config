@@ -66,6 +66,11 @@ window.onload = async () => {
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
 
+  Wized.data.listen("c.cookieindex", async () => {    
+    const exerciseResponse = await Wized.data.get("c.cookieindex"); // Get new value    
+    console.log("Current Index: ", exerciseResponse); // Console log new value  
+  });
+
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
@@ -73,11 +78,6 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
-
-    Wized.data.listen(cookieIndex, async () => {    
-      const exerciseResponse = Wized.data.get(cookieIndex); // Get new value    
-      console.log("Current Index: ", exerciseResponse); // Console log new value  
-  });
 
 
     /*(async () => {
