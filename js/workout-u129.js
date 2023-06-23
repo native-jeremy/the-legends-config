@@ -84,7 +84,7 @@ window.onload = async () => {
 
 
        Wized.data.listen("c.sirenmute", async () => {
-	    const VideoSrc = document.getElementById("video");
+	    const VideoContent = document.getElementById("video");
 	    let varExeIndex = parseInt(cookieIndex) + 1;
 	    const videoCurrentSrc = amrapData.data[0].Video[1].url;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
@@ -96,7 +96,7 @@ window.onload = async () => {
 	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 	
 		  
-	    videoSrc.src = videoCurrentSrc;
+	    videoContent.src = videoCurrentSrc;
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	  });
    });
