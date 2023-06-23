@@ -91,10 +91,12 @@ window.onload = async () => {
 	    const videoCurrentSrc = amrapRequest[0].Video[1].url;  
 	       
 	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
-		  
+	    videoContent.style = "0"  
 	    videoContent.src = videoCurrentSrc;
+	    videoContent.style = "1"  
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest[0].Video[1].url);
+	    
 
 	    video.play()
 	    //playButton.classList.toggle("pause")
