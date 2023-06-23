@@ -9,6 +9,7 @@ const roundPopup = document.getElementById("roundPopup");
 const roundTitle = document.getElementById("roundTitle");
 const roundText = document.getElementById("roundText");
 const videoChange = document.getElementById("videoChange");
+const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
 
 // Element Delarations
 const repText = document.getElementById("repText");
@@ -104,7 +105,7 @@ window.onload = async () => {
 	    }
 	       
 	    function exerciseChange () {
-		exerciseTitle.innerHTML = amrapRequest[0].Exercise_Title[1]
+		exerciseChangeTitle.innerHTML = amrapRequest[0].Exercise_Title[1]
 	    }
 	  });
 
