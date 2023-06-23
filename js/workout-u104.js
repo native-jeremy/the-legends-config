@@ -77,14 +77,14 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
-    let varExeIndex = ParseInt(exerciseIndex);	
+    let varExeIndex = parseInt(exerciseIndex);	
     console.log("Update Successful", varExeIndex);
   	  
   Wized.data.listen("c.sirenmute", async () => {
     const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
     const exerciseResponse = await Wized.data.get("c.sirenmute");
 
-    exerciseIndex = exerciseIndex + 1;
+    exerciseIndex = parseInt(exerciseIndex) + 1;
 	  console.log("Update Successful", exerciseIndex);
     
     history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
