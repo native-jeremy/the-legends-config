@@ -93,6 +93,7 @@ window.onload = async () => {
 	       
 	    //history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
 	    videoChangeSrc ()
+	    exerciseChange ()
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest[0].Video[1].url);
 	    //playButton.classList.toggle("pause")
@@ -100,6 +101,10 @@ window.onload = async () => {
 	    function videoChangeSrc () {
 		videoContent.src = videoCurrentSrc;
 		video.play();
+	    }
+	       
+	    function exerciseChange () {
+		exerciseTitle.innerHTML = amrapRequest[0].Exercise_Title[1].url
 	    }
 	  });
 
