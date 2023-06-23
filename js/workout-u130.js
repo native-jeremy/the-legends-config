@@ -84,7 +84,7 @@ window.onload = async () => {
 
 
        Wized.data.listen("c.sirenmute", async () => {
-	    const VideoContent = document.getElementById("video");
+	    const videoContent = document.getElementById("video");
 	    let varExeIndex = parseInt(cookieIndex) + 1;
 	    const videoCurrentSrc = amrapData.data[0].Video[1].url;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
