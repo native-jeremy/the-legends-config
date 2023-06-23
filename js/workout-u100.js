@@ -82,7 +82,7 @@ window.onload = async () => {
     const exerciseResponse = await Wized.data.get("c.sirenmute");
 
     exerciseIndex = parseInt(exerciseIndex) + 1;
-	  console.log("Update Successful", exerciseIndex);
+	  console.log("Update Successful", parseInt(exerciseIndex));
     
     history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 
