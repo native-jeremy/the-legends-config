@@ -99,7 +99,7 @@ window.onload = async () => {
 	    if (!video.paused)
 	    {
 	    video.pause()
-	    playButton.classList.remove("pause")
+	    playButton.classList.toggle("pause")
 	    }
 	    video.play()
 	    playButton.classList.toggle("pause")
