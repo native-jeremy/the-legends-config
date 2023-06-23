@@ -82,11 +82,11 @@ window.onload = async () => {
 	    let varExeIndex = parseInt(cookieIndex) + 1;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
 	    
-	    let update = Wized.data.setCookie("cookieindex", varExeIndex); // Set value of "c.accesstoken"  
+	    let update = Wized.data.setCookie("cookieindex", varExeIndex); 
 	
 	    //console.log("Update Successful", update);
 
-	    Wized.request.execute("Load Amrap");
+	    Wized.request.execute("Load Amrap") async () => {
 	    const amrapRequest = await Wized.data.get("r.31.d");   
 	    const videoCurrentSrc = amrapRequest;  
 
@@ -96,6 +96,7 @@ window.onload = async () => {
 	    //videoContent.src = videoCurrentSrc;
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest.data);
+	    });  
 	  });
 
     /*(async () => {
