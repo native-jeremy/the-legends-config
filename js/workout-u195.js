@@ -80,14 +80,13 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
+     const videoContent = document.getElementById("video");
 
 
 	let interval = setInterval(checkTime, 100);
+	  
 	function checkTime(){
-	  if(Math.floor(video.currentTime) == video.duration){
-
-
- 	    const videoContent = document.getElementById("video");
+	  if(Math.floor(video.currentTime) == video.duration){ 
 	    varExeIndex = varExeIndex + 1;
 	    const exerciseResponse = Wized.data.get("c.sirenmute");
 	    const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
