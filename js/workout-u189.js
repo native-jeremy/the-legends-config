@@ -85,8 +85,8 @@ window.onload = async () => {
 	 if ( video.currentTime === video.duration ) {
 	    const videoContent = document.getElementById("video");
 	    varExeIndex = varExeIndex + 1;
-	    const exerciseResponse = await Wized.data.get("c.sirenmute");
-	    const cookieIndexUpdated = await Wized.data.get("c.cookieindex"); 
+	    const exerciseResponse = Wized.data.get("c.sirenmute");
+	    const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
 	
 	    await Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
