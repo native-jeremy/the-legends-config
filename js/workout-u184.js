@@ -10,6 +10,7 @@ const roundTitle = document.getElementById("roundTitle");
 const roundText = document.getElementById("roundText");
 const videoChange = document.getElementById("videoChange");
 const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
+const exerciseAmrapTitle = document.querySelectorAll("amrap-title");
 
 // Element Delarations
 const repText = document.getElementById("repText");
@@ -112,7 +113,12 @@ window.onload = async () => {
 	    }
 	       
 	    function exerciseChange () {
-		    exerciseChangeTitle.innerHTML = amrapRequest[0].Exercise_Title[1]
+		 exerciseChangeTitle.style.display = "block"
+		    
+		for (let i = 0; i < amrapRequest[0].Exercise_Title.length; index++) {
+	          exerciseAmrapTitle[i].style.display = "block";
+		  exerciseAmrapTitle[i].innerHTML = amrapRequest[0].Exercise_Title[i];
+    		}
 	    }
 	  });
 
