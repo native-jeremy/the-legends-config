@@ -82,23 +82,24 @@ window.onload = async () => {
       const amrapData = response;
       console.log("Response: ", response);
       console.log("Response: ", amrapData.data[0].Video[0].url);
+
+
+       Wized.data.listen("c.sirenmute", async () => {
+	    let varExeIndex = parseInt(cookieIndex) + 1;
+	    const videoCurrentSrc = amrapData.data[0].Video[1].url;
+	    const exerciseResponse = await Wized.data.get("c.sirenmute");
+	    
+	    let update = Wized.data.setCookie("cookieindex", varExeIndex); // Set value of "c.accesstoken"  
+	
+	    //console.log("Update Successful", update);
+	    
+	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
+	
+		  
+	    videoSrc.src = videoCurrentSrc;
+	    console.log("Current Index: ", exerciseResponse); // Console log new value  
+	  });
    });
-  	  
-  Wized.data.listen("c.sirenmute", async () => {
-    let varExeIndex = parseInt(cookieIndex) + 1;
-    const videoCurrentSrc = amrapData.data[0].Video[1].url;
-    const exerciseResponse = await Wized.data.get("c.sirenmute");
-    
-   let update = Wized.data.setCookie("cookieindex", varExeIndex); // Set value of "c.accesstoken"  
-
-    //console.log("Update Successful", update);
-    
-    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
-
-	  
-    videoSrc.src = videoCurrentSrc;
-    console.log("Current Index: ", exerciseResponse); // Console log new value  
-  });
 
     /*(async () => {
         //let dataResponse = await Wized.data.get("v.response");
