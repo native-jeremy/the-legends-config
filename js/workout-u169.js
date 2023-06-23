@@ -81,16 +81,16 @@ window.onload = async () => {
 
        Wized.data.listen("c.sirenmute", async () => {
 	    const videoContent = document.getElementById("video");
-	    let varExeIndex = parseInt(cookieIndex) + 1;
+	    let varExeIndex = parseInt(exerciseIndex) + 1;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
 	    
-	    let update = Wized.data.setCookie("cookieindex", varExeIndex); 
+	    let update = Wized.data.setCookie("exerciseindex", varExeIndex); 
 	
 	    //console.log("Update Successful", update);
 
 	    await Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
-	    const videoCurrentSrc = amrapRequest[0].Video[1].url;  
+	    const videoCurrentSrc = amrapRequest[cookieIndex].Video[exerciseIndex].url;  
 	       
 	    //history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
 	    videoChangeSrc ()
@@ -100,12 +100,12 @@ window.onload = async () => {
 	    //playButton.classList.toggle("pause")
 
 	    function videoChangeSrc () {
-		videoContent.src = videoCurrentSrc;
-		video.play();
+		    videoContent.src = videoCurrentSrc;
+		    video.play();
 	    }
 	       
 	    function exerciseChange () {
-		exerciseChangeTitle.innerHTML = amrapRequest[0].Exercise_Title[1]
+		    exerciseChangeTitle.innerHTML = amrapRequest[0].Exercise_Title[1]
 	    }
 	  });
 
