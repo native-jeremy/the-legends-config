@@ -79,6 +79,7 @@ window.onload = async () => {
 
        Wized.data.listen("c.sirenmute", async () => {
 	    const videoContent = document.getElementById("video");
+	    videoContent.style.transition = "1s ease"
 	    let varExeIndex = parseInt(cookieIndex) + 1;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
 	    
@@ -92,14 +93,13 @@ window.onload = async () => {
 	       
 	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 	    videoContent.style.opacity = "0"  
-	    setTimeout(videoChangeStyle, 500)
+	    setTimeout(videoChangeStyle, 250)
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest[0].Video[1].url);
 	    //playButton.classList.toggle("pause")
 
 	    function videoChangeStyle () {
 		videoContent.src = videoCurrentSrc;
-		videoContent.style.transition = "1s ease"
 		videoContent.style.opacity = "1" 
 		video.play()
 	    }
