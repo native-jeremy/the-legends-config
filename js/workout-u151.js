@@ -96,12 +96,9 @@ window.onload = async () => {
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest[0].Video[1].url);
 
-	    if (!video.paused)
-	    {
-	    video.pause()
-	    }
 	    video.play()
 	    playButton.classList.toggle("pause")
+	    
 	  });
 
     /*(async () => {
