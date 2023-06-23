@@ -9,8 +9,8 @@ const roundPopup = document.getElementById("roundPopup");
 const roundTitle = document.getElementById("roundTitle");
 const roundText = document.getElementById("roundText");
 const videoChange = document.getElementById("videoChange");
-const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
-const exerciseAmrapTitle = document.querySelectorAll('.amrap-title');
+//const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
+//const exerciseAmrapTitle = document.querySelectorAll('.amrap-title');
 
 // Element Delarations
 const repText = document.getElementById("repText");
@@ -100,7 +100,7 @@ window.onload = async () => {
 	       
 	    //history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
 	    videoChangeSrc ()
-	    exerciseChange ()
+	    //exerciseChange ()
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(varExeIndex);
 	    console.log(amrapRequest);
@@ -112,14 +112,14 @@ window.onload = async () => {
 		    video.play();
 	    }
 	       
-	    function exerciseChange () {
+	    /*function exerciseChange () {
 		 exerciseChangeTitle.style.display = "block"
 		    
 		for (let i = 0; i < amrapRequest[0].Exercise_Title.length; i++) {
 	          exerciseAmrapTitle[i].style.display = "block";
 		  exerciseAmrapTitle[i].innerHTML = amrapRequest[0].Exercise_Title[i];
     		}
-	    }
+	    }*/
 	  });
 
     /*(async () => {
