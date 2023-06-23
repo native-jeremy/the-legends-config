@@ -92,15 +92,15 @@ window.onload = async () => {
 	       
 	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 	    videoContent.style.opacity = "0"  
-	    videoContent.src = videoCurrentSrc;
 	    setTimeout(videoChangeStyle, 500)
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest[0].Video[1].url);
-	    video.play()
 	    //playButton.classList.toggle("pause")
 
 	    function videoChangeStyle () {
+		videoContent.src = videoCurrentSrc;
 		videoContent.style.opacity = "1" 
+		video.play()
 	    }
 	    
 	  });
