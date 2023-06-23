@@ -10,7 +10,7 @@ const roundTitle = document.getElementById("roundTitle");
 const roundText = document.getElementById("roundText");
 const videoChange = document.getElementById("videoChange");
 const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
-const exerciseAmrapTitle = document.querySelectorAll("amrap-title");
+const exerciseAmrapTitle = document.querySelectorAll('.amrap-title');
 
 // Element Delarations
 const repText = document.getElementById("repText");
