@@ -100,7 +100,7 @@ window.onload = async () => {
 	    videoChangeSrc ()
 	    exerciseChange ()
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
-	    console.log(amrapRequest[0].Video[1].url);
+	    console.log(varExeIndex);
 	    //playButton.classList.toggle("pause")
 
 	    function videoChangeSrc () {
