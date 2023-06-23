@@ -84,7 +84,7 @@ window.onload = async () => {
   	  
   Wized.data.listen("c.sirenmute", async () => {
     let varExeIndex = parseInt(cookieIndex) + 1;
-    const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
+    const videoCurrentSrc = Wized.data.get("r.31.d[0].Video[0].url");
     const exerciseResponse = await Wized.data.get("c.sirenmute");
     
    let update = Wized.data.setCookie("cookieindex", varExeIndex); // Set value of "c.accesstoken"  
