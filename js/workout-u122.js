@@ -79,7 +79,9 @@ window.onload = async () => {
     console.log("Rep Type: ", repType);
 
    Wized.request.await("Load Amrap", (response) => { 
+      const amrapData = response;
       console.log("Response: ", response);
+      console.log("Response: ", amrapData.data[0].Video[0].url);
    });
   	  
   Wized.data.listen("c.sirenmute", async () => {
@@ -89,7 +91,7 @@ window.onload = async () => {
     
    let update = Wized.data.setCookie("cookieindex", varExeIndex); // Set value of "c.accesstoken"  
 
-    console.log("Update Successful", update);
+    //console.log("Update Successful", update);
     
     history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 
