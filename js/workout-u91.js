@@ -62,7 +62,7 @@ window.onload = async () => {
   const VideoSrc = document.getElementById("video");
   const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
-  const exercisesParam = await Wized.data.get("n.parameter.exercise");
+  const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const roundParam = await Wized.data.get("n.parameter.round");
   const workoutParam = await Wized.data.get("n.parameter.workout");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
