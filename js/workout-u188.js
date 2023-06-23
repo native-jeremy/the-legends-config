@@ -81,7 +81,39 @@ window.onload = async () => {
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
 
-       Wized.data.listen("c.sirenmute", async () => {
+
+	 if ( video.currentTime === video.duration ) {
+	    const videoContent = document.getElementById("video");
+	    varExeIndex = varExeIndex + 1;
+	    const exerciseResponse = await Wized.data.get("c.sirenmute");
+	    const cookieIndexUpdated = await Wized.data.get("c.cookieindex"); 
+	
+	    await Wized.request.execute("Load Amrap"); // Trigger request  
+	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
+	    const videoCurrentSrc = amrapRequest[0].Video[varExeIndex].url;  
+	       
+	    videoChangeSrc ()
+	    console.log("Current Index: ", exerciseResponse); // Console log new value  
+	    console.log(varExeIndex);
+	    console.log(amrapRequest);
+	    console.log(cookieIndexUpdated);
+		 
+	    function videoChangeSrc () {
+		    videoContent.src = videoCurrentSrc;
+		    video.play();
+	    }
+	       
+	    /*function exerciseChange () {
+		 exerciseChangeTitle.style.display = "block"
+		    
+		for (let i = 0; i < amrapRequest[0].Exercise_Title.length; i++) {
+	          exerciseAmrapTitle[i].style.display = "block";
+		  exerciseAmrapTitle[i].innerHTML = amrapRequest[0].Exercise_Title[i];
+    		}
+	    }*/
+	  }  
+
+       /*Wized.data.listen("c.sirenmute", async () => {
 	    const videoContent = document.getElementById("video");
 	    //let varExeIndex = parseInt(exerciseIndex) + 1;
 	    varExeIndex = varExeIndex + 1;
@@ -120,7 +152,7 @@ window.onload = async () => {
 		  exerciseAmrapTitle[i].innerHTML = amrapRequest[0].Exercise_Title[i];
     		}
 	    }*/
-	  });
+	  });*/
 
     /*(async () => {
         //let dataResponse = await Wized.data.get("v.response");
