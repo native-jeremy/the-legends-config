@@ -85,7 +85,7 @@ window.onload = async () => {
 	    //let varExeIndex = parseInt(exerciseIndex) + 1;
 	    varExeIndex = varExeIndex + 1;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
-	     const cookieIndexUpdated = await Wized.data.get("c.cookieindex");
+	    const cookieIndexUpdated = await Wized.data.get("c.cookieindex");
 	    
 	    //let update = Wized.data.setCookie("exerciseindex", varExeIndex);
 	    //let exerciseUpdatedIndex = Wized.data.get("c.exerciseindex"); 
@@ -102,7 +102,7 @@ window.onload = async () => {
 	    exerciseChange ()
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(varExeIndex);
-	    console.log(amrapRequest[cookieIndex]);
+	    console.log(amrapRequest[cookieIndexUpdated]);
 	    //playButton.classList.toggle("pause")
 
 	    function videoChangeSrc () {
