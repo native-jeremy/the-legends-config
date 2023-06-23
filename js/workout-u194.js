@@ -109,7 +109,6 @@ window.onload = async () => {
 	            alert("Time reached!");
 		    clearInterval(interval);
 		}
-	}
 
     }  
 
