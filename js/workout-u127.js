@@ -77,9 +77,8 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
-    const VideoSrc = document.getElementById("video");
-
    Wized.request.await("Load Amrap", (response) => { 
+      const VideoSrc = document.getElementById("video");
       const amrapData = response;
       console.log("Response: ", response);
       console.log("Response: ", amrapData.data[0].Video[0].url);
