@@ -60,7 +60,6 @@ window.onload = async () => {
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const dataIndex = await Wized.data.get("v.dataindex");
-  const VideoSrc = document.getElementById("video");
   const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
@@ -77,6 +76,8 @@ window.onload = async () => {
     console.log("Amount: ", repAmount);
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
+
+    const VideoSrc = document.getElementById("video");
 
    Wized.request.await("Load Amrap", (response) => { 
       const amrapData = response;
