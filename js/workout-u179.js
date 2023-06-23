@@ -103,6 +103,7 @@ window.onload = async () => {
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(varExeIndex);
 	    console.log(amrapRequest[cookieIndexUpdated]);
+	    console.log(cookieIndexUpdated);
 	    //playButton.classList.toggle("pause")
 
 	    function videoChangeSrc () {
@@ -178,7 +179,7 @@ window.onload = async () => {
       End Round Function
     */  
 
-		// Round check (if round popup needs to show)
+// Round check (if round popup needs to show)
     if (cookieIndex === undefined || cookieIndex === "undefined") {
       exerciseHeader.style.display = "none";
       exerciseTitle.style.display = "none";
