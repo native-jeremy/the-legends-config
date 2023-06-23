@@ -88,7 +88,7 @@ window.onload = async () => {
 	    //console.log("Update Successful", update);
 
 	    Wized.request.execute("Load Amrap");
-	    const amrapRequest Wized.data.get("r.31.d");   
+	    const amrapRequest = Wized.data.get("r.31.d");   
 	    const videoCurrentSrc = amrapRequest.data[0].Video[1].url;  
 
 	       
