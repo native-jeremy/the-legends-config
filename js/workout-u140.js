@@ -86,9 +86,11 @@ window.onload = async () => {
 	
 	    //console.log("Update Successful", update);
 
-	    Wized.request.execute("Load Amrap", (response) => {
-	    const amrapRequest = response;   
-	    const videoCurrentSrc = amrapRequest;  
+	    await Wized.request.execute("Load Amrap"); // Trigger request  
+	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
+	    //const videoCurrentSrc = amrapRequest;  
+
+	    console.log(response);
 
 	       
 	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
@@ -96,7 +98,6 @@ window.onload = async () => {
 	    //videoContent.src = videoCurrentSrc;
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest.data);
-	    });  
 	  });
 
     /*(async () => {
