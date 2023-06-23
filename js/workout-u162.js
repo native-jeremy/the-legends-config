@@ -8,6 +8,7 @@ const exerciseHeader = document.getElementById("exerciseHeader");
 const roundPopup = document.getElementById("roundPopup");
 const roundTitle = document.getElementById("roundTitle");
 const roundText = document.getElementById("roundText");
+const videoChange = document.getElementById("videoChange");
 
 // Element Delarations
 const repText = document.getElementById("repText");
@@ -89,6 +90,8 @@ window.onload = async () => {
 	    await Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
 	    const videoCurrentSrc = amrapRequest[0].Video[1].url;  
+	    videoChange.style.opacity = "0"
+	    videoContent.src = videoCurrentSrc;
 	       
 	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
 	    setTimeout(videoChangeSrc, 500)
@@ -97,7 +100,7 @@ window.onload = async () => {
 	    //playButton.classList.toggle("pause")
 
 	    function videoChangeSrc () {
-		videoContent.src = videoCurrentSrc;
+		videoChange.style.opacity = "1"
 		video.play()
 	    }
 	    
