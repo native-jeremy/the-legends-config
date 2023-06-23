@@ -85,6 +85,7 @@ window.onload = async () => {
 	    //let varExeIndex = parseInt(exerciseIndex) + 1;
 	    varExeIndex = varExeIndex + 1;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
+	     const cookieIndexUpdated await Wized.data.get("c.cookieindex");
 	    
 	    //let update = Wized.data.setCookie("exerciseindex", varExeIndex);
 	    //let exerciseUpdatedIndex = Wized.data.get("c.exerciseindex"); 
@@ -94,7 +95,7 @@ window.onload = async () => {
 
 	    await Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
-	    const videoCurrentSrc = amrapRequest[cookieIndex].Video[0].url;  
+	    const videoCurrentSrc = amrapRequest[cookieIndexUpdated].Video[0].url;  
 	       
 	    //history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
 	    videoChangeSrc ()
