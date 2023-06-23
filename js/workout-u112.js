@@ -82,9 +82,10 @@ window.onload = async () => {
     let varExeIndex = parseInt(cookieIndex) + 1;
     const videoCurrentSrc = Wized.data.get("r.36.d[0].Video[0].url");
     const exerciseResponse = await Wized.data.get("c.sirenmute");
-    Wized.data.setCookie("cookieIndex", varExeIndex); // Set value of "c.accesstoken"  
+    
+   let update = Wized.data.setCookie("cookieIndex", varExeIndex); // Set value of "c.accesstoken"  
 
-    console.log("Update Successful", varExeIndex);
+    console.log("Update Successful", update);
     
     history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 
