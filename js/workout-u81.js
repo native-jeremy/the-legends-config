@@ -66,8 +66,8 @@ window.onload = async () => {
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
 
-  Wized.data.listen("c.cookieindex", async () => {    
-    const exerciseResponse = await Wized.data.get("c.cookieindex"); // Get new value    
+  Wized.data.listen("c.sirenmute", async () => {    
+    const exerciseResponse = await Wized.data.get("c.sirenmute"); // Get new value    
     console.log("Current Index: ", exerciseResponse); // Console log new value  
   });
 
