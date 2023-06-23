@@ -59,18 +59,13 @@ window.onload = async () => {
   //const value = await Wized.data.get("v.complete");
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
+  const VideoSrc = document.getElementById("video");
   const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const roundParam = await Wized.data.get("n.parameter.round");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
-
-  Wized.data.listen("c.sirenmute", async () => {    
-    const exerciseResponse = await Wized.data.get("c.sirenmute"); // Get new value    
-    nextButton.click();
-    console.log("Current Index: ", exerciseResponse); // Console log new value  
-  });
 
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
@@ -80,6 +75,13 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
+    const videoCurrentSrc = await Wized.data.get("r.36.d[0].Video[0].url");
+  	  
+  Wized.data.listen("c.sirenmute", async () => {    
+    const exerciseResponse = await Wized.data.get("c.sirenmute");
+    videoSrc.src = videoCurrentSrc;
+    console.log("Current Index: ", exerciseResponse); // Console log new value  
+  });
 
     /*(async () => {
         //let dataResponse = await Wized.data.get("v.response");
