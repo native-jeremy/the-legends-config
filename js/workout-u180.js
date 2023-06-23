@@ -102,7 +102,7 @@ window.onload = async () => {
 	    exerciseChange ()
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(varExeIndex);
-	    console.log(amrapRequest[cookieIndexUpdated]);
+	    console.log(amrapRequest);
 	    console.log(cookieIndexUpdated);
 	    //playButton.classList.toggle("pause")
 
