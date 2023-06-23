@@ -77,6 +77,10 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
+    if (exerciseIndex === "" || exerciseIndex === NAN)
+    {
+	exerciseIndex = toString(0);    
+    }	    
     let varExeIndex = parseInt(exerciseIndex);	
     console.log("Update Successful", varExeIndex);
   	  
