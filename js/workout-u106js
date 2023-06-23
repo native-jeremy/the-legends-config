@@ -77,7 +77,7 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
 
-    if (exerciseIndex === "" || exerciseIndex === NAN)
+    if (exerciseIndex === "" || isNAN(exerciseIndex) === True)
     {
 	exerciseIndex = toString(0);    
     }	    
