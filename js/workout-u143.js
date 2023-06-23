@@ -93,7 +93,7 @@ window.onload = async () => {
 	       
 	    history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam);
 		  
-	    videoContent.src = videoCurrentSrc;
+	    //videoContent.src = videoCurrentSrc;
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
 	    console.log(amrapRequest.data);
 	  });
