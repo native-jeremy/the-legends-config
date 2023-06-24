@@ -86,7 +86,7 @@ window.onload = async () => {
 	let interval = setInterval(checkTime, 100);
 	  
 	function checkTime(){
-	  if(Math.floor(video.currentTime) == video.duration){ 
+	  if(video.currentTime == video.duration){ 
 	    varExeIndex = varExeIndex + 1;
 	    const exerciseResponse = Wized.data.get("c.sirenmute");
 	    const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
