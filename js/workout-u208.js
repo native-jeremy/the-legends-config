@@ -83,45 +83,11 @@ window.onload = async () => {
     let videoDurationIndex = 0;
     const videoContent = document.getElementById("video");
 
-
-	let interval = setInterval(checkTime, 100);
-
 	  /*setInterval(currentTime, 100);
 	  function currentTime(){
 	   console.log(Math.floor(videoContent.currentTime))	  
 	  }*/
 	  
-	function checkTime(){
-	  if(videoDurationIndex == videoContent.duration){ 
-	    varExeIndex = varExeIndex + 1;
-	    const exerciseResponse = Wized.data.get("c.sirenmute");
-	    const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
-	
-	    Wized.request.execute("Load Amrap"); // Trigger request  
-	    const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
-	    const videoCurrentSrc = amrapRequest;  
-	    console.log(videoCurrentSrc)
-	    console.log("Ran Request")
-	       
-	    videoChangeSrc ()
-	    console.log("Current Index: ", exerciseResponse); // Console log new value  
-	    console.log(varExeIndex);
-	    console.log(amrapRequest);
-	    console.log(cookieIndexUpdated);
-		 
-	    function videoChangeSrc () {
-		    videoContent.src = videoCurrentSrc;
-		    video.play();
-	    }
-	    alert("Time reached!");
-		  clearInterval(interval);
-      videoDurationIndex = 0;
-		}
-    else {
-      videoDurationIndex = videoDurationIndex + 1;
-    }
-
-    }  
 
        /*Wized.data.listen("c.sirenmute", async () => {
 	    const videoContent = document.getElementById("video");
@@ -243,6 +209,7 @@ window.onload = async () => {
         playVoice();
         //Conditions
         roundType();
+        let interval = setInterval(checkTime, 100);
       }
       playVideo();
       clickNum = clickNum + 1;
@@ -301,6 +268,7 @@ window.onload = async () => {
         sirenSrc.pause()
       }
     }
+
     function playVoice() {
       let voiceSrc = document.getElementById("voiceSrc");
       if (voiceSrc.paused) {
@@ -310,6 +278,37 @@ window.onload = async () => {
         voiceSrc.pause()
       }
     }
+
+    function checkTime(){
+      if(videoDurationIndex == videoContent.duration){ 
+        varExeIndex = varExeIndex + 1;
+        const exerciseResponse = Wized.data.get("c.sirenmute");
+        const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
+    
+        Wized.request.execute("Load Amrap"); // Trigger request  
+        const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
+        const videoCurrentSrc = amrapRequest;  
+        console.log(videoCurrentSrc)
+        console.log("Ran Request")
+           
+        videoChangeSrc ()
+        console.log("Current Index: ", exerciseResponse); // Console log new value  
+        console.log(varExeIndex);
+        console.log(amrapRequest);
+        console.log(cookieIndexUpdated);
+       
+        function videoChangeSrc () {
+          videoContent.src = videoCurrentSrc;
+          video.play();
+        }
+        alert("Time reached!");
+        clearInterval(interval);
+        videoDurationIndex = 0;
+      }
+      else {
+        videoDurationIndex = videoDurationIndex + 1;
+      }
+    }  
   });
 
   if (cookieIndex === 0 || exerciseParam === undefined || exerciseParam === "undefined") {
