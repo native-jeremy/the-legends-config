@@ -212,7 +212,7 @@ window.onload = async () => {
         let interval = setInterval(checkTime, 100);
 
         function checkTime(){
-          //console.log(videoDurationIndex);
+          console.log(videoDurationIndex);
           if(videoDurationIndex === videoContent.duration){ 
             varExeIndex = varExeIndex + 1;
             const exerciseResponse = Wized.data.get("c.sirenmute");
