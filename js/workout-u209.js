@@ -210,6 +210,7 @@ window.onload = async () => {
         //Conditions
         roundType();
         let interval = setInterval(checkTime, 100);
+        console.log(videoDurationIndex);
       }
       playVideo();
       clickNum = clickNum + 1;
