@@ -94,7 +94,8 @@ window.onload = async () => {
 	    Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
 	    const videoCurrentSrc = amrapRequest;  
-	    console.log(videoCurrentSrc)		  
+	    console.log(videoCurrentSrc)
+	    console.log("Ran Request")
 	       
 	    videoChangeSrc ()
 	    console.log("Current Index: ", exerciseResponse); // Console log new value  
