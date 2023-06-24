@@ -84,7 +84,7 @@ window.onload = async () => {
 
 
 	let interval = setInterval(checkTime, 100);
-	  setInterval(checkTime, 100);
+	  setInterval(currentTime, 100);
 	  function currentTime(){
 	   console.log(Math.floor(videoContent.currentTime))	  
 	  }
