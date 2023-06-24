@@ -210,6 +210,38 @@ window.onload = async () => {
         //Conditions
         roundType();
         let interval = setInterval(checkTime, 100);
+
+        function checkTime(){
+          //console.log(videoDurationIndex);
+          if(videoDurationIndex === videoContent.duration){ 
+            varExeIndex = varExeIndex + 1;
+            const exerciseResponse = Wized.data.get("c.sirenmute");
+            const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
+        
+            Wized.request.execute("Load Amrap"); // Trigger request  
+            const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
+            const videoCurrentSrc = amrapRequest;  
+            console.log(videoCurrentSrc)
+            console.log("Ran Request")
+               
+            videoChangeSrc ()
+            console.log("Current Index: ", exerciseResponse); // Console log new value  
+            console.log(varExeIndex);
+            console.log(amrapRequest);
+            console.log(cookieIndexUpdated);
+           
+            function videoChangeSrc () {
+              videoContent.src = videoCurrentSrc;
+              video.play();
+            }
+            alert("Time reached!");
+            clearInterval(interval);
+            videoDurationIndex = 0;
+          }
+          else {
+            videoDurationIndex = videoDurationIndex + 1;
+          }
+        } 
       }
       playVideo();
       clickNum = clickNum + 1;
@@ -279,37 +311,7 @@ window.onload = async () => {
       }
     }
 
-    function checkTime(){
-      //console.log(videoDurationIndex);
-      if(videoDurationIndex === videoContent.duration){ 
-        varExeIndex = varExeIndex + 1;
-        const exerciseResponse = Wized.data.get("c.sirenmute");
-        const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
-    
-        Wized.request.execute("Load Amrap"); // Trigger request  
-        const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
-        const videoCurrentSrc = amrapRequest;  
-        console.log(videoCurrentSrc)
-        console.log("Ran Request")
-           
-        videoChangeSrc ()
-        console.log("Current Index: ", exerciseResponse); // Console log new value  
-        console.log(varExeIndex);
-        console.log(amrapRequest);
-        console.log(cookieIndexUpdated);
-       
-        function videoChangeSrc () {
-          videoContent.src = videoCurrentSrc;
-          video.play();
-        }
-        alert("Time reached!");
-        clearInterval(interval);
-        videoDurationIndex = 0;
-      }
-      else {
-        videoDurationIndex = videoDurationIndex + 1;
-      }
-    }  
+ 
   });
 
   if (cookieIndex === 0 || exerciseParam === undefined || exerciseParam === "undefined") {
