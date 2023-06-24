@@ -281,7 +281,7 @@ window.onload = async () => {
 
     function checkTime(){
       //console.log(videoDurationIndex);
-      if(videoDurationIndex > videoContent.duration){ 
+      if(videoDurationIndex === videoContent.duration){ 
         varExeIndex = varExeIndex + 1;
         const exerciseResponse = Wized.data.get("c.sirenmute");
         const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
