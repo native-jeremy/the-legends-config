@@ -93,7 +93,7 @@ window.onload = async () => {
 	
 	    Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
-	    const videoCurrentSrc = amrapRequest[0].Video[1].url;  
+	    const videoCurrentSrc = amrapRequest;  
 	    console.log(videoCurrentSrc)		  
 	       
 	    videoChangeSrc ()
