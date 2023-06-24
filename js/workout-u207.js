@@ -80,17 +80,19 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
-     const videoContent = document.getElementById("video");
+    let videoDurationIndex = 0;
+    const videoContent = document.getElementById("video");
 
 
 	let interval = setInterval(checkTime, 100);
-	  setInterval(currentTime, 100);
+
+	  /*setInterval(currentTime, 100);
 	  function currentTime(){
 	   console.log(Math.floor(videoContent.currentTime))	  
-	  }
+	  }*/
 	  
 	function checkTime(){
-	  if(Math.floor(videoContent.currentTime) == videoContent.duration){ 
+	  if(videoDurationIndex == videoContent.duration){ 
 	    varExeIndex = varExeIndex + 1;
 	    const exerciseResponse = Wized.data.get("c.sirenmute");
 	    const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
@@ -111,9 +113,13 @@ window.onload = async () => {
 		    videoContent.src = videoCurrentSrc;
 		    video.play();
 	    }
-	            alert("Time reached!");
-		    clearInterval(interval);
+	    alert("Time reached!");
+		  clearInterval(interval);
+      videoDurationIndex = 0;
 		}
+    else {
+      videoDurationIndex = videoDurationIndex + 1;
+    }
 
     }  
 
