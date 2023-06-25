@@ -77,7 +77,6 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
-    let videoContent = document.getElementById("video");
     let amrapBool = repDataInt.data;
 
     if (
@@ -197,6 +196,7 @@ window.onload = async () => {
     }
 
     function videoCheck() {
+      let videoContent = document.getElementById("video");
       if (
         Math.floor(videoContent.currentTime) ===
         Math.floor(videoContent.duration)
@@ -226,6 +226,7 @@ window.onload = async () => {
         videoDurationIndex = 0;
       }
     }
+    currentTest.innerHTML = Math.round(videoContent.currentTime);
   });
 
   //Function Calls Onload
