@@ -96,11 +96,11 @@ window.onload = async () => {
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
 	    const cookieIndexUpdated = await Wized.data.get("c.cookieindex");
 	    
-	    //let update = Wized.data.setCookie("exerciseindex", varExeIndex);
-	    //let exerciseUpdatedIndex = Wized.data.get("c.exerciseindex"); 
+	    let update = Wized.data.setCookie("exerciseindex", varExeIndex);
+	    let exerciseUpdatedIndex = Wized.data.get("c.exerciseindex"); 
 	
 	
-	    //console.log("Update Successful", update);
+	    console.log("Update Successful", update);
 
 	    await Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
@@ -210,13 +210,6 @@ window.onload = async () => {
         //Conditions
         roundType();
         //let interval = setInterval(checkTime, 100);
-        while (videoDurationIndex < videoContent.duration) {
-          videoDurationIndex = videoDurationIndex + 1;
-        }
-        if (videoDurationIndex === videoContent.duration) {
-          videoDurationIndex = 0;
-          checkTime();
-        }
       }
       playVideo();
       clickNum = clickNum + 1;
@@ -286,7 +279,7 @@ window.onload = async () => {
       }
     }
 
-    function checkTime(){
+    /*function checkTime(){
       console.log(videoDurationIndex);
 
         varExeIndex = varExeIndex + 1;
@@ -312,11 +305,7 @@ window.onload = async () => {
         alert("Time reached!");
         clearInterval(interval);
         videoDurationIndex = 0;
-      }
-
-    
-
- 
+      }*/
   });
 
   if (cookieIndex === 0 || exerciseParam === undefined || exerciseParam === "undefined") {
@@ -507,4 +496,5 @@ window.onload = async () => {
       currentNum.innerHTML = maxLimit;
     }
   });
+})
 };
