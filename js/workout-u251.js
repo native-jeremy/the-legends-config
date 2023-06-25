@@ -62,7 +62,8 @@ window.onload = async () => {
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const dataIndex = await Wized.data.get("v.dataindex");
-  const exerciseIndex = await Wized.data.get("c.exerciseindex");  const exerciseParam = await Wized.data.get("n.parameter.exercise");
+  const exerciseIndex = await Wized.data.get("c.exerciseindex");
+  const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const roundParam = await Wized.data.get("n.parameter.round");
   const workoutParam = await Wized.data.get("n.parameter.workout");
@@ -129,7 +130,6 @@ window.onload = async () => {
     /*
       End Round Function
     */
-
 
     // Play click controls
     playButton.addEventListener("click", function () {
@@ -202,29 +202,24 @@ window.onload = async () => {
 
     function videoCheck() {
       let videos = document.getElementById("video");
-      if (
-        Math.floor(videos.currentTime) ===
-        Math.floor(videos.duration)
-      ) {
-        varExeIndex = varExeIndex + 1;
-        const cookieIndexUpdated = Wized.data.get("c.cookieindex");
+      if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
+        if (varExeIndex < amrapResponse.data[cookieIndex].Video.length) {
+          varExeIndex = varExeIndex + 1;
+          const videoCurrentSrc =
+            amrapResponse.data[cookieIndex].Video[varExeIndex].url;
+          console.log(videoCurrentSrc);
+          console.log("Ran Request");
 
-        //Wized.request.execute("Load Amrap"); // Trigger request
-        //let amrapRequest = Wized.data.get("r.31.d"); // Get request response
-        const videoCurrentSrc = amrapResponse.data[cookieIndex].Video[varExeIndex].url;
-        console.log(videoCurrentSrc);
-        console.log("Ran Request");
+          videoChangeSrc();
+          console.log(varExeIndex);
 
-        videoChangeSrc();
-        console.log(varExeIndex);
-        console.log(cookieIndexUpdated);
-
-        function videoChangeSrc() {
-          videos.src = videoCurrentSrc;
-          videos.play();
+          function videoChangeSrc() {
+            videos.src = videoCurrentSrc;
+            videos.play();
+          }
+        } else {
+          videoDurationIndex = 0;
         }
-        //clearInterval(interval);
-        videoDurationIndex = 0;
       }
       currentTest.innerHTML = Math.round(videos.currentTime);
       durationTest.innerHTML = Math.round(videos.duration);
@@ -268,21 +263,20 @@ window.onload = async () => {
   });
 
   function roundEnableLoad() {
+    // Round check (if round popup needs to show)
+    if (cookieIndex === undefined || cookieIndex === "undefined") {
+      exerciseHeader.style.display = "none";
+      exerciseTitle.style.display = "none";
+      roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
+    } else {
+      exerciseHeader.style.display = "flex";
+      exerciseTitle.style.display = "flex";
+      roundPopup.style.display = "none";
+      roundText.style.display = "none";
+      setTimeout(autoPlayVideo, 2000);
+    }
 
-     // Round check (if round popup needs to show)
-     if (cookieIndex === undefined || cookieIndex === "undefined") {
-        exerciseHeader.style.display = "none";
-        exerciseTitle.style.display = "none";
-        roundPopup.style.display = "flex";
-        roundText.style.display = "flex";
-      } else {
-        exerciseHeader.style.display = "flex";
-        exerciseTitle.style.display = "flex";
-        roundPopup.style.display = "none";
-        roundText.style.display = "none";
-        setTimeout(autoPlayVideo, 2000);
-      }
-      
     if (
       cookieIndex === 0 ||
       exerciseParam === undefined ||
