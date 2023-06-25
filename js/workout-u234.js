@@ -16,6 +16,7 @@ const videoChange = document.getElementById("videoChange");
 const repText = document.getElementById("repText");
 const timerText = document.getElementById("safeTimerDisplay");
 const currentTest = document.getElementById("current");
+const durationTest = document.getElementById("dur");
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -226,6 +227,7 @@ window.onload = async () => {
         videoDurationIndex = 0;
       }
       currentTest.innerHTML = Math.round(videos.currentTime);
+      durationTest.innerHTML = Math.round(videos.duration);
     }
   });
 
