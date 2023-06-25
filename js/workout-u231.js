@@ -218,7 +218,7 @@ window.onload = async () => {
         console.log(cookieIndexUpdated);
 
         function videoChangeSrc() {
-          videoContent.src = videoCurrentSrc;
+          video.src = videoCurrentSrc;
           video.play();
         }
         alert("Time reached!");
