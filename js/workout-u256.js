@@ -213,10 +213,6 @@ window.onload = async () => {
 
           videoChangeSrc();
           console.log(varExeIndex);
-
-          function videoChangeSrc() {
-            videos.src = videoCurrentSrc;
-            videos.play();
           }
         } else {
           varExeIndex = 0;
@@ -227,12 +223,12 @@ window.onload = async () => {
 
           videoChangeSrc();
           console.log(varExeIndex);
-
-          function videoChangeSrc() {
-            videos.src = videoCurrentSrc;
-            videos.play();
-        }
       }
+
+      function videoChangeSrc() {
+        videos.src = videoCurrentSrc;
+        videos.play();
+    }
       currentTest.innerHTML = Math.round(videos.currentTime);
       durationTest.innerHTML = Math.round(videos.duration);
     }
