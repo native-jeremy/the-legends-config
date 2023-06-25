@@ -132,7 +132,6 @@ window.onload = async () => {
         playVoice();
         //Conditions
         roundType();
-        setInterval(videoCheck, 1000);
       }
       playVideo();
       clickNum = clickNum + 1;
@@ -168,6 +167,7 @@ window.onload = async () => {
       let video = document.getElementById("video");
       if (video.paused) {
         video.play();
+        setInterval(videoCheck, 1000);
         playButton.classList.toggle("pause");
         timerText.classList.remove("pausetime");
         console.log(video.duration);
