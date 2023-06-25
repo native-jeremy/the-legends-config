@@ -205,15 +205,11 @@ window.onload = async () => {
     function videoCheck() {
       let videoCurrentSrc;
       let videos = document.getElementById("video");
-      videos.style.opacity = "1";
-      videos.style.transition = "0.5s";
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
         if (varExeIndex < amrapResponse.data[cookieIndex].Video.length) {
-          videos.style.opacity = "0";
           varExeIndex = varExeIndex + 1;
           videoCurrentSrc =
           amrapResponse.data[cookieIndex].Video[varExeIndex].url;
-          videos.style.opacity = "1";
           console.log(videoCurrentSrc);
           console.log("Ran Request");
 
@@ -221,11 +217,9 @@ window.onload = async () => {
           console.log(varExeIndex);
           }
         } else if (varExeIndex >= amrapResponse.data[cookieIndex].Video.length) {
-          videos.style.opacity = "0";
           varExeIndex = 0;
           videoCurrentSrc =
           amrapResponse.data[cookieIndex].Video[varExeIndex].url;
-          videos.style.opacity = "1";
           console.log(videoCurrentSrc);
           console.log("Ran Request");
 
