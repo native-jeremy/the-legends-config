@@ -214,7 +214,7 @@ window.onload = async () => {
           videoChangeSrc();
           console.log(varExeIndex);
           }
-        } else {
+        } else if (varExeIndex >= amrapResponse.data[cookieIndex].Video.length) {
           varExeIndex = 0;
           videoCurrentSrc =
           amrapResponse.data[cookieIndex].Video[varExeIndex].url;
