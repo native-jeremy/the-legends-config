@@ -94,7 +94,7 @@ window.onload = async () => {
     console.log(amrapBool);
 
     if (amrapBool == "True") {
-      setInterval(videoCheck, 100);
+      setInterval(videoCheck, 1000);
     }
 
     // Enable header to show correctly (if round popup is hidden)
