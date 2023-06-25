@@ -201,11 +201,12 @@ window.onload = async () => {
     }
 
     function videoCheck() {
+      let videoCurrentSrc;
       let videos = document.getElementById("video");
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
         if (varExeIndex < amrapResponse.data[cookieIndex].Video.length) {
           varExeIndex = varExeIndex + 1;
-          const videoCurrentSrc =
+          videoCurrentSrc =
           amrapResponse.data[cookieIndex].Video[varExeIndex].url;
           console.log(videoCurrentSrc);
           console.log("Ran Request");
@@ -219,6 +220,17 @@ window.onload = async () => {
           }
         } else {
           varExeIndex = 0;
+          videoCurrentSrc =
+          amrapResponse.data[cookieIndex].Video[varExeIndex].url;
+          console.log(videoCurrentSrc);
+          console.log("Ran Request");
+
+          videoChangeSrc();
+          console.log(varExeIndex);
+
+          function videoChangeSrc() {
+            videos.src = videoCurrentSrc;
+            videos.play();
         }
       }
       currentTest.innerHTML = Math.round(videos.currentTime);
