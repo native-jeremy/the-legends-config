@@ -81,6 +81,7 @@ window.onload = async () => {
     let varExeIndex = 0;
     let amrapBool = repDataInt.data;
     const amrapResponse = response;
+    let checkAmrap;
 
     if (
       cookieIndex === "" ||
@@ -94,7 +95,7 @@ window.onload = async () => {
     console.log(amrapBool);
 
     if (amrapBool == "True") {
-      setInterval(videoCheck, 0);
+      checkAmrap = setInterval(videoCheck, 0);
     }
 
     // Enable header to show correctly (if round popup is hidden)
@@ -154,6 +155,7 @@ window.onload = async () => {
             playSiren();
             nextButton.click();
             clearInterval(timer);
+            clearInterval(checkAmrap);
             console.log("Completed");
           } else {
             console.log("Timer Paused");
