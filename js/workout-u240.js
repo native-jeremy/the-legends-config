@@ -80,7 +80,7 @@ window.onload = async () => {
     let varExeIndex = 0;
     let amrapBool = repDataInt.data;
 
-    if (repDataInt.data[cookieIndex].Amrap == "True" || repDataInt.data[cookieIndex].Amrap == "True") {
+    if (repDataInt.data[0].Amrap == "True" || repDataInt.data[cookieIndex].Amrap == "True") {
       setInterval(videoCheck, 1000);
     }
 
