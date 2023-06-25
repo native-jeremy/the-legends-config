@@ -203,7 +203,7 @@ window.onload = async () => {
     function videoCheck() {
       let videos = document.getElementById("video");
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-        if (amrapResponse.data[cookieIndex].Video[varExeIndex].url == 200) {
+        if (varExeIndex < amrapResponse.data[cookieIndex].Video.length) {
           varExeIndex = varExeIndex + 1;
           const videoCurrentSrc =
           amrapResponse.data[cookieIndex].Video[varExeIndex].url;
@@ -218,7 +218,7 @@ window.onload = async () => {
             videos.play();
           }
         } else {
-          videoDurationIndex = 0;
+          varExeIndex = 0;
         }
       }
       currentTest.innerHTML = Math.round(videos.currentTime);
