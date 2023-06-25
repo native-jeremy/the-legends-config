@@ -203,7 +203,8 @@ window.onload = async () => {
       let videos = document.getElementById("video");
       if (
         Math.floor(videos.currentTime) ===
-        Math.floor(videos.duration)
+        //Math.floor(videos.duration)
+        4
       ) {
         varExeIndex = varExeIndex + 1;
         const cookieIndexUpdated = Wized.data.get("c.cookieindex");
