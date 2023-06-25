@@ -57,8 +57,6 @@ let refreshNum = 0;
 */
 
 window.onload = async () => {
-  //await Wized.data.setVariable("complete", minusBtn);
-  //const value = await Wized.data.get("v.complete");
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const dataIndex = await Wized.data.get("v.dataindex");
@@ -79,53 +77,7 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
-    let videoDurationIndex = 0;
     let videoContent = document.getElementById("video");
-
-    /*setInterval(currentTime, 100);
-	  function currentTime(){
-	   console.log(Math.floor(videoContent.currentTime))	  
-	  }*/
-
-    /*Wized.data.listen("c.sirenmute", async () => {
-	    const videoContent = document.getElementById("video");
-	    //let varExeIndex = parseInt(exerciseIndex) + 1;
-	    varExeIndex = varExeIndex + 1;
-	    const exerciseResponse = await Wized.data.get("c.sirenmute");
-	    const cookieIndexUpdated = await Wized.data.get("c.cookieindex");
-	    
-	    //let update = Wized.data.setCookie("exerciseindex", varExeIndex);
-	    //let exerciseUpdatedIndex = Wized.data.get("c.exerciseindex"); 
-	
-	
-	    //console.log("Update Successful", update);
-
-	    await Wized.request.execute("Load Amrap"); // Trigger request  
-	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
-	    const videoCurrentSrc = amrapRequest[0].Video[varExeIndex].url;  
-	       
-	    //history.pushState({pageID: 'workout'}, 'Workout', '/workout' + "?workout=" + workoutParam + "&round=" + roundParam + "&exercises=" + exercisesParam + "&exercise=" + exerciseParam); 
-	    videoChangeSrc ()
-	    //exerciseChange ()
-	    console.log("Current Index: ", exerciseResponse); // Console log new value  
-	    console.log(varExeIndex);
-	    console.log(amrapRequest);
-	    console.log(cookieIndexUpdated);
-	    //playButton.classList.toggle("pause")
-
-	    function videoChangeSrc () {
-		    videoContent.src = videoCurrentSrc;
-		    video.play();
-	    }
-	       
-	    /*function exerciseChange () {
-		 exerciseChangeTitle.style.display = "block"
-		    
-		for (let i = 0; i < amrapRequest[0].Exercise_Title.length; i++) {
-	          exerciseAmrapTitle[i].style.display = "block";
-		  exerciseAmrapTitle[i].innerHTML = amrapRequest[0].Exercise_Title[i];
-    		}
-	    }*/
     let amrapBool = repDataInt.data;
 
     if (
@@ -138,18 +90,6 @@ window.onload = async () => {
       amrapBool = repDataInt.data[cookieIndex].Amrap;
     }
     console.log(amrapBool);
-
-    /*function loadInfo() {
-        axios.get("https://api.github.com/users/morganbrowndev");
-    }*/
-
-    // Enable header to show correctly (if round popup is hidden)
-    if (roundPopup.style.display === "none") {
-      exerciseHeader.style.display = "flex";
-      exerciseHeader.style.opacity = 1;
-      exerciseTitle.style.display = "flex";
-      exerciseTitle.style.opacity = 1;
-    }
 
     //let counter = repAmount;
     console.log(cookieIndex);
@@ -177,23 +117,6 @@ window.onload = async () => {
       End Round Function
     */
 
-    // Round check (if round popup needs to show)
-    if (cookieIndex === undefined || cookieIndex === "undefined") {
-      exerciseHeader.style.display = "none";
-      exerciseTitle.style.display = "none";
-      roundPopup.style.display = "flex";
-      roundText.style.display = "flex";
-    } else {
-      exerciseHeader.style.display = "flex";
-      exerciseTitle.style.display = "flex";
-      roundPopup.style.display = "none";
-      roundText.style.display = "none";
-      setTimeout(autoPlayVideo, 2000);
-    }
-
-    function autoPlayVideo() {
-      playButton.click();
-    }
 
     // Play click controls
     playButton.addEventListener("click", function () {
@@ -295,112 +218,148 @@ window.onload = async () => {
         videoDurationIndex = 0;
       }
     }
-
-    /*function checkTime(){
-      console.log(videoDurationIndex);
-      if(videoDurationIndex > videoContent.duration){ 
-        varExeIndex = varExeIndex + 1;
-        const exerciseResponse = Wized.data.get("c.sirenmute");
-        const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
-    
-        Wized.request.execute("Load Amrap"); // Trigger request  
-        const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
-        const videoCurrentSrc = amrapRequest;  
-        console.log(videoCurrentSrc)
-        console.log("Ran Request")
-           
-        videoChangeSrc ()
-        console.log("Current Index: ", exerciseResponse); // Console log new value  
-        console.log(varExeIndex);
-        console.log(amrapRequest);
-        console.log(cookieIndexUpdated);
-       
-        function videoChangeSrc () {
-          videoContent.src = videoCurrentSrc;
-          video.play();
-        }
-        alert("Time reached!");
-        clearInterval(interval);
-        videoDurationIndex = 0;
-      }
-      else {
-        videoDurationIndex = videoDurationIndex + 1;
-      }
-    }*/
   });
 
-  if (
-    cookieIndex === 0 ||
-    exerciseParam === undefined ||
-    exerciseParam === "undefined"
-  ) {
-    exerciseHeader.style.display = "none";
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
-    exerciseTitle.style.display = "none";
-  } else {
-    exerciseHeader.style.display = "flex";
-    roundPopup.style.display = "none";
-    roundText.style.display = "none";
-    exerciseTitle.style.display = "none";
-  }
-
-  if (exerciseParam === undefined || exerciseParam === "undefined") {
-    playButton.style.display = "none";
-    playButtonDisabled.style.display = "flex";
-    //
-    nextButton.style.display = "none";
-    nextButtonDisabled.style.display = "flex";
-    //
-    prevButton.style.display = "none";
-    prevButtonDisabled.style.display = "flex";
-    //
-  } else {
-    playButton.style.display = "flex";
-    playButtonDisabled.style.display = "none";
-    //
-    nextButton.style.display = "flex";
-    nextButtonDisabled.style.display = "none";
-    //
-    prevButton.style.display = "flex";
-    prevButtonDisabled.style.display = "none";
-  }
-
-  if (roundParam === undefined || roundParam === "undefined") {
-    playButton.style.display = "none";
-    playButtonDisabled.style.display = "flex";
-    //
-    nextButton.style.display = "none";
-    nextButtonDisabled.style.display = "flex";
-    //
-    prevButton.style.display = "none";
-    prevButtonDisabled.style.display = "flex";
-  } else {
-    playButton.style.display = "flex";
-    playButtonDisabled.style.display = "none";
-    //
-    nextButton.style.display = "flex";
-    nextButtonDisabled.style.display = "none";
-    //
-    prevButton.style.display = "flex";
-    prevButtonDisabled.style.display = "none";
-  }
-
+  //Function Calls Onload
+  roundEnableLoad();
   setTimeout(nextPage, 2000);
-
   sirenEnableLoad();
   voiceEnableLoad();
-  DiffcultLevel();
 
-  // Siren click controls
+  // Siren Click Controls
   siren.addEventListener("click", function () {
     sirenEnableClick();
   });
 
-  // Voice click controls
+  // Voice Click Controls
   voice.addEventListener("click", function () {
     voiceEnableClick();
   });
+
+  // Diff Decrease Click Controls
+  minusBtn.addEventListener("click", function () {
+    if (amount > minLimit) {
+      amount--;
+      currentNum.innerHTML = amount;
+    } else {
+      amount = minLimit;
+    }
+  });
+
+  // Diff Increase Click Controls
+  plusBtn.addEventListener("click", function () {
+    if (amount < maxLimit) {
+      amount++;
+      currentNum.innerHTML = amount;
+    } else {
+      currentNum.innerHTML = maxLimit;
+    }
+  });
+
+  function roundEnableLoad() {
+     // Enable header to show correctly (if round popup is hidden)
+     if (roundPopup.style.display === "none") {
+            exerciseHeader.style.display = "flex";
+            exerciseHeader.style.opacity = 1;
+            exerciseTitle.style.display = "flex";
+            exerciseTitle.style.opacity = 1;
+      }
+
+     // Round check (if round popup needs to show)
+     if (cookieIndex === undefined || cookieIndex === "undefined") {
+        exerciseHeader.style.display = "none";
+        exerciseTitle.style.display = "none";
+        roundPopup.style.display = "flex";
+        roundText.style.display = "flex";
+      } else {
+        exerciseHeader.style.display = "flex";
+        exerciseTitle.style.display = "flex";
+        roundPopup.style.display = "none";
+        roundText.style.display = "none";
+        setTimeout(autoPlayVideo, 2000);
+      }
+      
+    if (
+      cookieIndex === 0 ||
+      exerciseParam === undefined ||
+      exerciseParam === "undefined"
+    ) {
+      exerciseHeader.style.display = "none";
+      roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
+      exerciseTitle.style.display = "none";
+    } else {
+      exerciseHeader.style.display = "flex";
+      roundPopup.style.display = "none";
+      roundText.style.display = "none";
+      exerciseTitle.style.display = "none";
+    }
+
+    if (exerciseParam === undefined || exerciseParam === "undefined") {
+      playButton.style.display = "none";
+      playButtonDisabled.style.display = "flex";
+      //
+      nextButton.style.display = "none";
+      nextButtonDisabled.style.display = "flex";
+      //
+      prevButton.style.display = "none";
+      prevButtonDisabled.style.display = "flex";
+      //
+    } else {
+      playButton.style.display = "flex";
+      playButtonDisabled.style.display = "none";
+      //
+      nextButton.style.display = "flex";
+      nextButtonDisabled.style.display = "none";
+      //
+      prevButton.style.display = "flex";
+      prevButtonDisabled.style.display = "none";
+    }
+
+    if (roundParam === undefined || roundParam === "undefined") {
+      playButton.style.display = "none";
+      playButtonDisabled.style.display = "flex";
+      //
+      nextButton.style.display = "none";
+      nextButtonDisabled.style.display = "flex";
+      //
+      prevButton.style.display = "none";
+      prevButtonDisabled.style.display = "flex";
+    } else {
+      playButton.style.display = "flex";
+      playButtonDisabled.style.display = "none";
+      //
+      nextButton.style.display = "flex";
+      nextButtonDisabled.style.display = "none";
+      //
+      prevButton.style.display = "flex";
+      prevButtonDisabled.style.display = "none";
+    }
+  }
+
+  function autoPlayVideo() {
+    playButton.click();
+  }
+
+  function nextPage() {
+    if (
+      exerciseParam === undefined ||
+      (exerciseParam === "undefined" && cookieIndex !== "completed=true")
+    ) {
+      if (refreshNum < 1) {
+        nextButton.click();
+      }
+      playButton.style.display = "none";
+      playButtonDisabled.style.display = "flex";
+      //
+      nextButton.style.display = "none";
+      nextButtonDisabled.style.display = "flex";
+      //
+      prevButton.style.display = "none";
+      prevButtonDisabled.style.display = "flex";
+    }
+    refreshNum = refreshNum + 1;
+  }
 
   function sirenEnableClick() {
     if (sirenText.innerHTML === "Off") {
@@ -451,26 +410,6 @@ window.onload = async () => {
         sirenToggleOn.classList.toggle("on");
       }
     }
-  }
-
-  function nextPage() {
-    if (
-      exerciseParam === undefined ||
-      (exerciseParam === "undefined" && cookieIndex !== "completed=true")
-    ) {
-      if (refreshNum < 1) {
-        nextButton.click();
-      }
-      playButton.style.display = "none";
-      playButtonDisabled.style.display = "flex";
-      //
-      nextButton.style.display = "none";
-      nextButtonDisabled.style.display = "flex";
-      //
-      prevButton.style.display = "none";
-      prevButtonDisabled.style.display = "flex";
-    }
-    refreshNum = refreshNum + 1;
   }
 
   function voiceEnableLoad() {
@@ -549,26 +488,4 @@ window.onload = async () => {
       );
     }
   });
-
-  function DiffcultLevel() {
-    // Decrease diff button
-    minusBtn.addEventListener("click", function () {
-      if (amount > minLimit) {
-        amount--;
-        currentNum.innerHTML = amount;
-      } else {
-        amount = minLimit;
-      }
-    });
-
-    // Increase diff button
-    plusBtn.addEventListener("click", function () {
-      if (amount < maxLimit) {
-        amount++;
-        currentNum.innerHTML = amount;
-      } else {
-        currentNum.innerHTML = maxLimit;
-      }
-    });
-  }
 };
