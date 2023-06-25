@@ -195,7 +195,8 @@ window.onload = async () => {
       }
     }
 
-    function videoCheck(video) {
+    function videoCheck() {
+      let video = document.getElementById("video");
       if (
         Math.floor(video.currentTime) ===
         Math.floor(video.duration)
