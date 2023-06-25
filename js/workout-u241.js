@@ -80,10 +80,6 @@ window.onload = async () => {
     let varExeIndex = 0;
     let amrapBool = repDataInt.data;
 
-    if (repDataInt.data[0].Amrap == "True" || repDataInt.data[cookieIndex].Amrap == "True") {
-      setInterval(videoCheck, 1000);
-    }
-
     if (
       cookieIndex === "" ||
       cookieIndex === undefined ||
@@ -94,6 +90,10 @@ window.onload = async () => {
       amrapBool = repDataInt.data[cookieIndex].Amrap;
     }
     console.log(amrapBool);
+
+    if (amrapBool == "True") {
+      setInterval(videoCheck, 1000);
+    }
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none") {
