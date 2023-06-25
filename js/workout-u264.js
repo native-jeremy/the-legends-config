@@ -237,7 +237,7 @@ window.onload = async () => {
   });
 
   //Function Calls Onload
-  roundEnableLoad();
+  //roundEnableLoad();
   setTimeout(nextPage, 2000);
   sirenEnableLoad();
   voiceEnableLoad();
@@ -272,7 +272,7 @@ window.onload = async () => {
     }
   });
 
-  function roundEnableLoad() {
+  //function roundEnableLoad() {
     // Round check (if round popup needs to show)
     if (cookieIndex === undefined || cookieIndex === "undefined") {
       exerciseHeader.style.display = "none";
@@ -342,7 +342,7 @@ window.onload = async () => {
       //
       prevButton.style.display = "flex";
       prevButtonDisabled.style.display = "none";
-    }
+  //  }
   }
 
   function autoPlayVideo() {
