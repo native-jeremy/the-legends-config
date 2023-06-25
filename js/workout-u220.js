@@ -89,18 +89,18 @@ window.onload = async () => {
 	  }*/
 	  
 
-       Wized.data.listen("c.sirenmute", async () => {
+       /*Wized.data.listen("c.sirenmute", async () => {
 	    const videoContent = document.getElementById("video");
 	    //let varExeIndex = parseInt(exerciseIndex) + 1;
 	    varExeIndex = varExeIndex + 1;
 	    const exerciseResponse = await Wized.data.get("c.sirenmute");
 	    const cookieIndexUpdated = await Wized.data.get("c.cookieindex");
 	    
-	    let update = Wized.data.setCookie("exerciseindex", varExeIndex);
-	    let exerciseUpdatedIndex = Wized.data.get("c.exerciseindex"); 
+	    //let update = Wized.data.setCookie("exerciseindex", varExeIndex);
+	    //let exerciseUpdatedIndex = Wized.data.get("c.exerciseindex"); 
 	
 	
-	    console.log("Update Successful", update);
+	    //console.log("Update Successful", update);
 
 	    await Wized.request.execute("Load Amrap"); // Trigger request  
 	    const amrapRequest = await Wized.data.get("r.31.d"); // Get request response  
@@ -209,7 +209,37 @@ window.onload = async () => {
         playVoice();
         //Conditions
         roundType();
-        //let interval = setInterval(checkTime, 100);
+        let interval = setInterval(function (){
+          console.log(videoDurationIndex);
+          if(videoDurationIndex > videoContent.duration){ 
+            varExeIndex = varExeIndex + 1;
+            const exerciseResponse = Wized.data.get("c.sirenmute");
+            const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
+        
+            Wized.request.execute("Load Amrap"); // Trigger request  
+            const amrapRequest = Wized.data.get("r.31.d"); // Get request response  
+            const videoCurrentSrc = amrapRequest;  
+            console.log(videoCurrentSrc)
+            console.log("Ran Request")
+              
+            videoChangeSrc ()
+            console.log("Current Index: ", exerciseResponse); // Console log new value  
+            console.log(varExeIndex);
+            console.log(amrapRequest);
+            console.log(cookieIndexUpdated);
+          
+            function videoChangeSrc () {
+              videoContent.src = videoCurrentSrc;
+              video.play();
+            }
+            alert("Time reached!");
+            clearInterval(interval);
+            videoDurationIndex = 0;
+          }
+          else {
+            videoDurationIndex = videoDurationIndex + 1;
+          }
+        }, 100);
       }
       playVideo();
       clickNum = clickNum + 1;
@@ -281,7 +311,7 @@ window.onload = async () => {
 
     /*function checkTime(){
       console.log(videoDurationIndex);
-
+      if(videoDurationIndex > videoContent.duration){ 
         varExeIndex = varExeIndex + 1;
         const exerciseResponse = Wized.data.get("c.sirenmute");
         const cookieIndexUpdated = Wized.data.get("c.cookieindex"); 
@@ -305,7 +335,13 @@ window.onload = async () => {
         alert("Time reached!");
         clearInterval(interval);
         videoDurationIndex = 0;
-      }*/
+      }
+      else {
+        videoDurationIndex = videoDurationIndex + 1;
+      }
+    }*/ 
+
+ 
   });
 
   if (cookieIndex === 0 || exerciseParam === undefined || exerciseParam === "undefined") {
@@ -496,5 +532,4 @@ window.onload = async () => {
       currentNum.innerHTML = maxLimit;
     }
   });
-})
 };
