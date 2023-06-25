@@ -203,7 +203,6 @@ window.onload = async () => {
         Math.floor(videos.duration)
       ) {
         varExeIndex = varExeIndex + 1;
-        const exerciseResponse = Wized.data.get("c.sirenmute");
         const cookieIndexUpdated = Wized.data.get("c.cookieindex");
 
         Wized.request.execute("Load Amrap"); // Trigger request
