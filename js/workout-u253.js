@@ -203,7 +203,7 @@ window.onload = async () => {
     function videoCheck() {
       let videos = document.getElementById("video");
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-        if (amrapResponse.data[cookieIndex].Video[varExeIndex].url !== undefined) {
+        if (amrapResponse.data[cookieIndex].Video[varExeIndex].url == 200) {
           varExeIndex = varExeIndex + 1;
           const videoCurrentSrc =
           amrapResponse.data[cookieIndex].Video[varExeIndex].url;
