@@ -196,10 +196,10 @@ window.onload = async () => {
     }
 
     function videoCheck() {
-      let video = document.getElementById("video");
+      let videos = document.getElementById("video");
       if (
-        Math.floor(video.currentTime) ===
-        Math.floor(video.duration)
+        Math.floor(videos.currentTime) ===
+        Math.floor(videos.duration)
       ) {
         varExeIndex = varExeIndex + 1;
         const exerciseResponse = Wized.data.get("c.sirenmute");
@@ -218,15 +218,15 @@ window.onload = async () => {
         console.log(cookieIndexUpdated);
 
         function videoChangeSrc() {
-          video.src = videoCurrentSrc;
-          video.play();
+          videos.src = videoCurrentSrc;
+          videos.play();
         }
         alert("Time reached!");
         //clearInterval(interval);
         videoDurationIndex = 0;
       }
     }
-    currentTest.innerHTML = Math.round(video.currentTime);
+    currentTest.innerHTML = Math.round(videos.currentTime);
   });
 
   //Function Calls Onload
