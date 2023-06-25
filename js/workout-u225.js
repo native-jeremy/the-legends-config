@@ -91,6 +91,14 @@ window.onload = async () => {
     }
     console.log(amrapBool);
 
+    // Enable header to show correctly (if round popup is hidden)
+    if (roundPopup.style.display === "none") {
+      exerciseHeader.style.display = "flex";
+      exerciseHeader.style.opacity = 1;
+      exerciseTitle.style.display = "flex";
+      exerciseTitle.style.opacity = 1;
+    }
+
     //let counter = repAmount;
     console.log(cookieIndex);
 
@@ -257,13 +265,6 @@ window.onload = async () => {
   });
 
   function roundEnableLoad() {
-     // Enable header to show correctly (if round popup is hidden)
-     if (roundPopup.style.display === "none") {
-            exerciseHeader.style.display = "flex";
-            exerciseHeader.style.opacity = 1;
-            exerciseTitle.style.display = "flex";
-            exerciseTitle.style.opacity = 1;
-      }
 
      // Round check (if round popup needs to show)
      if (cookieIndex === undefined || cookieIndex === "undefined") {
