@@ -132,7 +132,7 @@ window.onload = async () => {
         playVoice();
         //Conditions
         roundType();
-        let interval = setInterval(videoCheck, 1000);
+        setInterval(videoCheck, 1000);
       }
       playVideo();
       clickNum = clickNum + 1;
