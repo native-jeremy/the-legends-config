@@ -15,6 +15,7 @@ const videoChange = document.getElementById("videoChange");
 // Element Delarations
 const repText = document.getElementById("repText");
 const timerText = document.getElementById("safeTimerDisplay");
+const currentTest = document.getElementById("current");
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -60,8 +61,7 @@ window.onload = async () => {
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const dataIndex = await Wized.data.get("v.dataindex");
-  const exerciseIndex = await Wized.data.get("c.exerciseindex");
-  const exerciseParam = await Wized.data.get("n.parameter.exercise");
+  const exerciseIndex = await Wized.data.get("c.exerciseindex");  const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const roundParam = await Wized.data.get("n.parameter.round");
   const workoutParam = await Wized.data.get("n.parameter.workout");
@@ -132,7 +132,7 @@ window.onload = async () => {
         playVoice();
         //Conditions
         roundType();
-        let interval = setInterval(videoCheck, 100);
+        let interval = setInterval(videoCheck, 1000);
       }
       playVideo();
       clickNum = clickNum + 1;
