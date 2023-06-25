@@ -195,11 +195,10 @@ window.onload = async () => {
       }
     }
 
-    function videoCheck() {
-      let videoContent = document.getElementById("video");
+    function videoCheck(video) {
       if (
-        Math.floor(videoContent.currentTime) ===
-        Math.floor(videoContent.duration)
+        Math.floor(video.currentTime) ===
+        Math.floor(video.duration)
       ) {
         varExeIndex = varExeIndex + 1;
         const exerciseResponse = Wized.data.get("c.sirenmute");
