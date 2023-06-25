@@ -305,7 +305,7 @@ function videoCheck (){
             //clearInterval(interval);
             videoDurationIndex = 0;
           }
-        },
+        }
 
     /*function checkTime(){
       console.log(videoDurationIndex);
