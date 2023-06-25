@@ -79,6 +79,7 @@ window.onload = async () => {
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
     let amrapBool = repDataInt.data;
+    const amrapResponse = response;
 
     if (
       cookieIndex === "" ||
@@ -208,15 +209,14 @@ window.onload = async () => {
         varExeIndex = varExeIndex + 1;
         const cookieIndexUpdated = Wized.data.get("c.cookieindex");
 
-        Wized.request.execute("Load Amrap"); // Trigger request
-        let amrapRequest = Wized.data.get("r.31.d"); // Get request response
-        const videoCurrentSrc = amrapRequest;
+        //Wized.request.execute("Load Amrap"); // Trigger request
+        //let amrapRequest = Wized.data.get("r.31.d"); // Get request response
+        const videoCurrentSrc = amrapResponse.data[1].Video[1].url;
         console.log(videoCurrentSrc);
         console.log("Ran Request");
 
         videoChangeSrc();
         console.log(varExeIndex);
-        console.log(amrapRequest[0]);
         console.log(cookieIndexUpdated);
 
         function videoChangeSrc() {
