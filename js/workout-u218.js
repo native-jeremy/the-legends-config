@@ -89,7 +89,7 @@ window.onload = async () => {
 	  }*/
 	  
 
-       /*Wized.data.listen("c.sirenmute", async () => {
+       Wized.data.listen("c.sirenmute", async () => {
 	    const videoContent = document.getElementById("video");
 	    //let varExeIndex = parseInt(exerciseIndex) + 1;
 	    varExeIndex = varExeIndex + 1;
