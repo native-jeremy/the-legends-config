@@ -211,7 +211,7 @@ window.onload = async () => {
 
         //Wized.request.execute("Load Amrap"); // Trigger request
         //let amrapRequest = Wized.data.get("r.31.d"); // Get request response
-        const videoCurrentSrc = amrapResponse.data[1].Video[1].url;
+        const videoCurrentSrc = amrapResponse.data[cookieIndex].Video[varExeIndex].url;
         console.log(videoCurrentSrc);
         console.log("Ran Request");
 
@@ -223,7 +223,6 @@ window.onload = async () => {
           videos.src = videoCurrentSrc;
           videos.play();
         }
-        alert("Time reached!");
         //clearInterval(interval);
         videoDurationIndex = 0;
       }
