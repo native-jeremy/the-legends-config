@@ -218,7 +218,7 @@ window.onload = async () => {
         videoChangeSrc();
         console.log("Current Index: ", exerciseResponse); // Console log new value
         console.log(varExeIndex);
-        console.log(amrapRequest);
+        console.log(amrapRequest[0]);
         console.log(cookieIndexUpdated);
 
         function videoChangeSrc() {
