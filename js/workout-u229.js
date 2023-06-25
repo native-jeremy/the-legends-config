@@ -225,7 +225,7 @@ window.onload = async () => {
         videoDurationIndex = 0;
       }
     }
-    currentTest.innerHTML = Math.round(videoContent.currentTime);
+    currentTest.innerHTML = Math.round(video.currentTime);
   });
 
   //Function Calls Onload
