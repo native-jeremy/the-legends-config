@@ -203,10 +203,10 @@ window.onload = async () => {
     function videoCheck() {
       let videos = document.getElementById("video");
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-        if (varExeIndex < amrapResponse.data[cookieIndex].Video.length) {
+        if (amrapResponse.data[cookieIndex].Video[varExeIndex].url !== undefined) {
           varExeIndex = varExeIndex + 1;
           const videoCurrentSrc =
-            amrapResponse.data[cookieIndex].Video[varExeIndex].url;
+          amrapResponse.data[cookieIndex].Video[varExeIndex].url;
           console.log(videoCurrentSrc);
           console.log("Ran Request");
 
