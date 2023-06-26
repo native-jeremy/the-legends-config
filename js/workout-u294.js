@@ -173,11 +173,12 @@ window.onload = async () => {
           else if (counter == 2)
           {
             if (amrapBool == "True") {
-              checkAmrap = setInterval(videoCheck, 0);
+              /*checkAmrap = setInterval(videoCheck, 0);
               let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
               Wized.data.setCookie("cookieindex", newcookieIndex); // c.cookieindex"  
               const amrapIndex = Wized.data.get("c.cookieindex");
-              console.log(amrapIndex)
+              console.log(amrapIndex)*/
+              nextButton.click();
             }
           }
           else {
