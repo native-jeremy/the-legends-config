@@ -96,6 +96,8 @@ window.onload = async () => {
       cookieIndex === undefined ||
       cookieIndex === "undefined"
     ) {
+      //repAmount = repDataInt.data[0].Amounts_Name[0];
+      //repType = repDataInt.data[0].Rep_Type[0];
       amrapBool = repDataInt.data[0].Amrap;
     } else {
       amrapBool = repDataInt.data[cookieIndex].Amrap;
@@ -161,7 +163,15 @@ window.onload = async () => {
           counter--;
           if (counter < 0) {
             playSiren();
-            nextButton.click();
+            if (amrapBool === "True")
+            { cookieIndex = amrapResponse.data[cookieIndex].Video.length
+              Wized.data.setCookie("cookieindex", cookieIndex); // c.cookieindex"  
+              const amrapIndex = Wized.data.get("c.cookieindex");
+              console.log(amrapIndex)
+            }
+            setTimeout(() => {
+              nextButton.click();
+            }, 1000)
             clearInterval(timer);
             clearInterval(checkAmrap);
             console.log("Completed");
