@@ -60,8 +60,7 @@ let refreshNum = 0;
 
 window.onload = async () => {
   //const roundIndex = await Wized.data.get("c.roundindex");
-  let cookieIndex = await Wized.data.get("c.cookieindex");
-  let cookieIntVal = await Wized.data.get("c.cookieindex");
+  const cookieIndex = await Wized.data.get("c.cookieindex");
   const dataIndex = await Wized.data.get("v.dataindex");
   const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
@@ -108,14 +107,6 @@ window.onload = async () => {
     }
     console.log(amrapBool);
 
-    if (amrapBool == "True") {
-      checkAmrap = setInterval(videoCheck, 0);
-      cookieIndex = amrapResponse.data[cookieIndex].Video.length
-      Wized.data.setCookie("cookieindex", cookieIndex); // c.cookieindex"  
-      const amrapIndex = Wized.data.get("c.cookieindex");
-      console.log(amrapIndex)
- 
-    }
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none") {
@@ -178,7 +169,18 @@ window.onload = async () => {
             clearInterval(timer);
             clearInterval(checkAmrap);
             console.log("Completed");
-          } else {
+          }
+          else if (counter == 2)
+          {
+            if (amrapBool == "True") {
+              checkAmrap = setInterval(videoCheck, 0);
+              let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
+              Wized.data.setCookie("cookieindex", newcookieIndex); // c.cookieindex"  
+              const amrapIndex = Wized.data.get("c.cookieindex");
+              console.log(amrapIndex)
+            }
+          }
+          else {
             console.log("Timer Paused");
           }
         }
