@@ -81,7 +81,7 @@ window.onload = async () => {
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
-    let repAmount;
+    let repAmount = repDataInt.data[cookieIndex].Amounts_Name[cookieIndex];
     console.log("Amount: ", repAmount);
     let repType;
     console.log("Rep Type: ", repType);
@@ -96,12 +96,12 @@ window.onload = async () => {
       cookieIndex === undefined ||
       cookieIndex === "undefined"
     ) {
-      repAmount = repDataInt.data[0].Amounts_Name[0];
-      repType = repDataInt.data[0].Rep_Type[0];
+      //repAmount = repDataInt.data[0].Amounts_Name[0];
+      //repType = repDataInt.data[0].Rep_Type[0];
       amrapBool = repDataInt.data[0].Amrap;
     } else {
-      repAmount = repDataInt.data[cookieIndex].Amounts_Name[cookieIndex];
-      repType = repDataInt.data[cookieIndex].Rep_Type[cookieIndex];
+      //repAmount = repDataInt.data[cookieIndex].Amounts_Name[cookieIndex];
+      //repType = repDataInt.data[cookieIndex].Rep_Type[cookieIndex];
       amrapBool = repDataInt.data[cookieIndex].Amrap;
     }
     console.log(amrapBool);
