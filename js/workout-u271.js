@@ -130,7 +130,7 @@ window.onload = async () => {
       if (repType === "Time") {
         console.log(repType);
         timer();
-      } else {
+      } else if (epType === "Rep") {
         repCount();
       }
     }
