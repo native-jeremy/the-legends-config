@@ -108,14 +108,13 @@ window.onload = async () => {
     console.log(amrapBool);
 
 
-
-    /*if (amrapBool == "True") {
-              let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
-              Wized.data.setCookie("cookieindex", newcookieIndex); // c.cookieindex"  
-              const amrapIndex = Wized.data.get("c.cookieindex");
-              console.log(amrapIndex)
-              nextButton.click();
-    }*/
+    // Enable header to show correctly (if round popup is hidden)
+    if (roundPopup.style.display === "none") {
+      exerciseHeader.style.display = "flex";
+      exerciseHeader.style.opacity = 1;
+      exerciseTitle.style.display = "flex";
+      exerciseTitle.style.opacity = 1;
+    }
 
     //let counter = repAmount;
     console.log(cookieIndex);
@@ -174,13 +173,12 @@ window.onload = async () => {
           else if (counter == 2)
           {
             if (amrapBool == "True") {
-              /*checkAmrap = setInterval(videoCheck, 0);
-              let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
-              Wized.data.setCookie("cookieindex", newcookieIndex); // c.cookieindex"  
-              const amrapIndex = Wized.data.get("c.cookieindex");
-              console.log(amrapIndex)*/
-              nextButton.click();
-            }
+            checkAmrap = setInterval(videoCheck, 0);
+            let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
+            Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"  
+            const amrapIndex = Wized.data.get("c.exerciseindex");
+            console.log(amrapIndex)
+    }
           }
           else {
             console.log("Timer Paused");
@@ -291,14 +289,6 @@ window.onload = async () => {
   });
 
   function roundEnableLoad() {
-    // Enable header to show correctly (if round popup is hidden)
-    if (roundPopup.style.display === "none") {
-      exerciseHeader.style.display = "flex";
-      exerciseHeader.style.opacity = 1;
-      exerciseTitle.style.display = "flex";
-      exerciseTitle.style.opacity = 1;
-    }
-    
     // Round check (if round popup needs to show)
     if (cookieIndex === undefined || cookieIndex === "undefined") {
       exerciseHeader.style.display = "none";
