@@ -71,6 +71,13 @@ window.onload = async () => {
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
 
+  //Function Calls Onload
+  roundEnableLoad();
+  setTimeout(nextPage, 2000);
+  sirenEnableLoad();
+  voiceEnableLoad();
+  
+
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
@@ -234,13 +241,6 @@ window.onload = async () => {
       currentTest.innerHTML = Math.round(videos.currentTime);
       durationTest.innerHTML = Math.round(videos.duration);
     }
-
-      //Function Calls Onload
-  roundEnableLoad();
-  setTimeout(nextPage, 2000);
-  sirenEnableLoad();
-  voiceEnableLoad();
-
   });
 
 
