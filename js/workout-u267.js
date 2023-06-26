@@ -72,7 +72,77 @@ window.onload = async () => {
   console.log(exerciseParam);
 
   //Function Calls Onload
-  roundEnableLoad();
+   // Round check (if round popup needs to show)
+   if (cookieIndex === undefined || cookieIndex === "undefined") {
+    exerciseHeader.style.display = "none";
+    exerciseTitle.style.display = "none";
+    roundPopup.style.display = "flex";
+    roundText.style.display = "flex";
+  } else {
+    exerciseHeader.style.display = "flex";
+    exerciseTitle.style.display = "flex";
+    roundPopup.style.display = "none";
+    roundText.style.display = "none";
+    setTimeout(autoPlayVideo, 2000);
+  }
+
+  if (
+    cookieIndex === 0 ||
+    exerciseParam === undefined ||
+    exerciseParam === "undefined"
+  ) {
+    exerciseHeader.style.display = "none";
+    roundPopup.style.display = "flex";
+    roundText.style.display = "flex";
+    exerciseTitle.style.display = "none";
+  } else {
+    exerciseHeader.style.display = "flex";
+    roundPopup.style.display = "none";
+    roundText.style.display = "none";
+    exerciseTitle.style.display = "none";
+  }
+
+  if (exerciseParam === undefined || exerciseParam === "undefined") {
+    playButton.style.display = "none";
+    playButtonDisabled.style.display = "flex";
+    //
+    nextButton.style.display = "none";
+    nextButtonDisabled.style.display = "flex";
+    //
+    prevButton.style.display = "none";
+    prevButtonDisabled.style.display = "flex";
+    //
+  } else {
+    playButton.style.display = "flex";
+    playButtonDisabled.style.display = "none";
+    //
+    nextButton.style.display = "flex";
+    nextButtonDisabled.style.display = "none";
+    //
+    prevButton.style.display = "flex";
+    prevButtonDisabled.style.display = "none";
+  }
+
+  if (roundParam === undefined || roundParam === "undefined") {
+    playButton.style.display = "none";
+    playButtonDisabled.style.display = "flex";
+    //
+    nextButton.style.display = "none";
+    nextButtonDisabled.style.display = "flex";
+    //
+    prevButton.style.display = "none";
+    prevButtonDisabled.style.display = "flex";
+  } else {
+    playButton.style.display = "flex";
+    playButtonDisabled.style.display = "none";
+    //
+    nextButton.style.display = "flex";
+    nextButtonDisabled.style.display = "none";
+    //
+    prevButton.style.display = "flex";
+    prevButtonDisabled.style.display = "none";
+  }
+  //roundEnableLoad();
   setTimeout(nextPage, 2000);
   sirenEnableLoad();
   voiceEnableLoad();
@@ -274,7 +344,7 @@ window.onload = async () => {
     }
   });
 
-  function roundEnableLoad() {
+  /*function roundEnableLoad() {
     // Round check (if round popup needs to show)
     if (cookieIndex === undefined || cookieIndex === "undefined") {
       exerciseHeader.style.display = "none";
@@ -345,7 +415,7 @@ window.onload = async () => {
       prevButton.style.display = "flex";
       prevButtonDisabled.style.display = "none";
     }
-  }
+  }*/
 
   function autoPlayVideo() {
     playButton.click();
