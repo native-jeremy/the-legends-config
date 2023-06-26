@@ -96,8 +96,10 @@ window.onload = async () => {
       cookieIndex === undefined ||
       cookieIndex === "undefined"
     ) {
+      repAmount = repDataInt.data[0].Amounts_Name[0];
       amrapBool = repDataInt.data[0].Amrap;
     } else {
+      repAmount = repDataInt.data[cookieIndex].Amounts_Name[cookieIndex];
       amrapBool = repDataInt.data[cookieIndex].Amrap;
     }
     console.log(amrapBool);
