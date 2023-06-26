@@ -234,13 +234,15 @@ window.onload = async () => {
       currentTest.innerHTML = Math.round(videos.currentTime);
       durationTest.innerHTML = Math.round(videos.duration);
     }
-  });
 
-  //Function Calls Onload
-  //roundEnableLoad();
+      //Function Calls Onload
+  roundEnableLoad();
   setTimeout(nextPage, 2000);
   sirenEnableLoad();
   voiceEnableLoad();
+
+  });
+
 
   // Siren Click Controls
   siren.addEventListener("click", function () {
@@ -272,7 +274,7 @@ window.onload = async () => {
     }
   });
 
-  //function roundEnableLoad() {
+  function roundEnableLoad() {
     // Round check (if round popup needs to show)
     if (cookieIndex === undefined || cookieIndex === "undefined") {
       exerciseHeader.style.display = "none";
@@ -342,7 +344,7 @@ window.onload = async () => {
       //
       prevButton.style.display = "flex";
       prevButtonDisabled.style.display = "none";
-  //  }
+    }
   }
 
   function autoPlayVideo() {
