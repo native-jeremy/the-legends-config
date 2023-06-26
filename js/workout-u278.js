@@ -89,7 +89,7 @@ window.onload = async () => {
     let amrapBool = repDataInt.data[cookieIndex];
     const amrapResponse = response;
     let checkAmrap;
-    console.log(repDataInt)
+    console.log(repDataInt.data[cookieIndex])
 
     if (
       cookieIndex === "" ||
