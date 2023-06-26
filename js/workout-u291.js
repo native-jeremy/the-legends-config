@@ -66,6 +66,7 @@ window.onload = async () => {
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const roundParam = await Wized.data.get("n.parameter.round");
+  let roundIndex = await Wized.data.get("c.roundindex");
   const workoutParam = await Wized.data.get("n.parameter.workout");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
@@ -90,6 +91,11 @@ window.onload = async () => {
     const amrapResponse = response;
     let checkAmrap;
     console.log(repDataInt.data[cookieIndex])
+
+    if (roundIndex === 0)
+    {
+      roundIndex = parseInt(roundIndex) + 100;
+    }
 
     if (
       cookieIndex === "" ||
