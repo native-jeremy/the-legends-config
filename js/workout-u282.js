@@ -81,9 +81,9 @@ window.onload = async () => {
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
-    let repAmount = repDataInt.data[0].Amounts_Name[0];
+    let repAmount;
     console.log("Amount: ", repAmount);
-    let repType = repDataInt.data[0].Rep_Type[0];
+    let repType;
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
     let amrapBool = repDataInt.data[cookieIndex];
