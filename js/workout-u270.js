@@ -238,8 +238,6 @@ window.onload = async () => {
         videos.src = videoCurrentSrc;
         videos.play();
     }
-      currentTest.innerHTML = Math.round(videos.currentTime);
-      durationTest.innerHTML = Math.round(videos.duration);
     }
   });
 
