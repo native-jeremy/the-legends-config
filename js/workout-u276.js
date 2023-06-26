@@ -86,7 +86,7 @@ window.onload = async () => {
     const repType = repDataInt.data[0].Rep_Type[0];
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
-    let amrapBool = repDataInt.data;
+    let amrapBool = repDataInt.data[cookieIndex];
     const amrapResponse = response;
     let checkAmrap;
     console.log(repDataInt)
