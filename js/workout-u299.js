@@ -107,6 +107,14 @@ window.onload = async () => {
     }
     console.log(amrapBool);
 
+    if (amrapBool == "True") {
+      checkAmrap = setInterval(videoCheck, 0);
+      let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
+      Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"  
+      const amrapIndex = Wized.data.get("c.exerciseindex");
+      console.log(amrapIndex)
+    }
+
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none") {
@@ -169,16 +177,6 @@ window.onload = async () => {
             clearInterval(timer);
             clearInterval(checkAmrap);
             console.log("Completed");
-          }
-          else if (counter == 2)
-          {
-            if (amrapBool == "True") {
-            checkAmrap = setInterval(videoCheck, 0);
-            let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
-            Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"  
-            const amrapIndex = Wized.data.get("c.exerciseindex");
-            console.log(amrapIndex)
-    }
           }
           else {
             console.log("Timer Paused");
