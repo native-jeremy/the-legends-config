@@ -126,15 +126,6 @@ window.onload = async () => {
     Round Function
     */
 
-    function roundType() {
-      if (repType === "Time") {
-        console.log(repType);
-        timer();
-      } else if (repType === "Reps") {
-        repCount();
-      }
-    }
-
     /*
       End Round Function
     */
@@ -149,6 +140,15 @@ window.onload = async () => {
       playVideo();
       clickNum = clickNum + 1;
     });
+
+    function roundType() {
+      if (repType === "Time") {
+        console.log(repType);
+        timer();
+      } else if (repType === "Reps") {
+        repCount();
+      }
+    }
 
     // Timer setup function
     function timer() {
