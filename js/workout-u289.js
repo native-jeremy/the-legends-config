@@ -164,8 +164,8 @@ window.onload = async () => {
           if (counter < 0) {
             playSiren();
             if (amrapBool === "True")
-            { cookieIndex = amrapResponse.data[cookieIndex].Video.length
-              Wized.data.setCookie("cookieindex", cookieIndex); // c.cookieindex"  
+            { let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
+              Wized.data.setCookie("cookieindex", newcookieIndex); // c.cookieindex"  
               const amrapIndex = Wized.data.get("c.cookieindex");
               console.log(amrapIndex)
             }
