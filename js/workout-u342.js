@@ -72,7 +72,7 @@ window.onload = async () => {
   console.log(exerciseParam);
 
   //Function Calls Onload
-  roundEnableLoad();
+  //roundEnableLoad();
   setTimeout(nextPage, 2000);
   sirenEnableLoad();
   voiceEnableLoad();
@@ -313,6 +313,8 @@ window.onload = async () => {
       }
     }
   });
+
+  roundEnableLoad();
 
   // Siren Click Controls
   siren.addEventListener("click", function () {
