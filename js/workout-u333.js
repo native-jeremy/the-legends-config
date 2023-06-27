@@ -156,7 +156,8 @@ window.onload = async () => {
     console.log(cookieIndex);
 
     let clickNum = 0;
-      // Diff Decrease Click Controls
+
+  // Diff Decrease Click Controls
   minusBtn.addEventListener("click", function () {
     if (amount > minLimit) {
 
@@ -177,7 +178,6 @@ window.onload = async () => {
       diffCurrent++
       amount++;
       currentNum.innerHTML = amount;
-      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
     } else {
       currentNum.innerHTML = maxLimit;
     }
@@ -187,6 +187,10 @@ window.onload = async () => {
     prevButton.addEventListener("click", function () {
       history.back();
     });
+
+    setInterval(() => { 
+      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
+    }, 1000)
 
     /*
     Round Function
