@@ -96,6 +96,12 @@ window.onload = async () => {
     console.log(repDataInt.data[cookieIndex]);
     console.log("Amrap Response:",amrapResponse);
 
+    Wized.data.listen("v.diffnum", async () => {    
+      const diffCurrent = Wized.data.get("v.diffnum"); // Get new value    
+      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
+      console.log("Value of v.diffnum changed to: ", diffCurrent); // Console log new value  
+  });
+
         // Diff Decrease Click Controls
         minusBtn.addEventListener("click", function () {
           if (amount > minLimit) {
@@ -123,12 +129,6 @@ window.onload = async () => {
         }
         console.log(diffCurrent)
       });
-
-      Wized.data.listen("v.diffnum", async () => {    
-        const diffCurrent = Wized.data.get("v.diffnum"); // Get new value    
-        repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
-        console.log("Value of v.diffnum changed to: ", diffCurrent); // Console log new value  
-    });
 
     if (
       cookieIndex === "" ||
