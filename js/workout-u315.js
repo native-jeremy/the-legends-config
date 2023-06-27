@@ -89,6 +89,7 @@ window.onload = async () => {
     const amrapResponse = response;
     let checkAmrap;
     console.log(repDataInt.data[cookieIndex]);
+    console.log("Amrap Response:",amrapResponse);
 
     if (
       cookieIndex === "" ||
@@ -111,6 +112,8 @@ window.onload = async () => {
       Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
       const amrapIndex = Wized.data.get("c.exerciseindex");
       console.log(amrapIndex);
+      console.log("Amrap length:", newcookieIndex);
+      console.log("Amrap:", amrapResponse.data[cookieIndex]);
     } else {
       clearInterval(checkAmrap);
     }
