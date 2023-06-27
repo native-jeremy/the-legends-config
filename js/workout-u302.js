@@ -107,9 +107,7 @@ window.onload = async () => {
     }
     console.log(amrapBool);
 
-    if (response === 200)
-    {
-      if (amrapBool == "True") {
+    if (amrapBool == "True") {
         checkAmrap = setInterval(videoCheck, 0);
         let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
         Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"  
@@ -119,7 +117,6 @@ window.onload = async () => {
       else {
         clearInterval(checkAmrap);
       }
-  }
 
 
     // Enable header to show correctly (if round popup is hidden)
