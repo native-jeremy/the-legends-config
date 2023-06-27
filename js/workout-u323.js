@@ -266,7 +266,7 @@ window.onload = async () => {
           videoChangeSrc();
           console.log(varExeIndex);
         }
-      } /*else if (varExeIndex >= amrapResponse.data[cookieIndex].Video.length) {
+      } else if (varExeIndex >= amrapResponse.data[tempCookieIndex].Video.length) {
         varExeIndex = 0;
         videoCurrentSrc =
           amrapResponse.data[cookieIndex].Video[varExeIndex].url;
@@ -275,7 +275,7 @@ window.onload = async () => {
 
         videoChangeSrc();
         console.log(varExeIndex);
-      }*/
+      }
 
       function videoChangeSrc() {
         videos.src = videoCurrentSrc;
