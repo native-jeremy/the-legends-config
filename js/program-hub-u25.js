@@ -16,7 +16,7 @@ window.onload = async () => {
     const getData = response;
     let applyData = getData.data.Completed;
     console.log(applyData);
-    //let workout = document.querySelectorAll(".workouts");
+    let workout = document.querySelectorAll(".workouts");
     let icon = document.querySelectorAll(".completed-icon");
     let workout = document.querySelectorAll(".workouts");
 
