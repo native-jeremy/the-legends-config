@@ -125,10 +125,6 @@ window.onload = async () => {
       history.back();
     });
 
-    setInterval(() => { 
-      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
-    }, 0)
-
     if (
       cookieIndex === "" ||
       cookieIndex === undefined ||
