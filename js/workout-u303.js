@@ -385,6 +385,7 @@ window.onload = async () => {
     }
     refreshNum = refreshNum + 1;
   }
+  else if ()
 
   function sirenEnableClick() {
     if (sirenText.innerHTML === "Off") {
