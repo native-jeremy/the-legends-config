@@ -106,6 +106,8 @@ window.onload = async () => {
     }
     console.log(amrapBool);
 
+    console.log("Video Array Length:", amrapResponse.data[0].Video.length);
+
     if (amrapBool == "True") {
       checkAmrap = setInterval(videoCheck, 0);
       let newcookieIndex = amrapResponse.data[cookieIndex].Video.length;
@@ -118,7 +120,7 @@ window.onload = async () => {
       clearInterval(checkAmrap);
     }
 
-    console.log("Video Array Length:", amrapResponse.data[0].Video.length);
+  
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none") {
