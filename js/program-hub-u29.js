@@ -41,6 +41,6 @@ window.onload = async () => {
         textFormat: "percent",
         indeterminateText: 0
       });
-    }, 200)
+    }, 2000)
   });
 }
