@@ -246,13 +246,20 @@ window.onload = async () => {
     }
 
     function videoCheck() {
+      if(cookieIndex === undefined || cookieIndex === "undefined")
+      {
+        tempCookieIndex = 0;
+      }
+      else {
+        tempCookieIndex = cookieIndex
+      }
       let videoCurrentSrc;
       let videos = document.getElementById("video");
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-        if (varExeIndex < amrapResponse.data[cookieIndex].Video.length) {
+        if (varExeIndex < amrapResponse.data[tempCookieIndex].Video.length) {
           varExeIndex = varExeIndex + 1;
           videoCurrentSrc =
-            amrapResponse.data[cookieIndex].Video[varExeIndex].url;
+            amrapResponse.data[tempCookieIndex].Video[varExeIndex].url;
           console.log(videoCurrentSrc);
           console.log("Ran Request");
 
