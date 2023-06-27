@@ -78,7 +78,7 @@ window.onload = async () => {
   voiceEnableLoad();
 
   let diffStr = currentNum.innerHTML;
-  let diffInt = parseInt(currentNumStr);
+  let diffInt = parseInt(diffStr);
 
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
