@@ -302,9 +302,12 @@ window.onload = async () => {
   // Diff Decrease Click Controls
   minusBtn.addEventListener("click", function () {
     if (amount > minLimit) {
+
+      diffCurrent--
       amount--;
       currentNum.innerHTML = amount;
     } else {
+      diffCurrent = 0
       amount = minLimit;
     }
   });
@@ -312,6 +315,7 @@ window.onload = async () => {
   // Diff Increase Click Controls
   plusBtn.addEventListener("click", function () {
     if (amount < maxLimit) {
+      diffCurrent++
       amount++;
       currentNum.innerHTML = amount;
     } else {
