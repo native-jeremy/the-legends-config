@@ -156,6 +156,33 @@ window.onload = async () => {
     console.log(cookieIndex);
 
     let clickNum = 0;
+      // Diff Decrease Click Controls
+  minusBtn.addEventListener("click", function () {
+    if (amount > minLimit) {
+
+      diffCurrent--
+      amount--;
+      currentNum.innerHTML = amount;
+      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
+    } else {
+      diffCurrent = 0
+      amount = minLimit;
+    }
+    console.log(diffCurrent)
+  });
+
+  // Diff Increase Click Controls
+  plusBtn.addEventListener("click", function () {
+    if (amount < maxLimit) {
+      diffCurrent++
+      amount++;
+      currentNum.innerHTML = amount;
+      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
+    } else {
+      currentNum.innerHTML = maxLimit;
+    }
+    console.log(diffCurrent)
+  });
 
     prevButton.addEventListener("click", function () {
       history.back();
@@ -297,30 +324,6 @@ window.onload = async () => {
   // Voice Click Controls
   voice.addEventListener("click", function () {
     voiceEnableClick();
-  });
-
-  // Diff Decrease Click Controls
-  minusBtn.addEventListener("click", function () {
-    if (amount > minLimit) {
-
-      diffCurrent--
-      amount--;
-      currentNum.innerHTML = amount;
-    } else {
-      diffCurrent = 0
-      amount = minLimit;
-    }
-  });
-
-  // Diff Increase Click Controls
-  plusBtn.addEventListener("click", function () {
-    if (amount < maxLimit) {
-      diffCurrent++
-      amount++;
-      currentNum.innerHTML = amount;
-    } else {
-      currentNum.innerHTML = maxLimit;
-    }
   });
 
   function roundEnableLoad() {
