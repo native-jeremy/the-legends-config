@@ -20,12 +20,7 @@ window.onload = async () => {
     let icon = document.querySelectorAll(".completed-icon");
     let workout = document.querySelectorAll(".workouts");
 
-     if (response.status === 200) {
     setTimeout(loopCompleted, 2000);
-     }
-    else {
-      console.log("Response not loaded")
-    }
     function loopCompleted ()
     {
       
@@ -34,6 +29,13 @@ window.onload = async () => {
         if (icon.length <= applyData.length)
         {
           icon[i].classList.add("complete-indicator");
+        }
+        else if (applyData.length > icon.length)
+        {
+           for (let i = 0; i < icon.length; i++) {
+              icon[i].classList.add("complete-indicator");
+         }
+          
         }
         else {
           console.log("You have Completed Too Many Workouts")
