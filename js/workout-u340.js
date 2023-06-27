@@ -108,6 +108,19 @@ window.onload = async () => {
     console.log(diffCurrent)
   });
 
+   // Diff Decrease Click Controls
+   minusBtn.addEventListener("click", function () {
+    if (amount > minLimit) {
+      diffCurrent--
+      amount--;
+      currentNum.innerHTML = amount;
+    } else {
+      diffCurrent = 0
+      amount = minLimit;
+    }
+    console.log(diffCurrent)
+  });
+
     prevButton.addEventListener("click", function () {
       history.back();
     });
@@ -176,21 +189,6 @@ window.onload = async () => {
     console.log(cookieIndex);
 
     let clickNum = 0;
-
-  // Diff Decrease Click Controls
-  minusBtn.addEventListener("click", function () {
-    if (amount > minLimit) {
-      diffCurrent--
-      amount--;
-      let diffSet = setVariable("diffnum", amount);
-      currentNum.innerHTML = amount;
-      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
-    } else {
-      diffCurrent = 0
-      amount = minLimit;
-    }
-    console.log(diffCurrent)
-  });
 
     /*
     Round Function
