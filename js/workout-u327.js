@@ -79,6 +79,7 @@ window.onload = async () => {
 
   let diffStr = currentNum.innerHTML;
   let diffInt = parseInt(diffStr);
+  let diffCurrent = diffInt - 1;
 
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
