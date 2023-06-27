@@ -25,14 +25,7 @@ window.onload = async () => {
     {
       
       for (let i = 0; i < applyData.length; i++) {
-        
-        if (icon.length <= applyData.length)
-        {
-          icon[i].classList.add("complete-indicator");
-        }
-        else {
-          console.log("You have Completed Too Many Workouts")
-        }
+        icon[i].classList.add("complete-indicator");
         //console.log(applyData.length)
       }
       /*for (let index = 0; index < workout.length; index++) {
