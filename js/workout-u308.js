@@ -105,15 +105,16 @@ window.onload = async () => {
     }
     console.log(amrapBool);
 
-    /*if (amrapBool == "True") {
+    if (amrapBool == "True") {
       checkAmrap = setInterval(videoCheck, 0);
       let newcookieIndex = amrapResponse.data[cookieIndex].Video.length;
       Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
       const amrapIndex = Wized.data.get("c.exerciseindex");
+      clearInterval(checkAmrap);
       console.log(amrapIndex);
     } else {
       clearInterval(checkAmrap);
-    }*/
+    }
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none") {
@@ -146,15 +147,6 @@ window.onload = async () => {
         playVoice();
         //Conditions
         roundType();
-        if (amrapBool == "True") {
-          checkAmrap = setInterval(videoCheck, 0);
-          let newcookieIndex = amrapResponse.data[cookieIndex].Video.length;
-          Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
-          const amrapIndex = Wized.data.get("c.exerciseindex");
-          console.log(amrapIndex);
-        } else {
-          clearInterval(checkAmrap);
-        }
       }
       playVideo();
       clickNum = clickNum + 1;
