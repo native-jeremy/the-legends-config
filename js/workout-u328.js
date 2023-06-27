@@ -101,15 +101,15 @@ window.onload = async () => {
       cookieIndex === undefined ||
       cookieIndex === "undefined"
     ) {
-      repAmount = repDataInt.data[0].Amounts_Name[diffInt];
+      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
       repType = repDataInt.data[0].Rep_Type[0];
       amrapBool = repDataInt.data[0].Amrap;
     } else {
-      repAmount = repDataInt.data[cookieIndex].Amounts_Name[diffInt];
+      repAmount = repDataInt.data[cookieIndex].Amounts_Name[diffCurrent];
       repType = repDataInt.data[cookieIndex].Rep_Type[0];
       amrapBool = repDataInt.data[cookieIndex].Amrap;
     }
-    console.log(diffInt);
+    console.log(diffCurrent);
     console.log(amrapBool);
     if(cookieIndex === undefined || cookieIndex === "undefined")
     {
