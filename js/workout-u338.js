@@ -70,9 +70,10 @@ window.onload = async () => {
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
+  let diffCurrent;
 
   Wized.data.listen("v.diffnum", async () => {    
-    const diffCurrent = await Wized.data.get("v.diffnum"); // Get new value    
+    diffCurrent = await Wized.data.get("v.diffnum"); // Get new value    
     console.log("Value of v.diffnum changed to: ", diffCurrent); // Console log new value  
 
     // Diff Decrease Click Controls
