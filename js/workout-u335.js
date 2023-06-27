@@ -71,11 +71,6 @@ window.onload = async () => {
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
 
-  Wized.data.listen("v.diffnum", async () => {    
-    const diffCurrent = Wized.data.get("v.diffnum"); // Get new value    
-    console.log("Value of v.diffnum changed to: ", diffCurrent); // Console log new value  
-});
-
   //Function Calls Onload
   roundEnableLoad();
   setTimeout(nextPage, 2000);
@@ -128,6 +123,12 @@ window.onload = async () => {
         }
         console.log(diffCurrent)
       });
+
+      Wized.data.listen("v.diffnum", async () => {    
+        const diffCurrent = Wized.data.get("v.diffnum"); // Get new value    
+        repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
+        console.log("Value of v.diffnum changed to: ", diffCurrent); // Console log new value  
+    });
 
     if (
       cookieIndex === "" ||
