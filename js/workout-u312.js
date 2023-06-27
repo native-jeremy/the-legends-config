@@ -80,12 +80,12 @@ window.onload = async () => {
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
-    let repAmount = repDataInt.data[0].Amounts_Name[0];
+    let repAmount;
     console.log("Amount: ", repAmount);
-    let repType = repDataInt.data[0].Rep_Type[0];
+    let repType;
     console.log("Rep Type: ", repType);
     let varExeIndex = 0;
-    let amrapBool = repDataInt.data[0];
+    let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
     console.log(repDataInt.data[cookieIndex]);
@@ -104,9 +104,9 @@ window.onload = async () => {
       amrapBool = repDataInt.data[cookieIndex].Amrap;
     }
     console.log(amrapBool);
-setTimeout(() => {
-  if (amrapBool == "True") {
-      checkAmrap = setInterval(videoCheck, 1000);
+
+    if (amrapBool == "True") {
+      checkAmrap = setInterval(videoCheck, 0);
       let newcookieIndex = amrapResponse.data[cookieIndex].Video.length;
       Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
       const amrapIndex = Wized.data.get("c.exerciseindex");
@@ -114,8 +114,6 @@ setTimeout(() => {
     } else {
       clearInterval(checkAmrap);
     }
-}, 2000)
-    
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none") {
