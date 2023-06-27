@@ -91,6 +91,7 @@ window.onload = async () => {
     console.log(repDataInt.data[cookieIndex]);
     console.log("Amrap Response:",amrapResponse);
 
+    setTimeout(() => { 
     if (
       cookieIndex === "" ||
       cookieIndex === undefined ||
@@ -106,11 +107,11 @@ window.onload = async () => {
     }
     console.log(amrapBool);
 
-    console.log("Video Array Length:", amrapResponse.data[0].Video.length);
+    console.log("Video Array Length:", amrapResponse.data[cookieIndex].Video.length);
 
     if (amrapBool == "True") {
       checkAmrap = setInterval(videoCheck, 0);
-      let newcookieIndex = amrapResponse.data[0].Video.length;
+      let newcookieIndex = amrapResponse.data[cookieIndex].Video.length;
       Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
       const amrapIndex = Wized.data.get("c.exerciseindex");
       console.log(amrapIndex);
@@ -119,6 +120,8 @@ window.onload = async () => {
     } else {
       clearInterval(checkAmrap);
     }
+
+  }, 3000);
 
   
 
