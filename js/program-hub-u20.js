@@ -26,7 +26,7 @@ window.onload = async () => {
       
       for (let i = 0; i < applyData.length; i++) {
         
-        if (icon.length <= applyData.length)
+        if (icon.length < applyData.length)
         {
           icon[i].classList.add("complete-indicator");
         }
