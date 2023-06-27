@@ -77,6 +77,9 @@ window.onload = async () => {
   sirenEnableLoad();
   voiceEnableLoad();
 
+  let diffStr = currentNum.innerHTML;
+  let diffInt = parseInt(currentNumStr);
+
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
@@ -97,14 +100,15 @@ window.onload = async () => {
       cookieIndex === undefined ||
       cookieIndex === "undefined"
     ) {
-      repAmount = repDataInt.data[0].Amounts_Name[0];
+      repAmount = repDataInt.data[0].Amounts_Name[diffInt];
       repType = repDataInt.data[0].Rep_Type[0];
       amrapBool = repDataInt.data[0].Amrap;
     } else {
-      repAmount = repDataInt.data[cookieIndex].Amounts_Name[0];
+      repAmount = repDataInt.data[cookieIndex].Amounts_Name[diffInt];
       repType = repDataInt.data[cookieIndex].Rep_Type[0];
       amrapBool = repDataInt.data[cookieIndex].Amrap;
     }
+    console.log(diffInt);
     console.log(amrapBool);
     if(cookieIndex === undefined || cookieIndex === "undefined")
     {
