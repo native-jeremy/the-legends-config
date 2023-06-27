@@ -104,17 +104,18 @@ window.onload = async () => {
       amrapBool = repDataInt.data[cookieIndex].Amrap;
     }
     console.log(amrapBool);
-
-    if (amrapBool == "True") {
-      checkAmrap = setInterval(videoCheck, 0);
+setTimeout(() => {
+  if (amrapBool == "True") {
+      checkAmrap = setInterval(videoCheck, 1000);
       let newcookieIndex = amrapResponse.data[cookieIndex].Video.length;
       Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
       const amrapIndex = Wized.data.get("c.exerciseindex");
-      clearInterval(checkAmrap);
       console.log(amrapIndex);
     } else {
       clearInterval(checkAmrap);
     }
+}, 2000)
+    
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none") {
