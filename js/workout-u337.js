@@ -71,6 +71,38 @@ window.onload = async () => {
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
 
+  Wized.data.listen("v.diffnum", async () => {    
+    const diffCurrent = await Wized.data.get("v.diffnum"); // Get new value    
+    console.log("Value of v.diffnum changed to: ", diffCurrent); // Console log new value  
+
+    // Diff Decrease Click Controls
+    minusBtn.addEventListener("click", function () {
+      if (amount > minLimit) {
+        diffCurrent--
+        amount--;
+        let diffSet = setVariable("diffnum", amount);
+        currentNum.innerHTML = amount;
+      } else {
+        diffCurrent = 0
+        amount = minLimit;
+      }
+      console.log(diffCurrent)
+  });
+
+  // Diff Increase Click Controls
+  plusBtn.addEventListener("click", function () {
+    if (amount < maxLimit) {
+      diffCurrent++
+      amount++;
+      let diffSet = setVariable("diffnum", amount);
+      currentNum.innerHTML = amount;
+    } else {
+      currentNum.innerHTML = maxLimit;
+    }
+    console.log(diffCurrent)
+  });
+});
+
   //Function Calls Onload
   roundEnableLoad();
   setTimeout(nextPage, 2000);
@@ -95,40 +127,6 @@ window.onload = async () => {
     let tempCookieIndex = 0;
     console.log(repDataInt.data[cookieIndex]);
     console.log("Amrap Response:",amrapResponse);
-
-    Wized.data.listen("v.diffnum", async () => {    
-      const diffCurrent = Wized.data.get("v.diffnum"); // Get new value    
-      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
-      console.log("Value of v.diffnum changed to: ", diffCurrent); // Console log new value  
-  });
-
-        // Diff Decrease Click Controls
-        minusBtn.addEventListener("click", function () {
-          if (amount > minLimit) {
-            diffCurrent--
-            amount--;
-            let diffSet = setVariable("diffnum", amount);
-            currentNum.innerHTML = amount;
-            repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
-          } else {
-            diffCurrent = 0
-            amount = minLimit;
-          }
-          console.log(diffCurrent)
-      });
-    
-      // Diff Increase Click Controls
-      plusBtn.addEventListener("click", function () {
-        if (amount < maxLimit) {
-          diffCurrent++
-          amount++;
-          let diffSet = setVariable("diffnum", amount);
-          currentNum.innerHTML = amount;
-        } else {
-          currentNum.innerHTML = maxLimit;
-        }
-        console.log(diffCurrent)
-      });
 
     if (
       cookieIndex === "" ||
