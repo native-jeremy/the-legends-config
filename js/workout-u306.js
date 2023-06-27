@@ -73,7 +73,7 @@ window.onload = async () => {
 
   //Function Calls Onload
   roundEnableLoad();
-  setTimeout(nextPage, 2000);
+  setTimeout(nextPage, 4000);
   sirenEnableLoad();
   voiceEnableLoad();
 
@@ -362,7 +362,7 @@ window.onload = async () => {
 
   function nextPage() {
     if (
-      exerciseParam === undefined || exerciseParam === "undefined" && roundParam !== undefined || roundParam !== "undefined") {
+      exerciseParam === undefined || exerciseParam === "undefined") {
       if (refreshNum < 1) {
         nextButton.click();
       }
