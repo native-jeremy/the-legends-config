@@ -110,7 +110,7 @@ window.onload = async () => {
 
     if (amrapBool == "True") {
       checkAmrap = setInterval(videoCheck, 0);
-      let newcookieIndex = amrapResponse.data[cookieIndex].Video.length;
+      let newcookieIndex = amrapResponse.data[0].Video.length;
       Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
       const amrapIndex = Wized.data.get("c.exerciseindex");
       console.log(amrapIndex);
