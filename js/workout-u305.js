@@ -76,7 +76,6 @@ window.onload = async () => {
   setTimeout(nextPage, 2000);
   sirenEnableLoad();
   voiceEnableLoad();
-  
 
   // Rep Type Data Load
   Wized.request.await("Load Exercises", (response) => {
@@ -89,8 +88,7 @@ window.onload = async () => {
     let amrapBool = repDataInt.data[0];
     const amrapResponse = response;
     let checkAmrap;
-    console.log(repDataInt.data[cookieIndex])
-    
+    console.log(repDataInt.data[cookieIndex]);
 
     if (
       cookieIndex === "" ||
@@ -108,16 +106,14 @@ window.onload = async () => {
     console.log(amrapBool);
 
     if (amrapBool == "True") {
-        checkAmrap = setInterval(videoCheck, 0);
-        let newcookieIndex = amrapResponse.data[cookieIndex].Video.length
-        Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"  
-        const amrapIndex = Wized.data.get("c.exerciseindex");
-        console.log(amrapIndex)
-      }
-      else {
-        clearInterval(checkAmrap);
-      }
-
+      checkAmrap = setInterval(videoCheck, 0);
+      let newcookieIndex = amrapResponse.data[cookieIndex].Video.length;
+      Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
+      const amrapIndex = Wized.data.get("c.exerciseindex");
+      console.log(amrapIndex);
+    } else {
+      clearInterval(checkAmrap);
+    }
 
     // Enable header to show correctly (if round popup is hidden)
     if (roundPopup.style.display === "none") {
@@ -176,12 +172,11 @@ window.onload = async () => {
             playSiren();
             setTimeout(() => {
               nextButton.click();
-            }, 1000)
+            }, 1000);
             clearInterval(timer);
             clearInterval(checkAmrap);
             console.log("Completed");
-          }
-          else {
+          } else {
             console.log("Timer Paused");
           }
         }
@@ -233,31 +228,30 @@ window.onload = async () => {
         if (varExeIndex < amrapResponse.data[cookieIndex].Video.length) {
           varExeIndex = varExeIndex + 1;
           videoCurrentSrc =
-          amrapResponse.data[cookieIndex].Video[varExeIndex].url;
+            amrapResponse.data[cookieIndex].Video[varExeIndex].url;
           console.log(videoCurrentSrc);
           console.log("Ran Request");
 
           videoChangeSrc();
           console.log(varExeIndex);
-          }
-        } else if (varExeIndex >= amrapResponse.data[cookieIndex].Video.length) {
-          varExeIndex = 0;
-          videoCurrentSrc =
+        }
+      } else if (varExeIndex >= amrapResponse.data[cookieIndex].Video.length) {
+        varExeIndex = 0;
+        videoCurrentSrc =
           amrapResponse.data[cookieIndex].Video[varExeIndex].url;
-          console.log(videoCurrentSrc);
-          console.log("Ran Request");
+        console.log(videoCurrentSrc);
+        console.log("Ran Request");
 
-          videoChangeSrc();
-          console.log(varExeIndex);
+        videoChangeSrc();
+        console.log(varExeIndex);
       }
 
       function videoChangeSrc() {
         videos.src = videoCurrentSrc;
         videos.play();
-    }
+      }
     }
   });
-
 
   // Siren Click Controls
   siren.addEventListener("click", function () {
@@ -368,9 +362,7 @@ window.onload = async () => {
 
   function nextPage() {
     if (
-      exerciseParam === undefined ||
-      (exerciseParam === "undefined" && cookieIndex !== "completed=true")
-    ) {
+      exerciseParam === undefined || exerciseParam === "undefined" && roundParam !== undefined || roundParam !== "undefined") {
       if (refreshNum < 1) {
         nextButton.click();
       }
