@@ -18,7 +18,7 @@ window.onload = async () => {
     console.log(applyData);
     let workout = document.querySelectorAll(".workouts");
     let icon = document.querySelectorAll(".completed-icon");
-    let workout = document.querySelectorAll(".workouts");
+    let progressNum = applyData.length / workout.length * 100
 
     setTimeout(loopCompleted, 2000);
     function loopCompleted ()
@@ -32,8 +32,6 @@ window.onload = async () => {
         console.log(workout[index])
       }*/
     }
-
-      let progressNum = applyData.length / workout.length * 100
       
       const circleProgress = new CircleProgress('.circle-latest');
         circleProgress.attr({
