@@ -77,7 +77,7 @@ window.onload = async () => {
   roundPopup.style.display = "flex";
   
 
-  const testIndex = await Wized.data.get("n.parameter.link");
+const testIndex = await Wized.data.get("n.parameter.link");
 
 if (testIndex === "1234") {
   paramTest.style.display = "flex";
@@ -85,7 +85,16 @@ if (testIndex === "1234") {
   console.log("Parameter Active Let's Go!!!!!")
 }
 
+const roundParamIndex = await Wized.data.get("n.parameter.ri");
+const exercisesParamIndex = await Wized.data.get("n.parameter.esi");
+const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
+
   console.log("Here is the Parameter Value", testIndex);
+
+  // Parameter indexing setup
+  let params = new URLSearchParams(window.location.search);
+  params.get('exercise');
+
 
   //Function Calls Onload
   roundEnableLoad();
@@ -137,9 +146,9 @@ if (testIndex === "1234") {
     console.log(diffCurrent)
   });
 
-    prevButton.addEventListener("click", function () {
+    /*prevButton.addEventListener("click", function () {
       history.back();
-    });
+    });*/
 
 
 // CookieIndex Condtionals To Check If It Is Undefined To Apply The Correct Int Amount/Rep Type/Amrap - True or False       
