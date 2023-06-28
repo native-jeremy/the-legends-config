@@ -9,6 +9,7 @@ const roundPopup = document.getElementById("roundPopup");
 const roundTitle = document.getElementById("roundTitle");
 const roundText = document.getElementById("roundText");
 const videoChange = document.getElementById("videoChange");
+const paramTest = document.getElementById("paramTest");
 //const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
 //const exerciseAmrapTitle = document.querySelectorAll('.amrap-title');
 
@@ -77,7 +78,12 @@ window.onload = async () => {
 
   const testIndex = await Wized.data.get("n.parameter.link");
 
-  console.log(testIndex);
+if (testIndex === "1234") {
+  paramTest.style.display = "flex";
+  console.log("Parameter Active Let's Go!!!!!")
+}
+
+  console.log("Here is the Parameter Value", testIndex);
 
   //Function Calls Onload
   roundEnableLoad();
