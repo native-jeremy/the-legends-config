@@ -72,6 +72,8 @@ window.onload = async () => {
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
 
+  roundPopup.style.display = "flex";
+
   //Function Calls Onload
   roundEnableLoad();
   //setTimeout(nextPage, 2000);
@@ -394,7 +396,7 @@ window.onload = async () => {
       prevButtonDisabled.style.display = "none";
     }
 
-    /*if (roundParam === undefined || roundParam === "undefined") {
+    if (roundParam === undefined || roundParam === "undefined") {
       playButton.style.display = "none";
       playButtonDisabled.style.display = "flex";
       //
@@ -412,7 +414,7 @@ window.onload = async () => {
       //
       prevButton.style.display = "flex";
       prevButtonDisabled.style.display = "none";
-    }*/
+    }
   }
 
 
