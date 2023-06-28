@@ -394,7 +394,7 @@ window.onload = async () => {
       prevButtonDisabled.style.display = "none";
     }
 
-    if (roundParam === undefined || roundParam === "undefined") {
+    /*if (roundParam === undefined || roundParam === "undefined") {
       playButton.style.display = "none";
       playButtonDisabled.style.display = "flex";
       //
@@ -413,7 +413,7 @@ window.onload = async () => {
       prevButton.style.display = "flex";
       prevButtonDisabled.style.display = "none";
     }
-  }
+  }*/
 
 
 // Autoplay Video Function
