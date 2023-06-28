@@ -73,6 +73,11 @@ window.onload = async () => {
   console.log(exerciseParam);
 
   roundPopup.style.display = "flex";
+  
+
+  const testIndex = await Wized.data.get("n.parameter.link");
+
+  console.log(testIndex);
 
   //Function Calls Onload
   roundEnableLoad();
