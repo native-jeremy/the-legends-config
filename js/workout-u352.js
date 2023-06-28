@@ -54,6 +54,8 @@ limitNum.innerHTML = maxLimit;
 
 let refreshNum = 0;
 
+
+
 /* Wized Intialisation
 ----------------------------------------------------------------
 */
@@ -72,6 +74,10 @@ window.onload = async () => {
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   console.log(exerciseParam);
 
+  const roundparamcustom = await Wized.data.get("n.parameter.roundparamcustom");
+  const exercisesparamcustom = await Wized.data.get("n.parameter.exercisesparamcustom");
+  const exerciseparamcustom = await Wized.data.get("n.parameter.exerciseparamcustom");
+
   roundPopup.style.display = "flex";
 
   //Function Calls Onload
@@ -82,6 +88,16 @@ window.onload = async () => {
 
 // Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
+    roundParamUpdate = roundparamcustom + 1;
+    let exercisesParamUpdate = exercisesparamcustom+ 1;
+    let exerciseParamUpdate = exerciseparamcustom+ 1;
+
+
+    Wized.data.setNavigation("exercisesparamcustom", exerciseParamUpdate);
+
+
+    console.log(exerciseparamcustom);
+
     const repDataInt = response;
     let repAmount;
     console.log("Amount: ", repAmount);
