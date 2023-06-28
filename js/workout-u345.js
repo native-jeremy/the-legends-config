@@ -58,6 +58,7 @@ let refreshNum = 0;
 ----------------------------------------------------------------
 */
 
+// Window Load Async Function To Intialise Wized - Asap = Aysnc
 window.onload = async () => {
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
@@ -77,7 +78,7 @@ window.onload = async () => {
   sirenEnableLoad();
   voiceEnableLoad();
 
-  // Rep Type Data Load
+// Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
     let repAmount;
@@ -96,7 +97,7 @@ window.onload = async () => {
     let diffInt = parseInt(diffStr);
     let diffCurrent = diffInt - 1;
 
-      // Diff Increase Click Controls
+// Diff Increase Click Controls
   plusBtn.addEventListener("click", function () {
     if (amount < maxLimit) {
       diffCurrent++
@@ -108,7 +109,7 @@ window.onload = async () => {
     console.log(diffCurrent)
   });
 
-   // Diff Decrease Click Controls
+// Diff Decrease Click Controls
    minusBtn.addEventListener("click", function () {
     if (amount > minLimit) {
       diffCurrent--
@@ -125,6 +126,8 @@ window.onload = async () => {
       history.back();
     });
 
+
+// CookieIndex Condtionals To Check If It Is Undefined To Apply The Correct Int Amount/Rep Type/Amrap - True or False       
     if (
       cookieIndex === "" ||
       cookieIndex === undefined ||
@@ -140,6 +143,9 @@ window.onload = async () => {
     }
     console.log(diffCurrent);
     console.log(amrapBool);
+
+
+// CookieIndex Condtionals To Check If It Has An Index    
     if(cookieIndex === undefined || cookieIndex === "undefined")
     {
       console.log("Video Array Length:", amrapResponse.data[tempCookieIndex].Video.length);
@@ -148,6 +154,8 @@ window.onload = async () => {
       console.log("Video Array Length:", amrapResponse.data[cookieIndex].Video.length);
     }
 
+
+// Amrap Condtionals To Check If True/False
     if (amrapBool == "True") {
       if(cookieIndex === undefined || cookieIndex === "undefined"){
         checkAmrap = setInterval(videoCheck, 0);
@@ -186,15 +194,8 @@ window.onload = async () => {
 
     let clickNum = 0;
 
-    /*
-    Round Function
-    */
 
-    /*
-      End Round Function
-    */
-
-    // Play click controls
+// Play Button click controls
     playButton.addEventListener("click", function () {
       if (clickNum < 1) {
         playVoice();
@@ -205,6 +206,8 @@ window.onload = async () => {
       clickNum = clickNum + 1;
     });
 
+
+// Round Type Condtionals To Enable Time/Reps   
     function roundType() {
       if (repType === "Time") {
         console.log(repType);
@@ -214,6 +217,7 @@ window.onload = async () => {
       }
     }
 
+    
     // Timer setup function
     function timer() {
       let counter = repAmount;
@@ -237,12 +241,16 @@ window.onload = async () => {
       }, 1000);
     }
 
+
+// Rep Count Apply Function
     function repCount() {
       let counter = repAmount;
       repText.innerHTML = repType;
       timerText.innerHTML = counter;
     }
 
+
+// Video Condtionals To Enable If Paused/Playing    
     function playVideo() {
       let video = document.getElementById("video");
       if (video.paused) {
@@ -257,6 +265,8 @@ window.onload = async () => {
       }
     }
 
+
+// Siren Condtionals To Enable If Paused/Playing
     function playSiren() {
       let sirenSrc = document.getElementById("sirenSrc");
       if (sirenSrc.paused) {
@@ -266,6 +276,8 @@ window.onload = async () => {
       }
     }
 
+
+// Voice Condtionals To Enable If Paused/Playing
     function playVoice() {
       let voiceSrc = document.getElementById("voiceSrc");
       if (voiceSrc.paused) {
@@ -275,6 +287,8 @@ window.onload = async () => {
       }
     }
 
+
+// Video Condtionals To Change Src When Doing An Amrap
     function videoCheck() {
       if(cookieIndex === undefined || cookieIndex === "undefined")
       {
@@ -314,78 +328,7 @@ window.onload = async () => {
     }
   });
 
-  // Round check (if round popup needs to show)
-  if (cookieIndex === undefined || cookieIndex === "undefined") {
-    exerciseHeader.style.display = "none";
-    exerciseTitle.style.display = "none";
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
-  } else {
-    exerciseHeader.style.display = "flex";
-    exerciseTitle.style.display = "flex";
-    roundPopup.style.display = "none";
-    roundText.style.display = "none";
-    setTimeout(autoPlayVideo, 2000);
-  }
-
-  if (
-    cookieIndex === 0 ||
-    exerciseParam === undefined ||
-    exerciseParam === "undefined"
-  ) {
-    exerciseHeader.style.display = "none";
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
-    exerciseTitle.style.display = "none";
-  } else {
-    exerciseHeader.style.display = "flex";
-    roundPopup.style.display = "none";
-    roundText.style.display = "none";
-    exerciseTitle.style.display = "none";
-  }
-
-  if (exerciseParam === undefined || exerciseParam === "undefined") {
-    playButton.style.display = "none";
-    playButtonDisabled.style.display = "flex";
-    //
-    nextButton.style.display = "none";
-    nextButtonDisabled.style.display = "flex";
-    //
-    prevButton.style.display = "none";
-    prevButtonDisabled.style.display = "flex";
-    //
-  } else {
-    playButton.style.display = "flex";
-    playButtonDisabled.style.display = "none";
-    //
-    nextButton.style.display = "flex";
-    nextButtonDisabled.style.display = "none";
-    //
-    prevButton.style.display = "flex";
-    prevButtonDisabled.style.display = "none";
-  }
-
-  if (roundParam === undefined || roundParam === "undefined") {
-    playButton.style.display = "none";
-    playButtonDisabled.style.display = "flex";
-    //
-    nextButton.style.display = "none";
-    nextButtonDisabled.style.display = "flex";
-    //
-    prevButton.style.display = "none";
-    prevButtonDisabled.style.display = "flex";
-  } else {
-    playButton.style.display = "flex";
-    playButtonDisabled.style.display = "none";
-    //
-    nextButton.style.display = "flex";
-    nextButtonDisabled.style.display = "none";
-    //
-    prevButton.style.display = "flex";
-    prevButtonDisabled.style.display = "none";
-  }
-
-  //roundEnableLoad();
+  roundEnableLoad();
 
   // Siren Click Controls
   siren.addEventListener("click", function () {
@@ -397,14 +340,89 @@ window.onload = async () => {
     voiceEnableClick();
   });
 
+
+// Round Condtionals To Enable Popup
   function roundEnableLoad() {
-    
+    // Round check (if round popup needs to show)
+    if (cookieIndex === undefined || cookieIndex === "undefined") {
+      exerciseHeader.style.display = "none";
+      exerciseTitle.style.display = "none";
+      roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
+    } else {
+      exerciseHeader.style.display = "flex";
+      exerciseTitle.style.display = "flex";
+      roundPopup.style.display = "none";
+      roundText.style.display = "none";
+      setTimeout(autoPlayVideo, 2000);
+    }
+
+    if (
+      cookieIndex === 0 ||
+      exerciseParam === undefined ||
+      exerciseParam === "undefined"
+    ) {
+      exerciseHeader.style.display = "none";
+      roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
+      exerciseTitle.style.display = "none";
+    } else {
+      exerciseHeader.style.display = "flex";
+      roundPopup.style.display = "none";
+      roundText.style.display = "none";
+      exerciseTitle.style.display = "none";
+    }
+
+    if (exerciseParam === undefined || exerciseParam === "undefined") {
+      playButton.style.display = "none";
+      playButtonDisabled.style.display = "flex";
+      //
+      nextButton.style.display = "none";
+      nextButtonDisabled.style.display = "flex";
+      //
+      prevButton.style.display = "none";
+      prevButtonDisabled.style.display = "flex";
+      //
+    } else {
+      playButton.style.display = "flex";
+      playButtonDisabled.style.display = "none";
+      //
+      nextButton.style.display = "flex";
+      nextButtonDisabled.style.display = "none";
+      //
+      prevButton.style.display = "flex";
+      prevButtonDisabled.style.display = "none";
+    }
+
+    if (roundParam === undefined || roundParam === "undefined") {
+      playButton.style.display = "none";
+      playButtonDisabled.style.display = "flex";
+      //
+      nextButton.style.display = "none";
+      nextButtonDisabled.style.display = "flex";
+      //
+      prevButton.style.display = "none";
+      prevButtonDisabled.style.display = "flex";
+    } else {
+      playButton.style.display = "flex";
+      playButtonDisabled.style.display = "none";
+      //
+      nextButton.style.display = "flex";
+      nextButtonDisabled.style.display = "none";
+      //
+      prevButton.style.display = "flex";
+      prevButtonDisabled.style.display = "none";
+    }
   }
 
+
+// Autoplay Video Function
   function autoPlayVideo() {
     playButton.click();
   }
 
+
+// Next Page Condtionals To Proceed To Next Page
   function nextPage() {
     if (
       exerciseParam === undefined || exerciseParam === "undefined") {
@@ -423,6 +441,8 @@ window.onload = async () => {
     refreshNum = refreshNum + 1;
   }
 
+
+// Siren Condtionals Click On/Off
   function sirenEnableClick() {
     if (sirenText.innerHTML === "Off") {
       Wized.data.setCookie("sirenmute", "on");
@@ -439,6 +459,8 @@ window.onload = async () => {
     console.log("mute cookie changed to: ", sirenMuteCookie);
   }
 
+
+// Voice Condtionals Click On/Off  
   function voiceEnableClick() {
     if (voiceText.innerHTML === "Off") {
       Wized.data.setCookie("voicemute", "on");
@@ -455,7 +477,49 @@ window.onload = async () => {
     console.log("mute cookie changed to: ", voiceMuteCookie);
   }
 
+
+// Siren Condtionals On Page Load On/Off
   function sirenEnableLoad() {
+    // Siren Cookie Condition
+    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
+      Wized.data.setCookie("sirenmute", "on");
+      sirenText.innerHTML = "On";
+      sirenToggleOn.classList.toggle("on");
+    } else {
+      if (sirenCookieInt === "On") {
+        Wized.data.setCookie("sirenmute", "muted");
+        sirenText.innerHTML = "Off";
+        sirenToggleOn.classList.toggle("on");
+      } else {
+        Wized.data.setCookie("sirenmute", "on");
+        sirenText.innerHTML = "On";
+        sirenToggleOn.classList.toggle("on");
+      }
+    }
+  }
+
+
+// Voice Condtionals On Page Load On/Off
+  function voiceEnableLoad() {
+    // Voice Cookie Condition
+    if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
+      Wized.data.setCookie("voicemute", "on");
+      voiceText.innerHTML = "On";
+      voiceToggleOn.classList.toggle("on");
+    } else {
+      if (voiceCookieInt === "On") {
+        Wized.data.setCookie("voicemute", "muted");
+        voiceText.innerHTML = "Off";
+        voiceToggleOn.classList.toggle("on");
+      } else {
+        Wized.data.setCookie("voicemute", "on");
+        voiceText.innerHTML = "On";
+        voiceToggleOn.classList.toggle("on");
+      }
+    }
+  }
+
+  /*function sirenEnableLoad() {
     // Siren Cookie Condition
     if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
       Wized.data.setCookie("sirenmute", "on");
@@ -491,47 +555,9 @@ window.onload = async () => {
         voiceToggleOn.classList.toggle("on");
       }
     }
-  }
+  }*/
 
-  function sirenEnableLoad() {
-    // Siren Cookie Condition
-    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
-      Wized.data.setCookie("sirenmute", "on");
-      sirenText.innerHTML = "On";
-      sirenToggleOn.classList.toggle("on");
-    } else {
-      if (sirenCookieInt === "On") {
-        Wized.data.setCookie("sirenmute", "muted");
-        sirenText.innerHTML = "Off";
-        sirenToggleOn.classList.toggle("on");
-      } else {
-        Wized.data.setCookie("sirenmute", "on");
-        sirenText.innerHTML = "On";
-        sirenToggleOn.classList.toggle("on");
-      }
-    }
-  }
-
-  function voiceEnableLoad() {
-    // Voice Cookie Condition
-    if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
-      Wized.data.setCookie("voicemute", "on");
-      voiceText.innerHTML = "On";
-      voiceToggleOn.classList.toggle("on");
-    } else {
-      if (voiceCookieInt === "On") {
-        Wized.data.setCookie("voicemute", "muted");
-        voiceText.innerHTML = "Off";
-        voiceToggleOn.classList.toggle("on");
-      } else {
-        Wized.data.setCookie("voicemute", "on");
-        voiceText.innerHTML = "On";
-        voiceToggleOn.classList.toggle("on");
-      }
-    }
-  }
-
-  // ID click history replaced
+// History Replaced When Scroll Buttons Are Clicked
   $(document).ready(function () {
     const scrollBtn = $(".panel-button");
 
