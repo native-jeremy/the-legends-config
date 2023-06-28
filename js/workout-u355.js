@@ -301,6 +301,7 @@ window.onload = async () => {
       }
       let videoCurrentSrc;
       let videos = document.getElementById("video");
+      videos.style.opacity = "0"
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
         if (varExeIndex < amrapResponse.data[tempCookieIndex].Video.length) {
           varExeIndex = varExeIndex + 1;
@@ -322,7 +323,9 @@ window.onload = async () => {
         videoChangeSrc();
         console.log(varExeIndex);
       }
-
+      setTimeout(() => {
+        videos.style.opacity = "1"
+      }, 500)
       function videoChangeSrc() {
         videos.src = videoCurrentSrc;
         videos.play();
