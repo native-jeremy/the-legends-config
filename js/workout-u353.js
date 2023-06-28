@@ -93,7 +93,7 @@ window.onload = async () => {
     let exerciseParamUpdate = exerciseparamcustom+ 1;
 
 
-    Wized.data.setNavigation("exercisesparamcustom", exerciseParamUpdate);
+    Wized.data.setParameter("exercisesparamcustom", exerciseParamUpdate);
 
 
     console.log(exerciseparamcustom);
