@@ -74,7 +74,7 @@ window.onload = async () => {
 
   //Function Calls Onload
   roundEnableLoad();
-  setTimeout(nextPage, 2000);
+  //setTimeout(nextPage, 2000);
   sirenEnableLoad();
   voiceEnableLoad();
 
@@ -354,7 +354,7 @@ window.onload = async () => {
       exerciseTitle.style.display = "flex";
       roundPopup.style.display = "none";
       roundText.style.display = "none";
-      //setTimeout(autoPlayVideo, 2000);
+      setTimeout(autoPlayVideo, 2000);
     }
 
     if (
