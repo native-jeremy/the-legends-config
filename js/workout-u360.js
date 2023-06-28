@@ -81,7 +81,7 @@ window.onload = async () => {
 
 if (testIndex === "1234") {
   paramTest.style.display = "flex";
-  paramTestBase.style.display = "hidden";
+  paramTestBase.style.display = "none";
   console.log("Parameter Active Let's Go!!!!!")
 }
 
