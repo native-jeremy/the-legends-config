@@ -10,6 +10,7 @@ const roundTitle = document.getElementById("roundTitle");
 const roundText = document.getElementById("roundText");
 const videoChange = document.getElementById("videoChange");
 const paramTest = document.getElementById("paramTest");
+const paramTestBase = document.getElementById("paramTestBase");
 //const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
 //const exerciseAmrapTitle = document.querySelectorAll('.amrap-title');
 
@@ -80,6 +81,7 @@ window.onload = async () => {
 
 if (testIndex === "1234") {
   paramTest.style.display = "flex";
+  paramTestBase.style.display = "hidden";
   console.log("Parameter Active Let's Go!!!!!")
 }
 
