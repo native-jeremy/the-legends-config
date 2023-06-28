@@ -412,8 +412,8 @@ window.onload = async () => {
       //
       prevButton.style.display = "flex";
       prevButtonDisabled.style.display = "none";
-    }
-  }*/
+    }*/
+  }
 
 
 // Autoplay Video Function
