@@ -14,11 +14,27 @@ const paramTestBase = document.getElementById("paramTestBase");
 //const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
 //const exerciseAmrapTitle = document.querySelectorAll('.amrap-title');
 
-// Element Delarations
+// Element Declarations
 const repText = document.getElementById("repText");
 const timerText = document.getElementById("safeTimerDisplay");
 const currentTest = document.getElementById("current");
 const durationTest = document.getElementById("dur");
+
+
+// Param Int Set Variables
+let setIntRoundNum;
+let setIntExercisesNum;
+let setIntExerciseNum;
+
+// Param Get Variables
+let getRoundNum;
+let getExercisesNum;
+let getExerciseNum;
+
+// Param Set Variables
+let setRoundNum;
+let setExercisesNum;
+let setExerciseNum;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -60,7 +76,7 @@ let refreshNum = 0;
 ----------------------------------------------------------------
 */
 
-// Window Load Async Function To Intialise Wized - Asap = Aysnc
+// [- Step 1 -] Window Load Async Function To Intialise Wized - Asap = Aysnc
 window.onload = async () => {
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
@@ -75,41 +91,30 @@ window.onload = async () => {
 
   roundPopup.style.display = "flex";
 
-
+// URL Searching Setup and Declaration
 let activeParam = document.getElementById("activeParam")
 let params = (window.location.href);
 let url = new URL (params)
 let checkurl = url.searchParams;
-let setRoundParam = checkurl.set("round", "1");
-let setExercisesParam = checkurl.set("exercises", "0");
-let setExerciseParam = checkurl.set("exercise", "0");
+setIntRoundNum = checkurl.set("round", "1");
+setIntExercisesNum = checkurl.set("exercises", "0");
+setIntExerciseNum = checkurl.set("exercise", "0");
 window.history.replaceState(null, null, url.toString());
   
 
-const testIndex = await Wized.data.get("n.parameter.link");
+/*const testIndex = await Wized.data.get("n.parameter.link");
 
 if (testIndex === "1234") {
   paramTest.style.display = "flex";
   paramTestBase.style.display = "none";
   console.log("Parameter Active Let's Go!!!!!")
-}
+}*/
 
 const roundParamIndex = await Wized.data.get("n.parameter.ri");
 const exercisesParamIndex = await Wized.data.get("n.parameter.esi");
 const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
 
-  /* Parameter indexing setup
-  let params = new URLSearchParams(window.location.search);
-  params.get('exercise');*/
-
-
-  //Function Calls Onload
-  roundEnableLoad();
-  //setTimeout(nextPage, 2000);
-  sirenEnableLoad();
-  voiceEnableLoad();
-
-// Exercises Request Response From Wized
+// [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
     let repAmount;
@@ -201,8 +206,23 @@ nextButton.addEventListener("click", function(){
   console.log("Amrap Video Array Length:", amrapResponse.data[getNum].Video.length);
   console.log("---------------------------------------");
   console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
-
   });
+
+
+
+  function updateParamForVideo(){
+    getExerciseNum = checkurl.get("exercise");
+    getExerciseNum = parseInt(getExerciseNum) + 1;
+    setExerciseParam = checkurl.set("exercise", getExerciseNum.toString());
+    window.history.replaceState(null, null, url.toString());
+    checkParam()
+    console.log("---------------------------------------");
+    console.log("Next Button Clicked Updated Data Below");
+    console.log("---------------------------------------");
+    console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
+    console.log("---------------------------------------");
+    console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
+  }
 
 
   function checkParam() {
@@ -379,7 +399,11 @@ nextButton.addEventListener("click", function(){
     }
   });
 
+  //Function Calls Onload
   roundEnableLoad();
+  //setTimeout(nextPage, 2000);
+  sirenEnableLoad();
+  voiceEnableLoad();
 
   // Siren Click Controls
   siren.addEventListener("click", function () {
