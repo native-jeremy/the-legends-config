@@ -180,7 +180,8 @@ nextButton.addEventListener("click", function(){
   getExercisesNum = checkurl.get("exercises");
   getExercisesNum = parseInt(getExercisesNum) + 1;
   setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-  window.history.replaceState(null, null, url.toString());
+  //window.history.replaceState(null, null, url.toString());
+  window.href = url.toString();
   checkParam()
 
 
