@@ -120,6 +120,7 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     let repAmount;
     let repType;
     let varExeIndex = 0;
+    let newcookieIndex;
     let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
@@ -241,7 +242,7 @@ nextButton.addEventListener("click", function(){
 // Amrap Condtionals To Check If True/False
     if (amrapBool == "True") {
         checkAmrap = setInterval(videoCheck, 0);
-        let newcookieIndex = amrapResponse.data[parseInt(exercisesParam)].Video.length;
+        newcookieIndex = amrapResponse.data[parseInt(exercisesParam)].Video.length;
         console.log("Amrap length:", newcookieIndex);
     } else {
       clearInterval(checkAmrap);
@@ -363,7 +364,8 @@ nextButton.addEventListener("click", function(){
       let videoCurrentSrc;
       let videos = document.getElementById("video"); 
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-        if (parseInt(getExerciseNum) < amrapResponse.data[parseInt(getExercisesNum)].Video.length) {
+        if (newcookieIndex < amrapResponse.data[parseInt(getExercisesNum)].Video.length) {
+          console.log("Current Exercise Index For Video", parseInt(getExerciseNum));
           videoCurrentSrc =
           amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(getExerciseNum)].url;
           console.log("---------------------------------------");          
