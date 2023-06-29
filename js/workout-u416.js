@@ -11,7 +11,7 @@ const roundText = document.getElementById("roundText");
 const videoChange = document.getElementById("videoChange");
 const paramTest = document.getElementById("paramTest");
 const paramTestBase = document.getElementById("paramTestBase");
-const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
+//const exerciseChangeTitle = document.getElementById("exerciseChangeTitle");
 //const exerciseAmrapTitle = document.querySelectorAll('.amrap-title');
 
 // Element Declarations
@@ -127,7 +127,6 @@ window.history.replaceState(null, null, url.toString());
     let vidSrc = document.getElementById("video");
 
     vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
-    exerciseChangeTitle.innerHTML = repDataInt.data[parseInt(exercisesParam)].Name
 
    //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
    let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
