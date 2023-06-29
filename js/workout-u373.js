@@ -72,7 +72,6 @@ window.onload = async () => {
   const workoutParam = await Wized.data.get("n.parameter.workout");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
-  console.log(exerciseParam);
 
   roundPopup.style.display = "flex";
 
@@ -100,8 +99,6 @@ const roundParamIndex = await Wized.data.get("n.parameter.ri");
 const exercisesParamIndex = await Wized.data.get("n.parameter.esi");
 const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
 
-  console.log("Here is the Parameter Value", testIndex);
-
   /* Parameter indexing setup
   let params = new URLSearchParams(window.location.search);
   params.get('exercise');*/
@@ -125,7 +122,7 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     const amrapResponse = response;
     let checkAmrap;
     let tempCookieIndex = 0;
-    console.log(repDataInt.data[cookieIndex]);
+    console.log(repDataInt.data[exercisesParam]);
     console.log("Amrap Response:",amrapResponse);
 
     let diffStr = currentNum.innerHTML;
@@ -184,7 +181,7 @@ nextButton.addEventListener("click", function(){
   console.log(url.toString())
 
   console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
-  console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
+  console.log("Round Number", roundParam, "Exercises Number", getNuma, "Exercise Number", exerciseParam);
   });
 
   prevButton.addEventListener("click", function(){
