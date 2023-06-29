@@ -129,7 +129,7 @@ window.history.replaceState(null, null, url.toString());
     vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
 
    //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
-   let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Video.length
+   let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
 
 
 // Diff Increase Click Controls
@@ -177,13 +177,13 @@ console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
 
 nextButton.addEventListener("click", function(){
-  //updateParamForVideo() 
-  getExercisesNum = checkurl.get("exercises");
+  updateParamForVideo() 
+  /*getExercisesNum = checkurl.get("exercises");
   getExercisesNum = parseInt(getExercisesNum) + 1;
   setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
   //window.history.replaceState(null, null, url.toString());
   window.location.href = url.toString();
-  checkParam()
+  checkParam()*/
 
 
   //DEVELOPMENT ONLY
@@ -213,32 +213,24 @@ nextButton.addEventListener("click", function(){
 
 
 
-  /*function updateParamForVideo(){
-    if (parseInt(exerciseParam) < exercisesLength) {
-      getExerciseNum = checkurl.get("exercise");
-      getExerciseNum = parseInt(getExerciseNum) + 1;
-    }
-    else if (!exerciseParam < exercisesLength) {
-      getExerciseNum = checkurl.get("exercise");
-      getExerciseNum = 0;
-      setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());
-
+  function updateParamForVideo(){
+    if (parseInt(exercisesParam) < exercisesLength) {
       getExercisesNum = checkurl.get("exercises");
       getExercisesNum = parseInt(getExercisesNum) + 1;
-      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
     }
+
     window.location.href = url.toString();
     //window.history.replaceState(null, null, url.toString());
     //checkParam()
 
-     //DEVELOPMENT ONLY
+    /* //DEVELOPMENT ONLY
     console.log("---------------------------------------");
     console.log("Next Button Clicked Updated Data Below");
     console.log("---------------------------------------");
-    console.log("Amrap Video Array Length:", amrapResponse.data[parseInt(getExercisesNum)].Video.length);
+    console.log("Amrap Video Array Length:", amrapResponse.data[parseInt(exercisesParam)].Video.length);
     console.log("---------------------------------------");
-    console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));
-  }*/
+    console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));*/
+  }
 
 
   function checkParam() {
