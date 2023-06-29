@@ -178,11 +178,11 @@ console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
 nextButton.addEventListener("click", function(){
   updateParamForVideo() 
-  /*getExercisesNum = checkurl.get("exercises");
+  getExercisesNum = checkurl.get("exercises");
   getExercisesNum = parseInt(getExercisesNum) + 1;
   setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
   //window.history.replaceState(null, null, url.toString());
-  window.location.href = url.toString();*/
+  window.location.href = url.toString();
   checkParam()
 
 
@@ -213,7 +213,7 @@ nextButton.addEventListener("click", function(){
 
 
 
-  function updateParamForVideo(){
+  /*function updateParamForVideo(){
     if (parseInt(exerciseParam) < exercisesLength) {
       getExerciseNum = checkurl.get("exercise");
       getExerciseNum = parseInt(getExerciseNum) + 1;
@@ -238,7 +238,7 @@ nextButton.addEventListener("click", function(){
     console.log("Amrap Video Array Length:", amrapResponse.data[parseInt(getExercisesNum)].Video.length);
     console.log("---------------------------------------");
     console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));
-  }
+  }*/
 
 
   function checkParam() {
