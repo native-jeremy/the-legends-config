@@ -202,7 +202,7 @@ nextButton.addEventListener("click", function(){
   window.history.replaceState(null, null, url.toString());
   checkParam()
 
-   //DEVELOPMENT ONLY
+  //DEVELOPMENT ONLY
   console.log("---------------------------------------");
   console.log("Prev Button Clicked Updated Data Below");
   console.log("---------------------------------------");
@@ -227,7 +227,7 @@ nextButton.addEventListener("click", function(){
       getExercisesNum = parseInt(getExercisesNum) + 1;
       setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
     }
-    //window.location.href = url.toString();
+    window.location.href = url.toString();
     //window.history.replaceState(null, null, url.toString());
     //checkParam()
 
