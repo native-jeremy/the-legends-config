@@ -393,6 +393,10 @@ nextButton.addEventListener("click", function(){
       let videos = document.getElementById("video"); 
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
         if (parseInt(exerciseParam) < amrapResponse.data[parseInt(exercisesParam)].Video.length) {
+          getExercisesNum = checkurl.get("exercise");
+          getExerciseNum = parseInt(getExerciseNum) + 1;
+          setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());
+
           console.log("Current Exercise Index For Video", parseInt(exerciseParam));
           videoCurrentSrc =
           amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(exerciseParam)].url;
