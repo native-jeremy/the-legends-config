@@ -279,10 +279,10 @@ nextButton.addEventListener("click", function(){
             clearInterval(checkAmrap);
             console.log("---------------------------------------");
             console.log("Completed");
-          } else {
+          } /*else {
             console.log("---------------------------------------");
             console.log("Timer Paused");
-          }
+          }*/
         }
       }, 1000);
     }
@@ -351,12 +351,13 @@ nextButton.addEventListener("click", function(){
           varExeIndex = varExeIndex + 1;
           videoCurrentSrc =
           amrapResponse.data[tempCookieIndex].Video[varExeIndex].url;
+          console.log("---------------------------------------");          
           console.log(videoCurrentSrc);
           console.log("---------------------------------------");
-          console.log("Ran Request");
+          console.log("Ran Request Video Src => Updated");
 
           videoChangeSrc();
-          console.log(varExeIndex);
+          //console.log(varExeIndex);
         }
       } else if (varExeIndex >= amrapResponse.data[tempCookieIndex].Video.length) {
         varExeIndex = 0;
@@ -365,7 +366,7 @@ nextButton.addEventListener("click", function(){
         console.log("---------------------------------------");
         console.log(videoCurrentSrc);
         console.log("---------------------------------------");
-        console.log("Ran Request");
+        console.log("Ran Request Video Src <= Reset ");
 
         videoChangeSrc();
         console.log("---------------------------------------");
