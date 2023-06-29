@@ -119,13 +119,12 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     const amrapResponse = response;
     let checkAmrap;
     let tempCookieIndex = 0;
-    console.log("-------------");
+    console.log("---------------------------------------");
     console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
-    console.log("-------------");
+    console.log("---------------------------------------");
     console.log("All Exercises",amrapResponse);
-    console.log("-------------");
+    console.log("---------------------------------------");
     console.log("Single Exercise:", repDataInt.data[exercisesParam]);
-    console.log("-------------");
 
     let diffStr = currentNum.innerHTML;
     let diffInt = parseInt(diffStr);
@@ -165,11 +164,16 @@ repAmount = repDataInt.data[exercisesParam].Amounts_Name[diffCurrent];
 repType = repDataInt.data[exercisesParam].Rep_Type[0];
 amrapBool = repDataInt.data[exercisesParam].Amrap;
 
+console.log("---------------------------------------");
 console.log("Amount: ", repAmount);
+console.log("---------------------------------------");
 console.log("Rep Type: ", repType);
+console.log("---------------------------------------");
 
 console.log("Current Difficulty:", diffCurrent);
+console.log("---------------------------------------");
 console.log("Is The Selected Exercise An Amrap:", amrapBool);
+
 
 nextButton.addEventListener("click", function(){
   let getNum = checkurl.get("exercises");
@@ -178,7 +182,9 @@ nextButton.addEventListener("click", function(){
   window.history.replaceState(null, null, url.toString());
   checkParam()
 
+  console.log("---------------------------------------");
   console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
+  console.log("---------------------------------------");
   console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
   });
 
@@ -189,7 +195,9 @@ nextButton.addEventListener("click", function(){
   window.history.replaceState(null, null, url.toString());
   checkParam()
 
+  console.log("---------------------------------------");
   console.log("Amrap Video Array Length:", amrapResponse.data[getNum].Video.length);
+  console.log("---------------------------------------");
   console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
 
   });
@@ -266,8 +274,10 @@ nextButton.addEventListener("click", function(){
             }, 1000);
             clearInterval(timer);
             clearInterval(checkAmrap);
+            console.log("---------------------------------------");
             console.log("Completed");
           } else {
+            console.log("---------------------------------------");
             console.log("Timer Paused");
           }
         }
@@ -338,6 +348,7 @@ nextButton.addEventListener("click", function(){
           videoCurrentSrc =
           amrapResponse.data[tempCookieIndex].Video[varExeIndex].url;
           console.log(videoCurrentSrc);
+          console.log("---------------------------------------");
           console.log("Ran Request");
 
           videoChangeSrc();
@@ -347,10 +358,13 @@ nextButton.addEventListener("click", function(){
         varExeIndex = 0;
         videoCurrentSrc =
           amrapResponse.data[cookieIndex].Video[varExeIndex].url;
+        console.log("---------------------------------------");
         console.log(videoCurrentSrc);
+        console.log("---------------------------------------");
         console.log("Ran Request");
 
         videoChangeSrc();
+        console.log("---------------------------------------");
         console.log(varExeIndex);
       }
       function videoChangeSrc() {
@@ -488,6 +502,7 @@ nextButton.addEventListener("click", function(){
 
     // Development Purposes (DEBUGGING)
     const sirenMuteCookie = Wized.data.get("c.sirenmute");
+    console.log("---------------------------------------");
     console.log("mute cookie changed to: ", sirenMuteCookie);
   }
 
@@ -506,6 +521,7 @@ nextButton.addEventListener("click", function(){
 
     // Development Purposes (DEBUGGING)
     const voiceMuteCookie = Wized.data.get("c.voicemute");
+    console.log("---------------------------------------");
     console.log("mute cookie changed to: ", voiceMuteCookie);
   }
 
