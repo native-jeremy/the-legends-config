@@ -181,7 +181,7 @@ nextButton.addEventListener("click", function(){
   console.log(url.toString())
 
   console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
-  console.log("Round Number", roundParam, "Exercises Number", getNuma, "Exercise Number", exerciseParam);
+  console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
   });
 
   prevButton.addEventListener("click", function(){
