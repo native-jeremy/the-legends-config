@@ -209,7 +209,7 @@ nextButton.addEventListener("click", function(){
   console.log("---------------------------------------");
   console.log("Amrap Video Array Length:", amrapResponse.data[parseInt(getExercisesNum)].Video.length);
   console.log("---------------------------------------");
-  console.log("Round Number", roundParam, "Exercises Number", getExercisesNum, "Exercise Number", exerciseParam);
+  console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));
   });
 
 
