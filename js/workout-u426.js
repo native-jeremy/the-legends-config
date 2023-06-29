@@ -414,6 +414,8 @@ nextButton.addEventListener("click", function(){
           amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(videoIndex)].url;
         }, 100);
 
+        clearTimeout(clear);
+
           console.log("---------------------------------------");          
           console.log(videoCurrentSrc);
           console.log("---------------------------------------");
@@ -429,10 +431,12 @@ nextButton.addEventListener("click", function(){
           console.log("---------------------------------------");
           console.log("Current Video Index:", parseInt(videoIndex));
 
-          setTimeout(() => {
+        let clear = setTimeout(() => {
           videoCurrentSrc =
           amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(videoIndex)].url;
           }, 100);
+
+          clearTimeout(clear);
 
           console.log("---------------------------------------");
           console.log(videoCurrentSrc);
