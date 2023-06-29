@@ -270,7 +270,7 @@ nextButton.addEventListener("click", function(){
 
 // Amrap Condtionals To Check If True/False
     if (amrapBool == "True") {
-        checkAmrap = setInterval(videoCheck, 0);
+        checkAmrap = setInterval(videoCheck, 500);
         newcookieIndex = amrapResponse.data[parseInt(exercisesParam)].Video.length;
         console.log("Amrap length:", newcookieIndex);
     } else {
