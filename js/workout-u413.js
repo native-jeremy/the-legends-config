@@ -219,6 +219,7 @@ nextButton.addEventListener("click", function(){
     //if (parseInt(exercisesParam) > exercisesLength) {
       getExercisesNum = checkurl.get("exercises");
       getExercisesNum = parseInt(getExercisesNum) + 1;
+      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
     //}
 
     window.location.href = url.toString();
