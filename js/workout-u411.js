@@ -130,6 +130,8 @@ window.history.replaceState(null, null, url.toString());
 
    //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
    let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
+   console.log("---------------------------------------");
+   console.log(exercisesLength);
 
 
 // Diff Increase Click Controls
