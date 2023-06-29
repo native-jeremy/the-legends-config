@@ -172,12 +172,14 @@ console.log(amrapBool);
 console.log("Video Array Length:", amrapResponse.data[exercisesParam].Video.length);
 
 nextButton.addEventListener("click", function(){
-  let getNum = checkurl.get("exercise");
+  let getNum = checkurl.get("exercises");
   getNum = parseInt(getNum) + 1;
-  let UpdateExerciseParam = checkurl.set("exercise", getNum.toString());
+  let UpdateExerciseParam = checkurl.set("exercises", getNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
   console.log(url.toString())
+
+  console.log("Video Array Length:", amrapResponse.data[exercisesParam].Video.length);
   });
 
   prevButton.addEventListener("click", function(){
@@ -187,6 +189,8 @@ nextButton.addEventListener("click", function(){
   window.history.replaceState(null, null, url.toString());
   checkParam()
   console.log(url.toString())
+
+  console.log("Video Array Length:", amrapResponse.data[exercisesParam].Video.length);
   });
 
 
