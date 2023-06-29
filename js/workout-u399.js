@@ -128,8 +128,8 @@ window.history.replaceState(null, null, url.toString());
 
     vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
 
-   let roundLength = amrapResponse.data[parseInt(getExercisesNum)].Video.length
-   let exercisesLength = amrapResponse.data[parseInt(getExercisesNum)].Video.length
+   //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
+   let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Video.length
 
 
 // Diff Increase Click Controls
@@ -225,7 +225,7 @@ nextButton.addEventListener("click", function(){
       getExercisesNum = parseInt(getExercisesNum) + 1;
       setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
     }
-    
+
     window.history.replaceState(null, null, url.toString());
     checkParam()
 
