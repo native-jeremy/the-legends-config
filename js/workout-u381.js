@@ -119,9 +119,13 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     const amrapResponse = response;
     let checkAmrap;
     let tempCookieIndex = 0;
+    console.log("-------------");
     console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
+    console.log("-------------");
     console.log("All Exercises",amrapResponse);
+    console.log("-------------");
     console.log("Single Exercise:", repDataInt.data[exercisesParam]);
+    console.log("-------------");
 
     let diffStr = currentNum.innerHTML;
     let diffInt = parseInt(diffStr);
