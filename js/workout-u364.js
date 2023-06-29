@@ -180,7 +180,7 @@ nextButton.addEventListener("click", function(){
   console.log(url.toString())
   });
 
-  prevButtonButton.addEventListener("click", function(){
+  prevButton.addEventListener("click", function(){
   let getNum = checkurl.get("exercise");
   getNum = parseInt(getNum) - 1;
   let UpdateExerciseParam = checkurl.set("exercise", getNum.toString());
