@@ -181,7 +181,8 @@ nextButton.addEventListener("click", function(){
   let UpdateExerciseParam = checkurl.set("exercises", getNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
-
+  console.log("---------------------------------------");
+  console.log("Next Button Clicked Updated Data Below");
   console.log("---------------------------------------");
   console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
   console.log("---------------------------------------");
@@ -194,7 +195,8 @@ nextButton.addEventListener("click", function(){
   let UpdateExerciseParam = checkurl.set("exercises", getNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
-
+  console.log("---------------------------------------");
+  console.log("Prev Button Clicked Updated Data Below");
   console.log("---------------------------------------");
   console.log("Amrap Video Array Length:", amrapResponse.data[getNum].Video.length);
   console.log("---------------------------------------");
@@ -251,11 +253,12 @@ nextButton.addEventListener("click", function(){
 // Round Type Condtionals To Enable Time/Reps   
     function roundType() {
       if (repType === "Time") {
-        console.log(repType);
         timer();
       } else if (repType === "Reps") {
         repCount();
       }
+      console.log("---------------------------------------");
+      console.log("Rep OR Time", repType);
     }
 
     
