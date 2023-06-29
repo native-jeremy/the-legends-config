@@ -96,9 +96,9 @@ let activeParam = document.getElementById("activeParam")
 let params = (window.location.href);
 let url = new URL (params)
 let checkurl = url.searchParams;
-setIntRoundNum = checkurl.set("round", "1");
-setIntExercisesNum = checkurl.set("exercises", "0");
-setIntExerciseNum = checkurl.set("exercise", "0");
+//setIntRoundNum = checkurl.set("round", "1");
+//setIntExercisesNum = checkurl.set("exercises", "0");
+//setIntExerciseNum = checkurl.set("exercise", "0");
 window.history.replaceState(null, null, url.toString());
   
 
