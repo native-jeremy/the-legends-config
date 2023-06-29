@@ -177,7 +177,7 @@ console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
 
 nextButton.addEventListener("click", function(){
-  updateParamForVideo() 
+  //updateParamForVideo() 
   getExercisesNum = checkurl.get("exercises");
   getExercisesNum = parseInt(getExercisesNum) + 1;
   setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
