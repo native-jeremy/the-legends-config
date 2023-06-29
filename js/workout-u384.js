@@ -504,10 +504,13 @@ nextButton.addEventListener("click", function(){
     }
 
     // Development Purposes (DEBUGGING)
-    const sirenMuteCookie = Wized.data.get("c.sirenmute");
+    async() => {
+    const sirenMuteCookie = await Wized.data.get("c.sirenmute");
     console.log("---------------------------------------");
     console.log("mute cookie changed to: ", sirenMuteCookie);
+    console.log("---------------------------------------");
   }
+}
 
 
 // Voice Condtionals Click On/Off  
@@ -526,6 +529,7 @@ nextButton.addEventListener("click", function(){
     const voiceMuteCookie = Wized.data.get("c.voicemute");
     console.log("---------------------------------------");
     console.log("mute cookie changed to: ", voiceMuteCookie);
+    console.log("---------------------------------------");
   }
 
 
