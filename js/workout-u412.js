@@ -216,10 +216,10 @@ nextButton.addEventListener("click", function(){
 
 
   function updateParamForVideo(){
-    if (parseInt(exercisesParam) < exercisesLength) {
+    //if (parseInt(exercisesParam) > exercisesLength) {
       getExercisesNum = checkurl.get("exercises");
       getExercisesNum = parseInt(getExercisesNum) + 1;
-    }
+    //}
 
     window.location.href = url.toString();
     //window.history.replaceState(null, null, url.toString());
