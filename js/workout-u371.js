@@ -132,6 +132,10 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     let diffInt = parseInt(diffStr);
     let diffCurrent = diffInt - 1;
 
+
+    console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
+
+
 // Diff Increase Click Controls
   plusBtn.addEventListener("click", function () {
     if (amount < maxLimit) {
@@ -180,6 +184,7 @@ nextButton.addEventListener("click", function(){
   console.log(url.toString())
 
   console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
+  console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
   });
 
   prevButton.addEventListener("click", function(){
@@ -191,6 +196,8 @@ nextButton.addEventListener("click", function(){
   console.log(url.toString())
 
   console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
+  console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
+
   });
 
 
@@ -225,8 +232,6 @@ nextButton.addEventListener("click", function(){
     }*/
 
     //let counter = repAmount;
-    console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
-
     let clickNum = 0;
 
 
