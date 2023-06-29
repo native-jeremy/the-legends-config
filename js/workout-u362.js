@@ -146,37 +146,17 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     console.log(diffCurrent)
   });
 
-    /*prevButton.addEventListener("click", function () {
-      history.back();
-    });*/
+// New DEVELOPMENT Parameter setup for indexing using ("Query String")
+
+repAmount = repDataInt.data[exercisesParam].Amounts_Name[diffCurrent];
+repType = repDataInt.data[exercisesParam].Rep_Type[0];
+amrapBool = repDataInt.data[exercisesParam].Amrap;
+
+console.log(diffCurrent);
+console.log(amrapBool);
 
 
-// CookieIndex Condtionals To Check If It Is Undefined To Apply The Correct Int Amount/Rep Type/Amrap - True or False       
-    if (
-      cookieIndex === "" ||
-      cookieIndex === undefined ||
-      cookieIndex === "undefined"
-    ) {
-      repAmount = repDataInt.data[0].Amounts_Name[diffCurrent];
-      repType = repDataInt.data[0].Rep_Type[0];
-      amrapBool = repDataInt.data[0].Amrap;
-    } else {
-      repAmount = repDataInt.data[cookieIndex].Amounts_Name[diffCurrent];
-      repType = repDataInt.data[cookieIndex].Rep_Type[0];
-      amrapBool = repDataInt.data[cookieIndex].Amrap;
-    }
-    console.log(diffCurrent);
-    console.log(amrapBool);
-
-
-// CookieIndex Condtionals To Check If It Has An Index    
-    if(cookieIndex === undefined || cookieIndex === "undefined")
-    {
-      console.log("Video Array Length:", amrapResponse.data[tempCookieIndex].Video.length);
-    }
-    else {
-      console.log("Video Array Length:", amrapResponse.data[cookieIndex].Video.length);
-    }
+console.log("Video Array Length:", amrapResponse.data[exercisesParam].Video.length);
 
 
 // Amrap Condtionals To Check If True/False
