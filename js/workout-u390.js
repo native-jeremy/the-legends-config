@@ -136,7 +136,7 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     let diffCurrent = diffInt - 1;
     let vidSrc = document.getElementById("video");
 
-    vidSrc.src = repDataInt.data[exercisesParam].Video[0]
+    vidSrc.src = repDataInt.data[exercisesParam].Video[0].url
 
 
 // Diff Increase Click Controls
