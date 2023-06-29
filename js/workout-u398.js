@@ -100,31 +100,20 @@ let checkurl = url.searchParams;
 //setIntExercisesNum = checkurl.set("exercises", "0");
 //setIntExerciseNum = checkurl.set("exercise", "0");
 window.history.replaceState(null, null, url.toString());
-  
 
-/*const testIndex = await Wized.data.get("n.parameter.link");
-
-if (testIndex === "1234") {
-  paramTest.style.display = "flex";
-  paramTestBase.style.display = "none";
-  console.log("Parameter Active Let's Go!!!!!")
-}*/
-
-const roundParamIndex = await Wized.data.get("n.parameter.ri");
-const exercisesParamIndex = await Wized.data.get("n.parameter.esi");
-const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
+//const roundParamIndex = await Wized.data.get("n.parameter.ri");
+//const exercisesParamIndex = await Wized.data.get("n.parameter.esi");
+//const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
 
 // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
     let repAmount;
     let repType;
-    let varExeIndex = 0;
     let newcookieIndex;
     let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
-    let tempCookieIndex = 0;
     console.log("---------------------------------------");
     console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));
     console.log("---------------------------------------");
@@ -138,6 +127,9 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     let vidSrc = document.getElementById("video");
 
     vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
+
+   let roundLength = amrapResponse.data[parseInt(getExercisesNum)].Video.length
+   let exercisesLength = amrapResponse.data[parseInt(getExercisesNum)].Video.length
 
 
 // Diff Increase Click Controls
@@ -190,6 +182,9 @@ nextButton.addEventListener("click", function(){
   setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
+
+
+  //DEVELOPMENT ONLY
   console.log("---------------------------------------");
   console.log("Next Button Clicked Updated Data Below");
   console.log("---------------------------------------");
@@ -204,6 +199,8 @@ nextButton.addEventListener("click", function(){
   setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
+
+   //DEVELOPMENT ONLY
   console.log("---------------------------------------");
   console.log("Prev Button Clicked Updated Data Below");
   console.log("---------------------------------------");
@@ -215,11 +212,24 @@ nextButton.addEventListener("click", function(){
 
 
   function updateParamForVideo(){
-    getExerciseNum = checkurl.get("exercise");
-    getExerciseNum = parseInt(getExerciseNum) + 1;
-    setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());
+    if (parseInt(exerciseParam) < exercisesLength) {
+      getExerciseNum = checkurl.get("exercise");
+      getExerciseNum = parseInt(getExerciseNum) + 1;
+    }
+    else if (!exerciseParam < exercisesLength) {
+      getExerciseNum = checkurl.get("exercise");
+      getExerciseNum = 0;
+      setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());
+
+      getExercisesNum = checkurl.get("exercises");
+      getExercisesNum = parseInt(getExercisesNum) + 1;
+      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+    }
+    
     window.history.replaceState(null, null, url.toString());
     checkParam()
+
+     //DEVELOPMENT ONLY
     console.log("---------------------------------------");
     console.log("Next Button Clicked Updated Data Below");
     console.log("---------------------------------------");
