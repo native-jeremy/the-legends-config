@@ -169,9 +169,6 @@ amrapBool = repDataInt.data[exercisesParam].Amrap;
 console.log(diffCurrent);
 console.log(amrapBool);
 
-
-console.log("Video Array Length:", amrapResponse.data[exercisesParam].Video.length);
-
 nextButton.addEventListener("click", function(){
   let getNum = checkurl.get("exercises");
   getNum = parseInt(getNum) + 1;
@@ -190,7 +187,7 @@ nextButton.addEventListener("click", function(){
   window.history.replaceState(null, null, url.toString());
   checkParam()
 
-  console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
+  console.log("Amrap Video Array Length:", amrapResponse.data[getNum].Video.length);
   console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
 
   });
@@ -211,7 +208,6 @@ nextButton.addEventListener("click", function(){
         checkAmrap = setInterval(videoCheck, 0);
         let newcookieIndex = amrapResponse.data[exercisesParam].Video.length;
         console.log("Amrap length:", newcookieIndex);
-        console.log("Amrap:", amrapResponse.data[exercisesParam]);
     } else {
       clearInterval(checkAmrap);
     }
