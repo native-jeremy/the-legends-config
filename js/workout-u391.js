@@ -125,18 +125,18 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     let checkAmrap;
     let tempCookieIndex = 0;
     console.log("---------------------------------------");
-    console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
+    console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));
     console.log("---------------------------------------");
     console.log("All Exercises",amrapResponse);
     console.log("---------------------------------------");
-    console.log("Single Exercise:", repDataInt.data[exercisesParam]);
+    console.log("Single Exercise:", repDataInt.data[parseInt(exercisesParam)]);
 
     let diffStr = currentNum.innerHTML;
     let diffInt = parseInt(diffStr);
     let diffCurrent = diffInt - 1;
     let vidSrc = document.getElementById("video");
 
-    vidSrc.src = repDataInt.data[exercisesParam].Video[0].url
+    vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
 
 
 // Diff Increase Click Controls
@@ -168,9 +168,9 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
 /* WORK IN PROGRESS CODE Thursday 29th June 2023 
 New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
 
-repAmount = repDataInt.data[exercisesParam].Amounts_Name[diffCurrent];
-repType = repDataInt.data[exercisesParam].Rep_Type[0];
-amrapBool = repDataInt.data[exercisesParam].Amrap;
+repAmount = repDataInt.data[parseInt(exercisesParam)].Amounts_Name[diffCurrent];
+repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type[0];
+amrapBool = repDataInt.data[(parseInt(exercisesParam))].Amrap;
 
 console.log("---------------------------------------");
 console.log("Amount: ", repAmount);
@@ -184,9 +184,9 @@ console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
 
 nextButton.addEventListener("click", function(){
-  let getNum = checkurl.get("exercises");
-  getNum = parseInt(getNum) + 1;
-  let UpdateExerciseParam = checkurl.set("exercises", getNum.toString());
+  getExercisesNum = checkurl.get("exercises");
+  getExercisesNum = parseInt(getNum) + 1;
+  setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
   console.log("---------------------------------------");
@@ -194,13 +194,13 @@ nextButton.addEventListener("click", function(){
   console.log("---------------------------------------");
   console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
   console.log("---------------------------------------");
-  console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
+  console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(getExercisesNum), "Exercise Number", parseInt(exerciseParam));
   });
 
   prevButton.addEventListener("click", function(){
-  let getNum = checkurl.get("exercises");
-  getNum = parseInt(getNum) - 1;
-  let UpdateExerciseParam = checkurl.set("exercises", getNum.toString());
+  getExercisesNum = checkurl.get("exercises");
+  getExercisesNum = parseInt(getNum) - 1;
+  setExercisesNum = checkurl.set("exercises", getNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
   console.log("---------------------------------------");
@@ -208,7 +208,7 @@ nextButton.addEventListener("click", function(){
   console.log("---------------------------------------");
   console.log("Amrap Video Array Length:", amrapResponse.data[getNum].Video.length);
   console.log("---------------------------------------");
-  console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
+  console.log("Round Number", roundParam, "Exercises Number", getExercisesNum, "Exercise Number", exerciseParam);
   });
 
 
