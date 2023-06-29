@@ -270,7 +270,7 @@ nextButton.addEventListener("click", function(){
 
 // Amrap Condtionals To Check If True/False
     if (amrapBool == "True") {
-        checkAmrap = setInterval(videoCheck, 100);
+        checkAmrap = setInterval(videoCheck, 0);
         newcookieIndex = amrapResponse.data[parseInt(exercisesParam)].Video.length;
         console.log("Amrap length:", newcookieIndex);
     } else {
@@ -407,9 +407,13 @@ nextButton.addEventListener("click", function(){
           /*getExercisesNum = checkurl.get("exercise");
           getExerciseNum = parseInt(getExerciseNum) + 1;
           setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());*/
+          console.log("---------------------------------------");  
           console.log("Current Exercise Index For Video", parseInt(videoIndex));
+          setTimeout(() => {
           videoCurrentSrc =
           amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(videoIndex)].url;
+        }, 100);
+
           console.log("---------------------------------------");          
           console.log(videoCurrentSrc);
           console.log("---------------------------------------");
@@ -422,22 +426,22 @@ nextButton.addEventListener("click", function(){
         /*getExercisesNum = checkurl.get("exercise");
         getExerciseNum = 0;
         setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());*/
+          console.log("---------------------------------------");
+          console.log("Current Video Index:", parseInt(videoIndex));
 
-        videoCurrentSrc =
-        amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(videoIndex)].url;
-        console.log("---------------------------------------");
-        console.log(videoCurrentSrc);
-        console.log("---------------------------------------");
-        console.log("Ran Request Video Src <= Reset ");
+          setTimeout(() => {
+          videoCurrentSrc =
+          amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(videoIndex)].url;
+          }, 100);
 
-        videoChangeSrc();
-        console.log("---------------------------------------");
-        console.log("Current Video Index:", parseInt(videoIndex));
+          console.log("---------------------------------------");
+          console.log(videoCurrentSrc);
+          console.log("---------------------------------------");
+          console.log("Ran Request Video Src <= Reset ");
       }
-      function videoChangeSrc() {
-        videos.src = videoCurrentSrc;
-        videos.play();
-      }
+
+      videos.src = videoCurrentSrc;
+      videos.play();
     }
   });
 
