@@ -178,7 +178,6 @@ nextButton.addEventListener("click", function(){
   let UpdateExerciseParam = checkurl.set("exercises", getNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
-  console.log(url.toString())
 
   console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
   console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
@@ -190,7 +189,6 @@ nextButton.addEventListener("click", function(){
   let UpdateExerciseParam = checkurl.set("exercises", getNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
-  console.log(url.toString())
 
   console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
   console.log("Round Number", roundParam, "Exercises Number", getNum, "Exercise Number", exerciseParam);
