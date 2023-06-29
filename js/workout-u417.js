@@ -392,10 +392,10 @@ nextButton.addEventListener("click", function(){
       let videoCurrentSrc;
       let videos = document.getElementById("video"); 
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-        if (newcookieIndex < amrapResponse.data[parseInt(getExercisesNum)].Video.length) {
-          console.log("Current Exercise Index For Video", parseInt(getExerciseNum));
+        if (parseInt(exerciseParam) < amrapResponse.data[parseInt(exercisesParam)].Video.length) {
+          console.log("Current Exercise Index For Video", parseInt(exerciseParam));
           videoCurrentSrc =
-          amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(getExerciseNum)].url;
+          amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(exerciseParam)].url;
           console.log("---------------------------------------");          
           console.log(videoCurrentSrc);
           console.log("---------------------------------------");
@@ -404,13 +404,13 @@ nextButton.addEventListener("click", function(){
           videoChangeSrc();
           //console.log(varExeIndex);
         }
-      } else if (parseInt(getExerciseNum) >= amrapResponse.data[parseInt(getExercisesNum)].Video.length) {
+      } else if (parseInt(exerciseParam) >= amrapResponse.data[parseInt(exercisesParam)].Video.length) {
         getExercisesNum = checkurl.get("exercise");
         getExerciseNum = 0;
         setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());
 
         videoCurrentSrc =
-        amrapResponse.data[parseInt(getExercisesNum)].Video[parseInt(getExerciseNum)].url;
+        amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(exerciseParam)].url;
         console.log("---------------------------------------");
         console.log(videoCurrentSrc);
         console.log("---------------------------------------");
@@ -418,7 +418,7 @@ nextButton.addEventListener("click", function(){
 
         videoChangeSrc();
         console.log("---------------------------------------");
-        console.log("Current Video Index:", parseInt(getExerciseNum));
+        console.log("Current Video Index:", parseInt(exerciseParam));
       }
       function videoChangeSrc() {
         videos.src = videoCurrentSrc;
