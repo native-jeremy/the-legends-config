@@ -84,7 +84,6 @@ let setRoundParam = checkurl.set("round", "1");
 let setExercisesParam = checkurl.set("exercises", "0");
 let setExerciseParam = checkurl.set("exercise", "0");
 window.history.replaceState(null, null, url.toString());
-console.log(url.toString())
   
 
 const testIndex = await Wized.data.get("n.parameter.link");
@@ -120,15 +119,13 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     const amrapResponse = response;
     let checkAmrap;
     let tempCookieIndex = 0;
+    console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
     console.log("All Exercises",amrapResponse);
     console.log("Single Exercise:", repDataInt.data[exercisesParam]);
 
     let diffStr = currentNum.innerHTML;
     let diffInt = parseInt(diffStr);
     let diffCurrent = diffInt - 1;
-
-
-    console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
 
 
 // Diff Increase Click Controls
