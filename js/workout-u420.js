@@ -434,6 +434,10 @@ nextButton.addEventListener("click", function(){
     }
   });
 
+  if (parseInt(exercisesParam) > 0 && amrapBool == "False"|| parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0) {
+    setTimeout(autoPlayVideo, 2000);
+  }
+
   //Function Calls Onload
   roundEnableLoad();
   //setTimeout(nextPage, 2000);
