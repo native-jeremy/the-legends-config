@@ -177,11 +177,12 @@ console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
 
 nextButton.addEventListener("click", function(){
-  getExercisesNum = checkurl.get("exercises");
+  updateParamForVideo() 
+  /*getExercisesNum = checkurl.get("exercises");
   getExercisesNum = parseInt(getExercisesNum) + 1;
   setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
   //window.history.replaceState(null, null, url.toString());
-  window.location.href = url.toString();
+  window.location.href = url.toString();*/
   checkParam()
 
 
@@ -226,9 +227,9 @@ nextButton.addEventListener("click", function(){
       getExercisesNum = parseInt(getExercisesNum) + 1;
       setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
     }
-
-    window.history.replaceState(null, null, url.toString());
-    checkParam()
+    window.location.href = url.toString();
+    //window.history.replaceState(null, null, url.toString());
+    //checkParam()
 
      //DEVELOPMENT ONLY
     console.log("---------------------------------------");
