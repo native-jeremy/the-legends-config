@@ -120,8 +120,8 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     const amrapResponse = response;
     let checkAmrap;
     let tempCookieIndex = 0;
-    console.log(repDataInt.data[exercisesParam]);
-    console.log("Amrap Response:",amrapResponse);
+    console.log("All Exercises",amrapResponse);
+    console.log("Single Exercise:", repDataInt.data[exercisesParam]);
 
     let diffStr = currentNum.innerHTML;
     let diffInt = parseInt(diffStr);
@@ -167,8 +167,8 @@ amrapBool = repDataInt.data[exercisesParam].Amrap;
 console.log("Amount: ", repAmount);
 console.log("Rep Type: ", repType);
 
-console.log(diffCurrent);
-console.log(amrapBool);
+console.log("Current Difficulty:", diffCurrent);
+console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
 nextButton.addEventListener("click", function(){
   let getNum = checkurl.get("exercises");
