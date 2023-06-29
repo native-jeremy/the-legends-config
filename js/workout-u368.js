@@ -183,9 +183,9 @@ nextButton.addEventListener("click", function(){
   });
 
   prevButton.addEventListener("click", function(){
-  let getNum = checkurl.get("exercise");
+  let getNum = checkurl.get("exercises");
   getNum = parseInt(getNum) - 1;
-  let UpdateExerciseParam = checkurl.set("exercise", getNum.toString());
+  let UpdateExerciseParam = checkurl.set("exercises", getNum.toString());
   window.history.replaceState(null, null, url.toString());
   checkParam()
   console.log(url.toString())
