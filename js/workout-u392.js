@@ -360,20 +360,12 @@ nextButton.addEventListener("click", function(){
 
 // Video Condtionals To Change Src When Doing An Amrap
     function videoCheck() {
-      if(cookieIndex === undefined || cookieIndex === "undefined")
-      {
-        tempCookieIndex = 0;
-      }
-      else {
-        tempCookieIndex = cookieIndex
-      }
       let videoCurrentSrc;
       let videos = document.getElementById("video"); 
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-        if (varExeIndex < amrapResponse.data[tempCookieIndex].Video.length) {
-          varExeIndex = varExeIndex + 1;
+        if (parseInt(getExerciseNum) < amrapResponse.data[parseInt(getExercisesNum)].Video.length) {
           videoCurrentSrc =
-          amrapResponse.data[tempCookieIndex].Video[varExeIndex].url;
+          amrapResponse.data[parseInt(exercisesParam)].Video[getExerciseNum].url;
           console.log("---------------------------------------");          
           console.log(videoCurrentSrc);
           console.log("---------------------------------------");
@@ -382,10 +374,13 @@ nextButton.addEventListener("click", function(){
           videoChangeSrc();
           //console.log(varExeIndex);
         }
-      } else if (varExeIndex >= amrapResponse.data[tempCookieIndex].Video.length) {
-        varExeIndex = 0;
+      } else if (getExerciseNum >= amrapResponse.data[getExercisesNum].Video.length) {
+        getExercisesNum = checkurl.get("exercise");
+        getExerciseNum = 0;
+        setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());
+
         videoCurrentSrc =
-          amrapResponse.data[cookieIndex].Video[varExeIndex].url;
+        amrapResponse.data[getExercisesNum].Video[getExerciseNum].url;
         console.log("---------------------------------------");
         console.log(videoCurrentSrc);
         console.log("---------------------------------------");
@@ -393,7 +388,7 @@ nextButton.addEventListener("click", function(){
 
         videoChangeSrc();
         console.log("---------------------------------------");
-        console.log(varExeIndex);
+        console.log("Current Video Index:", getExerciseNum);
       }
       function videoChangeSrc() {
         videos.src = videoCurrentSrc;
