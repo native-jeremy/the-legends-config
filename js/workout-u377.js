@@ -114,9 +114,7 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
     let repAmount;
-    console.log("Amount: ", repAmount);
     let repType;
-    console.log("Rep Type: ", repType);
     let varExeIndex = 0;
     let amrapBool;
     const amrapResponse = response;
@@ -165,6 +163,9 @@ New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
 repAmount = repDataInt.data[exercisesParam].Amounts_Name[diffCurrent];
 repType = repDataInt.data[exercisesParam].Rep_Type[0];
 amrapBool = repDataInt.data[exercisesParam].Amrap;
+
+console.log("Amount: ", repAmount);
+console.log("Rep Type: ", repType);
 
 console.log(diffCurrent);
 console.log(amrapBool);
