@@ -190,7 +190,7 @@ nextButton.addEventListener("click", function(){
   checkParam()
   console.log(url.toString())
 
-  console.log("Video Array Length:", amrapResponse.data[exercisesParam].Video.length);
+  console.log("Video Array Length:", amrapResponse.data[getNum].Video.length);
   });
 
 
