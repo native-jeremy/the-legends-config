@@ -125,6 +125,7 @@ window.history.replaceState(null, null, url.toString());
     let diffInt = parseInt(diffStr);
     let diffCurrent = diffInt - 1;
     let vidSrc = document.getElementById("video");
+    let videoIndex = parseInt(exerciseParam);
 
     vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
 
@@ -391,30 +392,32 @@ nextButton.addEventListener("click", function(){
     function videoCheck() {
       let videoCurrentSrc;
       let videos = document.getElementById("video"); 
-      if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-        if (parseInt(exerciseParam) < amrapResponse.data[parseInt(exercisesParam)].Video.length) {
-          getExercisesNum = checkurl.get("exercise");
-          getExerciseNum = parseInt(getExerciseNum) + 1;
-          setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());
 
-          console.log("Current Exercise Index For Video", parseInt(exerciseParam));
+      if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
+        if (videoIndex < amrapResponse.data[parseInt(exercisesParam)].Video.length) {
+          videoIndex = videoIndex + 1;
+          
+          /*getExercisesNum = checkurl.get("exercise");
+          getExerciseNum = parseInt(getExerciseNum) + 1;
+          setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());*/
+          console.log("Current Exercise Index For Video", parseInt(videoIndex));
           videoCurrentSrc =
-          amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(exerciseParam)].url;
+          amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(videoIndex)].url;
           console.log("---------------------------------------");          
           console.log(videoCurrentSrc);
           console.log("---------------------------------------");
           console.log("Ran Request Video Src => Updated");
 
           videoChangeSrc();
-          //console.log(varExeIndex);
         }
-      } else if (parseInt(exerciseParam) >= amrapResponse.data[parseInt(exercisesParam)].Video.length) {
-        getExercisesNum = checkurl.get("exercise");
+      } else if (videoIndex >= amrapResponse.data[parseInt(exercisesParam)].Video.length) {
+        videoIndex = 0;
+        /*getExercisesNum = checkurl.get("exercise");
         getExerciseNum = 0;
-        setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());
+        setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());*/
 
         videoCurrentSrc =
-        amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(exerciseParam)].url;
+        amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(videoIndex)].url;
         console.log("---------------------------------------");
         console.log(videoCurrentSrc);
         console.log("---------------------------------------");
@@ -422,7 +425,7 @@ nextButton.addEventListener("click", function(){
 
         videoChangeSrc();
         console.log("---------------------------------------");
-        console.log("Current Video Index:", parseInt(exerciseParam));
+        console.log("Current Video Index:", parseInt(videoIndex));
       }
       function videoChangeSrc() {
         videos.src = videoCurrentSrc;
