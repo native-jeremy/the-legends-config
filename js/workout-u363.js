@@ -75,6 +75,17 @@ window.onload = async () => {
   console.log(exerciseParam);
 
   roundPopup.style.display = "flex";
+
+
+let activeParam = document.getElementById("activeParam")
+let params = (window.location.href);
+let url = new URL (params)
+let checkurl = url.searchParams;
+let setRoundParam = checkurl.set("round", "1");
+let setExercisesParam = checkurl.set("exercises", "0");
+let setExerciseParam = checkurl.set("exercise", "0");
+window.history.replaceState(null, null, url.toString());
+console.log(url.toString())
   
 
 const testIndex = await Wized.data.get("n.parameter.link");
@@ -91,9 +102,9 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
 
   console.log("Here is the Parameter Value", testIndex);
 
-  // Parameter indexing setup
+  /* Parameter indexing setup
   let params = new URLSearchParams(window.location.search);
-  params.get('exercise');
+  params.get('exercise');*/
 
 
   //Function Calls Onload
@@ -146,7 +157,9 @@ const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
     console.log(diffCurrent)
   });
 
-// New DEVELOPMENT Parameter setup for indexing using ("Query String")
+
+/* WORK IN PROGRESS CODE Thursday 29th June 2023 
+New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
 
 repAmount = repDataInt.data[exercisesParam].Amounts_Name[diffCurrent];
 repType = repDataInt.data[exercisesParam].Rep_Type[0];
@@ -158,6 +171,34 @@ console.log(amrapBool);
 
 console.log("Video Array Length:", amrapResponse.data[exercisesParam].Video.length);
 
+nextButton.addEventListener("click", function(){
+  let getNum = checkurl.get("exercise");
+  getNum = parseInt(getNum) + 1;
+  let UpdateExerciseParam = checkurl.set("exercise", getNum.toString());
+  window.history.replaceState(null, null, url.toString());
+  checkParam()
+  console.log(url.toString())
+  });
+
+  prevButtonButton.addEventListener("click", function(){
+  let getNum = checkurl.get("exercise");
+  getNum = parseInt(getNum) - 1;
+  let UpdateExerciseParam = checkurl.set("exercise", getNum.toString());
+  window.history.replaceState(null, null, url.toString());
+  checkParam()
+  console.log(url.toString())
+  });
+
+
+  function checkParam() {
+    if(checkurl.get("exercise") === "3")
+  {
+      activeParam.innerHTML = checkurl.get("exercise");
+  }
+  else {
+  	activeParam.innerHTML = "Audio Settings";
+  }
+}
 
 // Amrap Condtionals To Check If True/False
     if (amrapBool == "True") {
@@ -307,7 +348,7 @@ console.log("Video Array Length:", amrapResponse.data[exercisesParam].Video.leng
         if (varExeIndex < amrapResponse.data[tempCookieIndex].Video.length) {
           varExeIndex = varExeIndex + 1;
           videoCurrentSrc =
-            amrapResponse.data[tempCookieIndex].Video[varExeIndex].url;
+          amrapResponse.data[tempCookieIndex].Video[varExeIndex].url;
           console.log(videoCurrentSrc);
           console.log("Ran Request");
 
