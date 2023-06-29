@@ -206,24 +206,10 @@ nextButton.addEventListener("click", function(){
 
 // Amrap Condtionals To Check If True/False
     if (amrapBool == "True") {
-      if(cookieIndex === undefined || cookieIndex === "undefined"){
         checkAmrap = setInterval(videoCheck, 0);
-        let newcookieIndex = amrapResponse.data[tempCookieIndex].Video.length;
-        Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
-        const amrapIndex = Wized.data.get("c.exerciseindex");
-        console.log(amrapIndex);
+        let newcookieIndex = amrapResponse.data[exercisesParam].Video.length;
         console.log("Amrap length:", newcookieIndex);
-        console.log("Amrap:", amrapResponse.data[tempCookieIndex]);
-      }
-      else {
-        checkAmrap = setInterval(videoCheck, 0);
-        let newcookieIndex = amrapResponse.data[cookieIndex].Video.length;
-        Wized.data.setCookie("exerciseindex", newcookieIndex); // c.cookieindex"
-        const amrapIndex = Wized.data.get("c.exerciseindex");
-        console.log(amrapIndex);
-        console.log("Amrap length:", newcookieIndex);
-        console.log("Amrap:", amrapResponse.data[cookieIndex]);
-      }
+        console.log("Amrap:", amrapResponse.data[exercisesParam]);
     } else {
       clearInterval(checkAmrap);
     }
@@ -239,7 +225,7 @@ nextButton.addEventListener("click", function(){
     }*/
 
     //let counter = repAmount;
-    console.log(cookieIndex);
+    console.log("Round Number", roundParam, "Exercises Number", exercisesParam, "Exercise Number", exerciseParam);
 
     let clickNum = 0;
 
