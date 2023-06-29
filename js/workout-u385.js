@@ -258,7 +258,7 @@ nextButton.addEventListener("click", function(){
         repCount();
       }
       console.log("---------------------------------------");
-      console.log("Rep OR Time", repType);
+      console.log(repType, "Applied To The Exercise");
     }
 
     
@@ -303,7 +303,8 @@ nextButton.addEventListener("click", function(){
         video.play();
         playButton.classList.toggle("pause");
         timerText.classList.remove("pausetime");
-        console.log(video.duration);
+        console.log("---------------------------------------");
+        console.log("Video Duration", video.duration + "s");
       } else {
         video.pause();
         playButton.classList.toggle("pause");
@@ -504,13 +505,11 @@ nextButton.addEventListener("click", function(){
     }
 
     // Development Purposes (DEBUGGING)
-    async() => {
-    const sirenMuteCookie = await Wized.data.get("c.sirenmute");
+    const sirenMuteCookie = Wized.data.get("c.sirenmute");
     console.log("---------------------------------------");
     console.log("mute cookie changed to: ", sirenMuteCookie);
     console.log("---------------------------------------");
   }
-}
 
 
 // Voice Condtionals Click On/Off  
