@@ -132,17 +132,19 @@ window.history.replaceState(null, null, url.toString());
 
    //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
    let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
-   let roundLength = amrapResponse.data.length
+   let roundLength = repDataInt.data.length
 
    console.log("---------------------------------------");
-   console.log(exercisesLength);
+   console.log("Exercises Length",exercisesLength);
 
-   if (parseInt(exercisesParam) > roundLength) {
+  if (parseInt(exercisesParam) > roundLength) {
     RoundNumberText.innerHTML = "Workout Completed"
   }
   else {
     RoundNumberText.innerHTML = parseInt(exercisesParam)
   }
+  console.log("---------------------------------------");
+  console.log("Round Length", roundLengthLength);
 
 
 // Diff Increase Click Controls
