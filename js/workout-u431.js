@@ -442,7 +442,7 @@ nextButton.addEventListener("click", function(){
   });
 
   //Function Calls Onload
-  roundEnableLoad();
+  //roundEnableLoad();
   //setTimeout(nextPage, 2000);
   sirenEnableLoad();
   voiceEnableLoad();
