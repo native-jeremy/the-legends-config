@@ -322,7 +322,7 @@ window.history.replaceState(null, null, url.toString());
       RoundNumberText.innerHTML = "Workout Completed"
       getRoundNum = checkurl.get("round");
       getRoundNum = "completed";
-      setRoundNum = checkurl.set("exercises", getRoundNum.toString());
+      setRoundNum = checkurl.set("round", getRoundNum.toString());
     }
   
 
