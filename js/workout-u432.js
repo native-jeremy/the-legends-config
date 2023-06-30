@@ -19,6 +19,7 @@ const repText = document.getElementById("repText");
 const timerText = document.getElementById("safeTimerDisplay");
 const currentTest = document.getElementById("current");
 const durationTest = document.getElementById("dur");
+const RoundNumberText = document.getElementById("mainNumText");
 
 
 // Param Int Set Variables
@@ -166,7 +167,8 @@ New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
 
 repAmount = repDataInt.data[parseInt(exercisesParam)].Amounts_Name[diffCurrent];
 repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type[0];
-amrapBool = repDataInt.data[(parseInt(exercisesParam))].Amrap;
+amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
+RoundNumberText.innerHTML = parseInt(exercisesParam)
 
 console.log("---------------------------------------");
 console.log("Amount: ", repAmount);
