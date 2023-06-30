@@ -320,9 +320,7 @@ window.history.replaceState(null, null, url.toString());
     }
     else {
       RoundNumberText.innerHTML = "Workout Completed"
-      getRoundNum = checkurl.get("round");
-      getRoundNum = "completed";
-      setRoundNum = checkurl.set("round", getRoundNum.toString());
+      Wized.data.setVariable("complete", "completed");
     }
   
 
