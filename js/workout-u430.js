@@ -458,7 +458,7 @@ nextButton.addEventListener("click", function(){
   });
 
 
-// Round Condtionals To Enable Popup
+/* Round Condtionals To Enable Popup
   function roundEnableLoad() {
     // Round check (if round popup needs to show)
     if (cookieIndex === undefined || cookieIndex === "undefined") {
@@ -530,7 +530,7 @@ nextButton.addEventListener("click", function(){
       prevButton.style.display = "flex";
       prevButtonDisabled.style.display = "none";
     }
-  }
+  }*/
 
 
 // Autoplay Video Function
