@@ -14,14 +14,15 @@ window.onload = async () => {
   // Completed Data Load
   Wized.request.await("Load Users", (response) => {
 
-    if (response === 200)
+    if (response.status === 200)
     {
       const getData = response;
       let applyData = getData.data.Completed;
       console.log(applyData);
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
-  
+
+      if (applyData.length !== 0)
       setTimeout(loopCompleted, 2000);
       function loopCompleted ()
       {
