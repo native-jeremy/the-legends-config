@@ -24,18 +24,16 @@ window.onload = async () => {
 
       if (applyData.length !== 0)
       {
-            for (let i = 0; i < applyData.length; i++) {
-              icon[i].classList.add("complete-indicator");
-              //console.log(applyData.length)
-            }
-            let progressNum = applyData.length / workout.length * 100
-            const circleProgress = new CircleProgress('.circle-latest');
-              circleProgress.attr({
-              max: 100,
-              value: progressNum,
-              textFormat: "percent",
-              indeterminateText: 0
-
+        for (let i = 0; i < applyData.length; i++) {
+            icon[i].classList.add("complete-indicator");
+        }
+        let progressNum = applyData.length / workout.length * 100
+        const circleProgress = new CircleProgress('.circle-latest');
+          circleProgress.attr({
+          max: 100,
+          value: progressNum,
+          textFormat: "percent",
+          indeterminateText: 0});
       }
     }
   });
