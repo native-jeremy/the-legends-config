@@ -115,6 +115,9 @@ window.history.replaceState(null, null, url.toString());
     let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
+
+    let exerciseData = repDataInt.data[parseInt(exercisesParam)]
+
     console.log("---------------------------------------");
     console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));
     console.log("---------------------------------------");
@@ -128,37 +131,25 @@ window.history.replaceState(null, null, url.toString());
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
-     //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
-   //let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
+    if(exerciseData !== undefined) {
+    vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
+    }
+
+   //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
+   let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
    let roundLength = repDataInt.data.length
 
    console.log("---------------------------------------");
-   console.log("Exercises Length",exercisesLength);
+   console.log(exercisesLength);
 
-   if (parseInt(exercisesParam) === 2) {
-     RoundNumberText.innerHTML = "Workout Completed"
-   }
-   else {
-     RoundNumberText.innerHTML = parseInt(exercisesParam)
-   }
-   console.log("---------------------------------------");
-   console.log("Round Length", roundLength);
-
-    vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
-
-  
-
-   console.log("---------------------------------------");
-   console.log("Exercises Length",exercisesLength);
-
-  if (parseInt(exercisesParam) === 2) {
+  if (parseInt(exercisesParam) > roundLength) {
     RoundNumberText.innerHTML = "Workout Completed"
   }
   else {
     RoundNumberText.innerHTML = parseInt(exercisesParam)
   }
   console.log("---------------------------------------");
-  console.log("Round Length", roundLength);
+  console.log("Round Length", roundLengthLength);
 
 
 // Diff Increase Click Controls
