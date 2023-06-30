@@ -128,6 +128,13 @@ window.history.replaceState(null, null, url.toString());
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
+    if (videoIndex < exercisesLength) {
+      RoundNumberText.innerHTML = "Workout Completed"
+    }
+    else {
+      RoundNumberText.innerHTML = parseInt(exercisesParam)
+    }
+
     vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
 
    //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
@@ -168,7 +175,6 @@ New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
 repAmount = repDataInt.data[parseInt(exercisesParam)].Amounts_Name[diffCurrent];
 repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type[0];
 amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
-RoundNumberText.innerHTML = parseInt(exercisesParam)
 
 console.log("---------------------------------------");
 console.log("Amount: ", repAmount);
