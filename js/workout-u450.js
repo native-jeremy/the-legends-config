@@ -141,12 +141,7 @@ window.history.replaceState(null, null, url.toString());
       console.log(exercisesLength);
       console.log("---------------------------------------");
       console.log("Round Length", roundLength);
-      if (parseInt(exercisesParam) > 2) {
-        RoundNumberText.innerHTML = "Workout Completed"
-      }
-      else {
         RoundNumberText.innerHTML = parseInt(exercisesParam)
-      }
     
     
     // Diff Increase Click Controls
@@ -323,7 +318,7 @@ window.history.replaceState(null, null, url.toString());
           clickNum = clickNum + 1;
         });
     }
-
+    RoundNumberText.innerHTML = "Workout Completed"
   
 
 
