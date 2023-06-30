@@ -101,6 +101,8 @@ window.onload = async () => {
   //setIntExerciseNum = checkurl.set("exercise", "0");
   window.history.replaceState(null, null, url.toString());
 
+  enableDisabledStates ()
+
   //const roundParamIndex = await Wized.data.get("n.parameter.ri");
   //const exercisesParamIndex = await Wized.data.get("n.parameter.esi");
   //const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
