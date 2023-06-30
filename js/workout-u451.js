@@ -318,7 +318,9 @@ window.history.replaceState(null, null, url.toString());
           clickNum = clickNum + 1;
         });
     }
-    RoundNumberText.innerHTML = "Workout Completed"
+    else {
+      RoundNumberText.innerHTML = "Workout Completed"
+    }
   
 
 
