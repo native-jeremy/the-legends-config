@@ -135,7 +135,7 @@ window.history.replaceState(null, null, url.toString());
    console.log("---------------------------------------");
    console.log(exercisesLength);
 
-   if (exercisesParam > exercisesLength) {
+   if (parseInt(exercisesParam) > exercisesLength) {
     RoundNumberText.innerHTML = "Workout Completed"
   }
   else {
