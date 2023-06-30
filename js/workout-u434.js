@@ -128,19 +128,19 @@ window.history.replaceState(null, null, url.toString());
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
-    if (videoIndex < exercisesLength) {
-      RoundNumberText.innerHTML = "Workout Completed"
-    }
-    else {
-      RoundNumberText.innerHTML = parseInt(exercisesParam)
-    }
-
     vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
 
    //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
    let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
    console.log("---------------------------------------");
    console.log(exercisesLength);
+
+   if (videoIndex < exercisesLength) {
+    RoundNumberText.innerHTML = "Workout Completed"
+  }
+  else {
+    RoundNumberText.innerHTML = parseInt(exercisesParam)
+  }
 
 
 // Diff Increase Click Controls
