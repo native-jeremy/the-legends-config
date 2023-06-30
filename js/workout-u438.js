@@ -132,10 +132,12 @@ window.history.replaceState(null, null, url.toString());
 
    //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
    let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
+   let roundLength = amrapResponse.data.length
+
    console.log("---------------------------------------");
    console.log(exercisesLength);
 
-   if (parseInt(exercisesParam) > exercisesLength) {
+   if (parseInt(exercisesParam) > roundLength) {
     RoundNumberText.innerHTML = "Workout Completed"
   }
   else {
