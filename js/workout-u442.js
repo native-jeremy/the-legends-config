@@ -128,11 +128,27 @@ window.history.replaceState(null, null, url.toString());
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
-    vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
+    console.log("---------------------------------------");
+    console.log("Exercises Length",exercisesLength);
 
-   //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
+
+     //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
    let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
    let roundLength = repDataInt.data.length
+   
+ 
+   if (parseInt(exercisesParam) === 2) {
+     RoundNumberText.innerHTML = "Workout Completed"
+   }
+   else {
+     RoundNumberText.innerHTML = parseInt(exercisesParam)
+   }
+   console.log("---------------------------------------");
+   console.log("Round Length", roundLength);
+
+    vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
+
+  
 
    console.log("---------------------------------------");
    console.log("Exercises Length",exercisesLength);
