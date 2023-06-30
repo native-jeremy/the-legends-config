@@ -21,7 +21,6 @@ const currentTest = document.getElementById("current");
 const durationTest = document.getElementById("dur");
 const RoundNumberText = document.getElementById("mainNumText");
 
-
 // Param Int Set Variables
 let setIntRoundNum;
 let setIntExercisesNum;
@@ -92,21 +91,21 @@ window.onload = async () => {
 
   roundPopup.style.display = "flex";
 
-// URL Searching Setup and Declaration
-let activeParam = document.getElementById("activeParam")
-let params = (window.location.href);
-let url = new URL (params)
-let checkurl = url.searchParams;
-//setIntRoundNum = checkurl.set("round", "1");
-//setIntExercisesNum = checkurl.set("exercises", "0");
-//setIntExerciseNum = checkurl.set("exercise", "0");
-window.history.replaceState(null, null, url.toString());
+  // URL Searching Setup and Declaration
+  let activeParam = document.getElementById("activeParam");
+  let params = window.location.href;
+  let url = new URL(params);
+  let checkurl = url.searchParams;
+  //setIntRoundNum = checkurl.set("round", "1");
+  //setIntExercisesNum = checkurl.set("exercises", "0");
+  //setIntExerciseNum = checkurl.set("exercise", "0");
+  window.history.replaceState(null, null, url.toString());
 
-//const roundParamIndex = await Wized.data.get("n.parameter.ri");
-//const exercisesParamIndex = await Wized.data.get("n.parameter.esi");
-//const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
+  //const roundParamIndex = await Wized.data.get("n.parameter.ri");
+  //const exercisesParamIndex = await Wized.data.get("n.parameter.esi");
+  //const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
 
-// [- Step 2 -] Exercises Request Response From Wized
+  // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
     let repAmount;
@@ -116,12 +115,19 @@ window.history.replaceState(null, null, url.toString());
     const amrapResponse = response;
     let checkAmrap;
 
-    let exerciseData = repDataInt.data[parseInt(exercisesParam)]
+    let exerciseData = repDataInt.data[parseInt(exercisesParam)];
 
     console.log("---------------------------------------");
-    console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));
+    console.log(
+      "Round Number",
+      parseInt(roundParam),
+      "Exercises Number",
+      parseInt(exercisesParam),
+      "Exercise Number",
+      parseInt(exerciseParam)
+    );
     console.log("---------------------------------------");
-    console.log("All Exercises",amrapResponse);
+    console.log("All Exercises", amrapResponse);
     console.log("---------------------------------------");
     console.log("Single Exercise:", repDataInt.data[parseInt(exercisesParam)]);
 
@@ -131,112 +137,130 @@ window.history.replaceState(null, null, url.toString());
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
-    if(exerciseData !== undefined) {
-    vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
-       //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
-      let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
-      let roundLength = repDataInt.data.length
+    if (exerciseData !== undefined) {
+      vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url;
+      //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
+      let exercisesLength =
+        amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
+      let roundLength = repDataInt.data.length;
+
+      enableDisabledStates ()
 
       console.log("---------------------------------------");
       console.log(exercisesLength);
       console.log("---------------------------------------");
       console.log("Round Length", roundLength);
-      RoundNumberText.innerHTML = parseInt(exercisesParam) + 1
-    
-    
-    // Diff Increase Click Controls
+      RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
+
+      // Diff Increase Click Controls
       plusBtn.addEventListener("click", function () {
         if (amount < maxLimit) {
-          diffCurrent++
+          diffCurrent++;
           amount++;
           currentNum.innerHTML = amount;
         } else {
           currentNum.innerHTML = maxLimit;
         }
-        console.log(diffCurrent)
+        console.log(diffCurrent);
       });
-    
-    // Diff Decrease Click Controls
-       minusBtn.addEventListener("click", function () {
+
+      // Diff Decrease Click Controls
+      minusBtn.addEventListener("click", function () {
         if (amount > minLimit) {
-          diffCurrent--
+          diffCurrent--;
           amount--;
           currentNum.innerHTML = amount;
         } else {
-          diffCurrent = 0
+          diffCurrent = 0;
           amount = minLimit;
         }
-        console.log(diffCurrent)
+        console.log(diffCurrent);
       });
-    
-    
-    /* WORK IN PROGRESS CODE Thursday 29th June 2023 
+
+      /* WORK IN PROGRESS CODE Thursday 29th June 2023 
     New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
-    
-    repAmount = repDataInt.data[parseInt(exercisesParam)].Amounts_Name[diffCurrent];
-    repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type[0];
-    amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
-    
-    console.log("---------------------------------------");
-    console.log("Amount: ", repAmount);
-    console.log("---------------------------------------");
-    console.log("Rep Type: ", repType);
-    console.log("---------------------------------------");
-    
-    console.log("Current Difficulty:", diffCurrent);
-    console.log("---------------------------------------");
-    console.log("Is The Selected Exercise An Amrap:", amrapBool);
-    
-    
-    nextButton.addEventListener("click", function(){
-      updateParamForVideo() 
-      /*getExercisesNum = checkurl.get("exercises");
+
+      repAmount =
+        repDataInt.data[parseInt(exercisesParam)].Amounts_Name[diffCurrent];
+      repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type[0];
+      amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
+
+      console.log("---------------------------------------");
+      console.log("Amount: ", repAmount);
+      console.log("---------------------------------------");
+      console.log("Rep Type: ", repType);
+      console.log("---------------------------------------");
+
+      console.log("Current Difficulty:", diffCurrent);
+      console.log("---------------------------------------");
+      console.log("Is The Selected Exercise An Amrap:", amrapBool);
+
+      nextButton.addEventListener("click", function () {
+        updateParamForVideo();
+        /*getExercisesNum = checkurl.get("exercises");
       getExercisesNum = parseInt(getExercisesNum) + 1;
       setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
       //window.history.replaceState(null, null, url.toString());
       window.location.href = url.toString();
       checkParam()*/
-    
-    
-      //DEVELOPMENT ONLY
-      console.log("---------------------------------------");
-      console.log("Next Button Clicked Updated Data Below");
-      console.log("---------------------------------------");
-      console.log("Video Array Length:", amrapResponse.data[parseInt(exercisesParam)].Video.length);
-      console.log("---------------------------------------");
-      console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));
+
+        //DEVELOPMENT ONLY
+        console.log("---------------------------------------");
+        console.log("Next Button Clicked Updated Data Below");
+        console.log("---------------------------------------");
+        console.log(
+          "Video Array Length:",
+          amrapResponse.data[parseInt(exercisesParam)].Video.length
+        );
+        console.log("---------------------------------------");
+        console.log(
+          "Round Number",
+          parseInt(roundParam),
+          "Exercises Number",
+          parseInt(exercisesParam),
+          "Exercise Number",
+          parseInt(exerciseParam)
+        );
       });
-    
-      prevButton.addEventListener("click", function(){
-      backParamForVideo()
-      /*getExercisesNum = checkurl.get("exercises");
+
+      prevButton.addEventListener("click", function () {
+        backParamForVideo();
+        /*getExercisesNum = checkurl.get("exercises");
       getExercisesNum = parseInt(getExercisesNum) - 1;
       setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
       window.history.replaceState(null, null, url.toString());
       checkParam()*/
-    
-      //DEVELOPMENT ONLY
-      console.log("---------------------------------------");
-      console.log("Prev Button Clicked Updated Data Below");
-      console.log("---------------------------------------");
-      console.log("Amrap Video Array Length:", amrapResponse.data[parseInt(exercisesParam)].Video.length);
-      console.log("---------------------------------------");
-      console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));
+
+        //DEVELOPMENT ONLY
+        console.log("---------------------------------------");
+        console.log("Prev Button Clicked Updated Data Below");
+        console.log("---------------------------------------");
+        console.log(
+          "Amrap Video Array Length:",
+          amrapResponse.data[parseInt(exercisesParam)].Video.length
+        );
+        console.log("---------------------------------------");
+        console.log(
+          "Round Number",
+          parseInt(roundParam),
+          "Exercises Number",
+          parseInt(exercisesParam),
+          "Exercise Number",
+          parseInt(exerciseParam)
+        );
       });
-    
-    
-    
-      function updateParamForVideo(){
+
+      function updateParamForVideo() {
         //if (parseInt(exercisesParam) > exercisesLength) {
-          getExercisesNum = checkurl.get("exercises");
-          getExercisesNum = parseInt(getExercisesNum) + 1;
-          setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        getExercisesNum = checkurl.get("exercises");
+        getExercisesNum = parseInt(getExercisesNum) + 1;
+        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         //}
-    
+
         window.location.href = url.toString();
         //window.history.replaceState(null, null, url.toString());
         //checkParam()
-    
+
         /* //DEVELOPMENT ONLY
         console.log("---------------------------------------");
         console.log("Next Button Clicked Updated Data Below");
@@ -245,18 +269,18 @@ window.history.replaceState(null, null, url.toString());
         console.log("---------------------------------------");
         console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));*/
       }
-    
-      function backParamForVideo(){
+
+      function backParamForVideo() {
         //if (parseInt(exercisesParam) > exercisesLength) {
-          getExercisesNum = checkurl.get("exercises");
-          getExercisesNum = parseInt(getExercisesNum) - 1;
-          setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        getExercisesNum = checkurl.get("exercises");
+        getExercisesNum = parseInt(getExercisesNum) - 1;
+        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         //}
-    
+
         window.location.href = url.toString();
         //window.history.replaceState(null, null, url.toString());
         //checkParam()
-    
+
         /* //DEVELOPMENT ONLY
         console.log("---------------------------------------");
         console.log("Next Button Clicked Updated Data Below");
@@ -265,67 +289,69 @@ window.history.replaceState(null, null, url.toString());
         console.log("---------------------------------------");
         console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));*/
       }
-    
-    
+
       function checkParam() {
-        if(checkurl.get("exercise") === "3")
-      {
+        if (checkurl.get("exercise") === "3") {
           activeParam.innerHTML = checkurl.get("exercise");
-      }
-      else {
-        activeParam.innerHTML = "Audio Settings";
-      }
-    }
-    
-    // Amrap Condtionals To Check If True/False
-        if (amrapBool == "True") {
-            checkAmrap = setInterval(videoCheck, 25);
-            newcookieIndex = amrapResponse.data[parseInt(exercisesParam)].Video.length;
-            console.log("Amrap length:", newcookieIndex);
         } else {
-          clearInterval(checkAmrap);
+          activeParam.innerHTML = "Audio Settings";
         }
-    
-        if (parseInt(exercisesParam) > 0 && amrapBool == "False" || parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0) {
-          setTimeout(autoPlayVideo, 2000);
-        }
-        else if (parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0 || exerciseParam === 0) {
-          setTimeout(autoPlayVideo, 2000);
-        }
-    
-      
-    
-        /* Enable header to show correctly (if round popup is hidden)
+      }
+
+      // Amrap Condtionals To Check If True/False
+      if (amrapBool == "True") {
+        checkAmrap = setInterval(videoCheck, 25);
+        newcookieIndex =
+          amrapResponse.data[parseInt(exercisesParam)].Video.length;
+        console.log("Amrap length:", newcookieIndex);
+      } else {
+        clearInterval(checkAmrap);
+      }
+
+      if (
+        (parseInt(exercisesParam) > 0 && amrapBool == "False") ||
+        (parseInt(exercisesParam) > 0 &&
+          amrapBool == "True" &&
+          videoIndex === 0)
+      ) {
+        setTimeout(autoPlayVideo, 2000);
+      } else if (
+        (parseInt(exercisesParam) > 0 &&
+          amrapBool == "True" &&
+          videoIndex === 0) ||
+        exerciseParam === 0
+      ) {
+        setTimeout(autoPlayVideo, 2000);
+      }
+
+      /* Enable header to show correctly (if round popup is hidden)
         if (roundPopup.style.display === "none") {
           exerciseHeader.style.display = "flex";
           exerciseHeader.style.opacity = 1;
           exerciseTitle.style.display = "flex";
           exerciseTitle.style.opacity = 1;
         }*/
-    
-        //let counter = repAmount;
-        let clickNum = 0;
-    
-    
-    // Play Button click controls
-        playButton.addEventListener("click", function () {
-          if (clickNum < 1) {
-            playVoice();
-            //Conditions
-            roundType();
-          }
-          playVideo();
-          clickNum = clickNum + 1;
-        });
-    }
-    else {
-      RoundNumberText.innerHTML = "Workout Completed"
+
+      //let counter = repAmount;
+      let clickNum = 0;
+
+      // Play Button click controls
+      playButton.addEventListener("click", function () {
+        if (clickNum < 1) {
+          playVoice();
+          //Conditions
+          roundType();
+        }
+        playVideo();
+        clickNum = clickNum + 1;
+      });
+    } else {
+      RoundNumberText.innerHTML = "Workout Completed";
       Wized.data.setVariable("complete", "completed");
+      enableDisabledStates ()
     }
-  
 
-
-// Round Type Condtionals To Enable Time/Reps   
+    // Round Type Condtionals To Enable Time/Reps
     function roundType() {
       if (repType === "Time") {
         timer();
@@ -336,7 +362,6 @@ window.history.replaceState(null, null, url.toString());
       console.log(repType, "Applied To The Exercise");
     }
 
-    
     // Timer setup function
     function timer() {
       let counter = repAmount;
@@ -362,16 +387,14 @@ window.history.replaceState(null, null, url.toString());
       }, 1000);
     }
 
-
-// Rep Count Apply Function
+    // Rep Count Apply Function
     function repCount() {
       let counter = repAmount;
       repText.innerHTML = repType;
       timerText.innerHTML = counter;
     }
 
-
-// Video Condtionals To Enable If Paused/Playing    
+    // Video Condtionals To Enable If Paused/Playing
     function playVideo() {
       let video = document.getElementById("video");
       if (video.paused) {
@@ -387,8 +410,7 @@ window.history.replaceState(null, null, url.toString());
       }
     }
 
-
-// Siren Condtionals To Enable If Paused/Playing
+    // Siren Condtionals To Enable If Paused/Playing
     function playSiren() {
       let sirenSrc = document.getElementById("sirenSrc");
       if (sirenSrc.paused) {
@@ -398,8 +420,7 @@ window.history.replaceState(null, null, url.toString());
       }
     }
 
-
-// Voice Condtionals To Enable If Paused/Playing
+    // Voice Condtionals To Enable If Paused/Playing
     function playVoice() {
       let voiceSrc = document.getElementById("voiceSrc");
       if (voiceSrc.paused) {
@@ -409,39 +430,46 @@ window.history.replaceState(null, null, url.toString());
       }
     }
 
-
-// Video Condtionals To Change Src When Doing An Amrap
+    // Video Condtionals To Change Src When Doing An Amrap
     function videoCheck() {
       let videoCurrentSrc;
-      let videos = document.getElementById("video"); 
+      let videos = document.getElementById("video");
 
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-        if (videoIndex < amrapResponse.data[parseInt(exercisesParam)].Video.length) {
+        if (
+          videoIndex < amrapResponse.data[parseInt(exercisesParam)].Video.length
+        ) {
           videoIndex = videoIndex + 1;
-          
+
           /*getExercisesNum = checkurl.get("exercise");
           getExerciseNum = parseInt(getExerciseNum) + 1;
           setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());*/
           console.log("Current Exercise Index For Video", parseInt(videoIndex));
-          
+
           videoCurrentSrc =
-          amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(videoIndex)].url;
-          console.log("---------------------------------------");          
+            amrapResponse.data[parseInt(exercisesParam)].Video[
+              parseInt(videoIndex)
+            ].url;
+          console.log("---------------------------------------");
           console.log(videoCurrentSrc);
           console.log("---------------------------------------");
           console.log("Ran Request Video Src => Updated");
 
-        videos.src = videoCurrentSrc;
-        videos.play();
+          videos.src = videoCurrentSrc;
+          videos.play();
         }
-      } else if (videoIndex >= amrapResponse.data[parseInt(exercisesParam)].Video.length) {
+      } else if (
+        videoIndex >= amrapResponse.data[parseInt(exercisesParam)].Video.length
+      ) {
         videoIndex = 0;
         /*getExercisesNum = checkurl.get("exercise");
         getExerciseNum = 0;
         setExerciseNum = checkurl.set("exercise", getExerciseNum.toString());*/
 
         videoCurrentSrc =
-        amrapResponse.data[parseInt(exercisesParam)].Video[parseInt(videoIndex)].url;
+          amrapResponse.data[parseInt(exercisesParam)].Video[
+            parseInt(videoIndex)
+          ].url;
         console.log("---------------------------------------");
         console.log(videoCurrentSrc);
         console.log("---------------------------------------");
@@ -450,8 +478,8 @@ window.history.replaceState(null, null, url.toString());
         console.log("---------------------------------------");
         console.log("Current Video Index:", parseInt(videoIndex));
 
-      videos.src = videoCurrentSrc;
-      videos.play();
+        videos.src = videoCurrentSrc;
+        videos.play();
       }
     }
   });
@@ -472,8 +500,7 @@ window.history.replaceState(null, null, url.toString());
     voiceEnableClick();
   });
 
-
-/* Round Condtionals To Enable Popup
+  /* Round Condtionals To Enable Popup
   function roundEnableLoad() {
     // Round check (if round popup needs to show)
     if (cookieIndex === undefined || cookieIndex === "undefined") {
@@ -524,9 +551,9 @@ window.history.replaceState(null, null, url.toString());
       //
       prevButton.style.display = "flex";
       prevButtonDisabled.style.display = "none";
-    }
+    }*/
 
-    if (roundParam === undefined || roundParam === "undefined") {
+    function enableDisabledStates () {
       playButton.style.display = "none";
       playButtonDisabled.style.display = "flex";
       //
@@ -535,7 +562,10 @@ window.history.replaceState(null, null, url.toString());
       //
       prevButton.style.display = "none";
       prevButtonDisabled.style.display = "flex";
-    } else {
+    } 
+    
+    
+    function enableActiveStates () {
       playButton.style.display = "flex";
       playButtonDisabled.style.display = "none";
       //
@@ -544,20 +574,16 @@ window.history.replaceState(null, null, url.toString());
       //
       prevButton.style.display = "flex";
       prevButtonDisabled.style.display = "none";
-    }
-  }*/
+  }
 
-
-// Autoplay Video Function
+  // Autoplay Video Function
   function autoPlayVideo() {
     playButton.click();
   }
 
-
-// Next Page Condtionals To Proceed To Next Page
+  // Next Page Condtionals To Proceed To Next Page
   function nextPage() {
-    if (
-      exerciseParam === undefined || exerciseParam === "undefined") {
+    if (exerciseParam === undefined || exerciseParam === "undefined") {
       if (refreshNum < 1) {
         nextButton.click();
       }
@@ -573,8 +599,7 @@ window.history.replaceState(null, null, url.toString());
     refreshNum = refreshNum + 1;
   }
 
-
-// Siren Condtionals Click On/Off
+  // Siren Condtionals Click On/Off
   function sirenEnableClick() {
     if (sirenText.innerHTML === "Off") {
       Wized.data.setCookie("sirenmute", "on");
@@ -593,8 +618,7 @@ window.history.replaceState(null, null, url.toString());
     console.log("---------------------------------------");
   }
 
-
-// Voice Condtionals Click On/Off  
+  // Voice Condtionals Click On/Off
   function voiceEnableClick() {
     if (voiceText.innerHTML === "Off") {
       Wized.data.setCookie("voicemute", "on");
@@ -613,8 +637,7 @@ window.history.replaceState(null, null, url.toString());
     console.log("---------------------------------------");
   }
 
-
-// Siren Condtionals On Page Load On/Off
+  // Siren Condtionals On Page Load On/Off
   function sirenEnableLoad() {
     // Siren Cookie Condition
     if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
@@ -634,8 +657,7 @@ window.history.replaceState(null, null, url.toString());
     }
   }
 
-
-// Voice Condtionals On Page Load On/Off
+  // Voice Condtionals On Page Load On/Off
   function voiceEnableLoad() {
     // Voice Cookie Condition
     if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
@@ -693,7 +715,7 @@ window.history.replaceState(null, null, url.toString());
     }
   }*/
 
-// History Replaced When Scroll Buttons Are Clicked
+  // History Replaced When Scroll Buttons Are Clicked
   $(document).ready(function () {
     const scrollBtn = $(".panel-button");
 
