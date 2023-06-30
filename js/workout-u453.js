@@ -320,6 +320,9 @@ window.history.replaceState(null, null, url.toString());
     }
     else {
       RoundNumberText.innerHTML = "Workout Completed"
+      getRoundNum = checkurl.get("round");
+      getRoundNum = "completed";
+      setRoundNum = checkurl.set("exercises", getRoundNum.toString());
     }
   
 
