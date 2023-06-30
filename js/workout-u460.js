@@ -146,7 +146,10 @@ window.onload = async () => {
         amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
       let roundLength = repDataInt.data.length;
 
-      enableActiveStates ()
+      let clearStates = setTimeout (() => {
+        enableActiveStates ()
+        clearTimeout(clearStates)
+      }, 1000);
 
       console.log("---------------------------------------");
       console.log(exercisesLength);
