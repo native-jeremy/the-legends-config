@@ -133,14 +133,13 @@ window.history.replaceState(null, null, url.toString());
 
     if(exerciseData !== undefined) {
     vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url
+       //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
+      let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
+      let roundLength = repDataInt.data.length
+
+      console.log("---------------------------------------");
+      console.log(exercisesLength);
     }
-
-   //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
-   let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
-   let roundLength = repDataInt.data.length
-
-   console.log("---------------------------------------");
-   console.log(exercisesLength);
 
   if (parseInt(exercisesParam) > 2) {
     RoundNumberText.innerHTML = "Workout Completed"
