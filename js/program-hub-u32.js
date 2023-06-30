@@ -14,7 +14,7 @@ window.onload = async () => {
   // Completed Data Load
   Wized.request.await("Load Users", (response) => {
 
-    if (response.status === 200)
+    if (response === 200)
     {
       const getData = response;
       let applyData = getData.data.Completed;
@@ -36,7 +36,7 @@ window.onload = async () => {
       }
   
       setTimeout(() => {
-         let progressNum = applyData.length / workout.length * 100
+        let progressNum = applyData.length / workout.length * 100
         const circleProgress = new CircleProgress('.circle-latest');
           circleProgress.attr({
           max: 100,
