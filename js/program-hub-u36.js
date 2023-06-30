@@ -22,7 +22,7 @@ window.onload = async () => {
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
 
-      if (applyData.length !== 0)
+      if (applyData !== undefined)
       {
         for (let i = 0; i < applyData.length; i++) {
             icon[i].classList.add("complete-indicator");
