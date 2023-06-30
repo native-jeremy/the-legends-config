@@ -141,7 +141,7 @@ window.history.replaceState(null, null, url.toString());
       console.log(exercisesLength);
       console.log("---------------------------------------");
       console.log("Round Length", roundLength);
-        RoundNumberText.innerHTML = parseInt(exercisesParam)
+      RoundNumberText.innerHTML = parseInt(exercisesParam) + 1
     
     
     // Diff Increase Click Controls
