@@ -103,6 +103,11 @@ window.onload = async () => {
 
   enableDisabledStates ()
 
+  Wized.request.await("Load Round Base", (response) => {
+    console.log("---------------------------------------");    
+    console.log("All Rounds In Exercise",response); // Log request response  
+})
+
   //const roundParamIndex = await Wized.data.get("n.parameter.ri");
   //const exercisesParamIndex = await Wized.data.get("n.parameter.esi");
   //const exerciseParamIndex = await Wized.data.get("n.parameter.ei");
@@ -162,6 +167,9 @@ window.onload = async () => {
       console.log("---------------------------------------");
       console.log("Round Length", roundLength);
       RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
+
+
+      amrapResponse.data
 
       // Diff Increase Click Controls
       plusBtn.addEventListener("click", function () {
