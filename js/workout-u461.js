@@ -146,10 +146,16 @@ window.onload = async () => {
         amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
       let roundLength = repDataInt.data.length;
 
+      /*async () => {  
+        await Wized.request.await("Audio"); // Trigger request  
+        const response = await Wized.data.get("r.3.d"); // Get request response  
+        console.log("Audio Response", response); // Console log received request data
+    };*/
+
       let clearStates = setTimeout (() => {
         enableActiveStates ()
         clearTimeout(clearStates)
-      }, 1000);
+      }, 1500);
 
       console.log("---------------------------------------");
       console.log(exercisesLength);
