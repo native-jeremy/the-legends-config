@@ -129,7 +129,7 @@ window.history.replaceState(null, null, url.toString());
     let videoIndex = parseInt(exerciseParam);
 
      //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
-   let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
+   //let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length
    let roundLength = repDataInt.data.length
 
    console.log("---------------------------------------");
