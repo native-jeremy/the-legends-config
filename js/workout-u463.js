@@ -169,7 +169,10 @@ window.onload = async () => {
       RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
 
 
-      amrapResponse.data
+      amrapResponse.data[parseInt(exercisesParam)].Round_Name
+
+      console.log("---------------------------------------");
+      console.log("Round Length", amrapResponse.data[parseInt(exercisesParam)].Round_Name);
 
       // Diff Increase Click Controls
       plusBtn.addEventListener("click", function () {
