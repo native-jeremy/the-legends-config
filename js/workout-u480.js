@@ -96,7 +96,7 @@ window.onload = async () => {
   let params = window.location.href;
   let url = new URL(params);
   let checkurl = url.searchParams;
-  
+
   window.history.replaceState(null, null, url.toString());
 
   enableDisabledStates ()
@@ -168,7 +168,6 @@ window.onload = async () => {
 
       if (roundActiveName !== roundStartName) {
           console.log("New Round")
-          roundPopup.style.display = "flex";
       }
       else if ( roundActiveName === roundStartName) {
         console.log("Still The Same Round")
