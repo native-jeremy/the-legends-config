@@ -174,7 +174,7 @@ window.onload = async () => {
       else if ( roundActiveName === roundStartName) {
         console.log("Still The Same Round")
         //roundPopup.style.display = "none";
-        RoundNumberText.innerHTML = "Loading";
+        RoundNumberText.innerHTML = "Loading..";
       }
 
       console.log("---------------------------------------");
@@ -310,14 +310,6 @@ window.onload = async () => {
         console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));*/
       }
 
-      function checkParam() {
-        if (checkurl.get("exercise") === "3") {
-          activeParam.innerHTML = checkurl.get("exercise");
-        } else {
-          activeParam.innerHTML = "Audio Settings";
-        }
-      }
-
       // Amrap Condtionals To Check If True/False
       if (amrapBool == "True") {
         checkAmrap = setInterval(videoCheck, 25);
@@ -338,7 +330,7 @@ window.onload = async () => {
         (parseInt(exercisesParam) > 0 &&
           amrapBool == "True" &&
           videoIndex === 0) ||
-        exerciseParam === 0
+          exerciseParam === 0
       ) {
         setTimeout(autoPlayVideo, 2000);
       }
