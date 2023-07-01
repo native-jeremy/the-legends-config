@@ -230,7 +230,7 @@ window.onload = async () => {
 
       nextButton.addEventListener("click", function () {
         getRoundNum = checkurl.get("round");
-        getRoundNum = roundActiveName; 
+        getRoundNum = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]; 
         setRoundNum = checkurl.set("round", getRoundNum.toString());
         updateParamForVideo();
         /*getExercisesNum = checkurl.get("exercises");
