@@ -229,9 +229,6 @@ window.onload = async () => {
       console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
       nextButton.addEventListener("click", function () {
-        getRoundNum = checkurl.get("round");
-        getRoundNum = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]; 
-        setRoundNum = checkurl.set("round", getRoundNum.toString());
         updateParamForVideo();
         /*getExercisesNum = checkurl.get("exercises");
       getExercisesNum = parseInt(getExercisesNum) + 1;
@@ -291,6 +288,12 @@ window.onload = async () => {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        getRoundNum = checkurl.get("round");
+        getRoundNum = roundActiveName; 
+        setRoundNum = checkurl.set("round", getRoundNum);
+
+        console.log("---------------------------------------");
+        console.log("Next Button Clicked Round Updated", roundParam);
         //}
 
         window.location.href = url.toString();
