@@ -169,7 +169,7 @@ window.onload = async () => {
       RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
 
 
-      let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
+      /*let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
       let roundStartName = amrapResponse.data[0].Round_Name[0];
 
       if (roundActiveName !== roundStartName) {
@@ -180,7 +180,7 @@ window.onload = async () => {
         //}
 
         //window.location.href = url.toString();
-      }
+      }*/
 
       console.log("---------------------------------------");
       console.log("Rounds", amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]);
@@ -288,6 +288,9 @@ window.onload = async () => {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        getRoundNum = checkurl.get("round");
+        getRoundNum = roundActiveName; 
+        setRoundNum = checkurl.set("round", getRoundNum);
         //}
 
         window.location.href = url.toString();
