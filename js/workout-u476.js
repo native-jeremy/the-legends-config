@@ -183,7 +183,7 @@ window.onload = async () => {
       }*/
 
       if (roundActiveName !== roundStartName) {
-          console,log("New Round")
+          console.log("New Round")
       }
       else if ( roundActiveName === roundStartName) {
         console.log("Still The Same Round")
