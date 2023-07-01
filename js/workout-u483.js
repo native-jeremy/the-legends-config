@@ -90,7 +90,7 @@ window.onload = async () => {
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
-  roundPopup.style.display = "flex";
+  //roundPopup.style.display = "flex";
 
   // URL Searching Setup and Declaration
   let activeParam = document.getElementById("activeParam");
@@ -169,6 +169,7 @@ window.onload = async () => {
 
       if (roundActiveName !== roundStartName) {
           console.log("New Round")
+          roundPopup.style.display = "flex";
       }
       else if ( roundActiveName === roundStartName && statusNum !== "start") {
         console.log("Still The Same Round")
