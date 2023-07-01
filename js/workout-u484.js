@@ -90,7 +90,7 @@ window.onload = async () => {
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
-  //roundPopup.style.display = "flex";
+  roundPopup.style.display = "flex";
 
   // URL Searching Setup and Declaration
   let activeParam = document.getElementById("activeParam");
@@ -167,14 +167,14 @@ window.onload = async () => {
       let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
       let roundStartName = amrapResponse.data[0].Round_Name[0];
 
-      if (roundActiveName !== roundStartName) {
+      /*if (roundActiveName !== roundStartName) {
           console.log("New Round")
           roundPopup.style.display = "flex";
       }
       else if ( roundActiveName === roundStartName && statusNum !== "start") {
         console.log("Still The Same Round")
         roundPopup.style.display = "none";
-      }
+      }*/
 
       console.log("---------------------------------------");
       console.log("Rounds", amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]);
@@ -268,8 +268,8 @@ window.onload = async () => {
 
       function updateParamForVideo() {
         //if (parseInt(exercisesParam) > exercisesLength) {
-        getRoundNum = checkurl.get("round");
-        setRoundNum = checkurl.delete("round", "start");
+        //getRoundNum = checkurl.get("round");
+        //setRoundNum = checkurl.delete("round", "start");
 
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
