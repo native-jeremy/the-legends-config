@@ -169,8 +169,8 @@ window.onload = async () => {
       RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
 
 
-      /*let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
-      let roundStartName = amrapResponse.data[0].Round_Name[0];
+      let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
+      /*let roundStartName = amrapResponse.data[0].Round_Name[0];
 
       if (roundActiveName !== roundStartName) {
         //if (parseInt(exercisesParam) > exercisesLength) {
