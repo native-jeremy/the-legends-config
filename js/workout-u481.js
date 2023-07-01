@@ -81,6 +81,7 @@ window.onload = async () => {
   //const roundIndex = await Wized.data.get("c.roundindex");
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const dataIndex = await Wized.data.get("v.dataindex");
+  const statusNum = await Wized.data.get("v.statusnum");
   const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
@@ -172,6 +173,10 @@ window.onload = async () => {
       else if ( roundActiveName === roundStartName) {
         console.log("Still The Same Round")
         roundPopup.style.display = "none";
+      }
+
+      else if (statusNum === "start") {
+        roundPopup.style.display = "flex";
       }
 
       console.log("---------------------------------------");
