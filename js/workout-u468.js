@@ -179,7 +179,7 @@ window.onload = async () => {
         setRoundNum = checkurl.set("round", getRoundNum.toString());
         //}
 
-        window.location.href = url.toString();
+        //window.location.href = url.toString();
       }
 
       console.log("---------------------------------------");
