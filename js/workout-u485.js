@@ -161,20 +161,22 @@ window.onload = async () => {
       console.log(exercisesLength);
       console.log("---------------------------------------");
       console.log("Round Length", roundLength);
-      RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
+      //RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
 
 
       let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
       let roundStartName = amrapResponse.data[0].Round_Name[0];
 
-      /*if (roundActiveName !== roundStartName) {
+      if (roundActiveName !== roundStartName) {
           console.log("New Round")
-          roundPopup.style.display = "flex";
+          //roundPopup.style.display = "flex";
+          RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
       }
-      else if ( roundActiveName === roundStartName && statusNum !== "start") {
+      else if ( roundActiveName === roundStartName) {
         console.log("Still The Same Round")
-        roundPopup.style.display = "none";
-      }*/
+        //roundPopup.style.display = "none";
+        RoundNumberText.innerHTML = "Loading";
+      }
 
       console.log("---------------------------------------");
       console.log("Rounds", amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]);
