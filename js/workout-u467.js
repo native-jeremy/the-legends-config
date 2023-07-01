@@ -183,7 +183,7 @@ window.onload = async () => {
       }
 
       console.log("---------------------------------------");
-      console.log("Rounds", amrapResponse.data[parseInt(exercisesParam)].Round_Name)[0];
+      console.log("Rounds", amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]);
 
       // Diff Increase Click Controls
       plusBtn.addEventListener("click", function () {
