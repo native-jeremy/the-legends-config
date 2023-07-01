@@ -170,9 +170,9 @@ window.onload = async () => {
 
 
       let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
-      /*let roundStartName = amrapResponse.data[0].Round_Name[0];
+      let roundStartName = amrapResponse.data[0].Round_Name[0];
 
-      if (roundActiveName !== roundStartName) {
+      /*if (roundActiveName !== roundStartName) {
         //if (parseInt(exercisesParam) > exercisesLength) {
         getRoundNum = checkurl.get("round");
         getRoundNum = parseInt(getRoundNum) + 1;
@@ -181,6 +181,13 @@ window.onload = async () => {
 
         //window.location.href = url.toString();
       }*/
+
+      if (roundActiveName !== roundStartName) {
+          console,log("New Round")
+      }
+      else if ( roundActiveName === roundStartName) {
+        console.log("Still The Same Round")
+      }
 
       console.log("---------------------------------------");
       console.log("Rounds", amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]);
@@ -288,12 +295,6 @@ window.onload = async () => {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-        getRoundNum = checkurl.get("round");
-        getRoundNum = roundActiveName; 
-        setRoundNum = checkurl.set("round", getRoundNum);
-
-        console.log("---------------------------------------");
-        console.log("Next Button Clicked Round Updated", roundParam);
         //}
 
         window.location.href = url.toString();
