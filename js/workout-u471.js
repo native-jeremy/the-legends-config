@@ -290,7 +290,7 @@ window.onload = async () => {
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         getRoundNum = checkurl.get("round");
         getRoundNum = roundActiveName; 
-        setRoundNum = checkurl.set("round", getRoundNum);
+        setRoundNum = checkurl.set("round", getRoundNum.toString());
         //}
 
         window.location.href = url.toString();
