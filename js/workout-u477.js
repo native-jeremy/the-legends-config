@@ -184,6 +184,7 @@ window.onload = async () => {
 
       if (roundActiveName !== roundStartName) {
           console.log("New Round")
+          roundPopup.style.display = "none";
       }
       else if ( roundActiveName === roundStartName) {
         console.log("Still The Same Round")
