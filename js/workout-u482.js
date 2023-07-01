@@ -170,13 +170,9 @@ window.onload = async () => {
       if (roundActiveName !== roundStartName) {
           console.log("New Round")
       }
-      else if ( roundActiveName === roundStartName) {
+      else if ( roundActiveName === roundStartName && statusNum !== "start") {
         console.log("Still The Same Round")
         roundPopup.style.display = "none";
-      }
-
-      else if (statusNum === "start") {
-        roundPopup.style.display = "flex";
       }
 
       console.log("---------------------------------------");
@@ -211,7 +207,7 @@ window.onload = async () => {
     New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
 
       repAmount =
-        repDataInt.data[parseInt(exercisesParam)].Amounts_Name[diffCurrent];
+      repDataInt.data[parseInt(exercisesParam)].Amounts_Name[diffCurrent];
       repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type[0];
       amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
 
@@ -271,6 +267,9 @@ window.onload = async () => {
 
       function updateParamForVideo() {
         //if (parseInt(exercisesParam) > exercisesLength) {
+        getRoundNum = checkurl.get("round");
+        setRoundNum = checkurl.delete("round", "start");
+
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
