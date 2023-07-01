@@ -166,8 +166,7 @@ window.onload = async () => {
 
       let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
       let roundStartName = amrapResponse.data[0].Round_Name[0];
-
-      if (roundActiveName !== roundStartName) {
+      if (roundActiveName !== roundStartName || parseInt(exercisesParam) === 0) {
           console.log("New Round")
           //roundPopup.style.display = "flex";
           RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
