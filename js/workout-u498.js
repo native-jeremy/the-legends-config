@@ -121,7 +121,7 @@ window.onload = async () => {
     const amrapResponse = response;
     let checkAmrap;
 
-    console.log("Round Applied Index Info Response", roundResIndex)
+    console.log("Rounds Res Length", roundResIndex)
 
     let exerciseData = repDataInt.data[parseInt(exercisesParam)];
 
