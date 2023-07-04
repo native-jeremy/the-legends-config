@@ -521,19 +521,19 @@ window.onload = async () => {
 
       if (Math.floor(audio.currentTime) === Math.floor(audio.duration)) {
         if (
-          audioIndex < amrapResponse.data[parseInt(exercisesParam)].Audio.length
+          audioIndex < audioRes.data[parseInt(exercisesParam)].Audio.length
         ) {
-          videoIndex = videoIndex + 1;
-          console.log("Current Exercise Index For Video", parseInt(videoIndex));
+          audioIndex = videoIndex + 1;
+          console.log("Current Exercise Index For Audio", parseInt(audioIndex));
 
-          videoCurrentSrc =
-            amrapResponse.data[parseInt(exercisesParam)].Video[
-              parseInt(videoIndex)
+          audioCurrentSrc =
+            audioRes.data[parseInt(exercisesParam)].Audio[
+              parseInt(audioIndex)
             ].url;
           console.log("---------------------------------------");
-          console.log(videoCurrentSrc);
+          console.log(audioCurrentSrc);
           console.log("---------------------------------------");
-          console.log("Ran Request Video Src => Updated");
+          console.log("Ran Request Audio Src => Updated");
 
           videos.src = videoCurrentSrc;
           videos.play();
@@ -541,21 +541,21 @@ window.onload = async () => {
       } else if (
         videoIndex >= amrapResponse.data[parseInt(exercisesParam)].Video.length
       ) {
-        videoIndex = 0;
-        videoCurrentSrc =
-          amrapResponse.data[parseInt(exercisesParam)].Video[
-            parseInt(videoIndex)
+        audioIndex = 0;
+        audioCurrentSrc =
+          audioRes.data[parseInt(exercisesParam)].Audio[
+            parseInt(audioIndex)
           ].url;
         console.log("---------------------------------------");
-        console.log(videoCurrentSrc);
+        console.log(audioCurrentSrc);
         console.log("---------------------------------------");
-        console.log("Ran Request Video Src <= Reset ");
+        console.log("Ran Request Audio Src <= Reset ");
 
         console.log("---------------------------------------");
-        console.log("Current Video Index:", parseInt(videoIndex));
+        console.log("Current Video Index:", parseInt(audioIndex));
 
-        videos.src = videoCurrentSrc;
-        videos.play();
+        audio.src = audioCurrentSrc;
+        audio.play();
       }
     }
   });
