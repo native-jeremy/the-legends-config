@@ -351,12 +351,14 @@ window.onload = async () => {
 
       // Amrap Condtionals To Check If True/False
       if (amrapBool == "True") {
-        checkAmrap = setInterval(videoCheck, 0);
+        checkAmrapVideo = setInterval(videoCheck, 0);
+        checkAmrapAudio = setInterval(audioCheck, 0);
         newcookieIndex =
           amrapResponse.data[parseInt(exercisesParam)].Video.length;
         console.log("Amrap length:", newcookieIndex);
       } else {
-        clearInterval(checkAmrap);
+        clearInterval(checkAmrapVideo);
+        clearInterval(checkAmrapAudio);
       }
 
       if (
