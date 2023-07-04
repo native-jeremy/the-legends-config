@@ -180,18 +180,6 @@ window.onload = async () => {
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
-    if (exerciseData == undefined && parseInt(roundParam) !== roundLength)
-    {
-      getRoundNum = checkurl.get("round");
-      getRoundNum = parseInt(getRoundNum) + 1;
-      setRoundNum = checkurl.set("round", getRoundNum.toString());
-      getExercisesNum = checkurl.get("exercises");
-      getExercisesNum = 0;
-      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-
-      window.location.href = url.toString();      
-    }
-
     if (exerciseData !== undefined) {
       vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url;
       audioSrc.src = repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
@@ -397,7 +385,21 @@ window.onload = async () => {
         playVideo();
         clickNum = clickNum + 1;
       });
-    } else {
+    }
+
+  else if (exerciseData == undefined && parseInt(roundParam) !== roundLength)
+    {
+      getRoundNum = checkurl.get("round");
+      getRoundNum = parseInt(getRoundNum) + 1;
+      setRoundNum = checkurl.set("round", getRoundNum.toString());
+      getExercisesNum = checkurl.get("exercises");
+      getExercisesNum = 0;
+      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+
+      window.location.href = url.toString();      
+    }
+    
+    else {
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Workout Completed";
