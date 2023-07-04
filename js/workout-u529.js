@@ -102,8 +102,6 @@ window.onload = async () => {
   let url = new URL(params);
   let checkurl = url.searchParams;
 
-  roundPopup.style.display = "flex";
-
   window.history.replaceState(null, null, url.toString());
 
   enableDisabledStates ()
@@ -131,7 +129,7 @@ window.onload = async () => {
     if (parseInt(exercisesParam) === 0 || roundRealNumber > roundLength) {
       roundPopup.style.display = "flex";
     }
-    else {
+    else if (parseInt(exercisesParam) !== 0 || roundRealNumber < roundLength) {
       roundPopup.style.display = "none";
       roundText.style.display = "none";
     }
