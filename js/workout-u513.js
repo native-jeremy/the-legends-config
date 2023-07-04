@@ -125,7 +125,7 @@ window.onload = async () => {
 
     roundLength = roundRes.data.length;
 
-    roundRealNumber = parseInt(roundParam) + 1;
+    let roundRealNumber = parseInt(roundParam) + 1;
 
     console.log("---------------------------------------");
     console.log("Rounds Res Length", roundLength)
