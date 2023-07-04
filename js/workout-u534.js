@@ -380,6 +380,7 @@ window.onload = async () => {
       });
     } else {
       roundPopup.style.display = "flex";
+      roundText.style.display = "none";
       RoundNumberText.innerHTML = "Workout Completed";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates ()
