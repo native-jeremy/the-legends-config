@@ -373,14 +373,14 @@ window.onload = async () => {
           amrapBool == "True" &&
           videoIndex === 0)
       ) {
-        setTimeout(autoPlayVideo, 2000);
+        setTimeout(autoPlayVideo, 3000);
       } else if (
         (parseInt(exercisesParam) > 0 &&
           amrapBool == "True" &&
           videoIndex === 0) ||
           exerciseParam === 0
       ) {
-        setTimeout(autoPlayVideo, 2000);
+        setTimeout(autoPlayVideo, 3000);
       }
 
       //let counter = repAmount;
@@ -458,7 +458,6 @@ window.onload = async () => {
         playButton.classList.toggle("pause");
         timerText.classList.add("pausetime");
       }
-      playVoice()
     }
 
     // Siren Condtionals To Enable If Paused/Playing
