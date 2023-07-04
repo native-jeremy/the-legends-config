@@ -101,6 +101,7 @@ window.onload = async () => {
   }
   else {
     roundPopup.style.display = "none";
+    roundText.style.display = "none";
   }
 
   // URL Searching Setup and Declaration
