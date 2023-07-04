@@ -180,7 +180,7 @@ window.onload = async () => {
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
-    if (repDataInt.data[parseInt(exercisesParam)] == undefined)
+    if (exerciseData == undefined && parseInt(roundParam) !== roundLength)
     {
       getRoundNum = checkurl.get("round");
       getRoundNum = parseInt(getRoundNum) + 1;
