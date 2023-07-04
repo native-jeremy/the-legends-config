@@ -127,6 +127,12 @@ window.onload = async () => {
 
     let roundRealNumber = parseInt(roundParam) + 1;
 
+    if (roundRealNumber > roundLength) {
+      RoundNumberText.innerHTML = "Workout Completed";
+      Wized.data.setVariable("complete", "completed");
+      enableDisabledStates ()
+    }
+
     console.log("---------------------------------------");
     console.log("Rounds Res Length", roundLength)
 
@@ -292,11 +298,6 @@ window.onload = async () => {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-        }
-        else if (roundRealNumber > roundLength) {
-          RoundNumberText.innerHTML = "Workout Completed";
-          Wized.data.setVariable("complete", "completed");
-          enableDisabledStates ()
         }
         else {
         getRoundNum = checkurl.get("round");
