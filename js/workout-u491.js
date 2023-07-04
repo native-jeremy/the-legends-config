@@ -92,11 +92,6 @@ window.onload = async () => {
 
   roundPopup.style.display = "flex";
 
-  Wized.request.awaitAllPageLoad(async () => {    
-        const dataStore = await Wized.data.getAll();    
-        console.log(dataStore); // Console log the datastore snapshot  
-    });
-
   // URL Searching Setup and Declaration
   let activeParam = document.getElementById("activeParam");
   let params = window.location.href;
