@@ -180,7 +180,7 @@ window.onload = async () => {
 
     if (exerciseData !== undefined) {
       vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url;
-      audioSrc = repDataInt.data[parseInt(exercisesParam)].Audio[0].url;
+      audioSrc.src = repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
       //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
       let exercisesLength =
         amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
@@ -528,13 +528,13 @@ window.onload = async () => {
 
       if (Math.floor(audio.currentTime) === Math.floor(audio.duration)) {
         if (
-          audioIndex < amrapResponse.data[parseInt(exercisesParam)].Audio.length
+          audioIndex < amrapResponse.data[parseInt(exercisesParam)].Audio_Source.length
         ) {
           audioIndex = audioIndex + 1;
           console.log("Current Exercise Index For Audio", parseInt(audioIndex));
 
           audioCurrentSrc =
-          amrapResponse.data[parseInt(exercisesParam)].Audio[
+          amrapResponse.data[parseInt(exercisesParam)].Audio_Source[
               parseInt(audioIndex)
             ].url;
           console.log("---------------------------------------");
@@ -546,11 +546,11 @@ window.onload = async () => {
           audio.play();
         }
       } else if (
-        audioIndex >= amrapResponse.data[parseInt(exercisesParam)].Audio.length
+        audioIndex >= amrapResponse.data[parseInt(exercisesParam)].Audio_Source.length
       ) {
         audioIndex = 0;
         audioCurrentSrc =
-        amrapResponse.data[parseInt(exercisesParam)].Audio[
+        amrapResponse.data[parseInt(exercisesParam)].Audio_Source[
             parseInt(audioIndex)
           ].url;
         console.log("---------------------------------------");
