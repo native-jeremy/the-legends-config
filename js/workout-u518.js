@@ -297,11 +297,8 @@ window.onload = async () => {
           getExercisesNum = exercisesLength;
           setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         }
-        if (parseInt(exercisesParam) || getExercisesNum < exercisesLength) {
-        getExercisesNum = checkurl.get("exercises");
-        getExercisesNum = parseInt(getExercisesNum) + 1;
-        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-        }
+        //if (parseInt(exercisesParam) || getExercisesNum < exercisesLength) {
+        //}
         else if (!parseInt(exercisesParam) < exercisesLength) {
         getRoundNum = checkurl.get("round");
         getRoundNum = parseInt(getRoundNum) + 1;
@@ -309,6 +306,11 @@ window.onload = async () => {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = 0;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        }
+        else {
+          getExercisesNum = checkurl.get("exercises");
+          getExercisesNum = parseInt(getExercisesNum) + 1;
+          setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         }
 
         window.location.href = url.toString();
