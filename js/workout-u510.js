@@ -292,6 +292,11 @@ window.onload = async () => {
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         }
         else if (parseInt(roundParam) === roundLength) {
+          RoundNumberText.innerHTML = "Workout Completed";
+          Wized.data.setVariable("complete", "completed");
+          enableDisabledStates ()
+        }
+        else {
         getRoundNum = checkurl.get("round");
         getRoundNum = parseInt(getRoundNum) + 1;
         setRoundNum = checkurl.set("round", getRoundNum.toString());
