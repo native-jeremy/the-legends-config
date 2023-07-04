@@ -183,7 +183,7 @@ window.onload = async () => {
       //RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
 
 
-      let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
+      /*let roundActiveName = amrapResponse.data[parseInt(exercisesParam)].Round_Name[0];
       let roundStartName = amrapResponse.data[0].Round_Name[0];
       if (roundActiveName !== roundStartName || parseInt(exercisesParam) === 0) {
           console.log("New Round")
@@ -194,7 +194,7 @@ window.onload = async () => {
         console.log("Still The Same Round")
         //roundPopup.style.display = "none";
         RoundNumberText.innerHTML = "Loading..";
-      }
+      }*/
 
       console.log("---------------------------------------");
       console.log("Rounds", amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]);
