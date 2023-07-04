@@ -292,11 +292,11 @@ window.onload = async () => {
       });
 
       function updateParams() {
-        if (amrapBool == "True") {
+        /*if (amrapBool == "True") {
           getExercisesNum = checkurl.get("exercises");
           getExercisesNum = exercisesLength;
           setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-        }
+        }*/
         //if (parseInt(exercisesParam) || getExercisesNum < exercisesLength) {
         //}
         /*else if (!parseInt(exercisesParam) < exercisesLength) {
@@ -307,11 +307,11 @@ window.onload = async () => {
         getExercisesNum = 0;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         }*/
-        else {
+        //else {
           getExercisesNum = checkurl.get("exercises");
           getExercisesNum = parseInt(getExercisesNum) + 1;
           setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-        }
+       // }
 
         window.location.href = url.toString();
         //window.history.replaceState(null, null, url.toString());
