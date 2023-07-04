@@ -132,6 +132,9 @@ window.onload = async () => {
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates ()
     }
+    else {
+      RoundNumberText.innerHTML = parseInt(roundParam) + 1;
+    }
 
     console.log("---------------------------------------");
     console.log("Rounds Res Length", roundLength)
