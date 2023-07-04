@@ -44,6 +44,8 @@ let exerciseData;
 let roundRealNumber;
 let audioRes;
 let audioIndex;
+let checkAmrapVideo;
+let checkAmrapAudio;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
