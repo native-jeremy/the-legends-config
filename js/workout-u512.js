@@ -125,6 +125,8 @@ window.onload = async () => {
 
     roundLength = roundRes.data.length;
 
+    roundRealNumber = parseInt(roundParam) + 1;
+
     console.log("---------------------------------------");
     console.log("Rounds Res Length", roundLength)
 
@@ -291,7 +293,7 @@ window.onload = async () => {
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         }
-        else if (parseInt(roundParam) > roundLength) {
+        else if (roundRealNumber > roundLength) {
           RoundNumberText.innerHTML = "Workout Completed";
           Wized.data.setVariable("complete", "completed");
           enableDisabledStates ()
