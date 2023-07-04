@@ -281,7 +281,12 @@ window.onload = async () => {
       });
 
       function updateParams() {
-        if (parseInt(exercisesParam) < exercisesLength) {
+        if (amrapBool == "True") {
+          getExercisesNum = checkurl.get("exercises");
+          getExercisesNum = exercisesLength;
+          setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        }
+        if (parseInt(exercisesParam) || getExercisesNum < exercisesLength) {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
