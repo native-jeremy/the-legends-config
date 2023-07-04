@@ -525,7 +525,7 @@ window.onload = async () => {
         if (
           audioIndex < audioRes.data[parseInt(exercisesParam)].Audio.length
         ) {
-          audioIndex = videoIndex + 1;
+          audioIndex = audioIndex + 1;
           console.log("Current Exercise Index For Audio", parseInt(audioIndex));
 
           audioCurrentSrc =
@@ -537,11 +537,11 @@ window.onload = async () => {
           console.log("---------------------------------------");
           console.log("Ran Request Audio Src => Updated");
 
-          videos.src = videoCurrentSrc;
-          videos.play();
+          audio.src = audioCurrentSrc;
+          audio.play();
         }
       } else if (
-        videoIndex >= amrapResponse.data[parseInt(exercisesParam)].Video.length
+        audioIndex >= amrapResponse.data[parseInt(exercisesParam)].Audio.length
       ) {
         audioIndex = 0;
         audioCurrentSrc =
