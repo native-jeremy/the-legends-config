@@ -458,6 +458,7 @@ window.onload = async () => {
         playButton.classList.toggle("pause");
         timerText.classList.add("pausetime");
       }
+      playVoice()
     }
 
     // Siren Condtionals To Enable If Paused/Playing
