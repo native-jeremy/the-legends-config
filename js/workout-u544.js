@@ -168,7 +168,7 @@ window.onload = async () => {
     console.log("---------------------------------------");
     console.log("Single Exercise:", repDataInt.data[parseInt(exercisesParam)]);
 
-    console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio);
+    console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio_Source);
 
     let diffStr = currentNum.innerHTML;
     let diffInt = parseInt(diffStr);
