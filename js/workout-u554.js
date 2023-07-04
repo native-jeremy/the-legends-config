@@ -303,21 +303,21 @@ window.onload = async () => {
           getExercisesNum = exercisesLength;
           setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         }*/
-        //if (parseInt(exercisesParam) || getExercisesNum < exercisesLength) {
-        //}
-        /*else if (!parseInt(exercisesParam) < exercisesLength) {
+        if (parseInt(exercisesParam) || getExercisesNum < exercisesLength) {
+        }
+        else if (!parseInt(exercisesParam) < exercisesLength) {
         getRoundNum = checkurl.get("round");
         getRoundNum = parseInt(getRoundNum) + 1;
         setRoundNum = checkurl.set("round", getRoundNum.toString());
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = 0;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-        }*/
-        //else {
+        }
+        else {
           getExercisesNum = checkurl.get("exercises");
           getExercisesNum = parseInt(getExercisesNum) + 1;
           setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-       // }
+       }
 
         window.location.href = url.toString();
         //window.history.replaceState(null, null, url.toString());
