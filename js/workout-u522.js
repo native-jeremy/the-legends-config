@@ -100,7 +100,7 @@ window.onload = async () => {
     roundPopup.style.display = "flex";
   }
   else {
-    roundPopup.style.display = "flex";
+    roundPopup.style.display = "none";
   }
 
   // URL Searching Setup and Declaration
