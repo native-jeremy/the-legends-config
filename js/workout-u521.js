@@ -95,7 +95,13 @@ window.onload = async () => {
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
-  roundPopup.style.display = "flex";
+
+  if (parseInt(exercisesParam) === 0) {
+    roundPopup.style.display = "flex";
+  }
+  else {
+    roundPopup.style.display = "flex";
+  }
 
   // URL Searching Setup and Declaration
   let activeParam = document.getElementById("activeParam");
@@ -352,7 +358,7 @@ window.onload = async () => {
 
       // Amrap Condtionals To Check If True/False
       if (amrapBool == "True") {
-        checkAmrap = setInterval(videoCheck, 25);
+        checkAmrap = setInterval(videoCheck, 0);
         newcookieIndex =
           amrapResponse.data[parseInt(exercisesParam)].Video.length;
         console.log("Amrap length:", newcookieIndex);
