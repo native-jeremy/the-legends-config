@@ -153,7 +153,7 @@ window.onload = async () => {
       }, 1500);
 
       console.log("---------------------------------------");
-      console.log(exercisesLength);
+      console.log("Exersie Length", exercisesLength);
       console.log("---------------------------------------");
       console.log("Round Length", roundLength);
       //RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
@@ -184,7 +184,8 @@ window.onload = async () => {
         } else {
           currentNum.innerHTML = maxLimit;
         }
-        console.log(diffCurrent);
+        console.log("---------------------------------------");
+        console.log("Current Difficulty:", diffCurrent);
       });
 
       // Diff Decrease Click Controls
@@ -197,7 +198,8 @@ window.onload = async () => {
           diffCurrent = 0;
           amount = minLimit;
         }
-        console.log(diffCurrent);
+        console.log("---------------------------------------");
+        console.log("Current Difficulty:", diffCurrent);
       });
 
       /* WORK IN PROGRESS CODE Thursday 29th June 2023 
