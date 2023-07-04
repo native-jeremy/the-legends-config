@@ -38,8 +38,9 @@ let setExerciseNum;
 
 // Temp Variables
 let roundResIndex;
-let roundLength
+let roundLength;
 let exerciseData;
+let roundRealNumber;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -95,15 +96,6 @@ window.onload = async () => {
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
-
-  if (parseInt(exercisesParam) === 0) {
-    roundPopup.style.display = "flex";
-  }
-  else {
-    roundPopup.style.display = "none";
-    roundText.style.display = "none";
-  }
-
   // URL Searching Setup and Declaration
   let activeParam = document.getElementById("activeParam");
   let params = window.location.href;
@@ -131,8 +123,15 @@ window.onload = async () => {
     let checkAmrap;
 
     roundLength = roundRes.data.length;
+    roundRealNumber = parseInt(roundParam) + 1;
 
-    let roundRealNumber = parseInt(roundParam) + 1;
+    if (parseInt(exercisesParam) === 0 || roundRealNumber > roundLength) {
+      roundPopup.style.display = "flex";
+    }
+    else {
+      roundPopup.style.display = "none";
+      roundText.style.display = "none";
+    }
 
     if (roundRealNumber > roundLength) {
       RoundNumberText.innerHTML = "Workout Completed";
