@@ -133,6 +133,9 @@ window.onload = async () => {
       roundPopup.style.display = "none";
       roundText.style.display = "none";
     }
+    else if (roundRealNumber > roundLength) {
+      RoundNumberText.innerHTML = "Workout Completed";
+    }
 
     if (roundRealNumber > roundLength) {
       RoundNumberText.innerHTML = "Workout Completed";
@@ -382,9 +385,9 @@ window.onload = async () => {
         clickNum = clickNum + 1;
       });
     } else {
-      RoundNumberText.innerHTML = "Workout Completed";
+      /*RoundNumberText.innerHTML = "Workout Completed";
       Wized.data.setVariable("complete", "completed");
-      enableDisabledStates ()
+      enableDisabledStates ()*/
     }
 
     // Round Type Condtionals To Enable Time/Reps
