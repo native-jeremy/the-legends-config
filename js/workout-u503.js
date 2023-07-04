@@ -182,7 +182,7 @@ window.onload = async () => {
           //roundPopup.style.display = "flex";
           RoundNumberText.innerHTML = parseInt(roundParam) + 1;
       }
-      else if ( roundActiveName === roundStartName) {
+      else if (roundActiveName === roundStartName) {
         console.log("Still The Same Round")
         //roundPopup.style.display = "none";
         RoundNumberText.innerHTML = "Loading..";
@@ -229,7 +229,7 @@ window.onload = async () => {
       console.log("---------------------------------------");
       console.log("Amount: ", repAmount);
       console.log("---------------------------------------");
-      console.log("Rep Type: ", repType);
+      console.log("Rep Type:", repType);
       console.log("---------------------------------------");
 
       console.log("Current Difficulty:", diffCurrent);
@@ -281,18 +281,16 @@ window.onload = async () => {
       });
 
       function updateParams() {
-        //if (parseInt(exercisesParam) > exercisesLength) {
-        //getRoundNum = checkurl.get("round");
-        //setRoundNum = checkurl.delete("round", "start");
-
-        /*getExercisesNum = checkurl.get("exercises");
+        if (parseInt(exercisesParam) < exercisesLength) {
+        getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
-        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());*/
-
+        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        }
+        else {
         getRoundNum = checkurl.get("round");
         getRoundNum = parseInt(getRoundNum) + 1;
         setRoundNum = checkurl.set("round", getRoundNum.toString());
-        //}
+        }
 
         window.location.href = url.toString();
         //window.history.replaceState(null, null, url.toString());
