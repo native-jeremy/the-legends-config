@@ -112,6 +112,14 @@ window.onload = async () => {
     roundRes = response;
   })
 
+  if (parseInt(exercisesParam) === 0) {
+    roundPopup.style.display = "flex";
+  }
+  else {
+    roundPopup.style.display = "none";
+    roundText.style.display = "none";
+  }
+
   // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
@@ -123,18 +131,13 @@ window.onload = async () => {
     let checkAmrap;
 
     roundLength = roundRes.data.length;
+
     roundRealNumber = parseInt(roundParam) + 1;
 
-    if (parseInt(exercisesParam) === 0 || roundRealNumber > roundLength) {
-      roundPopup.style.display = "flex";
-    }
-    else {
-      roundPopup.style.display = "none";
-      roundText.style.display = "none";
-    }
-
     if (roundRealNumber > roundLength) {
+      roundPopup.style.display = "flex";
       RoundNumberText.innerHTML = "Workout Completed";
+      roundText.style.display = "flex";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates ()
     }
