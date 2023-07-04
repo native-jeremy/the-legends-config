@@ -36,6 +36,9 @@ let setRoundNum;
 let setExercisesNum;
 let setExerciseNum;
 
+// Temp Variables
+let roundResIndex;
+
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
 const sirenText = document.getElementById("sirenText");
@@ -104,6 +107,8 @@ window.onload = async () => {
 
     Wized.request.await("Load Round Info", (response) => {    
         console.log("Round Info Response", response); // Log request response  
+
+        roundResIndex = response;
     })
 
   // [- Step 2 -] Exercises Request Response From Wized
@@ -115,6 +120,8 @@ window.onload = async () => {
     let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
+
+    console.log("Round Applied Index Info Response", roundResIndex)
 
     let exerciseData = repDataInt.data[parseInt(exercisesParam)];
 
