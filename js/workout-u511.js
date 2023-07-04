@@ -291,7 +291,7 @@ window.onload = async () => {
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         }
-        else if (parseInt(roundParam) === roundLength) {
+        else if (parseInt(roundParam) > roundLength) {
           RoundNumberText.innerHTML = "Workout Completed";
           Wized.data.setVariable("complete", "completed");
           enableDisabledStates ()
