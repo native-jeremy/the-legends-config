@@ -304,9 +304,13 @@ window.onload = async () => {
 
       function backParamForVideo() {
         //if (parseInt(exercisesParam) > exercisesLength) {
-        getExercisesNum = checkurl.get("exercises");
+        /*getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) - 1;
-        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());*/
+
+        getRoundNum = checkurl.get("round");
+        getRoundNum = parseInt(getRoundNum) - 1;
+        setRoundNum = checkurl.set("round", getRoundNum.toString());
         //}
 
         window.location.href = url.toString();
