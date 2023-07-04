@@ -291,7 +291,7 @@ window.onload = async () => {
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         }
-        else if (parseInt(roundParam) < roundLength && !parseInt(exercisesParam) < exercisesLength) {
+        else if (parseInt(roundParam) === roundLength) {
         getRoundNum = checkurl.get("round");
         getRoundNum = parseInt(getRoundNum) + 1;
         setRoundNum = checkurl.set("round", getRoundNum.toString());
