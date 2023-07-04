@@ -175,7 +175,7 @@ window.onload = async () => {
       if (roundActiveName !== roundStartName || parseInt(exercisesParam) === 0) {
           console.log("New Round")
           //roundPopup.style.display = "flex";
-          RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
+          RoundNumberText.innerHTML = parseInt(roundParam) + 1;
       }
       else if ( roundActiveName === roundStartName) {
         console.log("Still The Same Round")
