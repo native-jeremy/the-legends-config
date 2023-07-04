@@ -102,6 +102,8 @@ window.onload = async () => {
   let url = new URL(params);
   let checkurl = url.searchParams;
 
+  roundPopup.style.display = "flex";
+
   window.history.replaceState(null, null, url.toString());
 
   enableDisabledStates ()
