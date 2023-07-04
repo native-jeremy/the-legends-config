@@ -115,11 +115,11 @@ window.onload = async () => {
     roundRes = response;
   })
 
-  Wized.request.await("Load Audio", (response) => {    
+  /*Wized.request.await("Load Audio", (response) => {    
     console.log("Audio Response", response);
 
     audioRes = response;
-  })
+  })*/
 
   // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
@@ -171,11 +171,14 @@ window.onload = async () => {
     let diffStr = currentNum.innerHTML;
     let diffInt = parseInt(diffStr);
     let diffCurrent = diffInt - 1;
+    let audioSrc = document.getElementById("voiceSrc");
+    let audioIndex = parseInt(exerciseParam);
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
     if (exerciseData !== undefined) {
       vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url;
+      audioSrc = repDataInt.data[parseInt(exercisesParam)].Audio[0].url;
       //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
       let exercisesLength =
         amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
@@ -523,13 +526,13 @@ window.onload = async () => {
 
       if (Math.floor(audio.currentTime) === Math.floor(audio.duration)) {
         if (
-          audioIndex < audioRes.data[parseInt(exercisesParam)].Audio.length
+          audioIndex < amrapResponse.data[parseInt(exercisesParam)].Audio.length
         ) {
           audioIndex = audioIndex + 1;
           console.log("Current Exercise Index For Audio", parseInt(audioIndex));
 
           audioCurrentSrc =
-            audioRes.data[parseInt(exercisesParam)].Audio[
+          amrapResponse.data[parseInt(exercisesParam)].Audio[
               parseInt(audioIndex)
             ].url;
           console.log("---------------------------------------");
@@ -545,7 +548,7 @@ window.onload = async () => {
       ) {
         audioIndex = 0;
         audioCurrentSrc =
-          audioRes.data[parseInt(exercisesParam)].Audio[
+        amrapResponse.data[parseInt(exercisesParam)].Audio[
             parseInt(audioIndex)
           ].url;
         console.log("---------------------------------------");
@@ -554,7 +557,7 @@ window.onload = async () => {
         console.log("Ran Request Audio Src <= Reset ");
 
         console.log("---------------------------------------");
-        console.log("Current Video Index:", parseInt(audioIndex));
+        console.log("Current Audio Index:", parseInt(audioIndex));
 
         audio.src = audioCurrentSrc;
         audio.play();
