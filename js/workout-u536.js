@@ -37,10 +37,13 @@ let setExercisesNum;
 let setExerciseNum;
 
 // Temp Variables
+let roundRes;
 let roundResIndex;
 let roundLength;
 let exerciseData;
 let roundRealNumber;
+let audioRes;
+let audioIndex;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -110,6 +113,12 @@ window.onload = async () => {
     console.log("Round Info Response", response);
 
     roundRes = response;
+  })
+
+  Wized.request.await("Load Audio", (response) => {    
+    console.log("Audio Response", response);
+
+    audioRes = response;
   })
 
   // [- Step 2 -] Exercises Request Response From Wized
@@ -470,6 +479,49 @@ window.onload = async () => {
       if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
         if (
           videoIndex < amrapResponse.data[parseInt(exercisesParam)].Video.length
+        ) {
+          videoIndex = videoIndex + 1;
+          console.log("Current Exercise Index For Video", parseInt(videoIndex));
+
+          videoCurrentSrc =
+            amrapResponse.data[parseInt(exercisesParam)].Video[
+              parseInt(videoIndex)
+            ].url;
+          console.log("---------------------------------------");
+          console.log(videoCurrentSrc);
+          console.log("---------------------------------------");
+          console.log("Ran Request Video Src => Updated");
+
+          videos.src = videoCurrentSrc;
+          videos.play();
+        }
+      } else if (
+        videoIndex >= amrapResponse.data[parseInt(exercisesParam)].Video.length
+      ) {
+        videoIndex = 0;
+        videoCurrentSrc =
+          amrapResponse.data[parseInt(exercisesParam)].Video[
+            parseInt(videoIndex)
+          ].url;
+        console.log("---------------------------------------");
+        console.log(videoCurrentSrc);
+        console.log("---------------------------------------");
+        console.log("Ran Request Video Src <= Reset ");
+
+        console.log("---------------------------------------");
+        console.log("Current Video Index:", parseInt(videoIndex));
+
+        videos.src = videoCurrentSrc;
+        videos.play();
+      }
+    }
+    function audioCheck() {
+      let audioCurrentSrc;
+      let audio = document.getElementById("voiceSrc");
+
+      if (Math.floor(audio.currentTime) === Math.floor(audio.duration)) {
+        if (
+          audioIndex < amrapResponse.data[parseInt(exercisesParam)].Audio.length
         ) {
           videoIndex = videoIndex + 1;
           console.log("Current Exercise Index For Video", parseInt(videoIndex));
