@@ -483,7 +483,9 @@ window.onload = async () => {
       let videoCurrentSrc;
       let videos = document.getElementById("video");
 
-      if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
+      let videoDuration = videos.duration * 2;
+
+      if (Math.floor(videos.currentTime) === Math.floor(videoDuration)) {
         if (
           videoIndex < amrapResponse.data[parseInt(exercisesParam)].Video.length
         ) {
