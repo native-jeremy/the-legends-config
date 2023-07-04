@@ -38,6 +38,8 @@ let setExerciseNum;
 
 // Temp Variables
 let roundResIndex;
+let roundLength
+let exerciseData;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -105,11 +107,11 @@ window.onload = async () => {
 
   enableDisabledStates ()
 
-    Wized.request.await("Load Round Info", (response) => {    
-        console.log("Round Info Response", response); // Log request response  
+  Wized.request.await("Load Round Info", (response) => {    
+    console.log("Round Info Response", response);
 
-        roundResIndex = response;
-    })
+    roundRes = response;
+  })
 
   // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
@@ -121,9 +123,12 @@ window.onload = async () => {
     const amrapResponse = response;
     let checkAmrap;
 
-    console.log("Rounds Res Length", roundResIndex.data.length)
+    roundLength = roundRes.data.length;
 
-    let exerciseData = repDataInt.data[parseInt(exercisesParam)];
+    console.log("---------------------------------------");
+    console.log("Rounds Res Length", roundLength)
+
+    exerciseData = repDataInt.data[parseInt(exercisesParam)];
 
     console.log("---------------------------------------");
     console.log(
@@ -164,7 +169,7 @@ window.onload = async () => {
       }, 1500);
 
       console.log("---------------------------------------");
-      console.log("Exersie Length", exercisesLength);
+      console.log("Exercise Length", exercisesLength);
       console.log("---------------------------------------");
       console.log("Round Length", roundLength);
       //RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
@@ -232,7 +237,7 @@ window.onload = async () => {
       console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
       nextButton.addEventListener("click", function () {
-        updateParamForVideo();
+        updateParams();
 
         //DEVELOPMENT ONLY
         console.log("---------------------------------------");
@@ -254,7 +259,7 @@ window.onload = async () => {
       });
 
       prevButton.addEventListener("click", function () {
-        backParamForVideo();
+        backTrackParams();
 
         //DEVELOPMENT ONLY
         console.log("---------------------------------------");
@@ -275,7 +280,7 @@ window.onload = async () => {
         );
       });
 
-      function updateParamForVideo() {
+      function updateParams() {
         //if (parseInt(exercisesParam) > exercisesLength) {
         //getRoundNum = checkurl.get("round");
         //setRoundNum = checkurl.delete("round", "start");
@@ -302,7 +307,7 @@ window.onload = async () => {
         console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));*/
       }
 
-      function backParamForVideo() {
+      function backTrackParams() {
         //if (parseInt(exercisesParam) > exercisesLength) {
         /*getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) - 1;
