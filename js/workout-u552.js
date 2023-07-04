@@ -359,13 +359,13 @@ window.onload = async () => {
       // Amrap Condtionals To Check If True/False
       if (amrapBool == "True") {
         checkAmrapVideo = setInterval(videoCheck, 0);
-        checkAmrapAudio = setInterval(audioCheck, 0);
+        //checkAmrapAudio = setInterval(audioCheck, 0);
         newcookieIndex =
           amrapResponse.data[parseInt(exercisesParam)].Video.length;
         console.log("Amrap length:", newcookieIndex);
       } else {
         clearInterval(checkAmrapVideo);
-        clearInterval(checkAmrapAudio);
+        //clearInterval(checkAmrapAudio);
       }
 
       if (
@@ -524,7 +524,7 @@ window.onload = async () => {
         videos.play();
       }
     }
-    function audioCheck() {
+    /*function audioCheck() {
       let audioCurrentSrc;
       let audio = document.getElementById("voiceSrc");
 
@@ -566,7 +566,7 @@ window.onload = async () => {
         audio.src = audioCurrentSrc;
         audio.play();
       }
-    }
+    }*/
   });
 
   //Function Calls Onload
