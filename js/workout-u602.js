@@ -215,6 +215,7 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           playVideoDiff();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+          setTimeout(autoPlayVideo, 2000);
         }
         else {
           amount = maxLimit;
@@ -231,6 +232,7 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           playVideoDiff();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+          setTimeout(autoPlayVideo, 2000);
         }
         else {
           amount = minLimit;
