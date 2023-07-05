@@ -80,9 +80,11 @@ const minusBtn = document.getElementById("minusBtn");
 const currentNum = document.getElementById("currentNum");
 const limitNum = document.getElementById("limitNum");
 const plusBtn = document.getElementById("plusBtn");
-let maxLimit;
-let minLimit = 0;
+let maxLimit = 5;
+let minLimit = 1;
 let amount = 1;
+currentNum.innerHTML = amount;
+limitNum.innerHTML = maxLimit;
 
 let refreshNum = 0;
 
@@ -142,16 +144,9 @@ window.onload = async () => {
         videoContainer.style.opacity = "1"
     }
 
-    // Difficulty Setup
-    currentNum.innerHTML = amount;
-    let diffStr = currentNum.innerHTML;
-    let diffInt = parseInt(diffStr);
-    let diffCurrent = diffInt - 1;
+    maxLimit = diffLength;
 
     diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].length;
-
-    maxLimit = diffLength;
-    limitNum.innerHTML = maxLimit;
 
     roundLength = roundRes.data.length;
 
@@ -191,6 +186,10 @@ window.onload = async () => {
     console.log("Single Exercise:", repDataInt.data[parseInt(exercisesParam)]);
 
     //console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio_Source);
+
+    let diffStr = currentNum.innerHTML;
+    let diffInt = parseInt(diffStr);
+    let diffCurrent = diffInt - 1;
     let audioSrc = document.getElementById("voiceSrc");
     let audioIndex = parseInt(exerciseParam);
     let vidSrc = document.getElementById("video");
@@ -213,6 +212,7 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         } else {
+          diffCurrent = ;
           currentNum.innerHTML = maxLimit;
         }
         console.log("---------------------------------------");
