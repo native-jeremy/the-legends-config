@@ -3,6 +3,7 @@
 */
 
 //Element Triggers
+const LoaderTrigger = document.getElementById("Trigger");
 const exerciseTitle = document.getElementById("exerciseTitle");
 const exerciseHeader = document.getElementById("exerciseHeader");
 const roundPopup = document.getElementById("roundPopup");
@@ -132,6 +133,10 @@ window.onload = async () => {
     let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
+
+    if (repDataInt.status === 200) {
+        LoaderTrigger.click();
+    }
 
     roundLength = roundRes.data.length;
 
