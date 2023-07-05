@@ -236,8 +236,8 @@ window.onload = async () => {
         plusBtn.style.cursor = "not-allowed";
       }
       else if (amount < maxLimit && amount > minLimit) {
-        plusBtn.style.cursor = "cursor";
-        minusBtn.style.cursor = "cursor";
+        plusBtn.style.cursor = "pointer";
+        minusBtn.style.cursor = "pointer";
       }
       else if (amount === minLimit) {
         minusBtn.style.cursor = "not-allowed";
