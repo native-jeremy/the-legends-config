@@ -122,7 +122,7 @@ window.onload = async () => {
   let url = new URL(params);
   let checkurl = url.searchParams;
 
-  window.history.replaceState(null, null, url.toString());
+  window.history.replaceState(null, null, "/workout-overview?workout=" + workoutParam);
 
   enableDisabledStates ()
 
@@ -419,7 +419,6 @@ window.onload = async () => {
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
 
         window.location.href = url.toString();
-        window.history.replaceState(null, null, url.toString());
         //checkParam()
 
         /* //DEVELOPMENT ONLY
