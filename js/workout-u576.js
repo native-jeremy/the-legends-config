@@ -50,6 +50,7 @@ let checkAmrapVideo;
 let checkAmrapAudio;
 let exerciseRes;
 let exerciseDiffRes;
+let diffLength;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -143,6 +144,10 @@ window.onload = async () => {
         videoContainer.style.opacity = "1"
     }
 
+    diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].length;
+
+    maxLimit = diffLength;
+
     roundLength = roundRes.data.length;
 
     roundRealNumber = parseInt(roundParam) + 1;
@@ -219,8 +224,10 @@ window.onload = async () => {
           diffCurrent--;
           amount--;
           currentNum.innerHTML = amount;
+          vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         } else {
           diffCurrent = 0;
+          vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
           amount = minLimit;
         }
         console.log("---------------------------------------");
