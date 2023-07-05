@@ -3,7 +3,8 @@
 */
 
 //Element Triggers
-const LoaderTrigger = document.getElementById("Trigger");
+const videoContainer = document.getElementById("videoContainer");
+const loaderTrigger = document.getElementById("Trigger");
 const exerciseTitle = document.getElementById("exerciseTitle");
 const exerciseHeader = document.getElementById("exerciseHeader");
 const roundPopup = document.getElementById("roundPopup");
@@ -135,7 +136,8 @@ window.onload = async () => {
     let checkAmrap;
 
     if (repDataInt.status === 200) {
-        LoaderTrigger.click();
+        loaderTrigger.click();
+        videoContainer.style.opacity = "1"
     }
 
     roundLength = roundRes.data.length;
