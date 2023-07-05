@@ -213,6 +213,7 @@ window.onload = async () => {
           diffCurrent++;
           amount++;
           currentNum.innerHTML = amount;
+          enableDisabledStates();
           playVideoDiff();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
           setTimeout(enableActiveStates, 1500);
@@ -231,6 +232,7 @@ window.onload = async () => {
           diffCurrent--;
           amount--;
           currentNum.innerHTML = amount;
+          enableDisabledStates();
           playVideoDiff();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
           setTimeout(enableActiveStates, 1500);
