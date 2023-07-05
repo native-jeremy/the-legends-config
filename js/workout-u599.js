@@ -731,7 +731,7 @@ window.onload = async () => {
       sirenText.innerHTML = "On";
       sirenToggleOn.classList.toggle("on");
     } else {
-      if (sirenCookieInt === "off") {
+      if (sirenCookieInt === "On") {
         Wized.data.setCookie("sirenmute", "muted");
         sirenText.innerHTML = "Off";
         sirenToggleOn.classList.toggle("on");
@@ -741,24 +741,6 @@ window.onload = async () => {
         sirenToggleOn.classList.toggle("on");
       }
     }
-    Wized.data.listen("c.sirenmute", async () => {    
-      const newValue = await Wized.data.get("c.mute"); // Get new value    
-      if (newValue === "undefined" || newValue === undefined) {
-        Wized.data.setCookie("sirenmute", "on");
-        sirenText.innerHTML = "On";
-        sirenToggleOn.classList.toggle("on");
-      } else {
-        if (newValue === "muted") {
-          Wized.data.setCookie("sirenmute", "muted");
-          sirenText.innerHTML = "Off";
-          sirenToggleOn.classList.toggle("on");
-        } else {
-          Wized.data.setCookie("sirenmute", "on");
-          sirenText.innerHTML = "On";
-          sirenToggleOn.classList.toggle("on");
-        }
-      }
-  });
   }
 
   // Voice Condtionals On Page Load On/Off
