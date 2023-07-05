@@ -395,7 +395,7 @@ window.onload = async () => {
       });
     }
 
-  else if (exerciseData == undefined && parseInt(roundParam) !== roundLength)
+  else if (exerciseData == undefined && parseInt(exercisesParam) > 0 && parseInt(roundParam) !== roundLength)
     {
       getRoundNum = checkurl.get("round");
       getRoundNum = parseInt(getRoundNum) + 1;
@@ -407,7 +407,15 @@ window.onload = async () => {
       window.location.href = url.toString();      
     }
     
-    else if  (exerciseData == undefined && parseInt(roundParam) === roundLength) {
+    else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
+      roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
+      enableDisabledStates ()
+
+      window.location.href = "/workout-overview?workout=" + workoutParam;
+    }
+
+    else if (exerciseData == undefined && parseInt(exercisesParam) > 0 && parseInt(roundParam) === roundLength) {
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Workout Completed";
