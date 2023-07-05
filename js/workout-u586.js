@@ -211,8 +211,8 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         } else {
-          minusBtn.style.cursor = "not-allowed";
-          currentNum.innerHTML = maxLimit;
+          plusBtn.style.cursor = "not-allowed";
+          amount = maxLimit;
         }
         console.log("---------------------------------------");
         console.log("Current Difficulty:", diffCurrent);
@@ -225,7 +225,8 @@ window.onload = async () => {
           amount--;
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-        } else {
+        } 
+        else {
           minusBtn.style.cursor = "not-allowed";
           amount = minLimit;
         }
