@@ -691,7 +691,7 @@ window.onload = async () => {
       Wized.data.setCookie("sirenmute", "on");
       sirenText.innerHTML = "On";
       sirenToggleOn.classList.toggle("on");
-    } else if (sirenText.innerHTML === "Off") {
+    } else if (sirenText.innerHTML === "On") {
       Wized.data.setCookie("sirenmute", "muted");
       sirenText.innerHTML = "Off";
       sirenToggleOn.classList.toggle("on");
@@ -726,7 +726,8 @@ window.onload = async () => {
   // Siren Condtionals On Page Load On/Off
   function sirenEnableLoad() {
     // Siren Cookie Condition
-    if (sirenCookieInt === "on" || sirenCookieInt === on) {
+    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
+      Wized.data.setCookie("sirenmute", "on");
       sirenText.innerHTML = "On";
       sirenToggleOn.classList.toggle("on");
     } else {
@@ -734,12 +735,30 @@ window.onload = async () => {
         Wized.data.setCookie("sirenmute", "muted");
         sirenText.innerHTML = "Off";
         sirenToggleOn.classList.toggle("on");
-      } /*else {
+      } else {
         Wized.data.setCookie("sirenmute", "on");
         sirenText.innerHTML = "On";
         sirenToggleOn.classList.toggle("on");
-      }*/
+      }
     }
+    Wized.data.listen("c.sirenmute", async () => {    
+      const newValue = await Wized.data.get("c.mute"); // Get new value    
+      if (newValue === "undefined" || newValue === undefined) {
+        Wized.data.setCookie("sirenmute", "on");
+        sirenText.innerHTML = "On";
+        sirenToggleOn.classList.toggle("on");
+      } else {
+        if (newValue === "muted") {
+          Wized.data.setCookie("sirenmute", "muted");
+          sirenText.innerHTML = "Off";
+          sirenToggleOn.classList.toggle("on");
+        } else {
+          Wized.data.setCookie("sirenmute", "on");
+          sirenText.innerHTML = "On";
+          sirenToggleOn.classList.toggle("on");
+        }
+      }
+  });
   }
 
   // Voice Condtionals On Page Load On/Off
