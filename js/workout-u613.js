@@ -201,21 +201,7 @@ window.onload = async () => {
 
     if (exerciseData !== undefined) {
 
-      if (amrapBool == "False") {
-        let diffStr = currentNum.innerHTML;
-        let diffInt = parseInt(diffStr);
-        diffCurrent = diffInt - 1;
-
-
-        diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
-        maxLimit = diffLength;
-        limitNum.innerHTML = maxLimit;
-        console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
-        console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
-
-        DiffControlsSingle();
-      }
-      else if (amrapBool == "True")
+      if (amrapBool == "True")
       {
         for (i = 0; i < currentNumMulti.length; i++) {
           currentNumMulti[i].innerHTML = amountMulti[i];
@@ -233,6 +219,21 @@ window.onload = async () => {
 
         //console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
         //console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
+      }
+
+      else {
+        let diffStr = currentNum.innerHTML;
+        let diffInt = parseInt(diffStr);
+        diffCurrent = diffInt - 1;
+
+
+        diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+        maxLimit = diffLength;
+        limitNum.innerHTML = maxLimit;
+        console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
+        console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
+
+        DiffControlsSingle();
       }
 
       
