@@ -212,7 +212,6 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         } else {
-          diffCurrent = ;
           currentNum.innerHTML = maxLimit;
         }
         console.log("---------------------------------------");
