@@ -205,6 +205,7 @@ window.onload = async () => {
           diffCurrent++;
           amount++;
           currentNum.innerHTML = amount;
+          vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[amount].url;
         } else {
           currentNum.innerHTML = maxLimit;
         }
