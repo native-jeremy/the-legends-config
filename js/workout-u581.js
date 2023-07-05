@@ -144,10 +144,6 @@ window.onload = async () => {
         videoContainer.style.opacity = "1"
     }
 
-    maxLimit = diffLength;
-
-    diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].length;
-
     roundLength = roundRes.data.length;
 
     roundRealNumber = parseInt(roundParam) + 1;
@@ -194,6 +190,9 @@ window.onload = async () => {
     let audioIndex = parseInt(exerciseParam);
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
+
+    diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].length;
+    maxLimit = diffLength;
 
     if (exerciseData !== undefined) {
       
