@@ -193,6 +193,8 @@ window.onload = async () => {
 
     diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
     maxLimit = diffLength;
+    console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
+    console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
 
     if (exerciseData !== undefined) {
       
