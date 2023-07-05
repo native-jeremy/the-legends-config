@@ -211,6 +211,7 @@ window.onload = async () => {
           diffCurrent++;
           amount++;
           currentNum.innerHTML = amount;
+          playVideo();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         }
         else {
@@ -226,6 +227,7 @@ window.onload = async () => {
           diffCurrent--;
           amount--;
           currentNum.innerHTML = amount;
+          playVideo();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         }
         else {
