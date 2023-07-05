@@ -207,43 +207,47 @@ window.onload = async () => {
         amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
       let roundLength = repDataInt.data.length;
 
-       // Diff Increase Click Controls
-       plusBtn.addEventListener("click", function () {
-        if (amount < maxLimit) {
-          diffCurrent++;
-          amount++;
-          currentNum.innerHTML = amount;
-          enableDisabledStates();
-          playVideoDiff();
-          vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-          setTimeout(enableActiveStates, 1500);
-          setTimeout(autoPlayVideo, 2000);
-        }
-        else {
-          amount = maxLimit;
-        }
-        console.log("---------------------------------------");
-        console.log("Current Difficulty:", diffCurrent);
-      });
+      DiffControlsSingle();
 
-      // Diff Decrease Click Controls
-      minusBtn.addEventListener("click", function () {
-        if (amount > minLimit) {
-          diffCurrent--;
-          amount--;
-          currentNum.innerHTML = amount;
-          enableDisabledStates();
-          playVideoDiff();
-          vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-          setTimeout(enableActiveStates, 1500);
-          setTimeout(autoPlayVideo, 2000);
-        }
-        else {
-          amount = minLimit;
-        }
-        console.log("---------------------------------------");
-        console.log("Current Difficulty:", diffCurrent);
-      });
+       // Diff Increase Click Controls - Single Exercise
+       function DiffControlsSingle() {
+        plusBtn.addEventListener("click", function () {
+          if (amount < maxLimit) {
+            diffCurrent++;
+            amount++;
+            currentNum.innerHTML = amount;
+            enableDisabledStates();
+            playVideoDiff();
+            vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+            setTimeout(enableActiveStates, 1500);
+            setTimeout(autoPlayVideo, 2000);
+          }
+          else {
+            amount = maxLimit;
+          }
+          console.log("---------------------------------------");
+          console.log("Current Difficulty:", diffCurrent);
+        });
+
+        // Diff Decrease Click Controls
+        minusBtn.addEventListener("click", function () {
+          if (amount > minLimit) {
+            diffCurrent--;
+            amount--;
+            currentNum.innerHTML = amount;
+            enableDisabledStates();
+            playVideoDiff();
+            vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+            setTimeout(enableActiveStates, 1500);
+            setTimeout(autoPlayVideo, 2000);
+          }
+          else {
+            amount = minLimit;
+          }
+          console.log("---------------------------------------");
+          console.log("Current Difficulty:", diffCurrent);
+        });
+      }
 
       let clearStates = setTimeout (() => {
         enableActiveStates ()
