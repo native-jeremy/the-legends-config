@@ -94,7 +94,6 @@ const plusBtnMulti = document.querySelectorAll('.plus-btn-multi');
 let maxLimitMulti;
 let minLimitMulti = 1;
 let amountMulti = 1;
-currentNumMulti[1].innerHTML = amountMulti;
 
 let refreshNum = 0;
 
@@ -216,6 +215,7 @@ window.onload = async () => {
       else if (amrapBool == "True")
       {
         for (let i = 0; i < currentNumMulti.length; i++) {
+          currentNumMulti[i].innerHTML = amountMulti[i];
           let diffStr = currentNumMulti[i].innerHTML;
           let diffInt = parseInt(diffStr);
           diffCurrent = diffInt - 1;
