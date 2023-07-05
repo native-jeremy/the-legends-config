@@ -84,7 +84,6 @@ let maxLimit;
 let minLimit = 1;
 let amount = 1;
 currentNum.innerHTML = amount;
-limitNum.innerHTML = maxLimit;
 
 let refreshNum = 0;
 
@@ -193,6 +192,7 @@ window.onload = async () => {
 
     diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
     maxLimit = diffLength;
+    limitNum.innerHTML = maxLimit;
     console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
     console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
 
