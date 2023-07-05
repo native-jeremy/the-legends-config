@@ -752,12 +752,12 @@ window.onload = async () => {
       voiceToggleOn.classList.toggle("on");
     } else {
       if (voiceCookieInt === "On") {
-        Wized.data.setCookie("voicemute", "on");
-        voiceText.innerHTML = "On";
-        voiceToggleOn.classList.toggle("on");
-      } else {
         Wized.data.setCookie("voicemute", "muted");
         voiceText.innerHTML = "Off";
+        voiceToggleOn.classList.toggle("on");
+      } else {
+        Wized.data.setCookie("voicemute", "on");
+        voiceText.innerHTML = "On";
         voiceToggleOn.classList.toggle("on");
       }
     }
