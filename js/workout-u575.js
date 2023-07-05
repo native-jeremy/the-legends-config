@@ -192,7 +192,7 @@ window.onload = async () => {
 
     if (exerciseData !== undefined) {
       
-      vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[amount].url;
+      vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
       audioSrc.src = repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
       //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
       let exercisesLength =
@@ -205,7 +205,7 @@ window.onload = async () => {
           diffCurrent++;
           amount++;
           currentNum.innerHTML = amount;
-          vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[amount].url;
+          vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         } else {
           currentNum.innerHTML = maxLimit;
         }
