@@ -419,7 +419,7 @@ window.onload = async () => {
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
 
         window.location.href = url.toString();
-        //window.history.replaceState(null, null, url.toString());
+        window.history.replaceState(null, null, url.toString());
         //checkParam()
 
         /* //DEVELOPMENT ONLY
