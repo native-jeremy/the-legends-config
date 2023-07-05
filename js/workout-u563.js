@@ -399,7 +399,7 @@ window.onload = async () => {
       window.location.href = url.toString();      
     }
     
-    else {
+    else if  (exerciseData == undefined && parseInt(roundParam) === roundLength) {
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Workout Completed";
