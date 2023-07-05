@@ -113,10 +113,18 @@ window.onload = async () => {
 
   enableDisabledStates ()
 
-  Wized.request.await("Load Round Info", (response) => {    
+  Wized.request.await("Load Round Info", (response) => {  
+    console.log("---------------------------------------");  
     console.log("Round Info Response", response);
 
     roundRes = response;
+  })
+
+  Wized.request.await("Load Exercise", (response) => { 
+    console.log("---------------------------------------");   
+    console.log("Exercise Info Response", response);
+
+    ExerciseRes = response;
   })
 
   /*Wized.request.await("Load Audio", (response) => {    
