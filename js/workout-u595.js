@@ -211,7 +211,7 @@ window.onload = async () => {
           diffCurrent++;
           amount++;
           currentNum.innerHTML = amount;
-          playVideo();
+          playVideoDiff();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         }
         else {
@@ -227,7 +227,7 @@ window.onload = async () => {
           diffCurrent--;
           amount--;
           currentNum.innerHTML = amount;
-          playVideo();
+          playVideoDiff();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         }
         else {
@@ -484,6 +484,17 @@ window.onload = async () => {
         video.pause();
         playButton.classList.toggle("pause");
         timerText.classList.add("pausetime");
+      }
+    }
+
+    function playVideoDiff() {
+      let video = document.getElementById("video");
+      if (!video.paused) {
+        video.pause();
+        playButton.classList.toggle("pause");
+        timerText.classList.add("pausetime");
+        console.log("---------------------------------------");
+        console.log("Video Duration", video.duration + "s");
       }
     }
 
