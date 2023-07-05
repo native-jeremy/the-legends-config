@@ -191,7 +191,7 @@ window.onload = async () => {
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
-    diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].length;
+    diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
     maxLimit = diffLength;
 
     if (exerciseData !== undefined) {
