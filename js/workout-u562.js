@@ -396,7 +396,7 @@ window.onload = async () => {
       getExercisesNum = 0;
       setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
 
-      //window.location.href = url.toString();      
+      window.location.href = url.toString();      
     }
     
     else {
