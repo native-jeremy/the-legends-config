@@ -191,35 +191,16 @@ window.onload = async () => {
     let videoIndex = parseInt(exerciseParam);
 
     if (exerciseData !== undefined) {
-      vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Video[0].url;
+      
+      vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[amount].url;
       audioSrc.src = repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
       //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
       let exercisesLength =
         amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
       let roundLength = repDataInt.data.length;
 
-      /*async () => {  
-        await Wized.request.await("Audio"); // Trigger request  
-        const response = await Wized.data.get("r.3.d"); // Get request response  
-        console.log("Audio Response", response); // Console log received request data
-    };*/
-
-      let clearStates = setTimeout (() => {
-        enableActiveStates ()
-        clearTimeout(clearStates)
-      }, 1500);
-
-      console.log("---------------------------------------");
-      console.log("Exercise Length", exercisesLength);
-      console.log("---------------------------------------");
-      console.log("Round Length", roundLength);
-      //RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
-
-      console.log("---------------------------------------");
-      console.log("Rounds", amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]);
-
-      // Diff Increase Click Controls
-      plusBtn.addEventListener("click", function () {
+       // Diff Increase Click Controls
+       plusBtn.addEventListener("click", function () {
         if (amount < maxLimit) {
           diffCurrent++;
           amount++;
@@ -244,6 +225,26 @@ window.onload = async () => {
         console.log("---------------------------------------");
         console.log("Current Difficulty:", diffCurrent);
       });
+
+      /*async () => {  
+        await Wized.request.await("Audio"); // Trigger request  
+        const response = await Wized.data.get("r.3.d"); // Get request response  
+        console.log("Audio Response", response); // Console log received request data
+    };*/
+
+      let clearStates = setTimeout (() => {
+        enableActiveStates ()
+        clearTimeout(clearStates)
+      }, 1500);
+
+      console.log("---------------------------------------");
+      console.log("Exercise Length", exercisesLength);
+      console.log("---------------------------------------");
+      console.log("Round Length", roundLength);
+      //RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
+
+      console.log("---------------------------------------");
+      console.log("Rounds", amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]);
 
       /* WORK IN PROGRESS CODE Thursday 29th June 2023 
     New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
