@@ -190,13 +190,15 @@ window.onload = async () => {
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
-    diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
-    maxLimit = diffLength;
-    limitNum.innerHTML = maxLimit;
-    console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
-    console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
 
     if (exerciseData !== undefined) {
+
+
+      diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+      maxLimit = diffLength;
+      limitNum.innerHTML = maxLimit;
+      console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
+      console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
       
       vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
       audioSrc.src = repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
