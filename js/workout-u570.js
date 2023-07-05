@@ -120,13 +120,6 @@ window.onload = async () => {
     roundRes = response;
   })
 
-  Wized.request.await("Load Exercise", (response) => { 
-    console.log("---------------------------------------");   
-    console.log("Exercise Info Response", response);
-
-    ExerciseRes = response;
-  })
-
   /*Wized.request.await("Load Audio", (response) => {    
     console.log("Audio Response", response);
 
@@ -586,6 +579,13 @@ window.onload = async () => {
       }
     }*/
   });
+
+  Wized.request.await("Load Exercise", (response) => { 
+    console.log("---------------------------------------");   
+    console.log("Exercise Info Response", response);
+
+    ExerciseRes = response;
+  })
 
   //Function Calls Onload
   //roundEnableLoad();
