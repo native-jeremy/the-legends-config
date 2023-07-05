@@ -80,7 +80,7 @@ const minusBtn = document.getElementById("minusBtn");
 const currentNum = document.getElementById("currentNum");
 const limitNum = document.getElementById("limitNum");
 const plusBtn = document.getElementById("plusBtn");
-let maxLimit = 5;
+let maxLimit;
 let minLimit = 1;
 let amount = 1;
 currentNum.innerHTML = amount;
@@ -210,11 +210,7 @@ window.onload = async () => {
           amount++;
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-          plusBtn.style.cursor = "pointer";
-        } 
-        else if (amount === maxLimit) {
-          plusBtn.style.cursor = "not-allowed";
-        } 
+        }
         else {
           amount = maxLimit;
         }
@@ -229,28 +225,13 @@ window.onload = async () => {
           amount--;
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-          minusBtn.style.cursor = "pointer";
         }
-        else if (amount === minLimit) {
-          minusBtn.style.cursor = "not-allowed";
-        } 
         else {
           amount = minLimit;
         }
         console.log("---------------------------------------");
         console.log("Current Difficulty:", diffCurrent);
       });
-
-      if (amount < maxLimit && amount > minLimit) {
-        plusBtn.style.cursor = "pointer";
-        minusBtn.style.cursor = "pointer";
-      }
-
-      /*async () => {  
-        await Wized.request.await("Audio"); // Trigger request  
-        const response = await Wized.data.get("r.3.d"); // Get request response  
-        console.log("Audio Response", response); // Console log received request data
-    };*/
 
       let clearStates = setTimeout (() => {
         enableActiveStates ()
