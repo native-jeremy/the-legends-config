@@ -210,7 +210,12 @@ window.onload = async () => {
           amount++;
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-        } else {
+          plusBtn.style.cursor = "pointer";
+        } 
+        else if (amount === maxLimit) {
+          plusBtn.style.cursor = "not-allowed";
+        } 
+        else {
           amount = maxLimit;
         }
         console.log("---------------------------------------");
@@ -224,6 +229,10 @@ window.onload = async () => {
           amount--;
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+          minusBtn.style.cursor = "pointer";
+        }
+        else if (amount === minLimit) {
+          minusBtn.style.cursor = "not-allowed";
         } 
         else {
           amount = minLimit;
@@ -232,15 +241,9 @@ window.onload = async () => {
         console.log("Current Difficulty:", diffCurrent);
       });
 
-      if (amount === maxLimit) {
-        plusBtn.style.cursor = "not-allowed";
-      }
-      else if (amount < maxLimit && amount > minLimit) {
+      if (amount < maxLimit && amount > minLimit) {
         plusBtn.style.cursor = "pointer";
         minusBtn.style.cursor = "pointer";
-      }
-      else if (amount === minLimit) {
-        minusBtn.style.cursor = "not-allowed";
       }
 
       /*async () => {  
