@@ -87,7 +87,7 @@ let amount = 1;
 currentNum.innerHTML = amount;
 
 // Diffcult Amrap = define - Intialisation
-const minusBtnMulti = document.getElementById("minus-btn-multi");
+const minusBtnMulti = document.querySelectorAll('.minus-btn-multi');
 const currentNumMulti = document.querySelectorAll('.current-num-multi');
 const limitNumMulti = document.querySelectorAll('.limit-num-multi');
 const plusBtnMulti = document.querySelectorAll('.plus-btn-multi');
@@ -211,6 +211,8 @@ window.onload = async () => {
         limitNum.innerHTML = maxLimit;
         console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
         console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
+
+        DiffControlsSingle();
       }
       else if (amrapBool == "True")
       {
@@ -223,7 +225,9 @@ window.onload = async () => {
           diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
           maxLimitMulti[i] = diffLength;
           limitNumMulti[i].innerHTML = maxLimitMulti[i];
+          DiffControlsAmrap();
         }
+        
 
 
         //console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
@@ -239,10 +243,10 @@ window.onload = async () => {
       let roundLength = repDataInt.data.length;
 
       // Diff Exercise Single Function
-      DiffControlsSingle();
+      
 
       // Diff Exercise Amrap Function
-      DiffControlsAmrap();
+      
 
        // Diff Increase Click Controls - Single Exercise
        function DiffControlsSingle() {
