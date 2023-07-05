@@ -215,6 +215,7 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           playVideoDiff();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+          setTimeout(enableActiveStates, 1500);
           setTimeout(autoPlayVideo, 2000);
         }
         else {
@@ -232,6 +233,7 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           playVideoDiff();
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+          setTimeout(enableActiveStates, 1500);
           setTimeout(autoPlayVideo, 2000);
         }
         else {
