@@ -80,13 +80,9 @@ const minusBtn = document.getElementById("minusBtn");
 const currentNum = document.getElementById("currentNum");
 const limitNum = document.getElementById("limitNum");
 const plusBtn = document.getElementById("plusBtn");
-let diffStr = currentNum.innerHTML;
-let diffInt = parseInt(diffStr);
-let diffCurrent = diffInt - 1;
 let maxLimit;
 let minLimit = 0;
 let amount = 1;
-currentNum.innerHTML = amount;
 
 let refreshNum = 0;
 
@@ -145,6 +141,12 @@ window.onload = async () => {
         loaderTrigger.click();
         videoContainer.style.opacity = "1"
     }
+
+    // Difficulty Setup
+    currentNum.innerHTML = amount;
+    let diffStr = currentNum.innerHTML;
+    let diffInt = parseInt(diffStr);
+    let diffCurrent = diffInt - 1;
 
     diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].length;
 
