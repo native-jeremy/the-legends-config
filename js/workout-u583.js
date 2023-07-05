@@ -211,6 +211,7 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         } else {
+          minusBtn.style.userSelect = "none";
           currentNum.innerHTML = maxLimit;
         }
         console.log("---------------------------------------");
@@ -225,8 +226,7 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         } else {
-          diffCurrent = 0;
-          vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+          minusBtn.style.userSelect = "none";
           amount = minLimit;
         }
         console.log("---------------------------------------");
