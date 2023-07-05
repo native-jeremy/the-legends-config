@@ -94,6 +94,7 @@ const plusBtnMulti = document.querySelectorAll('.plus-btn-multi');
 let maxLimitMulti;
 let minLimitMulti = 1;
 let amountMulti = 1;
+let i;
 
 let refreshNum = 0;
 
@@ -200,7 +201,7 @@ window.onload = async () => {
 
     if (exerciseData !== undefined) {
 
-      if (amrapBool !== "True") {
+      if (amrapBool == "False") {
         let diffStr = currentNum.innerHTML;
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
@@ -216,13 +217,13 @@ window.onload = async () => {
       }
       else if (amrapBool == "True")
       {
-        for (let i = 0; i < currentNumMulti.length; i++) {
+        for (i = 0; i < currentNumMulti.length; i++) {
           currentNumMulti[i].innerHTML = amountMulti[i];
           let diffStr = currentNumMulti[i].innerHTML;
           let diffInt = parseInt(diffStr);
           diffCurrent = diffInt - 1;
 
-          diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+          diffLength = 4//repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
           maxLimitMulti[i] = diffLength;
           limitNumMulti[i].innerHTML = maxLimitMulti[i];
           DiffControlsAmrap();
@@ -249,20 +250,20 @@ window.onload = async () => {
       
 
        // Diff Increase Click Controls - Single Exercise
-       function DiffControlsSingle() {
+       function DiffControlsAmrap() {
         plusBtn.addEventListener("click", function () {
-          if (amount < maxLimit) {
+          if (amount[i] < maxLimit[i]) {
             diffCurrent++;
-            amount++;
-            currentNum.innerHTML = amount;
-            enableDisabledStates();
-            playVideoDiff();
-            vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-            setTimeout(enableActiveStates, 1500);
-            setTimeout(autoPlayVideo, 2000);
+            amount[i]++;
+            currentNum[i].innerHTML = amountMulti[i];
+            //enableDisabledStates();
+            //playVideoDiff();
+            //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+            //setTimeout(enableActiveStates, 1500);
+            //setTimeout(autoPlayVideo, 2000);
           }
           else {
-            amount = maxLimit;
+            amountMulti[i] = maxLimitMulti[i];
           }
           console.log("---------------------------------------");
           console.log("Current Difficulty:", diffCurrent);
@@ -288,8 +289,8 @@ window.onload = async () => {
         });
       }
 
-       // Diff Increase Click Controls - Amrap Exercises
-       function DiffControlsAmrap() {
+       // Diff Increase Click Controls - Single Exercise
+       function DiffControlsSingle() {
         plusBtn.addEventListener("click", function () {
           if (amount < maxLimit) {
             diffCurrent++;
