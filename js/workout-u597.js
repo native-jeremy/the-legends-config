@@ -691,7 +691,7 @@ window.onload = async () => {
       Wized.data.setCookie("sirenmute", "on");
       sirenText.innerHTML = "On";
       sirenToggleOn.classList.toggle("on");
-    } else if (sirenText.innerHTML === "On") {
+    } else if (sirenText.innerHTML === "Off") {
       Wized.data.setCookie("sirenmute", "muted");
       sirenText.innerHTML = "Off";
       sirenToggleOn.classList.toggle("on");
@@ -726,20 +726,19 @@ window.onload = async () => {
   // Siren Condtionals On Page Load On/Off
   function sirenEnableLoad() {
     // Siren Cookie Condition
-    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
-      Wized.data.setCookie("sirenmute", "on");
+    if (sirenCookieInt === "on" || sirenCookieInt === on) {
       sirenText.innerHTML = "On";
       sirenToggleOn.classList.toggle("on");
     } else {
-      if (sirenCookieInt === "On") {
+      if (sirenCookieInt === "off") {
         Wized.data.setCookie("sirenmute", "muted");
         sirenText.innerHTML = "Off";
         sirenToggleOn.classList.toggle("on");
-      } else {
+      } /*else {
         Wized.data.setCookie("sirenmute", "on");
         sirenText.innerHTML = "On";
         sirenToggleOn.classList.toggle("on");
-      }
+      }*/
     }
   }
 
