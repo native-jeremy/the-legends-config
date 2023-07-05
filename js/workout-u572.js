@@ -48,6 +48,8 @@ let audioRes;
 let audioIndex;
 let checkAmrapVideo;
 let checkAmrapAudio;
+let exerciseRes;
+let exerciseDiffRes;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -592,7 +594,14 @@ window.onload = async () => {
     console.log("---------------------------------------");   
     console.log("Exercise Info Response", response);
 
-    ExerciseRes = response;
+    exerciseRes = response;
+  })
+
+  Wized.request.await("Load Exercise Diff", (response) => { 
+    console.log("---------------------------------------");   
+    console.log("Exercise Diff Info Response", response);
+
+    exerciseDiffRes = response;
   })
 
   //Function Calls Onload
