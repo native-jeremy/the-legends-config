@@ -211,7 +211,6 @@ window.onload = async () => {
           currentNum.innerHTML = amount;
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         } else {
-          plusBtn.style.cursor = "not-allowed";
           amount = maxLimit;
         }
         console.log("---------------------------------------");
@@ -227,12 +226,22 @@ window.onload = async () => {
           vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
         } 
         else {
-          minusBtn.style.cursor = "not-allowed";
           amount = minLimit;
         }
         console.log("---------------------------------------");
         console.log("Current Difficulty:", diffCurrent);
       });
+
+      if (amount === maxLimit) {
+        plusBtn.style.cursor = "not-allowed";
+      }
+      else if (amount === minLimit) {
+        minusBtn.style.cursor = "not-allowed";
+      }
+      else {
+        plusBtn.style.cursor = "cursor";
+        minusBtn.style.cursor = "cursor";
+      }
 
       /*async () => {  
         await Wized.request.await("Audio"); // Trigger request  
