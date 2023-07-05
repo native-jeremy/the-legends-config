@@ -246,8 +246,8 @@ window.onload = async () => {
     New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
 
       repAmount =
-      repDataInt.data[parseInt(exercisesParam)].Amounts_Name[diffCurrent];
-      repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type[0];
+      repDataInt.data[parseInt(exercisesParam)].Amounts_Name/*[diffCurrent]*/;
+      repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type/*[0]*/;
       amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
 
       console.log("---------------------------------------");
