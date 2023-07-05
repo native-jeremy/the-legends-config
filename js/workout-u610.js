@@ -223,7 +223,7 @@ window.onload = async () => {
           let diffInt = parseInt(diffStr);
           diffCurrent = diffInt - 1;
 
-          diffLength = 4//repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+          diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
           maxLimitMulti[i] = diffLength;
           limitNumMulti[i].innerHTML = maxLimitMulti[i];
           DiffControlsAmrap();
