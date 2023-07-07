@@ -31,17 +31,17 @@ window.onload = async () => {
 
       if (applyData !== undefined)
       {
-        for (let i = 0; i < applyCompleted.length; i++) {
+        for (let index = 0; index < workout.length; index++) {
 
-          for (let index = 0; index < workout.length; index++) {
+          for (let i = 0; i < applyCompleted.length; i++) {
             if (week1.textContent.toLowerCase().includes(applyWeek[i] && applyName[i]) || week2.textContent.toLowerCase().includes(applyWeek[i] && applyName[i]) && workoutTitle[index].textContent.toLowerCase().includes(applyWeek[i] && applyName[i])) {
               icon[index].classList.add("complete-indicator");
             }
-            console.log("Week", week1);
-            console.log("Week", week2);
-            console.log("Workout Title", workoutTitle[index].textContent.toLowerCase());
           }
-          
+
+          console.log("Week", week1);
+          console.log("Week", week2);
+          console.log("Workout Title", workoutTitle[index].textContent.toLowerCase());
         }
 
         let progressNum = applyCompleted.length / workout.length * 100
