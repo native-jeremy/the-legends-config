@@ -24,8 +24,8 @@ window.onload = async () => {
       console.log(applyData);
 
       let workout = document.querySelectorAll(".workouts");
-      let icon = document.querySelectorAll(".completed-icon");
-      let week = document.querySelectorAll(".week");
+      let icon = document.querySelectorAll(".completed-icon").textContent;
+      let week = document.querySelectorAll(".week").textContent;
       let workoutTitle = document.querySelectorAll(".workout-title");
 
       if (applyData !== undefined)
