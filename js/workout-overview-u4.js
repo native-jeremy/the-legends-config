@@ -25,16 +25,14 @@ const voiceToggleOn = document.getElementById("voiceToggleOn");
 window.onload = async () => {
   Wized.request.await("Load Workout - OVERVIEW", (response) => {
     const snapshot = response.data[0];
+    let richTextRes = snapshot.Equipment_List;
+    const richText = document.getElementById("richText");
     if (response.status == 200) {
-      let richTextRes = snapshot.Equipment_List;
-      const richText = document.getElementById("richText");
-      setTimeout(() => {
-        document.title = snapshot.Name;
-        var converter = new showdown.Converter(),
+      document.title = snapshot.Name;
+      var converter = new showdown.Converter(),
         text = richTextRes,
         html = converter.makeHtml(text);
-        richText.innerHTML = html;
-      }, 2000)
+      richText.innerHTML = html;
     }
     console.log("Workout Res", snapshot);
   });
@@ -44,6 +42,9 @@ window.onload = async () => {
     console.log("Exercises Res", exercises);
   });
 
+
+
+  // Siren & Voice Functionailty Setup
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
