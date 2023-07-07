@@ -23,13 +23,13 @@ window.onload = async () => {
       let applyName = applyData.Completed_Name;
       console.log(applyData);
 
+      let workout = document.querySelectorAll('.workouts');
+      let icon = document.querySelectorAll('.completed-icon');
+      let week = document.querySelectorAll('.week');
+      let workoutTitle = document.querySelectorAll('.workout-title');
+
       if (applyData !== undefined)
       {
-        let workout = document.querySelectorAll(".workouts");
-        let icon = document.querySelectorAll(".completed-icon");
-        let week = document.querySelectorAll(".week");
-        let workoutTitle = document.querySelectorAll(".workout-title");
-        
         for (let i = 0; i < applyCompleted.length; i++) {
 
           for (let index = 0; index < workout.length; index++) {
