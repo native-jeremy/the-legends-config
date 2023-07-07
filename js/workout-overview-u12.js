@@ -26,30 +26,10 @@ window.onload = async () => {
   Wized.request.await("Load Workout - OVERVIEW", (response) => {
 
     const snapshot = response.data[0];
-    let roundLength = snapshot.Round_Name;
     let richTextRes = snapshot.Equipment_List;
     const richText = document.getElementById("richText");
-    let tileList = document.querySelector('.tile-list');
-    let tileCreate = `
-      <div class="tile style-3">
-        <div class="tile-header">
-          <div class="tile-header-text">
-            <h2 class="generic-text-style-11"></h2>
-            <div class="generic-text-style-1"></div>
-          </div>
-          <div class="toggle-button-trigger">
-            <div class="generic-text-style-1"></div>
-            <div class="tile-arrow-icon"</div>
-        </div>
-      </div>
-    `
 
     if (response.status == 200) {
-      let tileCreated = tileCreate;
-      for (let i = 0; i < roundLength.length; i++) {
-        tileCreated;
-        tileList.innerHTML = tileCreated;
-      }
 
       // Showdown Rich Text Converter
       document.title = snapshot.Name;
