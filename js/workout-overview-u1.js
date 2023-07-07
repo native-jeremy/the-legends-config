@@ -23,6 +23,29 @@ const voiceToggleOn = document.getElementById("voiceToggleOn");
 */
 
 window.onload = async () => {
+    Wized.request.await("Load Workout - OVERVIEW", (response) => {  
+
+      const snapshot = response.data[0];
+      let richTextRes = snapshot.Equipment_List;
+      const richText = document.getElementById("richText");
+      if(response.status == 200)
+      {
+      
+      document.title = snapshot.Name;
+      var converter = new showdown.Converter(),
+    text      = richTextRes,
+    html      = converter.makeHtml(text);
+    richText.innerHTML = html;   
+       }
+       console.log("Workout Res", snapshot);
+    })
+    
+    Wized.request.await("Load Exercises - OVERVIEW", (response) => {  
+    		let exercises = response
+        console.log("Exercises Res", exercises);
+    })
+
+  
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
   
@@ -98,5 +121,4 @@ window.onload = async () => {
     const voiceMuteCookie = Wized.data.get("c.voicemute");
     console.log("mute cookie changed to: ", voiceMuteCookie);
   });
-
   };
