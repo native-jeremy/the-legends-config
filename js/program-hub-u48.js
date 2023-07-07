@@ -25,7 +25,8 @@ window.onload = async () => {
 
       let workout = document.querySelectorAll('.workouts');
       let icon = document.querySelectorAll('.completed-icon');
-      let week = document.querySelectorAll('.week').innerHTML.toUpperCase();
+      let week1 = document.querySelectorAll('.week')[0].innerHTML.toUpperCase();
+      let week2 = document.querySelectorAll('.week')[1].innerHTML.toUpperCase();
       let workoutTitle = document.querySelectorAll('.workout-title').innerHTML.toUpperCase();
 
       if (applyData !== undefined)
@@ -33,7 +34,7 @@ window.onload = async () => {
         for (let i = 0; i < applyCompleted.length; i++) {
 
           for (let index = 0; index < workout.length; index++) {
-            if (week[0] || week[1] && workoutTitle[index].includes(applyWeek[index].toUpperCase() && applyName[index].toUpperCase)) {
+            if (week1 || week2 && workoutTitle[index].includes(applyWeek[index].toUpperCase() && applyName[index].toUpperCase)) {
               icon[index].classList.add("complete-indicator");
             }
             console.log("Week", week[0]);
