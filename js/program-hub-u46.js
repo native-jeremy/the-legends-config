@@ -36,8 +36,8 @@ window.onload = async () => {
             if (week[index] && workoutTitle[index] === applyWeek[index] && applyName[index]) {
               icon[index].classList.add("complete-indicator");
             }
-            week[index].textContent;
-            workoutTitle[index].textContent;
+            console.log("Week", week[index]);
+            console.log("Workout Title", workoutTitle[index]);
           }
           
         }
