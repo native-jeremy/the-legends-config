@@ -37,9 +37,9 @@ window.onload = async () => {
             if (week1.includes(applyWeek[index].toUpperCase() && applyName[index].toUpperCase) || week2.includes(applyWeek[index].toUpperCase() && applyName[index].toUpperCase) && workoutTitle[index].textContent.toUpperCase().includes(applyWeek[index].toUpperCase() && applyName[index].toUpperCase())) {
               icon[index].classList.add("complete-indicator");
             }
-            console.log("Week", week[0]);
-            console.log("Week", week[1]);
-            console.log("Workout Title", workoutTitle[index]);
+            console.log("Week", week1);
+            console.log("Week", week2);
+            console.log("Workout Title", workoutTitle[index].textContent.toUpperCase());
           }
           
         }
