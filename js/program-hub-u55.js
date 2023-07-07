@@ -32,11 +32,17 @@ window.onload = async () => {
       if (applyData !== undefined)
       {
         for (let index = 0; index < workout.length; index++) {
+          icon = icon[index];
+          workoutTitle = workoutTitle[index];
+          workoutName = workoutTitle[index];
 
           for (let i = 0; i < applyCompleted.length; i++) {
-            if (week1.textContent.toLowerCase().includes(applyWeek[i] && applyName[i]) || week2.textContent.toLowerCase().includes(applyWeek[i] && applyName[i]) && workoutTitle[index].textContent.toLowerCase().includes(applyWeek[i] && applyName[i])) {
-              icon[index].classList.add("complete-indicator");
-            }
+            applyWeek = applyWeek[i];
+            applyName = applyName[i];
+          }
+
+          if (week1.textContent.toLowerCase().includes(applyWeek && applyName) || week2.textContent.toLowerCase().includes(applyWeek && applyName) && workoutTitle.textContent.toLowerCase().includes(applyWeek && applyName)) {
+            icon.classList.add("complete-indicator");
           }
 
           console.log("Week", week1);
