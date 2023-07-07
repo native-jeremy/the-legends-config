@@ -34,7 +34,6 @@ window.onload = async () => {
         for (let index = 0; index < workout.length; index++) {
           icon = icon[index];
           workoutTitle = workoutTitle[index];
-          workoutName = workoutName[index];
 
           for (let i = 0; i < applyCompleted.length; i++) {
             applyWeek = applyWeek[i];
