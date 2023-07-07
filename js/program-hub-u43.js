@@ -24,8 +24,8 @@ window.onload = async () => {
       console.log(applyData);
 
       let workout = document.querySelectorAll(".workouts");
-      let icon = document.querySelectorAll(".completed-icon").textContent;
-      let week = document.querySelectorAll(".week").textContent;
+      let icon = document.querySelectorAll(".completed-icon");
+      let week = document.querySelectorAll(".week");
       let workoutTitle = document.querySelectorAll(".workout-title");
 
       if (applyData !== undefined)
@@ -34,8 +34,10 @@ window.onload = async () => {
 
           for (let index = 0; index < workout.length; index++) {
             if (week[index] && workoutTitle[index] === applyWeek[index] && applyName[index]) {
-              icon[i].classList.add("complete-indicator");
+              icon[index].classList.add("complete-indicator");
             }
+            week[index].textContent;
+            workoutTitle[index].textContent;
           }
           
         }
