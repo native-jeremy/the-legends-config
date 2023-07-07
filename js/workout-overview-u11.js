@@ -48,7 +48,7 @@ window.onload = async () => {
       let tileCreated = tileCreate;
       for (let i = 0; i < roundLength.length; i++) {
         tileCreated;
-        tileList.append(tileCreated)
+        tileList.innerHTML = tileCreated;
       }
 
       // Showdown Rich Text Converter
