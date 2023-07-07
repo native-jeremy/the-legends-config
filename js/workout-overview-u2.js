@@ -23,73 +23,61 @@ const voiceToggleOn = document.getElementById("voiceToggleOn");
 */
 
 window.onload = async () => {
-    Wized.request.await("Load Workout - OVERVIEW", (response) => {  
-
+  Wized.request.await("Load Workout - OVERVIEW", (response) => {
+    if (response.status == 200) {
       const snapshot = response.data[0];
       let richTextRes = snapshot.Equipment_List;
       const richText = document.getElementById("richText");
-      if(response.status == 200)
-      {
-      
-      document.title = snapshot.Name;
-      var converter = new showdown.Converter(),
-    text      = richTextRes,
-    html      = converter.makeHtml(text);
-    richText.innerHTML = html;   
-       }
-       console.log("Workout Res", snapshot);
-    })
-    
-    Wized.request.await("Load Exercises - OVERVIEW", (response) => {  
-    		let exercises = response
-        console.log("Exercises Res", exercises);
-    })
+      setTimeout(() => {
+        document.title = snapshot.Name;
+        var converter = new showdown.Converter(),
+        text = richTextRes,
+        html = converter.makeHtml(text);
+        richText.innerHTML = html;
+      }, 2000)
+    }
+    console.log("Workout Res", snapshot);
+  });
 
-  
+  Wized.request.await("Load Exercises - OVERVIEW", (response) => {
+    let exercises = response;
+    console.log("Exercises Res", exercises);
+  });
+
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
-  
+
   if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
     Wized.data.setCookie("sirenmute", "on");
     sirenText.innerHTML = "On";
     sirenToggleOn.classList.toggle("on");
-  } 
-  else 
-  {
-      if (sirenCookieInt === "On")
-      {
-        Wized.data.setCookie("sirenmute", "muted");
-        sirenText.innerHTML = "Off";
-        sirenToggleOn.classList.toggle("on");
-      }
-      else
-      {
-        Wized.data.setCookie("sirenmute", "on");
-        sirenText.innerHTML = "On";
-        sirenToggleOn.classList.toggle("on");
-      }
+  } else {
+    if (sirenCookieInt === "On") {
+      Wized.data.setCookie("sirenmute", "muted");
+      sirenText.innerHTML = "Off";
+      sirenToggleOn.classList.toggle("on");
+    } else {
+      Wized.data.setCookie("sirenmute", "on");
+      sirenText.innerHTML = "On";
+      sirenToggleOn.classList.toggle("on");
+    }
   }
-  console.log(sirenCookieInt)
+  console.log(sirenCookieInt);
 
   if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
     Wized.data.setCookie("voicemute", "on");
     voiceText.innerHTML = "On";
     voiceToggleOn.classList.toggle("on");
-  } 
-  else 
-  {
-      if (voiceCookieInt === "On")
-      {
-        Wized.data.setCookie("voicemute", "muted");
-        voiceText.innerHTML = "Off";
-        voiceToggleOn.classList.toggle("on");
-      }
-      else 
-      {
-        Wized.data.setCookie("voicemute", "on");
-        voiceText.innerHTML = "On";
-        voiceToggleOn.classList.toggle("on");
-      }
+  } else {
+    if (voiceCookieInt === "On") {
+      Wized.data.setCookie("voicemute", "muted");
+      voiceText.innerHTML = "Off";
+      voiceToggleOn.classList.toggle("on");
+    } else {
+      Wized.data.setCookie("voicemute", "on");
+      voiceText.innerHTML = "On";
+      voiceToggleOn.classList.toggle("on");
+    }
   }
 
   // Siren click controls
@@ -121,4 +109,4 @@ window.onload = async () => {
     const voiceMuteCookie = Wized.data.get("c.voicemute");
     console.log("mute cookie changed to: ", voiceMuteCookie);
   });
-  };
+};
