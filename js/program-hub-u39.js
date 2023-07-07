@@ -17,7 +17,7 @@ window.onload = async () => {
     if (response.status === 200)
     {
       const getData = response;
-      let applyData = getData.data;
+      let applyData = getData.data.Completed;
       let applyWeek = applyData.Completed_Week;
       let applyName = applyData.Completed_Name;
       console.log(applyData);
@@ -34,8 +34,8 @@ window.onload = async () => {
             icon[i].classList.add("complete-indicator");
           }
         }
-        
-        let progressNum = applyData.Completed.length / workout.length * 100
+
+        let progressNum = applyData.length / workout.length * 100
         const circleProgress = new CircleProgress('.circle-latest');
           circleProgress.attr({
           max: 100,
