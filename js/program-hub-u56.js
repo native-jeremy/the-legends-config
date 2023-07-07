@@ -47,7 +47,7 @@ window.onload = async () => {
 
           console.log("Week", week1);
           console.log("Week", week2);
-          console.log("Workout Title", workoutTitle[index].textContent.toLowerCase());
+          console.log("Workout Title", workoutTitle.textContent.toLowerCase());
         }
 
         let progressNum = applyCompleted.length / workout.length * 100
