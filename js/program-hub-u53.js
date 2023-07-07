@@ -34,12 +34,12 @@ window.onload = async () => {
         for (let i = 0; i < applyCompleted.length; i++) {
 
           for (let index = 0; index < workout.length; index++) {
-            if (week1.textContent.toLowerCase.includes(applyWeek[i] && applyName[i]) || week2.textContent.toLowerCase.includes(applyWeek[i] && applyName[i]) && workoutTitle[index].textContent.toLowerCase.includes(applyWeek[i] && applyName[i])) {
+            if (week1.textContent.toLowerCase().includes(applyWeek[i] && applyName[i]) || week2.textContent.toLowerCase().includes(applyWeek[i] && applyName[i]) && workoutTitle[index].textContent.toLowerCase().includes(applyWeek[i] && applyName[i])) {
               icon[index].classList.add("complete-indicator");
             }
             console.log("Week", week1);
             console.log("Week", week2);
-            console.log("Workout Title", workoutTitle[index].textContent.toUpperCase());
+            console.log("Workout Title", workoutTitle[index].textContent.toLowerCase());
           }
           
         }
