@@ -17,7 +17,8 @@ window.onload = async () => {
     if (response.status === 200)
     {
       const getData = response;
-      let applyData = getData.data.Completed;
+      let applyData = getData.data;
+      let applyCompleted = getData.data.Completed;
       let applyWeek = applyData.Completed_Week;
       let applyName = applyData.Completed_Name;
       console.log(applyData);
@@ -29,13 +30,17 @@ window.onload = async () => {
 
       if (applyData !== undefined)
       {
-        for (let i = 0; i < applyData.length; i++) {
-          if (week[i] && workoutTitle[i] === applyWeek[i] && applyName[i]) {
-            icon[i].classList.add("complete-indicator");
+        for (let i = 0; i < applyCompleted.length; i++) {
+
+          for (let i = 0; i < workout.length; i++) {
+            if (week[i] && workoutTitle[i] === applyWeek[i] && applyName[i]) {
+              icon[i].classList.add("complete-indicator");
+            }
           }
+          
         }
 
-        let progressNum = applyData.length / workout.length * 100
+        let progressNum = applyCompleted.length / workout.length * 100
         const circleProgress = new CircleProgress('.circle-latest');
           circleProgress.attr({
           max: 100,
