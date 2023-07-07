@@ -26,7 +26,7 @@ window.onload = async () => {
   Wized.request.await("Load Workout - OVERVIEW", (response) => {
 
     const snapshot = response.data[0];
-    let roundLength = snapshot.Round_Name.length;
+    let roundLength = snapshot.Round_Name;
     let richTextRes = snapshot.Equipment_List;
     const richText = document.getElementById("richText");
     let tileList = document.querySelector('.tile-list');
@@ -45,9 +45,9 @@ window.onload = async () => {
     `
 
     if (response.status == 200) {
-      roundLength.forEach(round => {
+      for (let i = 0; i < roundLength.length; i++) {
         tileList.innerHTML = tileCreate;
-      });
+      }
 
       // Showdown Rich Text Converter
       document.title = snapshot.Name;
