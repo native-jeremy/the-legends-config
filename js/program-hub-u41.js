@@ -25,15 +25,15 @@ window.onload = async () => {
 
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
-      let week = document.querySelectorAll(".week").textContent;
-      let workoutTitle = document.querySelectorAll(".workout-title").textContent;
+      let week = document.querySelectorAll(".week");
+      let workoutTitle = document.querySelectorAll(".workout-title");
 
       if (applyData !== undefined)
       {
         for (let i = 0; i < applyCompleted.length; i++) {
 
-          for (let i = 0; i < workout.length; i++) {
-            if (week[i] && workoutTitle[i] === applyWeek[i] && applyName[i]) {
+          for (let index = 0; index < workout.length; index++) {
+            if (week[index] && workoutTitle[index] === applyWeek[index] && applyName[index]) {
               icon[i].classList.add("complete-indicator");
             }
           }
