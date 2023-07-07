@@ -25,7 +25,7 @@ window.onload = async () => {
 
       let workout = document.querySelectorAll('.workouts');
       let icon = document.querySelectorAll('.completed-icon');
-      let week1 = document.querySelectorAll('.week')[0].text.toUpperCase();
+      let week1 = document.querySelectorAll('.week')[0].textContent.toUpperCase();
       let week2 = document.querySelectorAll('.week')[1].textContent.toUpperCase();
       let workoutTitle = document.querySelectorAll('.workout-title');
 
