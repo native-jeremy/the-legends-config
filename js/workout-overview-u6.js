@@ -29,6 +29,7 @@ window.onload = async () => {
     let roundLength = snapshot.Round_Name;
     let richTextRes = snapshot.Equipment_List;
     const richText = document.getElementById("richText");
+    let tileList = document.querySelector('.tile-list');
     let tileCreate = `
       <div class="tile style-3">
         <div class="tile-header">
@@ -45,7 +46,7 @@ window.onload = async () => {
 
     if (response.status == 200) {
       roundLength.forEach(round => {
-        tileCreate;
+        tileList.innerHTML = tileCreate;
       });
 
       // Showdown Rich Text Converter
