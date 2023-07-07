@@ -26,7 +26,7 @@ window.onload = async () => {
   Wized.request.await("Load Workout - OVERVIEW", (response) => {
 
     const snapshot = response.data[0];
-    let roundLength = snapshot.Round_Name;
+    let roundLength = snapshot.Round_Name.length;
     let richTextRes = snapshot.Equipment_List;
     const richText = document.getElementById("richText");
     let tileList = document.querySelector('.tile-list');
