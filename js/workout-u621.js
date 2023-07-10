@@ -214,6 +214,8 @@ window.onload = async () => {
           maxLimitMulti[i] = diffLength;
           limitNumMulti[i].innerHTML = maxLimitMulti[i];
 
+          console.log("ADDED Event Listeners", counterNum.length);
+
 
          
           plusBtnMulti[i].addEventListener("click", function () {
@@ -226,7 +228,6 @@ window.onload = async () => {
               vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
               setTimeout(enableActiveStates, 1500);
               setTimeout(autoPlayVideo, 2000);
-              console.log("ADDED Event Listeners");
             }
             else {
               amountMulti[i] = maxLimitMulti[i];
