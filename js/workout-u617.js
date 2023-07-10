@@ -292,7 +292,7 @@ window.onload = async () => {
 
        // Diff Increase Click Controls - Amrap Exercises
        function DiffControlsAmrap() {
-        plusBtnMulti.addEventListener("click", function () {
+        plusBtnMulti[i].addEventListener("click", function () {
           if (amountMulti[i] < maxLimitMulti[i]) {
             diffCurrent++;
             amountMulti[i]++;
@@ -311,7 +311,7 @@ window.onload = async () => {
         });
 
         // Diff Decrease Click Controls - Amrap Exercises
-        minusBtnMulti.addEventListener("click", function () {
+        minusBtnMulti[i].addEventListener("click", function () {
           if (amountMulti[i] > minLimit[i]) {
             diffCurrent--;
             amountMulti[i]--;
