@@ -204,7 +204,7 @@ window.onload = async () => {
 
       if (amrapBool == "True")
       { 
-        for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
+        for (i = 0; i < 10;/*repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length;*/ i++) {
           plusBtnM[i].addEventListener("click", function () {
             if (amountM[i] < maxLimitM[i]) {
               diffCurrent++;
