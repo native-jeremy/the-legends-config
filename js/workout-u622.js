@@ -204,7 +204,7 @@ window.onload = async () => {
 
       if (amrapBool == "True")
       {
-        for (i = 0; i < counterNum.length; i++) {
+        for (i = 0; i < currentNumMulti.length; i++) {
           currentNumMulti[i].innerHTML = amountMulti[i];
           let diffStr = currentNumMulti[i].innerHTML;
           let diffInt = parseInt(diffStr);
