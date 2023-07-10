@@ -91,6 +91,7 @@ const minusBtnMulti = document.querySelectorAll('.minus-btn-multi');
 const currentNumMulti = document.querySelectorAll('.current-num-multi');
 const limitNumMulti = document.querySelectorAll('.limit-num-multi');
 const plusBtnMulti = document.querySelectorAll('.plus-btn-multi');
+const counterNum = document.querySelectorAll('.counter-num');
 let maxLimitMulti;
 let minLimitMulti = 1;
 let amountMulti = 1;
@@ -203,7 +204,7 @@ window.onload = async () => {
 
       if (amrapBool == "True")
       {
-        for (i = 0; i < currentNumMulti.length; i++) {
+        for (i = 0; i < counterNum.length; i++) {
           currentNumMulti[i].innerHTML = amountMulti[i];
           let diffStr = currentNumMulti[i].innerHTML;
           let diffInt = parseInt(diffStr);
@@ -212,6 +213,8 @@ window.onload = async () => {
           diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
           maxLimitMulti[i] = diffLength;
           limitNumMulti[i].innerHTML = maxLimitMulti[i];
+
+
          
           plusBtnMulti[i].addEventListener("click", function () {
             if (amountMulti[i] < maxLimitMulti[i]) {
@@ -223,6 +226,7 @@ window.onload = async () => {
               vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
               setTimeout(enableActiveStates, 1500);
               setTimeout(autoPlayVideo, 2000);
+              console.log("ADDED Event Listeners");
             }
             else {
               amountMulti[i] = maxLimitMulti[i];
@@ -249,6 +253,9 @@ window.onload = async () => {
             console.log("---------------------------------------");
             console.log("Current Difficulty:", diffCurrent);
           });
+
+
+
         }
         
 
