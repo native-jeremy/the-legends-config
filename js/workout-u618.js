@@ -212,7 +212,7 @@ window.onload = async () => {
           diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
           maxLimitMulti[i] = diffLength;
           limitNumMulti[i].innerHTML = maxLimitMulti[i];
-          DiffControlsAmrap();
+          DiffControlsAmrap(i, currentNumMulti[i], maxLimitMulti[i]);
         }
         
 
@@ -291,12 +291,12 @@ window.onload = async () => {
       }
 
        // Diff Increase Click Controls - Amrap Exercises
-       function DiffControlsAmrap() {
-        plusBtnMulti[i].addEventListener("click", function () {
-          if (amountMulti[i] < maxLimitMulti[i]) {
+       function DiffControlsAmrap(index, diffCurrent, amountMulti, maxLimitMulti) {
+        plusBtnMulti[index].addEventListener("click", function () {
+          if (amountMulti[index] < maxLimitMulti[index]) {
             diffCurrent++;
-            amountMulti[i]++;
-            currentNumMulti[i].innerHTML = amountMulti[i];
+            amountMulti[index]++;
+            currentNumMulti[index].innerHTML = amountMulti[index];
             enableDisabledStates();
             playVideoDiff();
             vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
@@ -304,7 +304,7 @@ window.onload = async () => {
             setTimeout(autoPlayVideo, 2000);
           }
           else {
-            amountMulti[i] = maxLimitMulti[i];
+            amountMulti[index] = maxLimitMulti[index];
           }
           console.log("---------------------------------------");
           console.log("Current Difficulty:", diffCurrent);
