@@ -87,14 +87,14 @@ let amount = 1;
 currentNum.innerHTML = amount;
 
 // Diffcult Amrap = define - Intialisation
-const minusBtnMulti = document.querySelectorAll('.minus-btn-multi');
-const currentNumMulti = document.querySelectorAll('.current-num-multi');
-const limitNumMulti = document.querySelectorAll('.limit-num-multi');
-const plusBtnMulti = document.querySelectorAll('.plus-btn-multi');
-const counterNum = document.querySelectorAll('.counter-num');
-let maxLimitMulti;
-let minLimitMulti = 1;
-let amountMulti = 1;
+const minusBtnM = document.querySelectorAll('.minus-btn-multi');
+const currentNumM = document.querySelectorAll('.current-num-multi');
+const limitNumM = document.querySelectorAll('.limit-num-multi');
+const plusBtnM = document.querySelectorAll('.plus-btn-multi');
+let maxLimitM;
+let minLimitM = 1;
+let amountM = 1;
+currentNumM.innerHTML = amountM;
 let i;
 
 let refreshNum = 0;
@@ -203,31 +203,32 @@ window.onload = async () => {
     if (exerciseData !== undefined) {
 
       if (amrapBool == "True")
-      { for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
-        plusBtn.addEventListener("click", function () {
-          if (amount < maxLimit) {
-            diffCurrent++;
-            amount++;
-            currentNum.innerHTML = amount;
-            enableDisabledStates();
-            playVideoDiff();
-            vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-            setTimeout(enableActiveStates, 1500);
-            setTimeout(autoPlayVideo, 2000);
-          }
-          else {
-            amount = maxLimit;
-          }
-          console.log("---------------------------------------");
-          console.log("Current Difficulty:", diffCurrent);
-        });
-
+      { 
+        for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
+          plusBtnM[i].addEventListener("click", function () {
+            if (amountM[i] < maxLimitM[i]) {
+              diffCurrent++;
+              amountM++;
+              currentNumM[i].innerHTML = amountM[i];
+              enableDisabledStates();
+              playVideoDiff();
+              vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+              setTimeout(enableActiveStates, 1500);
+              setTimeout(autoPlayVideo, 2000);
+            }
+            else {
+              amountM[i] = maxLimitM[i];
+            }
+            console.log("---------------------------------------");
+            console.log("Current Difficulty:", diffCurrent);
+          });
+          
         // Diff Decrease Click Controls - Single Exercise
-        minusBtn.addEventListener("click", function () {
-          if (amount > minLimit) {
+        minusBtnM[i].addEventListener("click", function () {
+          if (amountM[i] > minLimitM[i]) {
             diffCurrent--;
-            amount--;
-            currentNum.innerHTML = amount;
+            amountM[i]--;
+            currentNumM[i].innerHTML = amountM[i];
             enableDisabledStates();
             playVideoDiff();
             vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
@@ -235,14 +236,12 @@ window.onload = async () => {
             setTimeout(autoPlayVideo, 2000);
           }
           else {
-            amount = minLimit;
+            amountM[i] = minLimitM[i];
           }
           console.log("---------------------------------------");
           console.log("Current Difficulty:", diffCurrent);
         });
       }
-        
-
 
         //console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
         //console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
