@@ -540,7 +540,7 @@ window.onload = async () => {
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Redirecting..";
       enableDisabledStates ()
-        window.location.href = "/program-hub";
+      window.location.href = "/program-hub";
     }
     
     else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
@@ -548,7 +548,7 @@ window.onload = async () => {
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Redirecting..";
       enableDisabledStates ()
-
+      loaderTrigger.click();
       window.location.href = "/workout-overview?workout=" + workoutParam;
     }
 
