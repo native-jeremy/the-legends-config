@@ -5,7 +5,6 @@
 //Element Triggers
 const videoContainer = document.getElementById("videoContainer");
 const loaderTrigger = document.getElementById("Trigger");
-const loader = document.getElementById("loader");
 const exerciseTitle = document.getElementById("exerciseTitle");
 const exerciseHeader = document.getElementById("exerciseHeader");
 const roundPopup = document.getElementById("roundPopup");
@@ -537,7 +536,6 @@ window.onload = async () => {
     }
 
     else if (window.location.href == "https://the-legends-web-app.webflow.io/workout") {
-      loader.style.display = "none";
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Redirecting..";
