@@ -536,6 +536,7 @@ window.onload = async () => {
     }
 
     else if (window.location.href == "https://the-legends-web-app.webflow.io/workout") {
+      loaderTrigger.click();
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Redirecting..";
@@ -548,7 +549,6 @@ window.onload = async () => {
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Redirecting..";
       enableDisabledStates ()
-      loaderTrigger.click();
       window.location.href = "/workout-overview?workout=" + workoutParam;
     }
 
