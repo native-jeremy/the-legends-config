@@ -534,6 +534,14 @@ window.onload = async () => {
 
       window.location.href = url.toString();      
     }
+
+    else if (window.location.href === "/workout" && roundParam == undefined && exercisesParam == undefined && exerciseParam == undefined) {
+      roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
+      RoundNumberText.innerHTML = "Redirecting To Program Hub";
+      window.location.href = "/program-hub";
+      enableDisabledStates ()
+    }
     
     else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
       roundPopup.style.display = "flex";
@@ -548,14 +556,6 @@ window.onload = async () => {
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Workout Completed";
       Wized.data.setVariable("complete", "completed");
-      enableDisabledStates ()
-    }
-
-    else if (window.location.href === "/workout") {
-      roundPopup.style.display = "flex";
-      roundText.style.display = "flex";
-      RoundNumberText.innerHTML = "Redirecting To Program Hub";
-      window.location.href = "/program-hub";
       enableDisabledStates ()
     }
 
