@@ -543,13 +543,13 @@ window.onload = async () => {
       enableDisabledStates ()
     }
     
-    else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
+    /*else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       enableDisabledStates ()
 
       window.location.href = "/workout-overview?workout=" + workoutParam;
-    }
+    }*/
 
     else if (exerciseData == undefined && parseInt(exercisesParam) > 0 && parseInt(roundParam) === roundLength) {
       roundPopup.style.display = "flex";
