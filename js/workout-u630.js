@@ -535,7 +535,7 @@ window.onload = async () => {
       window.location.href = url.toString();      
     }
 
-    else if (window.location.href === "https://the-legends-web-app.webflow.io/workout") {
+    else if (window.location.href == "https://the-legends-web-app.webflow.io/workout") {
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Redirecting To Program Hub";
