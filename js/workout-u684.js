@@ -540,18 +540,17 @@ window.onload = async () => {
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Redirecting..";
       enableDisabledStates ()
-      setTimeout(() => {
         window.location.href = "/program-hub";
-      },2000)
     }
     
-    /*else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
+    else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
+      RoundNumberText.innerHTML = "Redirecting..";
       enableDisabledStates ()
 
       window.location.href = "/workout-overview?workout=" + workoutParam;
-    }*/
+    }
 
     else if (exerciseData == undefined && parseInt(exercisesParam) > 0 && parseInt(roundParam) === roundLength) {
       roundPopup.style.display = "flex";
