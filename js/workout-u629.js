@@ -535,7 +535,7 @@ window.onload = async () => {
       window.location.href = url.toString();      
     }
 
-    else if (window.location.href === "/workout" && roundParam == undefined && exercisesParam == undefined && exerciseParam == undefined) {
+    else if (window.location.href === "https://the-legends-web-app.webflow.io/workout") {
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Redirecting To Program Hub";
@@ -543,13 +543,13 @@ window.onload = async () => {
       enableDisabledStates ()
     }
     
-    /*else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
+    else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       enableDisabledStates ()
 
       window.location.href = "/workout-overview?workout=" + workoutParam;
-    }*/
+    }
 
     else if (exerciseData == undefined && parseInt(exercisesParam) > 0 && parseInt(roundParam) === roundLength) {
       roundPopup.style.display = "flex";
