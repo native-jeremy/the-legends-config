@@ -113,3 +113,8 @@ window.onload = async () => {
     console.log("mute cookie changed to: ", voiceMuteCookie);
   });
 };
+
+if(window.location.href == "https://the-legends-web-app.webflow.io/workout-overview"){
+
+window.location.href = "/program-hub"
+}
