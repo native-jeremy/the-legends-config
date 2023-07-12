@@ -535,12 +535,14 @@ window.onload = async () => {
       window.location.href = url.toString();      
     }
 
-    else if (window.location.href == "https://the-legends-web-app.webflow.io/workout") {
+    else if (window.location.href == "/workout") {
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
-      RoundNumberText.innerHTML = "Redirecting To Program Hub";
-      window.location.href = "/program-hub";
+      RoundNumberText.innerHTML = "Redirecting..";
       enableDisabledStates ()
+      setTimeout(() => {
+        window.location.href = "/program-hub";
+      },2000)
     }
     
     else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
