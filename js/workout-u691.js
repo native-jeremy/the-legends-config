@@ -157,7 +157,7 @@ window.onload = async () => {
 
     roundLength = roundRes.data.length;
 
-    if (parseInt(roundParam) === 0) {
+    if (parseInt(roundParam) < 1) {
       RoundNumberText.innerHTML = "Warm Up";
     }
     else {
@@ -175,7 +175,7 @@ window.onload = async () => {
       enableDisabledStates ()
     }
  
-    else if (RoundNumberText !== "Warm Up") {
+    else {
       RoundNumberText.innerHTML = parseInt(roundParam) + 1;
     }
 
