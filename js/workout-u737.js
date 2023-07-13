@@ -115,7 +115,7 @@ window.onload = async () => {
   const currentNumM = document.querySelectorAll('.current-num-multi');
   const limitNumM = document.querySelectorAll('.limit-num-multi');
   const plusBtnM = document.querySelectorAll('.plus-btn-multi');
-  let maxLimitM;
+  let maxLimitM = 5;
   let minLimitM = 1;
   let amountM = 1;
   currentNumM.innerHTML = amountM;
