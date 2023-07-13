@@ -213,12 +213,10 @@ window.onload = async () => {
 
     if (exerciseData !== undefined) {
 
-      vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-      audioSrc.src = repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
-      //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
-      let exercisesLength =
-        amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
-      let roundLength = repDataInt.data.length;
+      repAmount =
+      repDataInt.data[parseInt(exercisesParam)].Amounts_Name/*[diffCurrent]*/;
+      repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type/*[0]*/;
+      amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
 
       if (amrapBool == "True")
       { 
@@ -281,6 +279,14 @@ window.onload = async () => {
 
         DiffControlsSingle();
       }
+
+      
+      vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+      audioSrc.src = repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
+      //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
+      let exercisesLength =
+        amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
+      let roundLength = repDataInt.data.length;
 
       // Diff Exercise Single Function
       
@@ -477,10 +483,6 @@ window.onload = async () => {
       /* WORK IN PROGRESS CODE Thursday 29th June 2023 
     New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
 
-      repAmount =
-      repDataInt.data[parseInt(exercisesParam)].Amounts_Name/*[diffCurrent]*/;
-      repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type/*[0]*/;
-      amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
 
       console.log("---------------------------------------");
       console.log("Amount: ", repAmount);
