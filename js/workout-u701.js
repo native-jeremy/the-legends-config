@@ -164,13 +164,17 @@ window.onload = async () => {
       roundText.style.display = "none";
     }
 
+    if (parseInt(roundParam) === 0) {
+      roundRealNumber = 0;
+      if (roundRealNumber < 1) {
+        RoundNumberText.innerHTML = "Warm Up";
+      }
+    }
+
     if (roundRealNumber > roundLength) {
       RoundNumberText.innerHTML = "Workout Completed";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates ()
-    }
-    else if (roundRealNumber < 1) {
-      RoundNumberText.innerHTML = "Warm Up";
     }
  
     else {
