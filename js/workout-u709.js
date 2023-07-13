@@ -758,22 +758,6 @@ window.onload = async () => {
     exerciseDiffRes = response;
   })
 
-  //Function Calls Onload
-  //roundEnableLoad();
-  //setTimeout(nextPage, 2000);
-  sirenEnableLoad();
-  voiceEnableLoad();
-
-  // Siren Click Controls
-  siren.addEventListener("click", function () {
-    sirenEnableClick();
-  });
-
-  // Voice Click Controls
-  voice.addEventListener("click", function () {
-    voiceEnableClick();
-  });
-
     function enableDisabledStates () {
       playButton.style.display = "none";
       playButtonDisabled.style.display = "flex";
