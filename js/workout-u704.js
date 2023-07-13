@@ -164,19 +164,19 @@ window.onload = async () => {
       roundText.style.display = "none";
     }
 
-    if (parseInt(roundParam) < 1) {
-        RoundNumberText.innerHTML = "Warm Up";
-    }
-
     if (roundRealNumber > roundLength) {
       RoundNumberText.innerHTML = "Workout Completed";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates ()
     }
  
-    else {
+    else if (parseInt(roundParam) !== 0) {
       RoundNumberText.innerHTML = parseInt(roundParam);
     }
+
+    else {
+      RoundNumberText.innerHTML = "Warm Up";
+  }
 
     console.log("---------------------------------------");
     console.log("Rounds Res Length", roundLength)
