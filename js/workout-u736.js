@@ -359,6 +359,8 @@ window.onload = async () => {
         
         for (let i = 0; i < amrapControls.length; i++) {
 
+          maxLimitM[i] = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
+
           let diffLengthM;
           const plusBtnA = plusBtnM[i];
           const minusBtnA = minusBtnM[i];
