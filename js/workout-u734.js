@@ -369,22 +369,14 @@ window.onload = async () => {
           const currentNumA = currentNumM[i];
           const diffLengthA = diffLengthM[i];
           const diffCurrentA = diffCurrent[i];
-  
-  
-          diffLengthM = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
-          maxLimitM = diffLengthM;
-          limitNum.innerHTML = maxLimit;
-          console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
-          console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
-
 
           console.log("Elements ", plusBtnA, minusBtnA) 
 
           const limitNumA = limitNumM[i];
 
           let diffStrM = currentNumM.innerHTML;
-          let diffIntM = parseInt(diffStr);
-          diffCurrentM = diffInt - 1;
+          let diffIntM = parseInt(diffStrM);
+          diffCurrentM = diffIntM - 1;
   
   
           diffLengthA = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
