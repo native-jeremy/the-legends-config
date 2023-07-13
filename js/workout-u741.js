@@ -109,18 +109,6 @@ window.onload = async () => {
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
-  // Diffcult Amrap = define - Intialisation
-  const amrapControls = document.querySelectorAll('.amrap-diff-controls');
-  const minusBtnM = document.querySelectorAll('.minus-btn-multi');
-  const currentNumM = document.querySelectorAll('.current-num-multi');
-  const limitNumM = document.querySelectorAll('.limit-num-multi');
-  const plusBtnM = document.querySelectorAll('.plus-btn-multi');
-  let maxLimitM;
-  let minLimitM = 1;
-  let amountM = 1;
-  currentNumM.innerHTML = amountM;
-  let i;
-
   // URL Searching Setup and Declaration
   let activeParam = document.getElementById("activeParam");
   let params = window.location.href;
@@ -146,6 +134,19 @@ window.onload = async () => {
 
   // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
+      // Diffcult Amrap = define - Intialisation
+    const amrapControls = document.querySelectorAll('.amrap-diff-controls');
+    const minusBtnM = document.querySelectorAll('.minus-btn-multi');
+    const currentNumM = document.querySelectorAll('.current-num-multi');
+    const limitNumM = document.querySelectorAll('.limit-num-multi');
+    const plusBtnM = document.querySelectorAll('.plus-btn-multi');
+    let maxLimitM;
+    let minLimitM = 1;
+    let amountM = 1;
+    currentNumM.innerHTML = amountM;
+    let i;
+
+
     const repDataInt = response;
     let repAmount;
     let repType;
