@@ -220,7 +220,7 @@ window.onload = async () => {
 
       if (amrapBool == "True")
       { 
-        //DiffControlsAmrap()
+        DiffControlsAmrap()
         console.log("Amrap Activated")
         /*for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
           plusBtnM[i].addEventListener("click", function () {
@@ -281,7 +281,7 @@ window.onload = async () => {
       }
 
       
-      //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+      vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
       audioSrc.src = repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
       //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
       let exercisesLength =
