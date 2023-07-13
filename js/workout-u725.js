@@ -222,7 +222,7 @@ window.onload = async () => {
       { 
         //DiffControlsAmrap()
         console.log("Amrap Activated")
-        for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
+        for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup.length; i++) {
           plusBtnM[i].addEventListener("click", function () {
             if (amountM[i] < maxLimitM[i]) {
               diffCurrent++;
