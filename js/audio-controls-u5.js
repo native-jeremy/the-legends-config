@@ -10,8 +10,8 @@ const voiceText = document.getElementById("voiceText");
 const voiceAudio = document.getElementById("voiceAudio");
 const voiceToggleOn = document.getElementById("voiceToggleOn");
 
-const sirenCookieInt = await Wized.data.get("c.sirenmute");
-const voiceCookieInt = await Wized.data.get("c.voicemute");
+const sirenCookieInt = Wized.data.get("c.sirenmute");
+const voiceCookieInt = Wized.data.get("c.voicemute");
 
 sirenEnableLoad()
     voiceEnableLoad()
