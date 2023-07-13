@@ -363,12 +363,12 @@ window.onload = async () => {
           const plusBtnA = plusBtnM[i];
           const minusBtnA = minusBtnM[i];
 
-          const amountA = amountM;
-          const maxLimitA = maxLimitM;
-          const minLimitA = minLimitM;
-          const currentNumA = currentNumM[i];
-          const diffLengthA = diffLengthM;
-          const diffCurrentA = diffCurrent;
+          let amountA = amountM;
+          let maxLimitA = maxLimitM;
+          let minLimitA = minLimitM;
+          let currentNumA = currentNumM[i];
+          let diffLengthA = diffLengthM;
+          let diffCurrentA = diffCurrent;
 
           console.log("Elements ", plusBtnA, minusBtnA) 
 
