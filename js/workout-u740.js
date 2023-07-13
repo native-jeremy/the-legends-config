@@ -389,7 +389,7 @@ window.onload = async () => {
 
 
           // Plus Button Click Controls - Amrap Exercises
-          plusBtnA.addEventListener("click", function () {
+          plusBtnM[i].addEventListener("click", function () {
             alert("Event listener added")
             if (amountA[i] < maxLimitA[i]) {
               diffCurrentA++;
