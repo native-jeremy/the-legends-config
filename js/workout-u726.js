@@ -220,9 +220,9 @@ window.onload = async () => {
 
       if (amrapBool == "True")
       { 
-        //DiffControlsAmrap()
+        DiffControlsAmrap()
         console.log("Amrap Activated")
-        for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup.length; i++) {
+        /*for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
           plusBtnM[i].addEventListener("click", function () {
             if (amountM[i] < maxLimitM[i]) {
               diffCurrent++;
@@ -259,7 +259,7 @@ window.onload = async () => {
           console.log("---------------------------------------");
           console.log("Current Difficulty:", diffCurrent);
         });
-      }
+      }*/
 
         //console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
         //console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
@@ -281,7 +281,7 @@ window.onload = async () => {
       }
 
       
-      //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+      vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
       audioSrc.src = repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
       //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
       let exercisesLength =
