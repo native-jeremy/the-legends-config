@@ -539,6 +539,18 @@ window.onload = async () => {
       window.location.href = url.toString();      
     }
 
+    else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) !== roundLength)
+    {
+      getRoundNum = checkurl.get("round");
+      getRoundNum = parseInt(getRoundNum) - 1;
+      setRoundNum = checkurl.set("round", getRoundNum.toString());
+      getExercisesNum = checkurl.get("exercises");
+      getExercisesNum = 0;
+      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+
+      window.location.href = url.toString();      
+    }
+
     else if (window.location.href == "https://the-legends-web-app.webflow.io/workout") {
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
