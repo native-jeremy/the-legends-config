@@ -10,94 +10,92 @@ const voiceText = document.getElementById("voiceText");
 const voiceAudio = document.getElementById("voiceAudio");
 const voiceToggleOn = document.getElementById("voiceToggleOn");
 
-window.onload = async () => { 
-const sirenCookieInt = await Wized.data.get("c.sirenmute");
-const voiceCookieInt = await Wized.data.get("c.voicemute");
+window.onload = async () => {
+  const sirenCookieInt = await Wized.data.get("c.sirenmute");
+  const voiceCookieInt = await Wized.data.get("c.voicemute");
 
-return sirenCookieInt, voiceCookieInt;
-}
 
-sirenEnableLoad()
-    voiceEnableLoad()
+    sirenEnableLoad();
+    voiceEnableLoad();
 
     siren.addEventListener("click", sirenEnableClick);
     voice.addEventListener("click", voiceEnableClick);
 
-
     // Siren Condtionals Click On/Off
     function sirenEnableClick() {
-      if (sirenText.innerHTML === "Off") {
+    if (sirenText.innerHTML === "Off") {
         Wized.data.setCookie("sirenmute", "on");
         sirenText.innerHTML = "On";
         sirenToggleOn.classList.toggle("on");
-      } else if (sirenText.innerHTML === "On") {
+    } else if (sirenText.innerHTML === "On") {
         Wized.data.setCookie("sirenmute", "muted");
         sirenText.innerHTML = "Off";
         sirenToggleOn.classList.toggle("on");
-      }
+    }
 
-      // Development Purposes (DEBUGGING)
-      let sirenUpdatedCookie = Wized.data.get("c.sirenmute");
-      console.log("---------------------------------------");
-      console.log("mute cookie changed to: ", sirenUpdatedCookie);
-      console.log("---------------------------------------");
+    // Development Purposes (DEBUGGING)
+    let sirenUpdatedCookie = Wized.data.get("c.sirenmute");
+    console.log("---------------------------------------");
+    console.log("mute cookie changed to: ", sirenUpdatedCookie);
+    console.log("---------------------------------------");
     }
 
     // Voice Condtionals Click On/Off
     function voiceEnableClick() {
-      if (voiceText.innerHTML === "Off") {
+    if (voiceText.innerHTML === "Off") {
         Wized.data.setCookie("voicemute", "on");
         voiceText.innerHTML = "On";
         voiceToggleOn.classList.toggle("on");
-      } else if (voiceText.innerHTML === "On") {
+    } else if (voiceText.innerHTML === "On") {
         Wized.data.setCookie("voicemute", "muted");
         voiceText.innerHTML = "Off";
         voiceToggleOn.classList.toggle("on");
-      }
+    }
 
-      // Development Purposes (DEBUGGING)
-      const voiceUpdatedCookie = Wized.data.get("c.voicemute");
-      console.log("---------------------------------------");
-      console.log("mute cookie changed to: ", voiceUpdatedCookie);
-      console.log("---------------------------------------");
+    // Development Purposes (DEBUGGING)
+    const voiceUpdatedCookie = Wized.data.get("c.voicemute");
+    console.log("---------------------------------------");
+    console.log("mute cookie changed to: ", voiceUpdatedCookie);
+    console.log("---------------------------------------");
     }
 
     // Siren Condtionals On Page Load On/Off
     function sirenEnableLoad() {
-      // Siren Cookie Intialising On
-      if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
+    // Siren Cookie Intialising On
+    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
         Wized.data.setCookie("sirenmute", "on");
         sirenText.innerHTML = "On";
         sirenToggleOn.classList.toggle("on");
-      }
-      // Siren Cookie On
-      else if (sirenCookieInt === "on") {
+    }
+    // Siren Cookie On
+    else if (sirenCookieInt === "on") {
         sirenText.innerHTML = "On";
         sirenToggleOn.classList.toggle("on");
-      }
-      // Siren Cookie Off
-      else if (sirenCookieInt === "off") {
+    }
+    // Siren Cookie Off
+    else if (sirenCookieInt === "off") {
         sirenText.innerHTML = "Off";
         sirenToggleOn.classList.toggle("on");
-      }
+    }
     }
 
     // Voice Condtionals On Page Load On/Off
     function voiceEnableLoad() {
-      // Voice Cookie Intialising On
-      if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
+    // Voice Cookie Intialising On
+    if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
         Wized.data.setCookie("voicemute", "on");
         voiceText.innerHTML = "On";
         voiceToggleOn.classList.toggle("on");
-      }
-      // Voice Cookie On
-      else if (voiceCookieInt === "on") {
+    }
+    // Voice Cookie On
+    else if (voiceCookieInt === "on") {
         voiceText.innerHTML = "On";
         voiceToggleOn.classList.toggle("on");
-      }
-      // Voice Cookie Off
-      else if (voiceCookieInt === "off") {
+    }
+    // Voice Cookie Off
+    else if (voiceCookieInt === "off") {
         voiceText.innerHTML = "Off";
         voiceToggleOn.classList.toggle("on");
-      }
     }
+    }
+};
