@@ -88,10 +88,10 @@ let amount = 1;
 currentNum.innerHTML = amount;
 
 // Diffcult Amrap = define - Intialisation
-const minusBtnM = document.querySelectorAll('.minus-btn-multi');
-const currentNumM = document.querySelectorAll('.current-num-multi');
-const limitNumM = document.querySelectorAll('.limit-num-multi');
-const plusBtnM = document.querySelectorAll('.plus-btn-multi');
+let minusBtnM = document.querySelectorAll('.minus-btn-multi');
+let currentNumM = document.querySelectorAll('.current-num-multi');
+let limitNumM = document.querySelectorAll('.limit-num-multi');
+let plusBtnM = document.querySelectorAll('.plus-btn-multi');
 let maxLimitM;
 let minLimitM = 1;
 let amountM = 1;
@@ -395,7 +395,7 @@ window.onload = async () => {
 
 
           // Plus Button Click Controls - Amrap Exercises
-          plusBtnA.addEventListener("click", function () {
+          plusBtnM[i].addEventListener("click", function () {
             alert("Event listener added")
             if (amountA[i] < maxLimitA[i]) {
               diffCurrentA++;
