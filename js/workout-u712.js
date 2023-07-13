@@ -54,6 +54,18 @@ let exerciseDiffRes;
 let diffLength;
 let diffCurrent;
 
+// Siren = Define - Intialisation
+const siren = document.getElementById("siren");
+const sirenText = document.getElementById("sirenText");
+const sirenAudio = document.getElementById("sirenAudio");
+const sirenToggleOn = document.getElementById("sirenToggleOn");
+
+// Voice = Define - Intialisation
+const voice = document.getElementById("voice");
+const voiceText = document.getElementById("voiceText");
+const voiceAudio = document.getElementById("voiceAudio");
+const voiceToggleOn = document.getElementById("voiceToggleOn");
+
 // Exercise Controls
 // Enabled States
 const playButton = document.getElementById("playButton");
@@ -142,12 +154,6 @@ window.onload = async () => {
     if (repDataInt.status === 200) {
         loaderTrigger.click();
         videoContainer.style.opacity = "1"
-
-        sirenEnableLoad()
-        voiceEnableLoad()
-
-        siren.addEventListener("click", sirenEnableClick);
-        voice.addEventListener("click", voiceEnableClick);
     }
 
     roundLength = roundRes.data.length;
@@ -266,85 +272,6 @@ window.onload = async () => {
 
         DiffControlsSingle();
       }
-
-            // Siren Condtionals Click On/Off
-    function sirenEnableClick() {
-      if (sirenText.innerHTML === "Off") {
-        Wized.data.setCookie("sirenmute", "on");
-        sirenText.innerHTML = "On";
-        sirenToggleOn.classList.toggle("on");
-      } else if (sirenText.innerHTML === "On") {
-        Wized.data.setCookie("sirenmute", "muted");
-        sirenText.innerHTML = "Off";
-        sirenToggleOn.classList.toggle("on");
-      }
-
-      // Development Purposes (DEBUGGING)
-      let sirenUpdatedCookie = Wized.data.get("c.sirenmute");
-      console.log("---------------------------------------");
-      console.log("mute cookie changed to: ", sirenUpdatedCookie);
-      console.log("---------------------------------------");
-    }
-
-    // Voice Condtionals Click On/Off
-    function voiceEnableClick() {
-      if (voiceText.innerHTML === "Off") {
-        Wized.data.setCookie("voicemute", "on");
-        voiceText.innerHTML = "On";
-        voiceToggleOn.classList.toggle("on");
-      } else if (voiceText.innerHTML === "On") {
-        Wized.data.setCookie("voicemute", "muted");
-        voiceText.innerHTML = "Off";
-        voiceToggleOn.classList.toggle("on");
-      }
-
-      // Development Purposes (DEBUGGING)
-      const voiceUpdatedCookie = Wized.data.get("c.voicemute");
-      console.log("---------------------------------------");
-      console.log("mute cookie changed to: ", voiceUpdatedCookie);
-      console.log("---------------------------------------");
-    }
-
-    // Siren Condtionals On Page Load On/Off
-    function sirenEnableLoad() {
-      // Siren Cookie Intialising On
-      if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
-        Wized.data.setCookie("sirenmute", "on");
-        sirenText.innerHTML = "On";
-        sirenToggleOn.classList.toggle("on");
-      }
-      // Siren Cookie On
-      else if (sirenCookieInt === "on") {
-        sirenText.innerHTML = "On";
-        sirenToggleOn.classList.toggle("on");
-      }
-      // Siren Cookie Off
-      else if (sirenCookieInt === "off") {
-        sirenText.innerHTML = "Off";
-        sirenToggleOn.classList.toggle("on");
-      }
-    }
-
-    // Voice Condtionals On Page Load On/Off
-    function voiceEnableLoad() {
-      // Voice Cookie Intialising On
-      if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
-        Wized.data.setCookie("voicemute", "on");
-        voiceText.innerHTML = "On";
-        voiceToggleOn.classList.toggle("on");
-      }
-      // Voice Cookie On
-      else if (voiceCookieInt === "on") {
-        voiceText.innerHTML = "On";
-        voiceToggleOn.classList.toggle("on");
-      }
-      // Voice Cookie Off
-      else if (voiceCookieInt === "off") {
-        voiceText.innerHTML = "Off";
-        voiceToggleOn.classList.toggle("on");
-      }
-
-    }
 
       
       vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
@@ -845,6 +772,22 @@ window.onload = async () => {
     exerciseDiffRes = response;
   })
 
+  //Function Calls Onload
+  //roundEnableLoad();
+  //setTimeout(nextPage, 2000);
+  sirenEnableLoad();
+  voiceEnableLoad();
+
+  // Siren Click Controls
+  siren.addEventListener("click", function () {
+    sirenEnableClick();
+  });
+
+  // Voice Click Controls
+  voice.addEventListener("click", function () {
+    voiceEnableClick();
+  });
+
     function enableDisabledStates () {
       playButton.style.display = "none";
       playButtonDisabled.style.display = "flex";
@@ -890,6 +833,143 @@ window.onload = async () => {
     }
     refreshNum = refreshNum + 1;
   }
+
+  // Siren Condtionals Click On/Off
+  function sirenEnableClick() {
+    if (sirenText.innerHTML === "Off") {
+      Wized.data.setCookie("sirenmute", "on");
+      sirenText.innerHTML = "On";
+      sirenToggleOn.classList.toggle("on");
+    }
+    else if (sirenText.innerHTML === "On") {
+      Wized.data.setCookie("sirenmute", "muted");
+      sirenText.innerHTML = "Off";
+      sirenToggleOn.classList.toggle("on");
+    }
+
+    // Development Purposes (DEBUGGING)
+    let sirenUpdatedCookie = Wized.data.get("c.sirenmute");
+    console.log("---------------------------------------");
+    console.log("mute cookie changed to: ", sirenUpdatedCookie);
+    console.log("---------------------------------------");
+  }
+
+  // Voice Condtionals Click On/Off
+  function voiceEnableClick() {
+    if (voiceText.innerHTML === "Off") {
+      Wized.data.setCookie("voicemute", "on");
+      voiceText.innerHTML = "On";
+      voiceToggleOn.classList.toggle("on");
+    }
+    else if (voiceText.innerHTML === "On") {
+      Wized.data.setCookie("voicemute", "muted");
+      voiceText.innerHTML = "Off";
+      voiceToggleOn.classList.toggle("on");
+    }
+
+    // Development Purposes (DEBUGGING)
+    const voiceUpdatedCookie = Wized.data.get("c.voicemute");
+    console.log("---------------------------------------");
+    console.log("mute cookie changed to: ", voiceUpdatedCookie);
+    console.log("---------------------------------------");
+  }
+
+  // Siren Condtionals On Page Load On/Off
+  function sirenEnableLoad() {
+    // Siren Cookie Intialising On
+    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
+      Wized.data.setCookie("sirenmute", "on");
+      sirenText.innerHTML = "On";
+      sirenToggleOn.classList.toggle("on");
+    } 
+    // Siren Cookie On
+    else if (sirenCookieInt === "on") {
+        sirenText.innerHTML = "On";
+        sirenToggleOn.classList.toggle("on");
+    }
+    // Siren Cookie Off
+    else if (sirenCookieInt === "off") {
+      sirenText.innerHTML = "Off";
+      sirenToggleOn.classList.toggle("on");
+    }
+  }
+
+  /*function sirenEnableLoad() {
+    // Siren Cookie Condition
+    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
+      Wized.data.setCookie("sirenmute", "on");
+      sirenText.innerHTML = "On";
+      sirenToggleOn.classList.toggle("on");
+    } else {
+      if (sirenCookieInt === "On") {
+        Wized.data.setCookie("sirenmute", "muted");
+        sirenText.innerHTML = "Off";
+        sirenToggleOn.classList.toggle("on");
+      } else {
+        Wized.data.setCookie("sirenmute", "on");
+        sirenText.innerHTML = "On";
+        sirenToggleOn.classList.toggle("on");
+      }
+    }
+  }*/
+
+  // Voice Condtionals On Page Load On/Off
+  function voiceEnableLoad() {
+    // Voice Cookie Intialising On
+    if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
+      Wized.data.setCookie("voicemute", "on");
+      voiceText.innerHTML = "On";
+      voiceToggleOn.classList.toggle("on");
+    }
+     // Voice Cookie On
+     else if (voiceCookieInt === "on") {
+      voiceText.innerHTML = "On";
+      voiceToggleOn.classList.toggle("on");
+    }
+    // Voice Cookie Off
+    else if (voiceCookieInt === "off") {
+      voiceText.innerHTML = "Off";
+      voiceToggleOn.classList.toggle("on");
+    }
+  }
+
+  /*function sirenEnableLoad() {
+    // Siren Cookie Condition
+    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
+      Wized.data.setCookie("sirenmute", "on");
+      sirenText.innerHTML = "On";
+      sirenToggleOn.classList.toggle("on");
+    } else {
+      if (sirenCookieInt === "On") {
+        Wized.data.setCookie("sirenmute", "muted");
+        sirenText.innerHTML = "Off";
+        sirenToggleOn.classList.toggle("on");
+      } else {
+        Wized.data.setCookie("sirenmute", "on");
+        sirenText.innerHTML = "On";
+        sirenToggleOn.classList.toggle("on");
+      }
+    }
+  }
+
+  function voiceEnableLoad() {
+    // Voice Cookie Condition
+    if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
+      Wized.data.setCookie("voicemute", "on");
+      voiceText.innerHTML = "On";
+      voiceToggleOn.classList.toggle("on");
+    } else {
+      if (voiceCookieInt === "On") {
+        Wized.data.setCookie("voicemute", "muted");
+        voiceText.innerHTML = "Off";
+        voiceToggleOn.classList.toggle("on");
+      } else {
+        Wized.data.setCookie("voicemute", "on");
+        voiceText.innerHTML = "On";
+        voiceToggleOn.classList.toggle("on");
+      }
+    }
+  }*/
 
   // History Replaced When Scroll Buttons Are Clicked
   $(document).ready(function () {
