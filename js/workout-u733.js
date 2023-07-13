@@ -53,6 +53,8 @@ let exerciseRes;
 let exerciseDiffRes;
 let diffLength;
 let diffCurrent;
+let diffLengthM;
+let diffCurrentM;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -221,16 +223,6 @@ window.onload = async () => {
 
       if (amrapBool == "True")
       { 
-        let diffStr = currentNum.innerHTML;
-        let diffInt = parseInt(diffStr);
-        diffCurrent = diffInt - 1;
-
-
-        diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
-        maxLimitM = diffLength;
-        limitNum.innerHTML = maxLimit;
-        console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
-        console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
         DiffControlsAmrap()
         console.log("Amrap Activated")
         /*for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
@@ -366,6 +358,7 @@ window.onload = async () => {
        function DiffControlsAmrap() {
         
         for (let i = 0; i < amrapControls.length; i++) {
+
           let diffLengthM;
           const plusBtnA = plusBtnM[i];
           const minusBtnA = minusBtnM[i];
@@ -376,14 +369,22 @@ window.onload = async () => {
           const currentNumA = currentNumM[i];
           const diffLengthA = diffLengthM[i];
           const diffCurrentA = diffCurrent[i];
+  
+  
+          diffLengthM = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+          maxLimitM = diffLengthM;
+          limitNum.innerHTML = maxLimit;
+          console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
+          console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
+
 
           console.log("Elements ", plusBtnA, minusBtnA) 
 
           const limitNumA = limitNumM[i];
 
-          let diffStr = currentNumA.innerHTML;
-          let diffInt = parseInt(diffStr);
-          diffCurrentA = diffInt - 1;
+          let diffStrM = currentNumM.innerHTML;
+          let diffIntM = parseInt(diffStr);
+          diffCurrentM = diffInt - 1;
   
   
           diffLengthA = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
