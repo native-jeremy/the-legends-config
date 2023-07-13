@@ -11,10 +11,18 @@ const voiceAudio = document.getElementById("voiceAudio");
 const voiceToggleOn = document.getElementById("voiceToggleOn");
 
 window.onload = async () => {
-  const sirenCookieInt = await Wized.data.get("c.sirenmute");
-  const voiceCookieInt = await Wized.data.get("c.voicemute");
 
   Wized.request.awaitAllPageLoad(async () => {
+      const sirenCookieInt = await Wized.data.get("c.sirenmute");
+  const voiceCookieInt = await Wized.data.get("c.voicemute");
+
+    sirenEnableLoad()
+    voiceEnableLoad()
+
+    siren.addEventListener("click", sirenEnableClick);
+    voice.addEventListener("click", voiceEnableClick);
+
+
     // Siren Condtionals Click On/Off
     function sirenEnableClick() {
       if (sirenText.innerHTML === "Off") {
