@@ -13,8 +13,9 @@ const voiceToggleOn = document.getElementById("voiceToggleOn");
 window.onload = async () => {
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
-
-  sirenEnableLoad()
+    
+    Wized.request.await("Load Exercises", () => {    
+    sirenEnableLoad()
     voiceEnableLoad()
 
     siren.addEventListener("click", sirenEnableClick);
@@ -98,4 +99,5 @@ window.onload = async () => {
         voiceToggleOn.classList.toggle("on");
       }
     }
+    })
 };
