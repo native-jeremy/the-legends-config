@@ -267,7 +267,7 @@ window.onload = async () => {
         DiffControlsSingle();
       }
 
-          // Siren Condtionals Click On/Off
+            // Siren Condtionals Click On/Off
     function sirenEnableClick() {
       if (sirenText.innerHTML === "Off") {
         Wized.data.setCookie("sirenmute", "on");
@@ -343,6 +343,8 @@ window.onload = async () => {
         voiceText.innerHTML = "Off";
         voiceToggleOn.classList.toggle("on");
       }
+
+    }
 
       
       vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
