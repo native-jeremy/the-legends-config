@@ -164,7 +164,7 @@ window.onload = async () => {
       roundText.style.display = "none";
     }
 
-    if (parseInt(roundParam) < 0) {
+    if (parseInt(roundParam) < 1) {
         RoundNumberText.innerHTML = "Warm Up";
     }
 
