@@ -894,25 +894,6 @@ window.onload = async () => {
     }
   }
 
-  /*function sirenEnableLoad() {
-    // Siren Cookie Condition
-    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
-      Wized.data.setCookie("sirenmute", "on");
-      sirenText.innerHTML = "On";
-      sirenToggleOn.classList.toggle("on");
-    } else {
-      if (sirenCookieInt === "On") {
-        Wized.data.setCookie("sirenmute", "muted");
-        sirenText.innerHTML = "Off";
-        sirenToggleOn.classList.toggle("on");
-      } else {
-        Wized.data.setCookie("sirenmute", "on");
-        sirenText.innerHTML = "On";
-        sirenToggleOn.classList.toggle("on");
-      }
-    }
-  }*/
-
   // Voice Condtionals On Page Load On/Off
   function voiceEnableLoad() {
     // Voice Cookie Intialising On
@@ -932,44 +913,6 @@ window.onload = async () => {
       voiceToggleOn.classList.toggle("on");
     }
   }
-
-  /*function sirenEnableLoad() {
-    // Siren Cookie Condition
-    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
-      Wized.data.setCookie("sirenmute", "on");
-      sirenText.innerHTML = "On";
-      sirenToggleOn.classList.toggle("on");
-    } else {
-      if (sirenCookieInt === "On") {
-        Wized.data.setCookie("sirenmute", "muted");
-        sirenText.innerHTML = "Off";
-        sirenToggleOn.classList.toggle("on");
-      } else {
-        Wized.data.setCookie("sirenmute", "on");
-        sirenText.innerHTML = "On";
-        sirenToggleOn.classList.toggle("on");
-      }
-    }
-  }
-
-  function voiceEnableLoad() {
-    // Voice Cookie Condition
-    if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
-      Wized.data.setCookie("voicemute", "on");
-      voiceText.innerHTML = "On";
-      voiceToggleOn.classList.toggle("on");
-    } else {
-      if (voiceCookieInt === "On") {
-        Wized.data.setCookie("voicemute", "muted");
-        voiceText.innerHTML = "Off";
-        voiceToggleOn.classList.toggle("on");
-      } else {
-        Wized.data.setCookie("voicemute", "on");
-        voiceText.innerHTML = "On";
-        voiceToggleOn.classList.toggle("on");
-      }
-    }
-  }*/
 
   // History Replaced When Scroll Buttons Are Clicked
   $(document).ready(function () {
