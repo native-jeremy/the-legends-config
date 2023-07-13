@@ -220,6 +220,16 @@ window.onload = async () => {
 
       if (amrapBool == "True")
       { 
+        let diffStr = currentNum.innerHTML;
+        let diffInt = parseInt(diffStr);
+        diffCurrent = diffInt - 1;
+
+
+        diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+        maxLimit = diffLength;
+        limitNum.innerHTML = maxLimit;
+        console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
+        console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
         DiffControlsAmrap()
         console.log("Amrap Activated")
         /*for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
