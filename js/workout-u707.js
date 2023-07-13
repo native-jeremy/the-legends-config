@@ -148,7 +148,7 @@ window.onload = async () => {
     let repType;
     let newcookieIndex;
     let amrapBool;
-    const amrapResponse = response;
+    const amrapResponse = response; 
     let checkAmrap;
 
     if (repDataInt.status === 200) {
@@ -168,6 +168,7 @@ window.onload = async () => {
     if (roundRealNumber > roundLength) {
       RoundNumberText.innerHTML = "Workout Completed";
       roundTitle.innerHTML = "Congratulations!";
+      roundNumHeader.innerHTML = "";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates ()
     }
@@ -839,16 +840,17 @@ window.onload = async () => {
       Wized.data.setCookie("sirenmute", "on");
       sirenText.innerHTML = "On";
       sirenToggleOn.classList.toggle("on");
-    } else if (sirenText.innerHTML === "On") {
+    }
+    else if (sirenText.innerHTML === "On") {
       Wized.data.setCookie("sirenmute", "muted");
       sirenText.innerHTML = "Off";
       sirenToggleOn.classList.toggle("on");
     }
 
     // Development Purposes (DEBUGGING)
-    const sirenMuteCookie = Wized.data.get("c.sirenmute");
+    let sirenUpdatedCookie = Wized.data.get("c.sirenmute");
     console.log("---------------------------------------");
-    console.log("mute cookie changed to: ", sirenMuteCookie);
+    console.log("mute cookie changed to: ", sirenUpdatedCookie);
     console.log("---------------------------------------");
   }
 
@@ -858,21 +860,41 @@ window.onload = async () => {
       Wized.data.setCookie("voicemute", "on");
       voiceText.innerHTML = "On";
       voiceToggleOn.classList.toggle("on");
-    } else if (voiceText.innerHTML === "On") {
+    }
+    else if (voiceText.innerHTML === "On") {
       Wized.data.setCookie("voicemute", "muted");
       voiceText.innerHTML = "Off";
       voiceToggleOn.classList.toggle("on");
     }
 
     // Development Purposes (DEBUGGING)
-    const voiceMuteCookie = Wized.data.get("c.voicemute");
+    const voiceUpdatedCookie = Wized.data.get("c.voicemute");
     console.log("---------------------------------------");
-    console.log("mute cookie changed to: ", voiceMuteCookie);
+    console.log("mute cookie changed to: ", voiceUpdatedCookie);
     console.log("---------------------------------------");
   }
 
   // Siren Condtionals On Page Load On/Off
   function sirenEnableLoad() {
+    // Siren Cookie Intialising On
+    if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
+      Wized.data.setCookie("sirenmute", "on");
+      sirenText.innerHTML = "On";
+      sirenToggleOn.classList.toggle("on");
+    } 
+    // Siren Cookie On
+    else if (sirenCookieInt === "on") {
+        sirenText.innerHTML = "On";
+        sirenToggleOn.classList.toggle("on");
+    }
+    // Siren Cookie Off
+    else if (sirenCookieInt === "off") {
+      sirenText.innerHTML = "Off";
+      sirenToggleOn.classList.toggle("on");
+    }
+  }
+
+  /*function sirenEnableLoad() {
     // Siren Cookie Condition
     if (sirenCookieInt === "undefined" || sirenCookieInt === undefined) {
       Wized.data.setCookie("sirenmute", "on");
@@ -889,25 +911,25 @@ window.onload = async () => {
         sirenToggleOn.classList.toggle("on");
       }
     }
-  }
+  }*/
 
   // Voice Condtionals On Page Load On/Off
   function voiceEnableLoad() {
-    // Voice Cookie Condition
+    // Voice Cookie Intialising On
     if (voiceCookieInt === "undefined" || voiceCookieInt === undefined) {
       Wized.data.setCookie("voicemute", "on");
       voiceText.innerHTML = "On";
       voiceToggleOn.classList.toggle("on");
-    } else {
-      if (voiceCookieInt === "On") {
-        Wized.data.setCookie("voicemute", "muted");
-        voiceText.innerHTML = "Off";
-        voiceToggleOn.classList.toggle("on");
-      } else {
-        Wized.data.setCookie("voicemute", "on");
-        voiceText.innerHTML = "On";
-        voiceToggleOn.classList.toggle("on");
-      }
+    }
+     // Voice Cookie On
+     else if (voiceCookieInt === "on") {
+      voiceText.innerHTML = "On";
+      voiceToggleOn.classList.toggle("on");
+    }
+    // Voice Cookie Off
+    else if (voiceCookieInt === "off") {
+      voiceText.innerHTML = "Off";
+      voiceToggleOn.classList.toggle("on");
     }
   }
 
