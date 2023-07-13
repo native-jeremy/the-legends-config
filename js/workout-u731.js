@@ -87,17 +87,6 @@ let minLimit = 1;
 let amount = 1;
 currentNum.innerHTML = amount;
 
-// Diffcult Amrap = define - Intialisation
-let minusBtnM = document.querySelectorAll('.minus-btn-multi');
-let currentNumM = document.querySelectorAll('.current-num-multi');
-let limitNumM = document.querySelectorAll('.limit-num-multi');
-let plusBtnM = document.querySelectorAll('.plus-btn-multi');
-let maxLimitM;
-let minLimitM = 1;
-let amountM = 1;
-currentNumM.innerHTML = amountM;
-let i;
-
 let refreshNum = 0;
 
 /* Wized Intialisation
@@ -117,6 +106,18 @@ window.onload = async () => {
   const workoutParam = await Wized.data.get("n.parameter.workout");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
+
+  // Diffcult Amrap = define - Intialisation
+  const amrapControls = document.querySelectorAll('.amrap-diff-controls');
+  const minusBtnM = document.querySelectorAll('.minus-btn-multi');
+  const currentNumM = document.querySelectorAll('.current-num-multi');
+  const limitNumM = document.querySelectorAll('.limit-num-multi');
+  const plusBtnM = document.querySelectorAll('.plus-btn-multi');
+  let maxLimitM;
+  let minLimitM = 1;
+  let amountM = 1;
+  currentNumM.innerHTML = amountM;
+  let i;
 
   // URL Searching Setup and Declaration
   let activeParam = document.getElementById("activeParam");
@@ -364,14 +365,14 @@ window.onload = async () => {
        // Diff Increase Click Controls - Amrap Exercises
        function DiffControlsAmrap() {
         
-        for (let i = 0; i < i.length; i++) {
+        for (let i = 0; i < amrapControls.length; i++) {
           let diffLengthM;
           const plusBtnA = plusBtnM[i];
           const minusBtnA = minusBtnM[i];
 
           const amountA = amountM[i];
           const maxLimitA = maxLimitM[i];
-          const minLimitA = mixLimitM[i];
+          const minLimitA = minLimitM[i];
           const currentNumA = currentNumM[i];
           const diffLengthA = diffLengthM[i];
           const diffCurrentA = diffCurrent[i];
@@ -395,7 +396,7 @@ window.onload = async () => {
 
 
           // Plus Button Click Controls - Amrap Exercises
-          plusBtnM[i].addEventListener("click", function () {
+          plusBtnA.addEventListener("click", function () {
             alert("Event listener added")
             if (amountA[i] < maxLimitA[i]) {
               diffCurrentA++;
