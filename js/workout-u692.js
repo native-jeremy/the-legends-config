@@ -157,12 +157,7 @@ window.onload = async () => {
 
     roundLength = roundRes.data.length;
 
-    if (parseInt(roundParam) < 1) {
-      RoundNumberText.innerHTML = "Warm Up";
-    }
-    else {
-      roundRealNumber = parseInt(roundParam) + 1;
-    }
+    roundRealNumber = parseInt(roundParam);
 
     if (parseInt(exercisesParam) !== 0 /*|| roundRealNumber < roundLength*/) {
       roundPopup.style.display = "none";
@@ -174,9 +169,12 @@ window.onload = async () => {
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates ()
     }
+    else if (roundRealNumber < 1) {
+      RoundNumberText.innerHTML = "Warm Up";
+    }
  
     else {
-      RoundNumberText.innerHTML = parseInt(roundParam) + 1;
+      RoundNumberText.innerHTML = parseInt(roundParam);
     }
 
     console.log("---------------------------------------");
