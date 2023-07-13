@@ -357,13 +357,7 @@ window.onload = async () => {
 
        // Diff Increase Click Controls - Amrap Exercises
        function DiffControlsAmrap() {
-        plusBtnM.forEach(plusBtn => {
-          plusBtn.addEventListener("click", () =>
-          {
-            console.log("Activated Event Listner");
-        });
-          
-        });
+    
         /*plusBtn.addEventListener("click", function () {
 
           });
