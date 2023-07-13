@@ -381,12 +381,12 @@ window.onload = async () => {
           // Plus Button Click Controls - Amrap Exercises
           plusBtnA.addEventListener("click", function () {
             if (amountA[i] < maxLimitA[i]) {
-              diffCurrent++;
+              diffCurrentA++;
               amountA++;
               currentNumA.innerHTML = amountA;
               enableDisabledStates();
               playVideoDiff();
-              vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+              vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrentA].url;
               setTimeout(enableActiveStates, 1500);
               setTimeout(autoPlayVideo, 2000);
             }
@@ -400,12 +400,12 @@ window.onload = async () => {
           // Minus Button Click Controls - Amrap Exercises
           minusBtnA.addEventListener("click", function () {
             if (amountA > maxLimitA) {
-              diffCurrent--;
+              diffCurrentA--;
               amountA--;
               currentNumA.innerHTML = amountA;
               enableDisabledStates();
               playVideoDiff();
-              vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+              vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrentA].url;
               setTimeout(enableActiveStates, 1500);
               setTimeout(autoPlayVideo, 2000);
             }
@@ -413,7 +413,7 @@ window.onload = async () => {
               amountA = minLimitA;
             }
             console.log("---------------------------------------");
-            console.log("Current Difficulty:", diffCurrent);
+            console.log("Current Difficulty:", diffCurrentA);
           });
           
         }
