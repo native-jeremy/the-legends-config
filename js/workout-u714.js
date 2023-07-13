@@ -215,6 +215,7 @@ window.onload = async () => {
 
       if (amrapBool == "True")
       { 
+        DiffControlsAmrap()
         /*for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
           plusBtnM[i].addEventListener("click", function () {
             if (amountM[i] < maxLimitM[i]) {
@@ -326,10 +327,95 @@ window.onload = async () => {
           console.log("Current Difficulty:", diffCurrent);
         });
       }
+      
+       /*----------------------------------------------------------------
+        Work In Progress Amarap Diffculty Controls
+        ----------------------------------------------------------------
+        Amrap Control Variables
+        ----------------------------------------------------------------
+        Diffcult Amrap = define - Intialisation
+        const minusBtnM = document.querySelectorAll('.minus-btn-multi');
+        const currentNumM = document.querySelectorAll('.current-num-multi');
+        const limitNumM = document.querySelectorAll('.limit-num-multi');
+        const plusBtnM = document.querySelectorAll('.plus-btn-multi');
+        let maxLimitM;
+        let minLimitM = 1;
+        let amountM = 1;
+        currentNumM.innerHTML = amountM;
+        let i;
+        ----------------------------------------------------------------*/
 
        // Diff Increase Click Controls - Amrap Exercises
-       /*function DiffControlsAmrap() {
-        plusBtnMulti[i].addEventListener("click", function () {
+       function DiffControlsAmrap() {
+        
+        for (let i = 0; i < i.length; i++) {
+          let diffLengthM;
+          const plusBtnA = plusBtnM[i];
+          const minusBtnA = minusBtnM[i];
+
+          const amountA = amountM[i];
+          const maxLimitA = maxLimitM[i];
+          const minLimitA = mixLimitM[i];
+          const currentNumA = currentNumM[i];
+          const diffLengthA = diffLengthM[i];
+          const diffCurrentA = diffCurrent[i];
+
+          const limitNumA = limitNumM[i];
+
+          let diffStr = currentNumA.innerHTML;
+          let diffInt = parseInt(diffStr);
+          diffCurrentA = diffInt - 1;
+  
+  
+          diffLengthA = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+          maxLimitA = diffLengthA;
+          limitNumA.innerHTML = maxLimitA;
+          console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
+          console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
+
+
+
+
+          // Plus Button Click Controls - Amrap Exercises
+          plusBtnA.addEventListener("click", function () {
+            if (amountA[i] < maxLimitA[i]) {
+              diffCurrent++;
+              amountA++;
+              currentNumA.innerHTML = amountA;
+              enableDisabledStates();
+              playVideoDiff();
+              vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+              setTimeout(enableActiveStates, 1500);
+              setTimeout(autoPlayVideo, 2000);
+            }
+            else {
+              amountA = maxLimitA[i];
+            }
+            console.log("---------------------------------------");
+            console.log("Current Difficulty:", diffCurrent);
+          });
+
+          // Minus Button Click Controls - Amrap Exercises
+          minusBtnA.addEventListener("click", function () {
+            if (amountA > maxLimitA) {
+              diffCurrent--;
+              amountA--;
+              currentNumA.innerHTML = amountA;
+              enableDisabledStates();
+              playVideoDiff();
+              vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+              setTimeout(enableActiveStates, 1500);
+              setTimeout(autoPlayVideo, 2000);
+            }
+            else {
+              amountA = minLimitA;
+            }
+            console.log("---------------------------------------");
+            console.log("Current Difficulty:", diffCurrent);
+          });
+          
+        }
+        /*plusBtnA.addEventListener("click", function () {
           if (amountMulti[i] < maxLimitMulti[i]) {
             diffCurrent++;
             amountMulti[i]++;
@@ -364,8 +450,12 @@ window.onload = async () => {
           }
           console.log("---------------------------------------");
           console.log("Current Difficulty:", diffCurrent);
-        });
-      }*/
+        });*/
+      }
+
+        /*----------------------------------------------------------------
+        End Amarap Diffculty Controls
+        ----------------------------------------------------------------*/
       
 
       let clearStates = setTimeout (() => {
