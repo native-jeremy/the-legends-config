@@ -9,6 +9,7 @@ const exerciseTitle = document.getElementById("exerciseTitle");
 const exerciseHeader = document.getElementById("exerciseHeader");
 const roundPopup = document.getElementById("roundPopup");
 const roundTitle = document.getElementById("roundTitle");
+const roundNumHeader = document.getElementById("headerNumText");
 const roundText = document.getElementById("roundText");
 const videoChange = document.getElementById("videoChange");
 const paramTest = document.getElementById("paramTest");
@@ -173,11 +174,13 @@ window.onload = async () => {
  
     else if (parseInt(roundParam) !== 0) {
       RoundNumberText.innerHTML = parseInt(roundParam);
+      roundNumHeader.innerHTML = parseInt(roundParam);
     }
 
     else {
       RoundNumberText.innerHTML = "Warm Up";
       roundTitle.innerHTML = "";
+      roundNumHeader.innerHTML = "";
   }
 
     console.log("---------------------------------------");
