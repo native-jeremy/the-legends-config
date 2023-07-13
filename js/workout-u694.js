@@ -559,7 +559,7 @@ window.onload = async () => {
       window.location.href = "/program-hub";
     }
     
-    else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) === roundLength || parseInt(roundParam) !== roundLength){
+    else if (exerciseData == undefined && parseInt(roundParam) < 0){
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Redirecting..";
