@@ -157,7 +157,7 @@ window.onload = async () => {
 
     roundLength = roundRes.data.length;
 
-    roundRealNumber = parseInt(roundParam);
+    roundRealNumber = parseInt(roundParam) + 1;
 
     if (parseInt(exercisesParam) !== 0 /*|| roundRealNumber < roundLength*/) {
       roundPopup.style.display = "none";
