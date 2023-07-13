@@ -360,6 +360,8 @@ window.onload = async () => {
           const diffLengthA = diffLengthM[i];
           const diffCurrentA = diffCurrent[i];
 
+          console.log("Elements ", plusBtnA, minusBtnA, currentNumA, limitNumA, maxLimitA, minLimitA), 
+
           const limitNumA = limitNumM[i];
 
           let diffStr = currentNumA.innerHTML;
