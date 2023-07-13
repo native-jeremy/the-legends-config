@@ -539,6 +539,14 @@ window.onload = async () => {
       window.location.href = url.toString();      
     }
 
+    else if (exerciseData == undefined && parseInt(roundParam) == 0 && parseInt(exercisesParam) < 0) {
+      roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
+      RoundNumberText.innerHTML = "Redirecting..";
+      enableDisabledStates ()
+      window.location.href = "/workout-overview?workout=" + workoutParam;
+    }
+
     else if (exerciseData == undefined && parseInt(exercisesParam) < 0 && parseInt(roundParam) !== roundLength)
     {
       getRoundNum = checkurl.get("round");
@@ -557,14 +565,6 @@ window.onload = async () => {
       RoundNumberText.innerHTML = "Redirecting..";
       enableDisabledStates ()
       window.location.href = "/program-hub";
-    }
-    
-    else if (exerciseData == undefined && parseInt(roundParam) == 0 && parseInt(exercisesParam) < 0) {
-      roundPopup.style.display = "flex";
-      roundText.style.display = "flex";
-      RoundNumberText.innerHTML = "Redirecting..";
-      enableDisabledStates ()
-      window.location.href = "/workout-overview?workout=" + workoutParam;
     }
 
     else if (exerciseData == undefined && parseInt(exercisesParam) > 0 && parseInt(roundParam) === roundLength) {
