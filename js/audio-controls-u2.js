@@ -11,12 +11,10 @@ const voiceAudio = document.getElementById("voiceAudio");
 const voiceToggleOn = document.getElementById("voiceToggleOn");
 
 window.onload = async () => {
-
-  Wized.request.awaitAllPageLoad(async () => {
-      const sirenCookieInt = await Wized.data.get("c.sirenmute");
+  const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
-    sirenEnableLoad()
+  sirenEnableLoad()
     voiceEnableLoad()
 
     siren.addEventListener("click", sirenEnableClick);
@@ -100,5 +98,4 @@ window.onload = async () => {
         voiceToggleOn.classList.toggle("on");
       }
     }
-  });
 };
