@@ -115,7 +115,7 @@ window.onload = async () => {
   const currentNumM = document.querySelectorAll('.current-num-multi');
   const limitNumM = document.querySelectorAll('.limit-num-multi');
   const plusBtnM = document.querySelectorAll('.plus-btn-multi');
-  let maxLimitM = 5;
+  let maxLimitM;
   let minLimitM = 1;
   let amountM = 1;
   currentNumM.innerHTML = amountM;
@@ -359,26 +359,24 @@ window.onload = async () => {
         
         for (let i = 0; i < amrapControls.length; i++) {
 
-          maxLimitM[i] = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
-
           let diffLengthM;
           const plusBtnA = plusBtnM[i];
           const minusBtnA = minusBtnM[i];
 
-          const amountA = amountM[i];
-          const maxLimitA = maxLimitM[i];
-          const minLimitA = minLimitM[i];
+          const amountA = amountM;
+          const maxLimitA = maxLimitM;
+          const minLimitA = minLimitM;
           const currentNumA = currentNumM[i];
-          const diffLengthA = diffLengthM[i];
-          const diffCurrentA = diffCurrent[i];
+          const diffLengthA = diffLengthM;
+          const diffCurrentA = diffCurrent;
 
           console.log("Elements ", plusBtnA, minusBtnA) 
 
           const limitNumA = limitNumM[i];
 
-          let diffStrM = currentNumM.innerHTML;
+          let diffStrM = currentNumA.innerHTML;
           let diffIntM = parseInt(diffStrM);
-          diffCurrentM = diffIntM - 1;
+          diffCurrentA = diffIntM - 1;
   
   
           diffLengthA = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
