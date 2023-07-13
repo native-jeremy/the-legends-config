@@ -166,6 +166,7 @@ window.onload = async () => {
 
     if (roundRealNumber > roundLength) {
       RoundNumberText.innerHTML = "Workout Completed";
+      roundTitle.innerHTML = "Congratulations!";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates ()
     }
@@ -176,6 +177,7 @@ window.onload = async () => {
 
     else {
       RoundNumberText.innerHTML = "Warm Up";
+      roundTitle.innerHTML = "";
   }
 
     console.log("---------------------------------------");
