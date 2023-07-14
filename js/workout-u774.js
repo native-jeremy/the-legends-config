@@ -298,7 +298,7 @@ window.onload = async () => {
           amrapMinus = document.createElement('div');
           amrapMinus.classList.add('counter-btn', 'minus-btn');
 
-          amrapTrigger.appendChild(amrapPlus);
+          amrapTrigger.appendChild(amrapMinus);
 
           //Minus Button > Left Arrow
           amrapMinusArrow = document.createElement('div');
