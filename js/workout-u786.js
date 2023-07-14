@@ -317,7 +317,7 @@ window.onload = async () => {
           amrapPlus.appendChild(amrapPlusArrow);
 
           amrapPlus.addEventListener('click', () => {
-              if (amrapCurrentNumm < amrapMinNumm) {
+              if (amrapCurrentNumm < amrapMaxNumm) {
                   amrapCurrentNumm++;
                   amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm;
