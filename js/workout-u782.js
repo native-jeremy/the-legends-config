@@ -230,9 +230,9 @@ window.onload = async () => {
           let amrapPlusArrow;
           let amrapMinus;
           let amrapMinusArrow;
-          let minNumm = 1;
-          let limitNumm = 3;
-          let currentNumm = 1;
+          let amrapMinNumm = 1;
+          let ammrapLimitNumm = 3;
+          let amrapCurrentNumm = 1;
           
           //Amrap Control Div "body"
           amrapControl = document.createElement('div');
@@ -317,20 +317,20 @@ window.onload = async () => {
           amrapPlus.appendChild(amrapPlusArrow);
 
           amrapPlus.addEventListener('click', () => {
-              if (currentNumm < limitNumm) {
-                  currentNumm++;
-                  amrapTitle.innerHTML  = currentNumm;
-                  amrapCounter.innerHTML = currentNumm;
+              if (amrapCurrentNumm < amrapMinNumm) {
+                  amrapCurrentNumm++;
+                  amrapTitle.innerHTML  = amrapCurrentNumm;
+                  amrapCounter.innerHTML = amrapCurrentNumm;
 
                   console.log("Amrap Diff Increased");
               }
           });
 
           amrapMinus.addEventListener('click', () => {
-              if (currentNumm > minNumm) {
-                  currentNumm--;
-                  amrapTitle.innerHTML  = currentNumm;
-                  amrapCounter.innerHTML = currentNumm;
+              if (amrapCurrentNumm > amrapMinNumm) {
+                  amrapCurrentNumm--;
+                  amrapTitle.innerHTML  = amrapCurrentNumm;
+                  amrapCounter.innerHTML = amrapCurrentNumm;
 
                   console.log("Amrap Diff Decreased");
               }
