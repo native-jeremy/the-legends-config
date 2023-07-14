@@ -228,21 +228,21 @@ window.onload = async () => {
         let plus = document.querySelectorAll('.plus-btn');
         let minus = document.querySelectorAll('.minus-btn');
 
-        amrapTitle.forEach(applied => {
-          console.log(applied.innerHTML);
-        });
+        for (let i = 0; i < amrapTitle.length; i++) {
+          const amrapTitleMain = amrapTitle[i];
+          const plusMain = plus[i];
+          const minusMain = minus[i];
 
-        plus.forEach(btn => {
-          btn.addEventListener("click", () => { 
+          plusMain.addEventListener("click", () => { 
             alert("Amrap Activated");
           });
-        });
 
-        minus.forEach(btn => {
-          btn.addEventListener("click", () => { 
+          minusMain.addEventListener("click", () => { 
             alert("Amrap Deactivated");
           });
-        });
+
+          console.log(amrapTitleMain.textContent);
+        }
 
 
         diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
