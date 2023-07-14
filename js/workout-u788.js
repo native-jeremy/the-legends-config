@@ -213,6 +213,12 @@ window.onload = async () => {
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
 
+        diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+        maxLimit = diffLength;
+        limitNum.innerHTML = maxLimit;
+        console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
+        console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
+
         for (let i = 0; i < 3; i++) {
 
           let content = document.querySelector('#controls');
@@ -300,7 +306,7 @@ window.onload = async () => {
           //Limit Text
           amrapLimit = document.createElement('div');
           amrapLimit.classList.add('num', 'limit', 'limit-num');
-          amrapLimit.innerHTML = ammrapLimitNumm;
+          amrapLimit.innerHTML = maxLimit;
 
           amrapTrigger.appendChild(amrapLimit);
 
@@ -335,14 +341,7 @@ window.onload = async () => {
                   console.log("Amrap Diff Decreased");
               }
           });
-
-        diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
-        maxLimit = diffLength;
-        limitNum.innerHTML = maxLimit;
-        console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
-        console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
         //DiffControlsAmrap()
-        console.log("Amrap Activated")
       }
     }
 
