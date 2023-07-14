@@ -228,7 +228,7 @@ window.onload = async () => {
         //let plus = document.querySelectorAll('.plus-btn');
         //let minus = document.querySelectorAll('.minus-btn');
 
-        for (let i = 0; i < amrapTitle.length; i++) {
+        for (let i = 0; i < 3; i++) {
 
           /*plus[i].addEventListener("click", () => { 
             alert("Amrap Activated");
@@ -238,8 +238,65 @@ window.onload = async () => {
             alert("Amrap Deactivated");
           });*/
 
-          console.log(amrapTitle[i].textContent);
-        }
+          let content = document.querySelector('.content');
+
+          let amrapControl;
+          let minNumm = 1;
+          let limitNumm = 3;
+          let currentNumm = 1;
+          
+          amrapControl = document.createElement('div');
+          amrapControl.classList.add('accordion');
+          amrapControl.classList.add('style-1');
+          amrapControl.classList.add('amrap-diff-controls');
+          amrapControl.innerHTML = `
+          <div class="accordion-header style-3">
+              <div class="accordion-header-text style-2">
+                  <div class="accordion-header-top-content">
+                      <h2 class="main-sub-heading-style-1">Test</h2>
+                  </div>
+              </div>
+
+              <div class="diff-trigger">
+                  <div class="counter-btn minus-btn"><div class="counter-arrow left"></div></div>
+
+                  <div class="counter-num">
+                      <div class="num current current-num">${currentNumm}</div>
+                      <div class="num divider">/</div>
+                      <div class="num limit limit-num">${limitNumm}</div>
+                  </div>
+
+                  <div class="counter-btn plus-btn"><div class="counter-arrow right"></div></div>
+              </div>
+          </div>
+          `;
+          content.append(amrapControl);
+
+          setTimeout(() => { 
+            let plusBtnn = document.querySelectorAll('.plus-btn');
+            let minusBtnn = document.querySelectorAll('.minus-btn');
+            currentNumm = document.querySelectorAll('.current-num');
+            limitNumm = document.querySelectorAll('.limit-num');
+        
+            plusBtnn.forEach(plusBtn => {
+                plusBtn.addEventListener('click', () => {
+                    if (currentNumm < limitNumm) {
+                        currentNumm++;
+                    }
+                });
+            });
+        
+            minusBtnn.forEach(minusBtn => {
+                minusBtn.addEventListener('click', () => {
+                    if (currentNumm < limitNumm) {
+                        currentNumm++;
+                    }
+                });
+            });
+          }, 2000)
+
+            console.log(amrapTitle[i].textContent);
+          }
 
 
         diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
