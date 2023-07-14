@@ -225,9 +225,13 @@ window.onload = async () => {
         diffCurrent = diffInt - 1;
 
         let amrapTitle = document.querySelectorAll('.amrap-title');
+        let plus = document.querySelectorAll('.plus-btn');
 
         amrapTitle.forEach(applied => {
-          console.log(applied);
+          plus.addEventListener("click", () => { 
+            alert("Amrap Activated");
+          });
+          console.log(applied.textContent);
         });
 
 
