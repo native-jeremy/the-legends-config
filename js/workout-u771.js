@@ -315,7 +315,7 @@ window.onload = async () => {
           //Divider "/" Text
           amrapDivider = document.createElement('div');
           amrapDivider.classList.add('num', 'divider');
-          amrapDivider.innerHTML = currentNumm;
+          amrapDivider.innerHTML = "/";
 
           amrapTrigger.appendChild(amrapDivider);
 
