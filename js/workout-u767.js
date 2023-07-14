@@ -259,7 +259,7 @@ window.onload = async () => {
           let currentNumm = 1;
           
           amrapControl = document.createElement('div');
-          amrapControl.classList.add('accordion, style-1, amrap-diff-controls');
+          amrapControl.classList.add('accordion', 'style-1', 'amrap-diff-controls');
 
 
           /*amrapControl = document.createElement('div');
