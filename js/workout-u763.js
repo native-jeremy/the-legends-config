@@ -224,7 +224,7 @@ window.onload = async () => {
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
 
-        let amrapTitle = document.querySelectorAll('w-el="amrap_exercise_title"');
+        let amrapTitle = document.querySelectorAll('[w-el="amrap_exercise_title"]');
         //let plus = document.querySelectorAll('.plus-btn');
         //let minus = document.querySelectorAll('.minus-btn');
 
