@@ -224,7 +224,7 @@ window.onload = async () => {
         for (let i = 0; i < amrapLength; i++) {
 
           let content = document.querySelector('#controls');
-          let sortedAmrapTitle = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup..reverse(); 
+          let sortedAmrapTitle = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup.reverse(); 
           let amrapResTitle = sortedAmrapTitle[i];
 
           let amrapControl;
