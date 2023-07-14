@@ -87,17 +87,6 @@ let minLimit = 1;
 let amount = 1;
 currentNum.innerHTML = amount;
 
-// Diffcult Amrap = define - Intialisation
-const minusBtnM = document.querySelectorAll('.minus-btn-multi');
-const currentNumM = document.querySelectorAll('.current-num-multi');
-const limitNumM = document.querySelectorAll('.limit-num-multi');
-const plusBtnM = document.querySelectorAll('.plus-btn-multi');
-let maxLimitM;
-let minLimitM = 1;
-let amountM = 1;
-currentNumM.innerHTML = amountM;
-let i;
-
 let refreshNum = 0;
 
 /* Wized Intialisation
@@ -224,19 +213,7 @@ window.onload = async () => {
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
 
-        let amrapTitle = document.querySelectorAll('[w-el="amrap_exercise_title"]');
-        //let plus = document.querySelectorAll('.plus-btn');
-        //let minus = document.querySelectorAll('.minus-btn');
-
         for (let i = 0; i < 3; i++) {
-
-          /*plus[i].addEventListener("click", () => { 
-            alert("Amrap Activated");
-          });
-
-          minus[i].addEventListener("click", () => { 
-            alert("Amrap Deactivated");
-          });*/
 
           let content = document.querySelector('#controls');
 
@@ -341,16 +318,16 @@ window.onload = async () => {
 
           amrapPlus.addEventListener('click', () => {
             alert("Amrap Activated");
-            /*if (currentNumm < limitNumm) {
-                currentNumm++;
-            }*/
+              if (currentNumm < limitNumm) {
+                  currentNumm++;
+              }
           });
 
           amrapMinus.addEventListener('click', () => {
             alert("Amrap Deactivated");
-            /*if (currentNumm < limitNumm) {
-                currentNumm++;
-            }*/
+              if (currentNumm < limitNumm) {
+                  currentNumm++;
+              }
           });
 
         diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
