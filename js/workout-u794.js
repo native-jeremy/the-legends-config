@@ -224,7 +224,7 @@ window.onload = async () => {
         for (let i = 0; i < amrapLength; i++) {
 
           let content = document.querySelector('#controls');
-          let amrapResTitle = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup[i];
+          let amrapResTitle = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup.length;
 
           let amrapControl;
           let amrapHeader;
