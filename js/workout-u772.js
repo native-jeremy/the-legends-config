@@ -338,54 +338,19 @@ window.onload = async () => {
 
           amrapMinus.appendChild(amrapMinusArrow);
 
-          
-          /*amrapControl.innerHTML = `
-          <div class="accordion-header style-3">
-              <div class="accordion-header-text style-2">
-                  <div class="accordion-header-top-content">
-                      <h2 class="main-sub-heading-style-1">Test</h2>
-                  </div>
-              </div>
+          amrapPlus.addEventListener('click', () => {
+            alert("Amrap Activated");
+            /*if (currentNumm < limitNumm) {
+                currentNumm++;
+            }*/
+          });
 
-              <div class="diff-trigger">
-                  <div class="counter-btn minus-btn"><div class="counter-arrow left"></div></div>
-
-                  <div class="counter-num">
-                      <div class="num current current-num">${currentNumm}</div>
-                      <div class="num divider">/</div>
-                      <div class="num limit limit-num">${limitNumm}</div>
-                  </div>
-
-                  <div class="counter-btn plus-btn"><div class="counter-arrow right"></div></div>
-              </div>
-          </div>
-          `;*/
-
-
-          setTimeout(() => { 
-            let plusBtnn = document.querySelectorAll('.plus-btn');
-            let minusBtnn = document.querySelectorAll('.minus-btn');
-            currentNumm = document.querySelectorAll('.current-num');
-            limitNumm = document.querySelectorAll('.limit-num');
-        
-            plusBtnn.forEach(plusBtn => {
-                plusBtn.addEventListener('click', () => {
-                    if (currentNumm < limitNumm) {
-                        currentNumm++;
-                    }
-                });
-            });
-        
-            minusBtnn.forEach(minusBtn => {
-                minusBtn.addEventListener('click', () => {
-                    if (currentNumm < limitNumm) {
-                        currentNumm++;
-                    }
-                });
-            });
-          }, 2000)
-          }
-
+          amrapMinus.addEventListener('click', () => {
+            alert("Amrap Deactivated");
+            /*if (currentNumm < limitNumm) {
+                currentNumm++;
+            }*/
+          });
 
         diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
         maxLimit = diffLength;
@@ -394,48 +359,8 @@ window.onload = async () => {
         console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
         //DiffControlsAmrap()
         console.log("Amrap Activated")
-        /*for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
-          plusBtnM[i].addEventListener("click", function () {
-            if (amountM[i] < maxLimitM[i]) {
-              diffCurrent++;
-              amountM++;
-              currentNumM[i].innerHTML = amountM[i];
-              enableDisabledStates();
-              playVideoDiff();
-              vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-              setTimeout(enableActiveStates, 1500);
-              setTimeout(autoPlayVideo, 2000);
-            }
-            else {
-              amountM[i] = maxLimitM[i];
-            }
-            console.log("---------------------------------------");
-            console.log("Current Difficulty:", diffCurrent);
-          });
-          
-        // Diff Decrease Click Controls - Single Exercise
-        minusBtnM[i].addEventListener("click", function () {
-          if (amountM[i] > minLimitM[i]) {
-            diffCurrent--;
-            amountM[i]--;
-            currentNumM[i].innerHTML = amountM[i];
-            enableDisabledStates();
-            playVideoDiff();
-            vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-            setTimeout(enableActiveStates, 1500);
-            setTimeout(autoPlayVideo, 2000);
-          }
-          else {
-            amountM[i] = minLimitM[i];
-          }
-          console.log("---------------------------------------");
-          console.log("Current Difficulty:", diffCurrent);
-        });
-      }*/
-
-        //console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
-        //console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
       }
+    }
 
       else {
         let diffStr = currentNum.innerHTML;
