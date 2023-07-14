@@ -241,14 +241,32 @@ window.onload = async () => {
           let content = document.querySelector('.content');
 
           let amrapControl;
+          let amrapHeader;
+          let amrapHeaderText;
+          let amrapHeaderTop;
+          let amrapTitle;
+          let triigger;
+          /*let amrapTitle;
+          let amrapTitle;
+          let amrapTitle;
+          let amrapTitle;
+          let amrapTitle;
+          let amrapTitle;
+          let amrapTitle;
+          let amrapTitle;*/
           let minNumm = 1;
           let limitNumm = 3;
           let currentNumm = 1;
           
           amrapControl = document.createElement('div');
-          amrapControl.classList.add('accordion');
+          amrapControl.classList.add('accordion, style-1, amrap-diff-controls');
+
+
+          /*amrapControl = document.createElement('div');
+          amrapControl.classList.add('accordion-header style-3');
           amrapControl.classList.add('style-1');
-          amrapControl.classList.add('amrap-diff-controls');
+          amrapControl.classList.add('amrap-diff-controls');*/
+          
           amrapControl.innerHTML = `
           <div class="accordion-header style-3">
               <div class="accordion-header-text style-2">
@@ -270,6 +288,7 @@ window.onload = async () => {
               </div>
           </div>
           `;
+
           content.append(amrapControl);
 
           setTimeout(() => { 
