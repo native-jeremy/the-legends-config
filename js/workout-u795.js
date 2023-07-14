@@ -213,7 +213,7 @@ window.onload = async () => {
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
 
-        let amrapLength = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup
+        let amrapLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
 
         diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
         maxLimit = diffLength;
@@ -224,7 +224,7 @@ window.onload = async () => {
         for (let i = 0; i < amrapLength; i++) {
 
           let content = document.querySelector('#controls');
-          let amrapResTitle = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup.length;
+          let amrapResTitle = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup;
 
           let amrapControl;
           let amrapHeader;
