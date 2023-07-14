@@ -317,18 +317,20 @@ window.onload = async () => {
           amrapPlus.appendChild(amrapPlusArrow);
 
           amrapPlus.addEventListener('click', () => {
-            alert("Amrap Activated");
               if (currentNumm < limitNumm) {
                   currentNumm++;
                   amrapCounter.innerHTML = currentNumm;
+
+                  console.log("Amrap Diff Increased");
               }
           });
 
           amrapMinus.addEventListener('click', () => {
-            alert("Amrap Deactivated");
-              if (currentNumm > minLimitNumm) {
+              if (currentNumm > minNumm) {
                   currentNumm--;
                   amrapCounter.innerHTML = currentNumm;
+
+                  console.log("Amrap Diff Decreased");
               }
           });
 
