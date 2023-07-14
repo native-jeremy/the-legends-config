@@ -226,7 +226,7 @@ window.onload = async () => {
 
         let amrapTitle = document.querySelectorAll('.amrap-title');
         let plus = document.querySelectorAll('.plus-btn');
-        let minus = document.querySelectorAll('.plus-btn');
+        let minus = document.querySelectorAll('.minus-btn');
 
         amrapTitle.forEach(applied => {
 
@@ -242,7 +242,7 @@ window.onload = async () => {
             });
           });
 
-          console.log(applied.textContent);
+          console.log(applied.innerHTML);
         });
 
 
