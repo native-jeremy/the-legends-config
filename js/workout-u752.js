@@ -224,6 +224,12 @@ window.onload = async () => {
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
 
+        let amrapTitle = document.querySelectorAll('[w-el="amrap_exercise_title]');
+
+        amrapTitle.forEach(applied => {
+          console.log(applied);
+        });
+
 
         diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
         maxLimit = diffLength;
