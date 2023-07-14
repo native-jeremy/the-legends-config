@@ -213,13 +213,15 @@ window.onload = async () => {
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
 
+        let amrapLength = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup
+
         diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
         maxLimit = diffLength;
         limitNum.innerHTML = maxLimit;
         console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
         console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
 
-        for (let i = 0; i < maxLimit; i++) {
+        for (let i = 0; i < amrapLength; i++) {
 
           let content = document.querySelector('#controls');
           let amrapResTitle = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup[i];
