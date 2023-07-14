@@ -229,19 +229,16 @@ window.onload = async () => {
         let minus = document.querySelectorAll('.minus-btn');
 
         for (let i = 0; i < amrapTitle.length; i++) {
-          const amrapTitleMain = amrapTitle[i];
-          const plusMain = plus[i];
-          const minusMain = minus[i];
 
-          plusMain.addEventListener("click", () => { 
+          plus[i].addEventListener("click", () => { 
             alert("Amrap Activated");
           });
 
-          minusMain.addEventListener("click", () => { 
+          minus[i].addEventListener("click", () => { 
             alert("Amrap Deactivated");
           });
 
-          console.log(amrapTitleMain.textContent);
+          console.log(amrapTitle[i].textContent);
         }
 
 
