@@ -319,7 +319,7 @@ window.onload = async () => {
           amrapPlus.addEventListener('click', () => {
               if (currentNumm < limitNumm) {
                   currentNumm++;
-                  amrapTitle = currentNumm;
+                  amrapTitle.innerHTML  = currentNumm;
                   amrapCounter.innerHTML = currentNumm;
 
                   console.log("Amrap Diff Increased");
@@ -329,7 +329,7 @@ window.onload = async () => {
           amrapMinus.addEventListener('click', () => {
               if (currentNumm > minNumm) {
                   currentNumm--;
-                  amrapTitle = currentNumm;
+                  amrapTitle.innerHTML  = currentNumm;
                   amrapCounter.innerHTML = currentNumm;
 
                   console.log("Amrap Diff Decreased");
