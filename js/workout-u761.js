@@ -225,18 +225,18 @@ window.onload = async () => {
         diffCurrent = diffInt - 1;
 
         let amrapTitle = document.querySelectorAll('.amrap-title');
-        let plus = document.querySelectorAll('.plus-btn');
-        let minus = document.querySelectorAll('.minus-btn');
+        //let plus = document.querySelectorAll('.plus-btn');
+        //let minus = document.querySelectorAll('.minus-btn');
 
         for (let i = 0; i < amrapTitle.length; i++) {
 
-          plus[i].addEventListener("click", () => { 
+          /*plus[i].addEventListener("click", () => { 
             alert("Amrap Activated");
           });
 
           minus[i].addEventListener("click", () => { 
             alert("Amrap Deactivated");
-          });
+          });*/
 
           console.log(amrapTitle[i].textContent);
         }
