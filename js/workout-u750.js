@@ -213,6 +213,11 @@ window.onload = async () => {
 
     if (exerciseData !== undefined) {
 
+      repAmount =
+      repDataInt.data[parseInt(exercisesParam)].Amounts_Name/*[diffCurrent]*/;
+      repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type/*[0]*/;
+      amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
+
       if (amrapBool == "True")
       { 
         diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
@@ -220,7 +225,6 @@ window.onload = async () => {
         limitNum.innerHTML = maxLimit;
         console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
         console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
-
         //DiffControlsAmrap()
         console.log("Amrap Activated")
         /*for (i = 0; i < repDataInt.data[parseInt(exercisesParam)].Diff__Exercise_Lookup.length; i++) {
