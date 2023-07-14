@@ -222,6 +222,7 @@ window.onload = async () => {
         for (let i = 0; i < 3; i++) {
 
           let content = document.querySelector('#controls');
+          let amrapResTitle = repDataInt.data[parseInt(exercisesParam)].Exercise_Title[i];
 
           let amrapControl;
           let amrapHeader;
@@ -267,7 +268,7 @@ window.onload = async () => {
           //Amrap Exercise Title Text
           amrapTitle = document.createElement('h2');
           amrapTitle.classList.add('main-sub-heading-style-1');
-          amrapTitle.innerHTML = "Test Title";
+          amrapTitle.innerHTML = amrapResTitle;
 
           amrapHeaderTop.appendChild(amrapTitle);
 
@@ -325,7 +326,7 @@ window.onload = async () => {
           amrapPlus.addEventListener('click', () => {
               if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
-                  amrapTitle.innerHTML  = amrapCurrentNumm;
+                  //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm;
 
                   console.log("Amrap Diff Increased");
@@ -335,7 +336,7 @@ window.onload = async () => {
           amrapMinus.addEventListener('click', () => {
               if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
-                  amrapTitle.innerHTML  = amrapCurrentNumm;
+                  //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm;
 
                   console.log("Amrap Diff Decreased");
