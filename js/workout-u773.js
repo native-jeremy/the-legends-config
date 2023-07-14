@@ -294,16 +294,17 @@ window.onload = async () => {
 
           amrapHeader.appendChild(amrapTrigger);
 
-          //Plus Button
-          amrapPlus = document.createElement('div');
-          amrapPlus.classList.add('counter-btn', 'minus-btn');
+          //Minus Button
+          amrapMinus = document.createElement('div');
+          amrapMinus.classList.add('counter-btn', 'minus-btn');
 
           amrapTrigger.appendChild(amrapPlus);
 
-          //Plus Button > Right Arrow
-          amrapPlusArrow = document.createElement('div');
-          amrapPlusArrow.classList.add('counter-arrow', 'left');
-          amrapPlus.appendChild(amrapPlusArrow);
+          //Minus Button > Left Arrow
+          amrapMinusArrow = document.createElement('div');
+          amrapMinusArrow.classList.add('counter-arrow', 'left');
+
+          amrapMinus.appendChild(amrapMinusArrow);
 
           //Current Diffculty Text "1" - example
           amrapCounter = document.createElement('div');
@@ -326,17 +327,17 @@ window.onload = async () => {
 
           amrapTrigger.appendChild(amrapLimit);
 
-          //Minus Button
-          amrapMinus = document.createElement('div');
-          amrapMinus.classList.add('counter-btn', 'minus-btn');
+          //Plus Button
+          amrapPlus = document.createElement('div');
+          amrapPlus.classList.add('counter-btn', 'Plus-btn');
 
           amrapTrigger.appendChild(amrapMinus);
 
-          //Minus Button > Right Arrow
-          amrapMinusArrow = document.createElement('div');
-          amrapMinusArrow.classList.add('counter-arrow', 'right');
+          //Plus Button > Right Arrow
+          amrapPlusArrow = document.createElement('div');
+          amrapPlusArrow.classList.add('counter-arrow', 'right');
 
-          amrapMinus.appendChild(amrapMinusArrow);
+          amrapPlus.appendChild(amrapPlusArrow);
 
           amrapPlus.addEventListener('click', () => {
             alert("Amrap Activated");
