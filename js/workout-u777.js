@@ -320,13 +320,15 @@ window.onload = async () => {
             alert("Amrap Activated");
               if (currentNumm < limitNumm) {
                   currentNumm++;
+                  amrapCounter.innerHTML = currentNumm;
               }
           });
 
           amrapMinus.addEventListener('click', () => {
             alert("Amrap Deactivated");
-              if (currentNumm < limitNumm) {
-                  currentNumm++;
+              if (currentNumm > minLimitNumm) {
+                  currentNumm--;
+                  amrapCounter.innerHTML = currentNumm;
               }
           });
 
