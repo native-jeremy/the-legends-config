@@ -221,10 +221,10 @@ window.onload = async () => {
         console.log("Diff Video Length Exercise:", repDataInt.data[parseInt(exercisesParam)].Diff_Video.length);
         console.log("Diff Length :", repDataInt.data[parseInt(exercisesParam)].length);
 
-        for (let i = 0; i < amrapLength; i++) {
+        for (let i = 0; i < 3; i++) {
 
           let content = document.querySelector('#controls');
-          let amrapResTitle = repDataInt.data[parseInt(exercisesParam)].Diff_Exercise_Lookup;
+          let amrapResTitle = repDataInt.data[parseInt(exercisesParam)].Exercise_Title[i];
 
           let amrapControl;
           let amrapHeader;
