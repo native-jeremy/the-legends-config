@@ -220,6 +220,11 @@ window.onload = async () => {
 
       if (amrapBool == "True")
       { 
+        let diffStr = currentNum.innerHTML;
+        let diffInt = parseInt(diffStr);
+        diffCurrent = diffInt - 1;
+
+
         diffLength = repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
         maxLimit = diffLength;
         limitNum.innerHTML = maxLimit;
