@@ -229,20 +229,19 @@ window.onload = async () => {
         let minus = document.querySelectorAll('.minus-btn');
 
         amrapTitle.forEach(applied => {
-
-          plus.forEach(btn => {
-            btn.addEventListener("click", () => { 
-              alert("Amrap Activated");
-            });
-          });
-
-          minus.forEach(btn => {
-            btn.addEventListener("click", () => { 
-              alert("Amrap Deactivated");
-            });
-          });
-
           console.log(applied.innerHTML);
+        });
+
+        plus.forEach(btn => {
+          btn.addEventListener("click", () => { 
+            alert("Amrap Activated");
+          });
+        });
+
+        minus.forEach(btn => {
+          btn.addEventListener("click", () => { 
+            alert("Amrap Deactivated");
+          });
         });
 
 
