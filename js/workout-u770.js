@@ -292,7 +292,7 @@ window.onload = async () => {
           amrapTrigger = document.createElement('div');
           amrapTrigger.classList.add('diff-trigger');
 
-          amrapControl.appendChild(amrapTrigger);
+          amrapHeader.appendChild(amrapTrigger);
 
           //Plus Button
           amrapPlus = document.createElement('div');
