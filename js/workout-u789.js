@@ -237,7 +237,7 @@ window.onload = async () => {
           let amrapMinus;
           let amrapMinusArrow;
           let amrapMinNumm = 1;
-          let ammrapLimitNumm = 3;
+          let ammrapLimitNumm = maxLimit;
           let amrapCurrentNumm = 1;
           
           //Amrap Control Div "body"
@@ -306,7 +306,7 @@ window.onload = async () => {
           //Limit Text
           amrapLimit = document.createElement('div');
           amrapLimit.classList.add('num', 'limit', 'limit-num');
-          amrapLimit.innerHTML = maxLimit;
+          amrapLimit.innerHTML = ammrapLimitNumm;
 
           amrapTrigger.appendChild(amrapLimit);
 
