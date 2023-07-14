@@ -294,8 +294,6 @@ window.onload = async () => {
                 });
             });
           }, 2000)
-
-            console.log(amrapTitle[i].textContent);
           }
 
 
