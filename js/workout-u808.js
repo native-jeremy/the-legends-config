@@ -134,7 +134,7 @@ window.onload = async () => {
     console.log("---------------------------------------");   
     console.log("Exercise Diff Info Response", response);
 
-    exerciseDiffRes = response;
+    let exerciseDiffRes = response;
 
     return exerciseDiffRes;
   })
@@ -149,12 +149,14 @@ window.onload = async () => {
     const amrapResponse = response; 
     let checkAmrap;
 
-    let diffResponse = exerciseDiffRes;
-
     if (repDataInt.status === 200) {
         loaderTrigger.click();
         videoContainer.style.opacity = "1"
     }
+
+    //const let Wized.data.get("Load Exercise Diff");
+  
+    //exerciseDiffRes = response;
 
     roundLength = roundRes.data.length;
 
@@ -203,7 +205,7 @@ window.onload = async () => {
     console.log("---------------------------------------");
     console.log("Single Exercise:", repDataInt.data[parseInt(exercisesParam)]);
 
-    console.log("Diff Response Secondary:", diffResponse);
+    console.log("Diff Response Secondary:", exerciseDiffRes);
 
     //console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio_Source);
 
