@@ -361,7 +361,7 @@ window.onload = async () => {
               videoCheck();
 
               amrapPlus.addEventListener("click", () => {
-                if (amrapCurrentNumm < ammrapLimitNumm) {
+                if (amrapCurrentNumm < ammrapLimitNumm + 1) {
                   amrapCurrentNumm++;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm + 1;
@@ -377,7 +377,7 @@ window.onload = async () => {
               });
 
               amrapMinus.addEventListener("click", () => {
-                if (amrapCurrentNumm > amrapMinNumm) {
+                if (amrapCurrentNumm > amrapMinNumm + 1) {
                   amrapCurrentNumm--;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm + 1;
