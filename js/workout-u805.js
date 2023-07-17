@@ -135,6 +135,8 @@ window.onload = async () => {
     console.log("Exercise Diff Info Response", response);
 
     exerciseDiffRes = response;
+
+    return exerciseDiffRes;
   })
 
   // [- Step 2 -] Exercises Request Response From Wized
