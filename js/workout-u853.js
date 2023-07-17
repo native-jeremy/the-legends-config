@@ -357,6 +357,8 @@ window.onload = async () => {
 
               amrapPlus.appendChild(amrapPlusArrow);
 
+              videoCheck();
+
               amrapPlus.addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
@@ -366,7 +368,7 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                  exerciseDiffRes.data[parseInt(exerciseParam)].Video[amrapCurrentNumm].url;
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Increased");
@@ -381,14 +383,12 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                  exerciseDiffRes.data[parseInt(exerciseParam)].Video[amrapCurrentNumm].url;
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Decreased");
                 }
               });
-
-              videoCheck();
             }
 
             // Video Condtionals To Change Src When Doing An Amrap
