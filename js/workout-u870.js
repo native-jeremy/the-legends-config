@@ -360,8 +360,13 @@ window.onload = async () => {
 
               videoCheck();
 
+              diffLength =
+              diffRes.data[parseInt(videoIndex)].Video.length;
+              maxLimit = diffLength;
+              limitNum.innerHTML = maxLimit;
+
               amrapPlus.addEventListener("click", () => {
-                if (amrapCurrentNumm < ammrapLimitNumm + 1) {
+                if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm + 1;
@@ -377,7 +382,7 @@ window.onload = async () => {
               });
 
               amrapMinus.addEventListener("click", () => {
-                if (amrapCurrentNumm > amrapMinNumm + 1) {
+                if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm + 1;
