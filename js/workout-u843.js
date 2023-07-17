@@ -338,7 +338,7 @@ window.onload = async () => {
 
               //Plus Button
               amrapPlus = document.createElement("div");
-              amrapPlus.classList.add("counter-btn", "Plus-btn");
+              amrapPlus.classList.add("counter-btn", "plus-btn");
 
               amrapTrigger.appendChild(amrapPlus);
 
@@ -347,36 +347,45 @@ window.onload = async () => {
               amrapPlusArrow.classList.add("counter-arrow", "right");
 
               amrapPlus.appendChild(amrapPlusArrow);
+                
+              amrapNext = document.querySelectorAll('.plus-btn')
+              amrapPrev = document.querySelectorAll('.minus-btn')
 
-              amrapPlus.addEventListener("click", () => {
-                if (amrapCurrentNumm < ammrapLimitNumm) {
-                  amrapCurrentNumm++;
-                  //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm;
-                  //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-                  vidSrc.src =
-                  exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
-                  console.log("Amrap Diff Increased");
-                }
-              });
+              for (let i = 0; i < amrapNext.length; i++) {
+                const nextAmrap = amrapNext[i];
+                const prevAmrap = amrapPrev[i];
 
-              amrapMinus.addEventListener("click", () => {
-                if (amrapCurrentNumm > amrapMinNumm) {
-                  amrapCurrentNumm--;
-                  //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm;
-                  enableDisabledStates();
-                  playVideoDiff();
-                  vidSrc.src =
-                  exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
-                  setTimeout(enableActiveStates, 1500);
-                  setTimeout(autoPlayVideo, 2000);
-                  console.log("Amrap Diff Decreased");
-                }
-              });
+                nextAmrap.addEventListener("click", () => {
+                  if (amrapCurrentNumm < ammrapLimitNumm) {
+                    amrapCurrentNumm++;
+                    //amrapTitle.innerHTML  = amrapCurrentNumm;
+                    amrapCounter.innerHTML = amrapCurrentNumm;
+                    //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+                    vidSrc.src =
+                    exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
+                    console.log("Amrap Diff Increased");
+                  }
+                });
+
+                prevAmrap.addEventListener("click", () => {
+                  if (amrapCurrentNumm > amrapMinNumm) {
+                    amrapCurrentNumm--;
+                    //amrapTitle.innerHTML  = amrapCurrentNumm;
+                    amrapCounter.innerHTML = amrapCurrentNumm;
+                    enableDisabledStates();
+                    playVideoDiff();
+                    vidSrc.src =
+                    exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
+                    setTimeout(enableActiveStates, 1500);
+                    setTimeout(autoPlayVideo, 2000);
+                    console.log("Amrap Diff Decreased");
+                  }
+                });
+                
+              }
             }
-            /*vidSrc.src =
-            exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;*/
+            vidSrc.src =
+            exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
           });
         }
 
