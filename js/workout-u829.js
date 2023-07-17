@@ -217,9 +217,10 @@ window.onload = async () => {
         diffCurrent = diffInt - 1;
 
        async function loadData() { 
-          const value = await Wized.data.get("r.64.d")
-          console.log("---------------------------------------");   
-          console.log("Exercise Diff Info Response TEMP! ", value)
+          Wized.request.await("Load Exercise Diff", (response) => {    
+            console.log("---------------------------------------");   
+            console.log("Exercise Diff Info Response TEMP! ", response) // Log request response  
+        })
         };
 
         loadData()
