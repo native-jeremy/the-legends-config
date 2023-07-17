@@ -360,11 +360,6 @@ window.onload = async () => {
 
               videoCheck();
 
-              diffLength =
-              diffRes.data[i].Video.length;
-              maxLimit = diffLength;
-              limitNum.innerHTML = maxLimit;
-
               amrapPlus.addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
