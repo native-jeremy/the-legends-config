@@ -207,7 +207,9 @@ window.onload = async () => {
 
       if (amrapBool == "True") {
         async function loadData() {
+
           Wized.request.await("Load Exercise Diff", (response) => {
+            
             diffRes = response;
             console.log("---------------------------------------");
             console.log("Exercise Diff Info Response TEMP! ", diffRes);
@@ -236,6 +238,12 @@ window.onload = async () => {
               "Diff Length :",
               diffRes.data.length
             );
+
+            checkAmrapVideo = setInterval(videoCheck, 0);
+            //checkAmrapAudio = setInterval(audioCheck, 0);
+            newcookieIndex =
+            diffRes.data[parseInt(exercisesParam)].Video.length;
+            console.log("Amrap length:", newcookieIndex);
 
             let amrapCurrentNumm = 1;
 
@@ -387,6 +395,8 @@ window.onload = async () => {
 
         loadData();
       } else {
+
+        clearInterval(checkAmrapVideo);
         let diffStr = currentNum.innerHTML;
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
@@ -586,18 +596,6 @@ window.onload = async () => {
         console.log("Amrap Video Array Length:", amrapResponse.data[parseInt(exercisesParam)].Video.length);
         console.log("---------------------------------------");
         console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));*/
-      }
-
-      // Amrap Condtionals To Check If True/False
-      if (amrapBool == "True") {
-        checkAmrapVideo = setInterval(videoCheck, 0);
-        //checkAmrapAudio = setInterval(audioCheck, 0);
-        newcookieIndex =
-          amrapResponse.data[parseInt(exercisesParam)].Video.length;
-        console.log("Amrap length:", newcookieIndex);
-      } else {
-        clearInterval(checkAmrapVideo);
-        //clearInterval(checkAmrapAudio);
       }
 
       if (
