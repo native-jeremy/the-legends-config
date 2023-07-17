@@ -361,7 +361,7 @@ window.onload = async () => {
               videoCheck();
 
               diffLength =
-              diffRes.data[parseInt(videoIndex)].Video.length;
+              diffRes.data[i].Video.length;
               maxLimit = diffLength;
               limitNum.innerHTML = maxLimit;
 
