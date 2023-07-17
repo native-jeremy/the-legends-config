@@ -249,8 +249,6 @@ window.onload = async () => {
 
             for (let i = 0; i < amrapLength; i++) {
               let content = document.querySelector("#controls");
-              let plus = document.querySelectorAll('.plus-btn');
-              let minus = document.querySelectorAll('.minus-btn');
               let sortedAmrapTitle =
                 repDataInt.data[
                   parseInt(exercisesParam)
@@ -274,98 +272,98 @@ window.onload = async () => {
               let ammrapLimitNumm = maxLimit;
 
               //Amrap Control Div "body"
-              amrapControl = document.createElement("div");
-              amrapControl.classList.add(
+              amrapControl[i] = document.createElement("div");
+              amrapControl[i].classList.add(
                 "accordion",
                 "style-1",
                 "amrap-diff-controls"
               );
 
-              content.append(amrapControl);
+              content.append(amrapControl[i]);
 
               //Amrap Header Content - Content Div
-              amrapHeader = document.createElement("div");
-              amrapHeader.classList.add("accordion-header", "style-3");
+              amrapHeader[i] = document.createElement("div");
+              amrapHeader[i].classList.add("accordion-header", "style-3");
 
-              amrapControl.appendChild(amrapHeader);
+              amrapControl[i].appendChild(amrapHeader[i]);
 
               //Amrap Header Text Content - Content Div
-              amrapHeaderText = document.createElement("div");
-              amrapHeaderText.classList.add("accordion-header-text", "style-2");
+              amrapHeaderText[i] = document.createElement("div");
+              amrapHeaderText[i].classList.add("accordion-header-text", "style-2");
 
-              amrapHeader.appendChild(amrapHeaderText);
+              amrapHeader[i].appendChild(amrapHeaderText[i]);
 
               //Amrap Header Top Content - Content Div
-              amrapHeaderTop = document.createElement("div");
-              amrapHeaderTop.classList.add("accordion-header-top-content");
+              amrapHeaderTop[i] = document.createElement("div");
+              amrapHeaderTop[i].classList.add("accordion-header-top-content");
 
-              amrapHeaderText.appendChild(amrapHeaderTop);
+              amrapHeaderText[i].appendChild(amrapHeaderTop[i]);
 
               //Amrap Exercise Title Text
-              amrapTitle = document.createElement("h2");
-              amrapTitle.classList.add("main-sub-heading-style-1");
-              amrapTitle.innerHTML = amrapResTitle;
+              amrapTitle[i] = document.createElement("h2");
+              amrapTitle[i].classList.add("main-sub-heading-style-1");
+              amrapTitle[i].innerHTML = amrapResTitle[i];
 
-              amrapHeaderTop.appendChild(amrapTitle);
+              amrapHeaderTop[i].appendChild(amrapTitle[i]);
 
               //Counter Content Div
-              amrapTrigger = document.createElement("div");
-              amrapTrigger.classList.add("diff-trigger");
+              amrapTrigger[i] = document.createElement("div");
+              amrapTrigger[i].classList.add("diff-trigger");
 
-              amrapHeader.appendChild(amrapTrigger);
+              amrapHeader[i].appendChild(amrapTrigger);
 
               //Minus Button
-              amrapMinus = document.createElement("div");
-              amrapMinus.classList.add("counter-btn", "minus-btn");
+              amrapMinus[i] = document.createElement("div");
+              amrapMinus[i].classList.add("counter-btn", "minus-btn");
 
-              amrapTrigger.appendChild(amrapMinus);
+              amrapTrigger[i].appendChild(amrapMinus[i]);
 
               //Minus Button > Left Arrow
-              amrapMinusArrow = document.createElement("div");
-              amrapMinusArrow.classList.add("counter-arrow", "left");
+              amrapMinusArrow[i] = document.createElement("div");
+              amrapMinusArrow[i].classList.add("counter-arrow", "left");
 
-              amrapMinus.appendChild(amrapMinusArrow);
+              amrapMinus[i].appendChild(amrapMinusArrow[i]);
 
               //Current Diffculty Text "1" - example
-              amrapCounter = document.createElement("div");
-              amrapCounter.classList.add("num", "current", "current-num");
-              amrapCounter.innerHTML = amrapCurrentNumm;
+              amrapCounter[i] = document.createElement("div");
+              amrapCounter[i].classList.add("num", "current", "current-num");
+              amrapCounter[i].innerHTML = amrapCurrentNumm;
 
-              amrapTrigger.appendChild(amrapCounter);
+              amrapTrigger[i].appendChild(amrapCounter);
 
               //Divider "/" Text
-              amrapDivider = document.createElement("div");
-              amrapDivider.classList.add("num", "divider");
-              amrapDivider.innerHTML = "/";
+              amrapDivider[i] = document.createElement("div");
+              amrapDivider[i].classList.add("num", "divider");
+              amrapDivider[i].innerHTML = "/";
 
-              amrapTrigger.appendChild(amrapDivider);
+              amrapTrigger[i].appendChild(amrapDivider[i]);
 
               //Limit Text
-              amrapLimit = document.createElement("div");
-              amrapLimit.classList.add("num", "limit", "limit-num");
-              amrapLimit.innerHTML = ammrapLimitNumm;
+              amrapLimit[i] = document.createElement("div");
+              amrapLimit[i].classList.add("num", "limit", "limit-num");
+              amrapLimit[i].innerHTML = ammrapLimitNumm;
 
-              amrapTrigger.appendChild(amrapLimit);
+              amrapTrigger[i].appendChild(amrapLimit);
 
               //Plus Button
-              amrapPlus = document.createElement("div");
-              amrapPlus.classList.add("counter-btn", "Plus-btn");
+              amrapPlus[i] = document.createElement("div");
+              amrapPlus[i].classList.add("counter-btn", "Plus-btn");
 
-              amrapTrigger.appendChild(amrapPlus);
+              amrapTrigger[i].appendChild(amrapPlus[i]);
 
               //Plus Button > Right Arrow
-              amrapPlusArrow = document.createElement("div");
-              amrapPlusArrow.classList.add("counter-arrow", "right");
+              amrapPlusArrow[i] = document.createElement("div");
+              amrapPlusArrow[i].classList.add("counter-arrow", "right");
 
-              amrapPlus.appendChild(amrapPlusArrow);
+              amrapPlus[i].appendChild(amrapPlusArrow[i]);
 
               videoCheck();
 
-              plus[i].addEventListener("click", () => {
+              amrapPlus[i].addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm;
+                  amrapCounter[i].innerHTML = amrapCurrentNumm;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
                   enableDisabledStates();
                   playVideoDiff();
@@ -377,11 +375,11 @@ window.onload = async () => {
                 }
               });
 
-              minus[i].addEventListener("click", () => {
+              amrapMinus[i].addEventListener("click", () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm;
+                  amrapCounter[i].innerHTML = amrapCurrentNumm;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
