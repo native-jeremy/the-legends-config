@@ -245,7 +245,7 @@ window.onload = async () => {
             diffRes.data[parseInt(exercisesParam)].Video.length;
             console.log("Amrap length:", newcookieIndex);
 
-            let amrapCurrentNumm = 1;
+            let amrapCurrentNumm = diffCurrent;
 
             for (let i = 0; i < amrapLength; i++) {
               let content = document.querySelector("#controls");
@@ -268,7 +268,7 @@ window.onload = async () => {
               let amrapPlusArrow;
               let amrapMinus;
               let amrapMinusArrow;
-              let amrapMinNumm = 1;
+              let amrapMinNumm = 0;
               let ammrapLimitNumm = maxLimit;
 
               //Amrap Control Div "body"
@@ -327,7 +327,7 @@ window.onload = async () => {
               //Current Diffculty Text "1" - example
               amrapCounter = document.createElement("div");
               amrapCounter.classList.add("num", "current", "current-num");
-              amrapCounter.innerHTML = amrapCurrentNumm;
+              amrapCounter.innerHTML = amrapCurrentNumm + 1;
 
               amrapTrigger.appendChild(amrapCounter);
 
@@ -363,7 +363,7 @@ window.onload = async () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm;
+                  amrapCounter.innerHTML = amrapCurrentNumm + 1;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
                   enableDisabledStates();
                   playVideoDiff();
@@ -379,7 +379,7 @@ window.onload = async () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm;
+                  amrapCounter.innerHTML = amrapCurrentNumm - 1;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
