@@ -158,6 +158,7 @@ window.onload = async () => {
   
     exerciseDiffRes = diffres;
 
+return exerciseDiffRes;
     }
     
     roundLength = roundRes.data.length;
