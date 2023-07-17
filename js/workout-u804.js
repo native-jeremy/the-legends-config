@@ -199,6 +199,8 @@ window.onload = async () => {
     console.log("---------------------------------------");
     console.log("Single Exercise:", repDataInt.data[parseInt(exercisesParam)]);
 
+    console.log("Diff Response Secondary:", exerciseDiffRes);
+
     //console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio_Source);
 
     let audioSrc = document.getElementById("voiceSrc");
