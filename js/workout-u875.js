@@ -366,12 +366,11 @@ window.onload = async () => {
 
               amrapPlus.appendChild(amrapPlusArrow);
 
-              videoCheck();
-
               amrapPlus.addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
-                  amrapCurrentNummText = amrapCurrentNumm + 1
+                  videoCheck();
+                   amrapCurrentNummText = amrapCurrentNumm + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNummText;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
@@ -388,6 +387,7 @@ window.onload = async () => {
               amrapMinus.addEventListener("click", () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
+                  videoCheck();
                   amrapCurrentNummText = amrapCurrentNumm + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNummText;
@@ -400,6 +400,8 @@ window.onload = async () => {
                   console.log("Amrap Diff Decreased");
                 }
               });
+
+              videoCheck();
             }
 
             console.log("CurrentNumber Array: ", amrapCurrentNummArray);
