@@ -226,7 +226,7 @@ window.onload = async () => {
         console.log("---------------------------------------");   
         loadData().then((res) => console.log("Exercise Diff Info Response TEMP!", res));
       
-        exerciseDiffRes = value;
+        //exerciseDiffRes = value;
 
         let amrapLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
 
