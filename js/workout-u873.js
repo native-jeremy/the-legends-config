@@ -248,6 +248,8 @@ window.onload = async () => {
             let amrapCurrentNumm = 0;
             let amrapCurrentNummText = amrapCurrentNumm + 1;
 
+            let amrapCurrentNummArray = [];
+
             for (let i = 0; i < amrapLength; i++) {
               let content = document.querySelector("#controls");
               let sortedAmrapTitle =
@@ -255,6 +257,8 @@ window.onload = async () => {
                   parseInt(exercisesParam)
                 ].Diff_Exercise_Lookup.reverse();
               let amrapResTitle = sortedAmrapTitle[i];
+
+              amrapCurrentNummArray.push(amrapCurrentNumm);
 
               let amrapControl;
               let amrapHeader;
@@ -391,6 +395,8 @@ window.onload = async () => {
                 }
               });
             }
+
+            console.log("CurrentNumber Array: ", amrapCurrentNummArray);
 
             // Video Condtionals To Change Src When Doing An Amrap
             function videoCheck() {
