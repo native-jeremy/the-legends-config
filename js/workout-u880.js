@@ -367,9 +367,9 @@ window.onload = async () => {
               amrapPlus.appendChild(amrapPlusArrow);
 
               amrapPlus.addEventListener("click", () => {
-                if (amrapNumberArray[i] < ammrapLimitNumm) {
+                if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
-                  videoCheck();
+                  amrapNumberArray[i] = amrapCurrentNumm;
                    amrapCurrentNummText = amrapCurrentNumm + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNummText;
@@ -385,9 +385,9 @@ window.onload = async () => {
               });
 
               amrapMinus.addEventListener("click", () => {
-                if (amrapNumberArray[i] > amrapMinNumm) {
+                if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
-                  videoCheck();
+                  amrapNumberArray[i] = amrapCurrentNumm;
                   amrapCurrentNummText = amrapCurrentNumm + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNummText;
@@ -401,8 +401,7 @@ window.onload = async () => {
                 }
               });
 
-              amrapCurrentNumm = amrapNumberArray[i];
-
+              console.log("CurrentNumber Array: ", amrapNumberArray);
               videoCheck();
             }
 
@@ -438,7 +437,7 @@ window.onload = async () => {
                 videoIndex = 0;
                 videoCurrentSrc =
                 exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                  amrapCurrentNumm
+                    parseInt(amrapCurrentNumm)
                   ].url;
                 console.log("---------------------------------------");
                 console.log(videoCurrentSrc);
