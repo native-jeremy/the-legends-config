@@ -387,9 +387,9 @@ window.onload = async () => {
                   console.log("Amrap Diff Decreased");
                 }
               });
-            }
 
-            videoCheck();
+              videoCheck();
+            }
 
             // Video Condtionals To Change Src When Doing An Amrap
             function videoCheck() {
@@ -420,8 +420,8 @@ window.onload = async () => {
               ) {
                 videoIndex = 0;
                 videoCurrentSrc =
-                  amrapResponse.data[parseInt(exercisesParam)].Video[
-                    parseInt(videoIndex)
+                exerciseDiffRes.data[parseInt(videoIndex)].Video[
+                    parseInt(amrapCurrentNumm)
                   ].url;
                 console.log("---------------------------------------");
                 console.log(videoCurrentSrc);
@@ -435,8 +435,8 @@ window.onload = async () => {
                 videos.play();
               }
             }
-            vidSrc.src =
-            exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
+            /*vidSrc.src =
+            exerciseDiffRes.data[parseInt(exerciseParam)].Video[amrapCurrentNumm].url;*/
           });
         }
 
