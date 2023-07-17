@@ -359,7 +359,7 @@ window.onload = async () => {
 
               videoCheck();
 
-              amrapPlus.addEventListener("click", () => {
+              amrapPlus[i].addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
@@ -375,7 +375,7 @@ window.onload = async () => {
                 }
               });
 
-              amrapMinus.addEventListener("click", () => {
+              amrapMinus[i].addEventListener("click", () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
