@@ -249,10 +249,10 @@ window.onload = async () => {
             let amrapCurrentNummText;
 
             let amrapNumberArray = [];
-            let amrapPlusArray = [];
-            let amrapMinusArray = [];
+    
 
             for (let i = 0; i < amrapLength; i++) {
+              amrapNumberArray.push(amrapCurrentNumm);
               let content = document.querySelector("#controls");
               let sortedAmrapTitle =
                 repDataInt.data[
@@ -366,11 +366,7 @@ window.onload = async () => {
 
               amrapPlus.appendChild(amrapPlusArrow);
 
-              amrapNumberArray.push(amrapCurrentNumm);
-              amrapPlusArray.push(amrapPlus);
-              amrapMinusArray.push(amrapMinus);
-
-              amrapPlus[i].addEventListener("click", () => {
+              amrapPlus.addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   videoCheck();
@@ -388,7 +384,7 @@ window.onload = async () => {
                 }
               });
 
-              amrapMinus[i].addEventListener("click", () => {
+              amrapMinus.addEventListener("click", () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
                   videoCheck();
