@@ -248,7 +248,9 @@ window.onload = async () => {
             let amrapCurrentNumm = 0;
             let amrapCurrentNummText;
 
-            let amrapCurrentNummArray = [];
+            let amrapNumberArray = [];
+            let amrapPlusArray = [];
+            let amrapMinusArray = [];
 
             for (let i = 0; i < amrapLength; i++) {
               let content = document.querySelector("#controls");
@@ -257,8 +259,6 @@ window.onload = async () => {
                   parseInt(exercisesParam)
                 ].Diff_Exercise_Lookup.reverse();
               let amrapResTitle = sortedAmrapTitle[i];
-
-              amrapCurrentNummArray.push(amrapCurrentNumm);
 
               let amrapControl;
               let amrapHeader;
@@ -286,7 +286,7 @@ window.onload = async () => {
 
               content.append(amrapControl);
 
-              amrapCurrentNumm = amrapCurrentNummArray[i];
+              amrapCurrentNumm = amrapNumberArray[i];
 
               amrapCurrentNummText = amrapCurrentNumm + 1;
 
@@ -366,7 +366,11 @@ window.onload = async () => {
 
               amrapPlus.appendChild(amrapPlusArrow);
 
-              amrapPlus.addEventListener("click", () => {
+              amrapNumberArray.push(amrapCurrentNumm);
+              amrapPlusArray.push(amrapPlus);
+              amrapMinusArray.push(amrapMinus);
+
+              amrapPlus[i].addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   videoCheck();
@@ -384,7 +388,7 @@ window.onload = async () => {
                 }
               });
 
-              amrapMinus.addEventListener("click", () => {
+              amrapMinus[i].addEventListener("click", () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
                   videoCheck();
