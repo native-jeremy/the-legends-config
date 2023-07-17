@@ -363,7 +363,6 @@ window.onload = async () => {
               amrapPlus.addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
-                  videoCheck();
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm + 1;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
@@ -380,7 +379,6 @@ window.onload = async () => {
               amrapMinus.addEventListener("click", () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
-                  videoCheck();
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm + 1;
                   enableDisabledStates();
