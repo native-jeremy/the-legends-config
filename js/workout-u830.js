@@ -217,15 +217,21 @@ window.onload = async () => {
         diffCurrent = diffInt - 1;
 
        async function loadData() { 
-          Wized.request.await("Load Exercise Diff", (response) => {    
+          Wized.request.await("Load Exercise Diff", (response) => {  
+            
+            const diffRes = response;
             console.log("---------------------------------------");   
-            console.log("Exercise Diff Info Response TEMP! ", response) // Log request response  
-        })
+            console.log("Exercise Diff Info Response TEMP! ", diffRes)
+            
+            return diffRes;// Log request response  
+          })
         };
 
         loadData()
       
-        //exerciseDiffRes = value;
+        exerciseDiffRes = diffRes;
+
+        console.log("Diff Res RETURNED! ", exerciseDiffRes)
 
         let amrapLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
 
