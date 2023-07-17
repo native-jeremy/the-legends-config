@@ -381,6 +381,7 @@ window.onload = async () => {
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Increased");
+                  console.log("CurrentNumber Array: ", amrapNumberArray);
                 }
               });
 
@@ -398,10 +399,9 @@ window.onload = async () => {
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Decreased");
+                  console.log("CurrentNumber Array: ", amrapNumberArray);
                 }
               });
-
-              console.log("CurrentNumber Array: ", amrapNumberArray);
               videoCheck();
             }
 
