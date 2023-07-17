@@ -228,7 +228,9 @@ window.onload = async () => {
           })
         };
 
-        loadData()
+        (async () => {
+          console.log("Exercise Diff Info Response TEMP! ", await loadData())
+        })()
       
         exerciseDiffRes = diffRes;
 
