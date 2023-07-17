@@ -40,6 +40,7 @@ let setExercisesNum;
 let setExerciseNum;
 
 // Temp Variables
+let exerciseDiffRes;
 let roundRes;
 let roundResIndex;
 let roundLength;
@@ -50,7 +51,6 @@ let audioIndex;
 let checkAmrapVideo;
 let checkAmrapAudio;
 let exerciseRes;
-let exerciseDiffRes;
 let diffLength;
 let diffCurrent;
 
@@ -106,7 +106,6 @@ window.onload = async () => {
   const workoutParam = await Wized.data.get("n.parameter.workout");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
-  let exerciseDiffRes;
 
   // URL Searching Setup and Declaration
   let activeParam = document.getElementById("activeParam");
@@ -131,12 +130,12 @@ window.onload = async () => {
     audioRes = response;
   })*/
 
-  /*Wized.request.await("Load Exercise Diff", (response) => { 
+  Wized.request.await("Load Exercise Diff", (response) => { 
     console.log("---------------------------------------");   
     console.log("Exercise Diff Info Response", response);
 
     exerciseDiffRes = response;
-  })*/
+  })
 
   // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
@@ -153,14 +152,6 @@ window.onload = async () => {
         videoContainer.style.opacity = "1"
     }
 
-    async() => {
-    const diffres = Wized.data.get("Load Exercise Diff");
-  
-    exerciseDiffRes = diffres;
-
-return exerciseDiffRes;
-    }
-    
     roundLength = roundRes.data.length;
 
     roundRealNumber = parseInt(roundParam) + 1;
