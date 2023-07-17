@@ -130,12 +130,16 @@ window.onload = async () => {
     audioRes = response;
   })*/
 
-  Wized.request.await("Load Exercise Diff", (response) => { 
+  const value = await Wized.data.get("r.64.d"); // Returns the value of "r.2.d[0].name"
+
+  console.log("Exercise Diff Info Response", value);
+
+  /*Wized.request.await("Load Exercise Diff", (response) => { 
     console.log("---------------------------------------");   
     console.log("Exercise Diff Info Response", response);
 
     exerciseDiffRes = response;
-  })
+  })*/
 
   // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
