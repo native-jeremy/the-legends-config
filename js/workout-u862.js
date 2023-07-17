@@ -214,9 +214,9 @@ window.onload = async () => {
             console.log("---------------------------------------");
             console.log("Exercise Diff Info Response TEMP! ", diffRes);
 
-            let diffStr = currentNum.innerHTML;
+            /*let diffStr = currentNum.innerHTML;
             let diffInt = parseInt(diffStr);
-            diffCurrent = diffInt - 1;
+            diffCurrent = diffInt - 1;*/
 
             exerciseDiffRes = diffRes;
 
@@ -245,7 +245,8 @@ window.onload = async () => {
             diffRes.data[parseInt(exercisesParam)].Video.length;
             console.log("Amrap length:", newcookieIndex);
 
-            let amrapCurrentNumm = diffCurrent;
+            let amrapCurrentNumm = 0;
+            let amrapCurrentNummText = amrapCurrentNumm + 1;
 
             for (let i = 0; i < amrapLength; i++) {
               let content = document.querySelector("#controls");
@@ -327,7 +328,7 @@ window.onload = async () => {
               //Current Diffculty Text "1" - example
               amrapCounter = document.createElement("div");
               amrapCounter.classList.add("num", "current", "current-num");
-              amrapCounter.innerHTML = amrapCurrentNumm + 1;
+              amrapCounter.innerHTML = amrapCurrentNumm;
 
               amrapTrigger.appendChild(amrapCounter);
 
@@ -363,7 +364,7 @@ window.onload = async () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm;
+                  amrapCounter.innerHTML = amrapCurrentNummText;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
                   enableDisabledStates();
                   playVideoDiff();
@@ -379,7 +380,7 @@ window.onload = async () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm;
+                  amrapCounter.innerHTML = amrapCurrentNummText;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
