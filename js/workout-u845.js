@@ -355,8 +355,12 @@ window.onload = async () => {
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+                  enableDisabledStates();
+                  playVideoDiff();
                   vidSrc.src =
                   exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
+                  setTimeout(enableActiveStates, 1500);
+                  setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Increased");
                 }
               });
