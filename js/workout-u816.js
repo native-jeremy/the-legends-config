@@ -130,19 +130,17 @@ window.onload = async () => {
     audioRes = response;
   })*/
 
-  const value = await Wized.data.get("r.64.d"); // Returns the value of "r.2.d[0].name"
-
-  console.log("Exercise Diff Info Response", value);
-
-  /*Wized.request.await("Load Exercise Diff", (response) => { 
+  Wized.request.await("Load Exercise Diff", (response) => { 
     console.log("---------------------------------------");   
     console.log("Exercise Diff Info Response", response);
 
     exerciseDiffRes = response;
-  })*/
+
+    return exerciseDiffRes;
+  })
 
   // [- Step 2 -] Exercises Request Response From Wized
-  Wized.request.await("Load Exercises", (response) => {
+  Wized.request.await("Load Exercises", (response, exerciseDiffRes) => {
     const repDataInt = response;
     let repAmount;
     let repType;
@@ -150,6 +148,10 @@ window.onload = async () => {
     let amrapBool;
     const amrapResponse = response; 
     let checkAmrap;
+
+    let tempResponse =  exerciseDiffRes;
+
+    console.log("Returned Exercise Diff Response: ", tempResponse);
 
     if (repDataInt.status === 200) {
         loaderTrigger.click();
