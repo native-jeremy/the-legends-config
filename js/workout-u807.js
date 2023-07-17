@@ -130,6 +130,15 @@ window.onload = async () => {
     audioRes = response;
   })*/
 
+  Wized.request.await("Load Exercise Diff", (response) => { 
+    console.log("---------------------------------------");   
+    console.log("Exercise Diff Info Response", response);
+
+    exerciseDiffRes = response;
+
+    return exerciseDiffRes;
+  })
+
   // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
     const repDataInt = response;
@@ -139,6 +148,8 @@ window.onload = async () => {
     let amrapBool;
     const amrapResponse = response; 
     let checkAmrap;
+
+    let diffResponse = exerciseDiffRes;
 
     if (repDataInt.status === 200) {
         loaderTrigger.click();
@@ -191,17 +202,8 @@ window.onload = async () => {
     console.log("All Exercises", amrapResponse);
     console.log("---------------------------------------");
     console.log("Single Exercise:", repDataInt.data[parseInt(exercisesParam)]);
-    
-    async() => {
-      Wized.request.await("Load Exercise Diff", (response) => { 
-        console.log("---------------------------------------");   
-        console.log("Exercise Diff Info Response", response);
-    
-        exerciseDiffRes = response;
-      })
-  }
 
-    console.log("Diff Response Secondary:", exerciseDiffRes);
+    console.log("Diff Response Secondary:", diffResponse);
 
     //console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio_Source);
 
