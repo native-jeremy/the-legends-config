@@ -152,7 +152,7 @@ window.onload = async () => {
         videoContainer.style.opacity = "1"
     }
 
-    let diffres = Wized.data.get("Load Exercise Diff");
+    const diffres = Wized.data.get("Load Exercise Diff");
   
     let exerciseDiffRes = diffres;
     
