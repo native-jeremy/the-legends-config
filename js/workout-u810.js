@@ -152,9 +152,9 @@ window.onload = async () => {
         videoContainer.style.opacity = "1"
     }
 
-    let response = Wized.data.get("Load Exercise Diff");
+    let diffres = Wized.data.get("Load Exercise Diff");
   
-    let exerciseDiffRes = response;
+    let exerciseDiffRes = diffres;
     
     roundLength = roundRes.data.length;
 
