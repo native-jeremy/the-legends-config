@@ -53,6 +53,7 @@ let checkAmrapAudio;
 let exerciseRes;
 let diffLength;
 let diffCurrent;
+let diffRes;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -219,7 +220,7 @@ window.onload = async () => {
        async function loadData() { 
           Wized.request.await("Load Exercise Diff", (response) => {  
             
-            const diffRes = response;
+            diffRes = response;
             console.log("---------------------------------------");   
             console.log("Exercise Diff Info Response TEMP! ", diffRes)
             
