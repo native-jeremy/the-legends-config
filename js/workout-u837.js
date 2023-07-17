@@ -367,11 +367,10 @@ window.onload = async () => {
 
                   console.log("Amrap Diff Decreased");
                 }
-                
+                vidSrc.src =
+                exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
               });
             }
-            vidSrc.src =
-            exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
           });
         }
 
