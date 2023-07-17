@@ -366,7 +366,7 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                  exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
+                  exerciseDiffRes.data[parseInt(exerciseParam)].Video[amrapCurrentNumm].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Increased");
@@ -381,7 +381,7 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                  exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
+                  exerciseDiffRes.data[parseInt(exerciseParam)].Video[amrapCurrentNumm].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Decreased");
