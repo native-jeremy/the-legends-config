@@ -363,7 +363,7 @@ window.onload = async () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm + 1;
+                  amrapCounter.innerHTML = amrapCurrentNumm;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
                   enableDisabledStates();
                   playVideoDiff();
@@ -379,7 +379,7 @@ window.onload = async () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm - 1;
+                  amrapCounter.innerHTML = amrapCurrentNumm;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
