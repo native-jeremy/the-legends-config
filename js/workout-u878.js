@@ -404,7 +404,7 @@ window.onload = async () => {
               videoCheck();
             }
 
-            console.log("CurrentNumber Array: ", amrapCurrentNummArray);
+            console.log("CurrentNumber Array: ", amrapNumberArray);
 
             // Video Condtionals To Change Src When Doing An Amrap
             function videoCheck() {
