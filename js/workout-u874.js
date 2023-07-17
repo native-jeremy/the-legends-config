@@ -246,7 +246,7 @@ window.onload = async () => {
             console.log("Amrap length:", newcookieIndex);
 
             let amrapCurrentNumm = 0;
-            let amrapCurrentNummText = amrapCurrentNumm + 1;
+            let amrapCurrentNummText;
 
             let amrapCurrentNummArray = [];
 
@@ -285,6 +285,10 @@ window.onload = async () => {
               );
 
               content.append(amrapControl);
+
+              amrapCurrentNumm = amrapCurrentNummArray[i];
+
+              amrapCurrentNummText = amrapCurrentNumm + 1;
 
               //Amrap Header Content - Content Div
               amrapHeader = document.createElement("div");
@@ -367,8 +371,9 @@ window.onload = async () => {
               amrapPlus.addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
+                  amrapCurrentNummText = amrapCurrentNumm + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm + 1;
+                  amrapCounter.innerHTML = amrapCurrentNummText;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
                   enableDisabledStates();
                   playVideoDiff();
@@ -383,8 +388,9 @@ window.onload = async () => {
               amrapMinus.addEventListener("click", () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
+                  amrapCurrentNummText = amrapCurrentNumm + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNumm + 1;
+                  amrapCounter.innerHTML = amrapCurrentNummText;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
