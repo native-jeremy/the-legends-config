@@ -130,14 +130,12 @@ window.onload = async () => {
     audioRes = response;
   })*/
 
-  Wized.request.await("Load Exercise Diff", (response) => { 
+  /*Wized.request.await("Load Exercise Diff", (response) => { 
     console.log("---------------------------------------");   
     console.log("Exercise Diff Info Response", response);
 
-    let exerciseDiffRes = response;
-
-    return exerciseDiffRes;
-  })
+    exerciseDiffRes = response;
+  })*/
 
   // [- Step 2 -] Exercises Request Response From Wized
   Wized.request.await("Load Exercises", (response) => {
@@ -154,10 +152,10 @@ window.onload = async () => {
         videoContainer.style.opacity = "1"
     }
 
-    //const let Wized.data.get("Load Exercise Diff");
+    let response = Wized.data.get("Load Exercise Diff");
   
-    //exerciseDiffRes = response;
-
+    let exerciseDiffRes = response;
+    
     roundLength = roundRes.data.length;
 
     roundRealNumber = parseInt(roundParam) + 1;
