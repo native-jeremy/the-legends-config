@@ -354,7 +354,8 @@ window.onload = async () => {
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-
+                  vidSrc.src =
+                  exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
                   console.log("Amrap Diff Increased");
                 }
               });
@@ -364,13 +365,14 @@ window.onload = async () => {
                   amrapCurrentNumm--;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = amrapCurrentNumm;
-
+                  vidSrc.src =
+                  exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
                   console.log("Amrap Diff Decreased");
                 }
-                vidSrc.src =
-                diffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
               });
             }
+            vidSrc.src =
+            exerciseDiffRes.data[parseInt(exercisesParam)].Video[diffCurrent].url;
           });
         }
 
