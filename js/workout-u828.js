@@ -216,12 +216,12 @@ window.onload = async () => {
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
 
-       const loadData = async () => { 
+       async function loadData() { 
           const value = await Wized.data.get("r.64.d")
           console.log("---------------------------------------");   
           console.log("Exercise Diff Info Response TEMP! ", value)
-        }
-        
+        };
+
         loadData()
       
         //exerciseDiffRes = value;
