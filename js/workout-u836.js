@@ -371,7 +371,7 @@ window.onload = async () => {
               });
             }
             vidSrc.src =
-            repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+            exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
           });
         }
 
@@ -399,8 +399,6 @@ window.onload = async () => {
         repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
       }
 
-      vidSrc.src =
-        repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
       audioSrc.src =
         repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
       //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
