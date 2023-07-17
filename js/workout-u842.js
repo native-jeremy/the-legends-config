@@ -375,8 +375,8 @@ window.onload = async () => {
                 }
               });
             }
-            vidSrc.src =
-            exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
+            /*vidSrc.src =
+            exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;*/
           });
         }
 
