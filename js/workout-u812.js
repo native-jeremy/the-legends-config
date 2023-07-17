@@ -106,6 +106,7 @@ window.onload = async () => {
   const workoutParam = await Wized.data.get("n.parameter.workout");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
+  let exerciseDiffRes;
 
   // URL Searching Setup and Declaration
   let activeParam = document.getElementById("activeParam");
@@ -152,9 +153,12 @@ window.onload = async () => {
         videoContainer.style.opacity = "1"
     }
 
+    async() => {
     const diffres = Wized.data.get("Load Exercise Diff");
   
-    let exerciseDiffRes = diffres;
+    exerciseDiffRes = diffres;
+
+    }
     
     roundLength = roundRes.data.length;
 
