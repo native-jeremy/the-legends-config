@@ -249,6 +249,8 @@ window.onload = async () => {
 
             for (let i = 0; i < amrapLength; i++) {
               let content = document.querySelector("#controls");
+              let plus = document.querySelectorAll('.plus-btn');
+              let minus = document.querySelectorAll('.minus-btn');
               let sortedAmrapTitle =
                 repDataInt.data[
                   parseInt(exercisesParam)
@@ -359,7 +361,7 @@ window.onload = async () => {
 
               videoCheck();
 
-              amrapPlus[i].addEventListener("click", () => {
+              plus[i].addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
@@ -375,7 +377,7 @@ window.onload = async () => {
                 }
               });
 
-              amrapMinus[i].addEventListener("click", () => {
+              minus[i].addEventListener("click", () => {
                 if (amrapCurrentNumm > amrapMinNumm) {
                   amrapCurrentNumm--;
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
