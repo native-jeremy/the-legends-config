@@ -328,7 +328,7 @@ window.onload = async () => {
               //Current Diffculty Text "1" - example
               amrapCounter = document.createElement("div");
               amrapCounter.classList.add("num", "current", "current-num");
-              amrapCounter.innerHTML = amrapCurrentNumm;
+              amrapCounter.innerHTML = amrapCurrentNumm + 1;
 
               amrapTrigger.appendChild(amrapCounter);
 
