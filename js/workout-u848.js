@@ -271,6 +271,9 @@ window.onload = async () => {
               let amrapMinNumm = 1;
               let ammrapLimitNumm = maxLimit;
 
+              vidSrc.src =
+              exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
+
               //Amrap Control Div "body"
               amrapControl = document.createElement("div");
               amrapControl.classList.add(
@@ -433,8 +436,6 @@ window.onload = async () => {
                 videos.play();
               }
             }
-            vidSrc.src =
-            exerciseDiffRes.data[parseInt(exercisesParam)].Video[amrapCurrentNumm].url;
           });
         }
 
