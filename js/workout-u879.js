@@ -367,7 +367,7 @@ window.onload = async () => {
               amrapPlus.appendChild(amrapPlusArrow);
 
               amrapPlus.addEventListener("click", () => {
-                if (amrapCurrentNumm < ammrapLimitNumm) {
+                if (amrapNumberArray[i] < ammrapLimitNumm) {
                   amrapCurrentNumm++;
                   videoCheck();
                    amrapCurrentNummText = amrapCurrentNumm + 1
@@ -385,7 +385,7 @@ window.onload = async () => {
               });
 
               amrapMinus.addEventListener("click", () => {
-                if (amrapCurrentNumm > amrapMinNumm) {
+                if (amrapNumberArray[i] > amrapMinNumm) {
                   amrapCurrentNumm--;
                   videoCheck();
                   amrapCurrentNummText = amrapCurrentNumm + 1
@@ -400,6 +400,8 @@ window.onload = async () => {
                   console.log("Amrap Diff Decreased");
                 }
               });
+
+              amrapCurrentNumm = amrapNumberArray[i];
 
               videoCheck();
             }
@@ -436,7 +438,7 @@ window.onload = async () => {
                 videoIndex = 0;
                 videoCurrentSrc =
                 exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                    parseInt(amrapCurrentNumm)
+                  amrapCurrentNumm
                   ].url;
                 console.log("---------------------------------------");
                 console.log(videoCurrentSrc);
