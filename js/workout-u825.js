@@ -219,7 +219,7 @@ window.onload = async () => {
        const loadData = async () => { 
           const value = await Wized.data.get("r.64.d")
 
-          let res = value.json();
+          let res = value;
 
           return res;
         }
