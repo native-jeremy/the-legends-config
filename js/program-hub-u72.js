@@ -34,14 +34,11 @@ window.onload = async () => {
       if (applyCompleted.length !== 0)
       {
         for (let i = 0; i < applyCompleted.length; i++) {
-
-          for (let index = 0; index < workout.length; index++)
-          {
+          workout.forEach(workout => {
             if (workout[index].textContent.includes(applyWorkout)) {
-                  icon[index].classList.add("complete-indicator");
-          }
-
-          }
+              icon[index].classList.add("complete-indicator");
+        }
+          });
             //icon[i].classList.add("complete-indicator");
         }
         let progressNum = applyCompleted.length / workout.length * 100
@@ -55,3 +52,11 @@ window.onload = async () => {
     }
   });
 }
+
+            /*if (workout[index].textContent.includes(applyWeek)) {
+              if (workout[index].textContent.includes(applyName)) {
+                if (workout[index].textContent.includes(applyWorkout)) {
+                  icon[index].classList.add("complete-indicator");
+                }
+              }
+            }*/
