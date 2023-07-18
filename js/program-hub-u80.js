@@ -30,31 +30,32 @@ window.onload = async () => {
 
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
-setTimeout(() => {
+
       if (applyCompleted.length !== 0)
       {
-        for (let i = 0; i < workout.length; i++) {
-          const currentWorkout = workout[i];
-          const currentIcon = icon[i];
-
-          for (let j = 0; j < applyWorkout.length; j++) {
-            const currentCompleted = applyWorkout[j];
-
-            if (currentWorkout.textContent.includes(currentCompleted)) {
-              currentIcon.classList.add("complete-indicator");
-            }
-          }
-            //icon[i].classList.add("complete-indicator");
-        }
         let progressNum = applyCompleted.length / workout.length * 100
-        const circleProgress = new CircleProgress('.circle-latest');
-          circleProgress.attr({
-          max: 100,
-          value: progressNum,
-          textFormat: "percent",
-          indeterminateText: 0});
+
+        document.addEventListener("load", function(){
+          for (let i = 0; i < workout.length; i++) {
+            const currentWorkout = workout[i];
+            const currentIcon = icon[i];
+  
+            for (let j = 0; j < applyWorkout.length; j++) {
+              const currentCompleted = applyWorkout[j];
+  
+              if (currentWorkout.textContent.includes(currentCompleted)) {
+                currentIcon.classList.add("complete-indicator");
+              }
+            }
+            const circleProgress = new CircleProgress('.circle-latest');
+              circleProgress.attr({
+              max: 100,
+              value: progressNum,
+              textFormat: "percent",
+              indeterminateText: 0});
+          }
+      });
       }
-      }, 2000);
     }
   });
 }
