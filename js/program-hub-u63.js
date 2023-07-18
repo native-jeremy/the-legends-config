@@ -17,17 +17,30 @@ window.onload = async () => {
     if (response.status === 200)
     {
       const getData = response;
-      let applyData = getData.data.Completed;
-      console.log("User Completed Amount Data ", getData.data);
+      let applyCompleted = getData.data.Completed;
+      let applyWeek = getData.data.Completed_Week;
+      let applyName = getData.data.Completed_Name;
+      let applyWorkout = getData.data.Completed_Workout_ID;
+
+      console.log("User Data ", getData.data);
+      console.log("User Completed Amount ", applyCompleted);
+      console.log("User Completed Weeks ", applyWeek);
+      console.log("User Completed Names ", applyName);
+      console.log("User Completed Workout IDs ", applyWorkout);
+      
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
 
-      if (applyData.length !== 0)
+      if (applyCompleted.length !== 0)
       {
-        for (let i = 0; i < applyData.length; i++) {
+        for (let i = 0; i < applyCompleted.length; i++) {
+
+            if (icon[i].textContent.includes()) {
+              
+            }
             icon[i].classList.add("complete-indicator");
         }
-        let progressNum = applyData.length / workout.length * 100
+        let progressNum = applyCompleted.length / workout.length * 100
         const circleProgress = new CircleProgress('.circle-latest');
           circleProgress.attr({
           max: 100,
