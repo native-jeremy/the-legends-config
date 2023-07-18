@@ -376,8 +376,8 @@ window.onload = async () => {
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
                   enableDisabledStates();
                   playVideoDiff();
-                  /*vidSrc.src =
-                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;*/
+                  vidSrc.src =
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapNumberArray[i]].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Increased");
@@ -394,8 +394,8 @@ window.onload = async () => {
                   amrapCounter.innerHTML = amrapCurrentNummText;
                   enableDisabledStates();
                   playVideoDiff();
-                  /*vidSrc.src =
-                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;*/
+                  vidSrc.src =
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapNumberArray[i]].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Decreased");
@@ -421,7 +421,7 @@ window.onload = async () => {
 
                   videoCurrentSrc =
                   diffRes.data[parseInt(videoIndex)].Video[
-                    amrapCurrentNumm
+                    amrapNumberArray[i]
                     ].url;
                   console.log("---------------------------------------");
                   console.log(videoCurrentSrc);
@@ -437,7 +437,7 @@ window.onload = async () => {
                 videoIndex = 0;
                 videoCurrentSrc =
                 exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                    parseInt(amrapCurrentNumm)
+                  amrapNumberArray[i]
                   ].url;
                 console.log("---------------------------------------");
                 console.log(videoCurrentSrc);
