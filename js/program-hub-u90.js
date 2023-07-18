@@ -58,10 +58,10 @@ setTimeout(() => {
                 }
               }
               // Amount Indication
-              if (currentWorkout.includes("week 1")) {
+              if (currentWorkout.textContent.includes("week 1")) {
                 completedWeek1Array.push(currentWeek);
               }
-              else if (currentWorkout.includes("week 2")) {
+              else if (currentWorkout.textContent.includes("week 2")) {
                 completedWeek2Array.push(currentWeek);
               }
               completeWeek1.textContent = completedWeek1Array.length;
