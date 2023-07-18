@@ -43,11 +43,11 @@ setTimeout(() => {
       if (applyCompleted.length !== 0)
       {
         for (let i = 0; i < applyCompleted.length; i++) {
-          if (applyCompleted.includes("week 1")) {
-            completedWeek1Array.push(applyCompleted[i]);
+          if (applyWeek.includes("week 1")) {
+            completedWeek1Array.push(applyWeek[i]);
           }
-          else if (applyCompleted.includes("week 2")) {
-            completedWeek2Array.push(applyCompleted[i]);
+          else if (applyWeek.includes("week 2")) {
+            completedWeek2Array.push(applyWeek[i]);
           }
         }
         completeWeek1.textContent = completedWeek1Array.length;
