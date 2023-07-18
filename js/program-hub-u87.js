@@ -28,8 +28,8 @@ window.onload = async () => {
       console.log("User Completed Names ", applyName);
       console.log("User Completed Workout IDs ", applyWorkout);
 
-      let completeWeek1 = document.querySelectorAll(".complete-week-1");
-      let completeWeek2 = document.querySelectorAll(".complete-week-2");
+      let completeWeek1 = document.querySelector(".complete-week-1");
+      let completeWeek2 = document.querySelector(".complete-week-2");
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
 
