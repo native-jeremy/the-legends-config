@@ -38,8 +38,19 @@ window.onload = async () => {
       let completedWeek1Array = [];
       let completedWeek2Array = [];
 
-      let Week1Num = 0;
-      let Week2Num = 0;
+      for (let i = 0; i < applyWeek.length; i++) {
+        if (applyWeek[i].includes("week 1")) {
+            completedWeek1Array.push(applyWeek[i]);
+        }
+        else if (applyWeek[i].includes("week 2")) {
+            completedWeek2Array.push(applyWeek[i]);
+        }      
+    }
+    completeWeek1.textContent = completedWeek1Array.length;
+    completeWeek2.textContent = completedWeek2Array.length;
+
+    console.log("Week 1 Completed Array ", completedWeek1Array);
+    console.log("Week 2 Completed Array ", completedWeek1Array);
 
       let progressNum = applyCompleted.length / workout.length * 100;
 
@@ -60,21 +71,8 @@ window.onload = async () => {
                   currentIcon.classList.add("complete-indicator");
                 }
               }
-              // Amount Indication
-              if (currentWorkout.textContent.includes("week 1")) {
-                completedWeek1Array.push(currentWeek);
-              }
-              else if (currentWorkout.textContent.includes("week 2")) {
-                completedWeek2Array.push(currentWeek);
-              }
-
             }
           }
-          
-          completeWeek1.textContent = completedWeek1Array.length;
-          completeWeek2.textContent = completedWeek2Array.length;
-          console.log("Week 1 Completed Array ", completedWeek1Array);
-          console.log("Week 2 Completed Array ", completedWeek1Array);
             //icon[i].classList.add("complete-indicator");
         }
         const circleProgress = new CircleProgress('.circle-latest');
