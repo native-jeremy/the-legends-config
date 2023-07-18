@@ -30,7 +30,7 @@ window.onload = async () => {
 
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
-
+setTimeout(() => {
       if (applyCompleted.length !== 0)
       {
         for (let i = 0; i < workout.length; i++) {
@@ -54,6 +54,7 @@ window.onload = async () => {
           textFormat: "percent",
           indeterminateText: 0});
       }
+      }, 3000);
     }
   });
 }
