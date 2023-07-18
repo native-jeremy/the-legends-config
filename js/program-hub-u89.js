@@ -42,17 +42,6 @@ window.onload = async () => {
 setTimeout(() => {
       if (applyCompleted.length !== 0)
       {
-        for (let i = 0; i < applyCompleted.length; i++) {
-          if (applyWeek.includes("week 1")) {
-            completedWeek1Array.push(applyWeek[i]);
-          }
-          else if (applyWeek.includes("week 2")) {
-            completedWeek2Array.push(applyWeek[i]);
-          }
-        }
-        completeWeek1.textContent = completedWeek1Array.length;
-        completeWeek2.textContent = completedWeek2Array.length;
-
         for (let i = 0; i < workout.length; i++) {
           const currentWorkout = workout[i];
           const currentIcon = icon[i];
@@ -68,6 +57,15 @@ setTimeout(() => {
                   currentIcon.classList.add("complete-indicator");
                 }
               }
+              // Amount Indication
+              if (currentWorkout.includes("week 1")) {
+                completedWeek1Array.push(currentWeek);
+              }
+              else if (currentWorkout.includes("week 2")) {
+                completedWeek2Array.push(currentWeek);
+              }
+              completeWeek1.textContent = completedWeek1Array.length;
+              completeWeek2.textContent = completedWeek2Array.length;
             }
           }
             //icon[i].classList.add("complete-indicator");
