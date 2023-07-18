@@ -23,11 +23,11 @@ window.onload = async () => {
       let applyWorkout = getData.data.Completed_Workout_ID;
 
       console.log("User Data ", getData.data);
-      console.log("User Completed Amount ", applyCompleted);
+      console.log("User Completed Amount ", applyCompleted.length);
       console.log("User Completed Weeks ", applyWeek);
       console.log("User Completed Names ", applyName);
       console.log("User Completed Workout IDs ", applyWorkout);
-      
+
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
 
