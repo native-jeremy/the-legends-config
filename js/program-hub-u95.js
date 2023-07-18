@@ -9,12 +9,12 @@
 ----------------------------------------------------------------
 */
 
-setTimeout(() => {
-
-async () => {
+window.onload = async () => {
 
   // Completed Data Load
   Wized.request.await("Load Users", (response) => {
+
+  setTimeout(() => {
 
     if (response.status === 200)
     {
@@ -78,10 +78,9 @@ async () => {
           indeterminateText: 0});
       }
     }
+  }, 3000);
   });
 }
-
-}, 3000);
 
             /*if (workout[index].textContent.includes(applyWeek)) {
               if (workout[index].textContent.includes(applyName)) {
