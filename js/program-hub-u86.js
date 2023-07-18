@@ -28,12 +28,31 @@ window.onload = async () => {
       console.log("User Completed Names ", applyName);
       console.log("User Completed Workout IDs ", applyWorkout);
 
+      let completeWeek1 = document.querySelectorAll(".complete-week-1");
+      let completeWeek2 = document.querySelectorAll(".complete-week-2");
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
+
+      let completedWeek1Array = [];
+      let completedWeek2Array = [];
+
       let progressNum = applyCompleted.length / workout.length * 100;
+
+
 setTimeout(() => {
       if (applyCompleted.length !== 0)
       {
+        for (let i = 0; i < applyCompleted.length; i++) {
+          if (applyCompleted.includes("week 1")) {
+            completedWeek1Array.push(applyCompleted[i]);
+          }
+          else if (applyCompleted.includes("week 2")) {
+            completedWeek2Array.push(applyCompleted[i]);
+          }
+        }
+        completeWeek1.textContent = completedWeek1Array.length;
+        completeWeek2.textContent = completedWeek2Array.length;
+
         for (let i = 0; i < workout.length; i++) {
           const currentWorkout = workout[i];
           const currentIcon = icon[i];
