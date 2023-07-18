@@ -33,14 +33,14 @@ window.onload = async () => {
 
       if (applyCompleted.length !== 0)
       {
-        for (let i = 0; i < applyCompleted.length; i++) {
+        //for (let i = 0; i < applyCompleted.length; i++) {
           workout.forEach(workout => {
             if (workout[index].textContent.includes(applyWorkout)) {
               icon[index].classList.add("complete-indicator");
         }
           });
             //icon[i].classList.add("complete-indicator");
-        }
+        //}
         let progressNum = applyCompleted.length / workout.length * 100
         const circleProgress = new CircleProgress('.circle-latest');
           circleProgress.attr({
