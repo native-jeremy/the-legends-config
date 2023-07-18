@@ -39,10 +39,16 @@ setTimeout(() => {
           const currentIcon = icon[i];
 
           for (let j = 0; j < applyWorkout.length; j++) {
+            const currentWeek = applyWeek[j];
+            const currentName = applyName[j];
             const currentCompleted = applyWorkout[j];
 
-            if (currentWorkout.textContent.includes(currentCompleted)) {
-              currentIcon.classList.add("complete-indicator");
+            if (currentWorkout.textContent.includes(currentWeek)) {
+              if (currentWorkout.textContent.includes(currentName)) {
+                if (currentWorkout.textContent.includes(currentCompleted)) {
+                  currentIcon.classList.add("complete-indicator");
+                }
+              }
             }
           }
             //icon[i].classList.add("complete-indicator");
