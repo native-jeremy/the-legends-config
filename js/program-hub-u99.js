@@ -67,15 +67,14 @@ window.onload = async () => {
               else if (currentWorkout.textContent.includes("week 2")) {
                 completedWeek2Array.push(currentWeek);
               }
-              else {
-                console.log("Week 1 Completed Array ", completedWeek1Array);
-                console.log("Week 2 Completed Array ", completedWeek1Array);
-              }
+
             }
           }
           
           completeWeek1.textContent = completedWeek1Array.length;
           completeWeek2.textContent = completedWeek2Array.length;
+          console.log("Week 1 Completed Array ", completedWeek1Array);
+          console.log("Week 2 Completed Array ", completedWeek1Array);
             //icon[i].classList.add("complete-indicator");
         }
         const circleProgress = new CircleProgress('.circle-latest');
