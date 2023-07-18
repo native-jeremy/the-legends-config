@@ -54,7 +54,7 @@ setTimeout(() => {
           textFormat: "percent",
           indeterminateText: 0});
       }
-      }, 6000);
+      }, 2000);
     }
   });
 }
