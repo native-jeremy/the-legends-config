@@ -34,27 +34,25 @@ window.onload = async () => {
       if (applyCompleted.length !== 0)
       {
         let progressNum = applyCompleted.length / workout.length * 100
+        for (let i = 0; i < workout.length; i++) {
+          const currentWorkout = workout[i];
+          const currentIcon = icon[i];
 
-        window.addEventListener("dom", function(){
-          for (let i = 0; i < workout.length; i++) {
-            const currentWorkout = workout[i];
-            const currentIcon = icon[i];
-  
-            for (let j = 0; j < applyWorkout.length; j++) {
-              const currentCompleted = applyWorkout[j];
-  
-              if (currentWorkout.textContent.includes(currentCompleted)) {
-                currentIcon.classList.add("complete-indicator");
-              }
+          for (let j = 0; j < applyWorkout.length; j++) {
+            const currentCompleted = applyWorkout[j];
+
+            if (currentWorkout.textContent.includes(currentCompleted)) {
+              currentIcon.classList.add("complete-indicator");
             }
-            const circleProgress = new CircleProgress('.circle-latest');
-              circleProgress.attr({
-              max: 100,
-              value: progressNum,
-              textFormat: "percent",
-              indeterminateText: 0});
           }
-      });
+            //icon[i].classList.add("complete-indicator");
+        }
+        const circleProgress = new CircleProgress('.circle-latest');
+          circleProgress.attr({
+          max: 100,
+          value: progressNum,
+          textFormat: "percent",
+          indeterminateText: 0});
       }
     }
   });
