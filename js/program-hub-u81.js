@@ -35,7 +35,7 @@ window.onload = async () => {
       {
         let progressNum = applyCompleted.length / workout.length * 100
 
-        document.addEventListener("load", function(){
+        window.addEventListener("dom", function(){
           for (let i = 0; i < workout.length; i++) {
             const currentWorkout = workout[i];
             const currentIcon = icon[i];
