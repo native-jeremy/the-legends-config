@@ -64,6 +64,8 @@ window.onload = async () => {
               else if (currentWorkout.textContent.includes("week 2")) {
                 completedWeek2Array.push(currentWeek);
               }
+              console.log("Week 1 Completed Array ", completedWeek1Array);
+              console.log("Week 2 Completed Array ", completedWeek1Array);
             }
           }
           
