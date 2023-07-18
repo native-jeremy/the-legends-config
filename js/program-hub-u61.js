@@ -18,7 +18,7 @@ window.onload = async () => {
     {
       const getData = response;
       let applyData = getData.data.Completed;
-      console.log(applyData);
+      console.log("User Completed Amount Data ", applyData);
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
 
