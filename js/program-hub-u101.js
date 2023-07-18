@@ -50,7 +50,7 @@ window.onload = async () => {
     completeWeek2.textContent = completedWeek2Array.length;
 
     console.log("Week 1 Completed Array ", completedWeek1Array);
-    console.log("Week 2 Completed Array ", completedWeek1Array);
+    console.log("Week 2 Completed Array ", completedWeek2Array);
 
       let progressNum = applyCompleted.length / workout.length * 100;
 
