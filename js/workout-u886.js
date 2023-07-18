@@ -366,6 +366,8 @@ window.onload = async () => {
 
               amrapPlus.appendChild(amrapPlusArrow);
 
+              videoCheck();
+
               amrapPlus.addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
@@ -402,7 +404,6 @@ window.onload = async () => {
                   console.log("CurrentNumber Array: ", amrapNumberArray);
                 }
               });
-              videoCheck();
             }
 
             console.log("CurrentNumber Array: ", amrapNumberArray);
