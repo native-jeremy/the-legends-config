@@ -30,10 +30,9 @@ window.onload = async () => {
 
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
-
+setTimeout(() => {
       if (applyCompleted.length !== 0)
       {
-        let progressNum = applyCompleted.length / workout.length * 100
         for (let i = 0; i < workout.length; i++) {
           const currentWorkout = workout[i];
           const currentIcon = icon[i];
@@ -47,6 +46,7 @@ window.onload = async () => {
           }
             //icon[i].classList.add("complete-indicator");
         }
+        let progressNum = applyCompleted.length / workout.length * 100
         const circleProgress = new CircleProgress('.circle-latest');
           circleProgress.attr({
           max: 100,
@@ -54,6 +54,7 @@ window.onload = async () => {
           textFormat: "percent",
           indeterminateText: 0});
       }
+    }, 1000);
     }
   });
 }
