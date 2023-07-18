@@ -34,9 +34,16 @@ window.onload = async () => {
       if (applyCompleted.length !== 0)
       {
         for (let i = 0; i < workout.length; i++) {
-            if (workout[i].textContent.includes(applyWorkout[i])) {
-              icon[i].classList.add("complete-indicator");
-        }
+          const currentWorkout = workout[i];
+          const currentIcon = icon[i];
+
+          for (let j = 0; j < applyWorkout.length; j++) {
+            const currentCompleted = applyWorkout[j];
+
+            if (currentWorkout.textContent.includes(currentCompleted)) {
+              currentIcon.classList.add("complete-indicator");
+            }
+          }
             //icon[i].classList.add("complete-indicator");
         }
         let progressNum = applyCompleted.length / workout.length * 100
