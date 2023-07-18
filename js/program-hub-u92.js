@@ -28,8 +28,13 @@ window.onload = async () => {
       console.log("User Completed Names ", applyName);
       console.log("User Completed Workout IDs ", applyWorkout);
 
+      let completeWeek1 = document.querySelector(".complete-week-1");
+      let completeWeek2 = document.querySelector(".complete-week-2");
       let workout = document.querySelectorAll(".workouts");
       let icon = document.querySelectorAll(".completed-icon");
+
+      let completedWeek1Array = [];
+      let completedWeek2Array = [];
 
       let progressNum = applyCompleted.length / workout.length * 100;
 
@@ -52,6 +57,15 @@ setTimeout(() => {
                   currentIcon.classList.add("complete-indicator");
                 }
               }
+              // Amount Indication
+              if (currentWorkout.textContent.includes("week 1")) {
+                completedWeek1Array.push(currentWeek);
+              }
+              else if (currentWorkout.textContent.includes("week 2")) {
+                completedWeek2Array.push(currentWeek);
+              }
+              completeWeek1.textContent = completedWeek1Array.length;
+              completeWeek2.textContent = completedWeek2Array.length;
             }
           }
             //icon[i].classList.add("complete-indicator");
