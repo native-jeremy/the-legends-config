@@ -38,6 +38,9 @@ window.onload = async () => {
       let completedWeek1Array = [];
       let completedWeek2Array = [];
 
+      let Week1Num = 0;
+      let Week2Num = 0;
+
       let progressNum = applyCompleted.length / workout.length * 100;
 
       if (applyCompleted.length !== 0)
@@ -64,8 +67,10 @@ window.onload = async () => {
               else if (currentWorkout.textContent.includes("week 2")) {
                 completedWeek2Array.push(currentWeek);
               }
-              console.log("Week 1 Completed Array ", completedWeek1Array);
-              console.log("Week 2 Completed Array ", completedWeek1Array);
+              else {
+                console.log("Week 1 Completed Array ", completedWeek1Array);
+                console.log("Week 2 Completed Array ", completedWeek1Array);
+              }
             }
           }
           
