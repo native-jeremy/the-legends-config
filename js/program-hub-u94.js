@@ -11,7 +11,7 @@
 
 setTimeout(() => {
 
-window.onload = async () => {
+async () => {
 
   // Completed Data Load
   Wized.request.await("Load Users", (response) => {
