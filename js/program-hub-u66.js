@@ -35,9 +35,9 @@ window.onload = async () => {
       {
         for (let i = 0; i < applyCompleted.length; i++) {
 
-            if (icon[i].textContent.includes(applyWeek)) {
-              if (icon[i].textContent.includes(applyName)) {
-                if (icon[i].textContent.includes(applyWorkout)) {
+            if (workout[i].textContent.includes(applyWeek)) {
+              if (workout[i].textContent.includes(applyName)) {
+                if (workout[i].textContent.includes(applyWorkout)) {
                   icon[i].classList.add("complete-indicator");
                 }
               }
