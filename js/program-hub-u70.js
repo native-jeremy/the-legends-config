@@ -37,13 +37,17 @@ window.onload = async () => {
 
           for (let index = 0; index < workout.length; index++)
           {
-            if (workout[index].textContent.includes(applyWeek)) {
+            if (workout[index].textContent.includes(applyWorkout)) {
+                  icon[index].classList.add("complete-indicator");
+              }
+            }
+            /*if (workout[index].textContent.includes(applyWeek)) {
               if (workout[index].textContent.includes(applyName)) {
                 if (workout[index].textContent.includes(applyWorkout)) {
                   icon[index].classList.add("complete-indicator");
                 }
               }
-            }
+            }*/
           }
             //icon[i].classList.add("complete-indicator");
         }
