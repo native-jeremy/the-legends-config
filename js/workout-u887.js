@@ -366,8 +366,6 @@ window.onload = async () => {
 
               amrapPlus.appendChild(amrapPlusArrow);
 
-              videoCheck();
-
               amrapPlus.addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
@@ -404,54 +402,57 @@ window.onload = async () => {
                   console.log("CurrentNumber Array: ", amrapNumberArray);
                 }
               });
+              videoCheck();
+
+              function videoCheck() {
+                let videoCurrentSrc;
+                let videos = document.getElementById("video");
+  
+                if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
+                  if (
+                    videoIndex < diffLength
+                  ) {
+                    videoIndex = videoIndex + 1;
+                    console.log("Current Exercise Index For Video", parseInt(videoIndex));
+  
+                    videoCurrentSrc =
+                    diffRes.data[parseInt(videoIndex)].Video[
+                      amrapNumberArray[i]
+                      ].url;
+                    console.log("---------------------------------------");
+                    console.log(videoCurrentSrc);
+                    console.log("---------------------------------------");
+                    console.log("Ran Request Video Src => Updated");
+  
+                    videos.src = videoCurrentSrc;
+                    videos.play();
+                  }
+                } else if (
+                  videoIndex >= diffLength
+                ) {
+                  videoIndex = 0;
+                  videoCurrentSrc =
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[
+                      parseInt(amrapCurrentNumm)
+                    ].url;
+                  console.log("---------------------------------------");
+                  console.log(videoCurrentSrc);
+                  console.log("---------------------------------------");
+                  console.log("Ran Request Video Src <= Reset ");
+  
+                  console.log("---------------------------------------");
+                  console.log("Current Video Index:", parseInt(videoIndex));
+  
+                  videos.src = videoCurrentSrc;
+                  videos.play();
+                }
+              }
             }
 
             console.log("CurrentNumber Array: ", amrapNumberArray);
 
             // Video Condtionals To Change Src When Doing An Amrap
-            function videoCheck() {
-              let videoCurrentSrc;
-              let videos = document.getElementById("video");
 
-              if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-                if (
-                  videoIndex < diffLength
-                ) {
-                  videoIndex = videoIndex + 1;
-                  console.log("Current Exercise Index For Video", parseInt(videoIndex));
-
-                  videoCurrentSrc =
-                  diffRes.data[parseInt(videoIndex)].Video[
-                    amrapCurrentNumm
-                    ].url;
-                  console.log("---------------------------------------");
-                  console.log(videoCurrentSrc);
-                  console.log("---------------------------------------");
-                  console.log("Ran Request Video Src => Updated");
-
-                  videos.src = videoCurrentSrc;
-                  videos.play();
-                }
-              } else if (
-                videoIndex >= diffLength
-              ) {
-                videoIndex = 0;
-                videoCurrentSrc =
-                exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                    parseInt(amrapCurrentNumm)
-                  ].url;
-                console.log("---------------------------------------");
-                console.log(videoCurrentSrc);
-                console.log("---------------------------------------");
-                console.log("Ran Request Video Src <= Reset ");
-
-                console.log("---------------------------------------");
-                console.log("Current Video Index:", parseInt(videoIndex));
-
-                videos.src = videoCurrentSrc;
-                videos.play();
-              }
-            }
             vidSrc.src =
             exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
           });
