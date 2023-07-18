@@ -35,10 +35,14 @@ window.onload = async () => {
       {
         for (let i = 0; i < applyCompleted.length; i++) {
 
-            if (icon[i].textContent.includes()) {
-              
+            if (icon[i].textContent.includes(applyWeek)) {
+              if (icon[i].textContent.includes(applyName)) {
+                if (icon[i].textContent.includes(applyWorkout)) {
+                  icon[i].classList.add("complete-indicator");
+                }
+              }
             }
-            icon[i].classList.add("complete-indicator");
+            //icon[i].classList.add("complete-indicator");
         }
         let progressNum = applyCompleted.length / workout.length * 100
         const circleProgress = new CircleProgress('.circle-latest');
