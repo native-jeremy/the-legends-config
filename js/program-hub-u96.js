@@ -64,10 +64,11 @@ window.onload = async () => {
               else if (currentWorkout.textContent.includes("week 2")) {
                 completedWeek2Array.push(currentWeek);
               }
-              completeWeek1.textContent = completedWeek1Array.length;
-              completeWeek2.textContent = completedWeek2Array.length;
             }
           }
+          
+          completeWeek1.textContent = completedWeek1Array.length;
+          completeWeek2.textContent = completedWeek2Array.length;
             //icon[i].classList.add("complete-indicator");
         }
         const circleProgress = new CircleProgress('.circle-latest');
