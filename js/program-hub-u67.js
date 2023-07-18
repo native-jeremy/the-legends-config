@@ -35,6 +35,8 @@ window.onload = async () => {
       {
         for (let i = 0; i < applyCompleted.length; i++) {
 
+          for (let i = 0; i < workout.length; i++)
+          {
             if (workout[i].textContent.includes(applyWeek)) {
               if (workout[i].textContent.includes(applyName)) {
                 if (workout[i].textContent.includes(applyWorkout)) {
@@ -42,6 +44,7 @@ window.onload = async () => {
                 }
               }
             }
+          }
             //icon[i].classList.add("complete-indicator");
         }
         let progressNum = applyCompleted.length / workout.length * 100
