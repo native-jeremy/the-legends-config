@@ -9,6 +9,8 @@
 ----------------------------------------------------------------
 */
 
+setTimeout(() => {
+
 window.onload = async () => {
 
   // Completed Data Load
@@ -38,8 +40,6 @@ window.onload = async () => {
 
       let progressNum = applyCompleted.length / workout.length * 100;
 
-
-setTimeout(() => {
       if (applyCompleted.length !== 0)
       {
         for (let i = 0; i < workout.length; i++) {
@@ -77,10 +77,11 @@ setTimeout(() => {
           textFormat: "percent",
           indeterminateText: 0});
       }
-    }, 1000);
     }
   });
 }
+
+}, 3000);
 
             /*if (workout[index].textContent.includes(applyWeek)) {
               if (workout[index].textContent.includes(applyName)) {
