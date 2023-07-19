@@ -8,6 +8,7 @@ window.onload = async () => {
           Wized.request.await("Load Questionnaire", (response) => {
             const questionnaireData = response;
             console.log("Questionnaire Data ", questionnaireData);
+          });
         }
         loadData();
     })
