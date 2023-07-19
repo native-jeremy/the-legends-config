@@ -40,8 +40,6 @@ window.onload = async () => {
       let completedWeek1Array = [];
       let completedWeek2Array = [];
 
-      let progressNum;
-
       for (let i = 0; i < applyWeek.length; i++) {
         if (applyWeek[i].includes("week 1")) {
             completedWeek1Array.push(applyWeek[i]);
@@ -56,12 +54,7 @@ window.onload = async () => {
     console.log("Week 1 Completed Array ", completedWeek1Array);
     console.log("Week 2 Completed Array ", completedWeek2Array);
 
-      if (applyCompleted === undefined) {
-        progressNum = 0;   
-      }
-      else {
-      progressNum = applyCompleted.length / workout.length * 100;
-      }
+      let progressNum = applyCompleted.length / workout.length * 100;
 
       if (applyCompleted.length !== 0)
       {
@@ -84,13 +77,21 @@ window.onload = async () => {
           }
             //icon[i].classList.add("complete-indicator");
         }
+        }
         const circleProgress = new CircleProgress('.circle-latest');
           circleProgress.attr({
           max: 100,
           value: progressNum,
           textFormat: "percent",
           indeterminateText: 0});
-          }
+      }
+      else {
+        const circleProgress = new CircleProgress('.circle-latest');
+        circleProgress.attr({
+        max: 100,
+        value: 0,
+        textFormat: "percent",
+        indeterminateText: 0});
       }
     }
   }, 3000);
