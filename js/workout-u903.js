@@ -169,17 +169,17 @@ window.onload = async () => {
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates();
     } else if (RoundNumberText.innerHTML !== "Warm Up") {
-      if (parseInt(roundParam) !== 0) {
       RoundNumberText.innerHTML = parseInt(roundParam);
       roundTitle.innerHTML = "Round";
       roundNumHeader.innerHTML = parseInt(roundParam);
-      }
-      else {
-        RoundNumberText.innerHTML = parseInt(roundParam + 1);
-        roundTitle.innerHTML = "Round";
-        roundNumHeader.innerHTML = parseInt(roundParam + 1);
-      }
     }
+    else if (parseInt(roundParam) == 0)
+    {
+      RoundNumberText.innerHTML = parseInt(roundParam + 1);
+      roundTitle.innerHTML = "Round";
+      roundNumHeader.innerHTML = parseInt(roundParam + 1);
+    }
+
 
     console.log("---------------------------------------");
     console.log("Rounds Res Length", roundLength);
