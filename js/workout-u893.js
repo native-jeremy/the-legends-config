@@ -124,7 +124,7 @@ window.onload = async () => {
 
     roundRes = response;
 
-    if (roundRes.data[parseInt(exerciseParam)].Round_Selection == "Warmup")
+    if (roundRes.data[parseInt(exercisesParam)].Round_Selection == "Warmup")
     {
       RoundNumberText.innerHTML = "Warm Up";
       roundTitle.innerHTML = "";
