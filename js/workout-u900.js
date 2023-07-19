@@ -124,7 +124,12 @@ window.onload = async () => {
 
     roundRes = response;
 
-
+    if (roundRes.data[parseInt(exercisesParam)].Round_Selection == "Warmup")
+    {
+      RoundNumberText.innerHTML = "Warm Up";
+      roundTitle.innerHTML = "";
+      roundNumHeader.innerHTML = "";
+    }
   });
 
   /*Wized.request.await("Load Audio", (response) => {    
@@ -163,15 +168,10 @@ window.onload = async () => {
       roundNumHeader.innerHTML = "";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates();
-    } else if (!roundRes.data[parseInt(exercisesParam)].Round_Selection.includes("Warmup")) {
-      roundTitle.innerHTML = "Round";
+    } else if (RoundNumberText.innerHTML !== "Warm Up") {
       RoundNumberText.innerHTML = parseInt(roundParam);
+      roundTitle.innerHTML = "Round";
       roundNumHeader.innerHTML = parseInt(roundParam);
-    }
-    else {
-      RoundNumberText.innerHTML = "Warm Up";
-      roundTitle.innerHTML = "";
-      roundNumHeader.innerHTML = "";
     }
 
     console.log("---------------------------------------");
