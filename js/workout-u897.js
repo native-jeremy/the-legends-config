@@ -169,9 +169,9 @@ window.onload = async () => {
       roundNumHeader.innerHTML = parseInt(roundParam);
     }
     else {
-      roundTitle.innerHTML = "Round";
-      RoundNumberText.innerHTML = parseInt(roundParam + 1);
-      roundNumHeader.innerHTML = parseInt(roundParam + 1);
+      RoundNumberText.innerHTML = "Warm Up";
+      roundTitle.innerHTML = "";
+      roundNumHeader.innerHTML = "";
     }
 
     console.log("---------------------------------------");
