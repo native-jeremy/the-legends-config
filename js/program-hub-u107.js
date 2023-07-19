@@ -37,6 +37,7 @@ window.onload = async () => {
       let workout = document.querySelectorAll(".workouts");
       let recovery = document.querySelectorAll(".recoveries");
       let icon = document.querySelectorAll(".completed-icon");
+      let iconRec = document.querySelectorAll(".completed-icon");
 
       let completedWeek1Array = [];
       let completedWeek2Array = [];
@@ -85,7 +86,7 @@ window.onload = async () => {
 
         for (let l = 0; l < recovery.length; l++) {
           const currentRecovery = recovery[l];
-          const currentRecoveryIcon = icon[l];
+          const currentRecoveryIcon = iconRec[l];
 
           for (let m = 0; m < applyWorkout.length; m++) {
             const currentRecoveryWeek = applyWeek[m];
