@@ -123,6 +123,10 @@ window.onload = async () => {
     console.log("Round Info Response", response);
 
     roundRes = response;
+
+    roundSelected = roundRes.data[parseInt(roundParam)].Round_Selection;
+
+    console.log("Round Selection Name ", response);
   });
 
   /*Wized.request.await("Load Audio", (response) => {    
@@ -164,7 +168,11 @@ window.onload = async () => {
     } else if (parseInt(roundParam) !== 0) {
       RoundNumberText.innerHTML = parseInt(roundParam);
       roundNumHeader.innerHTML = parseInt(roundParam);
-    } else {
+    } else if (parseInt(roundParam) === 0 && roundSelected !== "Warmup"){
+      RoundNumberText.innerHTML = parseInt(roundParam + 1);
+      roundNumHeader.innerHTML = parseInt(roundParam + 1);
+    }
+    else if (parseInt(roundParam) === 0 && roundSelected === "Warmup"){
       RoundNumberText.innerHTML = "Warm Up";
       roundTitle.innerHTML = "";
       roundNumHeader.innerHTML = "";
