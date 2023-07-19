@@ -168,9 +168,15 @@ window.onload = async () => {
       roundNumHeader.innerHTML = "";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates();
-    } else {
+    } else if (parseInt(roundParam) !== 0) {
+      roundTitle.innerHTML = "Round";
       RoundNumberText.innerHTML = parseInt(roundParam);
       roundNumHeader.innerHTML = parseInt(roundParam);
+    }
+    else {
+      roundTitle.innerHTML = "Round";
+      RoundNumberText.innerHTML = parseInt(roundParam + 1);
+      roundNumHeader.innerHTML = parseInt(roundParam + 1);
     }
 
     console.log("---------------------------------------");
