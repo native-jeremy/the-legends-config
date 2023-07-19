@@ -163,7 +163,7 @@ window.onload = async () => {
       roundNumHeader.innerHTML = "";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates();
-    } else if (!roundRes.data[parseInt(exercisesParam)].Round_Selection == "Warmup") {
+    } else if (!roundRes.data[parseInt(exercisesParam)].Round_Selection.includes("Warmup")) {
       roundTitle.innerHTML = "Round";
       RoundNumberText.innerHTML = parseInt(roundParam);
       roundNumHeader.innerHTML = parseInt(roundParam);
