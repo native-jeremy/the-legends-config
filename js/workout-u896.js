@@ -118,6 +118,15 @@ window.onload = async () => {
 
   enableDisabledStates();
 
+  Wized.request.await("Load Round Info", (response) => {
+    console.log("---------------------------------------");
+    console.log("Round Info Response", response);
+
+    roundRes = response;
+
+
+  });
+
   /*Wized.request.await("Load Audio", (response) => {    
     console.log("Audio Response", response);
 
@@ -139,6 +148,8 @@ window.onload = async () => {
       videoContainer.style.opacity = "1";
     }
 
+    roundLength = roundRes.data.length;
+
     roundRealNumber = parseInt(roundParam) + 1;
 
     if (parseInt(exercisesParam) !== 0 /*|| roundRealNumber < roundLength*/) {
@@ -146,50 +157,22 @@ window.onload = async () => {
       roundText.style.display = "none";
     }
 
-    async function loadRoundInfo() {
-
-      Wized.request.await("Load Round Info", (response) => {
-        console.log("---------------------------------------");
-        console.log("Round Info Response", response);
-    
-        roundRes = response;
-
-        roundLength = roundRes.data.length;
-    
-        if (roundRes.data[parseInt(exercisesParam)].Round_Selection == "Warmup")
-        {
-          RoundNumberText.innerHTML = "Warm Up";
-          roundTitle.innerHTML = "";
-          roundNumHeader.innerHTML = "";
-        }
-
-        if (roundRealNumber > roundLength) {
-          RoundNumberText.innerHTML = "Workout Completed";
-          roundTitle.innerHTML = "Congratulations!";
-          roundNumHeader.innerHTML = "";
-          Wized.data.setVariable("complete", "completed");
-          enableDisabledStates();
-        } else if (parseInt(roundParam) !== 0) {
-          roundTitle.innerHTML = "Round";
-          RoundNumberText.innerHTML = parseInt(roundParam);
-          roundNumHeader.innerHTML = parseInt(roundParam);
-        }
-        else if (roundRes.data[parseInt(exercisesParam)].Round_Selection == "Warmup")
-        {
-          RoundNumberText.innerHTML = "Warm Up";
-          roundTitle.innerHTML = "";
-          roundNumHeader.innerHTML = "";
-        }
-        else {
-          roundTitle.innerHTML = "Round";
-          RoundNumberText.innerHTML = parseInt(roundParam + 1);
-          roundNumHeader.innerHTML = parseInt(roundParam + 1);
-        }
-      });
-
+    if (roundRealNumber > roundLength) {
+      RoundNumberText.innerHTML = "Workout Completed";
+      roundTitle.innerHTML = "Congratulations!";
+      roundNumHeader.innerHTML = "";
+      Wized.data.setVariable("complete", "completed");
+      enableDisabledStates();
+    } else if (!roundRes.data[parseInt(exerciseParam)].Round_Selection == "Warmup") {
+      roundTitle.innerHTML = "Round";
+      RoundNumberText.innerHTML = parseInt(roundParam);
+      roundNumHeader.innerHTML = parseInt(roundParam);
     }
-
-    loadRoundInfo();
+    else {
+      roundTitle.innerHTML = "Round";
+      RoundNumberText.innerHTML = parseInt(roundParam + 1);
+      roundNumHeader.innerHTML = parseInt(roundParam + 1);
+    }
 
     console.log("---------------------------------------");
     console.log("Rounds Res Length", roundLength);
