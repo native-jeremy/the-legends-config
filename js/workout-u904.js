@@ -173,13 +173,6 @@ window.onload = async () => {
       roundTitle.innerHTML = "Round";
       roundNumHeader.innerHTML = parseInt(roundParam);
     }
-    else if (parseInt(roundParam) == 0)
-    {
-      RoundNumberText.innerHTML = parseInt(roundParam + 1);
-      roundTitle.innerHTML = "Round";
-      roundNumHeader.innerHTML = parseInt(roundParam + 1);
-    }
-
 
     console.log("---------------------------------------");
     console.log("Rounds Res Length", roundLength);
