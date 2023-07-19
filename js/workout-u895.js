@@ -139,8 +139,6 @@ window.onload = async () => {
       videoContainer.style.opacity = "1";
     }
 
-    roundLength = roundRes.data.length;
-
     roundRealNumber = parseInt(roundParam) + 1;
 
     if (parseInt(exercisesParam) !== 0 /*|| roundRealNumber < roundLength*/) {
@@ -155,6 +153,8 @@ window.onload = async () => {
         console.log("Round Info Response", response);
     
         roundRes = response;
+
+        roundLength = roundRes.data.length;
     
         if (roundRes.data[parseInt(exercisesParam)].Round_Selection == "Warmup")
         {
