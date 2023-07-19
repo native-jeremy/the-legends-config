@@ -24,6 +24,8 @@ window.onload = async () => {
       let applyName = getData.data.Completed_Name;
       let applyWorkout = getData.data.Completed_Workout_ID;
 
+      if (applyCompleted && applyWeek && applyName && applyWorkout !== undefined) 
+      {
       console.log("User Data ", getData.data);
       console.log("User Completed Amount ", applyCompleted.length);
       console.log("User Completed Weeks ", applyWeek);
@@ -37,6 +39,8 @@ window.onload = async () => {
 
       let completedWeek1Array = [];
       let completedWeek2Array = [];
+
+      let progressNum;
 
       for (let i = 0; i < applyWeek.length; i++) {
         if (applyWeek[i].includes("week 1")) {
@@ -52,7 +56,12 @@ window.onload = async () => {
     console.log("Week 1 Completed Array ", completedWeek1Array);
     console.log("Week 2 Completed Array ", completedWeek2Array);
 
-      let progressNum = applyCompleted.length / workout.length * 100;
+      if (applyCompleted === undefined) {
+        progressNum = 0;   
+      }
+      else {
+      progressNum = applyCompleted.length / workout.length * 100;
+      }
 
       if (applyCompleted.length !== 0)
       {
@@ -81,6 +90,7 @@ window.onload = async () => {
           value: progressNum,
           textFormat: "percent",
           indeterminateText: 0});
+          }
       }
     }
   }, 3000);
