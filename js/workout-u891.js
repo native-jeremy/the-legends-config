@@ -123,6 +123,13 @@ window.onload = async () => {
     console.log("Round Info Response", response);
 
     roundRes = response;
+
+    if (roundRes.data[parseInt(exerciseParam)].Round_Selection == "Warmup")
+    {
+      RoundNumberText.innerHTML = "Warm Up";
+      roundTitle.innerHTML = "";
+      roundNumHeader.innerHTML = "";
+    }
   });
 
   /*Wized.request.await("Load Audio", (response) => {    
@@ -161,13 +168,9 @@ window.onload = async () => {
       roundNumHeader.innerHTML = "";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates();
-    } else if (parseInt(roundParam) !== 0) {
+    } else {
       RoundNumberText.innerHTML = parseInt(roundParam);
       roundNumHeader.innerHTML = parseInt(roundParam);
-    } else {
-      RoundNumberText.innerHTML = "Warm Up";
-      roundTitle.innerHTML = "";
-      roundNumHeader.innerHTML = "";
     }
 
     console.log("---------------------------------------");
@@ -377,7 +380,7 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapNumberArray[i]].url;
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Increased");
@@ -395,7 +398,7 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapNumberArray[i]].url;
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Decreased");
