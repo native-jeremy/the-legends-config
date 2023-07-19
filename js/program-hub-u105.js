@@ -85,25 +85,15 @@ window.onload = async () => {
           textFormat: "percent",
           indeterminateText: 0});
       }
+      else {
+        const circleProgress = new CircleProgress('.circle-latest');
+        circleProgress.attr({
+        max: 100,
+        value: 0,
+        textFormat: "percent",
+        indeterminateText: 0});
+      }
     }
   }, 3000);
-
-  if (applyCompleted == undefined)
-  {
-    const circleProgress = new CircleProgress('.circle-latest');
-    circleProgress.attr({
-    max: 100,
-    value: 0,
-    textFormat: "percent",
-    indeterminateText: 0});
-  }
   });
 }
-
-            /*if (workout[index].textContent.includes(applyWeek)) {
-              if (workout[index].textContent.includes(applyName)) {
-                if (workout[index].textContent.includes(applyWorkout)) {
-                  icon[index].classList.add("complete-indicator");
-                }
-              }
-            }*/
