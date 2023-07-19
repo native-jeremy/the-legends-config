@@ -1,5 +1,5 @@
 window.onload = async () => {  
-    Wized.request.await("Load User", (response) => {
+    Wized.request.await("Load Users", (response) => {
       const userData = response;
       console.log("User Data ", userData);
 
