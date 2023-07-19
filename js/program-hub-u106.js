@@ -35,10 +35,12 @@ window.onload = async () => {
       let completeWeek1 = document.querySelector(".complete-week-1");
       let completeWeek2 = document.querySelector(".complete-week-2");
       let workout = document.querySelectorAll(".workouts");
+      let recovery = document.querySelectorAll(".recoveries");
       let icon = document.querySelectorAll(".completed-icon");
 
       let completedWeek1Array = [];
       let completedWeek2Array = [];
+      let completedRecoveriesArray = [];
 
       for (let i = 0; i < applyWeek.length; i++) {
         if (applyWeek[i].includes("week 1")) {
@@ -46,13 +48,17 @@ window.onload = async () => {
         }
         else if (applyWeek[i].includes("week 2")) {
             completedWeek2Array.push(applyWeek[i]);
-        }      
+        }
+        else if (applyWeek[i].includes("recovery")) {
+            completedRecoveriesArray.push(applyWeek[i]);
+         }      
     }
     completeWeek1.textContent = completedWeek1Array.length;
     completeWeek2.textContent = completedWeek2Array.length;
 
     console.log("Week 1 Completed Array ", completedWeek1Array);
     console.log("Week 2 Completed Array ", completedWeek2Array);
+    console.log("Recoveries Completed Array ", completedRecoveriesArray);
 
       let progressNum = applyCompleted.length / workout.length * 100;
 
@@ -71,6 +77,25 @@ window.onload = async () => {
               if (currentWorkout.textContent.includes(currentName)) {
                 if (currentWorkout.textContent.includes(currentCompleted)) {
                   currentIcon.classList.add("complete-indicator");
+                }
+              }
+            }
+          }
+        }
+
+        for (let l = 0; l < recovery.length; l++) {
+          const currentRecovery = recovery[l];
+          const currentRecoveryIcon = icon[l];
+
+          for (let m = 0; m < applyWorkout.length; m++) {
+            const currentRecoveryWeek = applyWeek[m];
+            const currentRecoveryName = applyName[m];
+            const currentRecoveryCompleted = applyWorkout[m];
+
+            if (currentRecovery.textContent.includes(currentRecoveryWeek)) {
+              if (currentRecovery.textContent.includes(currentRecoveryName)) {
+                if (currentRecovery.textContent.includes(currentRecoveryCompleted)) {
+                  currentRecoveryIcon.classList.add("complete-indicator");
                 }
               }
             }
