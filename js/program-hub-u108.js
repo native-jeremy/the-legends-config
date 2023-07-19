@@ -81,27 +81,19 @@ window.onload = async () => {
                 }
               }
             }
-          }
-        }
+            for (let l = 0; l < recovery.length; l++) {
+              const currentRecovery = recovery[l];
+              const currentRecoveryIcon = iconRec[l];
 
-        for (let l = 0; l < recovery.length; l++) {
-          const currentRecovery = recovery[l];
-          const currentRecoveryIcon = iconRec[l];
-
-          for (let m = 0; m < applyWorkout.length; m++) {
-            const currentRecoveryWeek = applyWeek[m];
-            const currentRecoveryName = applyName[m];
-            const currentRecoveryCompleted = applyWorkout[m];
-
-            if (currentRecovery.textContent.includes(currentRecoveryWeek)) {
-              if (currentRecovery.textContent.includes(currentRecoveryName)) {
-                if (currentRecovery.textContent.includes(currentRecoveryCompleted)) {
+            if (currentRecovery.textContent.includes(currentWeek)) {
+              if (currentRecovery.textContent.includes(currentName)) {
+                if (currentRecovery.textContent.includes(currentCompleted)) {
                   currentRecoveryIcon.classList.add("complete-indicator");
                 }
               }
             }
           }
-            //icon[i].classList.add("complete-indicator");
+          }
         }
         }
         const circleProgress = new CircleProgress('.circle-latest');
