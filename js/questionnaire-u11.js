@@ -78,13 +78,13 @@ window.onload = async () => {
 
           let inputField = document.createElement('label')
           inputField.classList.add('input_field');
-          let radio = document.createElement("input");
-          radio.classList.add('input');
-          radio.setAttribute("type", "checkbox");
-          radio.setAttribute("id", "question4" + i);
-          radio.setAttribute("name", value);
-          radio.setAttribute("value", value);
-          radio.setAttribute("w-el", "Q_question_4_dynamic");
+          let checkbox = document.createElement("input");
+          checkbox.classList.add('input');
+          checkbox.setAttribute("type", "checkbox");
+          checkbox.setAttribute("id", "question4" + i);
+          checkbox.setAttribute("name", value);
+          checkbox.setAttribute("value", value);
+          checkbox.setAttribute("w-el", "Q_question_4_dynamic");
           //checkbox.setAttribute("checked", "checked");
 
           let label = document.createElement("span");
@@ -93,9 +93,96 @@ window.onload = async () => {
           label.textContent =  value;
 
           dynamicFieldsQ4.appendChild(inputField);
-          inputField.append(radio);
+          inputField.append(checkbox);
           inputField.append(label);
         }
+
+         //Question 5 Setup
+         const question5 = questionnaire.data[0].Question5;
+         const dynamicFieldsQ5 = document.getElementById('dynamicFields_Q5');
+         for (let i = 0; i < question5.length; i++) {
+ 
+           const value = question5[i];
+           console.log("Value ", value);
+ 
+           let inputField = document.createElement('label')
+           inputField.classList.add('input_field');
+           let checkbox = document.createElement("input");
+           checkbox.classList.add('input');
+           checkbox.setAttribute("type", "checkbox");
+           checkbox.setAttribute("id", "question5" + i);
+           checkbox.setAttribute("name", value);
+           checkbox.setAttribute("value", value);
+           checkbox.setAttribute("w-el", "Q_question_5_dynamic");
+           //checkbox.setAttribute("checked", "checked");
+ 
+           let label = document.createElement("span");
+           label.classList.add('label');
+           label.setAttribute("for",  + i);
+           label.textContent =  value;
+ 
+           dynamicFieldsQ5.appendChild(inputField);
+           inputField.append(checkbox);
+           inputField.append(label);
+         }
+         
+         //Question 6 Setup
+         const question6 = questionnaire.data[0].Question6;
+         const dynamicFieldsQ6 = document.getElementById('dynamicFields_Q6');
+         for (let i = 0; i < question6.length; i++) {
+ 
+           const value = question6[i];
+           console.log("Value ", value);
+ 
+           let inputField = document.createElement('label')
+           inputField.classList.add('input_field');
+           let checkbox = document.createElement("input");
+           checkbox.classList.add('input');
+           checkbox.setAttribute("type", "checkbox");
+           checkbox.setAttribute("id", "question6" + i);
+           checkbox.setAttribute("name", value);
+           checkbox.setAttribute("value", value);
+           checkbox.setAttribute("w-el", "Q_question_6_dynamic");
+           //checkbox.setAttribute("checked", "checked");
+ 
+           let label = document.createElement("span");
+           label.classList.add('label');
+           label.setAttribute("for",  + i);
+           label.textContent =  value;
+ 
+           dynamicFieldsQ6.appendChild(inputField);
+           inputField.append(checkbox);
+           inputField.append(label);
+         }
+         
+        //Question 3 Setup
+        const question7 = questionnaire.data[0].Question7;
+        const dynamicFieldsQ7 = document.getElementById('dynamicFields_Q7');
+        for (let i = 0; i < question3.length; i++) {
+
+          const value = question7[i];
+          console.log("Value ", value);
+
+          let inputField = document.createElement('label')
+          inputField.classList.add('input_field');
+          let radio = document.createElement("input");
+          radio.classList.add('input');
+          radio.setAttribute("type", "radio");
+          radio.setAttribute("id", "question7" + i);
+          radio.setAttribute("name", "level Of Fitness");
+          radio.setAttribute("value", value);
+          radio.setAttribute("w-el", "Q_question_7_dynamic");
+          //checkbox.setAttribute("checked", "checked");
+
+          let label = document.createElement("span");
+          label.classList.add('label');
+          label.setAttribute("for",  + i);
+          label.textContent =  value;
+
+          dynamicFieldsQ7.appendChild(inputField);
+          inputField.append(radio);
+          inputField.append(label);
+        }         
       });
     }
     loadData();
@@ -145,31 +232,3 @@ $(document).ready(function () {
     );
   }
 });
-
-/*const checkBoxes = document.querySelectorAll('[type="checkbox"]');
-let indi = 0;
-
-for (let i = 0; i < checkBoxes.length; i++) {
-  const checkBox = checkBoxes[i];
-
-  checkBox.addEventListener("click", () => {
-    if (checkBox.checked == true) {
-      console.log("Checking Checkboxes");
-      indi = indi + 1;
-    }
-    if (indi >= 3) {
-      checkBoxes.forEach(check => {
-        if (check.checked == false) {
-          check.disabled = true;
-          indi = indi - 1;
-        }
-      });
-    }
-    else if (indi < 3) {
-      checkBoxes.forEach(uncheck => {
-        uncheck.disabled = false; 
-      });
-      indi = indi - 1;
-    }
-  });
-}*/
