@@ -14,7 +14,7 @@ window.onload = async () => {
         const dynamicFields = document.getElementById('dynamicFields_Q1');
         for (let i = 0; i < question2.length; i++) {
 
-            const value = questionnaire[0].Question2[i].value;
+            const value = question2[i];
             console.log("Value ", value);
 
             const inputField = document.createElement('label')
