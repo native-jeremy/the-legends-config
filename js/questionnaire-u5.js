@@ -7,8 +7,9 @@ window.onload = async () => {
     async function loadData() {
       Wized.request.await("Load Questionnaire", (response) => {
         const questionnaireData = response;
-        const question2 = questionnaireData[0].Question2;
         console.log("Questionnaire Data ", questionnaireData);
+
+        const question2 = questionnaireData.data[0].Question2;
 
         const dynamicFields = document.getElementById('dynamicFields_Q1');
         for (let i = 0; i < question2.length; i++) {
@@ -85,3 +86,31 @@ $(document).ready(function () {
     );
   }
 });
+
+/*const checkBoxes = document.querySelectorAll('[type="checkbox"]');
+let indi = 0;
+
+for (let i = 0; i < checkBoxes.length; i++) {
+  const checkBox = checkBoxes[i];
+
+  checkBox.addEventListener("click", () => {
+    if (checkBox.checked == true) {
+      console.log("Checking Checkboxes");
+      indi = indi + 1;
+    }
+    if (indi >= 3) {
+      checkBoxes.forEach(check => {
+        if (check.checked == false) {
+          check.disabled = true;
+          indi = indi - 1;
+        }
+      });
+    }
+    else if (indi < 3) {
+      checkBoxes.forEach(uncheck => {
+        uncheck.disabled = false; 
+      });
+      indi = indi - 1;
+    }
+  });
+}*/
