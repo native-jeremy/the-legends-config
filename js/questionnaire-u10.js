@@ -23,7 +23,7 @@ window.onload = async () => {
             let radio = document.createElement("input");
             radio.classList.add('input');
             radio.setAttribute("type", "radio");
-            radio.setAttribute("id", "radio" + i);
+            radio.setAttribute("id", "question2" + i);
             radio.setAttribute("name", "Age Group");
             radio.setAttribute("value", value);
             radio.setAttribute("w-el", "Q_question_2_dynamic");
@@ -39,7 +39,7 @@ window.onload = async () => {
             inputField.append(label);
         }
 
-        //Question 2 Setup
+        //Question 3 Setup
         const question3 = questionnaire.data[0].Question3;
         const dynamicFieldsQ3 = document.getElementById('dynamicFields_Q3');
         for (let i = 0; i < question3.length; i++) {
@@ -52,8 +52,8 @@ window.onload = async () => {
           let radio = document.createElement("input");
           radio.classList.add('input');
           radio.setAttribute("type", "radio");
-          radio.setAttribute("id", "radio" + i);
-          radio.setAttribute("name", "Age Group");
+          radio.setAttribute("id", "question3" + i);
+          radio.setAttribute("name", "level Of Fitness");
           radio.setAttribute("value", value);
           radio.setAttribute("w-el", "Q_question_3_dynamic");
           //checkbox.setAttribute("checked", "checked");
@@ -66,8 +66,36 @@ window.onload = async () => {
           dynamicFieldsQ3.appendChild(inputField);
           inputField.append(radio);
           inputField.append(label);
-      }
+        }
 
+        //Question 4 Setup
+        const question4 = questionnaire.data[0].Question4;
+        const dynamicFieldsQ4 = document.getElementById('dynamicFields_Q4');
+        for (let i = 0; i < question4.length; i++) {
+
+          const value = question4[i];
+          console.log("Value ", value);
+
+          let inputField = document.createElement('label')
+          inputField.classList.add('input_field');
+          let radio = document.createElement("input");
+          radio.classList.add('input');
+          radio.setAttribute("type", "checkbox");
+          radio.setAttribute("id", "question4" + i);
+          radio.setAttribute("name", value);
+          radio.setAttribute("value", value);
+          radio.setAttribute("w-el", "Q_question_4_dynamic");
+          //checkbox.setAttribute("checked", "checked");
+
+          let label = document.createElement("span");
+          label.classList.add('label');
+          label.setAttribute("for",  + i);
+          label.textContent =  value;
+
+          dynamicFieldsQ4.appendChild(inputField);
+          inputField.append(radio);
+          inputField.append(label);
+        }
       });
     }
     loadData();
