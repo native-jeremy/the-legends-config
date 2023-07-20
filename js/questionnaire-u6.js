@@ -6,15 +6,15 @@ window.onload = async () => {
     //Async function for grabbing the Questionnaire response
     async function loadData() {
       Wized.request.await("Load Questionnaire", (response) => {
-        const questionnaireData = response;
-        console.log("Questionnaire Data ", questionnaireData);
+        const questionnaire = response;
+        console.log("Questionnaire Data ", questionnaire);
 
-        const question2 = questionnaireData.data[0].Question2;
+        const question2 = questionnaire.data[0].Question2;
 
         const dynamicFields = document.getElementById('dynamicFields_Q1');
         for (let i = 0; i < question2.length; i++) {
 
-            const value = questionnaireData[0].Question2[i].value;
+            const value = questionnaire[0].Question2[i].value;
             console.log("Value ", value);
 
             const inputField = document.createElement('label')
