@@ -1,7 +1,8 @@
 window.onload = async () => {
   Wized.request.await("Load Users", (response) => {
     const userData = response;
-    console.log("User Data ", userData); 
+    console.log("User Data ", userData);
+
     //Async function for grabbing the Questionnaire response
     async function loadData() {
       Wized.request.await("Load Questionnaire", (response) => {
@@ -184,9 +185,7 @@ window.onload = async () => {
         }         
       });
     }
-    setTimeout(() => {
-      loadData();
-    }, 2000); 
+    loadData();
   });
 };
 
