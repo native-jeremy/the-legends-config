@@ -158,7 +158,7 @@ window.onload = async () => {
         //Question 3 Setup
         const question7 = questionnaire.data[0].Question7;
         const dynamicFieldsQ7 = document.getElementById('dynamicFields_Q7');
-        for (let i = 0; i < question3.length; i++) {
+        for (let i = 0; i < question7.length; i++) {
 
           const value = question7[i];
           console.log("Value ", value);
