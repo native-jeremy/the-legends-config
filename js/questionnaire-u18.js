@@ -10,13 +10,13 @@ window.onload = async () => {
           console.log("Questionnaire Data ", questionnaire);
 
           //Question Variables
-          //let varQ2;
-          //let varQ3;
-          //let varQ4 = [];
+          let varQ2;
+          let varQ3;
+          let varQ4 = [];
           let varQ5 = [];
           let varQ6 = [];
           let varQ7;
-  
+
           //Question 2 Setup
           const question2 = questionnaire.data[0].Question2;
           const dynamicFieldsQ2 = document.getElementById('dynamicFields_Q2');
@@ -46,8 +46,8 @@ window.onload = async () => {
               inputField.append(radio);
               inputField.append(label);
 
-              value.addEventListener('change', (e) => {
-                if (e.target.checked) {
+              radio.addEventListener('change', (e) => {
+                if (e.target.checked === true) {
                     varQ2 = e.target.value;
                 }
               });
@@ -81,8 +81,8 @@ window.onload = async () => {
             inputField.append(radio);
             inputField.append(label);
             
-            value.addEventListener('change', (e) => {
-                if (e.target.checked) {
+            radio.addEventListener('change', (e) => {
+                if (e.target.checked === true) {
                     varQ3 = e.target.value;
                 }
               });
@@ -115,6 +115,17 @@ window.onload = async () => {
             dynamicFieldsQ4.appendChild(inputField);
             inputField.append(checkbox);
             inputField.append(label);
+
+            checkbox.addEventListener('change', (e) => {
+                if (e.target.checked === true) {
+                    if (varQ4.indexOf(e.target.value) === -1)
+                    if (!varQ4.indexOf(e.target.value))
+                    {
+                    varQ4.push(e.target.value)
+                    }
+                }
+                console.log("Change Value ", value);
+              });
           }
   
            //Question 5 Setup
@@ -145,7 +156,7 @@ window.onload = async () => {
              inputField.append(checkbox);
              inputField.append(label);
 
-             value.addEventListener('change', (e) => {
+             checkbox.addEventListener('change', (e) => {
                 if (e.target.checked === true) {
                     if (varQ5.indexOf(e.target.value) === -1)
                     if (!varQ5.indexOf(e.target.value))
@@ -185,7 +196,7 @@ window.onload = async () => {
              inputField.append(checkbox);
              inputField.append(label);
              
-             value.addEventListener('change', (e) => {
+             checkbox.addEventListener('change', (e) => {
                 if (e.target.checked === true) {
                     varQ6 = e.target.value;
                 }
@@ -221,7 +232,7 @@ window.onload = async () => {
             inputField.append(radio);
             inputField.append(label);
 
-            value.addEventListener('change', (e) => {
+            radio.addEventListener('change', (e) => {
                 if (e.target.checked === true) {
                     varQ7 = e.target.value;
                 }
