@@ -169,7 +169,7 @@ window.onload = async () => {
           radio.classList.add('input');
           radio.setAttribute("type", "radio");
           radio.setAttribute("id", "question7" + i);
-          radio.setAttribute("name", "level Of Fitness");
+          radio.setAttribute("name", "Sessions Per Week");
           radio.setAttribute("value", value);
           radio.setAttribute("w-el", "Q_question_7_dynamic");
           //checkbox.setAttribute("checked", "checked");
