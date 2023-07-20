@@ -10,9 +10,9 @@ window.onload = async () => {
           console.log("Questionnaire Data ", questionnaire);
 
           //Question Variables
-          let varQ2;
-          let varQ3;
-          let varQ4 = [];
+          //let varQ2;
+          //let varQ3;
+          //let varQ4 = [];
           let varQ5 = [];
           let varQ6 = [];
           let varQ7;
@@ -187,7 +187,7 @@ window.onload = async () => {
              
              value.addEventListener('change', (e) => {
                 if (e.target.checked === true) {
-                    varQ3 = e.target.value;
+                    varQ6 = e.target.value;
                 }
                 console.log("Change Value ", value);
               });
