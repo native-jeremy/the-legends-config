@@ -9,15 +9,16 @@ window.onload = async () => {
         const questionnaire = response;
         console.log("Questionnaire Data ", questionnaire);
 
+        //Question 2 Setup
         const question2 = questionnaire.data[0].Question2;
+        const dynamicFieldsQ2 = document.getElementById('dynamicFields_Q2');
 
-        const dynamicFields = document.getElementById('dynamicFields_Q1');
         for (let i = 0; i < question2.length; i++) {
 
             const value = question2[i];
             console.log("Value ", value);
 
-            const inputField = document.createElement('label')
+            let inputField = document.createElement('label')
             inputField.classList.add('input_field');
             let radio = document.createElement("input");
             radio.classList.add('input');
@@ -33,10 +34,40 @@ window.onload = async () => {
             label.setAttribute("for",  + i);
             label.textContent =  value;
 
-            dynamicFields.appendChild(inputField);
+            dynamicFieldsQ2.appendChild(inputField);
             inputField.append(radio);
             inputField.append(label);
         }
+
+        //Question 2 Setup
+        const question3 = questionnaire.data[0].Question2;
+        const dynamicFieldsQ3 = document.getElementById('dynamicFields_Q3');
+        for (let i = 0; i < question3.length; i++) {
+
+          const value = question3[i];
+          console.log("Value ", value);
+
+          let inputField = document.createElement('label')
+          inputField.classList.add('input_field');
+          let radio = document.createElement("input");
+          radio.classList.add('input');
+          radio.setAttribute("type", "radio");
+          radio.setAttribute("id", "radio" + i);
+          radio.setAttribute("name", "Age Group");
+          radio.setAttribute("value", value);
+          radio.setAttribute("w-el", "Q_question_3_dynamic");
+          //checkbox.setAttribute("checked", "checked");
+
+          let label = document.createElement("span");
+          label.classList.add('label');
+          label.setAttribute("for",  + i);
+          label.textContent =  value;
+
+          dynamicFieldsQ3.appendChild(inputField);
+          inputField.append(radio);
+          inputField.append(label);
+      }
+
       });
     }
     loadData();
