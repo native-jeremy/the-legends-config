@@ -40,7 +40,7 @@ window.onload = async () => {
         }
 
         //Question 2 Setup
-        const question3 = questionnaire.data[0].Question2;
+        const question3 = questionnaire.data[0].Question3;
         const dynamicFieldsQ3 = document.getElementById('dynamicFields_Q3');
         for (let i = 0; i < question3.length; i++) {
 
