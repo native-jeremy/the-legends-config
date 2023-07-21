@@ -1,9 +1,9 @@
 [w-el~="load_app"] {
   opacity: 1;
 }
-.capsule-body {
+/*.capsule-body {
   display: flex !important;
-}
+}*/
 .app-slide-image {
   background-position: center;
   background-size: cover;
