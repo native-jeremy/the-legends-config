@@ -257,6 +257,8 @@ window.onload = async () => {
             let amrapCurrentNummText;
 
             let amrapNumberArray = [];
+
+            videoCheck();
     
 
             for (let i = 0; i < amrapLength; i++) {
@@ -385,7 +387,7 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                  exerciseDiffRes.data[i].Video[amrapCurrentNumm].url;
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Increased");
@@ -403,14 +405,13 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                  exerciseDiffRes.data[i].Video[amrapCurrentNumm].url;
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Decreased");
                   console.log("CurrentNumber Array: ", amrapNumberArray);
                 }
               });
-              videoCheck();
             }
 
             console.log("CurrentNumber Array: ", amrapNumberArray);
