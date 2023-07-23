@@ -411,11 +411,7 @@ window.onload = async () => {
               });
 
               videoCheck();
-            }
-
-            console.log("CurrentNumber Array: ", amrapNumberArray);
-
-            // Video Condtionals To Change Src When Doing An Amrap
+                          // Video Condtionals To Change Src When Doing An Amrap
             function videoCheck() {
               let videoCurrentSrc;
               let videos = document.getElementById("video");
@@ -459,6 +455,11 @@ window.onload = async () => {
                 videos.play();
               }
             }
+            }
+
+            console.log("CurrentNumber Array: ", amrapNumberArray);
+
+
              vidSrc.src =
             exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
           });
