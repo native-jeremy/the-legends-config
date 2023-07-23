@@ -410,9 +410,13 @@ window.onload = async () => {
                 }
               });
 
-              videoCheck();
-                          // Video Condtionals To Change Src When Doing An Amrap
-            function videoCheck() {
+              videoCheck(i);
+            }
+
+            console.log("CurrentNumber Array: ", amrapNumberArray);
+
+            // Video Condtionals To Change Src When Doing An Amrap
+            function videoCheck(index) {
               let videoCurrentSrc;
               let videos = document.getElementById("video");
 
@@ -425,7 +429,7 @@ window.onload = async () => {
 
                   videoCurrentSrc =
                   diffRes.data[parseInt(videoIndex)].Video[
-                    amrapNumberArray[i]
+                    amrapNumberArray[index]
                     ].url;
                   console.log("---------------------------------------");
                   console.log(videoCurrentSrc);
@@ -441,7 +445,7 @@ window.onload = async () => {
                 videoIndex = 0;
                 videoCurrentSrc =
                 exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                    parseInt(amrapCurrentNumm)
+                    parseInt(amrapNumberArray[index])
                   ].url;
                 console.log("---------------------------------------");
                 console.log(videoCurrentSrc);
@@ -455,11 +459,6 @@ window.onload = async () => {
                 videos.play();
               }
             }
-            }
-
-            console.log("CurrentNumber Array: ", amrapNumberArray);
-
-
              vidSrc.src =
             exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
           });
