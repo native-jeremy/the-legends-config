@@ -410,7 +410,10 @@ window.onload = async () => {
                   console.log("CurrentNumber Array: ", amrapNumberArray);
                 }
               });
-              videoCheck();
+              setInterval(() => {
+                videoCheck();
+              }, 1000);
+              
             }
 
             console.log("CurrentNumber Array: ", amrapNumberArray);
@@ -459,8 +462,8 @@ window.onload = async () => {
                 videos.play();
               }
             }
-            /*vidSrc.src =
-            exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;*/
+             vidSrc.src =
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
           });
         }
 
