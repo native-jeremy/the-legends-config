@@ -257,10 +257,7 @@ window.onload = async () => {
             let amrapCurrentNummText;
 
             let amrapNumberArray = [];
-
-            videoCheck();
     
-
             for (let i = 0; i < amrapLength; i++) {
               amrapNumberArray.push(amrapCurrentNumm);
               let content = document.querySelector("#controls");
@@ -412,6 +409,8 @@ window.onload = async () => {
                   console.log("CurrentNumber Array: ", amrapNumberArray);
                 }
               });
+
+              videoCheck();
             }
 
             console.log("CurrentNumber Array: ", amrapNumberArray);
@@ -430,7 +429,7 @@ window.onload = async () => {
 
                   videoCurrentSrc =
                   diffRes.data[parseInt(videoIndex)].Video[
-                    amrapCurrentNumm
+                    amrapNumberArray[i]
                     ].url;
                   console.log("---------------------------------------");
                   console.log(videoCurrentSrc);
