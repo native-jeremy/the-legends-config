@@ -120,6 +120,6 @@ window.onload = async () => {
         indeterminateText: 0});
       }
     }
-  }, 3000);
+  }, 6000);
   });
 }
