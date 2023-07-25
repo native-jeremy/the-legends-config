@@ -28,7 +28,7 @@ window.onload = async () => {
                   {title: "Hello Xavier", author: 'Morgan', image: 'images/xav.jpg'},
                   {title: "Hello Jessica", author: 'Morgan', image: 'images/jess.jpg'},
               ],
-              getData
+              getData.data
           }
         },
         methods: {
