@@ -93,83 +93,213 @@ window.onload = async () => {
           let completedWeek25Array = [];
 
           for (let i = 0; i < applyWeek.length; i++) {
+
+            // Recovery Array Condition
             if (applyWeek[i].includes("recovery")) {
               completedRecoveriesArray.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 1 Array Condition
             if (applyWeek[i].includes("week 1")) {
               completedWeek1Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 2 Array Condition
             if (applyWeek[i].includes("week 2")) {
               completedWeek2Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 3 Array Condition
             if (applyWeek[i].includes("week 3")) {
               completedWeek3Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 4 Array Condition
             if (applyWeek[i].includes("week 4")) {
               completedWeek4Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 5 Array Condition
             if (applyWeek[i].includes("week 5")) {
               completedWeek5Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 6 Array Condition
             if (applyWeek[i].includes("week 6")) {
               completedWeek6Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 7 Array Condition
             if (applyWeek[i].includes("week 7")) {
               completedWeek7Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 8 Array Condition
             if (applyWeek[i].includes("week 8")) {
               completedWeek8Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 9 Array Condition
             if (applyWeek[i].includes("week 9")) {
               completedWeek9Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 10 Array Condition
             if (applyWeek[i].includes("week 10")) {
               completedWeek10Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 11 Array Condition
             if (applyWeek[i].includes("week 11")) {
               completedWeek11Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 12 Array Condition
             if (applyWeek[i].includes("week 12")) {
               completedWeek12Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 13 Array Condition
             if (applyWeek[i].includes("week 13")) {
               completedWeek13Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 14 Array Condition
             if (applyWeek[i].includes("week 14")) {
               completedWeek14Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 15 Array Condition
             if (applyWeek[i].includes("week 15")) {
               completedWeek15Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 16 Array Condition
             if (applyWeek[i].includes("week 16")) {
               completedWeek16Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 17 Array Condition
             if (applyWeek[i].includes("week 17")) {
               completedWeek17Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 18 Array Condition
             if (applyWeek[i].includes("week 18")) {
               completedWeek18Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 19 Array Condition
             if (applyWeek[i].includes("week 19")) {
               completedWeek19Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 20 Array Condition
             if (applyWeek[i].includes("week 20")) {
               completedWeek20Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 21 Array Condition
             if (applyWeek[i].includes("week 21")) {
               completedWeek21Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 22 Array Condition
             if (applyWeek[i].includes("week 22")) {
               completedWeek22Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 23 Array Condition
             if (applyWeek[i].includes("week 23")) {
               completedWeek23Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 24 Array Condition
             if (applyWeek[i].includes("week 24")) {
               completedWeek24Array.push(applyWeek[i]);
             }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
+            }
+
+            // Week 25 Array Condition
             if (applyWeek[i].includes("week 25")) {
               completedWeek25Array.push(applyWeek[i]);
+            }
+            else {
+              console.log("No Week Matched: " + applyWeek[i]);
             }
           }
           completeWeek1.textContent = completedWeek1Array.length;
