@@ -92,7 +92,7 @@ window.onload = async () => {
 
               startNextButton.href = currentWorkout.href;
               startNext = true;
-              console.log(currentIcon);
+              console.log(currentWorkout);
             }
           }
         }
