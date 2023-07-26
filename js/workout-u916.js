@@ -376,8 +376,8 @@ window.onload = async () => {
               amrapPlus.appendChild(amrapPlusArrow);
 
               amrapPlus.addEventListener("click", () => {
-                if (amrapCurrentNumm < ammrapLimitNumm) {
-                  amrapCurrentNumm++;
+                if (currentNumber < ammrapLimitNumm) {
+                  currentNumber++;
                   controlNumber[i] = currentNumber;
                   currentNumberText = controlNumber[i] + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
@@ -413,56 +413,57 @@ window.onload = async () => {
               });
 
               videoCheck();
-            }
 
-            console.log("CurrentNumber Array: ", controlNumber);
+              // Video Condtionals To Change Src When Doing An Amrap
+              function videoCheck() {
+                let videoCurrentSrc;
+                let videos = document.getElementById("video");
 
-            // Video Condtionals To Change Src When Doing An Amrap
-            function videoCheck() {
-              let videoCurrentSrc;
-              let videos = document.getElementById("video");
+                if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
+                  if (
+                    videoIndex < diffLength
+                  ) {
+                    videoIndex = videoIndex + 1;
+                    console.log("Current Exercise Index For Video", parseInt(videoIndex));
 
-              if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
-                if (
-                  videoIndex < diffLength
+                    videoCurrentSrc =
+                    diffRes.data[parseInt(videoIndex)].Video[
+                      controlNumber[i]
+                      ].url;
+                    console.log("---------------------------------------");
+                    console.log(videoCurrentSrc);
+                    console.log("---------------------------------------");
+                    console.log("Ran Request Video Src => Updated");
+
+                    videos.src = videoCurrentSrc;
+                    videos.play();
+                  }
+                } else if (
+                  videoIndex >= diffLength
                 ) {
-                  videoIndex = videoIndex + 1;
-                  console.log("Current Exercise Index For Video", parseInt(videoIndex));
-
+                  videoIndex = 0;
                   videoCurrentSrc =
-                  diffRes.data[parseInt(videoIndex)].Video[
-                    controlNumber[i]
+                  exerciseDiffRes.data[parseInt(videoIndex)].Video[
+                      parseInt(controlNumber[i])
                     ].url;
                   console.log("---------------------------------------");
                   console.log(videoCurrentSrc);
                   console.log("---------------------------------------");
-                  console.log("Ran Request Video Src => Updated");
+                  console.log("Ran Request Video Src <= Reset ");
+
+                  console.log("---------------------------------------");
+                  console.log("Current Video Index:", parseInt(videoIndex));
 
                   videos.src = videoCurrentSrc;
                   videos.play();
                 }
-              } else if (
-                videoIndex >= diffLength
-              ) {
-                videoIndex = 0;
-                videoCurrentSrc =
-                exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                    parseInt(controlNumber[i])
-                  ].url;
-                console.log("---------------------------------------");
-                console.log(videoCurrentSrc);
-                console.log("---------------------------------------");
-                console.log("Ran Request Video Src <= Reset ");
-
-                console.log("---------------------------------------");
-                console.log("Current Video Index:", parseInt(videoIndex));
-
-                videos.src = videoCurrentSrc;
-                videos.play();
               }
+              vidSrc.src =
+              exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
             }
-             vidSrc.src =
-            exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
+
+            console.log("CurrentNumber Array: ", controlNumber);
+
           });
         }
 
