@@ -85,7 +85,7 @@ window.onload = async () => {
             }
           }
 
-          if(currentIcon.classList.contains("complete-indicator"))
+          if(!currentIcon.classList.contains("complete-indicator"))
           {
             if (startNext === false)
             {
