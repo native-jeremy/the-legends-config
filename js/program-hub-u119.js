@@ -10,7 +10,7 @@
 */
 
 window.onload = async () => {
-  const startNextWorkout = document.getElementById("startNextWorkout");
+  const startNextButton = document.getElementById("startNextWorkout");
   startNext = false;
 
   // Completed Data Load
