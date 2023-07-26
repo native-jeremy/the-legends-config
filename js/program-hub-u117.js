@@ -69,11 +69,6 @@ window.onload = async () => {
           const currentWorkout = workout[i];
           const currentIcon = icon[i];
 
-          if(currentIcon.classList.contains("complete-indicator"))
-          {
-            console.log(currentIcon);
-          }
-
           for (let j = 0; j < applyWorkout.length; j++) {
             const currentWeek = applyWeek[j];
             const currentName = applyName[j];
@@ -86,6 +81,11 @@ window.onload = async () => {
                 }
               }
             }
+          }
+
+          if(currentIcon.classList.contains("complete-indicator"))
+          {
+            console.log(currentIcon);
           }
         }
 
