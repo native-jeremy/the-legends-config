@@ -10,6 +10,8 @@
 */
 
 window.onload = async () => {
+  const startNextWorkout = document.getElementById("startNextWorkout");
+  startNext = false;
 
   // Completed Data Load
   Wized.request.await("Load Users", (response) => {
@@ -85,7 +87,13 @@ window.onload = async () => {
 
           if(currentIcon.classList.contains("complete-indicator"))
           {
-            console.log(currentIcon);
+            if (startNext === false)
+            {
+
+              startNextButton.href = currentWorkout.href;
+              startNext = true;
+              console.log(currentIcon);
+            }
           }
         }
 
