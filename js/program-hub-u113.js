@@ -74,7 +74,7 @@ window.onload = async () => {
             const currentName = applyName[j];
             const currentCompleted = applyWorkout[j];
 
-            if(workout.find(o => o.classList.contains("complete-indicator")))
+            if(currentWorkout.contains("complete-indicator"))
             {
               console.log(workout);
             }
