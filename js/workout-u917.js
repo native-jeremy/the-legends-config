@@ -398,7 +398,7 @@ window.onload = async () => {
                 if (currentNumber > amrapMinNumm) {
                   currentNumber--;
                   controlNumber[i] = currentNumber;
-                  currentNumberText = controlNumber + 1
+                  currentNumberText = controlNumber[i] + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
                   amrapCounter.innerHTML = currentNumberText;
                   enableDisabledStates();
@@ -444,7 +444,7 @@ window.onload = async () => {
                   videoIndex = 0;
                   videoCurrentSrc =
                   exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                      parseInt(controlNumber[i])
+                      controlNumber[i]
                     ].url;
                   console.log("---------------------------------------");
                   console.log(videoCurrentSrc);
@@ -459,7 +459,7 @@ window.onload = async () => {
                 }
               }
               vidSrc.src =
-              exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
+              exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;
             }
 
             console.log("CurrentNumber Array: ", controlNumber);
