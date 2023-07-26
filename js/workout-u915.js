@@ -54,6 +54,7 @@ let exerciseRes;
 let diffLength;
 let diffCurrent;
 let diffRes;
+let tempNum;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -253,13 +254,14 @@ window.onload = async () => {
             diffRes.data[parseInt(exercisesParam)].Video.length;
             console.log("Amrap length:", newcookieIndex);
 
-            let amrapCurrentNumm = 0;
-            let amrapCurrentNummText;
+            let currentNumber = 0;
+            let currentNumberText;
 
-            let amrapNumberArray = [];
+            let controlNumber = [];
     
             for (let i = 0; i < amrapLength; i++) {
-              amrapNumberArray.push(amrapCurrentNumm);
+              tempNum++
+              controlNumber.push(currentNumber);
               let content = document.querySelector("#controls");
               let sortedAmrapTitle =
                 repDataInt.data[
@@ -293,9 +295,9 @@ window.onload = async () => {
 
               content.append(amrapControl);
 
-              amrapCurrentNumm = amrapNumberArray[i];
+              currentNumber = controlNumber[i];
 
-              amrapCurrentNummText = amrapCurrentNumm + 1;
+              currentNumberText = currentNumber + 1;
 
               //Amrap Header Content - Content Div
               amrapHeader = document.createElement("div");
@@ -343,7 +345,7 @@ window.onload = async () => {
               //Current Diffculty Text "1" - example
               amrapCounter = document.createElement("div");
               amrapCounter.classList.add("num", "current", "current-num");
-              amrapCounter.innerHTML = amrapCurrentNumm + 1;
+              amrapCounter.innerHTML = currentNumber + 1;
 
               amrapTrigger.appendChild(amrapCounter);
 
@@ -376,10 +378,10 @@ window.onload = async () => {
               amrapPlus.addEventListener("click", () => {
                 if (amrapCurrentNumm < ammrapLimitNumm) {
                   amrapCurrentNumm++;
-                  amrapNumberArray[i] = amrapCurrentNumm;
-                   amrapCurrentNummText = amrapCurrentNumm + 1
+                  controlNumber[i] = currentNumber;
+                  currentNumberText = controlNumber[i] + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNummText;
+                  amrapCounter.innerHTML = currentNumberText;
                   //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
                   enableDisabledStates();
                   playVideoDiff();
@@ -388,17 +390,17 @@ window.onload = async () => {
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Increased");
-                  console.log("CurrentNumber Array: ", amrapNumberArray);
+                  console.log("CurrentNumber Array: ", controlNumber);
                 }
               });
 
               amrapMinus.addEventListener("click", () => {
-                if (amrapCurrentNumm > amrapMinNumm) {
-                  amrapCurrentNumm--;
-                  amrapNumberArray[i] = amrapCurrentNumm;
-                  amrapCurrentNummText = amrapCurrentNumm + 1
+                if (currentNumber > amrapMinNumm) {
+                  currentNumber--;
+                  controlNumber[i] = currentNumber;
+                  currentNumberText = controlNumber + 1
                   //amrapTitle.innerHTML  = amrapCurrentNumm;
-                  amrapCounter.innerHTML = amrapCurrentNummText;
+                  amrapCounter.innerHTML = currentNumberText;
                   enableDisabledStates();
                   playVideoDiff();
                   /*vidSrc.src =
@@ -406,17 +408,17 @@ window.onload = async () => {
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                   console.log("Amrap Diff Decreased");
-                  console.log("CurrentNumber Array: ", amrapNumberArray);
+                  console.log("CurrentNumber Array: ", controlNumber);
                 }
               });
 
-              videoCheck(i);
+              videoCheck();
             }
 
-            console.log("CurrentNumber Array: ", amrapNumberArray);
+            console.log("CurrentNumber Array: ", controlNumber);
 
             // Video Condtionals To Change Src When Doing An Amrap
-            function videoCheck(index) {
+            function videoCheck() {
               let videoCurrentSrc;
               let videos = document.getElementById("video");
 
@@ -429,7 +431,7 @@ window.onload = async () => {
 
                   videoCurrentSrc =
                   diffRes.data[parseInt(videoIndex)].Video[
-                    amrapNumberArray[index]
+                    controlNumber[i]
                     ].url;
                   console.log("---------------------------------------");
                   console.log(videoCurrentSrc);
@@ -445,7 +447,7 @@ window.onload = async () => {
                 videoIndex = 0;
                 videoCurrentSrc =
                 exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                    parseInt(amrapNumberArray[index])
+                    parseInt(controlNumber[i])
                   ].url;
                 console.log("---------------------------------------");
                 console.log(videoCurrentSrc);
@@ -460,7 +462,7 @@ window.onload = async () => {
               }
             }
              vidSrc.src =
-            exerciseDiffRes.data[parseInt(videoIndex)].Video[amrapCurrentNumm].url;
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
           });
         }
 
