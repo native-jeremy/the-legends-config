@@ -248,7 +248,7 @@ window.onload = async () => {
               diffRes.data.length
             );
 
-            checkAmrapVideo = setInterval(videoCheck, 0);
+            //checkAmrapVideo = setInterval(videoCheck, 0);
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
             diffRes.data[parseInt(exercisesParam)].Video.length;
