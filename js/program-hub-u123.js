@@ -201,6 +201,14 @@ window.onload = async () => {
           console.log("Recoveries Completed Array ", completedRecoveriesArray);
           console.log("Week 1 Completed Array ", completedWeek1Array);
           console.log("Week 2 Completed Array ", completedWeek2Array);
+          console.log("Week 3 Completed Array ", completedWeek3Array);
+          console.log("Week 4 Completed Array ", completedWeek4Array);
+          console.log("Week 5 Completed Array ", completedWeek5Array);
+          console.log("Week 6 Completed Array ", completedWeek6Array);
+          console.log("Week 7 Completed Array ", completedWeek7Array);
+          console.log("Week 8 Completed Array ", completedWeek8Array);
+          console.log("Week 9 Completed Array ", completedWeek9Array);
+          console.log("Week 10 Completed Array ", completedWeek10Array);
 
           let progressNum = (applyCompleted.length / workout.length) * 100;
 
@@ -275,6 +283,6 @@ window.onload = async () => {
           });
         }
       }
-    }, 3000);
+    }, 6000);
   });
 };
