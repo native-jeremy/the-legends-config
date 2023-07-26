@@ -32,6 +32,8 @@ window.onload = async () => {
       console.log("User Completed Names ", applyName);
       console.log("User Completed Workout IDs ", applyWorkout);
 
+      indexOf()
+
       let completeWeek1 = document.querySelector(".complete-week-1");
       let completeWeek2 = document.querySelector(".complete-week-2");
       let workout = document.querySelectorAll(".workouts");
@@ -47,10 +49,10 @@ window.onload = async () => {
         if (applyWeek[i].includes("week 1")) {
             completedWeek1Array.push(applyWeek[i]);
         }
-        else if (applyWeek[i].includes("week 2")) {
+        if (applyWeek[i].includes("week 2")) {
             completedWeek2Array.push(applyWeek[i]);
         }
-        else if (applyWeek[i].includes("recovery")) {
+        if (applyWeek[i].includes("recovery")) {
             completedRecoveriesArray.push(applyWeek[i]);
          }      
     }
@@ -73,6 +75,11 @@ window.onload = async () => {
             const currentWeek = applyWeek[j];
             const currentName = applyName[j];
             const currentCompleted = applyWorkout[j];
+
+            if(workout.find(o => o.classList.contains("complete-indicator")))
+            {
+              console.log(workout);
+            }
 
             if (currentWorkout.textContent.includes(currentWeek)) {
               if (currentWorkout.textContent.includes(currentName)) {
@@ -120,6 +127,6 @@ window.onload = async () => {
         indeterminateText: 0});
       }
     }
-  }, 6000);
+  }, 3000);
   });
 }
