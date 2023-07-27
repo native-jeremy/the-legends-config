@@ -266,7 +266,7 @@ window.onload = async () => {
               {
                 controlNumber.push(currentNumber);
                 vidSrc.src =
-                exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;
+                exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
               }
             }
             /*vidSrc.src =
