@@ -395,7 +395,7 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (currentNumber < amrapMax) {
+                  if (currentNumber + 1 < amrapMax) {
                     currentNumber++;
                     videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i] + 1
@@ -414,9 +414,6 @@ window.onload = async () => {
                     }
                     console.log("Amrap Diff Increased");
                     console.log("CurrentNumber Array: ", controlPlusNumber);
-                  }
-                  else {
-                    controlPlusNumber[i].style.display = "none";
                   }
                 });
 
@@ -441,9 +438,6 @@ window.onload = async () => {
                     exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;*/
                     console.log("Amrap Diff Decreased");
                     console.log("CurrentNumber Array: ", controlMinusNumber);
-                  }
-                  else {
-                    controlMinusNumber[i].style.display = "none";
                   }
                 });
 
