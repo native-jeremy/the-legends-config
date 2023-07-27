@@ -254,7 +254,6 @@ window.onload = async () => {
             console.log("Amrap length:", newcookieIndex);
 
             let currentNumber = 0;
-            let currentNumberShow = currentNumber + 1;
             let currentNumberText;
 
             let controlPlusNumber = [];
@@ -362,7 +361,7 @@ window.onload = async () => {
                 //Current Diffculty Text "1" - example
                 amrapCounter = document.createElement("div");
                 amrapCounter.classList.add("num", "current", "current-num");
-                amrapCounter.innerHTML = currentNumberShow;
+                amrapCounter.innerHTML = currentNumber + 1;
 
                 amrapTrigger.appendChild(amrapCounter);
 
@@ -376,7 +375,7 @@ window.onload = async () => {
                 //Limit Text
                 amrapLimit = document.createElement("div");
                 amrapLimit.classList.add("num", "limit", "limit-num");
-                amrapLimit.innerHTML = amrapMax;
+                amrapLimit.innerHTML = ammrapLimitNumm;
 
                 amrapTrigger.appendChild(amrapLimit);
 
@@ -399,9 +398,9 @@ window.onload = async () => {
                   if (currentNumber >= amrapMax) {
                     currentNumber++;
                     videoSrcIndex[i] = currentNumber;
-                    currentNumberShow = videoSrcIndex[i] + 1
+                    currentNumberText = videoSrcIndex[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
-                    amrapCounter.innerHTML = currentNumberShow;
+                    amrapCounter.innerHTML = currentNumberText;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
                     if (videoIndex === videoSrcIndex[i])
                     {
