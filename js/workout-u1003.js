@@ -266,11 +266,11 @@ window.onload = async () => {
               {
                 let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff[i];
                 videoSrcIndex.push(defaultDiff);
-
-                vidSrc.src =
-                exerciseDiffRes.data[i].Video[defaultDiff].url;
               }
             }
+
+            vidSrc.src =
+            exerciseDiffRes.data[i].Video[defaultDiff].url;
 
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
