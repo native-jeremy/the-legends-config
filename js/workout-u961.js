@@ -235,6 +235,11 @@ window.onload = async () => {
             let amrapLength =
               amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection
                 .length;
+
+            diffLength =
+            diffRes.data[parseInt(exercisesParam)].Video.length;
+            maxLimit = diffLength;
+            limitNum.innerHTML = maxLimit;
             console.log(
               "Diff Video Length Exercise:",
               diffRes.data[parseInt(exercisesParam)].Video.length
@@ -305,6 +310,8 @@ window.onload = async () => {
 
                 currentNumber = videoSrcIndex[i];
 
+                let amrapMax = exerciseDiffRes.data[i].Video.length;
+
                 currentNumberText = currentNumber + 1;
 
                 //Amrap Header Content - Content Div
@@ -367,7 +374,7 @@ window.onload = async () => {
                 //Limit Text
                 amrapLimit = document.createElement("div");
                 amrapLimit.classList.add("num", "limit", "limit-num");
-                amrapLimit.innerHTML = diffRes.data[i].Video.length;
+                amrapLimit.innerHTML = ammrapLimitNumm;
 
                 amrapTrigger.appendChild(amrapLimit);
 
@@ -387,7 +394,7 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (currentNumber <= diffRes.data[i].Video.length) {
+                  if (currentNumber <= amrapMax) {
                     currentNumber++;
                     videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i] + 1
