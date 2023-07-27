@@ -260,7 +260,7 @@ window.onload = async () => {
             let controlMinusNumber = [];
             let videoSrcIndex = [];
             
-            if (controlNumber.length  <= 0) {
+            if (videoSrcIndex.length  <= 0) {
               
               for (let i = 0; i < amrapLength; i++)
               {
@@ -270,7 +270,7 @@ window.onload = async () => {
               }
             }
 
-            if (controlNumber.length > 0) {
+            if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
 
                 //controlNumber.push(currentNumber);
@@ -405,7 +405,7 @@ window.onload = async () => {
                     setTimeout(enableActiveStates, 1500);
                     setTimeout(autoPlayVideo, 2000);
                     console.log("Amrap Diff Increased");
-                    console.log("CurrentNumber Array: ", controlNumber);
+                    console.log("CurrentNumber Array: ", controlPlusNumber);
                   }
                 });
 
@@ -423,7 +423,7 @@ window.onload = async () => {
                     setTimeout(enableActiveStates, 1500);
                     setTimeout(autoPlayVideo, 2000);
                     console.log("Amrap Diff Decreased");
-                    console.log("CurrentNumber Array: ", controlNumber);
+                    console.log("CurrentNumber Array: ", controlMinusNumber);
                   }
                 });
 
@@ -474,7 +474,7 @@ window.onload = async () => {
               }
             }
 
-            console.log("Controls Number Array: ", controlNumber);
+            console.log("Video Index Array: ", videoSrcIndex);
             console.log("Control Plus Array: ", controlPlusNumber);
             console.log("Control Minus Array: ", controlMinusNumber);
 
