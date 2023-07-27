@@ -265,8 +265,12 @@ window.onload = async () => {
               for (let i = 0; i < amrapLength; i++)
               {
                 controlNumber.push(currentNumber);
+                vidSrc.src =
+                exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;
               }
             }
+            /*vidSrc.src =
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;*/
 
               let videoCurrentSrc;
               let videos = document.getElementById("video");
@@ -463,9 +467,6 @@ window.onload = async () => {
                     console.log("CurrentNumber Array: ", controlNumber);
                   }
                 });
-
-                /*vidSrc.src =
-                exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;*/
               }
             }
 
