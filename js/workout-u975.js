@@ -264,7 +264,8 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                videoSrcIndex.push(currentNumber);
+                let defaultDiff = repDataInt.data[i].Default_Diff[i];
+                videoSrcIndex.push(defaultDiff);
               }
             }
 
@@ -395,7 +396,7 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (currentNumber < amrapMax) {
+                  if (currentNumber + 1 < amrapMax) {
                     currentNumber++;
                     videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i] + 1
