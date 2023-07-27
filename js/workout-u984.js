@@ -359,10 +359,12 @@ window.onload = async () => {
 
                 amrapMinus.appendChild(amrapMinusArrow);
 
+                let RealNumber = videoSrcIndex[i] - 1;
+
                 //Current Diffculty Text "1" - example
                 amrapCounter = document.createElement("div");
                 amrapCounter.classList.add("num", "current", "current-num");
-                amrapCounter.innerHTML = videoSrcIndex[i];
+                amrapCounter.innerHTML = RealNumber;
 
                 amrapTrigger.appendChild(amrapCounter);
 
@@ -399,9 +401,9 @@ window.onload = async () => {
                   if (videoSrcIndex[i] < amrapMax) {
                     videoSrcIndex[i]++;
                     //videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i]
+                    //currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
-                    amrapCounter.innerHTML = currentNumberText;
+                    amrapCounter.innerHTML = RealNumber;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
                     if (videoIndex === videoSrcIndex[i])
                     {
@@ -422,9 +424,9 @@ window.onload = async () => {
                   if (videoSrcIndex[i] > amrapMinNumm) {
                     videoSrcIndex[i]--;
                     videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i]
+                    //currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
-                    amrapCounter.innerHTML = currentNumberText;
+                    amrapCounter.innerHTML = RealNumber;
                     if (videoIndex === videoSrcIndex[i])
                     {
                       vidSrc.src =
