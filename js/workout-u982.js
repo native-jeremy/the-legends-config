@@ -471,7 +471,7 @@ window.onload = async () => {
                     videoIndex = 0;
                     videoCurrentSrc =
                     exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                      videoSrcIndex[i]
+                      videoSrcIndex[videoIndex]
                       ].url;
                     console.log("---------------------------------------");
                     console.log(videoCurrentSrc);
