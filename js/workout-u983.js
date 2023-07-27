@@ -448,10 +448,11 @@ window.onload = async () => {
                   let videos = document.getElementById("video");
         
                   if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
+                    videoIndex = videoIndex + 1;
                     if (
                       videoIndex < diffLength
                     ) {
-                      videoIndex = videoIndex + 1;
+                      //videoIndex = videoIndex + 1;
                       console.log("Current Exercise Index For Video", parseInt(videoIndex));
                       videoCurrentSrc =
                       diffRes.data[parseInt(videoIndex)].Video[
