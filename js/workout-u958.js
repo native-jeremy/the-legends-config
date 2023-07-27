@@ -392,10 +392,10 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (currentNumber <= amrapLength - 1) {
+                  if (currentNumber <= amrapLength) {
                     currentNumber++;
                     videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i] + 1
+                    currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
@@ -418,7 +418,7 @@ window.onload = async () => {
                   if (currentNumber > amrapMinNumm) {
                     currentNumber--;
                     videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i] + 1
+                    currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     if (videoIndex === videoSrcIndex[i])
