@@ -399,16 +399,7 @@ window.onload = async () => {
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
-                    if (videoIndex === videoSrcIndex[i])
-                    {
-                      vidSrc.src =
-                      exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
-                      enableDisabledStates();
-                      playVideoDiff();
-                      setTimeout(enableActiveStates, 1500);
-                      setTimeout(autoPlayVideo, 2000);
-                      
-                    }
+
                     console.log("Amrap Diff Increased");
                     console.log("CurrentNumber Array: ", controlPlusNumber);
                   }
@@ -421,15 +412,7 @@ window.onload = async () => {
                     currentNumberText = videoSrcIndex[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
-                    if (videoIndex === videoSrcIndex[i])
-                    {
-                      vidSrc.src =
-                      exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
-                      enableDisabledStates();
-                      playVideoDiff();
-                      setTimeout(enableActiveStates, 1500);
-                      setTimeout(autoPlayVideo, 2000);
-                    }
+                   
                     /*vidSrc.src =
                     exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;*/
                     console.log("Amrap Diff Decreased");
@@ -448,10 +431,17 @@ window.onload = async () => {
                     ) {
                       videoIndex = videoIndex + 1;
                       console.log("Current Exercise Index For Video", parseInt(videoIndex));
-                      videoCurrentSrc =
-                      diffRes.data[parseInt(videoIndex)].Video[
-                        videoSrcIndex[videoIndex]
-                        ].url;
+                      for (let i = 0; i < videoSrcIndex.length; i++) {
+                        if (videoIndex === videoSrcIndex[i])
+                        {
+                          diffRes.data[parseInt(videoIndex)].Video[
+                            videoSrcIndex[videoIndex]]
+                          enableDisabledStates();
+                          playVideoDiff();
+                          setTimeout(enableActiveStates, 1500);
+                          setTimeout(autoPlayVideo, 2000);
+                        }
+                      }
                       console.log("---------------------------------------");
                       console.log(videoCurrentSrc);
                       console.log("---------------------------------------");
