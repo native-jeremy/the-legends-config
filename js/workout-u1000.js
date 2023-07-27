@@ -275,7 +275,7 @@ window.onload = async () => {
               for (let i = 0; i < amrapLength; i++) {
 
             vidSrc.src =
-            exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
+            exerciseDiffRes.data[i].Video[videoSrcIndex[i]].url;
 
                 //controlNumber.push(currentNumber);
                 let content = document.querySelector("#controls");
