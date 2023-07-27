@@ -254,6 +254,7 @@ window.onload = async () => {
             console.log("Amrap length:", newcookieIndex);
 
             let currentNumber = 0;
+            let currentNumberShow = currentNumber + 1;
             let currentNumberText;
 
             let controlPlusNumber = [];
@@ -361,7 +362,7 @@ window.onload = async () => {
                 //Current Diffculty Text "1" - example
                 amrapCounter = document.createElement("div");
                 amrapCounter.classList.add("num", "current", "current-num");
-                amrapCounter.innerHTML = currentNumber + 1;
+                amrapCounter.innerHTML = currentNumberShow;
 
                 amrapTrigger.appendChild(amrapCounter);
 
@@ -375,7 +376,7 @@ window.onload = async () => {
                 //Limit Text
                 amrapLimit = document.createElement("div");
                 amrapLimit.classList.add("num", "limit", "limit-num");
-                amrapLimit.innerHTML = ammrapLimitNumm;
+                amrapLimit.innerHTML = amrapMax;
 
                 amrapTrigger.appendChild(amrapLimit);
 
@@ -395,12 +396,12 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (videoSrcIndex[i] <= amrapMax - 1) {
-                    videoSrcIndex[i]++;
-                    //videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i]
+                  if (currentNumber >= amrapMax) {
+                    currentNumber++;
+                    videoSrcIndex[i] = currentNumber;
+                    currentNumberShow = videoSrcIndex[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
-                    amrapCounter.innerHTML = currentNumberText;
+                    amrapCounter.innerHTML = currentNumberShow;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
                     if (videoIndex === videoSrcIndex[i])
                     {
