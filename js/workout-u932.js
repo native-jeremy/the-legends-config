@@ -248,8 +248,6 @@ window.onload = async () => {
               "Diff Length :",
               diffRes.data.length
             );
-
-            checkAmrapVideo = setInterval(videoCheck, 0);
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
             diffRes.data[parseInt(exercisesParam)].Video.length;
@@ -269,9 +267,12 @@ window.onload = async () => {
                 exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
               }
             }
+
+            checkAmrapVideo = setInterval(() => {
+
             /*vidSrc.src =
             exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;*/
-
+            
               let videoCurrentSrc;
               let videos = document.getElementById("video");
     
@@ -313,6 +314,7 @@ window.onload = async () => {
                 videos.src = videoCurrentSrc;
                 videos.play();
               }
+            }, 0);
 
             if (controlNumber.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
