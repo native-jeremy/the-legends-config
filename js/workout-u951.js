@@ -358,7 +358,7 @@ window.onload = async () => {
                 //Current Diffculty Text "1" - example
                 amrapCounter = document.createElement("div");
                 amrapCounter.classList.add("num", "current", "current-num");
-                amrapCounter.innerHTML = currentNumber + 1;
+                amrapCounter.innerHTML = currentNumberText;
 
                 amrapTrigger.appendChild(amrapCounter);
 
@@ -395,19 +395,20 @@ window.onload = async () => {
                   if (currentNumber < ammrapLimitNumm) {
                     currentNumber++;
                     videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i] + 1
+                    currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
                     if (videoIndex === videoSrcIndex[i])
                     {
+                      vidSrc.src =
+                      exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
                       enableDisabledStates();
                       playVideoDiff();
                       setTimeout(enableActiveStates, 1500);
                       setTimeout(autoPlayVideo, 2000);
+                      
                     }
-                    /*vidSrc.src =
-                    exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;*/
                     console.log("Amrap Diff Increased");
                     console.log("CurrentNumber Array: ", controlPlusNumber);
                   }
@@ -417,7 +418,7 @@ window.onload = async () => {
                   if (currentNumber > amrapMinNumm) {
                     currentNumber--;
                     videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i] + 1
+                    currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     if (videoIndex === videoSrcIndex[i])
