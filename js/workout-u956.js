@@ -392,8 +392,7 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  let max = exerciseDiffRes.data[parseInt(videoIndex)].Video.length;
-                  if (currentNumber < max) {
+                  if (currentNumber < amrapLength - 1) {
                     currentNumber++;
                     videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i] + 1
