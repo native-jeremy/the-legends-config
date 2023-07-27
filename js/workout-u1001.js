@@ -269,13 +269,11 @@ window.onload = async () => {
               }
             }
 
-            
+            /*vidSrc.src =
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;*/
 
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
-
-            vidSrc.src =
-            exerciseDiffRes.data[i].Video[videoSrcIndex[i]].url;
 
                 //controlNumber.push(currentNumber);
                 let content = document.querySelector("#controls");
@@ -443,7 +441,7 @@ window.onload = async () => {
                     console.log("CurrentNumber Array: ", controlMinusNumber);
                   }
                 });
-
+                setTimeout(() => { 
                 checkAmrapVideo = setInterval(() => {
                   
                   let videoCurrentSrc;
@@ -488,6 +486,7 @@ window.onload = async () => {
                     videos.play();
                   }
                 }, 0);
+              }, 2000);
               }
             }
 
