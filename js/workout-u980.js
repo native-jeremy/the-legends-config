@@ -270,7 +270,7 @@ window.onload = async () => {
             }
 
             vidSrc.src =
-            exerciseDiffRes.data[parseInt(videoIndex)].Video[0].url;
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;
 
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
@@ -396,9 +396,9 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (currentNumber < amrapMax) {
-                    currentNumber++;
-                    videoSrcIndex[i] = currentNumber;
+                  if (videoSrcIndex[i] < amrapMax) {
+                    videoSrcIndex[i]++;
+                    //videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
@@ -419,8 +419,8 @@ window.onload = async () => {
                 });
 
                 controlMinusNumber[i].addEventListener("click", () => {
-                  if (currentNumber > amrapMinNumm) {
-                    currentNumber--;
+                  if (videoSrcIndex[i] > amrapMinNumm) {
+                    videoSrcIndex[i]--;
                     videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
