@@ -466,8 +466,8 @@ window.onload = async () => {
                     videos.play();
                   }
                 }
-                vidSrc.src =
-                exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;
+                /*vidSrc.src =
+                exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;*/
               }
             }
 
