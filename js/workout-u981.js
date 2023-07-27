@@ -362,7 +362,7 @@ window.onload = async () => {
                 //Current Diffculty Text "1" - example
                 amrapCounter = document.createElement("div");
                 amrapCounter.classList.add("num", "current", "current-num");
-                amrapCounter.innerHTML = currentNumber;
+                amrapCounter.innerHTML = videoSrcIndex[i];
 
                 amrapTrigger.appendChild(amrapCounter);
 
@@ -376,7 +376,7 @@ window.onload = async () => {
                 //Limit Text
                 amrapLimit = document.createElement("div");
                 amrapLimit.classList.add("num", "limit", "limit-num");
-                amrapLimit.innerHTML = ammrapLimitNumm;
+                amrapLimit.innerHTML = amrapMax;
 
                 amrapTrigger.appendChild(amrapLimit);
 
