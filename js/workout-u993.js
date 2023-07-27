@@ -397,7 +397,7 @@ window.onload = async () => {
 
                 videoSrcMax.push(amrapLimit);
                 for (let index = 0; index < videoSrcIndex.length; index++) {
-                  videoSrcMax[index].textContent = videoIndex[index];
+                  videoSrcMax[index].textContent = amrapMax;
                 }
 
                 controlPlusNumber[i].addEventListener("click", () => {
