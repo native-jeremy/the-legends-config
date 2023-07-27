@@ -256,15 +256,17 @@ window.onload = async () => {
             let currentNumber = 0;
             let currentNumberText;
 
-            let controlNumber = [];
+            let controlPlusNumber = [];
+            let controlMinusNumber = [];
+            let videoSrcIndex = [];
             
             if (controlNumber.length  <= 0) {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                controlNumber.push(currentNumber);
+                videoSrcIndex.push(currentNumber);
                 vidSrc.src =
-                exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
+                exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
               }
             }
 
@@ -385,18 +387,21 @@ window.onload = async () => {
 
                 amrapPlus.appendChild(amrapPlusArrow);
 
-                amrapPlus.addEventListener("click", () => {
+                controlPlusNumber.push(amrapPlus);
+                controlMinusNumber.push(amrapMinus);
+
+                controlPlusNumber[i].addEventListener("click", () => {
                   if (currentNumber < ammrapLimitNumm) {
                     currentNumber++;
-                    controlNumber[i] = currentNumber;
-                    currentNumberText = controlNumber[i] + 1
+                    videoSrcIndex[i] = currentNumber;
+                    currentNumberText = videoSrcIndex[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
                     enableDisabledStates();
                     playVideoDiff();
                     vidSrc.src =
-                    exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
+                    exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
                     setTimeout(enableActiveStates, 1500);
                     setTimeout(autoPlayVideo, 2000);
                     console.log("Amrap Diff Increased");
@@ -404,7 +409,7 @@ window.onload = async () => {
                   }
                 });
 
-                amrapMinus.addEventListener("click", () => {
+                controlMinusNumber[i].addEventListener("click", () => {
                   if (currentNumber > amrapMinNumm) {
                     currentNumber--;
                     controlNumber[i] = currentNumber;
@@ -414,7 +419,7 @@ window.onload = async () => {
                     enableDisabledStates();
                     playVideoDiff();
                     vidSrc.src =
-                    exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
+                    exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
                     setTimeout(enableActiveStates, 1500);
                     setTimeout(autoPlayVideo, 2000);
                     console.log("Amrap Diff Decreased");
@@ -436,7 +441,7 @@ window.onload = async () => {
         
                       videoCurrentSrc =
                       diffRes.data[parseInt(videoIndex)].Video[
-                        controlNumber[i]
+                        videoSrcIndex[i]
                         ].url;
                       console.log("---------------------------------------");
                       console.log(videoCurrentSrc);
@@ -452,7 +457,7 @@ window.onload = async () => {
                     videoIndex = 0;
                     videoCurrentSrc =
                     exerciseDiffRes.data[parseInt(videoIndex)].Video[
-                      controlNumber[i]
+                      videoSrcIndex[i]
                       ].url;
                     console.log("---------------------------------------");
                     console.log(videoCurrentSrc);
@@ -469,7 +474,9 @@ window.onload = async () => {
               }
             }
 
-            console.log("CurrentNumber Array: ", controlNumber);
+            console.log("Controls Number Array: ", controlNumber);
+            console.log("Control Plus Array: ", controlPlusNumber);
+            console.log("Control Minus Array: ", controlMinusNumber);
 
           });
         }
