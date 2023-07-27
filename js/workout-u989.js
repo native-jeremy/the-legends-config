@@ -85,7 +85,7 @@ const limitNum = document.getElementById("limitNum");
 const plusBtn = document.getElementById("plusBtn");
 let maxLimit;
 let minLimit = 1;
-let amount;
+let amount = 1;
 currentNum.innerHTML = amount;
 
 let refreshNum = 0;
@@ -236,10 +236,10 @@ window.onload = async () => {
               amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection
                 .length;
 
-            /*diffLength =
+            diffLength =
             diffRes.data[parseInt(exercisesParam)].Video.length;
             maxLimit = diffLength;
-            limitNum.innerHTML = maxLimit;*/
+            limitNum.innerHTML = maxLimit;
             console.log(
               "Diff Video Length Exercise:",
               diffRes.data[parseInt(exercisesParam)].Video.length
@@ -270,7 +270,7 @@ window.onload = async () => {
             }
 
             vidSrc.src =
-            exerciseDiffRes.data[parseInt(videoIndex)].Video[0].url;
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;
 
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
