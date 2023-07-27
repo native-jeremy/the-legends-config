@@ -311,6 +311,7 @@ window.onload = async () => {
                 currentNumber = videoSrcIndex[i];
 
                 let amrapMax = exerciseDiffRes.data[i].Video.length;
+                console.log("Length Of Videos: ", amrapMax);
 
                 currentNumberText = currentNumber + 1;
 
