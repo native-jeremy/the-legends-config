@@ -445,9 +445,9 @@ window.onload = async () => {
                 checkAmrapVideo = setInterval(() => {
                   
                   let videoCurrentSrc;
-                  let videos = document.getElementById("video");
+                  //let videos = document.getElementById("video");
         
-                  if (Math.floor(videos.currentTime) === Math.floor(videos.duration)) {
+                  if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) {
                     videoIndex = videoIndex + 1;
                     if (
                       videoIndex < diffLength
@@ -463,8 +463,8 @@ window.onload = async () => {
                       console.log("---------------------------------------");
                       console.log("Ran Request Video Src => Updated");
         
-                      videos.src = videoCurrentSrc;
-                      videos.play();
+                      vidSrc.src = videoCurrentSrc;
+                      vidSrc.play();
                     }
                   } else if (
                     videoIndex >= diffLength
@@ -482,8 +482,8 @@ window.onload = async () => {
                     console.log("---------------------------------------");
                     console.log("Current Video Index:", parseInt(videoIndex));
         
-                    videos.src = videoCurrentSrc;
-                    videos.play();
+                    vidSrc.src = videoCurrentSrc;
+                    vidSrc.play();
                   }
                 }, 0);
               }
