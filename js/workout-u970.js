@@ -398,7 +398,7 @@ window.onload = async () => {
                   if (currentNumber <= amrapMax) {
                     currentNumber++;
                     videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i] + 1
+                    currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
