@@ -214,6 +214,8 @@ window.onload = async () => {
       amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
 
       if (amrapBool == "True") {
+        loadData();
+        
         async function loadData() {
 
           Wized.request.await("Load Exercise Diff", (response) => {
@@ -475,8 +477,6 @@ window.onload = async () => {
 
           });
         }
-
-        loadData();
       } else {
 
         clearInterval(checkAmrapVideo);
