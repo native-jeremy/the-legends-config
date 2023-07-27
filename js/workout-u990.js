@@ -396,7 +396,7 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (videoSrcIndex[i] < videoSrcIndex) {
+                  if (videoSrcIndex[i] < videoSrcIndex.length) {
                     videoSrcIndex[i]++;
                     //videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i]
