@@ -358,7 +358,7 @@ window.onload = async () => {
                 //Current Diffculty Text "1" - example
                 amrapCounter = document.createElement("div");
                 amrapCounter.classList.add("num", "current", "current-num");
-                amrapCounter.innerHTML = currentNumberText;
+                amrapCounter.innerHTML = currentNumber + 1;
 
                 amrapTrigger.appendChild(amrapCounter);
 
@@ -392,10 +392,10 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (currentNumber < ammrapLimitNumm) {
+                  if (currentNumber <= ammrapLimitNumm) {
                     currentNumber++;
                     videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i]
+                    currentNumberText = videoSrcIndex[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
@@ -418,7 +418,7 @@ window.onload = async () => {
                   if (currentNumber > amrapMinNumm) {
                     currentNumber--;
                     videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i]
+                    currentNumberText = videoSrcIndex[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     if (videoIndex === videoSrcIndex[i])
