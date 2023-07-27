@@ -264,9 +264,9 @@ window.onload = async () => {
               for (let i = 0; i < amrapLength; i++)
               {
                 controlNumber.push(currentNumber);
-                vidSrc.src =
+                /*vidSrc.src =
                 exerciseDiffRes.data[parseInt(videoIndex)].Video[controlNumber[i]].url;
-                num = controlNumber[i];
+                num = controlNumber[i];*/
               }
 
               checkAmrapVideo = setInterval(() => {
