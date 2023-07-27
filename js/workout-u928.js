@@ -268,10 +268,6 @@ window.onload = async () => {
               }
             }
 
-            videoCheck();
-
-            // Video Condtionals To Change Src When Doing An Amrap
-            function videoCheck() {
               let videoCurrentSrc;
               let videos = document.getElementById("video");
     
@@ -313,7 +309,6 @@ window.onload = async () => {
                 videos.src = videoCurrentSrc;
                 videos.play();
               }
-            }
 
             if (controlNumber.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
