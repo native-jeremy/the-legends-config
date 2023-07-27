@@ -422,6 +422,8 @@ window.onload = async () => {
                     amrapCounter.innerHTML = currentNumberText;
                     if (videoIndex === videoSrcIndex[i])
                     {
+                      vidSrc.src =
+                      exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
                       enableDisabledStates();
                       playVideoDiff();
                       setTimeout(enableActiveStates, 1500);
