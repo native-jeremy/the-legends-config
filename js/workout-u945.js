@@ -265,10 +265,11 @@ window.onload = async () => {
               for (let i = 0; i < amrapLength; i++)
               {
                 videoSrcIndex.push(currentNumber);
-                vidSrc.src =
-                exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
               }
             }
+
+            vidSrc.src =
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;
 
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
