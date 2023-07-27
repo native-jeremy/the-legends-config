@@ -269,8 +269,8 @@ window.onload = async () => {
               }
             }
 
-            vidSrc.src =
-            exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;
+            /*vidSrc.src =
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;*/
 
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
@@ -441,6 +441,9 @@ window.onload = async () => {
                     console.log("CurrentNumber Array: ", controlMinusNumber);
                   }
                 });
+
+                vidSrc.src =
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[videoIndex]].url;
 
                 checkAmrapVideo = setInterval(() => {
                   
