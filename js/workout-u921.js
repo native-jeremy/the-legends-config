@@ -259,9 +259,11 @@ window.onload = async () => {
             let controlNumber = [];
             
             if (controlNumber.length  <= 0) {
-              amrapLength.forEach(control => {
+              
+              for (let i = 0; i < amrapLength; i++)
+              {
                 controlNumber.push(currentNumber);
-              });
+              }
             }
 
             if (controlNumber.length > 0) {
