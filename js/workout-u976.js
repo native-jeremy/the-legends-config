@@ -264,7 +264,7 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = repDataInt.data[i].Default_Diff[i];
+                let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff[i];
                 videoSrcIndex.push(defaultDiff);
               }
             }
@@ -314,7 +314,7 @@ window.onload = async () => {
                 let amrapMax = exerciseDiffRes.data[i].Video.length;
                 console.log("Length Of Videos: ", amrapMax);
 
-                currentNumberText = currentNumber + 1;
+                currentNumberText = currentNumber;
 
                 //Amrap Header Content - Content Div
                 amrapHeader = document.createElement("div");
