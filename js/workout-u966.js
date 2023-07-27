@@ -395,9 +395,9 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (currentNumber <= amrapMax) {
-                    currentNumber++;
-                    videoSrcIndex[i] = currentNumber;
+                  if (videoSrcIndex[i] <= amrapMax - 1) {
+                    videoSrcIndex[i]++;
+                    //videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
