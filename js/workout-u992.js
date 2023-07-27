@@ -259,6 +259,7 @@ window.onload = async () => {
             let controlPlusNumber = [];
             let controlMinusNumber = [];
             let videoSrcIndex = [];
+            let videoSrcMax = [];
             
             if (videoSrcIndex.length  <= 0) {
               
@@ -376,7 +377,6 @@ window.onload = async () => {
                 //Limit Text
                 amrapLimit = document.createElement("div");
                 amrapLimit.classList.add("num", "limit", "limit-num");
-                amrapLimit.innerHTML = videoSrcIndex.length;
 
                 amrapTrigger.appendChild(amrapLimit);
 
@@ -394,6 +394,11 @@ window.onload = async () => {
 
                 controlPlusNumber.push(amrapPlus);
                 controlMinusNumber.push(amrapMinus);
+
+                videoSrcMax.push(amrapLimit);
+                for (let index = 0; index < videoSrcIndex.length; index++) {
+                  videoSrcMax[index].textContent = videoIndex[index];
+                }
 
                 controlPlusNumber[i].addEventListener("click", () => {
                   if (videoSrcIndex[i] < videoSrcIndex.length) {
@@ -421,7 +426,7 @@ window.onload = async () => {
                 controlMinusNumber[i].addEventListener("click", () => {
                   if (videoSrcIndex[i] > amrapMinNumm) {
                     videoSrcIndex[i]--;
-                    videoSrcIndex[i] = currentNumber;
+                    //videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
