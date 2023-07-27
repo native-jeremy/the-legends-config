@@ -390,7 +390,7 @@ window.onload = async () => {
                     currentNumberText = controlNumber[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
-                    vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
+                    //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
                     enableDisabledStates();
                     playVideoDiff();
                     /*vidSrc.src =
