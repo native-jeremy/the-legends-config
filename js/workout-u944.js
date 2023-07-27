@@ -412,8 +412,8 @@ window.onload = async () => {
                 controlMinusNumber[i].addEventListener("click", () => {
                   if (currentNumber > amrapMinNumm) {
                     currentNumber--;
-                    controlNumber[i] = currentNumber;
-                    currentNumberText = controlNumber[i] + 1
+                    videoSrcIndex[i] = currentNumber;
+                    currentNumberText = videoSrcIndex[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     enableDisabledStates();
