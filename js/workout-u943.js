@@ -307,7 +307,7 @@ window.onload = async () => {
 
                 content.append(amrapControl);
 
-                currentNumber = controlNumber[i];
+                currentNumber = videoSrcIndex[i];
 
                 currentNumberText = currentNumber + 1;
 
