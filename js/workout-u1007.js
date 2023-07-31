@@ -264,7 +264,7 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff[i];
+                let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[i];
                 videoSrcIndex.push(defaultDiff);
               }
             }
