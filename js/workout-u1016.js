@@ -523,12 +523,8 @@ window.onload = async () => {
 
             console.log("Diff Res RETURNED! ", exerciseDiffRes);
 
-            let amrapLength =
-              amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection
-                .length;
-
             diffLength =
-            diffRes.data[parseInt(exercisesParam)].Video.length;
+            repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
             maxLimit = diffLength;
             limitNum.innerHTML = maxLimit;
             console.log(
