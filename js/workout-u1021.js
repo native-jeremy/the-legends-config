@@ -560,9 +560,9 @@ window.onload = async () => {
         );
 
         DiffControlsSingle();
+        console.log("Diff Current Applied", diffCurrent);
         vidSrc.src =
         repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
-        console.log("Diff Current Applied", diffCurrent);
       }
 
       audioSrc.src =
