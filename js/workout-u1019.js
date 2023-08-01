@@ -520,7 +520,7 @@ window.onload = async () => {
             console.log("Diff Res RETURNED! ", exerciseDiffRes);
 
             let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
-            currentNum.innerHTML = defaultDiff;
+            currentNum.innerHTML = defaultDiff + 1;
             //let diffStr = currentNum.innerHTML;
             diffCurrent = defaultDiff;
 
