@@ -541,28 +541,72 @@ window.onload = async () => {
             repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
             console.log("Amrap length:", newcookieIndex);
 
+            
+            diffLength =
+            repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+            maxLimit = diffLength;
+            limitNum.innerHTML = maxLimit;
+            console.log(
+              "Diff Video Length Exercise:",
+              repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
+            );
+            console.log(
+              "Diff Length :",
+              repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
+            );
+
+            DiffControlsSingle();
+            console.log("Diff Current Applied", diffCurrent);
+            vidSrc.src =
+            repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+
+            // Diff Increase Click Controls - Single Exercise
+            function DiffControlsSingle() {
+              plusBtn.addEventListener("click", function () {
+                if (amount < maxLimit) {
+                  diffCurrent++;
+                  amount++;
+                  currentNum.innerHTML = amount;
+                  enableDisabledStates();
+                  playVideoDiff();
+                  vidSrc.src =
+                    repDataInt.data[parseInt(exercisesParam)].Diff_Video[
+                      diffCurrent
+                    ].url;
+                  setTimeout(enableActiveStates, 1500);
+                  setTimeout(autoPlayVideo, 2000);
+                } else {
+                  amount = maxLimit;
+                }
+                console.log("---------------------------------------");
+                console.log("Current Difficulty:", diffCurrent);
+              });
+
+              // Diff Decrease Click Controls - Single Exercise
+              minusBtn.addEventListener("click", function () {
+                if (amount > minLimit) {
+                  diffCurrent--;
+                  amount--;
+                  currentNum.innerHTML = amount;
+                  enableDisabledStates();
+                  playVideoDiff();
+                  vidSrc.src =
+                    repDataInt.data[parseInt(exercisesParam)].Diff_Video[
+                      diffCurrent
+                    ].url;
+                  setTimeout(enableActiveStates, 1500);
+                  setTimeout(autoPlayVideo, 2000);
+                } else {
+                  amount = minLimit;
+                }
+                console.log("---------------------------------------");
+                console.log("Current Difficulty:", diffCurrent);
+              });
+            }
             /*vidSrc.src =
             exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;*/
           });
         }
-
-        diffLength =
-        repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
-        maxLimit = diffLength;
-        limitNum.innerHTML = maxLimit;
-        console.log(
-          "Diff Video Length Exercise:",
-          repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
-        );
-        console.log(
-          "Diff Length :",
-          repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
-        );
-
-        DiffControlsSingle();
-        console.log("Diff Current Applied", diffCurrent);
-        vidSrc.src =
-        repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
       }
 
       audioSrc.src =
@@ -571,51 +615,6 @@ window.onload = async () => {
       let exercisesLength =
         amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
       let roundLength = repDataInt.data.length;
-
-
-      // Diff Increase Click Controls - Single Exercise
-      function DiffControlsSingle() {
-        plusBtn.addEventListener("click", function () {
-          if (amount < maxLimit) {
-            diffCurrent++;
-            amount++;
-            currentNum.innerHTML = amount;
-            enableDisabledStates();
-            playVideoDiff();
-            vidSrc.src =
-              repDataInt.data[parseInt(exercisesParam)].Diff_Video[
-                diffCurrent
-              ].url;
-            setTimeout(enableActiveStates, 1500);
-            setTimeout(autoPlayVideo, 2000);
-          } else {
-            amount = maxLimit;
-          }
-          console.log("---------------------------------------");
-          console.log("Current Difficulty:", diffCurrent);
-        });
-
-        // Diff Decrease Click Controls - Single Exercise
-        minusBtn.addEventListener("click", function () {
-          if (amount > minLimit) {
-            diffCurrent--;
-            amount--;
-            currentNum.innerHTML = amount;
-            enableDisabledStates();
-            playVideoDiff();
-            vidSrc.src =
-              repDataInt.data[parseInt(exercisesParam)].Diff_Video[
-                diffCurrent
-              ].url;
-            setTimeout(enableActiveStates, 1500);
-            setTimeout(autoPlayVideo, 2000);
-          } else {
-            amount = minLimit;
-          }
-          console.log("---------------------------------------");
-          console.log("Current Difficulty:", diffCurrent);
-        });
-      }
 
       // Diff Increase Click Controls - Amrap Exercises
       /*function DiffControlsAmrap() {
