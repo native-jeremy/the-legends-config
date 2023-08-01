@@ -1,4 +1,4 @@
-/* Define - Intialisation - Elements Retreived
+ /* Define - Intialisation - Elements Retreived
 ----------------------------------------------------------------
 */
 
@@ -25,9 +25,15 @@ window.onload = async () => {
           return {
               showBooks: true,
               books: [
-                  {title: "Hello MJX Family", author: 'Morgan', image: 'images/mjx.jpg'},
-                  {title: "Hello Xavier", author: 'Morgan', image: 'images/xav.jpg'},
-                  {title: "Hello Jessica", author: 'Morgan', image: 'images/jess.jpg'},
+                  {title: "Hello DEV NDA", author: 'DEV NDA', image: '', number: "1"},
+                  {title: "Hello DEV NDA", author: 'DEV NDA', image: '',  number: "2"},
+                  {title: "Hello DEV NDA", author: 'DEV NDA', image: '',  number: "3"},
+                  {title: "Hello DEV NDA", author: 'DEV NDA', image: '', number: "4"},
+                  {title: "Hello DEV NDA", author: 'DEV NDA', image: '',  number: "5"},
+                  {title: "Hello DEV NDA", author: 'DEV NDA', image: '',  number: "6"},
+                  {title: "Hello DEV NDA", author: 'DEV NDA', image: '', number: "7"},
+                  {title: "Hello DEV NDA", author: 'DEV NDA', image: '',  number: "8"},
+                  {title: "Hello DEV NDA", author: 'DEV NDA', image: '',  number: "9"},
               ],
           }
         },
