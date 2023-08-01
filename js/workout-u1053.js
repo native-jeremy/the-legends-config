@@ -857,7 +857,7 @@ window.onload = async () => {
         timerText.innerHTML = counter + ".00";
         if (!timerText.classList.contains("pausetime")) {
           counter--;
-          setProgress(counter / counter * 100);
+          setProgress(percentage);
           if (counter < 0) {
             playSiren();
             setTimeout(() => {
