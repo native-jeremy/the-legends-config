@@ -522,7 +522,8 @@ window.onload = async () => {
             let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
             //let diffStr = currentNum.innerHTML;
             diffCurrent = defaultDiff;
-            currentNum.innerHTML = diffCurrent + 1;
+            realNumberText = diffCurrent + 1;
+            currentNum.innerHTML = realNumberText;
 
             diffLength =
             repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
@@ -566,7 +567,7 @@ window.onload = async () => {
                 if (diffCurrent < maxLimit) {
                   diffCurrent++;
                   amount++;
-                  currentNum.innerHTML = diffCurrent + 1;
+                  currentNum.innerHTML = realNumberText;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
@@ -587,7 +588,7 @@ window.onload = async () => {
                 if (diffCurrent > minLimit) {
                   diffCurrent--;
                   amount--;
-                  currentNum.innerHTML = diffCurrent + 1;
+                  currentNum.innerHTML = realNumberText;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
