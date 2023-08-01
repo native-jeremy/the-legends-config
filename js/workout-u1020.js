@@ -520,7 +520,7 @@ window.onload = async () => {
             console.log("Diff Res RETURNED! ", exerciseDiffRes);
 
             let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
-            currentNum.innerHTML = defaultDiff + 1;
+            currentNum.innerHTML = defaultDiff;
             //let diffStr = currentNum.innerHTML;
             diffCurrent = defaultDiff;
 
@@ -562,6 +562,7 @@ window.onload = async () => {
         DiffControlsSingle();
         vidSrc.src =
         repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+        console.log("Diff Current Applied", diffCurrent);
       }
 
       audioSrc.src =
