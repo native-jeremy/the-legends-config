@@ -524,18 +524,6 @@ window.onload = async () => {
             diffCurrent = defaultDiff;
             currentNum.innerHTML = diffCurrent;
 
-            diffLength =
-            repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
-            maxLimit = diffLength;
-            limitNum.innerHTML = maxLimit;
-            console.log(
-              "Diff Video Length Exercise:",
-              repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
-            );
-            console.log(
-              "Diff Length :",
-              diffRes.data.length
-            );
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
             repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
@@ -545,7 +533,7 @@ window.onload = async () => {
             diffLength =
             repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
             maxLimit = diffLength;
-            limitNum.innerHTML = maxLimit - 1;
+            limitNum.innerHTML = maxLimit;
             console.log(
               "Diff Video Length Exercise:",
               repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
