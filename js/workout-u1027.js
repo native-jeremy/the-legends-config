@@ -563,10 +563,10 @@ window.onload = async () => {
             // Diff Increase Click Controls - Single Exercise
             function DiffControlsSingle() {
               plusBtn.addEventListener("click", function () {
-                if (amount < maxLimit) {
+                if (diffCurrent < maxLimit) {
                   diffCurrent++;
                   amount++;
-                  currentNum.innerHTML = amount;
+                  currentNum.innerHTML = diffCurrent;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
@@ -576,7 +576,7 @@ window.onload = async () => {
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                 } else {
-                  amount = maxLimit;
+                  diffCurrent = maxLimit;
                 }
                 console.log("---------------------------------------");
                 console.log("Current Difficulty:", diffCurrent);
@@ -584,10 +584,10 @@ window.onload = async () => {
 
               // Diff Decrease Click Controls - Single Exercise
               minusBtn.addEventListener("click", function () {
-                if (amount > minLimit) {
+                if (diffCurrent > minLimit) {
                   diffCurrent--;
                   amount--;
-                  currentNum.innerHTML = amount;
+                  currentNum.innerHTML = diffCurrent;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
@@ -597,7 +597,7 @@ window.onload = async () => {
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                 } else {
-                  amount = minLimit;
+                  diffCurrent = minLimit;
                 }
                 console.log("---------------------------------------");
                 console.log("Current Difficulty:", diffCurrent);
