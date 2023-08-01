@@ -67,22 +67,11 @@ window.onload = async () => {
           let icon = document.querySelectorAll(".completed-icon");
           let iconRec = document.querySelectorAll(".completed-icon");
 
-          loadData();
-        
-          async function loadData() {
-  
-            Wized.request.await("Load Program", (response) => {
-              
-              weeksRes = response;
-
-              weeksRes.forEach(week => {
-               week = `<div class="accordion style-1 vanilla_render"><div data-w-id="dd8f0a6d-3e3e-25c7-0575-9aec2e76e4ad" class="accordion-header"><div class="accordion-header-text"><div class="accordion-header-top-content"><h2 class="main-heading-style-1 week vanilla_render_week">Week 1</h2><div class="accordion-header-arrow"><div class="accordion-arrow-icon"></div></div></div><div class="split-dynamic-text"><div class="generic-text-style-1 complete-week-1">0</div><div class="generic-text-style-1">/</div><div class="generic-text-style-1 week-1-length">3</div><div class="generic-text-style-1 left-complete-margin">Complete</div></div></div></div><div class="accordion-body style-1"><a w-el="workout_capsule_week_1" href="https://the-legends-web-app.webflow.io/workout-overview?workout=undefined&amp;ri=undefined" class="capsule-body style-1 vanilla_render_workout w-inline-block" w-el-list-display="flex" w-el-link="https://the-legends-web-app.webflow.io/workout-overview" style="display: none;"><div class="capsule-image-block"></div><div class="capsule-header-content"><div class="capsule-header-text"><h2 w-el="workout_capsule_title_week_1" class="main-heading-style-1 workout-title vanilla_render_title" w-el-text="Run to the Sun"></h2><div class="split-dynamic-text"><div class="generic-text-style-1">HIIT Workout</div><div class="generic-text-style-1 left-right-margin"> | </div><div class="generic-text-style-1">30min</div></div><div w-el="complete_filter_week" class="generic-text-style-1 complete-filter" w-el-text="HIIT Workout"></div><div w-el="complete_filter_name" class="generic-text-style-1 complete-filter" w-el-text="HIIT Workout"></div><div w-el="complete_filter_id" class="generic-text-style-1 complete-filter" w-el-text="HIIT Workout"></div></div><div class="completed-icon"></div></div></a><link rel="prerender" href="/workout-overview"></div></div>`
-               contentTab.innerHTML = week;
-               console.log("IT WORKED!")
-              });
-  
-            });
-          }
+          workout.forEach(week => {
+            week = `<div class="accordion style-1 vanilla_render"><div data-w-id="dd8f0a6d-3e3e-25c7-0575-9aec2e76e4ad" class="accordion-header"><div class="accordion-header-text"><div class="accordion-header-top-content"><h2 class="main-heading-style-1 week vanilla_render_week">Week 1</h2><div class="accordion-header-arrow"><div class="accordion-arrow-icon"></div></div></div><div class="split-dynamic-text"><div class="generic-text-style-1 complete-week-1">0</div><div class="generic-text-style-1">/</div><div class="generic-text-style-1 week-1-length">3</div><div class="generic-text-style-1 left-complete-margin">Complete</div></div></div></div><div class="accordion-body style-1"><a w-el="workout_capsule_week_1" href="https://the-legends-web-app.webflow.io/workout-overview?workout=undefined&amp;ri=undefined" class="capsule-body style-1 vanilla_render_workout w-inline-block" w-el-list-display="flex" w-el-link="https://the-legends-web-app.webflow.io/workout-overview" style="display: none;"><div class="capsule-image-block"></div><div class="capsule-header-content"><div class="capsule-header-text"><h2 w-el="workout_capsule_title_week_1" class="main-heading-style-1 workout-title vanilla_render_title" w-el-text="Run to the Sun"></h2><div class="split-dynamic-text"><div class="generic-text-style-1">HIIT Workout</div><div class="generic-text-style-1 left-right-margin"> | </div><div class="generic-text-style-1">30min</div></div><div w-el="complete_filter_week" class="generic-text-style-1 complete-filter" w-el-text="HIIT Workout"></div><div w-el="complete_filter_name" class="generic-text-style-1 complete-filter" w-el-text="HIIT Workout"></div><div w-el="complete_filter_id" class="generic-text-style-1 complete-filter" w-el-text="HIIT Workout"></div></div><div class="completed-icon"></div></div></a><link rel="prerender" href="/workout-overview"></div></div>`
+            contentTab.innerHTML = week;
+            console.log("IT WORKED!")
+          });
 
           let completedRecoveriesArray = [];
           let completedWeek1Array = [];
