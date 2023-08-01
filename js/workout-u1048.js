@@ -855,6 +855,7 @@ window.onload = async () => {
       progress.style.strokeDasharray = circumference;
 
       let counter = repAmount;
+      let percentage = counter / 100 * 100
       repText.innerHTML = repType;
       let timer = setInterval(function () {
         timerText.innerHTML = counter + ".00";
@@ -862,7 +863,7 @@ window.onload = async () => {
           counter--;
           if (counter < 0) {
             playSiren();
-            setProgress(counter++);
+            setProgress(percentage);
             setTimeout(() => {
               nextButton.click();
             }, 1000);
