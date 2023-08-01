@@ -84,8 +84,8 @@ const currentNum = document.getElementById("currentNum");
 const limitNum = document.getElementById("limitNum");
 const plusBtn = document.getElementById("plusBtn");
 let maxLimit;
-let minLimit = 1;
-let amount = 1;
+let minLimit = 0;
+let amount = 0;
 currentNum.innerHTML = amount;
 
 let refreshNum = 0;
