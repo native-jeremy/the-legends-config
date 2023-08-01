@@ -609,7 +609,7 @@ window.onload = async () => {
         }
       }
 
-      if(!repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url === undefined)
+      if(repDataInt.data[parseInt(exercisesParam)].includes("Audio_Source"))
       {
         audioSrc.src =
           repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
