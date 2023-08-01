@@ -23,10 +23,6 @@ window.onload = async () => {
       async function loadData() {
 
         Wized.request.await("Load weeks 25 - HUB", (response) => {
-          
-          weekRes = response;
-
-          if (weekRes === 200) {
             setTimeout(() => {
                 const getData = response;
                 let applyCompleted = getData.data.Completed;
@@ -425,8 +421,6 @@ window.onload = async () => {
                   });
               }
             }, 2500);
-          }
-
       });
     }
   });
