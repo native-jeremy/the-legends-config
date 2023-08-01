@@ -550,7 +550,7 @@ window.onload = async () => {
         }
 
         diffLength =
-          repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
+        repDataInt.data[parseInt(exercisesParam)].length;
         maxLimit = diffLength;
         limitNum.innerHTML = maxLimit;
         console.log(
