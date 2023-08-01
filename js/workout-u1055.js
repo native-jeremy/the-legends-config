@@ -850,7 +850,7 @@ window.onload = async () => {
     // Timer setup function
     function timer() {
       let counter = repAmount;
-      let percentage = counter / counter * 100;
+      let percentage = counter / counter * 2 * 100;
       repText.innerHTML = repType;
       setProgress(percentage);
       let timer = setInterval(function () {
