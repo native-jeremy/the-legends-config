@@ -436,7 +436,7 @@ window.onload = async () => {
                 controlMinusNumber[i].addEventListener("click", () => {
                   if (videoSrcIndex[i] > amrapMinNumm) {
                     videoSrcIndex[i]--;
-                    localStorage.setItem("currentNumber", videoSrcIndex[i]);
+                    localStorage.setItem("currentNumber", String(videoSrcIndex[i]));
                     //videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i]
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
