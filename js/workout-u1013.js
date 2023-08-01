@@ -214,9 +214,9 @@ window.onload = async () => {
       amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
 
       if (amrapBool == "True") {
-        loadData();
+        loadAmrapData();
         
-        async function loadData() {
+        async function loadAmrapData() {
 
           Wized.request.await("Load Exercise Diff", (response) => {
             
@@ -504,6 +504,50 @@ window.onload = async () => {
         let diffStr = currentNum.innerHTML;
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
+
+        loadSingleData();
+        
+        async function loadSingleData() {
+
+          Wized.request.await("Load Exercise Diff", (response) => {
+            
+            diffRes = response;
+            console.log("---------------------------------------");
+            console.log("Exercise Diff Info Response TEMP! ", diffRes);
+
+            /*let diffStr = currentNum.innerHTML;
+            let diffInt = parseInt(diffStr);
+            diffCurrent = diffInt - 1;*/
+
+            exerciseDiffRes = diffRes;
+
+            console.log("Diff Res RETURNED! ", exerciseDiffRes);
+
+            let amrapLength =
+              amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection
+                .length;
+
+            diffLength =
+            diffRes.data[parseInt(exercisesParam)].Video.length;
+            maxLimit = diffLength;
+            limitNum.innerHTML = maxLimit;
+            console.log(
+              "Diff Video Length Exercise:",
+              diffRes.data[parseInt(exercisesParam)].Video.length
+            );
+            console.log(
+              "Diff Length :",
+              diffRes.data.length
+            );
+            //checkAmrapAudio = setInterval(audioCheck, 0);
+            newcookieIndex =
+            diffRes.data[parseInt(exercisesParam)].Video.length;
+            console.log("Amrap length:", newcookieIndex);
+
+            /*vidSrc.src =
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;*/
+          });
+        }
 
         diffLength =
           repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
