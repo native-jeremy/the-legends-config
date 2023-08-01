@@ -537,7 +537,7 @@ window.onload = async () => {
             );
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
-            diffRes.data[parseInt(exercisesParam)].Video.length;
+            repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
             console.log("Amrap length:", newcookieIndex);
 
             /*vidSrc.src =
@@ -555,7 +555,7 @@ window.onload = async () => {
         );
         console.log(
           "Diff Length :",
-          repDataInt.data[parseInt(exercisesParam)].length
+          repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
         );
 
         DiffControlsSingle();
