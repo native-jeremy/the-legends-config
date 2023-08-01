@@ -849,6 +849,11 @@ window.onload = async () => {
 
     // Timer setup function
     function timer() {
+      let progress = document.querySelector('.progress');
+      let radius = progress.r.baseVal.value;
+      let circumference = radius * 2 * Math.PI;
+      progress.style.strokeDasharray = circumference;
+
       let counter = repAmount;
       repText.innerHTML = repType;
       let timer = setInterval(function () {
@@ -857,6 +862,7 @@ window.onload = async () => {
           counter--;
           if (counter < 0) {
             playSiren();
+            setProgress(counter++);
             setTimeout(() => {
               nextButton.click();
             }, 1000);
@@ -868,6 +874,10 @@ window.onload = async () => {
         }
       }, 1000);
     }
+
+      function setProgress(percent) {
+        progress.style.strokeDashoffset = circumference - (percent / 100) * circumference;
+      }
 
     // Rep Count Apply Function
     function repCount() {
