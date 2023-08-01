@@ -849,13 +849,13 @@ window.onload = async () => {
 
     // Timer setup function
     function timer() {
-      let progress = document.querySelector('.progress');
+      let progress = document.querySelector('.progressWheel');
       let radius = progress.r.baseVal.value;
       let circumference = radius * 2 * Math.PI;
       progress.style.strokeDasharray = circumference;
 
       let counter = repAmount;
-      let percentage = counter / 100 * 100
+      let percentage = counter * 100
       repText.innerHTML = repType;
       let timer = setInterval(function () {
         timerText.innerHTML = counter + ".00";
