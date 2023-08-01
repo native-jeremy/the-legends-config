@@ -522,8 +522,9 @@ window.onload = async () => {
             let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
             //let diffStr = currentNum.innerHTML;
             diffCurrent = defaultDiff - 1;
-            currentText = defaultDiff + 1
-            currentNum.innerHTML = currentText;
+            currentText = defaultDiff + 1;
+            realNumber = currentText;
+            currentNum.innerHTML = realNumber;
 
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
@@ -555,7 +556,7 @@ window.onload = async () => {
                 if (diffCurrent < maxLimit) {
                   diffCurrent++;
                   amount++;
-                  currentNum.innerHTML = currentText;
+                  currentNum.innerHTML = realNumber;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
@@ -576,7 +577,7 @@ window.onload = async () => {
                 if (diffCurrent > minLimit) {
                   diffCurrent--;
                   amount--;
-                  currentNum.innerHTML = currentText;
+                  currentNum.innerHTML = realNumber;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
