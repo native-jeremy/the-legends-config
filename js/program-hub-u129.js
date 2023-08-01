@@ -14,7 +14,6 @@ window.onload = async () => {
 
   // Completed Data Load
   Wized.request.await("Load Users", (response) => {
-    setTimeout(() => {
       if (response.status === 200) {
         const getData = response;
         let applyCompleted = getData.data.Completed;
@@ -413,6 +412,5 @@ window.onload = async () => {
           });
         }
       }
-    }, 2000);
   });
 };
