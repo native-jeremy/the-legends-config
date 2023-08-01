@@ -23,6 +23,7 @@ const timerText = document.getElementById("safeTimerDisplay");
 const currentTest = document.getElementById("current");
 const durationTest = document.getElementById("dur");
 const RoundNumberText = document.getElementById("mainNumText");
+const progressEl = document.querySelector('.wheel');
 
 // Param Int Set Variables
 let setIntRoundNum;
@@ -882,6 +883,7 @@ window.onload = async () => {
 
     // Rep Count Apply Function
     function repCount() {
+      progressEl.style.display = "none";
       let counter = repAmount;
       repText.innerHTML = repType;
       timerText.innerHTML = counter;
@@ -1010,6 +1012,7 @@ window.onload = async () => {
     //
     prevButton.style.display = "none";
     prevButtonDisabled.style.display = "flex";
+    progressEl.style.display = "none";
   }
 
   function enableActiveStates() {
@@ -1021,6 +1024,7 @@ window.onload = async () => {
     //
     prevButton.style.display = "flex";
     prevButtonDisabled.style.display = "none";
+    progressEl.style.display = "flex";
   }
 
   // Autoplay Video Function
