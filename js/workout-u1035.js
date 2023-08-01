@@ -565,7 +565,7 @@ window.onload = async () => {
             // Diff Increase Click Controls - Single Exercise
             function DiffControlsSingle() {
               plusBtn.addEventListener("click", function () {
-                if (diffCurrent < maxLimit - 1) {
+                if (diffCurrent < maxLimit) {
                   diffCurrent++;
                   amount++;
                   currentNum.innerHTML = diffCurrent;
