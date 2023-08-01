@@ -85,6 +85,8 @@ const limitNum = document.getElementById("limitNum");
 const plusBtn = document.getElementById("plusBtn");
 let maxLimit;
 let minLimit = 1;
+let amount = 1;
+currentNum.innerHTML = amount;
 
 let refreshNum = 0;
 
@@ -142,9 +144,6 @@ window.onload = async () => {
     let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
-
-    let amount = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
-    currentNum.innerHTML = amount;
 
     if (repDataInt.status === 200) {
       loaderTrigger.click();
@@ -505,6 +504,7 @@ window.onload = async () => {
         let diffStr = currentNum.innerHTML;
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
+        amount = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[diffCurrent]
 
         diffLength =
           repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
