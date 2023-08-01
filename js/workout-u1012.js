@@ -504,7 +504,6 @@ window.onload = async () => {
         let diffStr = currentNum.innerHTML;
         let diffInt = parseInt(diffStr);
         diffCurrent = diffInt - 1;
-        amount = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[diffCurrent]
 
         diffLength =
           repDataInt.data[parseInt(exercisesParam)].Diff_Video.length;
