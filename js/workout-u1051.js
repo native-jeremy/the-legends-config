@@ -849,11 +849,6 @@ window.onload = async () => {
 
     // Timer setup function
     function timer() {
-      let progress = document.querySelector('.progressWheel');
-      let radius = progress.r.baseVal.value;
-      let circumference = radius * 2 * Math.PI;
-      progress.style.strokeDasharray = circumference;
-
       let counter = repAmount;
       let percentage = 0;
       repText.innerHTML = repType;
@@ -878,6 +873,10 @@ window.onload = async () => {
     }
 
       function setProgress(percent) {
+        let progress = document.querySelector('.progressWheel');
+        let radius = progress.r.baseVal.value;
+        let circumference = radius * 2 * Math.PI;
+        progress.style.strokeDasharray = circumference;
         progress.style.strokeDashoffset = circumference - (percent / 100) * circumference;
       }
 
