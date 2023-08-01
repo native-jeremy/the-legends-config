@@ -501,10 +501,6 @@ window.onload = async () => {
       } else {
 
         clearInterval(checkAmrapVideo);
-        let diffStr = currentNum.innerHTML;
-        let diffInt = parseInt(diffStr);
-        diffCurrent = diffInt - 1;
-
         loadSingleData();
         
         async function loadSingleData() {
@@ -522,6 +518,11 @@ window.onload = async () => {
             exerciseDiffRes = diffRes;
 
             console.log("Diff Res RETURNED! ", exerciseDiffRes);
+
+            let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
+            currentNum.innerHTML = defaultDiff;
+            //let diffStr = currentNum.innerHTML;
+            diffCurrent = defaultDiff;
 
             diffLength =
             repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
