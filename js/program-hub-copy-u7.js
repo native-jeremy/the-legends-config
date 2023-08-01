@@ -61,7 +61,7 @@ window.onload = async () => {
           let completeWeek25 = document.querySelector(".complete-week-25");
 
           let workout = document.querySelectorAll(".workouts");
-          let contentTab = document.querySelector(".content");
+          let contentTab = document.querySelector(".tab-1");
           let workoutRender = document.querySelectorAll(".vanilla_render_workout");
           let recovery = document.querySelectorAll(".recoveries");
           let icon = document.querySelectorAll(".completed-icon");
