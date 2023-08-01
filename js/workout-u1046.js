@@ -608,8 +608,8 @@ window.onload = async () => {
               });
             }
 
-            audioSrc.src =
-            repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
+            /*audioSrc.src =
+            repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;*/
             //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
             let exercisesLength =
               amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
@@ -624,6 +624,9 @@ window.onload = async () => {
           });
         }
       }
+
+      audioSrc.src =
+      repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
 
       // Diff Increase Click Controls - Amrap Exercises
       /*function DiffControlsAmrap() {
