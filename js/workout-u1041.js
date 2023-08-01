@@ -522,7 +522,7 @@ window.onload = async () => {
             let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
             //let diffStr = currentNum.innerHTML;
             diffCurrent = defaultDiff - 1;
-            currentText = defaultDiff + 1;
+            currentText = parseInt(defaultDiff) + 1;
             realNumber = currentText;
             currentNum.innerHTML = realNumber;
 
