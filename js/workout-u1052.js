@@ -850,14 +850,14 @@ window.onload = async () => {
     // Timer setup function
     function timer() {
       let counter = repAmount;
-      let percentage = 0;
+      let percentage = counter / counter * 100;
       repText.innerHTML = repType;
       setProgress(percentage);
       let timer = setInterval(function () {
         timerText.innerHTML = counter + ".00";
         if (!timerText.classList.contains("pausetime")) {
           counter--;
-          setProgress(counter / 100 * 100);
+          setProgress(counter / counter * 100);
           if (counter < 0) {
             playSiren();
             setTimeout(() => {
