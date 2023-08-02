@@ -11,7 +11,7 @@
 let userData;
 let users;
 let diffRes;
-const dynamicContent = document.querySelector('.dynamic_content')l
+const dynamicContent = document.querySelector('.dynamic_content')
 
 window.onload = async () => {
     //const startNextButton = document.getElementById("startNextWorkout");
