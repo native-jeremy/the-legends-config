@@ -8,6 +8,10 @@
 ----------------------------------------------------------------
 */
 
+let userData;
+let users;
+let diffRes;
+
 window.onload = async () => {
     //const startNextButton = document.getElementById("startNextWorkout");
     startNext = false;
@@ -16,7 +20,9 @@ window.onload = async () => {
     Wized.request.await("Load Users Program Hub", (response) => {
        console.log("Users ", response.data.Add_Program[0]);
 
-       //let users = response.data.Add_Program[0];
+       userData = response.data;
+
+       users = userData.Add_Program[0];
 
        loadAmrapData();
           
@@ -24,7 +30,7 @@ window.onload = async () => {
   
        Wized.request.await("Load weeks - HUB", (response) => {
 
-       let = diffRes = response.data;
+       diffRes = response.data;
 
        //const program = users.filter(checkProgram);
 
@@ -34,7 +40,7 @@ window.onload = async () => {
        }
               
        console.log("Weeks Response ", diffRes);
-       //console.log("Users Program Array ", program);
+       console.log("Users Program Array ", users);
 
        for (let i = 0; i < diffRes.length; i++) {
 
