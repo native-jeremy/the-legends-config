@@ -35,9 +35,14 @@ window.onload = async () => {
        console.log("Users Response ", users[0]);
        console.log("Weeks Response ", diffRes);
 
-       diffRes.forEach(diff => {
-        diff.filter(diff.Program[0] = users[0])
-       });
+       for (let k = 0; k < diffRes.length; k++) {
+        const programSelected = diffRes.filter(checkDiffProgram);
+       };
+
+       function checkDiffProgram(diffProgram)
+       {
+        return diffProgram.Program[0] == users[0];
+       }
 
        for (let i = 0; i < diffRes.length; i++) {
 
@@ -75,6 +80,7 @@ window.onload = async () => {
 
         console.log("Weeks " + i + " Filtered Array", weeks);
         console.log("Users Program Array ", program);
+        console.log("Users Program Selected ", programSelected);
        }
       });
      }
