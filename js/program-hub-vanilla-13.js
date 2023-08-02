@@ -33,10 +33,10 @@ window.onload = async () => {
             let div = document.createElement("div");
             let h2 = document.createElement("h2");
 
-            h2.innerHTML = weeks[m];
+            h2.innerHTML = weeks[m].Week;
             div.append(h2);
             document.body.append(div);
-            console.log('Weeks: ' + weeks[m]);
+            console.log('Weeks: ' + weeks[m].Week);
         }
        //}
        
