@@ -16,21 +16,25 @@ window.onload = async () => {
     Wized.request.await("Load Users", (response) => {
        console.log("Users ", response);
 
+       let users = response.data;
+
        loadAmrapData();
           
        async function loadAmrapData() {
   
        Wized.request.await("Load weeks - HUB", (response) => {
 
+       diffRes = response.data;
+
        const program = diffRes.filter(checkProgram);
 
        function checkWeeks(currentProgram)
        {
-        return currentProgram.Program == "week " + [i];
+        return currentProgram.Program == users.Add_Program[0];
        }
               
-       diffRes = response.data;
        console.log("Weeks Response ", diffRes);
+       console.log("Users Program Array ", program);
 
        for (let i = 0; i < diffRes.length; i++) {
 
