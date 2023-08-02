@@ -16,7 +16,7 @@ window.onload = async () => {
           
        async function loadAmrapData() {
   
-       Wized.request.await("Load weeks - HUB", (response) => {
+       Wized.request.await("Load Program", (response) => {
               
        diffRes = response.data;
        console.log("Weeks Response ", diffRes);
@@ -30,7 +30,7 @@ window.onload = async () => {
 
         function checkWeeks(week)
         {
-         return week.Week == "week " + [i];
+         return week.Weeks == "week " + [i];
         }
 
         for (let m = 0; m < weeks.length; m++) {
