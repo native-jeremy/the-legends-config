@@ -22,7 +22,7 @@ window.onload = async () => {
 
        userData = response.data;
 
-       users = userData.Add_Program[0];
+       users = userData.Add_Program;
 
        loadAmrapData();
           
@@ -32,7 +32,7 @@ window.onload = async () => {
 
        diffRes = response.data;
            
-       console.log("Users Response ", users);
+       console.log("Users Response ", users.Add_Program[0]);
        console.log("Weeks Response ", diffRes);
 
        for (let i = 0; i < diffRes.length; i++) {
