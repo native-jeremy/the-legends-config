@@ -31,22 +31,21 @@ window.onload = async () => {
        Wized.request.await("Load weeks - HUB", (response) => {
 
        diffRes = response.data;
-
-       const program = users.filter(checkProgram);
-
-       function checkProgram(currentProgram)
-       {
-        return currentProgram == diffRes.Program[0];
-       }
            
        console.log("Users Response ", users);
        console.log("Weeks Response ", diffRes);
-       console.log("Users Program Array ", program);
 
        for (let i = 0; i < diffRes.length; i++) {
 
         let div = document.createElement("div");
         document.body.append(div);
+
+        const program = users.filter(checkProgram);
+
+        function checkProgram(currentProgram)
+        {
+         return currentProgram == diffRes.Program[0];
+        }
 
         const weeks = diffRes.filter(checkWeeks);
 
@@ -66,6 +65,7 @@ window.onload = async () => {
         }
 
         console.log("Weeks " + i + " Filtered Array", weeks);
+        console.log("Users Program Array ", program);
        }
       });
      }
