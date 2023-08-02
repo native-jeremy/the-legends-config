@@ -18,7 +18,7 @@ window.onload = async () => {
   
        Wized.request.await("Load weeks - HUB", (response) => {
               
-       diffRes = response;
+       diffRes = response.data;
 
        const weeks = diffRes.filter(checkWeeks);
 
