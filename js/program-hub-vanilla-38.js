@@ -44,7 +44,7 @@ window.onload = async () => {
 
         function checkProgram(currentProgram)
         {
-         return currentProgram == diffRes.Program[0];
+         return currentProgram == diffRes[i].Program[0];
         }
 
         const weeks = diffRes.filter(checkWeeks);
