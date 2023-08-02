@@ -26,9 +26,9 @@ window.onload = async () => {
 
        diffRes = response.data;
 
-       const program = diffRes.filter(checkProgram);
+       const program = users.filter(checkProgram);
 
-       function checkWeeks(currentProgram)
+       function checkProgram(currentProgram)
        {
         return currentProgram.Program == users.Add_Program[0];
        }
