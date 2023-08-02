@@ -21,7 +21,7 @@ window.onload = async () => {
        diffRes = response.data;
        console.log("Weeks Response ", diffRes);
 
-       for (let i = 0; i < diffRes.length; i++) {
+       for (let i = 0; i < diffRes.Weeks.length; i++) {
 
         let div = document.createElement("div");
         document.body.append(div);
