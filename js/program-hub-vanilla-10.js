@@ -28,10 +28,11 @@ window.onload = async () => {
        }
 
        for (let i = 0; i < diffRes.length; i++) {
-        let div = document.createElement("div");
-        let h2 = document.createElement("h2");
 
         for (let m = 0; m < weeks.length; m++) {
+            let div = document.createElement("div");
+            let h2 = document.createElement("h2");
+            
             h2.textContent = weeks[i];
             div.append(h2);
             document.body.append(div);
