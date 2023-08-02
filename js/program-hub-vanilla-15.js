@@ -39,7 +39,7 @@ window.onload = async () => {
             console.log('Weeks: ' + weeks[m].Week);
         }
 
-        console.log("Weeks Filtered Array ", weeks);
+        console.log("Weeks " + i + " Filtered Array", weeks);
        }
        
        console.log("Weeks Response ", diffRes);
