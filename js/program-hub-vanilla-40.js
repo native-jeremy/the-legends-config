@@ -22,7 +22,7 @@ window.onload = async () => {
 
        userData = response.data;
 
-       users = userData;
+       users = userData.Add_Program;
 
        loadAmrapData();
           
@@ -44,7 +44,7 @@ window.onload = async () => {
 
         function checkProgram(currentProgram)
         {
-         return currentProgram.Add_Program[0] == diffRes[i].Program[0];
+         return currentProgram[0] == diffRes[i].Program[0];
         }
 
         const weeks = diffRes.filter(checkWeeks);
