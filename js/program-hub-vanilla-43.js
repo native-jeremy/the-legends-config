@@ -35,6 +35,8 @@ window.onload = async () => {
        console.log("Users Response ", users[0]);
        console.log("Weeks Response ", diffRes);
 
+       diffRes.filter(diffRes[i].Program[0] == users[0])
+
        for (let i = 0; i < diffRes.length; i++) {
 
         let div = document.createElement("div");
