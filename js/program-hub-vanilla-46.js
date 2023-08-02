@@ -36,7 +36,7 @@ window.onload = async () => {
        console.log("Weeks Response ", diffRes);
 
        diffRes.forEach(diff => {
-        diffRes.filter(diff.Program[0] = users[0])
+        diff.filter(diff.Program[0] = users[0])
        });
 
        for (let i = 0; i < diffRes.length; i++) {
