@@ -27,17 +27,18 @@ window.onload = async () => {
         return week.Week == "week 1";
        }
 
-       for (let i = 0; i < diffRes.length; i++) {
+       //for (let i = 0; i < diffRes.length; i++) {
 
         for (let m = 0; m < weeks.length; m++) {
             let div = document.createElement("div");
             let h2 = document.createElement("h2");
-            
-            h2.textContent = weeks[i];
+
+            h2.innerHTML = weeks[i];
             div.append(h2);
             document.body.append(div);
+            console.log('Weeks: ' + weeks[i]);
         }
-       }
+       //}
        
        console.log("Weeks Response ", diffRes);
        console.log("Weeks Filtered Array ", weeks);
