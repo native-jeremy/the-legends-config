@@ -12,6 +12,17 @@ window.onload = async () => {
   const startNextButton = document.getElementById("startNextWorkout");
   startNext = false;
 
+     loadAmrapData();
+        
+     async function loadAmrapData() {
+
+     Wized.request.await("Load weeks - HUB", (response) => {
+            
+     diffRes = response;
+     console.log("Weeks Response ", diffRes);
+    });
+   }
+
   // Completed Data Load
   Wized.request.await("Load Users", (response) => {
     setTimeout(() => {
@@ -21,16 +32,6 @@ window.onload = async () => {
         let applyWeek = getData.data.Completed_Week;
         let applyName = getData.data.Completed_Name;
         let applyWorkout = getData.data.Completed_Workout_ID;
-                loadAmrapData();
-        
-        async function loadAmrapData() {
-
-          Wized.request.await("Load weeks - HUB", (response) => {
-            
-            diffRes = response;
-            console.log("Weeks Response ", diffRes);
-          });
-        }
 
         if (
           applyCompleted &&
