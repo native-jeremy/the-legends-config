@@ -58,11 +58,13 @@ window.onload = async () => {
             if (diffRes[i].Week == weeks[m].Week)
             {
                 let h2 = document.createElement("h2");
-                let h3 = document.createElement("h3");
                 h2.innerHTML = weeks[m].Week;
-                h3.innerHTML = weeks[m].Workout_Names[m];
                 div.append(h2);
-                div.append(h3);
+                weeks[m].Workout_Names.forEach(Title => {
+                    let h3 = document.createElement("h3");
+                    h3.innerHTML = Title;
+                    div.append(h3);
+                });
             }
             console.log('Weeks: ' + weeks[m].Week);
         }
