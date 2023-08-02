@@ -37,6 +37,7 @@ window.onload = async () => {
 
        for (let k = 0; k < diffRes.length; k++) {
         const programSelected = diffRes.filter(checkDiffProgram);
+        console.log("Users Program Selected ", programSelected);
        };
 
        function checkDiffProgram(diffProgram)
@@ -80,7 +81,6 @@ window.onload = async () => {
 
         console.log("Weeks " + i + " Filtered Array", weeks);
         console.log("Users Program Array ", program);
-        console.log("Users Program Selected ", programSelected);
        }
       });
      }
