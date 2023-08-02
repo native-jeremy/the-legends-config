@@ -18,9 +18,9 @@ window.onload = async () => {
 
        let users = response.data;
 
-       loadAmrapData();
+       loadAmrapData(users);
           
-       async function loadAmrapData() {
+       async function loadAmrapData(users) {
   
        Wized.request.await("Load weeks - HUB", (response) => {
 
