@@ -14,7 +14,7 @@ window.onload = async () => {
 
      // Completed Data Load
     Wized.request.await("Load Users Program Hub", (response) => {
-       console.log("Users ", response.Add_Program);
+       console.log("Users ", response);
 
        //let users = response.data.Add_Program[0];
 
