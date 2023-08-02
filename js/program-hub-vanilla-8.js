@@ -24,7 +24,7 @@ window.onload = async () => {
 
        function checkWeeks(week)
        {
-        return week == "week 1";
+        return week.Week == "week 1";
        }
        
        console.log("Weeks Response ", diffRes);
