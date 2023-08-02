@@ -38,10 +38,11 @@ window.onload = async () => {
             document.body.append(div);
             console.log('Weeks: ' + weeks[m].Week);
         }
+
+        console.log("Weeks Filtered Array ", weeks);
        }
        
        console.log("Weeks Response ", diffRes);
-       console.log("Weeks Filtered Array ", weeks);
       });
      }
   
