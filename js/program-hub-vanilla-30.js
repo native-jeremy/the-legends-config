@@ -34,7 +34,7 @@ window.onload = async () => {
        }
               
        console.log("Weeks Response ", diffRes);
-       console.log("Users Program Array ", program);
+       //console.log("Users Program Array ", program);
 
        for (let i = 0; i < diffRes.length; i++) {
 
