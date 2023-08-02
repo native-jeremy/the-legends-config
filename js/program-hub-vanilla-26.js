@@ -13,14 +13,14 @@ window.onload = async () => {
     startNext = false;
 
      // Completed Data Load
-    Wized.request.await("Load Users", (response) => {
+    Wized.request.await("Load Users Program Hub", (response) => {
        console.log("Users ", response);
 
        let users = response.data;
 
-       loadAmrapData(users);
+       loadAmrapData();
           
-       async function loadAmrapData(users) {
+       async function loadAmrapData() {
   
        Wized.request.await("Load weeks - HUB", (response) => {
 
