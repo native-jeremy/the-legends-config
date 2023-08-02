@@ -16,7 +16,7 @@ window.onload = async () => {
     Wized.request.await("Load Users Program Hub", (response) => {
        console.log("Users ", response);
 
-       let users = response.data;
+       let users = response.data.Add_Program[0];
 
        loadAmrapData();
           
@@ -30,7 +30,7 @@ window.onload = async () => {
 
        function checkProgram(currentProgram)
        {
-        return currentProgram.Add_Program[0] == diffRes.Program[0];
+        return currentProgram == diffRes.Program[0];
        }
               
        console.log("Weeks Response ", diffRes);
