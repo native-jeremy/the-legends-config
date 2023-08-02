@@ -11,6 +11,7 @@
 let userData;
 let users;
 let diffRes;
+const dynamicContent = document.querySelector('.dynamic_content')l
 
 window.onload = async () => {
     //const startNextButton = document.getElementById("startNextWorkout");
@@ -48,7 +49,7 @@ window.onload = async () => {
        for (let i = 0; i < diffRes.length; i++) {
 
         let div = document.createElement("div");
-        document.body.append(div);
+        dynamicContent.append(div);
 
         const program = users.filter(checkProgram);
 
