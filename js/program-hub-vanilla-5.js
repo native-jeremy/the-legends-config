@@ -20,7 +20,12 @@ window.onload = async () => {
               
        diffRes = response;
 
-       const weeks = diffRes.filter(diffRes => diffRes.data.include("week 1"));
+       const weeks = diffRes.filter(checkWeeks);
+
+       function checkWeeks(week)
+       {
+        return weeks.indexOf(week) !== -1;
+       }
        
        console.log("Weeks Response ", diffRes);
        console.log("Weeks Filtered Array ", weeks);
