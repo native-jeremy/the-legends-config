@@ -20,14 +20,14 @@ window.onload = async () => {
               
        diffRes = response.data;
 
-       const weeks = diffRes.filter(checkWeeks);
+       for (let i = 0; i < diffRes.length; i++) {
 
-       function checkWeeks(week)
-       {
-        return week.Week == "week 1";
-       }
+        const weeks = diffRes.filter(checkWeeks);
 
-       //for (let i = 0; i < diffRes.length; i++) {
+        function checkWeeks(week)
+        {
+         return week.Week == "week " + [i];
+        }
 
         for (let m = 0; m < weeks.length; m++) {
             let div = document.createElement("div");
@@ -38,7 +38,7 @@ window.onload = async () => {
             document.body.append(div);
             console.log('Weeks: ' + weeks[m].Week);
         }
-       //}
+       }
        
        console.log("Weeks Response ", diffRes);
        console.log("Weeks Filtered Array ", weeks);
