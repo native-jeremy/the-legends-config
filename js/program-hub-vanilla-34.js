@@ -32,15 +32,16 @@ window.onload = async () => {
 
        diffRes = response.data;
 
-       //const program = users.filter(checkProgram);
+       const program = users.filter(checkProgram);
 
        function checkProgram(currentProgram)
        {
         return currentProgram == diffRes.Program[0];
        }
-              
+           
+       console.log("Users Response ", users);
        console.log("Weeks Response ", diffRes);
-       console.log("Users Program Array ", users);
+       console.log("Users Program Array ", program);
 
        for (let i = 0; i < diffRes.length; i++) {
 
