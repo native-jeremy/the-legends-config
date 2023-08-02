@@ -24,13 +24,13 @@ window.onload = async () => {
   
        Wized.request.await("Load weeks - HUB", (response) => {
 
-       diffRes = response.data;
+       let = diffRes = response.data;
 
        const program = users.filter(checkProgram);
 
        function checkProgram(currentProgram)
        {
-        return currentProgram.Program == users.Add_Program[0];
+        return currentProgram.Add_Program[0] == diffRes.Program[0];
        }
               
        console.log("Weeks Response ", diffRes);
