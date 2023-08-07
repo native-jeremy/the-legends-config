@@ -459,7 +459,7 @@ window.onload = async () => {
                 });
 
                 vidSrc.src =
-            exerciseDiffRes.data[i].Video[videoSrcIndex[videoIndex]].url;
+            exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
 
                 checkAmrapVideo = setInterval(() => {
                   
