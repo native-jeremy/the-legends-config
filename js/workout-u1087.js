@@ -413,7 +413,7 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (videoSrcIndex[i] < amrapMax - 1) {
+                  if (videoSrcIndex[i] < amrapMax) {
                     videoSrcIndex[i]++;
                     localStorage.setItem("diffStart", videoSrcIndex[i]);
                     //videoSrcIndex[i] = currentNumber;
