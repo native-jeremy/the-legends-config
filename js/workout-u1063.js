@@ -234,7 +234,7 @@ window.onload = async () => {
             console.log("Diff Res RETURNED! ", exerciseDiffRes);
 
             let amrapLength =
-              amrapResponse.data[parseInt(videoIndex)].Diff_Video.length;
+              amrapResponse.data[parseInt(exercisesParam)].Diff_Video.length;
 
             diffLength =
             diffRes.data[parseInt(videoIndex)].Video.length;
@@ -242,7 +242,7 @@ window.onload = async () => {
             limitNum.innerHTML = maxLimit;
             console.log(
               "Diff Video Length Exercise:",
-              diffRes.data[parseInt(videoIndex)].Video.length
+              diffRes.data[parseInt(exercisesParam)].Video.length
             );
             console.log(
               "Diff Length :",
@@ -250,7 +250,7 @@ window.onload = async () => {
             );
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
-            diffRes.data[parseInt(videoIndex)].Video.length;
+            diffRes.data[parseInt(exercisesParam)].Video.length;
             console.log("Amrap length:", newcookieIndex);
 
             let currentNumber = 0;
@@ -264,7 +264,7 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = repDataInt.data[parseInt(videoIndex)].Default_Diff_Level[i];
+                let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[i];
                 videoSrcIndex.push(defaultDiff);
               }
             }
@@ -459,7 +459,7 @@ window.onload = async () => {
                 });
 
                 vidSrc.src =
-            exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[videoIndex]].url;
+            exerciseDiffRes.data[parseInt(exercisesParam)].Video[videoSrcIndex[videoIndex]].url;
 
                 checkAmrapVideo = setInterval(() => {
                   
