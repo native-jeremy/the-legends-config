@@ -242,7 +242,7 @@ window.onload = async () => {
             limitNum.innerHTML = maxLimit;
             console.log(
               "Diff Video Length Exercise:",
-              diffRes.data[parseInt(exercisesParam)].Video.length
+              diffRes.data[parseInt(videoIndex)].Video.length
             );
             console.log(
               "Diff Length :",
