@@ -234,23 +234,23 @@ window.onload = async () => {
             console.log("Diff Res RETURNED! ", exerciseDiffRes);
 
             let amrapLength =
-              amrapResponse.data[parseInt(exercisesParam)].Diff_Video.length;
+              amrapResponse.data[parseInt(videoIndex)].Diff_Video.length;
 
             diffLength =
-            exerciseDiffRes.data[parseInt(exercisesParam)].Video.length;
+            diffRes.data[parseInt(videoIndex)].Video.length;
             maxLimit = diffLength;
             limitNum.innerHTML = maxLimit;
             console.log(
               "Diff Video Length Exercise:",
-              exerciseDiffRes.data[parseInt(exercisesParam)].Video.length
+              diffRes.data[parseInt(videoIndex)].Video.length
             );
             console.log(
               "Diff Length :",
-              exerciseDiffRes.data.length
+              diffRes.data.length
             );
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
-            exerciseDiffRes.data[parseInt(exercisesParam)].Video.length;
+            diffRes.data[parseInt(videoIndex)].Video.length;
             console.log("Amrap length:", newcookieIndex);
 
             let currentNumber = 0;
@@ -264,7 +264,7 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[i];
+                let defaultDiff = repDataInt.data[parseInt(videoIndex)].Default_Diff_Level[i];
                 videoSrcIndex.push(defaultDiff);
               }
             }
