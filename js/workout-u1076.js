@@ -277,12 +277,12 @@ window.onload = async () => {
 
                 //controlNumber.push(currentNumber);
                 let content = document.querySelector("#controls");
-                let sortedAmrapTitle =
+                /*let sortedAmrapTitle =
                   repDataInt.data[
                     parseInt(exercisesParam)
-                  ].Diff_Exercise_Lookup.reverse();
-                sortedAmrapTitle = exerciseDiffRes.Exercise_Name;
-                let amrapResTitle = sortedAmrapTitle[i];
+                  ].Diff_Exercise_Lookup.reverse();*/
+                let sortedAmrapTitle = exerciseDiffRes.Exercise_Name[i];
+                let amrapResTitle = sortedAmrapTitle;
                 console.log("Data", sortedAmrapTitle);
                 console.log("Title", amrapResTitle);
 
