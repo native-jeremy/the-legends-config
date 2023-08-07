@@ -317,7 +317,7 @@ window.onload = async () => {
                   currentNumber = localStorage.getItem("diffStart");
                 }
                 else {
-                  currentNumber = videoSrcIndex[i] - 1;
+                  currentNumber = videoSrcIndex[i];
                 }
 
                 //currentNumber = videoSrcIndex[i];
