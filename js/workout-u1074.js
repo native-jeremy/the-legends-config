@@ -282,6 +282,8 @@ window.onload = async () => {
                     parseInt(exercisesParam)
                   ].Diff_Exercise_Lookup.reverse();
                 let amrapResTitle = sortedAmrapTitle[i];
+                console.log("Data", sortedAmrapTitle);
+                console.log("Title", amrapResTitle);
 
                 let amrapControl;
                 let amrapHeader;
