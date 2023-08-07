@@ -234,8 +234,7 @@ window.onload = async () => {
             console.log("Diff Res RETURNED! ", exerciseDiffRes);
 
             let amrapLength =
-              amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection
-                .length;
+              amrapResponse.data[parseInt(exercisesParam)].Diff_Video.length;
 
             diffLength =
             diffRes.data[parseInt(exercisesParam)].Video.length;
