@@ -644,7 +644,7 @@ window.onload = async () => {
       console.log("---------------------------------------");
       console.log(
         "Rounds",
-        amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]
+        //amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]
       );
 
       /* WORK IN PROGRESS CODE Thursday 29th June 2023 
