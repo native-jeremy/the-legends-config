@@ -299,7 +299,7 @@ window.onload = async () => {
                 let amrapPlusArrow;
                 let amrapMinus;
                 let amrapMinusArrow;
-                let amrapMinNumm = 1;
+                let amrapMinNumm = 0;
                 let ammrapLimitNumm = maxLimit;
 
                 //Amrap Control Div "body"
@@ -373,13 +373,16 @@ window.onload = async () => {
                 //Current Diffculty Text "1" - example
                 amrapCounter = document.createElement("div");
                 amrapCounter.classList.add("num", "current", "current-num");
-                if (localStorage.getItem("diffStart") !== null)
+                
+                /*if (localStorage.getItem("diffStart") !== null)
                 {
                   amrapCounter.innerHTML = localStorage.getItem("diffStart");
                 }
                 else {
                   amrapCounter.innerHTML = videoSrcIndex[i];
-                }
+                }*/
+
+                amrapCounter.innerHTML = videoSrcIndex[i];
 
                 amrapTrigger.appendChild(amrapCounter);
 
