@@ -664,6 +664,13 @@ window.onload = async () => {
       console.log("---------------------------------------");
       console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
+      document.body.addEventListener("keydown", () => {
+        if(keyCode == '40')
+        {
+          nextButton.click();
+        }
+      });
+
       nextButton.addEventListener("click", function () {
         updateParams();
 
