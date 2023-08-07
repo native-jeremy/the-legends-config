@@ -458,6 +458,8 @@ window.onload = async () => {
                   }
                 });
 
+                console.log("Video Src Array", videoIndex);
+
                 vidSrc.src =
             exerciseDiffRes.data[i].Video[videoSrcIndex[videoIndex]].url;
 
