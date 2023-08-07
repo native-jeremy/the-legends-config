@@ -664,10 +664,10 @@ window.onload = async () => {
       console.log("---------------------------------------");
       console.log("Is The Selected Exercise An Amrap:", amrapBool);
 
-      document.body.addEventListener("keydown", checkKey(e));
+      document.body.addEventListener("keydown", checkKey(event));
 
-        function checkKey(e) {
-        let key = e.key;
+        function checkKey(event) {
+        let key = event.key;
         if(key == 'CAPS LOCK')
         {
           nextButton.click();
