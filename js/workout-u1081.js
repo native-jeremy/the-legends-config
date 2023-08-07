@@ -254,7 +254,7 @@ window.onload = async () => {
             console.log("Amrap length:", newcookieIndex);
 
             let currentNumber = 0;
-            let currentNumberText;
+            let currentNumberText = currentNumber + 1;
 
             let controlPlusNumber = [];
             let controlMinusNumber = [];
