@@ -281,8 +281,7 @@ window.onload = async () => {
                   repDataInt.data[
                     parseInt(exercisesParam)
                   ].Diff_Exercise_Lookup.reverse();*/
-                let reverse = exerciseDiffRes.data[i].reverse();
-                let sortedAmrapTitle = reverse.Exercise_Name;
+                let sortedAmrapTitle = exerciseDiffRes.data[i].Exercise_Name;
                 let amrapResTitle = sortedAmrapTitle;
                 console.log("Data", sortedAmrapTitle);
                 console.log("Title", amrapResTitle);
