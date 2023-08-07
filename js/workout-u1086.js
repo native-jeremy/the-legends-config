@@ -393,7 +393,7 @@ window.onload = async () => {
                 //Limit Text
                 amrapLimit = document.createElement("div");
                 amrapLimit.classList.add("num", "limit", "limit-num");
-                amrapLimit.innerHTML = amrapMax - 1;
+                amrapLimit.innerHTML = amrapMax;
 
                 amrapTrigger.appendChild(amrapLimit);
 
