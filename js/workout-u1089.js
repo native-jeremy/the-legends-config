@@ -317,7 +317,7 @@ window.onload = async () => {
                   currentNumber = localStorage.getItem("diffStart");
                 }
                 else {
-                  currentNumber = videoSrcIndex[i];
+                  currentNumber = videoSrcIndex[i] - 1;
                 }
 
                 //currentNumber = videoSrcIndex[i];
@@ -420,7 +420,7 @@ window.onload = async () => {
                     videoSrcIndex[i]++;
                     localStorage.setItem("diffStart", videoSrcIndex[i]);
                     //videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i]
+                    currentNumberText = videoSrcIndex[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
@@ -444,7 +444,7 @@ window.onload = async () => {
                     videoSrcIndex[i]--;
                     localStorage.setItem("diffStart", videoSrcIndex[i]);
                     //videoSrcIndex[i] = currentNumber;
-                    currentNumberText = videoSrcIndex[i]
+                    currentNumberText = videoSrcIndex[i] + 1
                     //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
                     /*if (videoIndex === videoSrcIndex[i])
