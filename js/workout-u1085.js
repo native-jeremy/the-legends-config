@@ -254,7 +254,7 @@ window.onload = async () => {
             console.log("Amrap length:", newcookieIndex);
 
             let currentNumber = 0;
-            let currentNumberText = currentNumber + 1;
+            let currentNumberText = currentNumber;
 
             let controlPlusNumber = [];
             let controlMinusNumber = [];
@@ -299,7 +299,7 @@ window.onload = async () => {
                 let amrapPlusArrow;
                 let amrapMinus;
                 let amrapMinusArrow;
-                let amrapMinNumm = 0;
+                let amrapMinNumm = 1;
                 let ammrapLimitNumm = maxLimit;
 
                 //Amrap Control Div "body"
@@ -663,17 +663,6 @@ window.onload = async () => {
       console.log("Current Difficulty:", diffCurrent);
       console.log("---------------------------------------");
       console.log("Is The Selected Exercise An Amrap:", amrapBool);
-
-      document.body.addEventListener("keydown", checkKey(event));
-
-        function checkKey(event) {
-        let key = event.key;
-        if(key == 'CAPS LOCK')
-        {
-          nextButton.click();
-        }
-      }
-      
 
       nextButton.addEventListener("click", function () {
         updateParams();
