@@ -250,7 +250,7 @@ window.onload = async () => {
             );
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
-            diffRes.data[parseInt(exercisesParam)].Video.length;
+            diffRes.data[parseInt(videoIndex)].Video.length;
             console.log("Amrap length:", newcookieIndex);
 
             let currentNumber = 0;
@@ -264,7 +264,7 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[i];
+                let defaultDiff = repDataInt.data[parseInt(videoIndex)].Default_Diff_Level[i];
                 videoSrcIndex.push(defaultDiff);
               }
             }
