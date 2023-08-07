@@ -237,20 +237,20 @@ window.onload = async () => {
               amrapResponse.data[parseInt(exercisesParam)].Diff_Video.length;
 
             diffLength =
-            diffRes.data[parseInt(exercisesParam)].Video.length;
+            exerciseDiffRes.data[parseInt(exercisesParam)].Video.length;
             maxLimit = diffLength;
             limitNum.innerHTML = maxLimit;
             console.log(
               "Diff Video Length Exercise:",
-              diffRes.data[parseInt(exercisesParam)].Video.length
+              exerciseDiffRes.data[parseInt(exercisesParam)].Video.length
             );
             console.log(
               "Diff Length :",
-              diffRes.data.length
+              exerciseDiffRes.data.length
             );
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
-            diffRes.data[parseInt(exercisesParam)].Video.length;
+            exerciseDiffRes.data[parseInt(exercisesParam)].Video.length;
             console.log("Amrap length:", newcookieIndex);
 
             let currentNumber = 0;
