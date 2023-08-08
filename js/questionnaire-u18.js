@@ -1,4 +1,4 @@
-window.onload = async () => {
+/*window.onload = async () => {
     Wized.request.await("Load Users", (response) => {
       const userData = response;
       console.log("User Data ", userData);
@@ -287,4 +287,47 @@ window.onload = async () => {
         window.location.origin + window.location.pathname + window.location.search
       );
     }
-  });
+  });*/
+
+// New Setup For Checkboxes
+
+// Value array created to hold data
+let valueArray = [];
+
+// Checkbox element declaration
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+// Checkbox event listener for change event
+
+for (let i = 0; i < checkboxes.length; i++) {
+    const checkbox = checkboxes[i];
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked === true) {
+            console.log('Checkbox Enabled =', checkbox.name);
+            valueArray.push(checkbox.name);
+            console.log('Value Array =', valueArray);
+        }
+        else {
+            console.clear("");
+            const findIndex = valueArray.indexOf(checkbox.name);
+            if (findIndex > -1)
+            {
+                valueArray.splice(findIndex, 1);
+                console.log('Value Array =', valueArray);
+            }
+        }
+    });
+}
+
+/*setInterval(() => {
+if (valueArray.length == 2)
+{
+        valueArray.forEach(item => {
+        let h2 = document.createElement('h2');
+        h2.textContent = item
+        document.body.append(h2);
+    });
+}
+}, 1000);*/
+
+
