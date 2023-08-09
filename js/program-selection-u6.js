@@ -2,7 +2,8 @@ window.onload = async () => {
     let user;
     let programData;
     let programArray = [];
-    let triggerModal = document.getElementById("trigger")
+    let triggerModal = document.getElementById("triggerModal");
+    let triggerLoader = document.getElementById("trigger");
     let wrapper = document.querySelector(".swiper-wrapper");
     // Program Selection Request
     Wized.request.await("Load Users Program", (response) => {
@@ -224,8 +225,10 @@ window.onload = async () => {
               /////////////////////////////////////////
               swiper.on("slideChange", function () {
               Webflow.require("ix2").init();
+
+              triggerLoader.click();
               /*slideBtn_Left.classList.remove("swiper-button-lock");
-                                                      slideBtn_Right.classList.remove("swiper-button-lock");*/
+              slideBtn_Right.classList.remove("swiper-button-lock");*/
               });
           }, 2000);
   
@@ -239,4 +242,4 @@ window.onload = async () => {
         }
       });
     });
-  };
+  };  
