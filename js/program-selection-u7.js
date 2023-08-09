@@ -2,6 +2,7 @@ window.onload = async () => {
     let user;
     let programData;
     let programArray = [];
+    let sliderControls = document.querySelector('.slider-controls');
     let triggerModal = document.getElementById("triggerModal");
     let triggerLoader = document.getElementById("trigger");
     let wrapper = document.querySelector(".swiper-wrapper");
@@ -42,6 +43,7 @@ window.onload = async () => {
         }
         if (programArray.length > 0) {
           let programMatch = programArray;
+          sliderControls.style.display = "flex";
   
           programArray.forEach((item) => {
               item = document.createElement("div");
