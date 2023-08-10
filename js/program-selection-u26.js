@@ -43,6 +43,10 @@ window.onload = async () => {
                         Title: program.Title,
                         Image: program.Image
                     }
+
+                    programArray.forEach((item) => {
+                        console.log("Object Item", item);
+                    });
                    
                     //programObject.push(program);
                     programArray[num] = programObject;
