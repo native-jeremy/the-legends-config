@@ -48,7 +48,7 @@ window.onload = async () => {
                     }
                    
                     //programObject.push(program);
-                    programArray.push(new match(program.ID, program.Title, program.Image));
+                    programArray.push(new match(program.ID, program.Weeks, program.Title, program.Image));
                     console.log(
                       "Found A Match Here Is Your Program! =",
                       `[ ${programArray} ]`
