@@ -223,7 +223,7 @@ window.onload = async () => {
                                       </div>
                                   </div>
                               </div><a
-                                 class="button-style-1 w-button selection-button id="selection-button${num}"
+                                 class="button-style-1 w-button selection-button"
                                  >Let’s get started</a><a
                                   href="/questionnaire" class="button-style-5 w-button">back to programs</a>
                               <link rel="prerender" href="/questionnaire">
@@ -233,7 +233,7 @@ window.onload = async () => {
                   `;
               wrapper.append(item);
               setTimeout(() => {
-                let selectionButton = document.getElementById("selection-button`${num}`");
+                let selectionButton = document.querySelectorAll('.selection-button')[num];
                 selectionButton.addEventListener('click', () => {
                 console.log("Cliked This Button!")
                 Wized.data.setCookie("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
