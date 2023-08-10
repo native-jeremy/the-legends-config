@@ -1,8 +1,8 @@
 window.onload = async () => {
     let user;
     let programData;
-    let programArray = [];
-    let programObject = {};
+    let programArray = new Array();
+    let programObject = new Object();
     let num = 0;
     let sliderControls = document.querySelector('.slider-controls');
     let triggerModal = document.getElementById("triggerModal");
@@ -34,13 +34,18 @@ window.onload = async () => {
                     num++
                     function match(ID, Title, Image)
                     {
-                        this.ID = ID;
-                        this.Title = Title;
-                        this.Image = Image;
+                        programObject.ID = program.ID;
+                        programObject.Title = program.Title;
+                        programObject.Image = program.Image;
+                    }
+                    programObject = {
+                        ID: program.ID,
+                        Title: program.Title,
+                        Image: program.Image
                     }
                    
                     //programObject.push(program);
-                    programArray.push(new match(program.ID, program.Title, program.Image));
+                    programArray[num] = programObject;
                     console.log(
                       "Found A Match Here Is Your Program! =",
                       `[ ${programArray} ]`
