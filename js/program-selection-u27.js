@@ -34,26 +34,20 @@ window.onload = async () => {
                     num++
                     function match(ID, Title, Image)
                     {
-                        programObject.ID = program.ID;
-                        programObject.Title = program.Title;
-                        programObject.Image = program.Image;
+                        this.ID = program.ID;
+                        this.Title = program.Title;
+                        this.Image = program.Image;
                     }
-                    programObject = {
-                        ID: program.ID,
-                        Title: program.Title,
-                        Image: program.Image
-                    }
-
-                    programArray.forEach((item) => {
-                        console.log("Object Item", item);
-                    });
                    
                     //programObject.push(program);
-                    programArray[num] = programObject;
+                    programArray.push(new match(program.ID, program.Title, program.Image));
                     console.log(
                       "Found A Match Here Is Your Program! =",
                       `[ ${programArray} ]`
                     );
+                    programArray.forEach((item) =>{
+                        console.log("Item In Array", item);
+                    });
                     /////////////////////////////////////////
                   }
                 }
