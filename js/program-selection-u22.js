@@ -1,7 +1,7 @@
 window.onload = async () => {
     let user;
     let programData;
-    let programArray = [];
+    let programArray = [{}];
     let programObject = {};
     let num = 0;
     let sliderControls = document.querySelector('.slider-controls');
