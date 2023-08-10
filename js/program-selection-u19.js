@@ -37,7 +37,7 @@ window.onload = async () => {
                     programArray.push(programObject);
                     console.log(
                       "Found A Match Here Is Your Program! =",
-                      `[ ${programArray} ]`
+                      `[ ${programObject} ]`
                     );
                     /////////////////////////////////////////
                   }
