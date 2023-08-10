@@ -4,11 +4,6 @@ window.onload = async () => {
     const triggerModal = document.getElementById("triggerModal");
     //let triggerLoader = document.getElementById("trigger");
     const wrapper = document.querySelector(".swiper-wrapper");
-    let titleEl = document.querySelectorAll(".title_el");
-    let weeksEl = document.querySelectorAll(".weeks_el");
-    let descriptionEl = document.querySelectorAll(".description_el");
-    let imageEl = document.querySelectorAll(".image_el");
-    let num = 0;
 
     //Global Variables
     let user;
@@ -66,14 +61,12 @@ window.onload = async () => {
           sliderControls.style.display = "flex";
   
           programArray.forEach((item) => {
-              num++; //
-              titleEl[num] = item.Title
               item = document.createElement("div");
               item.classList.add("swiper-slide");
-              item.innerHTML = `      <div
+              item.innerHTML = `<div
               class="swiper-slide"
             >
-              <div class="app-slide-image no-margin image_el">
+              <div class="app-slide-image no-margin image_el" style="background-image: ${item.Image[0].url};">
                 <div class="app-block fixed overlay full-height">
                   <div class="app-block-content">
                     <div class="info-block auto-margin">
@@ -82,14 +75,14 @@ window.onload = async () => {
                           <div
                             class="generic-text-style-2 margin-right-split-dnyamic-text weeks_el"
                           >
-                            Loading
+                            Loading...
                           </div>
                           <div class="generic-text-style-2 center-align">program</div>
                         </div>
                         <div
                           class="main-heading-style-6 center-align slide-title title_el"
                         >
-                          Loading...
+                        ${item.Title}
                         </div>
                       </div>
                       <a
@@ -125,7 +118,7 @@ window.onload = async () => {
                         <div class="generic-text-style-6">wEEK program</div>
                       </div>
                       <h2 class="main-heading-style-1 title_el">
-                        Super Strength Transformation
+                        ${item.Title}
                       </h2>
                     </div>
                     <div class="content-block base-block">
