@@ -9,6 +9,11 @@ window.onload = async () => {
     let user;
     let programData;
     let programArray = new Array();
+    let TitleEl = [];
+    let ImageEl = [];
+    let DescriptionEl = [];
+    let WeeksEl = [];
+    let num = 0;
     
     // Program Selection Request
     Wized.request.await("Load Users Program", (response) => {
@@ -48,6 +53,13 @@ window.onload = async () => {
                       "Found A Match Here Is Your Program! =",
                       `[ ${programArray} ]`
                     );
+
+                    for (let i = 0; i < programArray.length; i++) {
+                        TitleEl[i] = programArray[i].Title;
+                        ImageEl[i] = programArray[i].Image[0].url;
+                        DescriptionEl[i] = programArray[i].Description;
+                        WeeksEl[i] = programArray[i].Count_Weeks;
+                    }
                     programArray.forEach((item) =>{
                         console.log("Item In Array", item);
                     });
@@ -63,6 +75,7 @@ window.onload = async () => {
           sliderControls.style.display = "flex";
   
           programArray.forEach((item) => {
+              num++
               item = document.createElement("div");
               item.classList.add("swiper-slide");
               item.innerHTML = `<div class="app-slide-image no-margin"
@@ -76,7 +89,7 @@ window.onload = async () => {
                                               class="generic-text-style-2 margin-right-split-dnyamic-text">8</div>
                                           <div class="generic-text-style-2 center-align">wEEK program</div>
                                       </div>
-                                      <div class="main-heading-style-6 center-align slide-title">${item.Title}</div>
+                                      <div class="main-heading-style-6 center-align slide-title">${item.TitleEl[num]}</div>
                                   </div><a data-w-id="5c806ac3-c34a-bc93-6409-9da4edc693c2" href="#"
                                       class="button-style-1 half w-button">Program Details</a><a href="/questionnaire"
                                       class="button-style-4 w-button">Back to Questionnaire</a>
@@ -92,17 +105,17 @@ window.onload = async () => {
                               <div class="content-headings margin-bottom">
                                   <div class="split-dynamic-text">
                                       <div
-                                          class="generic-text-style-6 margin-right-split-dnyamic-text">${item.Weeks}</div>
+                                          class="generic-text-style-6 margin-right-split-dnyamic-text">${item.WeeksEl[num]}</div>
                                       <div class="generic-text-style-6">wEEK program</div>
                                   </div>
-                                  <h2 class="main-heading-style-1">${item.Title}</h2>
+                                  <h2 class="main-heading-style-1">${item.TitleEl[num]}</h2>
                               </div>
                               <div class="content-block base-block">
                                   <div class="content-block-header">
                                       <h2 class="main-heading-style-2">Overview</h2>
                                   </div>
                                   <div class="content-block-body">
-                                      <p class="body-copy-text-style-1">${item.Description}</p>
+                                      <p class="body-copy-text-style-1">${item.DescriptionEl[num]}</p>
                                   </div>
                               </div>
                               <div class="content-block">
@@ -111,7 +124,7 @@ window.onload = async () => {
                                   </div>
                                   <div class="content-block-body">
                                       <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${item.Title}</p>
+                                          <p class="body-copy-text-style-1">${item.TitleEl[num]}</p>
                                       </div>
                                   </div>
                               </div>
@@ -124,7 +137,7 @@ window.onload = async () => {
                                           <h3 class="generic-text-style-6 non-caps">Core Workouts</h3>
                                       </div>
                                       <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${item.Title}</p>
+                                          <p class="body-copy-text-style-1">${item.TitleEl[num]}</p>
                                       </div>
                                   </div>
                                   <div class="content-block-body margin-top">
@@ -132,7 +145,7 @@ window.onload = async () => {
                                           <h3 class="generic-text-style-6 non-caps">Recommended</h3>
                                       </div>
                                       <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${item.Title}</p>
+                                          <p class="body-copy-text-style-1">${item.TitleEl[num]}</p>
                                       </div>
                                   </div>
                               </div>
