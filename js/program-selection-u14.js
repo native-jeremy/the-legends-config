@@ -29,7 +29,7 @@ window.onload = async () => {
                 if (program.Q5.includes(user.Q5)) {
                   //////////////////////////////////////////////
                   if (program.Q6.some((item) => user.Q6.includes(item))) {
-                    programArray.push(program.ID);
+                    programArray.push(program);
                     console.log(
                       "Found A Match Here Is Your Program! =",
                       `[ ${programArray} ]`
@@ -228,7 +228,7 @@ window.onload = async () => {
             swiper.on("slideChange", function () {
               Webflow.require("ix2").init();
               /*slideBtn_Left.classList.remove("swiper-button-lock");
-                                                    slideBtn_Right.classList.remove("swiper-button-lock");*/
+              slideBtn_Right.classList.remove("swiper-button-lock");*/
             });
           }, 2000);
   
@@ -242,4 +242,4 @@ window.onload = async () => {
         }
       });
     });
-  };  
+  };
