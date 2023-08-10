@@ -81,6 +81,10 @@ window.onload = async () => {
   
           programArray.forEach((item) => {
               num++
+              console.log("Title In Array", TitleEl[num]);
+              console.log("Image In Array", ImageEl[num]);
+              console.log("Week In Array", WeeksEl[num]);
+              console.log("Description In Array", DescriptionEl[num]);
               item = document.createElement("div");
               item.classList.add("swiper-slide");
               item.innerHTML = `<style>.app-slide-image {background-image: url('${ImageEl[num]}') !important;}</style>
