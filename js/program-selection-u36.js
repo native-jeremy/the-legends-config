@@ -63,7 +63,6 @@ window.onload = async () => {
           sliderControls.style.display = "flex";
   
           programArray.forEach((item) => {
-              num++; //
               item = document.createElement("div");
               item.classList.add("swiper-slide");
               item.innerHTML = `<div class="app-slide-image no-margin"
