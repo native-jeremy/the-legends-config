@@ -67,6 +67,7 @@ window.onload = async () => {
                     }
                     programArray.forEach((item) =>{
                         console.log("Item In Array", item);
+                        console.log("Image In Program Array", item.Image[0].url);
                     });
                     /////////////////////////////////////////
                   }
