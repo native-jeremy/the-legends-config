@@ -240,7 +240,7 @@ window.onload = async () => {
             for (let i = 0; i < selectionButton.length; i++) {
                 const button = selectionButton[i];
                 button.addEventListener('click', () => {
-                    let num = selectionButton.indexOf(button);
+                    num = selectionButton.indexOf(button);
                     console.log("Cliked This Button!", button + " Index: " + num);
                     Wized.data.setCookie("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
                 });
