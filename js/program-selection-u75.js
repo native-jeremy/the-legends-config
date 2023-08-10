@@ -238,9 +238,9 @@ window.onload = async () => {
             let selectionButton = document.querySelectorAll('.selection-button');
 
             for (let i = 0; i < selectionButton.length; i++) {
-                const selection = selectionButton[i];
+                const button = selectionButton[i];
                 button.addEventListener('click', () => {
-                    let num = selectionButton.indexOf(selection);
+                    let num = selectionButton.indexOf(button);
                     console.log("Cliked This Button!", button + " Index: " + num);
                     Wized.data.setCookie("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
                 });
