@@ -88,8 +88,8 @@ window.onload = async () => {
               console.log("Description In Array", DescriptionEl[num]);
               item = document.createElement("div");
               item.classList.add("swiper-slide");
-              item.innerHTML = `<style>.app-slide-image {background-image: url('${ImageEl[num]}') !important;}</style>
-              <div class="app-slide-image no-margin">
+              item.innerHTML = `
+              <div class="app-slide-image no-margin" style="background-image: url('${ImageEl[num]}') !important;">
                       <div class="app-block fixed overlay full-height">
                           <div class="app-block-content">
                               <div class="info-block auto-margin">
