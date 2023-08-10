@@ -203,9 +203,6 @@ window.onload = async () => {
           Wized.data.setVariable("program", programMatch);
           const id = Wized.data.get("v.program");
           console.log("Program Variable! =", id);
-          Wized.data.setVariable("program", programMatch);
-          const id = Wized.data.get("v.program");
-          console.log("Program Variable! =", id);
           setTimeout(() => {
             Wized.request.execute("Load Program Filter");
             /////////////////////////////////////////
