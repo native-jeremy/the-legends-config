@@ -240,6 +240,11 @@ window.onload = async () => {
                 button.addEventListener('click', () => {
                 console.log("Clicked This Button!", button + ' ' + num);
                 Wized.data.setCookie("programselection", `${IdEl[num]}`);
+                const checkSelection = Wized.data.get("c.programselection");
+                    if(checkSelection !== undefined)
+                    {
+                        window.location.href = "/stripe"
+                    }
                 });
             });
           },1000);
