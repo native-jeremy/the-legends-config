@@ -231,6 +231,7 @@ window.onload = async () => {
                 prevEl: ".left-slide-arrow-button",
               },
             });
+            Webflow.require("ix2").init();
             /////////////////////////////////////////
             swiper.on("slideChange", function () {
               Webflow.require("ix2").init();
