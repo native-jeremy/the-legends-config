@@ -51,7 +51,6 @@ window.onload = async () => {
                     );
                     programArray.forEach((item) =>{
                         console.log("Item In Array", item);
-                        Title = item.Title
                     });
                     /////////////////////////////////////////
                   }
@@ -65,6 +64,7 @@ window.onload = async () => {
           sliderControls.style.display = "flex";
   
           programArray.forEach((item) => {
+              Title = item.Title
               item = document.createElement("div");
               item.classList.add("swiper-slide");
               item.innerHTML = `<div w-el="program_slide_image" class="app-slide-image no-margin"
