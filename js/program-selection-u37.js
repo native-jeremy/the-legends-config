@@ -76,8 +76,7 @@ window.onload = async () => {
                                               class="generic-text-style-2 margin-right-split-dnyamic-text">8</div>
                                           <div class="generic-text-style-2 center-align">wEEK program</div>
                                       </div>
-                                      <div class="main-heading-style-6 center-align slide-title"
-                                          ${item.Title}></div>
+                                      <div class="main-heading-style-6 center-align slide-title">${item.Title}</div>
                                   </div><a data-w-id="5c806ac3-c34a-bc93-6409-9da4edc693c2" href="#"
                                       class="button-style-1 half w-button">Program Details</a><a href="/questionnaire"
                                       class="button-style-4 w-button">Back to Questionnaire</a>
@@ -96,8 +95,7 @@ window.onload = async () => {
                                           class="generic-text-style-6 margin-right-split-dnyamic-text">${item.Weeks}</div>
                                       <div class="generic-text-style-6">wEEK program</div>
                                   </div>
-                                  <h2 class="main-heading-style-1"
-                                  ${item.Title}></h2>
+                                  <h2 class="main-heading-style-1">${item.Title}</h2>
                               </div>
                               <div class="content-block base-block">
                                   <div class="content-block-header">
