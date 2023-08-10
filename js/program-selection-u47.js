@@ -58,7 +58,12 @@ window.onload = async () => {
                         TitleEl.push(programArray[i].Title);
                         ImageEl.push(programArray[i].Image[0].url);
                         DescriptionEl.push(programArray[i].Description);
-                        WeeksEl.push(programArray[i].Count_Weeks);
+                        if (programArray[i].Count_weeks !== undefined) {
+                            WeeksEl.push(programArray[i].Count_weeks);
+                        }
+                        else {
+                            WeeksEl.push(0);
+                        }
                     }
                     programArray.forEach((item) =>{
                         console.log("Item In Array", item);
@@ -79,14 +84,14 @@ window.onload = async () => {
               item = document.createElement("div");
               item.classList.add("swiper-slide");
               item.innerHTML = `<div class="app-slide-image no-margin"
-                      style="background-image: url('${item.Image}');">
+                      style="background-image: url('${ImageEl[num]}');">
                       <div class="app-block fixed overlay full-height">
                           <div class="app-block-content">
                               <div class="info-block auto-margin">
                                   <div class="info-block-header">
                                       <div class="split-dynamic-text center">
                                           <div w-el="program_slide_weeks"
-                                              class="generic-text-style-2 margin-right-split-dnyamic-text">8</div>
+                                              class="generic-text-style-2 margin-right-split-dnyamic-text">${WeeksEl[num]}</div>
                                           <div class="generic-text-style-2 center-align">wEEK program</div>
                                       </div>
                                       <div class="main-heading-style-6 center-align slide-title">${TitleEl[num]}</div>
