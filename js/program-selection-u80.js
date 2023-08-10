@@ -239,7 +239,7 @@ window.onload = async () => {
             selectionButton.forEach((button, num) => {
                 button.addEventListener('click', () => {
                 console.log("Clicked This Button!", button + ' ' + num);
-                Wized.data.setVariable("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
+                Wized.data.setVariable("programSelection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
                 });
             });
           },1000);
