@@ -9,6 +9,7 @@ window.onload = async () => {
     let user;
     let programData;
     let programArray = new Array();
+    let IdEl = [];
     let TitleEl = [];
     let ImageEl = [];
     let DescriptionEl = [];
@@ -55,6 +56,7 @@ window.onload = async () => {
                     );
 
                     for (let i = 0; i < programArray.length; i++) {
+                        IdEl.push(programArray[i].ID);
                         TitleEl.push(programArray[i].Title);
                         ImageEl.push(programArray[i].Image);
                         DescriptionEl.push(programArray[i].Description);
@@ -82,6 +84,7 @@ window.onload = async () => {
   
           programArray.forEach((item) => {
               num++
+              console.log("ID In Array", IdEl[num]);
               console.log("Title In Array", TitleEl[num]);
               console.log("Image In Array", ImageEl[num]);
               console.log("Week In Array", WeeksEl[num]);
@@ -220,14 +223,22 @@ window.onload = async () => {
                                       </div>
                                   </div>
                               </div><a w-el="questionnaire_user_program_added" data-w-id="318dd5d4-e2e9-7095-276c-a871128f0341"
-                                  href="/stripe" class="button-style-1 w-button"
+                                  href="/stripe" class="button-style-1 w-button selection-button"
                                   w-el-onclick-0-0="9165cc42-4c13-4be1-b1f2-51a5a8b8a571-0-0"
                                   w-el-onclick-1-0="9165cc42-4c13-4be1-b1f2-51a5a8b8a571-1-0">Let’s get started</a><a
                                   href="/questionnaire" class="button-style-5 w-button">back to programs</a>
                               <link rel="prerender" href="/questionnaire">
                           </div>
                       </div>
-                  </div>`;
+                  </div>
+                  <script>
+                  let selectionButton = document.querySelectorAll('selection-button');
+                  selectionButton[num].addEventListener('click', () => {
+                  Wized.data.setCookie("programselection", ${IdEl}); // Set value of "c.accesstoken"  
+                  const value = await Wized.data.get("c.programselection"); 
+                  });
+                  </script>
+                  `;
               wrapper.append(item);
           });
           Wized.data.setVariable("program", programMatch);
