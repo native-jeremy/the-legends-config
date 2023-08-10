@@ -32,7 +32,7 @@ window.onload = async () => {
                   if (program.Q6.some((item) => user.Q6.includes(item))) {
                     programObject.ID = program.ID
                     programObject.Title = program.Title
-                    programObject.Title = program.Image[0].url
+                    programObject.Image = program.Image[0].url
                     //programObject.push(program);
                     programArray.push(programObject);
                     console.log(
