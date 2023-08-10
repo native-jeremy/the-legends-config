@@ -236,7 +236,7 @@ window.onload = async () => {
                 let selectionButton = document.getElementById(`selection-button${num}`);
                 selectionButton.addEventListener('click', () => {
                 console.log("Cliked This Button!")
-                Wized.data.setCookie("programselection", ${IdEl[num]}); // Set value of "c.accesstoken"  
+                Wized.data.setCookie("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
                 const value = Wized.data.get("c.programselection"); 
                 });
               },1000);
