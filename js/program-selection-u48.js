@@ -41,7 +41,7 @@ window.onload = async () => {
                     function match(ID, Title, Image)
                     {
                         this.ID = program.ID;
-                        this.Weeks = program.Count_Weeks;
+                        this.Weeks = program.Count_weeks;
                         this.Title = program.Title;
                         this.Description = program.Description;
                         this.Image = program.Image[0].url;
