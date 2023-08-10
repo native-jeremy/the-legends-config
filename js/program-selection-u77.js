@@ -236,23 +236,13 @@ window.onload = async () => {
 
           setTimeout(() => {
             let selectionButton = document.querySelectorAll('.selection-button');
-
-            for (let i = 0; i < selectionButton.length; i++) {
-                const button = selectionButton[i];
+            selectionButton.forEach((button, num) => {
                 button.addEventListener('click', () => {
-                    num = selectionButton.indexOf(button);
-                    console.log("Cliked This Button!", button + " Index: " + num);
-                    Wized.data.setCookie("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
-                });
-            }
-
-            /*selectionButton.forEach((button) => {
-                button.addEventListener('click', () => {
-                console.log("Cliked This Button!", button)
+                console.log("Clicked This Button!", button + ' ' + num);
                 Wized.data.setCookie("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
                 const value = Wized.data.get("c.programselection"); 
                 });
-            });*/
+            });
           },1000);
 
           /*Wized.data.setVariable("program", programMatch);
