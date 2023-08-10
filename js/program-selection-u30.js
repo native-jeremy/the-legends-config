@@ -52,8 +52,6 @@ window.onload = async () => {
                     programArray.forEach((item) =>{
                         console.log("Item In Array", item);
                         Title = item.Title
-                        Description = item.Description
-                        Weeks = item.Weeks
                     });
                     /////////////////////////////////////////
                   }
