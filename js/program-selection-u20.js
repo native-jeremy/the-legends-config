@@ -3,6 +3,7 @@ window.onload = async () => {
     let programData;
     let programArray = [];
     let programObject = {};
+    let num = 0;
     let sliderControls = document.querySelector('.slider-controls');
     let triggerModal = document.getElementById("triggerModal");
     //let triggerLoader = document.getElementById("trigger");
@@ -30,14 +31,15 @@ window.onload = async () => {
                 if (program.Q5.includes(user.Q5)) {
                   //////////////////////////////////////////////
                   if (program.Q6.some((item) => user.Q6.includes(item))) {
+                    num++
                     programObject["0"] = program.ID
-                    programObject["1"] = program.Title
-                    programObject["2"] = program.Image[0].url
+                    programObject["1"]  = program.Title
+                    programObject["2"]  = program.Image[0].url
                     //programObject.push(program);
-                    programArray.push(programObject);
+                    programArray.push({id: num, program: id, title: program.Title, image: program.Image[0].url});
                     console.log(
                       "Found A Match Here Is Your Program! =",
-                      `[ ${programObject} ]`
+                      `[ ${programArray} ]`
                     );
                     /////////////////////////////////////////
                   }
