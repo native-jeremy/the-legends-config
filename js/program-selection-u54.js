@@ -83,8 +83,9 @@ window.onload = async () => {
               num++
               item = document.createElement("div");
               item.classList.add("swiper-slide");
-              item.innerHTML = `<div class="app-slide-image no-margin"
-                      style="background-image: url(${ImageEl[num]});">
+              item.innerHTML = `<style>app-slide-image {background-image: url('${ImageEl[num]}')}</style>
+              <div class="app-slide-image no-margin"
+                      style="background-image: url('${ImageEl[num]}');">
                       <div class="app-block fixed overlay full-height">
                           <div class="app-block-content">
                               <div class="info-block auto-margin">
