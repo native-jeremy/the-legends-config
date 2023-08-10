@@ -239,13 +239,13 @@ window.onload = async () => {
             selectionButton.forEach((button, num) => {
                 button.addEventListener('click', () => {
                 console.log("Clicked This Button!", button + ' ' + num);
-                Wized.data.setVariable("programSelection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
+                Wized.data.setVariable("selectedProgram", `${IdEl[num]}`); // Set value of "c.accesstoken"  
                 });
             });
           },1000);
 
-            Wized.data.listen("v.programSelection", async () => {    
-            const changedId = await Wized.data.get("v.programSelection"); // Get new value    
+            Wized.data.listen("v.selectedProgram", async () => {    
+            const changedId = await Wized.data.get("v.selectedProgram"); // Get new value    
             console.log("Program Selection changed to: ", changedId); // Console log new value  
             });
 
