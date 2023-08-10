@@ -226,6 +226,11 @@ window.onload = async () => {
               });
               /////////////////////////////////////////
               triggerLoader.click();
+              swiper.on("slideChange", function () {
+              Webflow.require("ix2").init();
+              /*slideBtn_Left.classList.remove("swiper-button-lock");
+              slideBtn_Right.classList.remove("swiper-button-lock");*/
+              });
       
           }, 2000);
   
