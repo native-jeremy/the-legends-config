@@ -30,9 +30,9 @@ window.onload = async () => {
                 if (program.Q5.includes(user.Q5)) {
                   //////////////////////////////////////////////
                   if (program.Q6.some((item) => user.Q6.includes(item))) {
-                    programObject.ID = program.ID
-                    programObject.Title = program.Title
-                    programObject.Image = program.Image[0].url
+                    programObject["0"] = program.ID
+                    programObject["1"] = program.Title
+                    programObject["2"] = program.Image[0].url
                     //programObject.push(program);
                     programArray.push(programObject);
                     console.log(
