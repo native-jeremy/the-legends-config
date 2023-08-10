@@ -2,6 +2,7 @@ window.onload = async () => {
     let user;
     let programData;
     let programArray = [];
+    let programObject = {};
     let sliderControls = document.querySelector('.slider-controls');
     let triggerModal = document.getElementById("triggerModal");
     //let triggerLoader = document.getElementById("trigger");
@@ -29,7 +30,8 @@ window.onload = async () => {
                 if (program.Q5.includes(user.Q5)) {
                   //////////////////////////////////////////////
                   if (program.Q6.some((item) => user.Q6.includes(item))) {
-                    programArray.push(program);
+                    programObject.push(program);
+                    programArray.push(programObject);
                     console.log(
                       "Found A Match Here Is Your Program! =",
                       `[ ${programArray} ]`
