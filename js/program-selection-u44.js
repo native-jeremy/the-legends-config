@@ -55,10 +55,10 @@ window.onload = async () => {
                     );
 
                     for (let i = 0; i < programArray.length; i++) {
-                        TitleEl[i] = programArray[i].Title;
-                        ImageEl[i] = programArray[i].Image[0].url;
-                        DescriptionEl[i] = programArray[i].Description;
-                        WeeksEl[i] = programArray[i].Count_Weeks;
+                        TitleEl.push(programArray[i].Title);
+                        ImageEl.push(programArray[i].Image[0].url);
+                        DescriptionEl.push(programArray[i].Description);
+                        WeeksEl.push(programArray[i].Count_Weeks);
                     }
                     programArray.forEach((item) =>{
                         console.log("Item In Array", item);
