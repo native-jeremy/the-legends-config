@@ -59,7 +59,7 @@ window.onload = async () => {
                         ImageEl.push(programArray[i].Image[0].url);
                         DescriptionEl.push(programArray[i].Description);
                         if (programArray[i].Weeks !== undefined) {
-                            WeeksEl.push(programArray[i].Count_weeks);
+                            WeeksEl.push(programArray[i].Weeks);
                         }
                         else {
                             WeeksEl.push(0);
