@@ -32,9 +32,15 @@ window.onload = async () => {
                   //////////////////////////////////////////////
                   if (program.Q6.some((item) => user.Q6.includes(item))) {
                     num++
+                    function match(ID, Title, Image)
+                    {
+                        this.ID = ID;
+                        this.Title = Title;
+                        this.Image = Image;
+                    }
                    
                     //programObject.push(program);
-                    programArray.push({id: num, program: program.ID, title: program.Title, image: program.Image[0].url});
+                    programArray.push(new match(program.ID, program.Title, program.Image));
                     console.log(
                       "Found A Match Here Is Your Program! =",
                       `[ ${programArray} ]`
