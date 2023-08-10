@@ -231,14 +231,14 @@ window.onload = async () => {
                 prevEl: ".left-slide-arrow-button",
               },
             });
-            Wized.request.awaitAllPageLoad(() => {
+
             setTimeout(()=>{window.Webflow && window.Webflow.destroy();
             window.Webflow && window.Webflow.ready();
             window.Webflow && window.Webflow.require( 'ix2' ).init();
             document.dispatchEvent( new Event( 'readystatechange' ) );
             console.log("Webflow Interactions have been reloaded!");
             }, 1000)
-            })
+
             /////////////////////////////////////////
             swiper.on("slideChange", function () {
               Webflow.require("ix2").init();
