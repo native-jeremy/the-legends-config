@@ -1,13 +1,18 @@
 window.onload = async () => {
+    //Element Variables
+    const sliderControls = document.querySelector('.slider-controls');
+    const triggerModal = document.getElementById("triggerModal");
+    //let triggerLoader = document.getElementById("trigger");
+    const wrapper = document.querySelector(".swiper-wrapper");
+    let Title = document.querySelectorAll("._title");
+    let Weeks = document.querySelectorAll("._weeks");
+    let Description = document.querySelectorAll("._description");
+
+    //Global Variables
     let user;
     let programData;
     let programArray = new Array();
-    let programObject = new Object();
-    let num = 0;
-    let sliderControls = document.querySelector('.slider-controls');
-    let triggerModal = document.getElementById("triggerModal");
-    //let triggerLoader = document.getElementById("trigger");
-    let wrapper = document.querySelector(".swiper-wrapper");
+    
     // Program Selection Request
     Wized.request.await("Load Users Program", (response) => {
       user = response.data;
@@ -47,6 +52,9 @@ window.onload = async () => {
                     );
                     programArray.forEach((item) =>{
                         console.log("Item In Array", item);
+                        Title = item.Title
+                        Description = item.Description
+                        Weeks = item.Weeks
                     });
                     /////////////////////////////////////////
                   }
