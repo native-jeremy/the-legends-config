@@ -30,7 +30,10 @@ window.onload = async () => {
                 if (program.Q5.includes(user.Q5)) {
                   //////////////////////////////////////////////
                   if (program.Q6.some((item) => user.Q6.includes(item))) {
-                    programObject.push(program);
+                    programObject.ID = program.ID
+                    programObject.Title = program.Title
+                    programObject.Title = program.Image[0].url
+                    //programObject.push(program);
                     programArray.push(programObject);
                     console.log(
                       "Found A Match Here Is Your Program! =",
