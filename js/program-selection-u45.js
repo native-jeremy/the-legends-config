@@ -89,7 +89,7 @@ window.onload = async () => {
                                               class="generic-text-style-2 margin-right-split-dnyamic-text">8</div>
                                           <div class="generic-text-style-2 center-align">wEEK program</div>
                                       </div>
-                                      <div class="main-heading-style-6 center-align slide-title">${item.TitleEl[num]}</div>
+                                      <div class="main-heading-style-6 center-align slide-title">${TitleEl[num]}</div>
                                   </div><a data-w-id="5c806ac3-c34a-bc93-6409-9da4edc693c2" href="#"
                                       class="button-style-1 half w-button">Program Details</a><a href="/questionnaire"
                                       class="button-style-4 w-button">Back to Questionnaire</a>
@@ -105,17 +105,17 @@ window.onload = async () => {
                               <div class="content-headings margin-bottom">
                                   <div class="split-dynamic-text">
                                       <div
-                                          class="generic-text-style-6 margin-right-split-dnyamic-text">${item.WeeksEl[num]}</div>
+                                          class="generic-text-style-6 margin-right-split-dnyamic-text">${WeeksEl[num]}</div>
                                       <div class="generic-text-style-6">wEEK program</div>
                                   </div>
-                                  <h2 class="main-heading-style-1">${item.TitleEl[num]}</h2>
+                                  <h2 class="main-heading-style-1">${TitleEl[num]}</h2>
                               </div>
                               <div class="content-block base-block">
                                   <div class="content-block-header">
                                       <h2 class="main-heading-style-2">Overview</h2>
                                   </div>
                                   <div class="content-block-body">
-                                      <p class="body-copy-text-style-1">${item.DescriptionEl[num]}</p>
+                                      <p class="body-copy-text-style-1">${DescriptionEl[num]}</p>
                                   </div>
                               </div>
                               <div class="content-block">
@@ -124,7 +124,7 @@ window.onload = async () => {
                                   </div>
                                   <div class="content-block-body">
                                       <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${item.TitleEl[num]}</p>
+                                          <p class="body-copy-text-style-1">${TitleEl[num]}</p>
                                       </div>
                                   </div>
                               </div>
@@ -137,7 +137,7 @@ window.onload = async () => {
                                           <h3 class="generic-text-style-6 non-caps">Core Workouts</h3>
                                       </div>
                                       <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${item.TitleEl[num]}</p>
+                                          <p class="body-copy-text-style-1">${TitleEl[num]}</p>
                                       </div>
                                   </div>
                                   <div class="content-block-body margin-top">
@@ -145,7 +145,7 @@ window.onload = async () => {
                                           <h3 class="generic-text-style-6 non-caps">Recommended</h3>
                                       </div>
                                       <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${item.TitleEl[num]}</p>
+                                          <p class="body-copy-text-style-1">${TitleEl[num]}</p>
                                       </div>
                                   </div>
                               </div>
