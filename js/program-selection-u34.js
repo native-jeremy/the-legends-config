@@ -37,7 +37,7 @@ window.onload = async () => {
                     {
                         this.ID = program.ID;
                         this.Title = program.Title;
-                        this.Image = program.Image;
+                        this.Image = program.Image[0].url;
                     }
                    
                     //programObject.push(program);
@@ -66,7 +66,7 @@ window.onload = async () => {
               item.innerHTML = `<div
               class="swiper-slide"
             >
-              <div class="app-slide-image no-margin image_el" style="background-image: ${item.Image[0].url};">
+              <div class="app-slide-image no-margin image_el" style="background-image: ${item.Image};">
                 <div class="app-block fixed overlay full-height">
                   <div class="app-block-content">
                     <div class="info-block auto-margin">
