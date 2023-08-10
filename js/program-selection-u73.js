@@ -232,15 +232,19 @@ window.onload = async () => {
                   </div>
                   `;
               wrapper.append(item);
-              setTimeout(() => {
-                let selectionButton = document.querySelectorAll('.selection-button')[num];
-                selectionButton.addEventListener('click', () => {
-                console.log("Cliked This Button!")
+          });
+
+          setTimeout(() => {
+            let selectionButton = document.querySelectorAll('.selection-button');
+            selectionButton.forEach((button) => {
+                button.addEventListener('click', () => {
+                console.log("Cliked This Button!", button)
                 Wized.data.setCookie("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
                 const value = Wized.data.get("c.programselection"); 
                 });
-              },1000);
-          });
+            });
+          },1000);
+
           Wized.data.setVariable("program", programMatch);
           const id = Wized.data.get("v.program");
           console.log("Program Variable! =", id);
