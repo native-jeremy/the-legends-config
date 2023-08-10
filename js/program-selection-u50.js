@@ -58,7 +58,7 @@ window.onload = async () => {
                         TitleEl.push(programArray[i].Title);
                         ImageEl.push(programArray[i].Image[0].url);
                         DescriptionEl.push(programArray[i].Description);
-                        if (programArray[i].Count_weeks !== undefined) {
+                        if (programArray[i].Weeks !== undefined) {
                             WeeksEl.push(programArray[i].Count_weeks);
                         }
                         else {
