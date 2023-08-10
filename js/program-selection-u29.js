@@ -36,7 +36,6 @@ window.onload = async () => {
                 if (program.Q5.includes(user.Q5)) {
                   //////////////////////////////////////////////
                   if (program.Q6.some((item) => user.Q6.includes(item))) {
-                    num++
                     function match(ID, Title, Image)
                     {
                         this.ID = program.ID;
