@@ -239,11 +239,15 @@ window.onload = async () => {
             selectionButton.forEach((button, num) => {
                 button.addEventListener('click', () => {
                 console.log("Clicked This Button!", button + ' ' + num);
-                Wized.data.setCookie("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
-                const value = Wized.data.get("c.programselection"); 
+                Wized.data.setVariable("programselection", `${IdEl[num]}`); // Set value of "c.accesstoken"  
                 });
             });
           },1000);
+
+            Wized.data.listen("v.programSelection", async () => {    
+            const changedId = await Wized.data.get("v.programSelection"); // Get new value    
+            console.log("Program Selection changed to: ", changedId); // Console log new value  
+            });
 
           /*Wized.data.setVariable("program", programMatch);
           const id = Wized.data.get("v.program");
