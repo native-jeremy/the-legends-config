@@ -231,7 +231,6 @@ window.onload = async () => {
                 prevEl: ".left-slide-arrow-button",
               },
             });
-            window.onload = async () => {
             Wized.request.awaitAllPageLoad(() => {
             setTimeout(()=>{window.Webflow && window.Webflow.destroy();
             window.Webflow && window.Webflow.ready();
@@ -240,7 +239,6 @@ window.onload = async () => {
             console.log("Webflow Interactions have been reloaded!");
             }, 1000)
             })
-            };
             /////////////////////////////////////////
             swiper.on("slideChange", function () {
               Webflow.require("ix2").init();
