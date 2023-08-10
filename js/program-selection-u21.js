@@ -36,7 +36,7 @@ window.onload = async () => {
                     programObject["1"]  = program.Title
                     programObject["2"]  = program.Image[0].url
                     //programObject.push(program);
-                    programArray.push({id: num, program: id, title: program.Title, image: program.Image[0].url});
+                    programArray.push({id: num, program: program.ID, title: program.Title, image: program.Image[0].url});
                     console.log(
                       "Found A Match Here Is Your Program! =",
                       `[ ${programArray} ]`
