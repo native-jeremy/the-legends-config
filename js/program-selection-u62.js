@@ -240,7 +240,7 @@ window.onload = async () => {
             const swiper = new Swiper(".swiper", {
               // Optional parameters
               speed: 1000,
-              loop: true,
+              loop: false,
               observer: true,
               observeParents: true,
               slidesPerView: 1,
