@@ -222,7 +222,7 @@ window.onload = async () => {
                                               required</p>
                                       </div>
                                   </div>
-                              </div><a data-w-id="318dd5d4-e2e9-7095-276c-a871128f0341"
+                              </div><a
                                  class="button-style-1 w-button selection-button"
                                  >Let’s get started</a><a
                                   href="/questionnaire" class="button-style-5 w-button">back to programs</a>
@@ -231,10 +231,10 @@ window.onload = async () => {
                       </div>
                   </div>
                   <script>
-                  let selectionButton = document.querySelectorAll('selection-button');
+                  let selectionButton = document.querySelectorAll('.selection-button');
                   selectionButton[num].addEventListener('click', () => {
                   Wized.data.setCookie("programselection", ${IdEl[num]}); // Set value of "c.accesstoken"  
-                  const value = await Wized.data.get("c.programselection"); 
+                  const value = Wized.data.get("c.programselection"); 
                   });
                   </script>
                   `;
