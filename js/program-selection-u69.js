@@ -223,23 +223,23 @@ window.onload = async () => {
                                       </div>
                                   </div>
                               </div><a
-                                 class="button-style-1 w-button selection-button"
+                                 class="button-style-1 w-button selection-button id="selection-button${num}"
                                  >Let’s get started</a><a
                                   href="/questionnaire" class="button-style-5 w-button">back to programs</a>
                               <link rel="prerender" href="/questionnaire">
                           </div>
                       </div>
                   </div>
-                  <script>
-                  let selectionButton = document.querySelector('.selection-button');
-                  selectionButton.addEventListener('click', () => {
-                  console.log("Cliked This Button!")
-                  Wized.data.setCookie("programselection", ${IdEl[num]}); // Set value of "c.accesstoken"  
-                  const value = Wized.data.get("c.programselection"); 
-                  });
-                  </script>
                   `;
               wrapper.append(item);
+              setTimeout(() => {
+                let selectionButton = document.getElementById(`selection-button${num}`);
+                selectionButton.addEventListener('click', () => {
+                console.log("Cliked This Button!")
+                Wized.data.setCookie("programselection", ${IdEl[num]}); // Set value of "c.accesstoken"  
+                const value = Wized.data.get("c.programselection"); 
+                });
+              },1000);
           });
           Wized.data.setVariable("program", programMatch);
           const id = Wized.data.get("v.program");
