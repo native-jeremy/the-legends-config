@@ -4,7 +4,7 @@ window.onload = async () => {
     let programArray = [];
     let sliderControls = document.querySelector('.slider-controls');
     let triggerModal = document.getElementById("triggerModal");
-    let triggerLoader = document.getElementById("trigger");
+    //let triggerLoader = document.getElementById("trigger");
     let wrapper = document.querySelector(".swiper-wrapper");
     // Program Selection Request
     Wized.request.await("Load Users Program", (response) => {
