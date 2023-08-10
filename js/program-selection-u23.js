@@ -1,7 +1,7 @@
 window.onload = async () => {
     let user;
     let programData;
-    let programArray = [{}];
+    let programArray = [];
     let programObject = {};
     let num = 0;
     let sliderControls = document.querySelector('.slider-controls');
@@ -32,9 +32,7 @@ window.onload = async () => {
                   //////////////////////////////////////////////
                   if (program.Q6.some((item) => user.Q6.includes(item))) {
                     num++
-                    programObject["0"] = program.ID
-                    programObject["1"]  = program.Title
-                    programObject["2"]  = program.Image[0].url
+                   
                     //programObject.push(program);
                     programArray.push({id: num, program: program.ID, title: program.Title, image: program.Image[0].url});
                     console.log(
