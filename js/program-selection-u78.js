@@ -250,7 +250,6 @@ window.onload = async () => {
           console.log("Program Variable! =", id);*/
           
           setTimeout(() => {
-            Wized.request.execute("Load Program Filter");
             /////////////////////////////////////////
     
             const swiper = new Swiper(".swiper", {
