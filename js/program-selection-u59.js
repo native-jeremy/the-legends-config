@@ -56,7 +56,7 @@ window.onload = async () => {
 
                     for (let i = 0; i < programArray.length; i++) {
                         TitleEl.push(programArray[i].Title);
-                        ImageEl.push(programArray[i].Image[0].url);
+                        ImageEl.push(programArray[i].Image);
                         DescriptionEl.push(programArray[i].Description);
                         if (programArray[i].Weeks !== undefined) {
                             WeeksEl.push(programArray[i].Weeks);
@@ -67,7 +67,7 @@ window.onload = async () => {
                     }
                     programArray.forEach((item) =>{
                         console.log("Item In Array", item);
-                        console.log("Image In Program Array", item.Image[0].url);
+                        console.log("Image In Program Array", item.Image);
                     });
                     /////////////////////////////////////////
                   }
