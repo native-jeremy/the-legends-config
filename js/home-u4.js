@@ -128,21 +128,21 @@ window.onload = async () => {
     console.log("WORKED!");
 
     //Programs Render List
-    snapshot.Programs.forEach(program => {
+    for (let i = 0; i < snapshot.Programs.length; i++) {
       const card = document.createElement("div");
       card = `
       <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
         <div class="card_image">
-          <img src="${snapshot.Image_Programs[0].url}" loading="lazy" alt="" class="img_full card_img_tag">
+          <img src="${snapshot.Image_Programs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
         </div>
         <div class="card_body">
-          <h4 class="main-heading-style-1">${snapshot.Heading_Programs}</h4>
-          <p class="body-copy-text-style-1 mt_xsml">${snapshot.Description_Programs}</p>
-          <a href="/program-overview?program=${snapshot.ID_Programs}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+          <h4 class="main-heading-style-1">${snapshot.Heading_Programs[i]}</h4>
+          <p class="body-copy-text-style-1 mt_xsml">${snapshot.Description_Programs[i]}</p>
+          <a href="/program-overview?program=${snapshot.ID_Programs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
       programContent.innerHTML = programContent.innerHTML + card;
-    });
+    }
 
     //Custom Slider Dots || Arrows || Elements / Event Listener Applied
     //Webflow Arrows | Buttons
