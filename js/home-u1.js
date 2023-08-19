@@ -130,7 +130,7 @@ window.onload = async () => {
     //Programs Render List
     snapshot.Programs.forEach(program => {
       const card = document.createElement("div");
-      card.innerHTML = `
+      card = `
       <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
         <div class="card_image">
           <img src="${snapshot.Image_Programs[0].url}" loading="lazy" alt="" class="img_full card_img_tag">
@@ -141,7 +141,7 @@ window.onload = async () => {
           <a href="/program-overview?program=${snapshot.ID_Programs}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
-      programContent.appendChild(card);
+      programContent.innerHTML = programContent.innerHTML + card;
     });
 
     //Custom Slider Dots || Arrows || Elements / Event Listener Applied
