@@ -48,9 +48,6 @@ window.onload = async () => {
   const ButtonLinkCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
   const ButtonTextCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
 
-  //Program Card Content
-  const programContent = document.getElementById("Program_Content");
-
   //Mock Data Array || Iphone Mockup
   const mockData = [
     {
@@ -130,6 +127,8 @@ window.onload = async () => {
 
     //Programs Render List
     for (let i = 0; i < 4; i++) {
+        //Program Card Content
+  const programContent = document.getElementById("Program_Content");
       const card = `
       <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
         <div class="card_image">
