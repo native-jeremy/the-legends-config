@@ -126,6 +126,7 @@ window.onload = async () => {
 
     //Logging Successful Request Message
     console.log("WORKED!");
+    console.log("Programs Length", snapshot.Programs.length);
 
     //Programs Render List
     for (let i = 0; i < snapshot.Programs.length; i++) {
