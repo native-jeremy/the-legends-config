@@ -126,10 +126,10 @@ window.onload = async () => {
 
     //Logging Successful Request Message
     console.log("WORKED!");
-    console.log("Programs Length", snapshot.ID_Programs);
+    //console.log("Programs Length", snapshot.ID_Programs);
 
     //Programs Render List
-    /*for (let i = 0; i < snapshot.Programs.length; i++) {
+    for (let i = 0; i < 4; i++) {
       const card = `
       <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
         <div class="card_image">
@@ -142,7 +142,7 @@ window.onload = async () => {
         </div>
       </div>`;
       programContent.innerHTML = programContent.innerHTML + card;
-    }*/
+    }
 
     //Custom Slider Dots || Arrows || Elements / Event Listener Applied
     //Webflow Arrows | Buttons
