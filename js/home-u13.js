@@ -141,7 +141,7 @@ window.onload = async () => {
           <a href="/program-overview?program=${snapshot.ID_Programs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
-      programContent.innerHTML = programContent.innerHTML + card;
+      programContent.innerHTML = card;
     }
 
     //Custom Slider Dots || Arrows || Elements / Event Listener Applied
