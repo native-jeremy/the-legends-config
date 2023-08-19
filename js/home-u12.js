@@ -49,7 +49,7 @@ window.onload = async () => {
   const ButtonTextCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
 
   //Program Card Content
-  //const programContent = document.getElementById("Program_Content");
+  const programContent = document.getElementById("Program_Content");
 
   //Mock Data Array || Iphone Mockup
   const mockData = [
