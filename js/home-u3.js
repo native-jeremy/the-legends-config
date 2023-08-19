@@ -93,7 +93,7 @@ window.onload = async () => {
     IntroDescription.textContent = snapshot.Intro_Description;
     IntroSmallText.textContent = snapshot.Intro_Small_Text;
     S1Heading.textContent = snapshot.S_1_Heading;
-    S1SubHeading.textContent = snapshot.S_1_Su_Heading;
+    S1SubHeading.textContent = snapshot.S_1_Sub_Heading;
     ActionHeading.textContent = snapshot.Action_Heading;
     ActionSubHeading.textContent = snapshot.Action_Sub_Heading;
     TrainerSectionHeading.textContent = snapshot.Trainer_Section_Heading;
