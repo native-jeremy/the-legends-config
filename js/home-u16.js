@@ -86,7 +86,23 @@ window.onload = async () => {
   //Home Page Request From Wized || Main Data
   Wized.request.await("Load Home Page", (response) => {
     const snapshot = response.data;
-    console.log(snapshot.Programs.length); // Log request response
+    console.log(snapshot); // Log request response
+
+    //Programs Render List
+    for (let i = 0; i < snapshot.Programs.length; i++) {
+    const card = `
+      <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
+        <div class="card_image">
+          <img src="${snapshot.Image_Programs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
+        </div>
+        <div class="card_body">
+          <h4 class="main-heading-style-1">${snapshot.Heading_Programs[i]}</h4>
+          <p class="body-copy-text-style-1 mt_xsml">${snapshot.Description_Programs[i]}</p>
+          <a href="/program-overview?program=${snapshot.ID_Programs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+        </div>
+      </div>`;
+    programContent.innerHTML = programContent.innerHTML + card;
+      }
 
     //Home Page Elements Request Data Applied To Elements
     IntroHeading.textContent = snapshot.Intro_Heading;
@@ -126,23 +142,6 @@ window.onload = async () => {
 
     //Logging Successful Request Message
     console.log("WORKED!");
-    //console.log("Programs Length", snapshot.ID_Programs);
-
-    //Programs Render List
-    for (let i = 0; i < snapshot.Programs.length; i++) {
-      const card = `
-      <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
-        <div class="card_image">
-          <img src="${snapshot.Image_Programs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
-        </div>
-        <div class="card_body">
-          <h4 class="main-heading-style-1">${snapshot.Heading_Programs[i]}</h4>
-          <p class="body-copy-text-style-1 mt_xsml">${snapshot.Description_Programs[i]}</p>
-          <a href="/program-overview?program=${snapshot.ID_Programs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
-        </div>
-      </div>`;
-      programContent.innerHTML = programContent.innerHTML + card;
-    }
 
     //Custom Slider Dots || Arrows || Elements / Event Listener Applied
     //Webflow Arrows | Buttons
