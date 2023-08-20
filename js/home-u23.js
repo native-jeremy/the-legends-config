@@ -137,7 +137,9 @@ window.onload = async () => {
         </div>
         <div class="card_body">
           <h4 class="main-heading-style-1">${snapshot.Heading_Programs[i]}</h4>
-          <p class="body-copy-text-style-1 mt_xsml">${snapshot.Description_Programs[i]}</p>
+          <div class="card_box">
+            <p class="body-copy-text-style-1 mt_xsml">${snapshot.Description_Programs[i]}</p>
+          </div>
           <a href="/program-overview?program=${snapshot.ID_Programs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
