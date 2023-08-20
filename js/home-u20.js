@@ -113,7 +113,7 @@ window.onload = async () => {
     S5Heading.textContent = snapshot.S_5_Heading;
     S5SubHeading.textContent = snapshot.S_5_Sub_Heading;
 
-    //Call Action Request Data Applied To Elements
+    /*//Call Action Request Data Applied To Elements
     HeadingCallToAction.textContent = snapshot.Heading_Call_To_Action[0];
     SubHeadingCallToAction.textContent = snapshot.Sub_Heading_Call_To_Action[0];
     ButtonLinkCallToAction.href = snapshot.Button_Link_Call_To_Action[0];
@@ -122,7 +122,7 @@ window.onload = async () => {
     HeadingCallToAction2.textContent = snapshot.Heading_Call_To_Action_2[0];
     SubHeadingCallToAction2.textContent = snapshot.Sub_Heading_Call_To_Action_2[0];
     ButtonLinkCallToAction2.href = snapshot.Button_Link_Call_To_Action_2[0];
-    ButtonTextCallToAction2.textContent = snapshot.Button_Text_Call_To_Action_2[0];
+    ButtonTextCallToAction2.textContent = snapshot.Button_Text_Call_To_Action_2[0];*/
 
     //Logging Successful Request Message
     console.log("WORKED!");
