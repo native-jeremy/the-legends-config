@@ -51,6 +51,9 @@ window.onload = async () => {
   //Program Card Content
   const programContent = document.getElementById("Program_Content");
 
+  //Blog Card Content
+  const blogContent = document.getElementById("Blog_Content");
+
   //Mock Data Array || Iphone Mockup
   const mockData = [
     {
@@ -144,6 +147,24 @@ window.onload = async () => {
         </div>
       </div>`;
       programContent.innerHTML = programContent.innerHTML + card;
+    }
+
+    //Blogs Render List
+    for (let i = 0; i < snapshot.Blog.length; i++) {
+      const card = `
+      <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
+        <div class="card_image">
+          <img src="${snapshot.image_or_video[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
+        </div>
+        <div class="card_body">
+          <h4 class="main-heading-style-1">${snapshot.Name_Blog[i]}</h4>
+          <div class="card_box">
+            <p class="body-copy-text-style-1 mt_xsml">${snapshot.Rich_Text_Blog[i]}</p>
+          </div>
+          <a href="/program-overview?program=${snapshot.ID_Blog[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+        </div>
+      </div>`;
+      blogContent.innerHTML = blogContent.innerHTML + card;
     }
 
     //Custom Slider Dots || Arrows || Elements / Event Listener Applied
