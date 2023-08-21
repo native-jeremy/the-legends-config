@@ -124,7 +124,7 @@ window.onload = async () => {
     console.log("Blogs Length", snapshot.Blogs.length);
 
     //Programs Render List
-    for (let i = 0; i < ProgramData.Programs.length; i++) {
+    for (let i = 0; i < 5; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_image">
@@ -142,7 +142,7 @@ window.onload = async () => {
     }
 
     //Blogs Render List
-    for (let i = 0; i < BlogData.Blogs.length; i++) {
+    for (let i = 0; i < 5; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_image">
