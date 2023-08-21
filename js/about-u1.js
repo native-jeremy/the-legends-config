@@ -56,11 +56,11 @@ window.onload = async () => {
         TrainerImage.srcset = snapshot.Trainer_Image[0].url;
         TrainerName.textContent = snapshot.Trainer_Name;
         TrainerRole.textContent = snapshot.Trainer_Role;
-        TrainerDescription.textContent = snapshot.Trainer_Description;
+        TrainerDescription.innerHTML = snapshot.Trainer_Description;
         TrainerImage2.srcset = snapshot.Trainer_Image_2[0].url;
         TrainerName2.textContent = snapshot.Trainer_Name_2;
         TrainerRole2.textContent = snapshot.Trainer_Role_2;
-        TrainerDescription2.textContent = snapshot.Trainer_Description_2;
+        TrainerDescription2.innerHTML = snapshot.Trainer_Description_2;
         S3Heading.textContent = snapshot.S_3_Heading;
         S3SubHeading.textContent = snapshot.S_3_Sub_Heading;
         S4Heading.textContent = snapshot.S_4_Heading;
