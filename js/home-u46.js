@@ -135,7 +135,7 @@ window.onload = async () => {
           <div class="card_box">
             <p class="body-copy-text-style-1 mt_xsml">${snapshot.Description_Programs[i]}</p>
           </div>
-          <a href="/program?program=${snapshot.ID_Programs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+          <a href="/program.html?program=${snapshot.ID_Programs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
       programContent.innerHTML = programContent.innerHTML + card;
@@ -153,7 +153,7 @@ window.onload = async () => {
           <div class="card_box">
             <p class="body-copy-text-style-1 mt_xsml">${snapshot.Rich_Text_Blogs[i]}</p>
           </div>
-          <a href="/blog-post?blog=${snapshot.ID_Blogs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+          <a href="/blog-post.html?blog=${snapshot.ID_Blogs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
       blogContent.innerHTML = blogContent.innerHTML + card;
