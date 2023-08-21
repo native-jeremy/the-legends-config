@@ -54,6 +54,9 @@ window.onload = async () => {
   //Blog Card Content
   const blogContent = document.getElementById("Blog_Content");
 
+  //Blog Card Content
+  const testimonialContent = document.getElementById("Testimonial_Content");
+
   //Mock Data Array || Iphone Mockup
   const mockData = [
     {
@@ -124,7 +127,7 @@ window.onload = async () => {
     console.log("Blogs Length", snapshot.Blogs.length);
 
     //Programs Render List
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 8; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_image">
@@ -142,7 +145,7 @@ window.onload = async () => {
     }
 
     //Blogs Render List
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 8; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_image">
@@ -154,6 +157,21 @@ window.onload = async () => {
             <p class="body-copy-text-style-1 mt_xsml">${snapshot.Rich_Text_Blogs[i]}</p>
           </div>
           <a href="/blog-post?blog=${snapshot.ID_Blogs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+        </div>
+      </div>`;
+      blogContent.innerHTML = blogContent.innerHTML + card;
+    }
+
+    //Testimonials Render List
+    for (let i = 0; i < 8; i++) {
+      const card = `
+      <div class="card scroll_card">
+        <div class="card_body">
+          <p class="body-copy-text-style-1 mt_xsml">${snapshot.Heading_Testimonials[i]}</p>
+          <div class="bottom_content mt_auto">
+            <h4 class="body-copy-text-style-1 mt_auto">-</h4>
+            <h4 class="body-copy-text-style-1 mt_auto">${snapshot.Description_Testimonials[i]}</h4>
+          </div>
         </div>
       </div>`;
       blogContent.innerHTML = blogContent.innerHTML + card;
