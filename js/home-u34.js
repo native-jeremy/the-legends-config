@@ -89,7 +89,7 @@ window.onload = async () => {
   //Home Page Request From Wized || Main Data
   Wized.request.await("Load Home Page", (response) => {
     const snapshot = response.data;
-    const { ID_Blogs: ID, Name_Blogs: Name, Media_Content_Blogs: Media, Rich_Text_Blogs: Description, Date_Blogs: Date } = snapshot;
+    const { ID_Blogs: ID, Name_Blogs: Name, Media_Content_Blogs: Media, Rich_Text_Blogs: Description} = snapshot;
     console.log(snapshot); // Log request response
 
     //Home Page Elements Request Data Applied To Elements
