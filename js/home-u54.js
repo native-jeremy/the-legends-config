@@ -163,7 +163,7 @@ window.onload = async () => {
     }
 
     //Testimonials Render List
-    for (let i = 0; i < snapshot.testimonials.length; i++) {
+    for (let i = 0; i < snapshot.Testimonials.length; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_body">
