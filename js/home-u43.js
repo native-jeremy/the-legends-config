@@ -37,6 +37,17 @@ window.onload = async () => {
   const S5Heading = document.getElementById("S_5_Heading");
   const S5SubHeading = document.getElementById("S_5_Sub_Heading");
 
+  //Call Action Elements
+  const HeadingCallToAction = document.getElementById("Heading_Call_To_Action");
+  const SubHeadingCallToAction = document.getElementById("Sub_Heading_Call_To_Action");
+  const ButtonLinkCallToAction = document.getElementById("Button_Link_Call_To_Action");
+  const ButtonTextCallToAction = document.getElementById("Button_Link_Call_To_Action");
+
+  const HeadingCallToAction2 = document.getElementById("Heading_Call_To_Action_2");
+  const SubHeadingCallToAction2 = document.getElementById("Sub_Heading_Call_To_Action_2");
+  const ButtonLinkCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
+  const ButtonTextCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
+
   //Program Card Content
   const programContent = document.getElementById("Program_Content");
 
@@ -75,17 +86,6 @@ window.onload = async () => {
     },
   ];
 
-  //Call Action Elements
-  const HeadingCallToAction = document.getElementById("Heading_Call_To_Action");
-  const SubHeadingCallToAction = document.getElementById("Sub_Heading_Call_To_Action");
-  const ButtonLinkCallToAction = document.getElementById("Button_Link_Call_To_Action");
-  const ButtonTextCallToAction = document.getElementById("Button_Link_Call_To_Action");
-
-  const HeadingCallToAction2 = document.getElementById("Heading_Call_To_Action_2");
-  const SubHeadingCallToAction2 = document.getElementById("Sub_Heading_Call_To_Action_2");
-  const ButtonLinkCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
-  const ButtonTextCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
-
   //Home Page Request From Wized || Main Data
   Wized.request.await("Load Home Page", (response) => {
     const snapshot = response.data;
@@ -117,17 +117,6 @@ window.onload = async () => {
     S4SubHeading.textContent = snapshot.S_4_Sub_Heading;
     S5Heading.textContent = snapshot.S_5_Heading;
     S5SubHeading.textContent = snapshot.S_5_Sub_Heading;
-
-    //Call Action Request Data Applied To Elements
-    HeadingCallToAction.textContent = snapshot.Heading_Call_To_Action[0];
-    SubHeadingCallToAction.textContent = snapshot.Sub_Heading_Call_To_Action[0];
-    ButtonLinkCallToAction.href = snapshot.Button_Link_Call_To_Action[0];
-    ButtonTextCallToAction.textContent = snapshot.Button_Text_Call_To_Action[0];
-        
-    HeadingCallToAction2.textContent = snapshot.Heading_Call_To_Action_2[0];
-    SubHeadingCallToAction2.textContent = snapshot.Sub_Heading_Call_To_Action_2[0];
-    ButtonLinkCallToAction2.href = snapshot.Button_Link_Call_To_Action_2[0];
-    ButtonTextCallToAction2.textContent = snapshot.Button_Text_Call_To_Action_2[0];
 
     //Logging Successful Request Message
     console.log("WORKED!");
@@ -169,6 +158,17 @@ window.onload = async () => {
       </div>`;
       blogContent.innerHTML = blogContent.innerHTML + card;
     }
+
+    //Call Action Request Data Applied To Elements
+    HeadingCallToAction.textContent = snapshot.Heading_Call_To_Action[0];
+    SubHeadingCallToAction.textContent = snapshot.Sub_Heading_Call_To_Action[0];
+    ButtonLinkCallToAction.href = snapshot.Button_Link_Call_To_Action[0];
+    ButtonTextCallToAction.textContent = snapshot.Button_Text_Call_To_Action[0];
+        
+    HeadingCallToAction2.textContent = snapshot.Heading_Call_To_Action_2[0];
+    SubHeadingCallToAction2.textContent = snapshot.Sub_Heading_Call_To_Action_2[0];
+    ButtonLinkCallToAction2.href = snapshot.Button_Link_Call_To_Action_2[0];
+    ButtonTextCallToAction2.textContent = snapshot.Button_Text_Call_To_Action_2[0];
 
     //Custom Slider Dots || Arrows || Elements / Event Listener Applied
     //Webflow Arrows | Buttons
