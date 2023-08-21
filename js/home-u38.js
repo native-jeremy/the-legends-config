@@ -153,7 +153,7 @@ window.onload = async () => {
     }
 
     BlogData.Blogs.forEach(Blog, post => {
-      const Blog = `
+      Blog = `
       <div class="card scroll_card">
         <div class="card_image">
           <img src="${snapshot.Media_Content_Blogs[post].url}" loading="lazy" alt="" class="img_full card_img_tag">
