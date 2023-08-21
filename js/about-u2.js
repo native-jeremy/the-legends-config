@@ -44,11 +44,11 @@ window.onload = async () => {
         console.log(snapshot); // Log request response
     
         //About Page Elements Request Data Applied To Elements
-        //HeroImage.srcset = snapshot.Hero_Image[0].url;
+        HeroImage.srcset = snapshot.Hero_Image[0].url;
         IntroHeading.textContent = snapshot.Intro_Heading;
         IntroDescription.textContent = snapshot.Intro_Description;
         S1Description.textContent = snapshot.S_1_Description;
-        //S1Image.srcset = snapshot.S_1_Image[0].url;
+        S1Image.srcset = snapshot.S_1_Image[0].url;
         S2Description.textContent = snapshot.S_2_Description;
         S2DisplayHeading.textContent = snapshot.S_2_Display_Heading;
         TrainerSectionHeading.textContent = snapshot.Trainer_Section_Heading;
