@@ -152,9 +152,7 @@ window.onload = async () => {
       programContent.innerHTML = programContent.innerHTML + card;
     }
 
-    array.forEach(element => {
-      
-    });
+
 
     //Blogs Render List
     for (let i = 0; i < BlogData.Blogs.length; i++) {
