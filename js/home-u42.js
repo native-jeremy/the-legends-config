@@ -37,17 +37,6 @@ window.onload = async () => {
   const S5Heading = document.getElementById("S_5_Heading");
   const S5SubHeading = document.getElementById("S_5_Sub_Heading");
 
-  //Call Action Elements
-  const HeadingCallToAction = document.getElementById("Heading_Call_To_Action");
-  const SubHeadingCallToAction = document.getElementById("Sub_Heading_Call_To_Action");
-  const ButtonLinkCallToAction = document.getElementById("Button_Link_Call_To_Action");
-  const ButtonTextCallToAction = document.getElementById("Button_Link_Call_To_Action");
-
-  const HeadingCallToAction2 = document.getElementById("Heading_Call_To_Action_2");
-  const SubHeadingCallToAction2 = document.getElementById("Sub_Heading_Call_To_Action_2");
-  const ButtonLinkCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
-  const ButtonTextCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
-
   //Program Card Content
   const programContent = document.getElementById("Program_Content");
 
@@ -85,6 +74,17 @@ window.onload = async () => {
       description: `No matter your fitness level, The Legends Programs will be tailored to where you plan to workout, what equipment you have available, the type of workouts you enjoy doing, how often & how long you would like to train each week, and specific to your health & fitness goals.`,
     },
   ];
+
+  //Call Action Elements
+  const HeadingCallToAction = document.getElementById("Heading_Call_To_Action");
+  const SubHeadingCallToAction = document.getElementById("Sub_Heading_Call_To_Action");
+  const ButtonLinkCallToAction = document.getElementById("Button_Link_Call_To_Action");
+  const ButtonTextCallToAction = document.getElementById("Button_Link_Call_To_Action");
+
+  const HeadingCallToAction2 = document.getElementById("Heading_Call_To_Action_2");
+  const SubHeadingCallToAction2 = document.getElementById("Sub_Heading_Call_To_Action_2");
+  const ButtonLinkCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
+  const ButtonTextCallToAction2 = document.getElementById("Button_Link_Call_To_Action_2");
 
   //Home Page Request From Wized || Main Data
   Wized.request.await("Load Home Page", (response) => {
