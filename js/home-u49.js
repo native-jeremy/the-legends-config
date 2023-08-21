@@ -135,13 +135,11 @@ window.onload = async () => {
           <div class="card_box">
             <p class="body-copy-text-style-1 mt_xsml">${snapshot.Description_Programs[i]}</p>
           </div>
-          <a href="/program" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+          <a href="/program/?program=${snapshot.ID_Programs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
       programContent.innerHTML = programContent.innerHTML + card;
     }
-
-    //?program=${snapshot.ID_Programs[i]}
 
     //Blogs Render List
     for (let i = 0; i < BlogData.Blogs.length; i++) {
