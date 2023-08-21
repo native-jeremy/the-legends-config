@@ -89,7 +89,8 @@ window.onload = async () => {
   //Home Page Request From Wized || Main Data
   Wized.request.await("Load Home Page", (response) => {
     const snapshot = response.data;
-    const { ID_Blogs: ID, Name_Blogs: Name, Media_Content_Blogs: Media, Rich_Text_Blogs: Description} = snapshot;
+    const ProgramData = snapshot;
+    const BlogData = snapshot;
     console.log(snapshot); // Log request response
 
     //Home Page Elements Request Data Applied To Elements
@@ -134,7 +135,7 @@ window.onload = async () => {
     console.log("Blogs Length", snapshot.Blogs.length);
 
     //Programs Render List
-    for (let i = 0; i < snapshot.Programs.length; i++) {
+    for (let i = 0; i < ProgramData.Programs.length; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_image">
@@ -156,18 +157,18 @@ window.onload = async () => {
     });
 
     //Blogs Render List
-    for (let i = 0; i < snapshot.Blogs.length; i++) {
+    for (let i = 0; i < BlogData.Blogs.length; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_image">
-          <img src="${Media[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
+          <img src="${snapshot.Media_Content_Blogs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
         </div>
         <div class="card_body">
-          <h4 class="main-heading-style-1">${Name[i]}</h4>
+          <h4 class="main-heading-style-1">${snapshot.Name_Blogs[i]}</h4>
           <div class="card_box">
-            <p class="body-copy-text-style-1 mt_xsml">${Description[i]}</p>
+            <p class="body-copy-text-style-1 mt_xsml">${snapshot.Rich_Text_Blogs[i]}</p>
           </div>
-          <a href="/blog-post?blog=${ID[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+          <a href="/blog-post?blog=${snapshot.ID_Blogs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
       blogContent.innerHTML = blogContent.innerHTML + card;
