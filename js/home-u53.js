@@ -145,7 +145,7 @@ window.onload = async () => {
     }
 
     //Blogs Render List
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < snapshot.Blogs.length; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_image">
@@ -163,7 +163,7 @@ window.onload = async () => {
     }
 
     //Testimonials Render List
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < snapshot.testimonials.length; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_body">
