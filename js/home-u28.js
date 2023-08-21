@@ -152,7 +152,7 @@ window.onload = async () => {
 
     //Blogs Render List
     for (let i = 0; i < snapshot.Blogs.length; i++) {
-      const card = `
+      const cardBlog = `
       <div class="card scroll_card">
         <div class="card_image">
           <img src="${snapshot.Media_Content_Blogs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
@@ -165,7 +165,7 @@ window.onload = async () => {
           <a href="/blog-post?blog=${snapshot.ID_Blogs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
-      blogContent.innerHTML = blogContent.innerHTML + card;
+      blogContent.innerHTML = blogContent.innerHTML + cardBlog;
     }
 
     //Custom Slider Dots || Arrows || Elements / Event Listener Applied
