@@ -54,9 +54,6 @@ window.onload = async () => {
   //Blog Card Content
   const blogContent = document.getElementById("Blog_Content");
 
-  /*Testimonial Card Content
-  const testimonialContent = document.getElementById("Testimonial_Content");*/
-
   //Mock Data Array || Iphone Mockup
   const mockData = [
     {
@@ -127,7 +124,7 @@ window.onload = async () => {
     console.log("Blogs Length", snapshot.Blogs.length);
 
     //Programs Render List
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 5; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_image">
@@ -145,7 +142,7 @@ window.onload = async () => {
     }
 
     //Blogs Render List
-    for (let i = 0; i < snapshot.Blogs.length; i++) {
+    for (let i = 0; i < 5; i++) {
       const card = `
       <div class="card scroll_card">
         <div class="card_image">
@@ -161,21 +158,6 @@ window.onload = async () => {
       </div>`;
       blogContent.innerHTML = blogContent.innerHTML + card;
     }
-
-    /*Testimonials Render List
-    for (let i = 0; i < snapshot.Testimonials.length; i++) {
-      const card = `
-      <div class="card scroll_card">
-        <div class="card_body">
-          <p class="body-copy-text-style-1 mt_xsml">${snapshot.Heading_Testimonials[i]}</p>
-          <div class="bottom_content mt_auto">
-            <h4 class="body-copy-text-style-1 mt_auto">-</h4>
-            <h4 class="body-copy-text-style-1 mt_auto">${snapshot.Description_Testimonials[i]}</h4>
-          </div>
-        </div>
-      </div>`;
-      testimonialContent.innerHTML = testimonialContent.innerHTML + card;
-    }*/
 
     //Call Action Request Data Applied To Elements
     HeadingCallToAction.textContent = snapshot.Heading_Call_To_Action[0];
