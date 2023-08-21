@@ -169,11 +169,11 @@ window.onload = async () => {
     } else if (parseInt(roundParam) !== 0) {
       RoundNumberText.innerHTML = parseInt(roundParam);
       roundNumHeader.innerHTML = parseInt(roundParam);
-    } else if (parseInt(roundParam) === 0 && roundSelected !== "Warmup"){
+    } else if (parseInt(roundParam) === 0 && roundSelected !== "Round 0"){
       RoundNumberText.innerHTML = parseInt(roundParam + 1);
       roundNumHeader.innerHTML = parseInt(roundParam + 1);
     }
-    else if (parseInt(roundParam) === 0 && roundSelected === "Warmup"){
+    else if (parseInt(roundParam) === 0 && roundSelected === "Round 0"){
       RoundNumberText.innerHTML = "Warm Up";
       roundTitle.innerHTML = "";
       roundNumHeader.innerHTML = "";
