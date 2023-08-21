@@ -54,8 +54,8 @@ window.onload = async () => {
   //Blog Card Content
   const blogContent = document.getElementById("Blog_Content");
 
-  //Blog Card Content
-  const testimonialContent = document.getElementById("Testimonial_Content");
+  /*Testimonial Card Content
+  const testimonialContent = document.getElementById("Testimonial_Content");*/
 
   //Mock Data Array || Iphone Mockup
   const mockData = [
