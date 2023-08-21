@@ -162,7 +162,7 @@ window.onload = async () => {
       blogContent.innerHTML = blogContent.innerHTML + card;
     }
 
-    //Testimonials Render List
+    /*Testimonials Render List
     for (let i = 0; i < snapshot.Testimonials.length; i++) {
       const card = `
       <div class="card scroll_card">
@@ -175,7 +175,7 @@ window.onload = async () => {
         </div>
       </div>`;
       testimonialContent.innerHTML = testimonialContent.innerHTML + card;
-    }
+    }*/
 
     //Call Action Request Data Applied To Elements
     HeadingCallToAction.textContent = snapshot.Heading_Call_To_Action[0];
