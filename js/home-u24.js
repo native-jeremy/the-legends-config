@@ -135,7 +135,7 @@ window.onload = async () => {
     //Programs Render List
     for (let i = 0; i < snapshot.Programs.length; i++) {
       const card = `
-      <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
+      <div class="card scroll_card">
         <div class="card_image">
           <img src="${snapshot.Image_Programs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
         </div>
@@ -153,7 +153,7 @@ window.onload = async () => {
     //Blogs Render List
     for (let i = 0; i < snapshot.Blogs.length; i++) {
       const card = `
-      <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
+      <div class="card scroll_card">
         <div class="card_image">
           <img src="${snapshot.Media_Content_Blogs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
         </div>
