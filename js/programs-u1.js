@@ -8,7 +8,7 @@ window.onload = async () => {
       const ButtonTextCallToAction = document.getElementById("Button_Link_Call_To_Action");
     
     //Home Page Request From Wized || Main Data
-      Wized.request.await("Load Programs", (response) => {
+      Wized.request.await("Load Programs CTA", (response) => {
         const snapshot = response.data;
         console.log(snapshot); // Log request response
     
