@@ -130,6 +130,7 @@ window.onload = async () => {
     //Logging Successful Request Message
     console.log("WORKED!");
     console.log("Programs Length", snapshot.Programs.length);
+    console.log("Blogs Length", snapshot.Blogs.length);
 
     //Programs Render List
     for (let i = 0; i < snapshot.Programs.length; i++) {
@@ -150,18 +151,18 @@ window.onload = async () => {
     }
 
     //Blogs Render List
-    for (let i = 0; i < snapshot.Blog.length; i++) {
+    for (let i = 0; i < snapshot.Blogs.length; i++) {
       const card = `
       <div id="w-node-a5574579-43de-e56f-650f-7731fc6fc9dd-061c0e03" class="card scroll_card">
         <div class="card_image">
-          <img src="${snapshot.image_or_video[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
+          <img src="${snapshot.Media_Content_Blogs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
         </div>
         <div class="card_body">
-          <h4 class="main-heading-style-1">${snapshot.Name_Blog[i]}</h4>
+          <h4 class="main-heading-style-1">${snapshot.Name_Blogs[i]}</h4>
           <div class="card_box">
-            <p class="body-copy-text-style-1 mt_xsml">${snapshot.Rich_Text_Blog[i]}</p>
+            <p class="body-copy-text-style-1 mt_xsml">${snapshot.Rich_Text_Blogs[i]}</p>
           </div>
-          <a href="/program-overview?program=${snapshot.ID_Blog[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+          <a href="/program-overview?program=${snapshot.ID_Blogs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
       blogContent.innerHTML = blogContent.innerHTML + card;
