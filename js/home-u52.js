@@ -174,7 +174,7 @@ window.onload = async () => {
           </div>
         </div>
       </div>`;
-      blogContent.innerHTML = blogContent.innerHTML + card;
+      testimonialContent.innerHTML = testimonialContent.innerHTML + card;
     }
 
     //Call Action Request Data Applied To Elements
