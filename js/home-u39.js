@@ -153,7 +153,7 @@ window.onload = async () => {
     }
 
     BlogData.Blogs.forEach(Blog, post => {
-      Blog = `
+      const card = `
       <div class="card scroll_card">
         <div class="card_image">
           <img src="${snapshot.Media_Content_Blogs[post].url}" loading="lazy" alt="" class="img_full card_img_tag">
@@ -166,7 +166,7 @@ window.onload = async () => {
           <a href="/blog-post?blog=${snapshot.ID_Blogs[post]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
         </div>
       </div>`;
-      blogContent.innerHTML = blogContent.innerHTML + Blog;
+      blogContent.innerHTML = blogContent.innerHTML + card;
     });
 
     /*Blogs Render List
