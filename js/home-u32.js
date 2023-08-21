@@ -132,24 +132,6 @@ window.onload = async () => {
     console.log("Programs Length", snapshot.Programs.length);
     console.log("Blogs Length", snapshot.Blogs.length);
 
-        //Blogs Render List
-        for (let i = 0; i < snapshot.Blogs.length; i++) {
-          const card = `
-          <div class="card scroll_card">
-            <div class="card_image">
-              <img src="${snapshot.Media_Content_Blogs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
-            </div>
-            <div class="card_body">
-              <h4 class="main-heading-style-1">${snapshot.Name_Blogs[i]}</h4>
-              <div class="card_box">
-                <p class="body-copy-text-style-1 mt_xsml">${snapshot.Rich_Text_Blogs[i]}</p>
-              </div>
-              <a href="/blog-post?blog=${snapshot.ID_Blogs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
-            </div>
-          </div>`;
-          blogContent.innerHTML = blogContent.innerHTML + card;
-        }
-
     //Programs Render List
     for (let i = 0; i < snapshot.Programs.length; i++) {
       const card = `
@@ -166,6 +148,24 @@ window.onload = async () => {
         </div>
       </div>`;
       programContent.innerHTML = programContent.innerHTML + card;
+    }
+
+    //Blogs Render List
+    for (let i = 0; i < snapshot.Blogs.length; i++) {
+      const card = `
+      <div class="card scroll_card">
+        <div class="card_image">
+          <img src="${snapshot.Media_Content_Blogs[i].url}" loading="lazy" alt="" class="img_full card_img_tag">
+        </div>
+        <div class="card_body">
+          <h4 class="main-heading-style-1">${snapshot.Name_Blogs[i]}</h4>
+          <div class="card_box">
+            <p class="body-copy-text-style-1 mt_xsml">${snapshot.Rich_Text_Blogs[i]}</p>
+          </div>
+          <a href="/blog-post?blog=${snapshot.ID_Blogs[i]}" class="button-style-1 card_button mt_auto w-button">Learn More</a>
+        </div>
+      </div>`;
+      blogContent.innerHTML = blogContent.innerHTML + card;
     }
 
     //Custom Slider Dots || Arrows || Elements / Event Listener Applied
