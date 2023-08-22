@@ -151,6 +151,8 @@ window.onload = async () => {
       videoContainer.style.opacity = "1";
     }
 
+    console.log("Round Default Start Diff Level", roundRes.data[parseInt(roundParam)].Default_Diff_Level);
+
     roundLength = roundRes.data.length;
 
     roundRealNumber = parseInt(roundParam) + 1;
