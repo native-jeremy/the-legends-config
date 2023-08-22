@@ -126,7 +126,11 @@ window.onload = async () => {
     roundRes = response;
     roundInfo = roundRes.data[parseInt(roundParam)];
 
+    roundDiffLevel = roundInfo.Default_Diff_Level.split(", ");
+
     roundSelected = roundRes.data[parseInt(roundParam)].Round_Selection;
+
+    console.log("Round Default Diff Level Split Into Array", roundDiffLevel);
 
     console.log("Round Selection Name ", response);
   });
@@ -152,7 +156,7 @@ window.onload = async () => {
       videoContainer.style.opacity = "1";
     }
 
-    console.log("Round Default Start Diff Level", roundInfo.Default_Diff_Level);
+    //console.log("Round Default Start Diff Level", roundInfo.Default_Diff_Level);
 
     roundLength = roundRes.data.length;
 
@@ -547,7 +551,7 @@ window.onload = async () => {
             console.log("Diff Res RETURNED! ", exerciseDiffRes);
 
             //let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
-            let defaultDiff = roundInfo.Default_Diff_Level[0];
+            let defaultDiff = roundDiffLevel[0];
             //let diffStr = currentNum.innerHTML;
             diffCurrent = defaultDiff - 1;
             currentNum.innerHTML = defaultDiff;
