@@ -142,13 +142,18 @@ window.onload = async () => {
   })*/
 
   // [- Step 2 -] Exercises Request Response From Wized
-  Wized.request.await("Load Exercises", (response, exerciseDiffRes) => {
-    const repDataInt = response;
+  Wized.request.await("Load Exercises", (response, exerciseDiffRes, roundRes) => {
+    let a = roundRes;
+    let b = roundRes;
+    const sortedResponse = response.sort((a,b) => {
+      return a.Exercise_Order - b.Exercise_Order;
+    });.Exercise_Orderconsole.log("Sorted Response!", sortResponse);
+    const repDataInt = sortedResponse;
     let repAmount;
     let repType;
     let newcookieIndex;
     let amrapBool;
-    const amrapResponse = response;
+    const amrapResponse = sortedResponse;
     let checkAmrap;
 
     if (repDataInt.status === 200) {
