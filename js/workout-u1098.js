@@ -147,7 +147,8 @@ window.onload = async () => {
     let b = roundRes;
     const sortedResponse = response.sort((a,b) => {
       return a.Exercise_Order - b.Exercise_Order;
-    });.Exercise_Orderconsole.log("Sorted Response!", sortResponse);
+    });
+    console.log("Sorted Response!", sortResponse);
     const repDataInt = sortedResponse;
     let repAmount;
     let repType;
