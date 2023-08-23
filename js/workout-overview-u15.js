@@ -24,7 +24,7 @@ const voiceToggleOn = document.getElementById("voiceToggleOn");
 
 window.onload = async () => {
   Wized.request.await("Load Workout - OVERVIEW", (response) => {
-    const snapshot = response.data[0];
+    const snapshot = response.data;
     let richTextRes = snapshot.Equipment_List;
     const richText = document.getElementById("richText");
 
