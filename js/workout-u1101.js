@@ -142,7 +142,8 @@ window.onload = async () => {
   })*/
 
   // [- Step 2 -] Exercises Request Response From Wized
-  Wized.request.await("Load Exercises", (response, exerciseDiffRes) => {
+  //Load Exercises
+  Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
     const repDataInt = response;
     let repAmount;
     let repType;
