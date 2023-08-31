@@ -518,9 +518,6 @@ window.onload = async () => {
           Wized.request.await("Load Exercise Diff", (response) => {
             
             secondaryResponse = response;
-            console.log("---------------------------------------");
-            console.log("Exercise Diff Information ", secondaryResponse);
-
             /*let diffStr = currentNum.innerHTML;
             let diffInt = parseInt(diffStr);
             diffCurrent = diffInt - 1;*/
@@ -534,28 +531,16 @@ window.onload = async () => {
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
             secondaryResponse.data[0].Video.length
-            console.log("Amrap length:", newcookieIndex);
 
-            
             diffLength =
             secondaryResponse.data[0].Video.length;
             maxLimit = diffLength;
             limitNum.innerHTML = maxLimit;
-            console.log(
-              "Diff Video Length Exercise:",
-              secondaryResponse.data[0].Video.length
-            );
-            console.log(
-              "Diff Length :",
-              secondaryResponse.data[0].Video.length
-            );
 
             DiffControlsSingle();
-            console.log("Diff Current Applied", diffCurrent);
             vidSrc.src =
             secondaryResponse.data[0].Video[0].url
             
-
             // Diff Increase Click Controls - Single Exercise
             function DiffControlsSingle() {
               plusBtn.addEventListener("click", function () {
