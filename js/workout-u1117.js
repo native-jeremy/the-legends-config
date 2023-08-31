@@ -110,7 +110,6 @@ window.onload = async () => {
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
   // URL Searching Setup and Declaration
-  let activeParam = document.getElementById("activeParam");
   let params = window.location.href;
   let url = new URL(params);
   let checkurl = url.searchParams;
@@ -129,10 +128,6 @@ window.onload = async () => {
     roundDiffLevel = roundInfo.Default_Diff_Level.split(", ");
 
     roundSelected = roundRes.data[parseInt(roundParam)].Round_Selection;
-
-    console.log("Default Diff Level Data", roundDiffLevel);
-
-    console.log("Round Selection Name ", response);
   });
 
   /*Wized.request.await("Load Audio", (response) => {    
@@ -158,8 +153,6 @@ window.onload = async () => {
       loaderTrigger.click();
       videoContainer.style.opacity = "1";
     }
-
-    //console.log("Round Default Start Diff Level", roundInfo.Default_Diff_Level);
 
     roundLength = roundRes.data.length;
 
@@ -192,17 +185,8 @@ window.onload = async () => {
     console.log("---------------------------------------");
     console.log("Rounds Res Length", roundLength);
 
-    exerciseData = repDataInt.data[parseInt(exercisesParam)];
+    exerciseData = mainResponse.data[parseInt(exercisesParam)];
 
-    console.log("---------------------------------------");
-    console.log(
-      "Round Number",
-      parseInt(roundParam),
-      "Exercises Number",
-      parseInt(exercisesParam),
-      "Exercise Number",
-      parseInt(exerciseParam)
-    );
     console.log("---------------------------------------");
     console.log("All Rounds:", mainResponse);
     console.log("---------------------------------------");
