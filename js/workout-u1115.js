@@ -781,9 +781,8 @@ window.onload = async () => {
         clickNum = clickNum + 1;
       });
     } else if (
-      exerciseData == undefined &&
       parseInt(exercisesParam) > 0 &&
-      parseInt(roundParam) !== roundLength
+      parseInt(roundParam) !== mainResponse.data.length
     ) {
       getRoundNum = checkurl.get("round");
       getRoundNum = parseInt(getRoundNum) + 1;
@@ -794,7 +793,7 @@ window.onload = async () => {
 
       window.location.href = url.toString();
     } else if (
-      exerciseData == undefined &&
+
       parseInt(roundParam) == 0 &&
       parseInt(exercisesParam) < 0
     ) {
