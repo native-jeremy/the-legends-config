@@ -622,27 +622,6 @@ window.onload = async () => {
         clearTimeout(clearStates);
       }, 1500);
 
-      //RoundNumberText.innerHTML = parseInt(exercisesParam) + 1;
-
-      console.log("---------------------------------------");
-      console.log(
-        "Rounds",
-        //amrapResponse.data[parseInt(exercisesParam)].Round_Name[0]
-      );
-
-      /* WORK IN PROGRESS CODE Thursday 29th June 2023 
-    New DEVELOPMENT Parameter setup for indexing using ("Query String")*/
-
-      console.log("---------------------------------------");
-      console.log("Amount: ", repAmount);
-      console.log("---------------------------------------");
-      console.log("Rep Type:", repType);
-      console.log("---------------------------------------");
-
-      console.log("Current Difficulty:", diffCurrent);
-      console.log("---------------------------------------");
-      console.log("Is The Selected Exercise An Amrap:", amrapBool);
-
       nextButton.addEventListener("click", function () {
         updateParams();
 
