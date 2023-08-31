@@ -184,7 +184,7 @@ window.onload = async () => {
     console.log("---------------------------------------");
     console.log("All Rounds:", mainResponse);
     console.log("---------------------------------------");
-    console.log("Current Round Information:", mainResponse.data[parseInt(roundParam)]);
+    console.log("Current Round:", mainResponse.data[parseInt(roundParam)]);
 
     //console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio_Source);
 
@@ -559,8 +559,6 @@ window.onload = async () => {
                 } else {
                   diffCurrent = maxLimit;
                 }
-                console.log("---------------------------------------");
-                console.log("Current Difficulty:", diffCurrent);
               });
 
               // Diff Decrease Click Controls - Single Exercise
@@ -580,8 +578,6 @@ window.onload = async () => {
                 } else {
                   diffCurrent = minLimit;
                 }
-                console.log("---------------------------------------");
-                console.log("Current Difficulty:", diffCurrent);
               });
             }
           });
