@@ -145,6 +145,7 @@ window.onload = async () => {
   //Load Exercises
   //parseInt(roundParam)
   Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
+    const mainResponse = response;
     const repDataInt = response;
     let repAmount;
     let repType;
@@ -203,11 +204,9 @@ window.onload = async () => {
       parseInt(exerciseParam)
     );
     console.log("---------------------------------------");
-    console.log("All Rounds + Exercises Information:", amrapResponse);
+    console.log("All Rounds + Exercises Information:", mainResponse);
     console.log("---------------------------------------");
-    console.log("Current Round + Current Exercise Information:", repDataInt.data[parseInt(roundParam)]);
-
-    console.log("Diff Response Secondary:", exerciseDiffRes);
+    console.log("Current Round + Current Exercise Information:", mainResponse.data[parseInt(roundParam)]);
 
     //console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio_Source);
 
@@ -540,17 +539,13 @@ window.onload = async () => {
 
           Wized.request.await("Load Exercise Diff", (response) => {
             
-            diffRes = response;
+            secondaryResponse = response;
             console.log("---------------------------------------");
-            console.log("Exercise Diff Info Response TEMP! ", diffRes);
+            console.log("Exercise Diff Information ", secondaryResponse);
 
             /*let diffStr = currentNum.innerHTML;
             let diffInt = parseInt(diffStr);
             diffCurrent = diffInt - 1;*/
-
-            exerciseDiffRes = diffRes;
-
-            console.log("Diff Res RETURNED! ", exerciseDiffRes);
 
             //let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
             let defaultDiff = roundDiffLevel[parseInt(exercisesParam)];
@@ -560,27 +555,27 @@ window.onload = async () => {
 
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
-            exerciseDiffRes.data[0].Video.length
+            secondaryResponse.data[0].Video.length
             console.log("Amrap length:", newcookieIndex);
 
             
             diffLength =
-            exerciseDiffRes.data[0].Video.length;
+            secondaryResponse.data[0].Video.length;
             maxLimit = diffLength;
             limitNum.innerHTML = maxLimit;
             console.log(
               "Diff Video Length Exercise:",
-              exerciseDiffRes.data[0].Video.length
+              secondaryResponse.data[0].Video.length
             );
             console.log(
               "Diff Length :",
-              exerciseDiffRes.data[0].Video.length
+              secondaryResponse.data[0].Video.length
             );
 
             DiffControlsSingle();
             console.log("Diff Current Applied", diffCurrent);
             vidSrc.src =
-            exerciseDiffRes.data[0].Video[0].url
+            secondaryResponse.data[0].Video[0].url
             
 
             // Diff Increase Click Controls - Single Exercise
@@ -593,7 +588,7 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                    repDataInt.data[parseInt(exercisesParam)].Diff_Video[
+                  secondaryResponse.data[parseInt(exercisesParam)].Video[
                       diffCurrent
                     ].url;
                   setTimeout(enableActiveStates, 1500);
@@ -614,7 +609,7 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                    repDataInt.data[parseInt(exercisesParam)].Diff_Video[
+                    secondaryResponse.data[parseInt(exercisesParam)].Video[
                       diffCurrent
                     ].url;
                   setTimeout(enableActiveStates, 1500);
@@ -626,20 +621,6 @@ window.onload = async () => {
                 console.log("Current Difficulty:", diffCurrent);
               });
             }
-
-            /*audioSrc.src =
-            repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;*/
-            //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
-            /*let exercisesLength =
-              amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
-            let roundLength = repDataInt.data.length;
-
-            console.log("---------------------------------------");
-            console.log("Exercise Length", exercisesLength);
-            console.log("---------------------------------------");
-            console.log("Round Length", roundLength);*/
-            /*vidSrc.src =
-            exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;*/
           });
         }
       }
@@ -891,13 +872,13 @@ window.onload = async () => {
       }, 1000);
     }
 
-      function setProgress(percent) {
-        let progress = document.querySelector('.progressWheel');
-        let radius = progress.r.baseVal.value;
-        let circumference = radius * 2 * Math.PI;
-        progress.style.strokeDasharray = circumference;
-        progress.style.strokeDashoffset = circumference - (percent / 100) * circumference;
-      }
+    function setProgress(percent) {
+      let progress = document.querySelector('.progressWheel');
+      let radius = progress.r.baseVal.value;
+      let circumference = radius * 2 * Math.PI;
+      progress.style.strokeDasharray = circumference;
+      progress.style.strokeDashoffset = circumference - (percent / 100) * circumference;
+    }
 
     // Rep Count Apply Function
     function repCount() {
@@ -997,13 +978,6 @@ window.onload = async () => {
       }
     }*/
   });
-
-  /*Wized.request.await("Load Exercise", (response) => {
-    console.log("---------------------------------------");
-    console.log("Exercise Info Response", response);
-
-    exerciseRes = response;
-  });*/
 
   //Function Calls Onload
   //roundEnableLoad();
@@ -1166,3 +1140,17 @@ window.onload = async () => {
     }
   });
 };
+
+/*function audioChange() {
+  audioSrc.src =
+  repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
+  let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
+  let exercisesLength = amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
+  let roundLength = repDataInt.data.length;
+
+  console.log("---------------------------------------");
+  console.log("Exercise Length", exercisesLength);
+  console.log("---------------------------------------");
+  console.log("Round Length", roundLength);
+  vidSrc.src = exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;
+}*/
