@@ -580,7 +580,7 @@ window.onload = async () => {
             DiffControlsSingle();
             console.log("Diff Current Applied", diffCurrent);
             vidSrc.src =
-            exerciseDiffRes.data[0].Video.url
+            exerciseDiffRes.data[0].Video[0].url
             
 
             // Diff Increase Click Controls - Single Exercise
