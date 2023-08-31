@@ -130,7 +130,7 @@ window.onload = async () => {
 
     roundSelected = roundRes.data[parseInt(roundParam)].Round_Selection;
 
-    console.log("Round Default Diff Level Split Into Array", roundDiffLevel);
+    console.log("Default Diff Level Data", roundDiffLevel);
 
     console.log("Round Selection Name ", response);
   });
@@ -204,9 +204,9 @@ window.onload = async () => {
       parseInt(exerciseParam)
     );
     console.log("---------------------------------------");
-    console.log("All Rounds + Exercises Information:", mainResponse);
+    console.log("All Rounds:", mainResponse);
     console.log("---------------------------------------");
-    console.log("Current Round + Current Exercise Information:", mainResponse.data[parseInt(roundParam)]);
+    console.log("Current Round Information:", mainResponse.data[parseInt(roundParam)]);
 
     //console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio_Source);
 
@@ -217,10 +217,10 @@ window.onload = async () => {
 
     if (exerciseData !== undefined) {
       repAmount =
-        repDataInt.data[parseInt(exercisesParam)]
+      mainResponse.data[parseInt(exercisesParam)]
           .Amounts_Name /*[diffCurrent]*/;
-      repType = repDataInt.data[parseInt(exercisesParam)].Rep_Type /*[0]*/;
-      amrapBool = repDataInt.data[parseInt(exercisesParam)].Amrap;
+      repType = mainResponse.data[parseInt(exercisesParam)].Rep_Type /*[0]*/;
+      amrapBool = mainResponse.data[parseInt(exercisesParam)].Amrap;
 
       if (amrapBool == "True") {
         loadAmrapData();
@@ -667,11 +667,6 @@ window.onload = async () => {
         console.log("Next Button Clicked Updated Data Below");
         console.log("---------------------------------------");
         console.log(
-          "Video Array Length:",
-          amrapResponse.data[parseInt(exercisesParam)].Video.length
-        );
-        console.log("---------------------------------------");
-        console.log(
           "Round Number",
           parseInt(roundParam),
           "Exercises Number",
@@ -689,11 +684,6 @@ window.onload = async () => {
         console.log("Prev Button Clicked Updated Data Below");
         console.log("---------------------------------------");
         console.log(
-          "Amrap Video Array Length:",
-          amrapResponse.data[parseInt(exercisesParam)].Video.length
-        );
-        console.log("---------------------------------------");
-        console.log(
           "Round Number",
           parseInt(roundParam),
           "Exercises Number",
@@ -704,27 +694,11 @@ window.onload = async () => {
       });
 
       function updateParams() {
-        /*if (amrapBool == "True") {
-          getExercisesNum = checkurl.get("exercises");
-          getExercisesNum = exercisesLength;
-          setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-        }*/
-
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
 
         window.location.href = url.toString();
-        //window.history.replaceState(null, null, url.toString());
-        //checkParam()
-
-        /* //DEVELOPMENT ONLY
-        console.log("---------------------------------------");
-        console.log("Next Button Clicked Updated Data Below");
-        console.log("---------------------------------------");
-        console.log("Amrap Video Array Length:", amrapResponse.data[parseInt(exercisesParam)].Video.length);
-        console.log("---------------------------------------");
-        console.log("Round Number", parseInt(roundParam), "Exercises Number", parseInt(exercisesParam), "Exercise Number", parseInt(exerciseParam));*/
       }
 
       function backTrackParams() {
