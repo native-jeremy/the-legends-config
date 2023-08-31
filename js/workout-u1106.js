@@ -203,7 +203,7 @@ window.onload = async () => {
       parseInt(exerciseParam)
     );
     console.log("---------------------------------------");
-    console.log("All Exercises", amrapResponse);
+    console.log("All Exercises", amrapResponse.data[parseInt(roundParam)]);
     console.log("---------------------------------------");
     console.log("Single Exercise:", repDataInt.data[parseInt(exercisesParam)]);
 
