@@ -145,12 +145,12 @@ window.onload = async () => {
   //Load Exercises
   //parseInt(roundParam)
   Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
-    const repDataInt = response.data[0];
+    const repDataInt = response;
     let repAmount;
     let repType;
     let newcookieIndex;
     let amrapBool;
-    const amrapResponse = response.data[0];
+    const amrapResponse = response;
     let checkAmrap;
 
     if (repDataInt.status === 200) {
