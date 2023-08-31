@@ -997,12 +997,12 @@ window.onload = async () => {
     }*/
   });
 
-  Wized.request.await("Load Exercise", (response) => {
+  /*Wized.request.await("Load Exercise", (response) => {
     console.log("---------------------------------------");
     console.log("Exercise Info Response", response);
 
     exerciseRes = response;
-  });
+  });*/
 
   //Function Calls Onload
   //roundEnableLoad();
