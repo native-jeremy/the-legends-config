@@ -580,6 +580,9 @@ window.onload = async () => {
                 }
               });
             }
+
+            console.log("---------------------------------------");
+            console.log("Current Diff:", secondaryResponse);
           });
         }
       }
