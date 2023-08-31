@@ -630,22 +630,22 @@ window.onload = async () => {
             /*audioSrc.src =
             repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;*/
             //let roundLength = amrapResponse.data[parseInt(exerciseParam)].Video.length
-            let exercisesLength =
+            /*let exercisesLength =
               amrapResponse.data[parseInt(exercisesParam)].Exercise_Selection.length;
             let roundLength = repDataInt.data.length;
 
             console.log("---------------------------------------");
             console.log("Exercise Length", exercisesLength);
             console.log("---------------------------------------");
-            console.log("Round Length", roundLength);
+            console.log("Round Length", roundLength);*/
             /*vidSrc.src =
             exerciseDiffRes.data[parseInt(videoIndex)].Video[currentNumber].url;*/
           });
         }
       }
 
-      audioSrc.src =
-      repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;
+      /*audioSrc.src =
+      repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;*/
 
       // Diff Increase Click Controls - Amrap Exercises
       /*function DiffControlsAmrap() {
