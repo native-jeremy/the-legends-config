@@ -203,9 +203,9 @@ window.onload = async () => {
       parseInt(exerciseParam)
     );
     console.log("---------------------------------------");
-    console.log("All Exercises", amrapResponse.data[parseInt(roundParam)]);
+    console.log("All Exercises", amrapResponse);
     console.log("---------------------------------------");
-    console.log("Single Exercise:", repDataInt.data[parseInt(exercisesParam)]);
+    console.log("Single Exercise:", repDataInt.data[parseInt(roundParam)]);
 
     console.log("Diff Response Secondary:", exerciseDiffRes);
 
