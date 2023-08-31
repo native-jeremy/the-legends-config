@@ -560,7 +560,7 @@ window.onload = async () => {
 
             //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
-            repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
+            exerciseDiffRes.data[0].Video.length
             console.log("Amrap length:", newcookieIndex);
 
             
