@@ -119,9 +119,6 @@ window.onload = async () => {
   enableDisabledStates();
 
   Wized.request.await("Load Round Info", (response) => {
-    console.log("---------------------------------------");
-    console.log("Round Info Response", response);
-
     roundRes = response;
     roundInfo = roundRes.data[parseInt(roundParam)];
 
@@ -181,9 +178,6 @@ window.onload = async () => {
       roundTitle.innerHTML = "";
       roundNumHeader.innerHTML = "";
     }
-
-    console.log("---------------------------------------");
-    console.log("Rounds Res Length", roundLength);
 
     exerciseData = mainResponse.data[parseInt(exercisesParam)];
 
