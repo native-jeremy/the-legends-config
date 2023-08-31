@@ -570,17 +570,18 @@ window.onload = async () => {
             limitNum.innerHTML = maxLimit;
             console.log(
               "Diff Video Length Exercise:",
-              repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
+              exerciseDiffRes.data[0].Video.length
             );
             console.log(
               "Diff Length :",
-              repDataInt.data[parseInt(exercisesParam)].Diff_Video.length
+              exerciseDiffRes.data[0].Video.length
             );
 
             DiffControlsSingle();
             console.log("Diff Current Applied", diffCurrent);
             vidSrc.src =
-            repDataInt.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url;
+            exerciseDiffRes.data[0].Video.url
+            
 
             // Diff Increase Click Controls - Single Exercise
             function DiffControlsSingle() {
