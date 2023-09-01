@@ -600,39 +600,9 @@ window.onload = async () => {
         clearTimeout(clearStates);
       }, 1500);
 
-      nextButton.addEventListener("click", function () {
-        updateParams();
+      nextButton.addEventListener("click", updateParams());
 
-        //DEVELOPMENT ONLY
-        console.log("---------------------------------------");
-        console.log("Next Button Clicked Updated Data Below");
-        console.log("---------------------------------------");
-        console.log(
-          "Round Number",
-          parseInt(roundParam),
-          "Exercises Number",
-          parseInt(exercisesParam),
-          "Exercise Number",
-          parseInt(exerciseParam)
-        );
-      });
-
-      prevButton.addEventListener("click", function () {
-        backTrackParams();
-
-        //DEVELOPMENT ONLY
-        console.log("---------------------------------------");
-        console.log("Prev Button Clicked Updated Data Below");
-        console.log("---------------------------------------");
-        console.log(
-          "Round Number",
-          parseInt(roundParam),
-          "Exercises Number",
-          parseInt(exercisesParam),
-          "Exercise Number",
-          parseInt(exerciseParam)
-        );
-      });
+      prevButton.addEventListener("click", backTrackParams());
 
       function updateParams() {
         getExercisesNum = checkurl.get("exercises");
