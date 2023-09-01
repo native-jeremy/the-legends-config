@@ -600,13 +600,9 @@ window.onload = async () => {
         clearTimeout(clearStates);
       }, 1500);
 
-      nextButton.addEventListener("click", function () {
-        updateParams();
-      });
+      nextButton.addEventListener("click", updateParams, false);
 
-      prevButton.addEventListener("click", function () {
-        backTrackParams();
-      });
+      prevButton.addEventListener("click", backTrackParams, false);
 
       function updateParams() {
         getExercisesNum = checkurl.get("exercises");
