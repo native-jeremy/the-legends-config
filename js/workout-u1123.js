@@ -695,7 +695,7 @@ window.onload = async () => {
         playVideo();
         clickNum = clickNum + 1;
       });
-    } else if (
+    } /*else if (
       parseInt(exercisesParam) > 0 &&
       parseInt(roundParam) !== mainResponse.data.length
     ) {
@@ -707,8 +707,7 @@ window.onload = async () => {
       setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
 
       window.location.href = url.toString();
-    } else if (
-
+    }*/ else if (
       parseInt(roundParam) == 0 &&
       parseInt(exercisesParam) < 0
     ) {
