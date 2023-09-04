@@ -186,7 +186,7 @@ window.onload = async () => {
     console.log("---------------------------------------");
     console.log("Current Round:", mainResponse.data[parseInt(roundParam)]);
     console.log("---------------------------------------");
-    console.log("Current Exercise Amount:", mainResponse.data[parseInt(roundParam)]).Amounts_Name_Linked_Exercises[parseInt(exercisesParam)];
+    console.log("Current Exercise Amount:", mainResponse.data[parseInt(roundParam)]).Amounts_Name_Linked_Exercises[0];
 
     //console.log("Audio", amrapResponse.data[parseInt(exercisesParam)].Audio_Source);
 
