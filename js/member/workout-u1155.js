@@ -598,7 +598,7 @@ window.onload = async () => {
         }
       }
 
-      audioSrc.src = mainResponse.data[parseInt(roundParam)].Audio_Source[parseInt(exercisesParam)].url;
+      audioSrc.src = mainResponse.data[parseInt(roundParam)].Audio_Source_Linked_Exercises[parseInt(exercisesParam)].url;
 
       // Diff Increase Click Controls - Amrap Exercises
       /*function DiffControlsAmrap() {
