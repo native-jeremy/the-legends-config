@@ -749,7 +749,7 @@ window.onload = async () => {
       setProgress(percentage);
       let timer = setInterval(function () {
         timerConversion(counter);
-        timerText.innerHTML = minutes + seconds;
+        timerText.innerHTML = minutes + ":" + seconds;
         if (!timerText.classList.contains("pausetime")) {
           counter--;
           setProgress(counter);
