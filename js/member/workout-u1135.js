@@ -751,7 +751,7 @@ window.onload = async () => {
       repText.innerHTML = repType;
       setProgress(percentage);
       let timer = setInterval(function () {
-        console.log(minutes + seconds)
+        console.log(timerConversion)
         timerText.innerHTML = counter + ".00";
         if (!timerText.classList.contains("pausetime")) {
           counter--;
