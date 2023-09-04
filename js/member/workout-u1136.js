@@ -25,6 +25,9 @@ const durationTest = document.getElementById("dur");
 const RoundNumberText = document.getElementById("mainNumText");
 const progressEl = document.querySelector('.wheel');
 
+let minutes;
+let seconds;
+
 // Param Int Set Variables
 let setIntRoundNum;
 let setIntExercisesNum;
@@ -605,13 +608,10 @@ window.onload = async () => {
       
 
       function timerConversion(time) {
-        let minutes = time / 60;
-        let seconds = time % 60;
+        minutes = time / 60;
+        seconds = time % 60;
 
-        return {
-          minutes: minutes,
-          seconds: seconds
-        };
+        return minutes, seconds;
       }
 
       nextButton.addEventListener("click", updateParams, false);
@@ -746,7 +746,7 @@ window.onload = async () => {
 
     // Timer setup function
     function timer() {
-      let counter = repAmount;
+      let counter = minutes + seconds;
       let percentage = counter / 100 * 100;
       repText.innerHTML = repType;
       setProgress(percentage);
