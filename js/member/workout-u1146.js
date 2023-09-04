@@ -204,7 +204,7 @@ window.onload = async () => {
       timerConversion(repAmount)
 
       function timerConversion(time) {
-        let minutes = time / 60;
+        let minutes = Math.floor(time / 60);
         let seconds = time % 60;
         console.log("Minutes:", minutes, "Seconds:", seconds);
       }
