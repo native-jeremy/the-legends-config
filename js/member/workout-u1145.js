@@ -203,6 +203,12 @@ window.onload = async () => {
 
       timerConversion(repAmount)
 
+      function timerConversion(time) {
+        let minutes = time / 60;
+        let seconds = time % 60;
+        console.log("Minutes:", minutes, "Seconds:", seconds);
+      }
+
       if (amrapBool == "True") {
         loadAmrapData();
         
@@ -602,14 +608,6 @@ window.onload = async () => {
         enableActiveStates();
         clearTimeout(clearStates);
       }, 1500);
-      
-
-      function timerConversion(time) {
-        let minutes = time / 60;
-        let seconds = time % 60;
-        return (seconds, minutes)
-      }
-      console.log("Minutes:", minutes, "Seconds:", seconds);
 
       nextButton.addEventListener("click", updateParams, false);
 
