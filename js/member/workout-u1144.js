@@ -25,8 +25,6 @@ const durationTest = document.getElementById("dur");
 const RoundNumberText = document.getElementById("mainNumText");
 const progressEl = document.querySelector('.wheel');
 
-
-
 // Param Int Set Variables
 let setIntRoundNum;
 let setIntExercisesNum;
@@ -202,6 +200,8 @@ window.onload = async () => {
       repType = mainResponse.data[parseInt(roundParam)].Rep_Type_Linked_Exercises[parseInt(exercisesParam)]
       /*[0]*/;
       amrapBool = mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises[parseInt(exercisesParam)];
+
+      timerConversion(repAmount)
 
       if (amrapBool == "True") {
         loadAmrapData();
@@ -604,19 +604,12 @@ window.onload = async () => {
       }, 1500);
       
 
-      function secondsToMinutesAndSeconds(totalSeconds) {
-        let minutes = Math.floor(totalSeconds / 60);
-        let seconds = totalSeconds % 60;
-      
-        return {
-          minutes: minutes,
-          seconds: seconds
-        };
+      function timerConversion(time) {
+        let minutes = time / 60;
+        let seconds = time % 60;
+        return (seconds, minutes)
       }
-      
-      // Example usage:
-
-      console.log(result.minutes + " minutes and " + result.seconds + " seconds");
+      console.log("Minutes:", minutes, "Seconds:", seconds);
 
       nextButton.addEventListener("click", updateParams, false);
 
@@ -751,12 +744,11 @@ window.onload = async () => {
     // Timer setup function
     function timer() {
       let counter = repAmount;
-      secondsToMinutesAndSeconds(counter);
       let percentage = counter / 100 * 100;
       repText.innerHTML = repType;
       setProgress(percentage);
       let timer = setInterval(function () {
-        timerText.innerHTML = counter;
+        timerText.innerHTML = counter + ".00";
         if (!timerText.classList.contains("pausetime")) {
           counter--;
           setProgress(counter);
