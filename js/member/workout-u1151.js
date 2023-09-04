@@ -550,7 +550,7 @@ window.onload = async () => {
 
             DiffControlsSingle();
             vidSrc.src =
-            secondaryResponse.data[0].Video[0].url
+            secondaryResponse.data[0].Video[diffCurrent].url
             
             // Diff Increase Click Controls - Single Exercise
             function DiffControlsSingle() {
