@@ -751,12 +751,12 @@ window.onload = async () => {
     // Timer setup function
     function timer() {
       let counter = repAmount;
-      let result = secondsToMinutesAndSeconds(counter);
+      secondsToMinutesAndSeconds(counter);
       let percentage = counter / 100 * 100;
       repText.innerHTML = repType;
       setProgress(percentage);
       let timer = setInterval(function () {
-        timerText.innerHTML = result;
+        timerText.innerHTML = counter;
         if (!timerText.classList.contains("pausetime")) {
           counter--;
           setProgress(counter);
