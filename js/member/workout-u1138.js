@@ -204,7 +204,7 @@ window.onload = async () => {
       /*[0]*/;
       amrapBool = mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises[parseInt(exercisesParam)];
 
-      timerConversion(repAmount)
+      timerConversion(parseInt(repAmount))
 
       if (amrapBool == "True") {
         loadAmrapData();
@@ -608,9 +608,14 @@ window.onload = async () => {
       
 
       function timerConversion(time) {
+        if (time < 60)
+        {
+          seconds = time % 60;
+        }
+        else {
         minutes = Math.floor(time / 60);
         seconds = time % 60;
-
+        }
         return minutes, seconds;
       }
 
@@ -751,7 +756,6 @@ window.onload = async () => {
       repText.innerHTML = repType;
       setProgress(percentage);
       let timer = setInterval(function () {
-        console.log(timerConversion)
         timerText.innerHTML = counter;
         if (!timerText.classList.contains("pausetime")) {
           counter--;
