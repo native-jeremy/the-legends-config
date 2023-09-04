@@ -603,7 +603,7 @@ window.onload = async () => {
       // Diff Increase Click Controls - Amrap Exercises
       /*function DiffControlsAmrap() {
 
-      }
+      }*/
 
       let clearStates = setTimeout(() => {
         enableActiveStates();
