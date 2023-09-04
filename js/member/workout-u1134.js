@@ -201,6 +201,8 @@ window.onload = async () => {
       /*[0]*/;
       amrapBool = mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises[parseInt(exercisesParam)];
 
+      timerConversion(repAmount)
+
       if (amrapBool == "True") {
         loadAmrapData();
         
@@ -600,6 +602,17 @@ window.onload = async () => {
         enableActiveStates();
         clearTimeout(clearStates);
       }, 1500);
+      
+
+      function timerConversion(time) {
+        let minutes = time / 60;
+        let seconds = time % 60;
+
+        return {
+          minutes: minutes,
+          seconds: seconds
+        };
+      }
 
       nextButton.addEventListener("click", updateParams, false);
 
@@ -738,6 +751,7 @@ window.onload = async () => {
       repText.innerHTML = repType;
       setProgress(percentage);
       let timer = setInterval(function () {
+        console.log(minutes + seconds)
         timerText.innerHTML = counter + ".00";
         if (!timerText.classList.contains("pausetime")) {
           counter--;
