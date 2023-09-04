@@ -196,11 +196,10 @@ window.onload = async () => {
     let videoIndex = parseInt(exerciseParam);
 
     if (exerciseData !== undefined) {
-      repAmount =
-      mainResponse.data[parseInt(roundParam)]
-          .Amounts_Name_Linked_Exercises[parseInt(exercisesParam)] /*[diffCurrent]*/;
-      repType = mainResponse.data[parseInt(exercisesParam)].Rep_Type /*[0]*/;
-      amrapBool = mainResponse.data[parseInt(exercisesParam)].Amrap;
+      repAmount = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises[parseInt(exercisesParam)] /*[diffCurrent]*/;
+      repType = mainResponse.data[parseInt(roundParam)].Rep_Type_Linked_Exercises[parseInt(exercisesParam)]
+      /*[0]*/;
+      amrapBool = mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises[parseInt(exercisesParam)];
 
       if (amrapBool == "True") {
         loadAmrapData();
