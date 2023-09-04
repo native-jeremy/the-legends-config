@@ -204,7 +204,7 @@ window.onload = async () => {
       /*[0]*/;
       amrapBool = mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises[parseInt(exercisesParam)];
 
-      timerConversion(epAmount)
+      timerConversion(repAmount)
 
       if (amrapBool == "True") {
         loadAmrapData();
