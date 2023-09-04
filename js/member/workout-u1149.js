@@ -55,6 +55,8 @@ let exerciseRes;
 let diffLength;
 let diffCurrent;
 let diffRes;
+let minutes;
+let seconds;
 
 // Siren = Define - Intialisation
 const siren = document.getElementById("siren");
@@ -204,8 +206,8 @@ window.onload = async () => {
       timerConversion(repAmount)
 
       function timerConversion(time) {
-        let minutes = Math.floor(time / 60);
-        let seconds = time % 60;
+        minutes = Math.floor(time / 60);
+        seconds = time % 60;
         console.log("Minutes:", minutes, "Seconds:", seconds);
       }
 
