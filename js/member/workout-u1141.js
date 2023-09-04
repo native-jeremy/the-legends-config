@@ -25,8 +25,7 @@ const durationTest = document.getElementById("dur");
 const RoundNumberText = document.getElementById("mainNumText");
 const progressEl = document.querySelector('.wheel');
 
-let minutes;
-let seconds;
+
 
 // Param Int Set Variables
 let setIntRoundNum;
@@ -607,17 +606,19 @@ window.onload = async () => {
       }, 1500);
       
 
-      function timerConversion(time) {
-        if (time < 60)
-        {
-          seconds = time % 60;
-        }
-        else {
-        minutes = Math.floor(time / 60);
-        seconds = time % 60;
-        }
-        return minutes, seconds;
+      function secondsToMinutesAndSeconds(totalSeconds) {
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = totalSeconds % 60;
+      
+        return {
+          minutes: minutes,
+          seconds: seconds
+        };
       }
+      
+      // Example usage:
+
+      console.log(result.minutes + " minutes and " + result.seconds + " seconds");
 
       nextButton.addEventListener("click", updateParams, false);
 
@@ -751,12 +752,13 @@ window.onload = async () => {
 
     // Timer setup function
     function timer() {
-      let counter = minutes + seconds;
+      let counter = repAmount;
+      let result = secondsToMinutesAndSeconds(counter);
       let percentage = counter / 100 * 100;
       repText.innerHTML = repType;
       setProgress(percentage);
       let timer = setInterval(function () {
-        timerText.innerHTML = counter;
+        timerText.innerHTML = result;
         if (!timerText.classList.contains("pausetime")) {
           counter--;
           setProgress(counter);
