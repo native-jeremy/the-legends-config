@@ -608,7 +608,7 @@ window.onload = async () => {
       
 
       function timerConversion(time) {
-        minutes = time / 60;
+        minutes = Math.floor(time / 60);
         seconds = time % 60;
 
         return minutes, seconds;
@@ -752,7 +752,7 @@ window.onload = async () => {
       setProgress(percentage);
       let timer = setInterval(function () {
         console.log(timerConversion)
-        timerText.innerHTML = counter + ".00";
+        timerText.innerHTML = counter;
         if (!timerText.classList.contains("pausetime")) {
           counter--;
           setProgress(counter);
