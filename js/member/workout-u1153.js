@@ -129,11 +129,11 @@ window.onload = async () => {
     roundSelected = roundRes.data[parseInt(roundParam)].Round_Selection;
   });
 
-  /*Wized.request.await("Load Audio", (response) => {    
+  Wized.request.await("Load Audio", (response) => {    
     console.log("Audio Response", response);
 
     audioRes = response;
-  })*/
+  })
 
   // [- Step 2 -] Exercises Request Response From Wized
   //Load Exercises
@@ -598,13 +598,12 @@ window.onload = async () => {
         }
       }
 
-      /*audioSrc.src =
-      repDataInt.data[parseInt(exercisesParam)].Audio_Source[0].url;*/
+      audioSrc.src = mainResponse.data[parseInt(roundParam)].Audio_Source[parseInt(exercisesParam)].url;
 
       // Diff Increase Click Controls - Amrap Exercises
       /*function DiffControlsAmrap() {
 
-      }*/
+      }
 
       let clearStates = setTimeout(() => {
         enableActiveStates();
