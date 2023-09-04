@@ -196,7 +196,7 @@ window.onload = async () => {
     if (exerciseData !== undefined) {
       repAmount =
       mainResponse.data[parseInt(exercisesParam)]
-          .Amounts_Name /*[diffCurrent]*/;
+          .Amounts_Name_Linked_Exercises[exercisesParam] /*[diffCurrent]*/;
       repType = mainResponse.data[parseInt(exercisesParam)].Rep_Type /*[0]*/;
       amrapBool = mainResponse.data[parseInt(exercisesParam)].Amrap;
 
