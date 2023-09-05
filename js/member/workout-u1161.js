@@ -157,9 +157,12 @@ createApp({
     return {
       Exercises: mainResponse,
     }
+    },
+    mounted() {
+      applyCode()
     }
 }).mount('#app')
-setTimeout((applyCode), 2000);
+
 function applyCode () {
     if (repDataInt.status === 200) {
       loaderTrigger.click();
