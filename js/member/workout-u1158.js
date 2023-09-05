@@ -140,6 +140,7 @@ window.onload = async () => {
   //parseInt(roundParam)
   Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
     const mainResponse = response;
+    let { Exercise_Title_Linked_Exercises: Exercises } = response[parseInt(roundParam)]
     const repDataInt = response;
     let repAmount;
     let repType;
@@ -147,6 +148,18 @@ window.onload = async () => {
     let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
+//----------------------------------------------------------------
+//  VUE JS CONFIGURATION
+//----------------------------------------------------------------
+const { createApp } = Vue
+
+createApp({
+    data() {
+    return {
+      Exercises: Exercises,
+    }
+    }
+}).mount('#app')
 
     if (repDataInt.status === 200) {
       loaderTrigger.click();
@@ -218,7 +231,7 @@ window.onload = async () => {
 
           Wized.request.await("Load Exercise Diff", (response) => {
             
-            diffRes = response;
+            secondaryResponse = response;
             console.log("---------------------------------------");
             console.log("Exercise Diff Info Response TEMP! ", diffRes);
 
@@ -233,19 +246,9 @@ window.onload = async () => {
             let amrapLength =
               amrapResponse.data[parseInt(exercisesParam)].Diff_Video.length;
 
-            diffLength =
-            diffRes.data[parseInt(videoIndex)].Video.length;
+            diffLength = secondaryResponse.data[parseInt(videoIndex)].Video.length
             maxLimit = diffLength;
             limitNum.innerHTML = maxLimit;
-            console.log(
-              "Diff Video Length Exercise:",
-              diffRes.data[parseInt(videoIndex)].Video.length
-            );
-            console.log(
-              "Diff Length :",
-              diffRes.data.length
-            );
-            //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
             diffRes.data[parseInt(videoIndex)].Video.length;
             console.log("Amrap length:", newcookieIndex);
@@ -828,51 +831,7 @@ window.onload = async () => {
         voiceSrc.pause();
       }
     }
-    /*function audioCheck() {
-      let audioCurrentSrc;
-      let audio = document.getElementById("voiceSrc");
-
-      if (Math.floor(audio.currentTime) === Math.floor(audio.duration)) {
-        if (
-          audioIndex < amrapResponse.data[parseInt(exercisesParam)].Audio_Source.length
-        ) {
-          audioIndex = audioIndex + 1;
-          console.log("Current Exercise Index For Audio", parseInt(audioIndex));
-
-          audioCurrentSrc =
-          amrapResponse.data[parseInt(exercisesParam)].Audio_Source[
-              parseInt(audioIndex)
-            ].url;
-          console.log("---------------------------------------");
-          console.log(audioCurrentSrc);
-          console.log("---------------------------------------");
-          console.log("Ran Request Audio Src => Updated");
-
-          audio.src = audioCurrentSrc;
-          audio.play();
-        }
-      } else if (
-        audioIndex >= amrapResponse.data[parseInt(exercisesParam)].Audio_Source.length
-      ) {
-        audioIndex = 0;
-        audioCurrentSrc =
-        amrapResponse.data[parseInt(exercisesParam)].Audio_Source[
-            parseInt(audioIndex)
-          ].url;
-        console.log("---------------------------------------");
-        console.log(audioCurrentSrc);
-        console.log("---------------------------------------");
-        console.log("Ran Request Audio Src <= Reset ");
-
-        console.log("---------------------------------------");
-        console.log("Current Audio Index:", parseInt(audioIndex));
-
-        audio.src = audioCurrentSrc;
-        audio.play();
-      }
-    }*/
   });
-
   //Function Calls Onload
   //roundEnableLoad();
   //setTimeout(nextPage, 2000);
