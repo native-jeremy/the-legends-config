@@ -147,23 +147,7 @@ window.onload = async () => {
     let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
-//----------------------------------------------------------------
-//  VUE JS CONFIGURATION
-//----------------------------------------------------------------
-const { createApp } = Vue
 
-createApp({
-    data() {
-    return {
-      Exercises: mainResponse,
-    }
-    },
-    mounted() {
-      applyCode()
-    }
-}).mount('#app')
-
-function applyCode () {
     if (repDataInt.status === 200) {
       loaderTrigger.click();
       videoContainer.style.opacity = "1";
@@ -834,8 +818,7 @@ function applyCode () {
         voiceSrc.pause();
       }
     }
-  }
-});
+  });
   //Function Calls Onload
   //roundEnableLoad();
   //setTimeout(nextPage, 2000);
