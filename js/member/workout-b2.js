@@ -167,7 +167,6 @@ window.onload = async () => {
       roundTitle.innerHTML = "Congratulations!";
       roundNumHeader.innerHTML = "";
       Wized.data.setVariable("complete", "completed");
-      window.location.href = "/workout-overview?workout=" + workoutParam;
       enableDisabledStates();
     } else if (parseInt(roundParam) !== 0) {
       RoundNumberText.innerHTML = parseInt(roundParam);
@@ -675,7 +674,20 @@ window.onload = async () => {
       setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
 
       window.location.href = url.toString();
-    } else if (
+    }
+    else if (
+      exerciseData == undefined &&
+      parseInt(exercisesParam) > 0 &&
+      parseInt(roundParam) === roundLength
+    ) {
+      roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
+      RoundNumberText.innerHTML = "Workout Completed";
+      Wized.data.setVariable("complete", "completed");
+      window.location.href = "/workout-overview?workout=" + workoutParam;
+      enableDisabledStates();
+    }
+     else if (
       parseInt(roundParam) == 0 &&
       parseInt(exercisesParam) < 0
     ) {
@@ -705,18 +717,7 @@ window.onload = async () => {
       RoundNumberText.innerHTML = "Redirecting..";
       enableDisabledStates();
       window.location.href = "/program-hub";
-    } else if (
-      exerciseData == undefined &&
-      parseInt(exercisesParam) > 0 &&
-      parseInt(roundParam) === roundLength
-    ) {
-      roundPopup.style.display = "flex";
-      roundText.style.display = "flex";
-      RoundNumberText.innerHTML = "Workout Completed";
-      Wized.data.setVariable("complete", "completed");
-      window.location.href = "/workout-overview?workout=" + workoutParam;
-      enableDisabledStates();
-    }
+    } 
 
     // Round Type Condtionals To Enable Time/Reps
     function roundType() {
