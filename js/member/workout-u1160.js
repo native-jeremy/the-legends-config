@@ -140,7 +140,6 @@ window.onload = async () => {
   //parseInt(roundParam)
   Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
     const mainResponse = response;
-    let { Exercise_Title_Linked_Exercises: Exercises } = response[parseInt(roundParam)]
     const repDataInt = response;
     let repAmount;
     let repType;
@@ -160,7 +159,8 @@ createApp({
     }
     }
 }).mount('#app')
-
+setTimeout((applyCode), 2000);
+function applyCode () {
     if (repDataInt.status === 200) {
       loaderTrigger.click();
       videoContainer.style.opacity = "1";
@@ -831,7 +831,8 @@ createApp({
         voiceSrc.pause();
       }
     }
-  });
+  }
+});
   //Function Calls Onload
   //roundEnableLoad();
   //setTimeout(nextPage, 2000);
