@@ -167,6 +167,7 @@ window.onload = async () => {
       roundTitle.innerHTML = "Congratulations!";
       roundNumHeader.innerHTML = "";
       Wized.data.setVariable("complete", "completed");
+      window.location.href = "/workout-overview?workout=" + workoutParam;
       enableDisabledStates();
     } else if (parseInt(roundParam) !== 0) {
       RoundNumberText.innerHTML = parseInt(roundParam);
@@ -530,17 +531,14 @@ window.onload = async () => {
             currentNum.innerHTML = defaultDiff;
 
             //checkAmrapAudio = setInterval(audioCheck, 0);
-            newcookieIndex =
-            secondaryResponse.data[0].Video.length
+            newcookieIndex = secondaryResponse.data[0].Video.length
 
-            diffLength =
-            secondaryResponse.data[0].Video.length;
+            diffLength = secondaryResponse.data[0].Video.length;
             maxLimit = diffLength;
             limitNum.innerHTML = maxLimit;
 
             DiffControlsSingle();
-            vidSrc.src =
-            secondaryResponse.data[0].Video[diffCurrent].url
+            vidSrc.src = secondaryResponse.data[0].Video[diffCurrent].url
             
             // Diff Increase Click Controls - Single Exercise
             function DiffControlsSingle() {
@@ -716,6 +714,7 @@ window.onload = async () => {
       roundText.style.display = "flex";
       RoundNumberText.innerHTML = "Workout Completed";
       Wized.data.setVariable("complete", "completed");
+      window.location.href = "/workout-overview?workout=" + workoutParam;
       enableDisabledStates();
     }
 
