@@ -156,7 +156,7 @@ const { createApp } = Vue
 createApp({
     data() {
     return {
-      Exercises: Exercises,
+      Exercises: mainResponse,
     }
     }
 }).mount('#app')
