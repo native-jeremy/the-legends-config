@@ -103,6 +103,22 @@ window.onload = async () => {
 
   enableDisabledStates();
 
+  if (parseInt(roundParam) < 0 && parseInt(exercisesParam) === 0) {
+    roundPopup.style.display = "flex";
+    roundText.style.display = "flex";
+    RoundNumberText.innerHTML = "Redirecting..";
+    enableDisabledStates();
+    window.location.href = "/workout-overview?workout=" + workoutParam;
+  } else if (
+    window.location.href == "https://the-legends-web-app.webflow.io/workout"
+  ) {
+    roundPopup.style.display = "flex";
+    roundText.style.display = "flex";
+    RoundNumberText.innerHTML = "Redirecting..";
+    enableDisabledStates();
+    window.location.href = "/program-hub";
+  }
+
   if (parseInt(roundLengthCookie) === parseInt(roundParam))
   {
     RoundNumberText.innerHTML = "Workout Completed";
@@ -603,36 +619,6 @@ window.onload = async () => {
         clickNum = clickNum + 1;
       });
     //} 
-    /*else if (
-      parseInt(roundParam) == 0 &&
-      parseInt(exercisesParam) < 0
-    ) {
-      roundPopup.style.display = "flex";
-      roundText.style.display = "flex";
-      RoundNumberText.innerHTML = "Redirecting..";
-      enableDisabledStates();
-      window.location.href = "/workout-overview?workout=" + workoutParam;
-    }*/ /*else if (
-      window.location.href == "https://the-legends-web-app.webflow.io/workout"
-    ) {
-      roundPopup.style.display = "flex";
-      roundText.style.display = "flex";
-      RoundNumberText.innerHTML = "Redirecting..";
-      enableDisabledStates();
-      window.location.href = "/program-hub";
-    } else if (
-      exerciseData == undefined &&
-      parseInt(exercisesParam) > 0 && parseInt(roundParam) === mainResponse.data.length
-    ) {
-      roundPopup.style.display = "flex";
-      roundText.style.display = "flex";
-      RoundNumberText.innerHTML = "Workout Completed";
-      Wized.data.setVariable("complete", "completed");
-      enableDisabledStates();
-    }
-    else {
-        console.log("Request Finished")
-    }*/
 
     function roundType() {
       if (repType === "Time") {
