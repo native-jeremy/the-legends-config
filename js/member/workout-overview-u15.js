@@ -39,11 +39,6 @@ window.onload = async () => {
     console.log("Workout Res", snapshot);
   });
 
-  Wized.request.await("Load Exercises - OVERVIEW", (response) => {
-    let exercises = response;
-    console.log("Exercises Res", exercises);
-  });
-
   // Siren & Voice Functionailty Setup
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
@@ -133,9 +128,9 @@ window.onload = async () => {
   }
 };
 
-if (
+/*if (
   window.location.href ==
   "https://the-legends-web-app.webflow.io/workout-overview"
 ) {
   window.location.href = "/program-hub";
-}
+}*/
