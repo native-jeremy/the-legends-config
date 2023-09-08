@@ -86,6 +86,7 @@ window.onload = async () => {
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const dataIndex = await Wized.data.get("v.dataindex");
   const statusNum = await Wized.data.get("v.statusnum");
+  const roundLengthCookie = await Wized.data.get("c.roundlength");
   const exerciseIndex = await Wized.data.get("c.exerciseindex");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
@@ -101,6 +102,17 @@ window.onload = async () => {
   window.history.replaceState(null, null, url.toString());
 
   enableDisabledStates();
+
+  if (parseInt(roundLengthCookie) === parseInt(roundParam))
+  {
+    RoundNumberText.innerHTML = "Workout Completed";
+    roundTitle.innerHTML = "Congratulations!";
+    roundNumHeader.innerHTML = "";
+    Wized.data.setVariable("complete", "completed");
+    
+    roundPopup.style.display = "flex";
+    roundText.style.display = "flex";
+  }
 
   Wized.request.await("Load Round Info", (response) => {
     roundRes = response;
@@ -131,6 +143,36 @@ window.onload = async () => {
       loaderTrigger.click();
       videoContainer.style.opacity = "1";
     }
+    //----------------------------------------------------------------
+    if (parseInt(exercisesParam) < 0) {
+      getRoundNum = checkurl.get("round");
+      getRoundNum = parseInt(getRoundNum) - 1;
+      setRoundNum = checkurl.set("round", getRoundNum.toString());
+      getExercisesNum = checkurl.get("exercises");
+      getExercisesNum = 0;
+      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+
+      window.location.href = url.toString();
+    }
+
+    if (parseInt(exercisesParam) > mainResponse.data[parseInt(roundParam)].Diff_ID_Linked_Exercises.length - 1) {
+      getRoundNum = checkurl.get("round");
+      getRoundNum = parseInt(getRoundNum) + 1;
+      setRoundNum = checkurl.set("round", getRoundNum.toString());
+      getExercisesNum = checkurl.get("exercises");
+      getExercisesNum = 0;
+      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+
+      window.location.href = url.toString();
+    }
+    
+     else if (parseInt(roundParam) !== 0) {
+      RoundNumberText.innerHTML = parseInt(roundParam);
+      roundNumHeader.innerHTML = parseInt(roundParam);
+    } else if (parseInt(roundParam) === 0 && roundSelected !== "Round 0"){
+      RoundNumberText.innerHTML = parseInt(roundParam + 1);
+      roundNumHeader.innerHTML = parseInt(roundParam + 1);
+    }
 
     roundLength = roundRes.data.length;
     roundRealNumber = parseInt(roundParam) + 1;
@@ -159,6 +201,8 @@ window.onload = async () => {
       roundNumHeader.innerHTML = "";
     }
 
+      //----------------------------------------------------------------
+
     exerciseData = mainResponse.data[parseInt(exercisesParam)];
 
     console.log("---------------------------------------");
@@ -173,7 +217,7 @@ window.onload = async () => {
     let vidSrc = document.getElementById("video");
     let videoIndex = parseInt(exerciseParam);
 
-    if (exerciseData !== undefined) {
+    //if (exerciseData !== undefined) {
       repAmount = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises[parseInt(exercisesParam)];
       repType = mainResponse.data[parseInt(roundParam)].Rep_Type_Linked_Exercises[parseInt(exercisesParam)]
       amrapBool = mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises[parseInt(exercisesParam)];
@@ -520,12 +564,11 @@ window.onload = async () => {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-
         window.location.href = url.toString();
       }
 
       function backTrackParams() {
-        //if (parseInt(exercisesParam) > exercisesLength) {
+        if (parseInt(exercisesParam) < mainResponse.data[parseInt(roundParam)].Diff_ID_Linked_Exercises.length - 1) {
         /*getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) - 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());*/
@@ -533,7 +576,7 @@ window.onload = async () => {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) - 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-        //}
+        }
 
         window.location.href = url.toString();
         //window.history.replaceState(null, null, url.toString());
@@ -559,19 +602,8 @@ window.onload = async () => {
         playVideo();
         clickNum = clickNum + 1;
       });
-    } else if (
-      parseInt(exercisesParam) > 0 &&
-      parseInt(roundParam) !== mainResponse.data.length
-    ) {
-      getRoundNum = checkurl.get("round");
-      getRoundNum = parseInt(getRoundNum) + 1;
-      setRoundNum = checkurl.set("round", getRoundNum.toString());
-      getExercisesNum = checkurl.get("exercises");
-      getExercisesNum = 0;
-      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-
-      window.location.href = url.toString();
-    } else if (
+    //} 
+    /*else if (
       parseInt(roundParam) == 0 &&
       parseInt(exercisesParam) < 0
     ) {
@@ -580,20 +612,7 @@ window.onload = async () => {
       RoundNumberText.innerHTML = "Redirecting..";
       enableDisabledStates();
       window.location.href = "/workout-overview?workout=" + workoutParam;
-    } else if (
-      exerciseData == undefined &&
-      parseInt(exercisesParam) < 0 &&
-      parseInt(roundParam) !== mainResponse.data.length
-    ) {
-      getRoundNum = checkurl.get("round");
-      getRoundNum = parseInt(getRoundNum) - 1;
-      setRoundNum = checkurl.set("round", getRoundNum.toString());
-      getExercisesNum = checkurl.get("exercises");
-      getExercisesNum = 0;
-      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-
-      window.location.href = url.toString();
-    } else if (
+    }*/ /*else if (
       window.location.href == "https://the-legends-web-app.webflow.io/workout"
     ) {
       roundPopup.style.display = "flex";
@@ -613,7 +632,7 @@ window.onload = async () => {
     }
     else {
         console.log("Request Finished")
-    }
+    }*/
 
     function roundType() {
       if (repType === "Time") {
@@ -709,6 +728,7 @@ window.onload = async () => {
       }
     }
   });
+  
   //roundEnableLoad();
   //setTimeout(nextPage, 2000);
   sirenEnableLoad();
