@@ -52,6 +52,8 @@ let diffRes;
 let minutes;
 let seconds;
 
+const workoutExitButton = document.getElementById("workoutExit");
+
 const siren = document.getElementById("siren");
 const sirenText = document.getElementById("sirenText");
 const sirenAudio = document.getElementById("sirenAudio");
@@ -575,6 +577,12 @@ window.onload = async () => {
       nextButton.addEventListener("click", updateParams);
 
       prevButton.addEventListener("click", backTrackParams);
+
+      workoutExitButton.addEventListener("click", exitParams);
+
+      function exitParams() {
+        workoutExitButton.href = "/workout-overview?workout=" + workoutParam;
+      }
 
       function updateParams() {
         getExercisesNum = checkurl.get("exercises");
