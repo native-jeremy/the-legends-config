@@ -222,7 +222,7 @@ window.onload = async () => {
                                               required</p>
                                       </div>
                                   </div>
-                              </div><aclass="button-style-1 w-el="questionnaire_user_program_added" w-button selection-button">Let’s get started</a>
+                              </div><aclass="button-style-1" w-el="questionnaire_user_program_added" w-button selection-button">Let’s get started</a>
                               <a href="/questionnaire" class="button-style-5 w-button">back to questionnaire</a>
                               <link rel="prerender" href="/questionnaire">
                           </div>
