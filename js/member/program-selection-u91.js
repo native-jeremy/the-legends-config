@@ -222,7 +222,8 @@ window.onload = async () => {
                                               required</p>
                                       </div>
                                   </div>
-                              </div><a href="" class="button-style-1" w-el="questionnaire_user_program_added" w-button selection-button">Let’s get started</a>
+                              </div>
+                              <a w-el="questionnaire_user_program_added" data-w-id="318dd5d4-e2e9-7095-276c-a871128f0341" href="#" class="button-style-1 w-button" w-el-onclick-0-0="9165cc42-4c13-4be1-b1f2-51a5a8b8a571-0-0">Let’s get started</a>
                               <a href="/questionnaire" class="button-style-5 w-button">back to questionnaire</a>
                               <link rel="prerender" href="/questionnaire">
                           </div>
