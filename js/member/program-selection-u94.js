@@ -36,6 +36,7 @@ window.onload = async () => {
             let fullDate = day + "/" + month + "/" + year;
             console.log(day + "/" + month + "/" + year);
         	Wized.data.setVariable("date", fullDate); 
+        });
   
         for (let i = 0; i < programData.length; i++) {
           const program = programData[i];
