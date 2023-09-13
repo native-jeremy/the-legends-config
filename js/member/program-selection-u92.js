@@ -24,6 +24,20 @@ window.onload = async () => {
       Wized.request.await("Load Program Selection", (response) => {
         programData = response.data;
         console.log(programData);
+
+        const value = await Wized.data.get("v.date");
+        const dateButton = document.getElementById("dateButton");
+        dateButton.addEventListener("click", () => {
+            // Get current date
+            let date = new Date();
+            // Add five days to current date
+            date.setDate(date.getDate() + 14);
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let day = date.getDate();
+            let fullDate = day + "/" + month + "/" + year;
+            console.log(day + "/" + month + "/" + year);
+        	Wized.data.setVariable("date", fullDate); 
   
         for (let i = 0; i < programData.length; i++) {
           const program = programData[i];
