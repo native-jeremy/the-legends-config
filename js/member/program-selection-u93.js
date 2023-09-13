@@ -24,8 +24,6 @@ window.onload = async () => {
       Wized.request.await("Load Program Selection", (response) => {
         programData = response.data;
         console.log(programData);
-
-        const value = await Wized.data.get("v.date");
         const dateButton = document.getElementById("dateButton");
         dateButton.addEventListener("click", () => {
             // Get current date
