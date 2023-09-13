@@ -1,110 +1,125 @@
 window.onload = async () => {
-    //Element Variables
-    const sliderControls = document.querySelector('.slider-controls');
-    const triggerModal = document.getElementById("triggerModal");
-    //let triggerLoader = document.getElementById("trigger");
-    const wrapper = document.querySelector(".swiper-wrapper");
+  //Element Variables
+  const sliderControls = document.querySelector(".slider-controls");
+  const triggerModal = document.getElementById("triggerModal");
+  //let triggerLoader = document.getElementById("trigger");
+  const wrapper = document.querySelector(".swiper-wrapper");
 
-    //Global Variables
-    let user;
-    let programData;
-    let programArray = new Array();
-    let IdEl = [];
-    let TitleEl = [];
-    let ImageEl = [];
-    let DescriptionEl = [];
-    let WeeksEl = [];
-    let num = 0;
-    
-    // Program Selection Request
-    Wized.request.await("Load Users Program", (response) => {
-      user = response.data;
-      console.log(user);
-  
-      Wized.request.await("Load Program Selection", (response) => {
-        programData = response.data;
-        console.log(programData);
-        const dateButton = document.getElementById("dateButton");
-        dateButton.addEventListener("click", () => {
-            // Get current date
-            let date = new Date();
-            // Add five days to current date
-            date.setDate(date.getDate() + 14);
-            let year = date.getFullYear();
-            let month = date.getMonth() + 1;
-            let day = date.getDate();
-            let fullDate = day + "/" + month + "/" + year;
-            console.log(day + "/" + month + "/" + year);
-        	Wized.data.setVariable("date", fullDate); 
-        });
-  
-        for (let i = 0; i < programData.length; i++) {
-          const program = programData[i];
-          //console.log("Q3 Answer:", program.Q3)
-          //console.log("User Answer:", user.Q3)
-          if (program.Q2.includes(user.Q2)) {
-            ////////////////////////////////////////////////////////////////
-            if (program.Q3.includes(user.Q3)) {
-              //////////////////////////////////////////////////////////
-              if (program.Q4.some((item) => user.Q4.includes(item))) {
-                console.log("Found A Match! Continuing With Conditional Match");
-                ////////////////////////////////////////////////////
-                if (program.Q5.includes(user.Q5)) {
-                  //////////////////////////////////////////////
-                  if (program.Q6.some((item) => user.Q6.includes(item))) {
-                    function match(ID, Title, Image)
-                    {
-                        this.ID = program.ID;
-                        this.Weeks = program.Count_weeks;
-                        this.Title = program.Title;
-                        this.Description = program.Description;
-                        this.Image = program.Image[0].url;
-                    }
-                   
-                    //programObject.push(program);
-                    programArray.push(new match(program.ID, program.Weeks, program.Title, program.Image));
-                    console.log(
-                      "Found A Match Here Is Your Program! =",
-                      `[ ${programArray} ]`
-                    );
+  //Global Variables
+  let user;
+  let programData;
+  let programArray = new Array();
+  let IdEl = [];
+  let TitleEl = [];
+  let ImageEl = [];
+  let DescriptionEl = [];
+  let WeeksEl = [];
+  let num = 0;
 
-                    for (let i = 0; i < programArray.length; i++) {
-                        IdEl.push(programArray[i].ID);
-                        TitleEl.push(programArray[i].Title);
-                        ImageEl.push(programArray[i].Image);
-                        DescriptionEl.push(programArray[i].Description);
-                        if (programArray[i].Weeks !== undefined) {
-                            WeeksEl.push(programArray[i].Weeks);
-                        }
-                        else {
-                            WeeksEl.push(0);
-                        }
-                    }
-                    programArray.forEach((item) =>{
-                        console.log("Item In Array", item);
-                        console.log("Image In Program Array", item.Image);
-                    });
-                    /////////////////////////////////////////
+  // Get current date
+  let date = new Date();
+  // Add five days to current date
+  date.setDate(date.getDate() + 14);
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  let fullDate = day + "/" + month + "/" + year;
+  console.log(day + "/" + month + "/" + year);
+  await Wized.data.setVariable("date", fullDate);
+
+  // Program Selection Request
+  Wized.request.await("Load Users Program", (response) => {
+    user = response.data;
+    console.log(user);
+
+    Wized.request.await("Load Program Selection", (response) => {
+      programData = response.data;
+      console.log(programData);
+      const dateButton = document.getElementById("dateButton");
+      dateButton.addEventListener("click", () => {
+        // Get current date
+        let date = new Date();
+        // Add five days to current date
+        date.setDate(date.getDate() + 14);
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let fullDate = day + "/" + month + "/" + year;
+        console.log(day + "/" + month + "/" + year);
+      });
+
+      for (let i = 0; i < programData.length; i++) {
+        const program = programData[i];
+        //console.log("Q3 Answer:", program.Q3)
+        //console.log("User Answer:", user.Q3)
+        if (program.Q2.includes(user.Q2)) {
+          ////////////////////////////////////////////////////////////////
+          if (program.Q3.includes(user.Q3)) {
+            //////////////////////////////////////////////////////////
+            if (program.Q4.some((item) => user.Q4.includes(item))) {
+              console.log("Found A Match! Continuing With Conditional Match");
+              ////////////////////////////////////////////////////
+              if (program.Q5.includes(user.Q5)) {
+                //////////////////////////////////////////////
+                if (program.Q6.some((item) => user.Q6.includes(item))) {
+                  function match(ID, Title, Image) {
+                    this.ID = program.ID;
+                    this.Weeks = program.Count_weeks;
+                    this.Title = program.Title;
+                    this.Description = program.Description;
+                    this.Image = program.Image[0].url;
                   }
+
+                  //programObject.push(program);
+                  programArray.push(
+                    new match(
+                      program.ID,
+                      program.Weeks,
+                      program.Title,
+                      program.Image
+                    )
+                  );
+                  console.log(
+                    "Found A Match Here Is Your Program! =",
+                    `[ ${programArray} ]`
+                  );
+
+                  for (let i = 0; i < programArray.length; i++) {
+                    IdEl.push(programArray[i].ID);
+                    TitleEl.push(programArray[i].Title);
+                    ImageEl.push(programArray[i].Image);
+                    DescriptionEl.push(programArray[i].Description);
+                    if (programArray[i].Weeks !== undefined) {
+                      WeeksEl.push(programArray[i].Weeks);
+                    } else {
+                      WeeksEl.push(0);
+                    }
+                  }
+                  programArray.forEach((item) => {
+                    console.log("Item In Array", item);
+                    console.log("Image In Program Array", item.Image);
+                  });
+                  /////////////////////////////////////////
                 }
               }
             }
           }
         }
-        if (programArray.length > 0) {
-          let programMatch = programArray;
-          sliderControls.style.display = "flex";
-  
-          programArray.forEach((item) => {
-              num++
-              console.log("ID In Array", IdEl[num]);
-              console.log("Title In Array", TitleEl[num]);
-              console.log("Image In Array", ImageEl[num]);
-              console.log("Week In Array", WeeksEl[num]);
-              console.log("Description In Array", DescriptionEl[num]);
-              item = document.createElement("div");
-              item.classList.add("swiper-slide");
-              item.innerHTML = `
+      }
+      if (programArray.length > 0) {
+        let programMatch = programArray;
+        sliderControls.style.display = "flex";
+
+        programArray.forEach((item) => {
+          num++;
+          console.log("ID In Array", IdEl[num]);
+          console.log("Title In Array", TitleEl[num]);
+          console.log("Image In Array", ImageEl[num]);
+          console.log("Week In Array", WeeksEl[num]);
+          console.log("Description In Array", DescriptionEl[num]);
+          item = document.createElement("div");
+          item.classList.add("swiper-slide");
+          item.innerHTML = `
               <div class="app-slide-image no-margin" style="background-image: url('${ImageEl[num]}') !important;">
                       <div class="app-block fixed overlay full-height">
                           <div class="app-block-content">
@@ -243,73 +258,70 @@ window.onload = async () => {
                       </div>
                   </div>
                   `;
-              wrapper.append(item);
+          wrapper.append(item);
+        });
+
+        setTimeout(() => {
+          let selectionButton = document.querySelectorAll(".selection-button");
+          selectionButton.forEach((button, num) => {
+            button.addEventListener("click", () => {
+              console.log("Clicked This Button!", button + " " + num);
+              Wized.data.setCookie("programselection", `${IdEl[num]}`);
+              const checkSelection = Wized.data.get("c.programselection");
+              if (!checkSelection) {
+                console.log("Selected Program Selection", num);
+              } else {
+                window.location.href = "/stripe";
+              }
+            });
           });
+        }, 1000);
 
-          setTimeout(() => {
-            let selectionButton = document.querySelectorAll('.selection-button');
-            selectionButton.forEach((button, num) => {
-                button.addEventListener('click', () => {
-                console.log("Clicked This Button!", button + ' ' + num);
-                Wized.data.setCookie("programselection", `${IdEl[num]}`);
-                const checkSelection = Wized.data.get("c.programselection");
-                    if(!checkSelection)
-                    {
-                        console.log("Selected Program Selection", num);
-                    }
-                    else {
-                        window.location.href = "/stripe"
-                    }
-                });
-            });
-          },1000);
+        Wized.data.listen("c.programselection", async () => {
+          const changedId = await Wized.data.get("c.programselection");
+          console.log("Program Selection changed to: ", changedId);
+        });
 
-            Wized.data.listen("c.programselection", async () => {    
-            const changedId = await Wized.data.get("c.programselection");
-            console.log("Program Selection changed to: ", changedId);
-            });
-
-          /*Wized.data.setVariable("program", programMatch);
+        /*Wized.data.setVariable("program", programMatch);
           const id = Wized.data.get("v.program");
           console.log("Program Variable! =", id);*/
-          
-          setTimeout(() => {
-            /////////////////////////////////////////
-    
-            const swiper = new Swiper(".swiper", {
-              // Optional parameters
-              speed: 1000,
-              loop: false,
-              observer: true,
-              observeParents: true,
-              slidesPerView: 1,
-              shortSwipes: true,
-              watchSlidesProgress: true,
-              initialSlide: 0,
-    
-              // Navigation arrows
-              navigation: {
-                nextEl: ".right-slide-arrow-button",
-                prevEl: ".left-slide-arrow-button",
-              },
-            });
-            Webflow.require("ix2").init();
-            /////////////////////////////////////////
-            swiper.on("slideChange", function () {
-              Webflow.require("ix2").init();
-              /*slideBtn_Left.classList.remove("swiper-button-lock");
-              slideBtn_Right.classList.remove("swiper-button-lock");*/
-            });
-          }, 2000);
-  
-          Wized.data.listen("v.programMatch", async () => {
-              const programMatch = await Wized.data.get("v.program"); // Get new value
-              console.log("Program Match: ", programMatch); // Console log new value
+
+        setTimeout(() => {
+          /////////////////////////////////////////
+
+          const swiper = new Swiper(".swiper", {
+            // Optional parameters
+            speed: 1000,
+            loop: false,
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            shortSwipes: true,
+            watchSlidesProgress: true,
+            initialSlide: 0,
+
+            // Navigation arrows
+            navigation: {
+              nextEl: ".right-slide-arrow-button",
+              prevEl: ".left-slide-arrow-button",
+            },
           });
-        }
-        else {
-            triggerModal.click();
-        }
-      });
+          Webflow.require("ix2").init();
+          /////////////////////////////////////////
+          swiper.on("slideChange", function () {
+            Webflow.require("ix2").init();
+            /*slideBtn_Left.classList.remove("swiper-button-lock");
+              slideBtn_Right.classList.remove("swiper-button-lock");*/
+          });
+        }, 2000);
+
+        Wized.data.listen("v.programMatch", async () => {
+          const programMatch = await Wized.data.get("v.program"); // Get new value
+          console.log("Program Match: ", programMatch); // Console log new value
+        });
+      } else {
+        triggerModal.click();
+      }
     });
-  };
+  });
+};
