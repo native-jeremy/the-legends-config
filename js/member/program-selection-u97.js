@@ -288,6 +288,7 @@ window.onload = async () => {
 
         setTimeout(() => {
           /////////////////////////////////////////
+          console.log("Programs", programArray)
 
           const swiper = new Swiper(".swiper", {
             // Optional parameters
