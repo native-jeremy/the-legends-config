@@ -14,15 +14,6 @@ window.onload = async () => {
 
   // Completed Data Load
   Wized.request.await("Load Users", (response) => {
-     let date = new Date();
-    // Add five days to current date
-    date.setDate(date.getDate() + 14);
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-    let fullDate = year + "/" + month + "/" + day;
-    console.log(fullDate);
-    Wized.data.setVariable("date", fullDate);
     setTimeout(() => {
       if (response.status === 200) {
         const getData = response;
