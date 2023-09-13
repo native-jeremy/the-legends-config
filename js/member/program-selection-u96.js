@@ -15,17 +15,17 @@ window.onload = async () => {
   let DescriptionEl = [];
   let WeeksEl = [];
   let num = 0;
-
-  // Get current date
-  let date = new Date();
-  // Add five days to current date
-  date.setDate(date.getDate() + 14);
-  let year = date.getFullYear();
-  let month = date.getMonth() + 1;
-  let day = date.getDate();
-  let fullDate = day + "/" + month + "/" + year;
-  console.log(day + "/" + month + "/" + year);
-  await Wized.data.setVariable("date", fullDate);
+  const value = await Wized.data.get("v.date");
+     // Get current date
+    let date = new Date();
+    // Add five days to current date
+    date.setDate(date.getDate() + 14);
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let fullDate = year + "/" + month + "/" + day;
+    console.log(fullDate);
+    Wized.data.setVariable("date", fullDate);
 
   // Program Selection Request
   Wized.request.await("Load Users Program", (response) => {
