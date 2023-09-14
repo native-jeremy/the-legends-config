@@ -32,6 +32,17 @@ window.onload = async () => {
     user = response.data;
     console.log(user);
 
+    const app = document.querySelector('.app');
+    	if (snapshot.Stripe == "Not Verified" 
+      && snapshot.Questionnaire == "Not Completed")
+      {
+        app.style.opacity = '0';
+        window.location.href = "/questionnaire";
+      }
+      else {
+        app.style.opacity = '1'
+      }
+
     Wized.request.await("Load Program Selection", (response) => {
       programData = response.data;
       console.log(programData);
