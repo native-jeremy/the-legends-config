@@ -36,6 +36,7 @@ window.onload = async () => {
     	if (user.Questionnaire == "Not Completed")
       {
          triggerModal.click();
+        console.log("Selected!")
       }
       else {
         app.style.opacity = '1'
