@@ -293,9 +293,9 @@ window.onload = async () => {
           console.log("Program Selection changed to: ", changedId);
         });
 
-        /*Wized.data.setVariable("program", programMatch);
+        Wized.data.setVariable("program", programMatch);
           const id = Wized.data.get("v.program");
-          console.log("Program Variable! =", id);*/
+          console.log("Program Variable! =", id);
 
         setTimeout(() => {
           /////////////////////////////////////////
