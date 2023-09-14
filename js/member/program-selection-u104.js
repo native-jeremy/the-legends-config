@@ -111,7 +111,7 @@ window.onload = async () => {
         sliderControls.style.display = "flex";
 
         programArray.forEach((item, index) => {
-        const { Image } = programArray[index].Image[0].url;
+          const Image = programArray[index].Image[0].url;
           num++;
           console.log("ID In Array", IdEl[num]);
           console.log("Title In Array", TitleEl[num]);
