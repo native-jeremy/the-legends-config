@@ -277,7 +277,7 @@ window.onload = async () => {
           selectionButton.forEach((button, num) => {
             button.addEventListener("click", () => {
               console.log("Clicked This Button!", button + " " + num);
-              Wized.data.setCookie("programselection", `${${programArray[num].ID}`);
+              Wized.data.setCookie("programselection", `${programArray[num].ID}`);
               const checkSelection = Wized.data.get("c.programselection");
               if (!checkSelection) {
                 console.log("Selected Program Selection", num);
