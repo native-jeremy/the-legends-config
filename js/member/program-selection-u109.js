@@ -293,7 +293,7 @@ window.onload = async () => {
 
           const swiper = new Swiper(".swiper", {
             // Optional parameters
-            speed: 500,
+            speed: 1500,
             rewind: true,
             observer: true,
             observeParents: true,
