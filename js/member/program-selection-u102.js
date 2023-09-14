@@ -111,6 +111,7 @@ window.onload = async () => {
         sliderControls.style.display = "flex";
 
         programArray.forEach((item, index) => {
+        const { Image } = item.Image[0].url;
           num++;
           console.log("ID In Array", IdEl[num]);
           console.log("Title In Array", TitleEl[num]);
@@ -120,7 +121,7 @@ window.onload = async () => {
           item = document.createElement("div");
           item.classList.add("swiper-slide");
           item.innerHTML = `
-              <div class="app-slide-image no-margin" style="background-image: url('${programArray[index].Image[0].url}') !important;">
+              <div class="app-slide-image no-margin" style="background-image: url('${Image}') !important;">
                       <div class="app-block fixed overlay full-height">
                           <div class="app-block-content">
                               <div class="info-block auto-margin">
@@ -293,7 +294,7 @@ window.onload = async () => {
           const swiper = new Swiper(".swiper", {
             // Optional parameters
             speed: 1000,
-            loop: true,
+            loop: false,
             observer: true,
             observeParents: true,
             slidesPerView: 1,
