@@ -36,8 +36,7 @@ window.onload = async () => {
     	if (snapshot.Stripe == "Not Verified" 
       && snapshot.Questionnaire == "Not Completed")
       {
-        app.style.opacity = '0';
-        window.location.href = "/questionnaire";
+         triggerModal.click();
       }
       else {
         app.style.opacity = '1'
