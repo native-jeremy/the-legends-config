@@ -109,155 +109,8 @@ window.onload = async () => {
       if (programArray.length > 0) {
         let programMatch = programArray;
         sliderControls.style.display = "flex";
-        setTimeout(() => {
-        for (let i = 0; i < programMatch.length; i++)
-        {
-          item = document.createElement("div");
-          item.classList.add("swiper-slide");
-          item.innerHTML = `
-              <div class="app-slide-image no-margin" style="background-image: url('${ImageEl[i]}') !important;">
-                      <div class="app-block fixed overlay full-height">
-                          <div class="app-block-content">
-                              <div class="info-block auto-margin">
-                                  <div class="info-block-header">
-                                      <div class="split-dynamic-text center">
-                                          <div w-el="program_slide_weeks"
-                                              class="generic-text-style-2 margin-right-split-dnyamic-text">${WeeksEl[i]}</div>
-                                          <div class="generic-text-style-2 center-align">wEEK program</div>
-                                      </div>
-                                      <div class="main-heading-style-6 center-align slide-title">${TitleEl[i]}</div>
-                                  </div><a data-w-id="5c806ac3-c34a-bc93-6409-9da4edc693c2" href="#"
-                                      class="button-style-1 half w-button">Program Details</a><a href="/questionnaire"
-                                      class="button-style-4 w-button">Back to Questionnaire</a>
-                                  <link rel="prerender" href="/questionnaire">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
-                      class="app-view-animation">
-                      <div class="app-body">
-                          <div class="content">
-                              <div class="content-headings margin-bottom">
-                                  <div class="split-dynamic-text">
-                                      <div
-                                          class="generic-text-style-6 margin-right-split-dnyamic-text">${WeeksEl[i]}</div>
-                                      <div class="generic-text-style-6">wEEK program</div>
-                                  </div>
-                                  <h2 class="main-heading-style-1">${TitleEl[i]}</h2>
-                              </div>
-                              <div class="content-block base-block">
-                                  <div class="content-block-header">
-                                      <h2 class="main-heading-style-2">Overview</h2>
-                                  </div>
-                                  <div class="content-block-body">
-                                      <p class="body-copy-text-style-1">${DescriptionEl[i]}</p>
-                                  </div>
-                              </div>
-                              <div class="content-block">
-                                  <div class="content-block-header">
-                                      <h2 class="main-heading-style-2">Key points</h2>
-                                  </div>
-                                  <div class="content-block-body">
-                                      <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${TitleEl[i]}</p>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="content-block">
-                                  <div class="content-block-header">
-                                      <h2 class="main-heading-style-2">Workout Structure (Weekly)</h2>
-                                  </div>
-                                  <div class="content-block-body">
-                                      <div class="content-block-body-header">
-                                          <h3 class="generic-text-style-6 non-caps">Core Workouts</h3>
-                                      </div>
-                                      <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${TitleEl[i]}</p>
-                                      </div>
-                                  </div>
-                                  <div class="content-block-body margin-top">
-                                      <div class="content-block-body-header">
-                                          <h3 class="generic-text-style-6 non-caps">Recommended</h3>
-                                      </div>
-                                      <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${TitleEl[i]}</p>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="content-block">
-                                  <div class="content-block-header">
-                                      <h2 class="main-heading-style-2">FAQ</h2>
-                                  </div>
-                                  <div class="accordion style-2">
-                                      <div data-w-id="318dd5d4-e2e9-7095-276c-a871128f0316" class="accordion-header style-2">
-                                          <h2 class="generic-text-style-6 non-caps">What’s my investment?</h2>
-                                          <div class="accordion-header-arrow">
-                                              <div class="accordion-arrow-icon"></div>
-                                          </div>
-                                      </div>
-                                      <div class="accordion-body style-2">
-                                          <p class="body-copy-text-style-1">This is the description for this program.<br>This will
-                                              detail the types of workouts with the program. It should detail to main object of
-                                              the program and the results that can be expected. This description can be as long as
-                                              required</p>
-                                      </div>
-                                  </div>
-                                  <div class="accordion style-2">
-                                      <div data-w-id="318dd5d4-e2e9-7095-276c-a871128f0321" class="accordion-header style-2">
-                                          <h2 class="generic-text-style-6 non-caps">Can I cancel at anytime?</h2>
-                                          <div class="accordion-header-arrow">
-                                              <div class="accordion-arrow-icon"></div>
-                                          </div>
-                                      </div>
-                                      <div class="accordion-body style-2">
-                                          <p class="body-copy-text-style-1">This is the description for this program.<br>This will
-                                              detail the types of workouts with the program. It should detail to main object of
-                                              the program and the results that can be expected. This description can be as long as
-                                              required</p>
-                                      </div>
-                                  </div>
-                                  <div class="accordion style-2">
-                                      <div data-w-id="318dd5d4-e2e9-7095-276c-a871128f032c" class="accordion-header style-2">
-                                          <h2 class="generic-text-style-6 non-caps">Can I swap Programs?</h2>
-                                          <div class="accordion-header-arrow">
-                                              <div class="accordion-arrow-icon"></div>
-                                          </div>
-                                      </div>
-                                      <div class="accordion-body style-2">
-                                          <p class="body-copy-text-style-1">This is the description for this program.<br>This will
-                                              detail the types of workouts with the program. It should detail to main object of
-                                              the program and the results that can be expected. This description can be as long as
-                                              required</p>
-                                      </div>
-                                  </div>
-                                  <div class="accordion style-2">
-                                      <div data-w-id="318dd5d4-e2e9-7095-276c-a871128f0337" class="accordion-header style-2">
-                                          <h2 class="generic-text-style-6 non-caps">Do I have to change my diet?</h2>
-                                          <div class="accordion-header-arrow">
-                                              <div class="accordion-arrow-icon"></div>
-                                          </div>
-                                      </div>
-                                      <div class="accordion-body style-2">
-                                          <p class="body-copy-text-style-1">This is the description for this program.<br>This will
-                                              detail the types of workouts with the program. It should detail to main object of
-                                              the program and the results that can be expected. This description can be as long as
-                                              required</p>
-                                      </div>
-                                  </div>
-                              </div>
-                              <a w-el="questionnaire_user_program_added" data-w-id="318dd5d4-e2e9-7095-276c-a871128f0341" href="#" class="button-style-1 w-button" w-el-onclick-0-0="9165cc42-4c13-4be1-b1f2-51a5a8b8a571-0-0">Let’s get started</a>
-                              <a href="/questionnaire" class="button-style-5 w-button">back to questionnaire</a>
-                              <link rel="prerender" href="/questionnaire">
-                          </div>
-                      </div>
-                  </div>
-                  `;
-          wrapper.append(item);
-        }
-      },1000);
 
-       /* programMatch.forEach((item, index) => {
+        programArray.forEach((item, index) => {
           num++;
           console.log("ID In Array", IdEl[num]);
           console.log("Title In Array", TitleEl[num]);
@@ -267,17 +120,17 @@ window.onload = async () => {
           item = document.createElement("div");
           item.classList.add("swiper-slide");
           item.innerHTML = `
-              <div class="app-slide-image no-margin" style="background-image: url('${ImageEl[index]}') !important;">
+              <div class="app-slide-image no-margin" style="background-image: url('${programArray[index].Image[0].url}') !important;">
                       <div class="app-block fixed overlay full-height">
                           <div class="app-block-content">
                               <div class="info-block auto-margin">
                                   <div class="info-block-header">
                                       <div class="split-dynamic-text center">
                                           <div w-el="program_slide_weeks"
-                                              class="generic-text-style-2 margin-right-split-dnyamic-text">${WeeksEl[index]}</div>
+                                              class="generic-text-style-2 margin-right-split-dnyamic-text">${programArray[index].Weeks}</div>
                                           <div class="generic-text-style-2 center-align">wEEK program</div>
                                       </div>
-                                      <div class="main-heading-style-6 center-align slide-title">${TitleEl[index]}</div>
+                                      <div class="main-heading-style-6 center-align slide-title">${programArray[index].Title}</div>
                                   </div><a data-w-id="5c806ac3-c34a-bc93-6409-9da4edc693c2" href="#"
                                       class="button-style-1 half w-button">Program Details</a><a href="/questionnaire"
                                       class="button-style-4 w-button">Back to Questionnaire</a>
@@ -296,14 +149,14 @@ window.onload = async () => {
                                           class="generic-text-style-6 margin-right-split-dnyamic-text">${WeeksEl[index]}</div>
                                       <div class="generic-text-style-6">wEEK program</div>
                                   </div>
-                                  <h2 class="main-heading-style-1">${TitleEl[index]}</h2>
+                                  <h2 class="main-heading-style-1">${programArray[index].Title}</h2>
                               </div>
                               <div class="content-block base-block">
                                   <div class="content-block-header">
                                       <h2 class="main-heading-style-2">Overview</h2>
                                   </div>
                                   <div class="content-block-body">
-                                      <p class="body-copy-text-style-1">${DescriptionEl[index]}</p>
+                                      <p class="body-copy-text-style-1">${programArray[index].Description}</p>
                                   </div>
                               </div>
                               <div class="content-block">
@@ -312,7 +165,7 @@ window.onload = async () => {
                                   </div>
                                   <div class="content-block-body">
                                       <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${TitleEl[index]}</p>
+                                          <p class="body-copy-text-style-1">${programArray[index].Title}</p>
                                       </div>
                                   </div>
                               </div>
@@ -325,7 +178,7 @@ window.onload = async () => {
                                           <h3 class="generic-text-style-6 non-caps">Core Workouts</h3>
                                       </div>
                                       <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${TitleEl[index]}</p>
+                                          <p class="body-copy-text-style-1">${programArray[index].Title}</p>
                                       </div>
                                   </div>
                                   <div class="content-block-body margin-top">
@@ -333,7 +186,7 @@ window.onload = async () => {
                                           <h3 class="generic-text-style-6 non-caps">Recommended</h3>
                                       </div>
                                       <div class="content-block-body-copy">
-                                          <p class="body-copy-text-style-1">${TitleEl[index]}</p>
+                                          <p class="body-copy-text-style-1">${programArray[index].Title}</p>
                                       </div>
                                   </div>
                               </div>
@@ -406,7 +259,7 @@ window.onload = async () => {
                   </div>
                   `;
           wrapper.append(item);
-        });*/
+        });
 
         setTimeout(() => {
           let selectionButton = document.querySelectorAll(".selection-button");
