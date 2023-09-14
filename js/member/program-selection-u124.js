@@ -33,7 +33,7 @@ window.onload = async () => {
     console.log(user);
 
     const app = document.querySelector('.app');
-    	if (snapshot.Questionnaire == "Not Completed")
+    	if (user.Questionnaire == "Not Completed")
       {
          triggerModal.click();
       }
