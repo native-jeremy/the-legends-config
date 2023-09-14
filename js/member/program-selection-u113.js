@@ -295,7 +295,8 @@ window.onload = async () => {
             // Optional parameters
             speed: 1000,
             rewind: true,
-            effect: "cards",
+            effect: "fade",
+            crossFade: true,
             observer: true,
             observeParents: true,
             slidesPerView: 1,
