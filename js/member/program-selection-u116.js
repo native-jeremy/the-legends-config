@@ -293,17 +293,14 @@ window.onload = async () => {
 
           const swiper = new Swiper(".swiper", {
             // Optional parameters
-            speed: 250,
+            speed: 1000,
             rewind: true,
-            effect: "fade",
-            crossFade: true,
             observer: true,
             observeParents: true,
             slidesPerView: 1,
             shortSwipes: true,
             watchSlidesProgress: true,
             initialSlide: 0,
-            parallax: true,
             // Navigation arrows
             navigation: {
               nextEl: ".right-slide-arrow-button",
