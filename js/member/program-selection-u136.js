@@ -41,7 +41,7 @@ window.onload = async () => {
     console.log(user);
     if (user.Questionnaire == "Not Completed")
     {
-        errorModal.style.display = "flex !important";
+        errorModal.style.display = "flex";
         console.log("Selected!")
     }
 
