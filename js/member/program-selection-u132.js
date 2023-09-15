@@ -15,6 +15,11 @@ window.onload = async () => {
   let DescriptionEl = [];
   let WeeksEl = [];
   let num = 0;
+  let stripeBuyLinks = [
+    "https://buy.stripe.com/test_cN2cPM10l4h7fkY002",
+    "https://buy.stripe.com/test_3csg1YfVfdRH7SwaEF",
+    "https://buy.stripe.com/test_6oE3fc10lcNDdcQ8ww",
+  ];
   const value = await Wized.data.get("v.date");
      // Get current date
     let date = new Date();
@@ -280,6 +285,9 @@ window.onload = async () => {
               Wized.data.setCookie("programselection", `${programArray[num].ID}`);
               const checkSelection = Wized.data.get("c.programselection");
                 console.log("Selected Program Selection", num);
+                setTimeout(() => { 
+                  button.href = `${stripeBuyLinks[num]}`;
+                },2000)
             });
           });
         }, 1000);
