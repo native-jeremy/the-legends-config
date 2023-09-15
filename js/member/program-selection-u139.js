@@ -8,6 +8,7 @@ window.onload = async () => {
   //let triggerLoader = document.getElementById("trigger");
   const wrapper = document.querySelector(".swiper-wrapper");
   const stateLoader = document.querySelector('.loading-state')
+  const filterState = document.getElementById("filterState");
 
   //Global Variables
   let user;
@@ -324,6 +325,7 @@ window.onload = async () => {
             },
           });
           stateLoader.remove();
+          filterState.remove();
           Webflow.require("ix2").init();
           /////////////////////////////////////////
           swiper.on("slideChange", function () {
