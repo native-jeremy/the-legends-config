@@ -286,7 +286,7 @@ window.onload = async () => {
               const checkSelection = Wized.data.get("c.programselection");
                 console.log("Selected Program Selection", num);
                 setTimeout(() => { 
-                  button.href = `${stripeBuyLinks[num]}`;
+                  window.location.href = `${stripeBuyLinks[num]}`;
                 },2000)
             });
           });
