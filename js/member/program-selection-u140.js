@@ -324,8 +324,8 @@ window.onload = async () => {
               prevEl: ".left-slide-arrow-button",
             },
           });
-          stateLoader.remove();
           filterState.remove();
+          stateLoader.remove();
           Webflow.require("ix2").init();
           /////////////////////////////////////////
           swiper.on("slideChange", function () {
