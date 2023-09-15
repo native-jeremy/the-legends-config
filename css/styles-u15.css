@@ -1,5 +1,8 @@
-[w-el~="load_app"] {
-  opacity: 1;
+[wized-cloak-custom] {
+  opacity: 0! important;
+}
+.app { 
+	transition: 1s linear 1s;	
 }
 /*.capsule-body {
   display: flex !important;
