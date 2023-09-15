@@ -1,7 +1,7 @@
 window.onload = async () => {
   //Element Variables
   const sliderControls = document.querySelector(".slider-controls");
-  const triggerModal = document.getElementById("triggerModal");
+  const errorModal = document.getElementById("errorModal");
   const annualBuyLink = document.getElementById("annualBuyLink");
   const quarterlyBuyLink = document.getElementById("quarterlyBuyLink");
   const monthlyBuyLink = document.getElementById("monthlyBuyLink");
@@ -39,16 +39,11 @@ window.onload = async () => {
   Wized.request.await("Load Users Program", (response) => {
     user = response.data;
     console.log(user);
-
-    const app = document.querySelector('.app');
-    	if (user.Questionnaire == "Not Completed")
-      {
-         triggerModal.click();
+    if (user.Questionnaire == "Not Completed")
+    {
+        errorModal.style.display = "flex !important";
         console.log("Selected!")
-      }
-      else {
-        app.style.opacity = '1'
-      }
+    }
 
     Wized.request.await("Load Program Selection", (response) => {
       programData = response.data;
