@@ -7,6 +7,7 @@ window.onload = async () => {
   const monthlyBuyLink = document.getElementById("monthlyBuyLink");
   //let triggerLoader = document.getElementById("trigger");
   const wrapper = document.querySelector(".swiper-wrapper");
+  const stateLoader = document.querySelector('.loading-state')
 
   //Global Variables
   let user;
@@ -322,6 +323,7 @@ window.onload = async () => {
               prevEl: ".left-slide-arrow-button",
             },
           });
+          stateLoader.remove();
           Webflow.require("ix2").init();
           /////////////////////////////////////////
           swiper.on("slideChange", function () {
