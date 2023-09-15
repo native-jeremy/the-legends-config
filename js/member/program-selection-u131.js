@@ -279,11 +279,7 @@ window.onload = async () => {
               console.log("Clicked This Button!", button + " " + num);
               Wized.data.setCookie("programselection", `${programArray[num].ID}`);
               const checkSelection = Wized.data.get("c.programselection");
-              if (!checkSelection) {
                 console.log("Selected Program Selection", num);
-              } else {
-                window.location.href = "/stripe";
-              }
             });
           });
         }, 1000);
