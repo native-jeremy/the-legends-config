@@ -303,6 +303,10 @@ window.onload = async () => {
         Wized.data.setVariable("program", programMatch);
           const id = Wized.data.get("v.program");
           console.log("Program Variable! =", id);
+        setTimeout(() => {
+          filterState.remove();
+          stateLoader.remove();
+        }, 1000);
 
         setTimeout(() => {
           /////////////////////////////////////////
@@ -324,8 +328,6 @@ window.onload = async () => {
               prevEl: ".left-slide-arrow-button",
             },
           });
-          filterState.remove();
-          stateLoader.remove();
           Webflow.require("ix2").init();
           /////////////////////////////////////////
           swiper.on("slideChange", function () {
