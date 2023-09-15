@@ -341,8 +341,6 @@ window.onload = async () => {
           const programMatch = await Wized.data.get("v.program"); // Get new value
           console.log("Program Match: ", programMatch); // Console log new value
         });
-      } else {
-        triggerModal.click();
       }
     });
   });
