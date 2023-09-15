@@ -2,6 +2,9 @@ window.onload = async () => {
   //Element Variables
   const sliderControls = document.querySelector(".slider-controls");
   const triggerModal = document.getElementById("triggerModal");
+  const annualBuyLink = document.getElementById("annualBuyLink");
+  const quarterlyBuyLink = document.getElementById("quarterlyBuyLink");
+  const monthlyBuyLink = document.getElementById("monthlyBuyLink");
   //let triggerLoader = document.getElementById("trigger");
   const wrapper = document.querySelector(".swiper-wrapper");
 
@@ -285,12 +288,15 @@ window.onload = async () => {
               Wized.data.setCookie("programselection", `${programArray[num].ID}`);
               const checkSelection = Wized.data.get("c.programselection");
                 console.log("Selected Program Selection", num);
-                setTimeout(() => { 
-                  window.location.href = `${stripeBuyLinks[num]}`;
-                },2000)
             });
           });
         }, 1000);
+
+        setTimeout(() => { 
+          annualBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[0]}`});
+          quarterlyBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[1]}`});
+          monthlyBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[2]}`});
+        },1000)
 
         Wized.data.listen("c.programselection", async () => {
           const changedId = await Wized.data.get("c.programselection");
