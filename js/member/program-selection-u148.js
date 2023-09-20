@@ -282,21 +282,21 @@ window.onload = async () => {
           selectionButton.forEach((button, num) => {
             button.addEventListener("click", () => {
               console.log("Clicked This Button!", button + " " + num);
-              Wized.data.setCookie("programselection", `${programArray[num].ID}`);
+              Wized.data.setVariable("programid", `${programArray[num].ID}`);
               const checkSelection = Wized.data.get("c.programselection");
-                console.log("Selected Program Selection", num);
+                console.log("Selected Program id", checkSelection);
             });
           });
         }, 1000);
 
-        setTimeout(() => { 
+        /*setTimeout(() => { 
           annualBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[0]}`});
           quarterlyBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[1]}`});
           monthlyBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[2]}`});
-        },1000)
+        },1000)*/
 
-        Wized.data.listen("c.programselection", async () => {
-          const changedId = await Wized.data.get("c.programselection");
+        Wized.data.listen("v.programid", async () => {
+          const changedId = await Wized.data.get("v.programid");
           console.log("Program Selection changed to: ", changedId);
         });
 
