@@ -9,8 +9,6 @@ window.onload = async () => {
   const wrapper = document.querySelector(".swiper-wrapper");
   const stateLoader = document.querySelector('.loading-state')
   const filterState = document.getElementById("filterState");
-  const updateProgram = document.getElementById("verified");
-  const addProgram = document.getElementById("notVerified");
 
   //Global Variables
   let user;
@@ -22,11 +20,11 @@ window.onload = async () => {
   let DescriptionEl = [];
   let WeeksEl = [];
   let num = 0;
-  /*let stripeBuyLinks = [
+  let stripeBuyLinks = [
     "https://buy.stripe.com/test_cN2cPM10l4h7fkY002",
     "https://buy.stripe.com/test_3csg1YfVfdRH7SwaEF",
     "https://buy.stripe.com/test_6oE3fc10lcNDdcQ8ww",
-  ];*/
+  ];
   const value = await Wized.data.get("v.date");
      // Get current date
     let date = new Date();
@@ -43,6 +41,11 @@ window.onload = async () => {
   Wized.request.await("Load Users Program", (response) => {
     user = response.data;
     console.log(user);
+    if (user.Questionnaire == "Not Completed")
+    {
+        errorModal.style.display = "flex";
+        console.log("Selected!")
+    }
 
     Wized.request.await("Load Program Selection", (response) => {
       programData = response.data;
@@ -264,8 +267,7 @@ window.onload = async () => {
                                       </div>
                                   </div>
                               </div>
-                              <a id="notVerified" w-el="program_add" data-w-id="318dd5d4-e2e9-7095-276c-a871128f0341" href="#" class="button-style-1 w-button selection-button" w-el-onclick-0-0="383e510a-e306-44da-9439-d41dec8ba095-0-0">Let’s get started</a>
-                              <a href="#" id="verified" w-el="program_update" class="button-style-1 w-button selection-button" w-el-onclick-0-0="36d85c9e-79f9-460e-acd7-94e64c3ef6b0-0-0">Let’s get started</a>
+                              <a data-w-id="318dd5d4-e2e9-7095-276c-a871128f0341" href="#" w-el="program_add" class="button-style-1 w-button selection_button">Let’s get started</a>
                               <a href="/questionnaire" class="button-style-5 w-button">back to questionnaire</a>
                               <link rel="prerender" href="/questionnaire">
                           </div>
@@ -287,29 +289,11 @@ window.onload = async () => {
           });
         }, 1000);
 
-        setTimeout(() => {
-          if (user.Questionnaire == "Not Completed")
-          {
-              errorModal.style.display = "flex";
-              console.log("Selected!")
-          }
-      
-          if (user.Stripe == "Not Verified")
-          {
-              updateProgram.remove();
-          }
-          else if (user.Stripe == "Verified")
-          {
-              addProgram.remove();
-          }
-        }, 1000);
-    
-
-        /*setTimeout(() => { 
+        setTimeout(() => { 
           annualBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[0]}`});
           quarterlyBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[1]}`});
           monthlyBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[2]}`});
-        },1000)*/
+        },1000)
 
         Wized.data.listen("c.programselection", async () => {
           const changedId = await Wized.data.get("c.programselection");
