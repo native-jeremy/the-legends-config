@@ -43,20 +43,6 @@ window.onload = async () => {
   Wized.request.await("Load Users Program", (response) => {
     user = response.data;
     console.log(user);
-    if (user.Questionnaire == "Not Completed")
-    {
-        errorModal.style.display = "flex";
-        console.log("Selected!")
-    }
-
-    if (user.Stripe == "Not Verified")
-    {
-        updateProgram.remove();
-    }
-    else if (user.Stripe == "Verified")
-    {
-        addProgram.remove();
-    }
 
     Wized.request.await("Load Program Selection", (response) => {
       programData = response.data;
@@ -278,8 +264,8 @@ window.onload = async () => {
                                       </div>
                                   </div>
                               </div>
-                              <a id="notVerified" w-el="program_add" data-w-id="318dd5d4-e2e9-7095-276c-a871128f0341" href="#" class="button-style-1 w-button" w-el-onclick-0-0="383e510a-e306-44da-9439-d41dec8ba095-0-0">Let’s get started</a>
-                              <a href="#" id="verified" w-el="program_update" class="button-style-1 w-button">Let’s get started</a>
+                              <a id="notVerified" w-el="program_add" data-w-id="318dd5d4-e2e9-7095-276c-a871128f0341" href="#" class="button-style-1 w-button selection-button" w-el-onclick-0-0="383e510a-e306-44da-9439-d41dec8ba095-0-0">Let’s get started</a>
+                              <a href="#" id="verified" w-el="program_update" class="button-style-1 w-button selection-button" w-el-onclick-0-0="36d85c9e-79f9-460e-acd7-94e64c3ef6b0-0-0">Let’s get started</a>
                               <a href="/questionnaire" class="button-style-5 w-button">back to questionnaire</a>
                               <link rel="prerender" href="/questionnaire">
                           </div>
@@ -300,6 +286,24 @@ window.onload = async () => {
             });
           });
         }, 1000);
+
+        setTimeout(() => {
+          if (user.Questionnaire == "Not Completed")
+          {
+              errorModal.style.display = "flex";
+              console.log("Selected!")
+          }
+      
+          if (user.Stripe == "Not Verified")
+          {
+              updateProgram.remove();
+          }
+          else if (user.Stripe == "Verified")
+          {
+              addProgram.remove();
+          }
+        }, 1000);
+    
 
         /*setTimeout(() => { 
           annualBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[0]}`});
