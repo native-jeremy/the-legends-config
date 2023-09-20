@@ -283,7 +283,7 @@ window.onload = async () => {
             button.addEventListener("click", () => {
               console.log("Clicked This Button!", button + " " + num);
               Wized.data.setVariable("programid", `${programArray[num].ID}`);
-              const checkSelection = Wized.data.get("c.programselection");
+              const checkSelection = Wized.data.get("v.program");
                 console.log("Selected Program id", checkSelection);
             });
           });
