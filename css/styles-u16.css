@@ -41,6 +41,7 @@ a {
 }
 .disabled {
   pointer-events: none;
+  opacity: 0.6;
 }
 .blog-image {
   -o-object-fit: cover;
