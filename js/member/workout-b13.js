@@ -527,15 +527,15 @@ window.onload = async () => {
                 if (diffCurrent < maxLimit) {
                   diffCurrent++;
                   amount++;
-                  currentNum.innerHTML = diffCurrent;
+                  currentNum.innerHTML = diffCurrent + 1;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
                   secondaryResponse.data[0].Video[
                       diffCurrent
                     ].url;
-                  setTimeout(enableActiveStates, 1500);
-                  setTimeout(autoPlayVideo, 2000);
+                  //setTimeout(enableActiveStates, 1500);
+                 // setTimeout(autoPlayVideo, 2000);
                 } else {
                   diffCurrent = maxLimit;
                 }
@@ -546,15 +546,15 @@ window.onload = async () => {
                 if (diffCurrent > minLimit) {
                   diffCurrent--;
                   amount--;
-                  currentNum.innerHTML = diffCurrent;
+                  currentNum.innerHTML = diffCurrent + 1;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
                     secondaryResponse.data[parseInt(exercisesParam)].Video[
                       diffCurrent
                     ].url;
-                  setTimeout(enableActiveStates, 1500);
-                  setTimeout(autoPlayVideo, 2000);
+                 // setTimeout(enableActiveStates, 1500);
+                 // setTimeout(autoPlayVideo, 2000);
                 } else {
                   diffCurrent = minLimit;
                 }
