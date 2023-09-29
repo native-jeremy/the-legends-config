@@ -301,7 +301,7 @@ window.onload = async () => {
                 let sortedAmrapTitle = secondaryResponse.data[i].Exercise_Name;
                 let amrapResTitle = sortedAmrapTitle;
 
-                maxLimit = secondaryResponse.data[i].Video.length
+                let amrapMaxLimit = secondaryResponse.data[i].Video.length
 
                 let amrapControl;
                 let amrapHeader;
@@ -396,7 +396,7 @@ window.onload = async () => {
                 //Limit Text
                 amrapLimit = document.createElement("div");
                 amrapLimit.classList.add("num", "limit", "limit-num");
-                amrapLimit.innerHTML = maxLimit;
+                amrapLimit.innerHTML = amrapMaxLimit;
                 amrapTrigger.appendChild(amrapLimit);
                 //Plus Button----------------------------------------------------------------
                 amrapPlus = document.createElement("div");
@@ -411,7 +411,7 @@ window.onload = async () => {
                 controlMinusNumber.push(amrapMinus);
 
                 controlPlusNumber[i].addEventListener("click", () => {
-                  if (videoSrcIndex[i] < maxLimit) {
+                  if (videoSrcIndex[i] < amrapMaxLimit) {
                     videoSrcIndex[i]++;
                     localStorage.setItem("diffStart", videoSrcIndex[i]);
                     //videoSrcIndex[i] = currentNumber;
@@ -527,6 +527,7 @@ window.onload = async () => {
                 if (diffCurrent + 1 < maxLimit) {
                   diffCurrent++;
                   amount++;
+                  localStorage.setItem("diffStart", diffCurrent);
                   currentNum.innerHTML = diffCurrent + 1;
                   enableDisabledStates();
                   playVideoDiff();
@@ -546,6 +547,7 @@ window.onload = async () => {
                 if (diffCurrent > minLimit) {
                   diffCurrent--;
                   amount--;
+                  localStorage.setItem("diffStart", diffCurrent);
                   currentNum.innerHTML = diffCurrent + 1;
                   enableDisabledStates();
                   playVideoDiff();
