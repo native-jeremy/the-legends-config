@@ -550,7 +550,7 @@ window.onload = async () => {
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
-                    secondaryResponse.data[parseInt(exercisesParam)].Video[
+                    secondaryResponse.data[0].Video[
                       diffCurrent
                     ].url;
                   setTimeout(enableActiveStates, 1500);
