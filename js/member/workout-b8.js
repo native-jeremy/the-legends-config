@@ -523,11 +523,12 @@ window.onload = async () => {
             
             // Diff Increase Click Controls - Single Exercise
             function DiffControlsSingle() {
+              currentNum.innerHTML = diffCurrent + 1;
               plusBtn.addEventListener("click", function () {
                 if (diffCurrent < maxLimit) {
                   diffCurrent++;
                   amount++;
-                  currentNum.innerHTML = diffCurrent + 1;
+                  //currentNum.innerHTML = diffCurrent + 1;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
@@ -546,7 +547,7 @@ window.onload = async () => {
                 if (diffCurrent > minLimit) {
                   diffCurrent--;
                   amount--;
-                  currentNum.innerHTML = diffCurrent + 1;
+                  //currentNum.innerHTML = diffCurrent + 1;
                   enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
