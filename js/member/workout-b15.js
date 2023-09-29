@@ -528,7 +528,7 @@ window.onload = async () => {
                   diffCurrent++;
                   amount++;
                   currentNum.innerHTML = diffCurrent + 1;
-                  //enableDisabledStates();
+                  enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
                   secondaryResponse.data[0].Video[
@@ -547,7 +547,7 @@ window.onload = async () => {
                   diffCurrent--;
                   amount--;
                   currentNum.innerHTML = diffCurrent + 1;
-                  //enableDisabledStates();
+                  enableDisabledStates();
                   playVideoDiff();
                   vidSrc.src =
                     secondaryResponse.data[parseInt(exercisesParam)].Video[
