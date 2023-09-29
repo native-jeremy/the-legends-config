@@ -534,11 +534,13 @@ window.onload = async () => {
                   secondaryResponse.data[0].Video[
                       diffCurrent
                     ].url;
-                  setTimeout(enableActiveStates, 1500);
-                  setTimeout(autoPlayVideo, 2000);
+                  //setTimeout(enableActiveStates, 1500);
+                  //setTimeout(autoPlayVideo, 2000);
                 } else {
                   diffCurrent = maxLimit;
                 }
+                setTimeout(enableActiveStates, 1500);
+                setTimeout(autoPlayVideo, 2000);
               });
 
               // Diff Decrease Click Controls - Single Exercise
@@ -553,11 +555,13 @@ window.onload = async () => {
                     secondaryResponse.data[parseInt(exercisesParam)].Video[
                       diffCurrent
                     ].url;
-                  setTimeout(enableActiveStates, 1500);
-                  setTimeout(autoPlayVideo, 2000);
+                  //setTimeout(enableActiveStates, 1500);
+                  //setTimeout(autoPlayVideo, 2000);
                 } else {
                   diffCurrent = minLimit;
                 }
+                setTimeout(enableActiveStates, 1500);
+                setTimeout(autoPlayVideo, 2000);
               });
             }
 
