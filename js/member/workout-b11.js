@@ -536,9 +536,7 @@ window.onload = async () => {
                     ].url;
                   //setTimeout(enableActiveStates, 1500);
                   //setTimeout(autoPlayVideo, 2000);
-                } else {
-                  diffCurrent = maxLimit;
-                }
+                } 
                 setTimeout(enableActiveStates, 1500);
                 setTimeout(autoPlayVideo, 2000);
               });
@@ -557,9 +555,7 @@ window.onload = async () => {
                     ].url;
                   //setTimeout(enableActiveStates, 1500);
                   //setTimeout(autoPlayVideo, 2000);
-                } else {
-                  diffCurrent = minLimit;
-                }
+                } 
                 setTimeout(enableActiveStates, 1500);
                 setTimeout(autoPlayVideo, 2000);
               });
