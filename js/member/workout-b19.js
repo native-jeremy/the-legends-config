@@ -537,7 +537,7 @@ window.onload = async () => {
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                 } else {
-                  diffCurrent = maxLimit;
+                  return false;
                 }
               });
 
@@ -556,7 +556,7 @@ window.onload = async () => {
                   setTimeout(enableActiveStates, 1500);
                   setTimeout(autoPlayVideo, 2000);
                 } else {
-                  diffCurrent = minLimit;
+                  return false;
                 }
               });
             }
