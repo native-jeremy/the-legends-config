@@ -18,6 +18,7 @@ const currentTest = document.getElementById("current");
 const durationTest = document.getElementById("dur");
 const RoundNumberText = document.getElementById("mainNumText");
 const progressEl = document.querySelector('.wheel');
+let loader = document.getElementById('loader');
 
 // Param Int Set Variables
 let setIntRoundNum;
@@ -204,8 +205,7 @@ window.onload = async () => {
       RoundNumberText.innerHTML = "Workout Completed";
       roundTitle.innerHTML = "Congratulations!";
       roundNumHeader.innerHTML = "";
-      let loader = document.getElementById('loader');
-      loader.remove();
+      loader.style.display = "none";
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates();
     } else if (parseInt(roundParam) !== 0) {
