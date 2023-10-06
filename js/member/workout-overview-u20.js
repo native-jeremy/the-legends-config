@@ -39,7 +39,7 @@ window.onload = async () => {
     console.log("Workout Res", snapshot);
   });
     Wized.request.await("Load Round Info", (response) => {
-        console.log("Rounds", response);
+        console.log("Rounds", response.data);
         const rounds = response.data;
         rounds.forEach((currentRound, index) => {
             currentRound.Rep_Type_Linked_Exercises.forEach((amount, index) => {
@@ -49,8 +49,8 @@ window.onload = async () => {
                         const timeConvert = document.querySelectorAll('.convert_time');
                         timeConvert.forEach(time => {
                          if(parseInt(time.textContent) < 60)
-                         {   time.textContent = time.textContent + " seconds";
-                             console.log("Standard Time Not Over 60 seconds", time.textContent);
+                         {   
+                            time.textContent = time.textContent + " seconds";
                          }
                          else {
                              let timer = parseInt(time.textContent)
@@ -63,14 +63,12 @@ window.onload = async () => {
                              else {
                                  time.textContent = convertedTime + " minutes " + extraSeconds + " seconds";
                              }
-                             console.log("Correct Converted Time", convertedTime + " minutes " + extraSeconds + " seconds");
                          }
                         });
                      }, 1000);
                 }
                 else {
                     time.textContent = time.textContent + " Reps";
-                    console.log("Reps", time.textContent);
                 }
             });
         });
