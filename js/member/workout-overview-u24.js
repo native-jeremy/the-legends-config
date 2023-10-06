@@ -45,35 +45,33 @@ window.onload = async () => {
             currentRound.Rep_Type_Linked_Exercises.forEach((amount, index) => {
                 if(amount == "Time")
                 {
-                    setTimeout(() => {
-                        const timeConvert = document.querySelectorAll('.convert_time');
-                        timeConvert.forEach(time => {
-                         if(parseInt(time.textContent) < 60)
-                         {   
-                            time.textContent = time.textContent + " seconds";
-                         }
-                         else {
-                             let timer = parseInt(time.textContent)
-                             let = convertedTime = Math.floor(timer/ 60)
-                             let extraSeconds = timer % 60;
-                             if(!extraSeconds > 0)
-                             {
-                                 time.textContent = convertedTime + " minutes";
-                             }
-                             else {
-                                 time.textContent = convertedTime + " minutes " + extraSeconds + " seconds";
-                             }
-                         }
-                        });
-                     }, 1000);
+                    const timeConvert = document.querySelectorAll('.convert_time')[index];
+                    timeConvert.forEach(time => {
+                    if(parseInt(time.textContent) < 60)
+                    {   
+                        time.textContent = time.textContent + " seconds";
+                    }
+                    else {
+                    let timer = parseInt(time.textContent)
+                    let = convertedTime = Math.floor(timer/ 60)
+                    let extraSeconds = timer % 60;
+                    if(!extraSeconds > 0)
+                    {
+                        time.textContent = convertedTime + " minutes";
+                    }
+                    else {
+                        time.textContent = convertedTime + " minutes " + extraSeconds + " seconds";
+                    }
+                    }
+                    });
                 }
                 else if (amount == "Rep") {
+                    const time = document.querySelectorAll('.convert_time')[index];
                     time.textContent = time.textContent + " Reps";
                 }
             });
         });
-        console.log(response); // Log request response  
-    })
+    });
 
   // Siren & Voice Functionailty Setup
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
