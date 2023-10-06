@@ -39,7 +39,7 @@ window.onload = async () => {
     console.log("Workout Res", snapshot);
   });
     Wized.request.await("Load Round Info", (response) => {
-        console.log("Rounds", response.data);
+        console.log("Rounds", response);
         const rounds = response.data;
         rounds.forEach((currentRound, index) => {
             currentRound.Rep_Type_Linked_Exercises.forEach((amount, index) => {
