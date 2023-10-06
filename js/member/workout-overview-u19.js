@@ -38,10 +38,8 @@ window.onload = async () => {
     }
     console.log("Workout Res", snapshot);
   });
-
-  window.onload = async () => {  
     Wized.request.await("Load Round Info", (response) => {
-        console.log("Rounds", response);
+        console.log("Rounds", response.data);
         const rounds = response.data;
         rounds.forEach((currentRound, index) => {
             currentRound.Rep_Type_Linked_Exercises.forEach((amount, index) => {
@@ -78,7 +76,6 @@ window.onload = async () => {
         });
         console.log(response); // Log request response  
     })
-};
 
   // Siren & Voice Functionailty Setup
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
