@@ -67,7 +67,7 @@ window.onload = async () => {
                         });
                      }, 1000);
                 }
-                else {
+                else if (amount == "Rep") {
                     time.textContent = time.textContent + " Reps";
                 }
             });
