@@ -38,14 +38,14 @@ window.onload = async () => {
     }
     console.log("Workout Res", snapshot);
   });
-    Wized.request.await("Load Round Info", (response) => {
+    /*Wized.request.await("Load Round Info", (response) => {
         console.log("Rounds", response.data);
         const rounds = response.data;
         rounds.forEach((currentRound, index) => {
             currentRound.Rep_Type_Linked_Exercises.forEach((amount, index) => {
+                const timeConvert = document.querySelectorAll('.convert_time')[index];
                 if(amount == "Time")
-                {
-                    const timeConvert = document.querySelectorAll('.convert_time')[index];
+                {   const timeConvert = document.querySelectorAll('.convert_time')[index];
                     timeConvert.forEach(time => {
                     if(parseInt(time.textContent) < 60)
                     {   
@@ -71,7 +71,7 @@ window.onload = async () => {
                 }
             });
         });
-    });
+    });*/
 
   // Siren & Voice Functionailty Setup
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
