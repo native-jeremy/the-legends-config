@@ -204,6 +204,11 @@ window.onload = async () => {
       RoundNumberText.innerHTML = "Workout Completed";
       roundTitle.innerHTML = "Congratulations!";
       roundNumHeader.innerHTML = "";
+      let loader = document.getElementById('loader');
+      loader.remove();
+      setTimeout(() => {
+        Wized.data.setVariable("complete", "completed");
+      },3000);
       Wized.data.setVariable("complete", "completed");
       enableDisabledStates();
     } else if (parseInt(roundParam) !== 0) {
