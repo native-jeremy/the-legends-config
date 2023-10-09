@@ -323,12 +323,12 @@ window.onload = async () => {
                 let amrapMinusArrow;
                 let amrapMinNumm = 0;
                 let ammrapLimitNumm = maxLimit;
+                
+                const renderElAmount = secondaryResponse.data.length
 
                 for (let i = 0; i < renderElAmount; i++) {
                   const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises
                   const amrapRenderName = secondaryResponse.data[i].Exercise_Name
-
-                  const renderElAmount = secondaryResponse.data.length
                   const renderHeadings = `
                   <div class="generic-text-style-3 amrap-amount">${amrapRenderAmount}</div>
                   <div class="main-heading-style-6 center-align amrap-title">${amrapRenderName}</div>
