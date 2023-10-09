@@ -326,7 +326,7 @@ window.onload = async () => {
 
                 const renderElAmount = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises.length;
 
-                for (let i = 0; i < renderElAmount; i++) {
+                
                   const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises[i]
                   const amrapRenderName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
                   const renderHeadings = `
@@ -338,7 +338,7 @@ window.onload = async () => {
                   renderBlock.classList.add("render_headings_block");
                   renderBlock.innerHTML = renderBlock.innerHTML + renderHeadings
                   amrapBlock.append(renderBlock);
-                }
+                
 
                 const amrapControlName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
 
