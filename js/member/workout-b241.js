@@ -136,6 +136,8 @@ window.onload = async () => {
 
   Wized.request.await("Load Round Info", (response) => {
     roundRes = response;
+    let roundSort = response.data;
+    roundSort.sort(function (a, b) {return a.Exercise_Category_Linked_Exercises - b.Exercise_Category_Linked_Exercises});
     roundInfo = roundRes.data[parseInt(roundParam)];
 
     roundDiffLevel = roundInfo.Default_Diff_Level.split(", ");
