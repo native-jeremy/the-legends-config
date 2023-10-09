@@ -340,6 +340,8 @@ window.onload = async () => {
                   amrapBlock.append(renderBlock);
                 }
 
+                const amrapControlName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
+
                 //Amrap Control Div "body"----------------------------------------------------------------
                 amrapControl = document.createElement("div");
                 amrapControl.classList.add(
@@ -379,7 +381,7 @@ window.onload = async () => {
                 //Amrap Exercise Title Text----------------------------------------------------------------
                 amrapTitle = document.createElement("h2");
                 amrapTitle.classList.add("main-sub-heading-style-1");
-                amrapTitle.innerHTML = amrapRenderName;
+                amrapTitle.innerHTML = amrapControlName;
                 amrapHeaderTop.appendChild(amrapTitle);
                 //Counter Content Div----------------------------------------------------------------
                 amrapTrigger = document.createElement("div");
