@@ -298,22 +298,6 @@ window.onload = async () => {
             }
             vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
 
-            const renderElAmount = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises.length;
-
-            for (let i = 0; i < renderElAmount; i++) {
-              const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises[i]
-              const amrapRenderName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
-              const renderHeadings = `
-              <div class="generic-text-style-3 amrap-amount">${amrapRenderAmount}</div>
-              <div class="main-heading-style-6 center-align amrap-title">${amrapRenderName}</div>
-              `
-              amrapBlock.innerHTML = "";
-              renderBlock = document.createElement("div")
-              renderBlock.classList.add("render_headings_block");
-              renderBlock.innerHTML = renderBlock.innerHTML + renderHeadings
-              amrapBlock.append(renderBlock);
-            }
-
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
                 //controlNumber.push(currentNumber);----------------------------------------------------------------
@@ -339,6 +323,22 @@ window.onload = async () => {
                 let amrapMinusArrow;
                 let amrapMinNumm = 0;
                 let ammrapLimitNumm = maxLimit;
+
+               const renderElAmount = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises.length;
+
+                for (let i = 0; i < renderElAmount; i++) {
+                  const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises[i]
+                  const amrapRenderName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
+                  const renderHeadings = `
+                  <div class="generic-text-style-3 amrap-amount">${amrapRenderAmount}</div>
+                  <div class="main-heading-style-6 center-align amrap-title">${amrapRenderName}</div>
+                  `
+                  amrapBlock.innerHTML = "";
+                  renderBlock = document.createElement("div")
+                  renderBlock.classList.add("render_headings_block");
+                  renderBlock.innerHTML = renderBlock.innerHTML + renderHeadings
+                  amrapBlock.append(renderBlock);
+                }
 
                 const amrapControlName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
 
@@ -477,7 +477,7 @@ window.onload = async () => {
                     exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;*/
                   }
                 });
-                vidSrc.src = secondaryResponse.data[0].Video[0].url;
+                vidSrc.src = secondaryResponse.data[videoIndex].Video[videoSrcIndex[videoIndex]].url;
 
                 checkAmrapVideo = setInterval(() => {
                   
