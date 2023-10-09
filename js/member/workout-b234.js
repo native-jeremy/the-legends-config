@@ -286,7 +286,7 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = mainResponse.data[parseInt(roundParam)].Default_Diff_Level_Linked_Exercises[i];
+                let defaultDiff = roundDiffLevel[parseInt(exercisesParam)][i];
                 videoSrcIndex.push(defaultDiff);
               }
               console.log("Default Video Length",videoSrcIndex);
