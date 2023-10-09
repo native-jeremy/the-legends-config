@@ -270,7 +270,7 @@ window.onload = async () => {
 
             exerciseDiffRes = diffRes;
 
-            let amrapLength = secondaryResponse.data.length;
+            let amrapLength = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises[parseInt(exercisesParam)].length;
 
             diffLength = secondaryResponse.data[parseInt(videoIndex)].Video.length
             maxLimit = diffLength;
