@@ -379,7 +379,7 @@ window.onload = async () => {
                 //Amrap Exercise Title Text----------------------------------------------------------------
                 amrapTitle = document.createElement("h2");
                 amrapTitle.classList.add("main-sub-heading-style-1");
-                amrapTitle.innerHTML = amrapResTitle;
+                amrapTitle.innerHTML = amrapRenderName;
                 amrapHeaderTop.appendChild(amrapTitle);
                 //Counter Content Div----------------------------------------------------------------
                 amrapTrigger = document.createElement("div");
