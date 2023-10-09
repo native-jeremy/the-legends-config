@@ -256,8 +256,9 @@ window.onload = async () => {
         async function loadAmrapData() {
 
           Wized.request.await("Load Exercise Diff", (response) => {
-            const singleTitle = document.querySelector('.single-title');
-            singleTitle.remove();
+            const singleBlock = document.querySelector('.single_heading_block');
+            const amrapBlock = document.querySelector('.amrap_heading_block');
+            singleBlock.remove();
             
             secondaryResponse = response;
             console.log("---------------------------------------");
@@ -500,6 +501,8 @@ window.onload = async () => {
         async function loadSingleData() {
 
           Wized.request.await("Load Exercise Diff", (response) => {
+            const amrapBlock = document.querySelector('.amrap_heading_block');
+            amrapBlock.remove();
             
             secondaryResponse = response;
             /*let diffStr = currentNum.innerHTML;
@@ -528,8 +531,6 @@ window.onload = async () => {
             // Diff Increase Click Controls - Single Exercise
             function DiffControlsSingle() {
               const singleTitle = document.querySelector('.single-title');
-              const amrapTitle = document.querySelector('.amrap-title');
-              amrapTitle.remove();
               singleTitle.textContent = secondaryResponse.data[0].Exercise_Name
               plusBtn.addEventListener("click", function () {
                 if (diffCurrent + 1 < maxLimit) {
