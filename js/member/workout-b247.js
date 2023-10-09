@@ -328,7 +328,7 @@ window.onload = async () => {
 
                 for (let i = 0; i < renderElAmount; i++) {
                   const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises
-                  const amrapRenderName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises
+                  const amrapRenderName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
                   const renderHeadings = `
                   <div class="generic-text-style-3 amrap-amount">${amrapRenderAmount}</div>
                   <div class="main-heading-style-6 center-align amrap-title">${amrapRenderName}</div>
