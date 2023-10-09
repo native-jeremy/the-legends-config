@@ -290,7 +290,7 @@ window.onload = async () => {
                 videoSrcIndex.push(defaultDiff);
               }
               console.log("Default Video Length",videoSrcIndex);
-              console.log("Default Res Level: ", mainResponse.data[parseInt(roundParam)].Default_Diff_Level_Linked_Exercises)
+              console.log("Default Res Level: ", roundDiffLevel)
               console.log("amrapLength: ", amrapLength)
             }
             vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
