@@ -286,11 +286,11 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = roundDiffLevel;
+                let defaultDiff = roundDiffLevel[i];
                 videoSrcIndex.push(defaultDiff);
               }
               console.log("Default Video Length",videoSrcIndex);
-              console.log("Default Res Level: ", roundDiffLevel)
+              console.log("Default Res Level: ", videoSrcIndex)
               console.log("amrapLength: ", amrapLength)
             }
             vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
