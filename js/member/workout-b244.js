@@ -324,6 +324,22 @@ window.onload = async () => {
                 let amrapMinNumm = 0;
                 let ammrapLimitNumm = maxLimit;
 
+                for (let i = 0; i < renderElAmount; i++) {
+                  const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises
+                  const amrapRenderName = secondaryResponse.data[i].Exercise_Name
+
+                  const renderElAmount = secondaryResponse.data.length
+                  const renderHeadings = `
+                  <div class="generic-text-style-3 amrap-amount">${amrapRenderAmount}</div>
+                  <div class="main-heading-style-6 center-align amrap-title">${amrapRenderName}</div>
+                  `
+                  amrapBlock.innerHTML = "";
+                  renderBlock = document.createElement("div")
+                  renderBlock.classList.add("render_headings_block");
+                  renderBlock.innerHTML = renderBlock.innerHTML + renderHeadings
+                  amrapBlock.append(renderBlock);
+                }
+
                 //Amrap Control Div "body"----------------------------------------------------------------
                 amrapControl = document.createElement("div");
                 amrapControl.classList.add(
