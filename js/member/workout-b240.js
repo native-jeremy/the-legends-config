@@ -293,7 +293,7 @@ window.onload = async () => {
               console.log("Default Res Level: ", videoSrcIndex)
               console.log("amrapLength: ", amrapLength)
             }
-            vidSrc.src = secondaryResponse.data[0].Video[currentNumber].url;
+            vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
 
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
