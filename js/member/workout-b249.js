@@ -324,7 +324,7 @@ window.onload = async () => {
                 let amrapMinNumm = 0;
                 let ammrapLimitNumm = maxLimit;
 
-                const renderElAmount = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises
+                const renderElAmount = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises.length;
 
                 for (let i = 0; i < renderElAmount; i++) {
                   const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises
