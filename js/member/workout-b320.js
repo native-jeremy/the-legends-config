@@ -296,10 +296,10 @@ window.onload = async () => {
               }});
             });
 
-            secondaryResponse.data.sort(function(a, b){  
+            let order = secondaryResponse.data.sort(function(a, b){  
               return videoOrderList.indexOf(a) - videoOrderList.indexOf(b);
             });
-
+            console.log("New Diff Order", order)
             console.log("Video Order", videoOrderList)
             
             if (videoSrcIndex.length  <= 0) {
