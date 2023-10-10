@@ -599,10 +599,19 @@ window.onload = async () => {
       }
 
       function updateParams() {
+        if((amrapBool !== "True"))
+        {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         window.location.href = url.toString();
+        }
+        else {
+        getRoundNum = checkurl.get("exercises");
+        getRoundNum = parseInt(getRoundNum) + 1;
+        setExercisesNum = checkurl.set("round", getRoundNum.toString());
+        window.location.href = url.toString();
+        }
       }
 
       function backTrackParams() {
