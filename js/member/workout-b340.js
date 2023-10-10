@@ -464,7 +464,7 @@ window.onload = async () => {
                 });
 
                 let srcIndex = 0;
-                vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
+                vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
 
                 console.log("Diff Level: ", videoSrcIndex);
 
