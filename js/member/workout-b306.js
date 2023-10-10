@@ -464,7 +464,7 @@ window.onload = async () => {
                       vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
                       vidSrc.play();
                     }
-                  } else
+                  } else if (!srcIndex < amrapLength)
                     {
                         srcIndex = 0;
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
