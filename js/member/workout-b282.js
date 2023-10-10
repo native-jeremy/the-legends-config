@@ -484,7 +484,7 @@ window.onload = async () => {
                         vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                         vidSrc.play();
                     }
-                }, 0);
+                }, 1000);
               }
             }
             console.log("---------------------------------------");
