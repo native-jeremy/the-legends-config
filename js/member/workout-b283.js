@@ -459,7 +459,7 @@ window.onload = async () => {
                     amrapCounter.innerHTML = currentNumberText;
                   }
                 });
-                vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
+                vidSrc.src = secondaryResponse.data[0].Video[currentNumber].url;
 
                 checkAmrapVideo = setInterval(() => {
                   
@@ -484,7 +484,7 @@ window.onload = async () => {
                         vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                         vidSrc.play();
                     }
-                }, 1000);
+                }, 0);
               }
             }
             console.log("---------------------------------------");
