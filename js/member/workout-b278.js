@@ -261,13 +261,6 @@ window.onload = async () => {
             singleBlock.remove();
             
             secondaryResponse = response;
-            newSortedDiff = secondaryResponse.sort(function(a, b){  
-              return mainResponse.indexOf(a) - mainResponse.indexOf(b);
-            });
-            
-
-            console.log("New Diff Sorting: " + newSortedDiff)
-
             
             console.log("---------------------------------------");
             console.log("Exercise Diff Info Response TEMP! ", secondaryResponse);
