@@ -303,7 +303,7 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = roundDiffLevel[i] - 1;
+                let defaultDiff = roundDiffLevel[i];
                 videoSrcIndex.push(defaultDiff);
               }
 
@@ -464,7 +464,7 @@ window.onload = async () => {
                 });
 
                 let srcIndex = 0;
-                vidSrc.src = secondaryResponse.data[0].Video[0].url;
+                vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
 
                 console.log("Diff Level: ", videoSrcIndex);
 
