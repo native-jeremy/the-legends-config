@@ -463,6 +463,8 @@ window.onload = async () => {
                 let srcIndex = 0;
                 vidSrc.src = secondaryResponse.data[0].Video[0].url;
 
+                console.log("Diff Level: " + videoSrcIndex);
+
                 checkAmrapVideo = setInterval(() => {
                   console.log("Video: " + srcIndex)
                   
