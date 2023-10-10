@@ -258,7 +258,6 @@ window.onload = async () => {
             const singleBlock = document.querySelector('.single_heading_block');
             const amrapBlock = document.querySelector('.amrap_heading_block');
             singleBlock.remove();
-            let srcIndex = 0;
             
             secondaryResponse = response;
             
@@ -283,6 +282,7 @@ window.onload = async () => {
             let controlPlusNumber = [];
             let controlMinusNumber = [];
             let videoSrcIndex = [];
+            let srcIndex = 0;
             
             if (videoSrcIndex.length  <= 0) {
               
