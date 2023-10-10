@@ -456,23 +456,31 @@ window.onload = async () => {
                           
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
-                    changeVideo = true; 
+                    changeVideo = true;
+                    if (changeVideo == true)
+                    {
+                      videoSource();
+                    } 
+                  }
+                }, 0);
+
+                function videoSource()
+                {
                     console.log("Video index changed", srcIndex);
                     srcIndex++;
                     if (srcIndex < amrapLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                      vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
+                      vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
                       vidSrc.play();
                     }
                     else if (srcIndex >= amrapLength)
                     {
                         srcIndex = 0;
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                        vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
+                        vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
                         vidSrc.play();
                     }
-                  }
-                }, 0);
+                }
               }
             }
             console.log("---------------------------------------");
