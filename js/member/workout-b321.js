@@ -297,7 +297,7 @@ window.onload = async () => {
             });
 
             let order = secondaryResponse.data.sort(function(a, b){  
-              return videoOrderList.indexOf(a) - videoOrderList.indexOf(b);
+              return secondaryResponse.data.indexOf(a.videoOrderList) - secondaryResponse.data.indexOf(b.videoOrderList);
             });
             console.log("New Diff Order", order)
             console.log("Video Order", videoOrderList)
