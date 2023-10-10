@@ -327,14 +327,13 @@ window.onload = async () => {
                   const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises[i]
                   const amrapRenderName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
                   const renderHeadings = `
+                  <div class = "render_headings_block"> 
                   <div class="generic-text-style-3 amrap-amount">${amrapRenderAmount}</div>
                   <div class="main-heading-style-6 center-align amrap-title">${amrapRenderName}</div>
+                  </div>
                   `
                   amrapBlock.innerHTML = "";
-                  renderBlock = document.createElement("div")
-                  renderBlock.classList.add("render_headings_block");
-                  renderBlock.innerHTML = renderBlock.innerHTML + renderHeadings
-                  amrapBlock.innerHTML = renderBlock.innerHTML;
+                  amrapBlock.innerHTML = renderBlock.innerHTML + renderHeadings
 
                 const amrapControlName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
 
