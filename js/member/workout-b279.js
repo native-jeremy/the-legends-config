@@ -308,7 +308,7 @@ window.onload = async () => {
               console.log("Default Res Level: ", videoSrcIndex)
               console.log("amrapLength: ", amrapLength)
             }
-            vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
+            //vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
 
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
@@ -468,7 +468,7 @@ window.onload = async () => {
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
                     videoIndex = videoIndex + 1;
-                    if (videoIndex < diffRealLength) {
+                    if (videoIndex < diffLength) {
                       videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = videoCurrentSrc;
                       vidSrc.play();
@@ -477,7 +477,7 @@ window.onload = async () => {
                       console.log("Video Urls: " + secondaryResponse.data)
                     }
                   } else if (
-                    videoIndex >= diffRealLength)
+                    videoIndex >= diffLength)
                     {
                         videoIndex = 0;
                         videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
