@@ -464,7 +464,6 @@ window.onload = async () => {
                 checkAmrapVideo = setInterval(() => {
                   
                   //let videoCurrentSrc;
-                  console.log("Video Index: " + videoIndex)
         
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
