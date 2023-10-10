@@ -461,7 +461,7 @@ window.onload = async () => {
                   }
                 });
 
-                vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
+                vidSrc.src = secondaryResponse.data[0].Video[videoSrcIndex[0]].url;
 
                 checkAmrapVideo = setInterval(() => {
                   
