@@ -263,7 +263,7 @@ window.onload = async () => {
             secondaryResponse = response;
 
             newSortedDiff = secondaryResponse.data.sort(function(a, b){  
-              return mainResponse.data.Exercise_Category_Linked_Exercises.indexOf(a) - mainResponse.data.Exercise_Category_Linked_Exercises.indexOf(b);
+              return mainResponse.data.indexOf(a) - mainResponse.data.indexOf(b);
             });
 
             console.log("New Diff Sorting: " + newSortedDiff)
