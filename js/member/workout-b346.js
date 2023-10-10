@@ -607,7 +607,7 @@ window.onload = async () => {
         window.location.href = url.toString();
         }
         else {
-        getRoundNum = checkurl.get("exercises");
+        getRoundNum = checkurl.get("round");
         getRoundNum = parseInt(getRoundNum) + 1;
         setExercisesNum = checkurl.set("round", getRoundNum.toString());
         window.location.href = url.toString();
