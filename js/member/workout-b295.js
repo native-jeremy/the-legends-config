@@ -258,6 +258,7 @@ window.onload = async () => {
             const singleBlock = document.querySelector('.single_heading_block');
             const amrapBlock = document.querySelector('.amrap_heading_block');
             singleBlock.remove();
+            let srcIndex = 0;
             
             secondaryResponse = response;
             
@@ -460,7 +461,6 @@ window.onload = async () => {
                   }
                 });
 
-                let srcIndex = 0;
                 vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
 
                 checkAmrapVideo = setInterval(() => {
