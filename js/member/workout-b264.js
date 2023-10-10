@@ -303,7 +303,6 @@ window.onload = async () => {
                 <div class="main-heading-style-6 center-align amrap-title">${amrapRenderName}</div>
                 </div>
                 `
-                amrapBlock.innerHTML = "";
                 amrapBlock.innerHTML = amrapBlock.innerHTML + renderHeadings
               }
 
