@@ -247,7 +247,6 @@ window.onload = async () => {
       function timerConversion(time) {
         minutes = Math.floor(time / 60); 
         seconds = time % 60;
-        console.log("Minutes:", minutes, "Seconds:", seconds);
       }
 
       if (amrapBool == "True") {
@@ -271,6 +270,7 @@ window.onload = async () => {
             let amrapLength = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises.length;
 
             diffLength = secondaryResponse.data[parseInt(videoIndex)].Video.length // This will keep throwing an error if the video length is more
+            let diffRealLength = secondaryResponse.data[0].Video.length 
             maxLimit = diffLength;
             limitNum.innerHTML = maxLimit;
             newcookieIndex =
@@ -468,7 +468,7 @@ window.onload = async () => {
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
                     videoIndex = videoIndex + 1;
-                    if (videoIndex < diffLength) {
+                    if (videoIndex < diffRealLength) {
                       videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = videoCurrentSrc;
                       vidSrc.play();
@@ -477,7 +477,7 @@ window.onload = async () => {
                       console.log("Video Urls: " + secondaryResponse.data)
                     }
                   } else if (
-                    videoIndex >= diffLength)
+                    videoIndex >= diffRealLength)
                     {
                         videoIndex = 0;
                         videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
