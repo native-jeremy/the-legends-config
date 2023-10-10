@@ -487,7 +487,7 @@ window.onload = async () => {
                     videoIndex = videoIndex + 1;
                     if (videoIndex < diffLength) {
                       //videoIndex = videoIndex + 1;
-                      videoCurrentSrc = secondaryResponse.data[videoIndex].Video[videoSrcIndex[videoIndex]].url;
+                      videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = videoCurrentSrc;
                       vidSrc.play();
                       console.log("Video: " + videoSrcIndex[videoIndex])
@@ -502,7 +502,6 @@ window.onload = async () => {
                         vidSrc.src = videoCurrentSrc;
                         vidSrc.play();
                     }
-                    console.log("Video Index: " + videoIndex)
                 }, 0);
               }
             }
