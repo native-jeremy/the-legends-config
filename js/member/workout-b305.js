@@ -461,14 +461,14 @@ window.onload = async () => {
                     srcIndex++;
                     if (srcIndex < amrapLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                      vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
+                      vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
                       vidSrc.play();
                     }
                   } else
                     {
                         srcIndex = 0;
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                        vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
+                        vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
                         vidSrc.play();
                     }
                 }, 1000);
