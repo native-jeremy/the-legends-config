@@ -245,7 +245,7 @@ window.onload = async () => {
       timerConversion(repAmount)
 
       function timerConversion(time) {
-        minutes = Math.floor(time / 60);
+        minutes = Math.floor(time / 60); 
         seconds = time % 60;
         console.log("Minutes:", minutes, "Seconds:", seconds);
       }
@@ -261,8 +261,8 @@ window.onload = async () => {
             singleBlock.remove();
             
             secondaryResponse = response;
-            newSortedDiff = secondaryResponse.data.sort(function(a, b){  
-              return mainResponse.data.indexOf(a) - mainResponse.data.indexOf(b);
+            newSortedDiff = secondaryResponse.sort(function(a, b){  
+              return mainResponse.indexOf(a) - mainResponse.indexOf(b);
             });
             
 
