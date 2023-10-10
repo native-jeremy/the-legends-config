@@ -297,7 +297,10 @@ window.onload = async () => {
             });
 
             let order = secondaryResponse.data.sort(function(a, b){  
-              return secondaryResponse.data.indexOf(a.videoOrderList) - secondaryResponse.data.indexOf(b.videoOrderList);
+              if(a.Exercise_Category.includes(videoOrderList))
+              {
+              return a.Exercise_Category - b.Exercise_Category;
+              }
             });
             console.log("New Diff Order", order)
             console.log("Video Order", videoOrderList)
