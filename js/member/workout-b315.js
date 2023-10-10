@@ -283,6 +283,20 @@ window.onload = async () => {
             let controlMinusNumber = [];
             let videoSrcIndex = [];
             
+            const exerciseNames = mainResponse.data.Exercise_Category_Linked_Exercises
+            const exerciseDiffNames = mainResponse.data
+
+            videoOrderList = [];
+
+            exerciseNames.forEach((name, index) => {
+              if(exerciseDiffNames.includes(name))
+              {
+                videoOrderList.push(name);
+              }
+            });
+
+            console.log("Video Order", videoOrderList)
+            
             if (videoSrcIndex.length  <= 0) {
               
               for (let i = 0; i < amrapLength; i++)
