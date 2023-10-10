@@ -458,7 +458,7 @@ window.onload = async () => {
         
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
-                    console.log("Video index changed", videoSrcIndex);
+                    console.log("Video index changed", srcIndex);
                     srcIndex++;
                     if (srcIndex < amrapLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
