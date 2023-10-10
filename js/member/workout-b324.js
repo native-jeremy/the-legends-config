@@ -297,13 +297,7 @@ window.onload = async () => {
             });
 
             let order = secondaryResponse.data.sort(function(a, b){  
-              if(a.Exercise_Category.includes(videoOrderList))
-              {
-              return a.Exercise_Category - b.Exercise_Category;
-              }
-              else {
-                return (a.Exercise_Category < b.Exercise_Category) ? -1 : 1;
-              }
+              a.videoOrderList - b.videoOrderList
             });
             console.log("New Diff Order", order)
             console.log("Video Order", videoOrderList)
