@@ -459,7 +459,9 @@ window.onload = async () => {
                     amrapCounter.innerHTML = currentNumberText;
                   }
                 });
-                vidSrc.src = secondaryResponse.data[0].Video[currentNumber].url;
+
+                let srcIndex = 0;
+                vidSrc.src = secondaryResponse.data[srcIndex].Video[currentNumber].url;
 
                 checkAmrapVideo = setInterval(() => {
                   
@@ -467,9 +469,9 @@ window.onload = async () => {
         
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
-                    vidSrc.play();
-                    videoIndex = videoIndex + 1;
-                    if (videoIndex < diffRealLength) {
+                    vidSrc.pause();
+                    srcIndex++;
+                    if (srcIndex < diffRealLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.play();
@@ -480,7 +482,8 @@ window.onload = async () => {
                   } else if (
                     videoIndex >= diffRealLength)
                     {
-                        videoIndex = 0;
+                        vidSrc.pause();
+                        srcIndex = 0;
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                         vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                         vidSrc.play();
