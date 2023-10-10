@@ -301,6 +301,9 @@ window.onload = async () => {
               {
               return a.Exercise_Category - b.Exercise_Category;
               }
+              else {
+                return (a.Exercise_Category < b.Exercise_Category) ? -1 : 1;
+              }
             });
             console.log("New Diff Order", order)
             console.log("Video Order", videoOrderList)
