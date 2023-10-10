@@ -292,6 +292,21 @@ window.onload = async () => {
                 let defaultDiff = roundDiffLevel[i];
                 videoSrcIndex.push(defaultDiff);
               }
+
+              for (let i = 0; i < amrapLength; i++)
+              {
+                const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises[i]
+                const amrapRenderName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
+                const renderHeadings = `
+                <div class = "render_headings_block"> 
+                <div class="generic-text-style-3 amrap-amount">${amrapRenderAmount}</div>
+                <div class="main-heading-style-6 center-align amrap-title">${amrapRenderName}</div>
+                </div>
+                `
+                amrapBlock.innerHTML = "";
+                amrapBlock.innerHTML = amrapBlock.innerHTML + renderHeadings
+              }
+
               console.log("Default Video Length",videoSrcIndex);
               console.log("Default Res Level: ", videoSrcIndex)
               console.log("amrapLength: ", amrapLength)
@@ -323,17 +338,6 @@ window.onload = async () => {
                 let amrapMinusArrow;
                 let amrapMinNumm = 0;
                 let ammrapLimitNumm = maxLimit;
-
-                  const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises[i]
-                  const amrapRenderName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
-                  const renderHeadings = `
-                  <div class = "render_headings_block"> 
-                  <div class="generic-text-style-3 amrap-amount">${amrapRenderAmount}</div>
-                  <div class="main-heading-style-6 center-align amrap-title">${amrapRenderName}</div>
-                  </div>
-                  `
-                  amrapBlock.innerHTML = "";
-                  amrapBlock.innerHTML = amrapBlock.innerHTML + renderHeadings
 
                 const amrapControlName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
 
