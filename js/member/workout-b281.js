@@ -463,25 +463,25 @@ window.onload = async () => {
 
                 checkAmrapVideo = setInterval(() => {
                   
-                  let videoCurrentSrc;
+                  //let videoCurrentSrc;
         
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
                     videoIndex = videoIndex + 1;
-                    if (videoIndex < diffLength) {
-                      videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                      vidSrc.src = videoCurrentSrc;
+                    if (videoIndex < diffRealLength) {
+                      //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
+                      vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.play();
                       console.log("Video: " + videoSrcIndex[videoIndex])
                       console.log("Video Url: " + secondaryResponse.data[videoIndex].Video[videoSrcIndex[currentNumber]].url)
                       console.log("Video Urls: " + secondaryResponse.data)
                     }
                   } else if (
-                    videoIndex >= diffLength)
+                    videoIndex >= diffRealLength)
                     {
                         videoIndex = 0;
-                        videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                        vidSrc.src = videoCurrentSrc;
+                        //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
+                        vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                         vidSrc.play();
                     }
                 }, 0);
