@@ -474,7 +474,7 @@ window.onload = async () => {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.play();
-                      console.log("Video: " + videoSrcIndex[videoIndex])
+                      console.log("Video: " + srcIndex)
                       console.log("Video Url: " + secondaryResponse.data[videoIndex].Video[videoSrcIndex[currentNumber]].url)
                       console.log("Video Urls: " + secondaryResponse.data)
                     }
