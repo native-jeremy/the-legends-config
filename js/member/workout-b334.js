@@ -303,7 +303,7 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = roundInfo.Default_Diff_Level[i].split(", ");
+                let defaultDiff = roundDiffLevel[i];
                 videoSrcIndex.push(defaultDiff);
               }
 
