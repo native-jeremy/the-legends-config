@@ -247,7 +247,6 @@ window.onload = async () => {
       function timerConversion(time) {
         minutes = Math.floor(time / 60);
         seconds = time % 60;
-        console.log("Minutes:", minutes, "Seconds:", seconds);
       }
 
       if (amrapBool == "True") {
@@ -263,11 +262,10 @@ window.onload = async () => {
             secondaryResponse = response;
 
             newSortedDiff = secondaryResponse.data.sort(function(a, b){  
-              return mainResponse.data.indexOf(a) - mainResponse.data.indexOf(b);
+              return mainResponse.data.Exercise_Category_Linked_Exercises.indexOf(a) - mainResponse.Exercise_Category_Linked_Exercises.indexOf(b);
             });
             
-            secondaryResponse = newSortedDiff
-            console.log("New Diff Sorting: " + secondaryResponse)
+            console.log("New Diff Sorting: " + newSortedDiff)
 
             
             console.log("---------------------------------------");
