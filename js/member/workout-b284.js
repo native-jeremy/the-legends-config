@@ -464,9 +464,11 @@ window.onload = async () => {
                 checkAmrapVideo = setInterval(() => {
                   
                   //let videoCurrentSrc;
+                  console.log("Video Index: " + videoIndex)
         
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
+                    vidSrc.play();
                     videoIndex = videoIndex + 1;
                     if (videoIndex < diffRealLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
