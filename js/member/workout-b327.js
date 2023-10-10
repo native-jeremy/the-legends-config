@@ -292,12 +292,12 @@ window.onload = async () => {
               exerciseDiffNames.forEach((diff, current) => {
               if(exerciseDiffNames[current].Exercise_Category.includes(name))
               {
-                videoOrderList.push(name);
+                videoOrderList.push(exerciseDiffNames[current]);
               }});
             });
 
             let order = secondaryResponse.data.sort(function(a, b){  
-              a.Exercise_Name - b.videoOrderList
+              a.videoOrderList - b.videoOrderList
             });
             console.log("New Diff Order", order)
             console.log("Video Order", videoOrderList)
