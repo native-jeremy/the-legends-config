@@ -458,6 +458,8 @@ window.onload = async () => {
         
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
+                    vidSrc.paused();
+                    vidSrc.src = ""
                     srcIndex++;
                     if (srcIndex < amrapLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
@@ -471,7 +473,7 @@ window.onload = async () => {
                         vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
                         vidSrc.play();
                     }
-                }, 1000);
+                }, 0);
               }
             }
             console.log("---------------------------------------");
