@@ -433,21 +433,8 @@ window.onload = async () => {
                   if (videoSrcIndex[i] < amrapMaxLimit) {
                     videoSrcIndex[i]++;
                     localStorage.setItem("diffStart", videoSrcIndex[i]);
-                    //videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i] + 1
-                    //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
-                    //vidSrc.src = repDataInt.data[parseInt(exercisesParam)].Diff_Video[controlNumber[i]].url;
-                    /*if (videoIndex === videoSrcIndex[i])
-                    {
-                      vidSrc.src =
-                      exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
-                      enableDisabledStates();
-                      playVideoDiff();
-                      setTimeout(enableActiveStates, 1500);
-                      setTimeout(autoPlayVideo, 2000);
-                      console.log("Video Index Matches");
-                    }*/
                   }
                 });
 
@@ -474,15 +461,14 @@ window.onload = async () => {
                     srcIndex++;
                     if (srcIndex < amrapLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                      vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
+                      vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
                       vidSrc.play();
                     }
-                  } else if (
-                    videoIndex >= amrapLength)
+                  } else
                     {
                         srcIndex = 0;
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                        vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
+                        vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
                         vidSrc.play();
                     }
                 }, 1000);
