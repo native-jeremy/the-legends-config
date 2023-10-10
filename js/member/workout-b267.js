@@ -502,6 +502,7 @@ window.onload = async () => {
                         vidSrc.src = videoCurrentSrc;
                         vidSrc.play();
                     }
+                    console.log("Video Index: " + videoIndex)
                 }, 0);
               }
             }
