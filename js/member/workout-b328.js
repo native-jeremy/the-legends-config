@@ -296,8 +296,9 @@ window.onload = async () => {
               }});
             });
 
+            
+            secondaryResponse.data = videoOrderList;
             console.log("Video Order", secondaryResponse.data);
-            secondaryResponse = videoOrderList;
             if (videoSrcIndex.length  <= 0) {
               
               for (let i = 0; i < amrapLength; i++)
