@@ -297,7 +297,7 @@ window.onload = async () => {
             });
 
             let order = secondaryResponse.data.sort(function(a, b){  
-              a - b.videoOrderList
+              a.Exercise_Name - b.videoOrderList
             });
             console.log("New Diff Order", order)
             console.log("Video Order", videoOrderList)
