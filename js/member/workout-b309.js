@@ -458,7 +458,6 @@ window.onload = async () => {
         
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
-                    vidSrc.paused();
                     vidSrc.src = ""
                     srcIndex++;
                     if (srcIndex < amrapLength) {
@@ -466,7 +465,7 @@ window.onload = async () => {
                       vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
                       vidSrc.play();
                     }
-                  } else if (!srcIndex < amrapLength)
+                  } else if (srcIndex >= amrapLength)
                     {
                         srcIndex = 0;
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
