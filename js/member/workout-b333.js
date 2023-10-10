@@ -303,7 +303,7 @@ window.onload = async () => {
               
               for (let i = 0; i < amrapLength; i++)
               {
-                let defaultDiff = roundDiffLevel[i];
+                let defaultDiff = roundInfo.Default_Diff_Level[i].split(", ");
                 videoSrcIndex.push(defaultDiff);
               }
 
@@ -486,14 +486,14 @@ window.onload = async () => {
                     srcIndex++;
                     if (srcIndex < amrapLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                      vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
+                      vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
                       vidSrc.play();
                     }
                     else if (srcIndex >= amrapLength)
                     {
                         srcIndex = 0;
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                        vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex]].url;
+                        vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
                         vidSrc.play();
                     }
                 }
