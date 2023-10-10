@@ -482,7 +482,6 @@ window.onload = async () => {
 
                 function videoSource()
                 {
-                    console.log("Video index changed", srcIndex);
                     srcIndex++;
                     if (srcIndex < amrapLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
