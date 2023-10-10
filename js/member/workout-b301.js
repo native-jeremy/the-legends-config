@@ -464,6 +464,7 @@ window.onload = async () => {
                 vidSrc.src = secondaryResponse.data[0].Video[0].url;
 
                 checkAmrapVideo = setInterval(() => {
+                  console.log("Video: " + srcIndex)
                   
                   //let videoCurrentSrc;
         
@@ -474,8 +475,6 @@ window.onload = async () => {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = secondaryResponse.data[srcIndex].Video[0].url;
                       vidSrc.play();
-                      console.log("Video: " + srcIndex)
-                      console.log("Video Urls: " + secondaryResponse.data)
                     }
                   } else if (
                     videoIndex >= amrapLength)
