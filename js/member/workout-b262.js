@@ -333,7 +333,7 @@ window.onload = async () => {
                   </div>
                   `
                   amrapBlock.innerHTML = "";
-                  amrapBlock.innerHTML = renderBlock.innerHTML + renderHeadings
+                  amrapBlock.innerHTML = amrapBlock.innerHTML + renderHeadings
 
                 const amrapControlName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
 
