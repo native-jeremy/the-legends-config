@@ -261,18 +261,23 @@ window.onload = async () => {
             singleBlock.remove();
             
             secondaryResponse = response;
+
+            newSortedDiff = secondaryResponse.data.sort(function(a, b){  
+              return mainResponse.data.Exercise_Category_Linked_Exercises.indexOf(a) - mainResponse.data.Exercise_Category_Linked_Exercises.indexOf(b);
+            });
+
+            console.log("New Diff Sorting: " + newSortedDiff)
+
+            
             console.log("---------------------------------------");
             console.log("Exercise Diff Info Response TEMP! ", secondaryResponse);
 
-            /*let diffStr = currentNum.innerHTML;
-            let diffInt = parseInt(diffStr);
-            diffCurrent = diffInt - 1;*/
 
             exerciseDiffRes = diffRes;
 
             let amrapLength = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises.length;
 
-            diffLength = secondaryResponse.data[parseInt(videoIndex)].Video.length
+            diffLength = secondaryResponse.data[parseInt(videoIndex)].Video.length // This will keep throwing an error if the video length is more
             maxLimit = diffLength;
             limitNum.innerHTML = maxLimit;
             newcookieIndex =
@@ -457,22 +462,8 @@ window.onload = async () => {
                   if (videoSrcIndex[i] > amrapMinNumm) {
                     videoSrcIndex[i]--;
                     localStorage.setItem("diffStart", videoSrcIndex[i]);
-                    //videoSrcIndex[i] = currentNumber;
                     currentNumberText = videoSrcIndex[i] + 1
-                    //amrapTitle.innerHTML  = amrapCurrentNumm;
                     amrapCounter.innerHTML = currentNumberText;
-                    /*if (videoIndex === videoSrcIndex[i])
-                    {
-                      vidSrc.src =
-                      exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;
-                      enableDisabledStates();
-                      playVideoDiff();
-                      setTimeout(enableActiveStates, 1500);
-                      setTimeout(autoPlayVideo, 2000);
-                      console.log("Video Index Matches");
-                    }*/
-                    /*vidSrc.src =
-                    exerciseDiffRes.data[parseInt(videoIndex)].Video[videoSrcIndex[i]].url;*/
                   }
                 });
                 vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
@@ -480,13 +471,11 @@ window.onload = async () => {
                 checkAmrapVideo = setInterval(() => {
                   
                   let videoCurrentSrc;
-                  //let videos = document.getElementById("video");
         
                   if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
                   {
                     videoIndex = videoIndex + 1;
                     if (videoIndex < diffLength) {
-                      //videoIndex = videoIndex + 1;
                       videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = videoCurrentSrc;
                       vidSrc.play();
@@ -521,17 +510,11 @@ window.onload = async () => {
             amrapBlock.remove();
             
             secondaryResponse = response;
-            /*let diffStr = currentNum.innerHTML;
-            let diffInt = parseInt(diffStr);
-            diffCurrent = diffInt - 1;*/
 
-            //let defaultDiff = repDataInt.data[parseInt(exercisesParam)].Default_Diff_Level[0];
             let defaultDiff = roundDiffLevel[parseInt(exercisesParam)];
-            //let diffStr = currentNum.innerHTML;
             diffCurrent = defaultDiff - 1;
             currentNum.innerHTML = defaultDiff;
 
-            //checkAmrapAudio = setInterval(audioCheck, 0);
             newcookieIndex =
             secondaryResponse.data[0].Video.length
 
