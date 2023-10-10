@@ -284,15 +284,16 @@ window.onload = async () => {
             let videoSrcIndex = [];
             
             const exerciseNames = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises
-            const exerciseDiffNames = mainResponse.data
+            const exerciseDiffNames = secondaryResponse.data
 
             videoOrderList = [];
 
             exerciseNames.forEach((name, index) => {
-              if(exerciseDiffNames.includes(name))
+              exerciseDiffNames.forEach((diff, current) => {
+              if(exerciseDiffNames[current].Exercise_Category.includes(name))
               {
                 videoOrderList.push(name);
-              }
+              }});
             });
 
             console.log("Video Order", videoOrderList)
