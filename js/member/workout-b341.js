@@ -478,7 +478,7 @@ window.onload = async () => {
                       videoSource();
                     } 
                   }
-                }, 0);
+                }, 1000);
 
                 function videoSource()
                 {
