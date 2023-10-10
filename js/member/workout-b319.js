@@ -296,7 +296,7 @@ window.onload = async () => {
               }});
             });
 
-            secondaryResponse.sort(function(a, b){  
+            secondaryResponse.data.sort(function(a, b){  
               return videoOrderList.indexOf(a) - videoOrderList.indexOf(b);
             });
 
