@@ -282,7 +282,6 @@ window.onload = async () => {
             let controlPlusNumber = [];
             let controlMinusNumber = [];
             let videoSrcIndex = [];
-            let srcIndex = 0;
             
             if (videoSrcIndex.length  <= 0) {
               
@@ -461,6 +460,7 @@ window.onload = async () => {
                   }
                 });
 
+                let srcIndex = 0;
                 vidSrc.src = secondaryResponse.data[0].Video[0].url;
 
                 checkAmrapVideo = setInterval(() => {
