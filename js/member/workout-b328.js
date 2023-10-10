@@ -296,12 +296,8 @@ window.onload = async () => {
               }});
             });
 
-            let order = secondaryResponse.data.sort(function(a, b){  
-              a.videoOrderList - b.videoOrderList
-            });
-            console.log("New Diff Order", order)
-            console.log("Video Order", videoOrderList)
-            
+            console.log("Video Order", secondaryResponse.data);
+            secondaryResponse = videoOrderList;
             if (videoSrcIndex.length  <= 0) {
               
               for (let i = 0; i < amrapLength; i++)
