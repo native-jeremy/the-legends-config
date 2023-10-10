@@ -519,8 +519,8 @@ window.onload = async () => {
             diffCurrent = defaultDiff - 1;
             currentNum.innerHTML = defaultDiff;
 
-            newcookieIndex =
-            secondaryResponse.data[0].Video.length
+            /*newcookieIndex =
+            secondaryResponse.data[0].Video.length*/
 
             diffLength =
             secondaryResponse.data[0].Video.length;
