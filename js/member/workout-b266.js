@@ -491,14 +491,14 @@ window.onload = async () => {
                       vidSrc.src = videoCurrentSrc;
                       vidSrc.play();
                       console.log("Video: " + videoSrcIndex[videoIndex])
-                      console.log("Video Url: " + secondaryResponse.data[parseInt(videoIndex)].Video[videoSrcIndex[videoIndex]].url)
+                      console.log("Video Url: " + secondaryResponse.data[videoIndex].Video[videoSrcIndex[currentNumber]].url)
                       console.log("Video Urls: " + secondaryResponse.data)
                     }
                   } else if (
                     videoIndex >= diffLength)
                     {
                         videoIndex = 0;
-                        videoCurrentSrc = secondaryResponse.data[parseInt(videoIndex)].Video[videoSrcIndex[videoIndex]].url;
+                        videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                         vidSrc.src = videoCurrentSrc;
                         vidSrc.play();
                     }
