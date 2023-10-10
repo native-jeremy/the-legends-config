@@ -262,12 +262,12 @@ window.onload = async () => {
             
             secondaryResponse = response;
 
-            newSortedDiff = secondaryResponse.data.sort(function(a, b){  
+            newSortedDiff = secondaryResponse.sort(function(a, b){  
               return mainResponse.data.indexOf(a) - mainResponse.data.indexOf(b);
             });
             
-
-            console.log("New Diff Sorting: " + newSortedDiff.data)
+            //secondaryResponse = newSortedDiff
+            console.log("New Diff Sorting: " + newSortedDiff)
 
             
             console.log("---------------------------------------");
