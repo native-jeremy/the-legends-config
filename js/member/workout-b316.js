@@ -283,7 +283,7 @@ window.onload = async () => {
             let controlMinusNumber = [];
             let videoSrcIndex = [];
             
-            const exerciseNames = mainResponse.data.Exercise_Category_Linked_Exercises
+            const exerciseNames = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises
             const exerciseDiffNames = mainResponse.data
 
             videoOrderList = [];
