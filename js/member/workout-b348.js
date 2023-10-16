@@ -514,8 +514,15 @@ window.onload = async () => {
             amrapBlock.remove();
             
             secondaryResponse = response;
-
-            let defaultDiff = roundDiffLevel[parseInt(exercisesParam)];
+            let defaultDiff;
+            
+            if(mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises.includes("True"))
+            {
+              defaultDiff = roundDiffLevel[mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises.length + 1];
+            }
+            else {
+              defaultDiff = roundDiffLevel[parseInt(exercisesParam)];
+            }
             diffCurrent = defaultDiff - 1;
             currentNum.innerHTML = defaultDiff;
 
