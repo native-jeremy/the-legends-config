@@ -153,7 +153,7 @@ window.onload = async () => {
   })
 
   Wized.request.await("Load Recovery - Workout", (response) => { 
-    let recoveryData   
+    let recoveryData = response;  
     let getType = checkurl.get("type");
     if(getType == "recovery")
     {
@@ -166,8 +166,6 @@ window.onload = async () => {
       workoutMessage.style.display = "flex";
     }
     console.log("Recovery Response", recoveryData);
-
-    audioRes = response;
   })
 
   Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
