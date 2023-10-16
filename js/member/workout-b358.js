@@ -303,7 +303,7 @@ window.onload = async () => {
 
             
             secondaryResponse.data = videoOrderList;
-            console.log("Video Order", secondaryResponse.data);
+            console.log("Video Order", videoOrderList);
             console.log("Video Used Order", videoInfo);
             if (videoSrcIndex.length  <= 0) {
               
