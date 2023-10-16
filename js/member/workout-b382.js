@@ -152,6 +152,13 @@ window.onload = async () => {
 
     audioRes = response;
   })
+
+  Wized.request.await("Load Recovery - Workout", (response) => {    
+    console.log("Recovery / Workouts Response", response);
+
+    recoveryData = response;
+  })
+
     if(typeParam == "recovery")
     {
       recoveryMessage.style.display = "none";
