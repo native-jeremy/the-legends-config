@@ -293,7 +293,7 @@ window.onload = async () => {
               exerciseDiffNames.forEach((diff, current) => {
               if(exerciseDiffNames[current].Exercise_Category.includes(name))
               {
-                if(!videoInfo.includes(exerciseDiffNames[current]))
+                if(!videoInfo.includes(exerciseDiffNames[current].Exercise_Name))
                 {
                   videoOrderList.push(exerciseDiffNames[current]);
                   videoInfo.push(current);
