@@ -20,6 +20,9 @@ const RoundNumberText = document.getElementById("mainNumText");
 const progressEl = document.querySelector('.wheel');
 let loader = document.getElementById('loader');
 const returnMessage = document.getElementById('return');
+const recoveryMessage = document.getElementById('recoveryMessage');
+const recoveryLink = document.getElementById('recoveryLink');
+const workoutMessage = document.getElementById('workoutMessage');
 
 // Param Int Set Variables
 let setIntRoundNum;
@@ -145,6 +148,24 @@ window.onload = async () => {
 
   Wized.request.await("Load Audio", (response) => {    
     console.log("Audio Response", response);
+
+    audioRes = response;
+  })
+
+  Wized.request.await("Load Recovery - Workout", (response) => { 
+    let recoveryData   
+    let getType = checkurl.get("type");
+    if(getType == "recovery")
+    {
+      recoveryMessage.style.display = "flex";
+      workoutMessage.style.display = "none";
+    }
+    else  {
+      recoveryMessage.style.display = "none";
+      recoveryLink.href = recoveryLink.href + `?workout=${recQxMVw9YOyffPfi}&round=0&exercises=0&exercise=0&esi=notset&type=recovery`
+      workoutMessage.style.display = "flex";
+    }
+    console.log("Recovery Response", recoveryData);
 
     audioRes = response;
   })
