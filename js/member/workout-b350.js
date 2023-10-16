@@ -616,10 +616,14 @@ window.onload = async () => {
           window.location.href = url.toString();
           }
           else {
-          getRoundNum = checkurl.get("round");
-          getRoundNum = parseInt(getRoundNum) + 1;
-          setExercisesNum = checkurl.set("round", getRoundNum.toString());
-          window.location.href = url.toString();
+            getRoundNum = checkurl.get("round");
+            getRoundNum = parseInt(getRoundNum) + 1;
+            setRoundNum = checkurl.set("round", getRoundNum.toString());
+            getExercisesNum = checkurl.get("exercises");
+            getExercisesNum = 0;
+            setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+      
+            window.location.href = url.toString();
           }
         }
         getExercisesNum = checkurl.get("exercises");
