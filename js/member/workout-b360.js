@@ -293,18 +293,22 @@ window.onload = async () => {
               exerciseDiffNames.forEach((diff, current) => {
               if(exerciseDiffNames[current].Exercise_Category.includes(name))
               {
-                if(videoInfo.includes(exerciseDiffNames[current].Exercise_Name))
-                {
-                  return false;
-                }
-                else {
-                  videoOrderList.push(exerciseDiffNames[current]);
-                  videoInfo.push(exerciseDiffNames[current]);
-                }
+                videoOrderList.push(exerciseDiffNames[current]);
               }});
             });
 
-            
+            removeDuplicates(videoOrderList)
+
+            function removeDuplicates(arr) { 
+            videoInfo = arr.reduce(function (acc, curr) { 
+            if (!acc.includes(curr)) 
+              acc.push(curr); 
+            return acc; 
+            }, []); 
+            return videoInfo; 
+            } 
+            console.log("Video Order", videoInfo);
+
             secondaryResponse.data = videoOrderList;
             console.log("Video Order", videoOrderList);
             console.log("Video Used Order", videoInfo);
