@@ -152,12 +152,12 @@ window.onload = async () => {
     audioRes = response;
   })
     let getType = checkurl.get("type");
-    if(getType == "recovery")
+    if(getType.includes("recovery"))
     {
       recoveryMessage.style.display = "flex";
       workoutMessage.style.display = "none";
     }
-    else if (getType == "workout")  {
+    else  {
       recoveryMessage.style.display = "none";
       //recoveryLink.href = recoveryLink.href + `?workout=${recQxMVw9YOyffPfi}&round=0&exercises=0&exercise=0&esi=notset&type=recovery`
       workoutMessage.style.display = "flex";
