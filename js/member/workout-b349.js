@@ -606,20 +606,22 @@ window.onload = async () => {
       }
 
       function updateParams() {
-        /*if((amrapBool !== "True"))
+        if(mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises.includes("True"))
         {
-        getExercisesNum = checkurl.get("exercises");
-        getExercisesNum = parseInt(getExercisesNum) + 1;
-        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-        window.location.href = url.toString();
+          if(parseInt(exercisesParam) < mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises)
+          {
+          getExercisesNum = checkurl.get("exercises");
+          getExercisesNum = parseInt(getExercisesNum) + 1;
+          setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+          window.location.href = url.toString();
+          }
+          else {
+          getRoundNum = checkurl.get("round");
+          getRoundNum = parseInt(getRoundNum) + 1;
+          setExercisesNum = checkurl.set("round", getRoundNum.toString());
+          window.location.href = url.toString();
+          }
         }
-        else {
-        getRoundNum = checkurl.get("round");
-        getRoundNum = parseInt(getRoundNum) + 1;
-        setExercisesNum = checkurl.set("round", getRoundNum.toString());
-        window.location.href = url.toString();
-        }*/
-
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
