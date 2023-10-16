@@ -362,7 +362,7 @@ window.onload = async () => {
                 let amrapMinNumm = 0;
                 let ammrapLimitNumm = maxLimit;
 
-                const amrapControlName = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises[i]
+                const amrapControlName = videoOrderList[i].Exercise_Name;
 
                 //Amrap Control Div "body"----------------------------------------------------------------
                 amrapControl = document.createElement("div");
