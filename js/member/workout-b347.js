@@ -599,7 +599,7 @@ window.onload = async () => {
       }
 
       function updateParams() {
-        if((amrapBool !== "True"))
+        /*if((amrapBool !== "True"))
         {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
@@ -611,7 +611,12 @@ window.onload = async () => {
         getRoundNum = parseInt(getRoundNum) + 1;
         setExercisesNum = checkurl.set("round", getRoundNum.toString());
         window.location.href = url.toString();
-        }
+        }*/
+
+        getExercisesNum = checkurl.get("exercises");
+        getExercisesNum = parseInt(getExercisesNum) + 1;
+        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        window.location.href = url.toString();
       }
 
       function backTrackParams() {
