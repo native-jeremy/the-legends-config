@@ -287,7 +287,6 @@ window.onload = async () => {
             const exerciseDiffNames = secondaryResponse.data
 
             let videoOrderList = [];
-            let videoInfo = [];
 
             exerciseNames.forEach((name, index) => {
               exerciseDiffNames.forEach((diff, current) => {
@@ -300,18 +299,16 @@ window.onload = async () => {
             removeDuplicates(videoOrderList)
 
             function removeDuplicates(arr) { 
-            videoInfo = arr.reduce(function (acc, curr) { 
+            videoOrderList = arr.reduce(function (acc, curr) { 
             if (!acc.includes(curr)) 
               acc.push(curr); 
             return acc; 
             }, []); 
-            return videoInfo; 
+            return videoOrderList; 
             } 
-            console.log("Video Order", videoInfo);
 
             secondaryResponse.data = videoOrderList;
             console.log("Video Order", videoOrderList);
-            console.log("Video Used Order", videoInfo);
             if (videoSrcIndex.length  <= 0) {
               
               for (let i = 0; i < amrapLength; i++)
