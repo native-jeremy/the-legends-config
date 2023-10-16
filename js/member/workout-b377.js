@@ -151,6 +151,17 @@ window.onload = async () => {
 
     audioRes = response;
   })
+    let getType = checkurl.get("type");
+    if(getType == "recovery")
+    {
+      recoveryMessage.style.display = "flex";
+      workoutMessage.style.display = "none";
+    }
+    else if (getType == "workout")  {
+      recoveryMessage.style.display = "none";
+      //recoveryLink.href = recoveryLink.href + `?workout=${recQxMVw9YOyffPfi}&round=0&exercises=0&exercise=0&esi=notset&type=recovery`
+      workoutMessage.style.display = "flex";
+    }
 
   Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
     const mainResponse = response;
@@ -222,20 +233,6 @@ window.onload = async () => {
       RoundNumberText.innerHTML = "Warm Up";
       roundTitle.innerHTML = "";
       roundNumHeader.innerHTML = "";
-    }
-
-    let recoveryData = Wized.data.get("v.complete");
-    //let getType = checkurl.get("type");
-    //if(getType == "recovery")
-    if(recoveryData == "completed")
-    {
-      recoveryMessage.style.display = "flex";
-      workoutMessage.style.display = "none";
-    }
-    else  {
-      recoveryMessage.style.display = "none";
-      //recoveryLink.href = recoveryLink.href + `?workout=${recQxMVw9YOyffPfi}&round=0&exercises=0&exercise=0&esi=notset&type=recovery`
-      workoutMessage.style.display = "flex";
     }
 
       //----------------------------------------------------------------
