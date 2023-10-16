@@ -154,13 +154,13 @@ window.onload = async () => {
   })
     if(typeParam == "recovery")
     {
-      recoveryMessage.style.display = "flex";
-      workoutMessage.style.display = "none";
+      recoveryMessage.style.display = "none";
+      workoutMessage.style.display = "flex";
     }
     else  {
-      recoveryMessage.style.display = "none";
+      recoveryMessage.style.display = "flex";
       //recoveryLink.href = recoveryLink.href + `?workout=${recQxMVw9YOyffPfi}&round=0&exercises=0&exercise=0&esi=notset&type=recovery`
-      workoutMessage.style.display = "flex";
+      workoutMessage.style.display = "none";
     }
 
   Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
