@@ -618,7 +618,7 @@ window.onload = async () => {
       function updateParams() {
         if(mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises.includes("True"))
         {
-          if(parseInt(exercisesParam) < mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises.length)
+          if(parseInt(exercisesParam) < mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises.length - 1)
           {
             getExercisesNum = checkurl.get("exercises");
             getExercisesNum = parseInt(getExercisesNum) + 1;
