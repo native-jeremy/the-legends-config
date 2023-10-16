@@ -162,7 +162,7 @@ window.onload = async () => {
     }
     else  {
       recoveryMessage.style.display = "none";
-      recoveryLink.href = recoveryLink.href + `?workout=${recQxMVw9YOyffPfi}&round=0&exercises=0&exercise=0&esi=notset&type=recovery`
+      //recoveryLink.href = recoveryLink.href + `?workout=${recQxMVw9YOyffPfi}&round=0&exercises=0&exercise=0&esi=notset&type=recovery`
       workoutMessage.style.display = "flex";
     }
 
