@@ -287,12 +287,17 @@ window.onload = async () => {
             const exerciseDiffNames = secondaryResponse.data
 
             videoOrderList = [];
+            videoInfo= [];
 
             exerciseNames.forEach((name, index) => {
               exerciseDiffNames.forEach((diff, current) => {
               if(exerciseDiffNames[current].Exercise_Category.includes(name))
               {
-                videoOrderList.push(exerciseDiffNames[current]);
+                if(!videoInfo.includes(exerciseDiffNames[current]))
+                {
+                  videoOrderList.push(exerciseDiffNames[current]);
+                  videoOrderList.push(current);
+                }
               }});
             });
 
