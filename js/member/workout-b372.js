@@ -152,10 +152,10 @@ window.onload = async () => {
     audioRes = response;
   })
 
-  Wized.request.await("Load Recovery - Workout", (response) => { 
-    let recoveryData = response;  
-    let getType = checkurl.get("type");
-    if(getType == "recovery")
+    let recoveryData = Wized.data.getVariable("v.complete");
+    //let getType = checkurl.get("type");
+    //if(getType == "recovery")
+    if(recoveryData == "completed")
     {
       recoveryMessage.style.display = "flex";
       workoutMessage.style.display = "none";
@@ -165,8 +165,6 @@ window.onload = async () => {
       recoveryLink.href = recoveryLink.href + `?workout=${recQxMVw9YOyffPfi}&round=0&exercises=0&exercise=0&esi=notset&type=recovery`
       workoutMessage.style.display = "flex";
     }
-    console.log("Recovery Response", recoveryData);
-  })
 
   Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
     const mainResponse = response;
