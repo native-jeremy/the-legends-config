@@ -626,10 +626,12 @@ window.onload = async () => {
             window.location.href = url.toString();
           }
         }
+        else {
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) + 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         window.location.href = url.toString();
+        }
       }
 
       function backTrackParams() {
