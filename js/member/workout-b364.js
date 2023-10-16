@@ -320,7 +320,7 @@ window.onload = async () => {
               for (let i = 0; i < amrapLength; i++)
               {
                 const amrapRenderAmount = mainResponse.data[parseInt(roundParam)].Amrap_Exercise_Amount_Linked_Exercises[i]
-                const amrapRenderName = exerciseDiffNames[i].Exercise_Name
+                const amrapRenderName = videoOrderList[i].Exercise_Name
                 const renderHeadings = `
                 <div class = "render_headings_block"> 
                 <div class="generic-text-style-3 amrap-amount">${amrapRenderAmount}</div>
