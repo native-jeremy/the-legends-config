@@ -95,7 +95,7 @@ window.onload = async () => {
   const statusNum = await Wized.data.get("v.statusnum");
   const roundLengthCookie = await Wized.data.get("c.roundlength");
   const exerciseIndex = await Wized.data.get("c.exerciseindex");
-  const typeParam = await Wized.data.get("n.parameter.exercise");
+  const typeParam = await Wized.data.get("n.parameter.type");
   const exerciseParam = await Wized.data.get("n.parameter.exercise");
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const roundParam = await Wized.data.get("n.parameter.round");
