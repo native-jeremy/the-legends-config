@@ -474,7 +474,7 @@ window.onload = async () => {
                 });
 
                 let srcIndex = 0;
-                vidSrc.src = videoOrderList[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
+                vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
 
                 console.log("Diff Level: ", videoSrcIndex);
 
@@ -488,21 +488,21 @@ window.onload = async () => {
                       videoSource();
                     } 
                   }
-                }, 0);
+                }, 250);
 
                 function videoSource()
                 {
                     srcIndex++;
                     if (srcIndex < amrapLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                      vidSrc.src = videoOrderList[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
+                      vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                       vidSrc.play();
                     }
                     else if (srcIndex >= amrapLength)
                     {
                         srcIndex = 0;
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                        vidSrc.src = videoOrderList[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
+                        vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                         vidSrc.play();
                     }
                 }
