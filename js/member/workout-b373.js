@@ -152,7 +152,7 @@ window.onload = async () => {
     audioRes = response;
   })
 
-    let recoveryData = Wized.data.getVariable("v.complete");
+    let recoveryData = Wized.data.get("v.complete");
     //let getType = checkurl.get("type");
     //if(getType == "recovery")
     if(recoveryData == "completed")
