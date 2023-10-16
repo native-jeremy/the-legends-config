@@ -156,9 +156,6 @@ window.onload = async () => {
   Wized.request.await("Load Recovery - Workout", (response) => {    
     let recoveryData = response;
 
-    console.log("Recovery / Workouts Response", recoveryData);
-  })
-
     if(typeParam == "recovery")
     {
       recoveryMessage.style.display = "none";
@@ -169,6 +166,9 @@ window.onload = async () => {
       recoveryLink.href = recoveryLink.href + `?workout=${recoveryData.Recoveries[0]}&round=0&exercises=0&exercise=0&esi=notset&type=recovery`
       workoutMessage.style.display = "none";
     }
+
+    console.log("Recovery / Workouts Response", recoveryData);
+  })
 
   Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
     const mainResponse = response;
