@@ -156,7 +156,7 @@ window.onload = async () => {
   })
 
   Wized.request.await("Load Recovery - Workout", (response) => {    
-    recoveryData = response;
+    recoveryData = response.data;
 
     console.log("Recovery / Workouts Response", recoveryData);
   })
