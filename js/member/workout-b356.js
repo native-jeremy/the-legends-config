@@ -286,8 +286,8 @@ window.onload = async () => {
             const exerciseNames = mainResponse.data[parseInt(roundParam)].Exercise_Category_Linked_Exercises
             const exerciseDiffNames = secondaryResponse.data
 
-            videoOrderList = [];
-            videoInfo= [];
+            let videoOrderList = [];
+            let videoInfo = [];
 
             exerciseNames.forEach((name, index) => {
               exerciseDiffNames.forEach((diff, current) => {
@@ -304,6 +304,7 @@ window.onload = async () => {
             
             secondaryResponse.data = videoOrderList;
             console.log("Video Order", secondaryResponse.data);
+            console.log("Video Used Order", videoInfo);
             if (videoSrcIndex.length  <= 0) {
               
               for (let i = 0; i < amrapLength; i++)
