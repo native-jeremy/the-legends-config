@@ -296,7 +296,7 @@ window.onload = async () => {
                 if(!videoInfo.includes(exerciseDiffNames[current].Exercise_Name))
                 {
                   videoOrderList.push(exerciseDiffNames[current]);
-                  videoInfo.push(current);
+                  videoInfo.push(exerciseDiffNames[current]);
                 }
               }});
             });
