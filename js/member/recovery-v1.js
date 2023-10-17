@@ -115,7 +115,7 @@ window.onload = async () => {
     roundText.style.display = "flex";
     RoundNumberText.innerHTML = "Redirecting..";
     enableDisabledStates();
-    window.location.href = "/workout-overview?recovery=" + workoutParam;
+    window.location.href = "/recovery-overview?recovery=" + workoutParam;
   } else if (
     window.location.href == "https://the-legends-web-app.webflow.io/recovery"
   ) {
@@ -137,7 +137,7 @@ window.onload = async () => {
     roundText.style.display = "flex";
   }
 
-  Wized.request.await("Load Round Info", (response) => {
+  Wized.request.await("Load Round Info - Recovery", (response) => {
     roundRes = response;
     roundInfo = roundRes.data[parseInt(roundParam)];
 
@@ -146,13 +146,13 @@ window.onload = async () => {
     roundSelected = roundRes.data[parseInt(roundParam)].Round_Selection;
   });
 
-  Wized.request.await("Load Audio", (response) => {    
+  Wized.request.await("Load Audio - Recovery", (response) => {    
     console.log("Audio Response", response);
 
     audioRes = response;
   })
 
-  Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
+  Wized.request.await("Load Round Info - Recovery", (response, exerciseDiffRes) => {
     const mainResponse = response;
     const repDataInt = response;
     let repAmount;
@@ -257,7 +257,7 @@ window.onload = async () => {
         
         async function loadAmrapData() {
 
-          Wized.request.await("Load Exercise Diff", (response) => {
+          Wized.request.await("Load Exercise Diff - Recovery", (response) => {
             const singleBlock = document.querySelector('.single_heading_block');
             const amrapBlock = document.querySelector('.amrap_heading_block');
             singleBlock.remove();
@@ -522,7 +522,7 @@ window.onload = async () => {
         
         async function loadSingleData() {
 
-          Wized.request.await("Load Exercise Diff", (response) => {
+          Wized.request.await("Load Exercise Diff - Recovery", (response) => {
             const amrapBlock = document.querySelector('.amrap_heading_block');
             amrapBlock.remove();
             
@@ -615,7 +615,7 @@ window.onload = async () => {
       workoutExitButton.addEventListener("click", exitParams);
 
       function exitParams() {
-        workoutExitButton.href = "/workout-overview?workout=" + workoutParam;
+        workoutExitButton.href = "/recovery-overview?recovery=" + workoutParam;
       }
 
       function updateParams() {
