@@ -69,6 +69,8 @@ const nextButton = document.getElementById("nextButton");
 const prevButton = document.getElementById("prevButton");
 const backButton = document.getElementById("backButton");
 
+const returnButton = document.getElementById("returnButton");
+
 const playButtonDisabled = document.getElementById("playButtonDisabled");
 const nextButtonDisabled = document.getElementById("nextButtonDisabled");
 const prevButtonDisabled = document.getElementById("prevButtonDisabled");
@@ -119,6 +121,8 @@ window.onload = async () => {
       returnMessage.click();
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
+
+      returnButton.addEventListener(() => {localStorage.removeItem("length")});
     }
   }
 
