@@ -94,38 +94,9 @@ window.onload = async () => {
   let url = new URL(params);
   let checkurl = url.searchParams;
 
-  let recoveryData;
-
   window.history.replaceState(null, null, url.toString());
 
   enableDisabledStates();
-
-  /*if (parseInt(roundParam) < 0 && parseInt(exercisesParam) === 0) {
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
-    RoundNumberText.innerHTML = "Redirecting..";
-    enableDisabledStates();
-    window.location.href = "/recovery-overview?recovery=" + recoveryParam;
-  } else if (
-    window.location.href == "https://the-legends-web-app.webflow.io/recovery"
-  ) {
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
-    RoundNumberText.innerHTML = "Redirecting..";
-    enableDisabledStates();
-    window.location.href = "/program-hub";
-  }*/
-
-  /*if (parseInt(roundLengthCookie) === parseInt(roundParam))
-  {
-    RoundNumberText.innerHTML = "Workout Completed";
-    roundTitle.innerHTML = "Congratulations!";
-    roundNumHeader.innerHTML = "";
-    Wized.data.setVariable("complete", "completed");
-    returnMessage.click();
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
-  }*/
 
   Wized.request.await("Load Audio - Recovery", (response) => {
     console.log("Audio Response", response);
@@ -146,6 +117,11 @@ window.onload = async () => {
       returnMessage.click();
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
+    }
+    else {
+      RoundNumberText.innerHTML = "Let's begin your";
+      roundTitle.innerHTML = "Recovery";
+      roundNumHeader.innerHTML = "";
     }
   }
 
