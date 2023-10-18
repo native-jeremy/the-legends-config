@@ -15,9 +15,9 @@ const timerText = document.getElementById("safeTimerDisplay");
 const currentTest = document.getElementById("current");
 const durationTest = document.getElementById("dur");
 const RoundNumberText = document.getElementById("mainNumText");
-const progressEl = document.querySelector('.wheel');
-let loader = document.getElementById('loader');
-const returnMessage = document.getElementById('return');
+const progressEl = document.querySelector(".wheel");
+let loader = document.getElementById("loader");
+const returnMessage = document.getElementById("return");
 
 // Param Int Set Variables
 let setIntRoundNum;
@@ -127,28 +127,30 @@ window.onload = async () => {
     roundText.style.display = "flex";
   }*/
 
-  Wized.request.await("Load Audio - Recovery", (response) => {    
+  Wized.request.await("Load Audio - Recovery", (response) => {
     console.log("Audio Response", response);
 
     audioRes = response;
-  })
+  });
 
-  Wized.request.await("Load Round Info - Recovery", (response, exerciseDiffRes) => {
-    const dataSrc = response.data[parseInt(exercisesParam)];
-    const mainResponse = response;
-    const repDataInt = response;
-    let repAmount;
-    let repType;
-    let amrapBool;
-    const amrapResponse = response;
-    let checkAmrap;
+  Wized.request.await(
+    "Load Round Info - Recovery",
+    (response, exerciseDiffRes) => {
+      const dataSrc = response.data[parseInt(exercisesParam)];
+      const mainResponse = response;
+      const repDataInt = response;
+      let repAmount;
+      let repType;
+      let amrapBool;
+      const amrapResponse = response;
+      let checkAmrap;
 
-    if (repDataInt.status === 200) {
-      loaderTrigger.click();
-      videoContainer.style.opacity = "1";
-    }
-    //----------------------------------------------------------------
-    /*if (parseInt(exercisesParam) < 0) {
+      if (repDataInt.status === 200) {
+        loaderTrigger.click();
+        videoContainer.style.opacity = "1";
+      }
+      //----------------------------------------------------------------
+      /*if (parseInt(exercisesParam) < 0) {
       getRoundNum = checkurl.get("round");
       getRoundNum = parseInt(getRoundNum) - 1;
       setRoundNum = checkurl.set("round", getRoundNum.toString());
@@ -206,83 +208,75 @@ window.onload = async () => {
     }*/
 
       //----------------------------------------------------------------
-    // NEW CODE WEDNESDAY 18 OCT 2023
+      // NEW CODE WEDNESDAY 18 OCT 2023
 
-    console.log("---------------------------------------");
-    console.log("All Rounds:", dataSrc);
-    console.log("---------------------------------------");
-    console.log("---------------------------------------");
+      console.log("---------------------------------------");
+      console.log("All Rounds:", dataSrc);
+      console.log("---------------------------------------");
+      console.log("---------------------------------------");
 
-    let audioSrc = document.getElementById("voiceSrc");
-    let vidSrc = document.getElementById("video");
+      let audioSrc = document.getElementById("voiceSrc");
+      let vidSrc = document.getElementById("video");
 
-    //if (exerciseData !== undefined) {
+      //if (exerciseData !== undefined) {
       repAmount = dataSrc.Exercise_Amount[0];
-      repType = dataSrc.Rep_Type[0]
- 
-      timerConversion(repAmount)
+      repType = dataSrc.Rep_Type[0];
+
+      timerConversion(repAmount);
 
       function timerConversion(time) {
-        minutes = Math.floor(time / 60); 
+        minutes = Math.floor(time / 60);
         seconds = time % 60;
       }
 
-        loadSingleData();
-        
-        async function loadSingleData() {
+      let defaultDiff = 1;
+      diffCurrent = defaultDiff - 1;
+      currentNum.innerHTML = defaultDiff;
 
-          const amrapBlock = document.querySelector('.amrap_heading_block');
-          amrapBlock.remove();
+      diffLength = dataSrc.Diff_Video.length;
+      maxLimit = diffLength;
+      limitNum.innerHTML = maxLimit;
 
-          let defaultDiff = 1;
-          diffCurrent = defaultDiff - 1;
-          currentNum.innerHTML = defaultDiff;
+      DiffControlsSingle();
+      vidSrc.src = dataSrc.Diff_Video[0].url;
 
-          diffLength = dataSrc.Diff_Video.length;
-          maxLimit = diffLength;
-          limitNum.innerHTML = maxLimit;
-
-          DiffControlsSingle();
-          vidSrc.src = dataSrc.Diff_Video[diffCurrent].url
-          
-          // Diff Increase Click Controls - Single Exercise
-          function DiffControlsSingle() {
-            const singleTitle = document.querySelector('.single-title');
-            singleTitle.textContent = dataSrc.Exercise_Category
-            plusBtn.addEventListener("click", function () {
-              if (diffCurrent + 1 < maxLimit) {
-                diffCurrent++;
-                amount++;
-                localStorage.setItem("diffStart", diffCurrent);
-                currentNum.innerHTML = diffCurrent + 1;
-                enableDisabledStates();
-                playVideoDiff();
-                vidSrc.src = dataSrc.Diff_Video[diffCurrent].url
-                setTimeout(enableActiveStates, 1500);
-                setTimeout(autoPlayVideo, 2000);
-              } else {
-                return false;
-              }
-            });
-
-            // Diff Decrease Click Controls - Single Exercise
-            minusBtn.addEventListener("click", function () {
-              if (diffCurrent > minLimit) {
-                diffCurrent--;
-                amount--;
-                localStorage.setItem("diffStart", diffCurrent);
-                currentNum.innerHTML = diffCurrent + 1;
-                enableDisabledStates();
-                playVideoDiff();
-                vidSrc.src = dataSrc.Diff_Video[diffCurrent].url
-                setTimeout(enableActiveStates, 1500);
-                setTimeout(autoPlayVideo, 2000);
-              } else {
-                return false;
-              }
-            });
+      // Diff Increase Click Controls - Single Exercise
+      function DiffControlsSingle() {
+        const singleTitle = document.querySelector(".single-title");
+        singleTitle.textContent = dataSrc.Exercise_Category;
+        plusBtn.addEventListener("click", function () {
+          if (diffCurrent + 1 < maxLimit) {
+            diffCurrent++;
+            amount++;
+            localStorage.setItem("diffStart", diffCurrent);
+            currentNum.innerHTML = diffCurrent + 1;
+            enableDisabledStates();
+            playVideoDiff();
+            vidSrc.src = dataSrc.Diff_Video[diffCurrent].url;
+            setTimeout(enableActiveStates, 1500);
+            setTimeout(autoPlayVideo, 2000);
+          } else {
+            return false;
           }
-        }
+        });
+
+        // Diff Decrease Click Controls - Single Exercise
+        minusBtn.addEventListener("click", function () {
+          if (diffCurrent > minLimit) {
+            diffCurrent--;
+            amount--;
+            localStorage.setItem("diffStart", diffCurrent);
+            currentNum.innerHTML = diffCurrent + 1;
+            enableDisabledStates();
+            playVideoDiff();
+            vidSrc.src = dataSrc.Diff_Video[diffCurrent].url;
+            setTimeout(enableActiveStates, 1500);
+            setTimeout(autoPlayVideo, 2000);
+          } else {
+            return false;
+          }
+        });
+      }
 
       audioSrc.src = dataSrc.Audio_Source[0].url;
 
@@ -309,18 +303,35 @@ window.onload = async () => {
       }
 
       function backTrackParams() {
-        if (parseInt(exercisesParam) < mainResponse.data[parseInt(roundParam)].Diff_ID_Linked_Exercises.length - 1) {
-        getExercisesNum = checkurl.get("exercises");
-        getExercisesNum = parseInt(getExercisesNum) - 1;
-        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+        if (
+          parseInt(exercisesParam) <
+          mainResponse.data[parseInt(roundParam)].Diff_ID_Linked_Exercises
+            .length -
+            1
+        ) {
+          getExercisesNum = checkurl.get("exercises");
+          getExercisesNum = parseInt(getExercisesNum) - 1;
+          setExercisesNum = checkurl.set(
+            "exercises",
+            getExercisesNum.toString()
+          );
         }
         window.location.href = url.toString();
       }
 
-      if ((parseInt(exercisesParam) > 0 && amrapBool == "False") || (parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0)) 
-      {
+      if (
+        (parseInt(exercisesParam) > 0 && amrapBool == "False") ||
+        (parseInt(exercisesParam) > 0 &&
+          amrapBool == "True" &&
+          videoIndex === 0)
+      ) {
         setTimeout(autoPlayVideo, 2000);
-      } else if ((parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0) || exerciseParam === 0) {
+      } else if (
+        (parseInt(exercisesParam) > 0 &&
+          amrapBool == "True" &&
+          videoIndex === 0) ||
+        exerciseParam === 0
+      ) {
         setTimeout(autoPlayVideo, 2000);
       }
 
@@ -336,103 +347,105 @@ window.onload = async () => {
         playVideo();
         clickNum = clickNum + 1;
       });
-    //} 
+      //}
 
-    function roundType() {
-      if (repType === "Time") {
-        timer();
-      } else if (repType === "Reps") {
-        repCount();
-      }
-      console.log("---------------------------------------");
-      console.log(repType, "Applied To The Exercise");
-    }
-
-    function timer() {
-      let counter = repAmount;
-      let percentage = counter / 100 * 100;
-      repText.innerHTML = repType;
-      setProgress(percentage);
-      let timer = setInterval(function () {
-        timerConversion(counter);
-        timerText.innerHTML = minutes + ":" + seconds;
-        if (!timerText.classList.contains("pausetime")) {
-          counter--;
-          setProgress(counter);
-          if (counter < 0) {
-            playSiren();
-            setTimeout(() => {
-              nextButton.click();
-            }, 1000);
-            clearInterval(timer);
-            clearInterval(checkAmrap);
-            console.log("---------------------------------------");
-            console.log("Completed");
-          }
+      function roundType() {
+        if (repType === "Time") {
+          timer();
+        } else if (repType === "Reps") {
+          repCount();
         }
-      }, 1000);
-    }
-
-    function setProgress(percent) {
-      let progress = document.querySelector('.progressWheel');
-      let radius = progress.r.baseVal.value;
-      let circumference = radius * 2 * Math.PI;
-      progress.style.strokeDasharray = circumference;
-      progress.style.strokeDashoffset = circumference - (percent / 100) * circumference;
-    }
-
-    function repCount() {
-      progressEl.style.display = "none";
-      let counter = repAmount;
-      repText.innerHTML = repType;
-      timerText.innerHTML = counter;
-    }
-
-    function playVideo() {
-      let video = document.getElementById("video");
-      if (!video.paused) {
-        video.play();
-        playButton.classList.toggle("pause");
-        timerText.classList.remove("pausetime");
         console.log("---------------------------------------");
-        console.log("Video Duration", video.duration + "s");
-      } else {
-        video.pause();
-        playButton.classList.toggle("pause");
-        timerText.classList.add("pausetime");
+        console.log(repType, "Applied To The Exercise");
       }
-    }
 
-    function playVideoDiff() {
-      let video = document.getElementById("video");
-      if (!video.paused) {
-        video.pause();
-        playButton.classList.toggle("pause");
-        timerText.classList.add("pausetime");
-        console.log("---------------------------------------");
-        console.log("Video Duration", video.duration + "s");
+      function timer() {
+        let counter = repAmount;
+        let percentage = (counter / 100) * 100;
+        repText.innerHTML = repType;
+        setProgress(percentage);
+        let timer = setInterval(function () {
+          timerConversion(counter);
+          timerText.innerHTML = minutes + ":" + seconds;
+          if (!timerText.classList.contains("pausetime")) {
+            counter--;
+            setProgress(counter);
+            if (counter < 0) {
+              playSiren();
+              setTimeout(() => {
+                nextButton.click();
+              }, 1000);
+              clearInterval(timer);
+              clearInterval(checkAmrap);
+              console.log("---------------------------------------");
+              console.log("Completed");
+            }
+          }
+        }, 1000);
       }
-    }
 
-    function playSiren() {
-      let sirenSrc = document.getElementById("sirenSrc");
-      if (sirenSrc.paused) {
-        sirenSrc.play();
-      } else {
-        sirenSrc.pause();
+      function setProgress(percent) {
+        let progress = document.querySelector(".progressWheel");
+        let radius = progress.r.baseVal.value;
+        let circumference = radius * 2 * Math.PI;
+        progress.style.strokeDasharray = circumference;
+        progress.style.strokeDashoffset =
+          circumference - (percent / 100) * circumference;
       }
-    }
 
-    function playVoice() {
-      let voiceSrc = document.getElementById("voiceSrc");
-      if (voiceSrc.paused) {
-        voiceSrc.play();
-      } else {
-        voiceSrc.pause();
+      function repCount() {
+        progressEl.style.display = "none";
+        let counter = repAmount;
+        repText.innerHTML = repType;
+        timerText.innerHTML = counter;
+      }
+
+      function playVideo() {
+        let video = document.getElementById("video");
+        if (video.paused) {
+          video.play();
+          playButton.classList.toggle("pause");
+          timerText.classList.remove("pausetime");
+          console.log("---------------------------------------");
+          console.log("Video Duration", video.duration + "s");
+        } else {
+          video.pause();
+          playButton.classList.toggle("pause");
+          timerText.classList.add("pausetime");
+        }
+      }
+
+      function playVideoDiff() {
+        let video = document.getElementById("video");
+        if (!video.paused) {
+          video.pause();
+          playButton.classList.toggle("pause");
+          timerText.classList.add("pausetime");
+          console.log("---------------------------------------");
+          console.log("Video Duration", video.duration + "s");
+        }
+      }
+
+      function playSiren() {
+        let sirenSrc = document.getElementById("sirenSrc");
+        if (sirenSrc.paused) {
+          sirenSrc.play();
+        } else {
+          sirenSrc.pause();
+        }
+      }
+
+      function playVoice() {
+        let voiceSrc = document.getElementById("voiceSrc");
+        if (voiceSrc.paused) {
+          voiceSrc.play();
+        } else {
+          voiceSrc.pause();
+        }
       }
     }
-  });
-  
+  );
+
   //roundEnableLoad();
   //setTimeout(nextPage, 2000);
   sirenEnableLoad();
