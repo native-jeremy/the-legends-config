@@ -87,9 +87,9 @@ let refreshNum = 0;
 window.onload = async () => {
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const recoveryParam = await Wized.data.get("n.parameter.recovery");
-  const lengthCookie = await Wized.data.get("c.length");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
+  let Length;
 
   let params = window.location.href;
   let url = new URL(params);
@@ -134,7 +134,12 @@ window.onload = async () => {
     audioRes = response;
   });
 
-  if (parseInt(lengthCookie) >= parseInt(exercisesParam))
+  if(!localStorage.getItem("length") == undefined)
+  {
+    Length = parseInt(localStorage.getItem("length"));
+  }
+
+  if (parseInt(Length) >= parseInt(exercisesParam))
   {
     RoundNumberText.innerHTML = "Workout Completed";
     roundTitle.innerHTML = "Congratulations!";
@@ -146,6 +151,11 @@ window.onload = async () => {
   }
 
   Wized.request.await("Load Round Info - Recovery",(response, exerciseDiffRes) => {
+      let lengthApply = response.data.length 
+      if(localStorage.getItem("length") == undefined)
+      {
+        localStorage.setItem("length", lengthApply);
+      }
       const dataSrc = response.data[parseInt(exercisesParam)];
       const mainResponse = response;
       const repDataInt = response;
