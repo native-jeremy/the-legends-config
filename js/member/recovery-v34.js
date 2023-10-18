@@ -306,7 +306,6 @@ window.onload = async () => {
 
       function exitParams() {
         workoutExitButton.href = "/recovery-overview?recovery=" + recoveryParam;
-        localStorage.removeItem("recovery");
       }
 
       function updateParams() {
