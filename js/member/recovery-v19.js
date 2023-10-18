@@ -283,7 +283,7 @@ window.onload = async () => {
       workoutExitButton.addEventListener("click", exitParams);
 
       function exitParams() {
-        recoveryExitButton.href = "/recovery-overview?recovery=" + recoveryParamParam;
+        recoveryExitButton.href = "/recovery-overview?recovery=" + recoveryParam;
       }
 
       function updateParams() {
