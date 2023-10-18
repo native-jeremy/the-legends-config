@@ -94,6 +94,8 @@ window.onload = async () => {
   let url = new URL(params);
   let checkurl = url.searchParams;
 
+  let recoveryData;
+
   window.history.replaceState(null, null, url.toString());
 
   enableDisabledStates();
@@ -118,14 +120,13 @@ window.onload = async () => {
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
     }
-    else {
-      RoundNumberText.innerHTML = "Recovery";
-      roundTitle.innerHTML = "Let's begin your";
-      roundNumHeader.innerHTML = "";
-    }
   }
 
-  Wized.request.await("Load Round Info - Recovery",(response) => {
+  Wized.request.await("Load Round Info - Recovery",(response, exerciseDiffRes) => {
+    RoundNumberText.innerHTML = "Recovery";
+    roundTitle.innerHTML = "Let's begin your";
+    roundNumHeader.innerHTML = "";
+    
       let lengthApply = response.data.length 
       if(localStorage.getItem("length") == undefined)
       {
