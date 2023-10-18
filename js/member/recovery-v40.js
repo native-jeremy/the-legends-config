@@ -125,6 +125,19 @@ window.onload = async () => {
   Wized.request.await("Load Round Info - Recovery",(response, exerciseDiffRes) => {
     roundNumHeader.innerHTML = "";
       let lengthApply = response.data.length 
+
+      let clickNum = 0;
+
+      playButton.addEventListener("click", function () {
+        if (clickNum < 1) {
+          playVoice();
+          //Conditions
+          roundType();
+        }
+        playVideo();
+        clickNum = clickNum + 1;
+      });
+      
       if(localStorage.getItem("length") == undefined)
       {
         localStorage.setItem("length", lengthApply);
@@ -142,7 +155,6 @@ window.onload = async () => {
       if (repDataInt.status === 200) {
         loaderTrigger.click();
         videoContainer.style.opacity = "1";
-        
       }
       //----------------------------------------------------------------
       /*if (parseInt(exercisesParam) < 0) {
@@ -273,8 +285,6 @@ window.onload = async () => {
         clearTimeout(clearStates);
       }, 1500);
 
-      setTimeout(autoPlayVideo, 2000);
-
       nextButton.addEventListener("click", updateParams);
 
       prevButton.addEventListener("click", backTrackParams);
@@ -311,17 +321,6 @@ window.onload = async () => {
       }
 
       //let counter = repAmount;
-      let clickNum = 0;
-
-      playButton.addEventListener("click", function () {
-        if (clickNum < 1) {
-          playVoice();
-          //Conditions
-          roundType();
-        }
-        playVideo();
-        clickNum = clickNum + 1;
-      });
       //}
 
       function roundType() {
