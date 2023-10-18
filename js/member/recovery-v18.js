@@ -52,7 +52,7 @@ let diffRes;
 let minutes;
 let seconds;
 
-const workoutExitButton = document.getElementById("workoutExit");
+const recoveryExitButton = document.getElementById("workoutExit");
 
 const siren = document.getElementById("siren");
 const sirenText = document.getElementById("sirenText");
@@ -283,7 +283,7 @@ window.onload = async () => {
       workoutExitButton.addEventListener("click", exitParams);
 
       function exitParams() {
-        workoutExitButton.href = "/recovery-overview?recovery=" + workoutParam;
+        recoveryExitButton.href = "/recovery-overview?recovery=" + recoveryParamParam;
       }
 
       function updateParams() {
