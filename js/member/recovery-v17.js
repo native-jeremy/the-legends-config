@@ -139,9 +139,10 @@ window.onload = async () => {
       const repDataInt = response;
       let repAmount;
       let repType;
-      const singleTitle = document.getElementById("single-title");
-      singleTitle.textContent = dataSrc.Exercise_Category[0];
-
+      const singleTitle = document.querySelectorAll(".single-title");
+      singleTitle.forEach(title => {
+        title.textContent = dataSrc.Exercise_Category[0];
+      });
       if (repDataInt.status === 200) {
         loaderTrigger.click();
         videoContainer.style.opacity = "1";
