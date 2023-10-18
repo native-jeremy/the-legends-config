@@ -139,7 +139,7 @@ window.onload = async () => {
     Length = parseInt(localStorage.getItem("length"));
   }
 
-  if (parseInt(Length) >= parseInt(exercisesParam))
+  if (parseInt(Length) == parseInt(exercisesParam))
   {
     RoundNumberText.innerHTML = "Workout Completed";
     roundTitle.innerHTML = "Congratulations!";
