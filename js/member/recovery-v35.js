@@ -133,7 +133,7 @@ window.onload = async () => {
     audioRes = response;
   });
 
-  if(localStorage.getItem("length") !== undefined)
+  if(!localStorage.getItem("length") == undefined)
   {
     let Length = localStorage.getItem("length");
 
