@@ -142,6 +142,7 @@ window.onload = async () => {
       if (repDataInt.status === 200) {
         loaderTrigger.click();
         videoContainer.style.opacity = "1";
+        
       }
       //----------------------------------------------------------------
       /*if (parseInt(exercisesParam) < 0) {
@@ -271,6 +272,8 @@ window.onload = async () => {
         enableActiveStates();
         clearTimeout(clearStates);
       }, 1500);
+
+      setTimeout(autoPlayVideo, 2000);
 
       nextButton.addEventListener("click", updateParams);
 
