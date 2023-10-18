@@ -390,7 +390,7 @@ window.onload = async () => {
 
     function playVideo() {
       let video = document.getElementById("video");
-      if (video.paused) {
+      if (!video.paused) {
         video.play();
         playButton.classList.toggle("pause");
         timerText.classList.remove("pausetime");
