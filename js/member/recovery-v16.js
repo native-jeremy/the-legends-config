@@ -234,7 +234,7 @@ window.onload = async () => {
       maxLimit = diffLength;
       limitNum.innerHTML = maxLimit;
 
-      vidSrc.src = dataSrc.Diff_Video[0].url;
+      vidSrc.src = dataSrc.Diff_Video[diffCurrent].url;
         plusBtn.addEventListener("click", function () {
           if (diffCurrent + 1 < maxLimit) {
             diffCurrent++;
@@ -318,7 +318,7 @@ window.onload = async () => {
           //Conditions
           roundType();
         }
-        playVideo();
+        playVideo(vidSrc);
         clickNum = clickNum + 1;
       });
       //}
@@ -374,8 +374,7 @@ window.onload = async () => {
         timerText.innerHTML = counter;
       }
 
-      function playVideo() {
-        let video = document.getElementById("video");
+      function playVideo(video) {
         if (video.paused) {
           video.play();
           playButton.classList.toggle("pause");
