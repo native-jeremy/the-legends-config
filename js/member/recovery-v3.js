@@ -244,12 +244,12 @@ window.onload = async () => {
           limitNum.innerHTML = maxLimit;
 
           DiffControlsSingle();
-          vidSrc.src = dataSrc.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url
+          vidSrc.src = dataSrc.Diff_Video[diffCurrent].url
           
           // Diff Increase Click Controls - Single Exercise
           function DiffControlsSingle() {
             const singleTitle = document.querySelector('.single-title');
-            singleTitle.textContent = secondaryResponse.data[0].Exercise_Name
+            singleTitle.textContent = dataSrc.Exercise_Category
             plusBtn.addEventListener("click", function () {
               if (diffCurrent + 1 < maxLimit) {
                 diffCurrent++;
@@ -258,7 +258,7 @@ window.onload = async () => {
                 currentNum.innerHTML = diffCurrent + 1;
                 enableDisabledStates();
                 playVideoDiff();
-                vidSrc.src = dataSrc.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url
+                vidSrc.src = dataSrc.Diff_Video[diffCurrent].url
                 setTimeout(enableActiveStates, 1500);
                 setTimeout(autoPlayVideo, 2000);
               } else {
@@ -275,7 +275,7 @@ window.onload = async () => {
                 currentNum.innerHTML = diffCurrent + 1;
                 enableDisabledStates();
                 playVideoDiff();
-                vidSrc.src = dataSrc.data[parseInt(exercisesParam)].Diff_Video[diffCurrent].url
+                vidSrc.src = dataSrc.Diff_Video[diffCurrent].url
                 setTimeout(enableActiveStates, 1500);
                 setTimeout(autoPlayVideo, 2000);
               } else {
@@ -285,7 +285,7 @@ window.onload = async () => {
           }
         }
 
-      audioSrc.src = mainResponse.data[parseInt(roundParam)].Audio_Source_Linked_Exercises[parseInt(exercisesParam)].url;
+      audioSrc.src = dataSrc.Audio_Source[0].url;
 
       let clearStates = setTimeout(() => {
         enableActiveStates();
