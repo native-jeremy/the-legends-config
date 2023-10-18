@@ -255,8 +255,11 @@ window.onload = async () => {
           getExercisesNum = checkurl.get("exercises");
           getExercisesNum = parseInt(getExercisesNum) - 1;
           setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
+          window.location.href = url.toString();
         }
-        window.location.href = url.toString();
+        else {
+          window.location.href = "/recovery-overview?recovery=" + recoveryParam;
+        }
       }
 
       function roundType() {
