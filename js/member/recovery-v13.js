@@ -390,7 +390,7 @@ window.onload = async () => {
         timerText.innerHTML = counter;
       }
 
-      function playVideo() {
+      function playVideo(video) {
         //let video = document.getElementById("video");
         if (video.paused) {
           video.play();
