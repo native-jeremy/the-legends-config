@@ -119,13 +119,13 @@ window.onload = async () => {
       roundText.style.display = "flex";
     }
     else {
-      RoundNumberText.innerHTML = "Let's begin your";
-      roundTitle.innerHTML = "Recovery";
+      RoundNumberText.innerHTML = "Recovery";
+      roundTitle.innerHTML = "Let's begin your";
       roundNumHeader.innerHTML = "";
     }
   }
 
-  Wized.request.await("Load Round Info - Recovery",(response, exerciseDiffRes) => {
+  Wized.request.await("Load Round Info - Recovery",(response) => {
       let lengthApply = response.data.length 
       if(localStorage.getItem("length") == undefined)
       {
