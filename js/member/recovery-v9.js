@@ -237,11 +237,8 @@ window.onload = async () => {
       maxLimit = diffLength;
       limitNum.innerHTML = maxLimit;
 
-      DiffControlsSingle();
       vidSrc.src = dataSrc.Diff_Video[0].url;
 
-      // Diff Increase Click Controls - Single Exercise
-      function DiffControlsSingle() {
         const singleTitle = document.querySelector(".single-title");
         singleTitle.textContent = dataSrc.Exercise_Category[0];
         plusBtn.addEventListener("click", function () {
@@ -276,7 +273,6 @@ window.onload = async () => {
             return false;
           }
         });
-      }
 
       audioSrc.src = dataSrc.Audio_Source[0].url;
 
