@@ -133,17 +133,14 @@ window.onload = async () => {
     audioRes = response;
   });
 
-  Wized.request.await(
-    "Load Round Info - Recovery",
-    (response, exerciseDiffRes) => {
+  Wized.request.await("Load Round Info - Recovery",(response, exerciseDiffRes) => {
       const dataSrc = response.data[parseInt(exercisesParam)];
       const mainResponse = response;
       const repDataInt = response;
       let repAmount;
       let repType;
-      let amrapBool;
-      const amrapResponse = response;
-      let checkAmrap;
+      const singleTitle = document.getElementById("single-title");
+      singleTitle.textContent = dataSrc.Exercise_Category[0];
 
       if (repDataInt.status === 200) {
         loaderTrigger.click();
@@ -238,9 +235,6 @@ window.onload = async () => {
       limitNum.innerHTML = maxLimit;
 
       vidSrc.src = dataSrc.Diff_Video[0].url;
-
-        const singleTitle = document.querySelector(".single-title");
-        singleTitle.textContent = dataSrc.Exercise_Category[0];
         plusBtn.addEventListener("click", function () {
           if (diffCurrent + 1 < maxLimit) {
             diffCurrent++;
