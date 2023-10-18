@@ -87,6 +87,7 @@ let refreshNum = 0;
 window.onload = async () => {
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const recoveryParam = await Wized.data.get("n.parameter.recovery");
+
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
@@ -133,28 +134,18 @@ window.onload = async () => {
     audioRes = response;
   });
 
-  if(!localStorage.getItem("length") == undefined)
+  if (parseInt(lengthCookie) >= parseInt(exercisesParam))
   {
-    let Length = localStorage.getItem("length");
-
-    if (parseInt(Length) == parseInt(exercisesParam))
-    {
-      RoundNumberText.innerHTML = "Workout Completed";
-      roundTitle.innerHTML = "Congratulations!";
-      roundNumHeader.innerHTML = "";
-      Wized.data.setVariable("recovery", "completed");
-      returnMessage.click();
-      roundPopup.style.display = "flex";
-      roundText.style.display = "flex";
-    }
+    RoundNumberText.innerHTML = "Workout Completed";
+    roundTitle.innerHTML = "Congratulations!";
+    roundNumHeader.innerHTML = "";
+    Wized.data.setVariable("recovery", "completed");
+    returnMessage.click();
+    roundPopup.style.display = "flex";
+    roundText.style.display = "flex";
   }
 
   Wized.request.await("Load Round Info - Recovery",(response, exerciseDiffRes) => {
-      let lengthApply = response.data.length 
-      if(localStorage.getItem("length") == undefined)
-      {
-        localStorage.setItem("length", lengthApply);
-      }
       const dataSrc = response.data[parseInt(exercisesParam)];
       const mainResponse = response;
       const repDataInt = response;
