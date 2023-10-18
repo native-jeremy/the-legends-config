@@ -96,8 +96,6 @@ window.onload = async () => {
   let url = new URL(params);
   let checkurl = url.searchParams;
 
-  let recoveryData;
-
   window.history.replaceState(null, null, url.toString());
 
   enableDisabledStates();
@@ -126,7 +124,7 @@ window.onload = async () => {
     }
   }
 
-  Wized.request.await("Load Round Info - Recovery",(response, exerciseDiffRes) => {
+  Wized.request.await("Load Round Info - Recovery",(response) => {
     RoundNumberText.innerHTML = "Recovery";
     roundTitle.innerHTML = "Let's begin your!";
     roundNumHeader.innerHTML = "";
@@ -162,63 +160,6 @@ window.onload = async () => {
         loaderTrigger.click();
         videoContainer.style.opacity = "1";
       }
-      //----------------------------------------------------------------
-      /*if (parseInt(exercisesParam) < 0) {
-      getRoundNum = checkurl.get("round");
-      getRoundNum = parseInt(getRoundNum) - 1;
-      setRoundNum = checkurl.set("round", getRoundNum.toString());
-      getExercisesNum = checkurl.get("exercises");
-      getExercisesNum = 0;
-      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-
-      window.location.href = url.toString();
-    }
-
-    if (parseInt(exercisesParam) > mainResponse.data[parseInt(roundParam)].Diff_ID_Linked_Exercises.length - 1) {
-      getRoundNum = checkurl.get("round");
-      getRoundNum = parseInt(getRoundNum) + 1;
-      setRoundNum = checkurl.set("round", getRoundNum.toString());
-      getExercisesNum = checkurl.get("exercises");
-      getExercisesNum = 0;
-      setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
-
-      window.location.href = url.toString();
-    }
-    
-     else if (parseInt(roundParam) !== 0) {
-      RoundNumberText.innerHTML = parseInt(roundParam);
-      roundNumHeader.innerHTML = parseInt(roundParam);
-    } else if (parseInt(roundParam) === 0 && roundSelected !== "Round 0"){
-      RoundNumberText.innerHTML = parseInt(roundParam + 1);
-      roundNumHeader.innerHTML = parseInt(roundParam + 1);
-    }
-
-    roundLength = roundRes.data.length;
-    roundRealNumber = parseInt(roundParam) + 1;
-
-    if (parseInt(exercisesParam) !== 0 ) {
-      roundPopup.style.display = "none";
-      roundText.style.display = "none";
-    }
-
-    if (roundRealNumber > roundLength) {
-      RoundNumberText.innerHTML = "Workout Completed";
-      roundTitle.innerHTML = "Congratulations!";
-      roundNumHeader.innerHTML = "";
-      Wized.data.setVariable("complete", "completed");
-      enableDisabledStates();
-    } else if (parseInt(roundParam) !== 0) {
-      RoundNumberText.innerHTML = parseInt(roundParam);
-      roundNumHeader.innerHTML = parseInt(roundParam);
-    } else if (parseInt(roundParam) === 0 && roundSelected !== "Round 0"){
-      RoundNumberText.innerHTML = parseInt(roundParam + 1);
-      roundNumHeader.innerHTML = parseInt(roundParam + 1);
-    }
-    else if (parseInt(roundParam) === 0 && roundSelected === "Round 0"){
-      RoundNumberText.innerHTML = "Warm Up";
-      roundTitle.innerHTML = "";
-      roundNumHeader.innerHTML = "";
-    }*/
 
       //----------------------------------------------------------------
       // NEW CODE WEDNESDAY 18 OCT 2023
@@ -310,24 +251,13 @@ window.onload = async () => {
       }
 
       function backTrackParams() {
-        if (
-          parseInt(exercisesParam) <
-          mainResponse.data[parseInt(roundParam)].Diff_ID_Linked_Exercises
-            .length -
-            1
-        ) {
+        if (parseInt(exercisesParam) < dataSrc.length - 1) {
           getExercisesNum = checkurl.get("exercises");
           getExercisesNum = parseInt(getExercisesNum) - 1;
-          setExercisesNum = checkurl.set(
-            "exercises",
-            getExercisesNum.toString()
-          );
+          setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         }
         window.location.href = url.toString();
       }
-
-      //let counter = repAmount;
-      //}
 
       function roundType() {
         if (repType === "Time") {
