@@ -137,7 +137,7 @@ window.onload = async () => {
         playVideo();
         clickNum = clickNum + 1;
       });
-      
+
       if(localStorage.getItem("length") == undefined)
       {
         localStorage.setItem("length", lengthApply);
@@ -293,7 +293,7 @@ window.onload = async () => {
 
       function exitParams() {
         workoutExitButton.href = "/recovery-overview?recovery=" + recoveryParam;
-        localStorage.removeItem("recovery");
+        localStorage.removeItem("length");
       }
 
       function updateParams() {
