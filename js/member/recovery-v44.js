@@ -122,7 +122,7 @@ window.onload = async () => {
       roundPopup.style.display = "flex";
       roundText.style.display = "flex";
 
-      returnButton.addEventListener(() => {localStorage.removeItem("length")});
+      returnButton.addEventListener('click', () => {localStorage.removeItem("length")});
     }
   }
 
