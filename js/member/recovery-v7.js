@@ -243,7 +243,7 @@ window.onload = async () => {
       // Diff Increase Click Controls - Single Exercise
       function DiffControlsSingle() {
         const singleTitle = document.querySelector(".single-title");
-        singleTitle.textContent = dataSrc.Exercise_Category;
+        singleTitle.textContent = dataSrc.Exercise_Category[0];
         plusBtn.addEventListener("click", function () {
           if (diffCurrent + 1 < maxLimit) {
             diffCurrent++;
