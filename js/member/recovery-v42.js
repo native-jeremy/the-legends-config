@@ -123,6 +123,8 @@ window.onload = async () => {
   }
 
   Wized.request.await("Load Round Info - Recovery",(response, exerciseDiffRes) => {
+    RoundNumberText.innerHTML = "Recovery";
+    roundTitle.innerHTML = "Let's begin your!";
     roundNumHeader.innerHTML = "";
       let lengthApply = response.data.length 
 
