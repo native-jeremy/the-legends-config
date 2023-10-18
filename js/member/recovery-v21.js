@@ -52,7 +52,7 @@ let diffRes;
 let minutes;
 let seconds;
 
-const recoveryExitButton = document.getElementById("workoutExit");
+const workoutExitButton = document.getElementById("workoutExit");
 
 const siren = document.getElementById("siren");
 const sirenText = document.getElementById("sirenText");
@@ -139,10 +139,9 @@ window.onload = async () => {
       const repDataInt = response;
       let repAmount;
       let repType;
-      const singleTitle = document.querySelectorAll(".single-title");
-      singleTitle.forEach(title => {
-        title.textContent = dataSrc.Exercise_Category[0];
-      });
+      const singleTitle = document.getElementById("single-title");
+      singleTitle.textContent = dataSrc.Exercise_Category[0];
+
       if (repDataInt.status === 200) {
         loaderTrigger.click();
         videoContainer.style.opacity = "1";
@@ -283,7 +282,7 @@ window.onload = async () => {
       workoutExitButton.addEventListener("click", exitParams);
 
       function exitParams() {
-        recoveryExitButton.href = "/recovery-overview?recovery=" + recoveryParam;
+        workoutExitButton.href = "/recovery-overview?recovery=" + workoutParam;
       }
 
       function updateParams() {
