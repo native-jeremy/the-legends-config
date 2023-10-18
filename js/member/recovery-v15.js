@@ -309,22 +309,6 @@ window.onload = async () => {
         window.location.href = url.toString();
       }
 
-      if (
-        (parseInt(exercisesParam) > 0 && amrapBool == "False") ||
-        (parseInt(exercisesParam) > 0 &&
-          amrapBool == "True" &&
-          videoIndex === 0)
-      ) {
-        setTimeout(autoPlayVideo, 2000);
-      } else if (
-        (parseInt(exercisesParam) > 0 &&
-          amrapBool == "True" &&
-          videoIndex === 0) ||
-        exerciseParam === 0
-      ) {
-        setTimeout(autoPlayVideo, 2000);
-      }
-
       //let counter = repAmount;
       let clickNum = 0;
 
@@ -334,8 +318,7 @@ window.onload = async () => {
           //Conditions
           roundType();
         }
-        vidSrc.play();
-        playVideo(vidSrc);
+        playVideo();
         clickNum = clickNum + 1;
       });
       //}
@@ -391,8 +374,8 @@ window.onload = async () => {
         timerText.innerHTML = counter;
       }
 
-      function playVideo(video) {
-        //let video = document.getElementById("video");
+      function playVideo() {
+        let video = document.getElementById("video");
         if (video.paused) {
           video.play();
           playButton.classList.toggle("pause");
