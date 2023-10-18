@@ -140,7 +140,9 @@ window.onload = async () => {
       let repAmount;
       let repType;
       const singleTitle = document.getElementById("single-title");
+      const displaySingleTitle = document.getElementById("display_single_title");
       singleTitle.textContent = dataSrc.Exercise_Category[0];
+      displaySingleTitle.textContent = dataSrc.Exercise_Category[0];
 
       if (repDataInt.status === 200) {
         loaderTrigger.click();
@@ -282,7 +284,7 @@ window.onload = async () => {
       workoutExitButton.addEventListener("click", exitParams);
 
       function exitParams() {
-        workoutExitButton.href = "/recovery-overview?recovery=" + workoutParam;
+        workoutExitButton.href = "/recovery-overview?recovery=" + recoveryParam;
       }
 
       function updateParams() {
