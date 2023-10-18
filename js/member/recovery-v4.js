@@ -139,7 +139,6 @@ window.onload = async () => {
     const repDataInt = response;
     let repAmount;
     let repType;
-    let newcookieIndex;
     let amrapBool;
     const amrapResponse = response;
     let checkAmrap;
