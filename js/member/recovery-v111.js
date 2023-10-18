@@ -334,7 +334,7 @@ window.onload = async () => {
           //Conditions
           roundType();
         }
-        playVideo();
+        playVideo(vidSrc);
         clickNum = clickNum + 1;
       });
       //}
@@ -391,7 +391,7 @@ window.onload = async () => {
       }
 
       function playVideo() {
-        let video = document.getElementById("video");
+        //let video = document.getElementById("video");
         if (video.paused) {
           video.play();
           playButton.classList.toggle("pause");
