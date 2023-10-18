@@ -87,7 +87,6 @@ let refreshNum = 0;
 window.onload = async () => {
   const exercisesParam = await Wized.data.get("n.parameter.exercises");
   const recoveryParam = await Wized.data.get("n.parameter.recovery");
-
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
 
@@ -101,51 +100,35 @@ window.onload = async () => {
 
   enableDisabledStates();
 
-  /*if (parseInt(roundParam) < 0 && parseInt(exercisesParam) === 0) {
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
-    RoundNumberText.innerHTML = "Redirecting..";
-    enableDisabledStates();
-    window.location.href = "/recovery-overview?recovery=" + recoveryParam;
-  } else if (
-    window.location.href == "https://the-legends-web-app.webflow.io/recovery"
-  ) {
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
-    RoundNumberText.innerHTML = "Redirecting..";
-    enableDisabledStates();
-    window.location.href = "/program-hub";
-  }*/
-
-  /*if (parseInt(roundLengthCookie) === parseInt(roundParam))
-  {
-    RoundNumberText.innerHTML = "Workout Completed";
-    roundTitle.innerHTML = "Congratulations!";
-    roundNumHeader.innerHTML = "";
-    Wized.data.setVariable("complete", "completed");
-    returnMessage.click();
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
-  }*/
-
   Wized.request.await("Load Audio - Recovery", (response) => {
     console.log("Audio Response", response);
 
     audioRes = response;
   });
 
-  if (parseInt(lengthCookie) >= parseInt(exercisesParam))
+  if(localStorage.getItem("length") !== undefined)
   {
-    RoundNumberText.innerHTML = "Workout Completed";
-    roundTitle.innerHTML = "Congratulations!";
-    roundNumHeader.innerHTML = "";
-    Wized.data.setVariable("recovery", "completed");
-    returnMessage.click();
-    roundPopup.style.display = "flex";
-    roundText.style.display = "flex";
+    let Length = localStorage.getItem("length");
+
+    if (parseInt(Length) == parseInt(exercisesParam))
+    {
+      RoundNumberText.innerHTML = "Workout Completed";
+      roundTitle.innerHTML = "Congratulations!";
+      roundNumHeader.innerHTML = "";
+      Wized.data.setVariable("recovery", "completed");
+      returnMessage.click();
+      roundPopup.style.display = "flex";
+      roundText.style.display = "flex";
+    }
   }
 
   Wized.request.await("Load Round Info - Recovery",(response, exerciseDiffRes) => {
+    roundNumHeader.innerHTML = "";
+      let lengthApply = response.data.length 
+      if(localStorage.getItem("length") == undefined)
+      {
+        localStorage.setItem("length", lengthApply);
+      }
       const dataSrc = response.data[parseInt(exercisesParam)];
       const mainResponse = response;
       const repDataInt = response;
@@ -297,6 +280,7 @@ window.onload = async () => {
 
       function exitParams() {
         workoutExitButton.href = "/recovery-overview?recovery=" + recoveryParam;
+        localStorage.removeItem("recovery");
       }
 
       function updateParams() {
