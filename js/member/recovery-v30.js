@@ -15,6 +15,7 @@ const timerText = document.getElementById("safeTimerDisplay");
 const currentTest = document.getElementById("current");
 const durationTest = document.getElementById("dur");
 const RoundNumberText = document.getElementById("mainNumText");
+const RoundSmall = document.getElementById("roundSmallText");
 const progressEl = document.querySelector(".wheel");
 let loader = document.getElementById("loader");
 const returnMessage = document.getElementById("return");
@@ -119,9 +120,10 @@ window.onload = async () => {
       roundText.style.display = "flex";
     }
     else {
-      RoundNumberText.innerHTML = "Recovery";
-      roundTitle.innerHTML = "Let's begin your";
-      roundNumHeader.innerHTML = "";
+      RoundNumberText.textContent = "Recovery";
+      RoundSmall.textContent = ""
+      roundTitle.textContent = "Let's begin your";
+      roundNumHeader.textContent = "Recovery";
     }
   }
 
