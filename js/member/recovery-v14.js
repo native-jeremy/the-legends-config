@@ -334,6 +334,7 @@ window.onload = async () => {
           //Conditions
           roundType();
         }
+        vidSrc.play();
         playVideo(vidSrc);
         clickNum = clickNum + 1;
       });
