@@ -102,6 +102,7 @@ window.onload = async () => {
   const workoutParam = await Wized.data.get("n.parameter.workout");
   const sirenCookieInt = await Wized.data.get("c.sirenmute");
   const voiceCookieInt = await Wized.data.get("c.voicemute");
+  const recoveryID = await Wized.data.get("c.recoveryid");
 
   let params = window.location.href;
   let url = new URL(params);
@@ -138,6 +139,7 @@ window.onload = async () => {
     returnMessage.click();
     roundPopup.style.display = "flex";
     roundText.style.display = "flex";
+    recoveryLink.href = `/recovery?recovery=${recoveryID}&exercises=0`
   }
 
   Wized.request.await("Load Round Info", (response) => {
@@ -155,7 +157,7 @@ window.onload = async () => {
     audioRes = response;
   })
 
-  Wized.request.await("Load Round Info", (response, exerciseDiffRes) => {
+  Wized.request.await("Load Round Info", (response) => {
     const mainResponse = response;
     const repDataInt = response;
     let repAmount;
