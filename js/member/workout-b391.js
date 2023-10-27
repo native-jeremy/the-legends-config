@@ -488,7 +488,7 @@ window.onload = async () => {
 
                 checkAmrapVideo = setInterval(() => {
                           
-                  if (Math.floor(vidSrc.currentTime) === Math.floor(vidSrc.duration)) 
+                  if (Math.floor(vidSrc.currentTime) === 5 /*Math.floor(vidSrc.duration)*/) 
                   {
                     changeVideo = true;
                     if (changeVideo == true)
@@ -496,7 +496,7 @@ window.onload = async () => {
                       videoSource();
                     } 
                   }
-                }, 250);
+                }, 0);
 
                 function videoSource()
                 {
