@@ -499,14 +499,7 @@ window.onload = async () => {
                     } 
                   }
                   else {
-                    if(!vidSrc.paused)
-                    {
-                      vidSrc.pause();
-                    }
-                    else
-                    {
-                      trackerTime = trackerTime + 1
-                    }
+                    trackerTime = trackerTime + 1
                   }
                 }, 1000);
 
