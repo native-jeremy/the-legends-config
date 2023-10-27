@@ -499,9 +499,9 @@ window.onload = async () => {
                     } 
                   }
                   else {
-                    if(!vid.paused)
+                    if(!vidSrc.paused)
                     {
-                      vid.pause();
+                      vidSrc.pause();
                     }
                     else
                     {
