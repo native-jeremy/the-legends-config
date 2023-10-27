@@ -125,8 +125,8 @@ window.onload = async () => {
   }
 
   Wized.request.await("Load Round Info - Recovery",(response) => {
-    RoundNumberText.innerHTML = "Recovery";
-    roundTitle.innerHTML = "Let's begin your!";
+    RoundNumberText.innerHTML = "Recovery!";
+    roundTitle.innerHTML = "Let's begin your";
     roundNumHeader.innerHTML = "";
       let lengthApply = response.data.length 
 
@@ -261,7 +261,7 @@ window.onload = async () => {
           window.location.href = "/recovery-overview?recovery=" + recoveryParam;
         }
       }
-
+      {{Sub_Title_Award[index]}}
       function roundType() {
         if (repType === "Time") {
           timer();
