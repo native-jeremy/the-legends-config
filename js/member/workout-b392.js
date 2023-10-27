@@ -482,19 +482,24 @@ window.onload = async () => {
                 });
 
                 let srcIndex = 0;
+                let trackerTime = 0;
                 vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
 
                 console.log("Diff Level: ", videoSrcIndex);
 
                 checkAmrapVideo = setInterval(() => {
                           
-                  if (Math.floor(vidSrc.currentTime) === 5 /*Math.floor(vidSrc.duration)*/) 
+                  if (/*Math.floor(vidSrc.currentTime)*/ trackerTime === 5 /*Math.floor(vidSrc.duration)*/) 
                   {
                     changeVideo = true;
                     if (changeVideo == true)
                     {
                       videoSource();
+                      trackerTime = 0
                     } 
+                  }
+                  else {
+                    trackerTime = trackerTime + 1
                   }
                 }, 0);
 
