@@ -488,7 +488,9 @@ window.onload = async () => {
                 console.log("Diff Level: ", videoSrcIndex);
 
                 checkAmrapVideo = setInterval(() => {
-                          
+
+                  if(!vidSrc.paused)
+                  {       
                   if (/*Math.floor(vidSrc.currentTime)*/ trackerTime === 5 /*Math.floor(vidSrc.duration)*/) 
                   {
                     changeVideo = true;
@@ -500,6 +502,10 @@ window.onload = async () => {
                   }
                   else {
                     trackerTime = trackerTime + 1
+                  }
+                  }
+                  else {
+                    return false
                   }
                 }, 1000);
 
@@ -752,13 +758,11 @@ window.onload = async () => {
       let video = document.getElementById("video");
       if (video.paused) {
         video.play();
-        //checkAmrapVideo;
         playButton.classList.toggle("pause");
         timerText.classList.remove("pausetime");
         console.log("---------------------------------------");
         console.log("Video Duration", video.duration + "s");
       } else {
-        clearInterval(checkAmrapVideo);
         video.pause();
         playButton.classList.toggle("pause");
         timerText.classList.add("pausetime");
