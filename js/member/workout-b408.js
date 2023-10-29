@@ -488,10 +488,6 @@ window.onload = async () => {
                 console.log("Diff Level: ", videoSrcIndex);
 
                 checkAmrapVideo = setInterval(() => {
-                  let catchSrc = vidSrc.play();
-                  if (catchSrc !== null) {
-                    catchSrc.catch(() => { /* discard runtime error */ })
-                  }
 
                   if(!vidSrc.paused)
                   {       
