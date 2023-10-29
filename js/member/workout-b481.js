@@ -520,7 +520,9 @@ window.onload = async () => {
                         vidSrc.load();
                         if(vidSrc.paused)
                         {
-                          vidSrc.play();
+                          setTimeout(() => {
+                            vidSrc.play();
+                          }, 150);
                         }
                     // }, 1);
                     }
@@ -531,7 +533,12 @@ window.onload = async () => {
                         vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                         //setTimeout(function () {      
                           vidSrc.load();
-                          vidSrc.play();
+                          if(vidSrc.paused)
+                          {
+                            setTimeout(() => {
+                              vidSrc.play();
+                            }, 150);
+                          }
                        //}, 1);
                     }
                 }
