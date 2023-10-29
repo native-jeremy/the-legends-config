@@ -752,11 +752,13 @@ window.onload = async () => {
       let video = document.getElementById("video");
       if (video.paused) {
         video.play();
+        checkAmrapVideo;
         playButton.classList.toggle("pause");
         timerText.classList.remove("pausetime");
         console.log("---------------------------------------");
         console.log("Video Duration", video.duration + "s");
       } else {
+        clearInterval(checkAmrapVideo);
         video.pause();
         playButton.classList.toggle("pause");
         timerText.classList.add("pausetime");
