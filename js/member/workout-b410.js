@@ -516,7 +516,7 @@ window.onload = async () => {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                      //setTimeout(function () {      
-                        vidSrc.play();
+                        vidSrc.load();
                     // }, 1);
                     }
                     else if (srcIndex >= amrapLength)
@@ -525,7 +525,7 @@ window.onload = async () => {
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                         vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                         //setTimeout(function () {      
-                          vidSrc.play();
+                          vidSrc.load();
                        //}, 1);
                     }
                 }
