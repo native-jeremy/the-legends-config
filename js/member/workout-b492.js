@@ -515,6 +515,7 @@ window.onload = async () => {
                     if (srcIndex < amrapLength) {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
+                      vidSrc.pause()
                      //setTimeout(function () {      
                         video.onloadeddata = function() {
                           vidSrc.play()
@@ -527,7 +528,8 @@ window.onload = async () => {
                         srcIndex = 0;
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                         vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
-                        //setTimeout(function () {      
+                        //setTimeout(function () { 
+                          vidSrc.pause()     
                           video.onloadeddata = function() {
                             vidSrc.play()
                         }
