@@ -496,7 +496,6 @@ window.onload = async () => {
                     changeVideo = true;
                     if (changeVideo == true)
                     {
-                      vidSrc.pause();
                       videoSource();
                       trackerTime = 0
                     } 
