@@ -496,6 +496,7 @@ window.onload = async () => {
                     changeVideo = true;
                     if (changeVideo == true)
                     {
+                      vidSrc.pause();
                       videoSource();
                       trackerTime = 0
                     } 
@@ -517,7 +518,10 @@ window.onload = async () => {
                       vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                      //setTimeout(function () {      
                         vidSrc.load();
-                        vidSrc.play();
+                        if(vidSrc.paused)
+                        {
+                          vidSrc.play();
+                        }
                     // }, 1);
                     }
                     else if (srcIndex >= amrapLength)
