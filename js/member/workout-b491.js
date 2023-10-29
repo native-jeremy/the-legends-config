@@ -516,11 +516,6 @@ window.onload = async () => {
                       //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                       vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                      //setTimeout(function () {      
-                        vidSrc.load();
-                        if(vidSrc.load() == false)
-                        {
-                          vidSrc.play();
-                        }
                         video.onloadeddata = function() {
                           vidSrc.play()
                       }
@@ -533,7 +528,6 @@ window.onload = async () => {
                         //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
                         vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                         //setTimeout(function () {      
-                          vidSrc.load();
                           video.onloadeddata = function() {
                             vidSrc.play()
                         }
