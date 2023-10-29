@@ -517,7 +517,7 @@ window.onload = async () => {
                       vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                      //setTimeout(function () {      
                         vidSrc.load();
-                        if(vidSrc.paused)
+                        if(vidSrc.load() == false)
                         {
                           vidSrc.play();
                         }
@@ -531,7 +531,7 @@ window.onload = async () => {
                         vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
                         //setTimeout(function () {      
                           vidSrc.load();
-                          if(vidSrc.paused)
+                          if(vidSrc.load() == false)
                           {
                             vidSrc.play();
                           }
