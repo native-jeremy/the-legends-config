@@ -501,7 +501,7 @@ window.onload = async () => {
                   else {
                     trackerTime = trackerTime + 1
                   }
-                }, 1000);
+                }, 250);
 
                 function videoSource()
                 {
