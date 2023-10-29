@@ -519,7 +519,6 @@ window.onload = async () => {
                      //setTimeout(function () {      
                         vidSrc.load();
                         vidSrc.oncanplaythrough = function() {
-                          alert("Can play through video without stopping");
                           vidSrc.play();
                       };
                     // }, 1);
@@ -532,7 +531,6 @@ window.onload = async () => {
                         //setTimeout(function () {      
                           vidSrc.load();
                           vidSrc.oncanplaythrough = function() {
-                            alert("Can play through video without stopping");
                             vidSrc.play();
                         };
                        //}, 1);
