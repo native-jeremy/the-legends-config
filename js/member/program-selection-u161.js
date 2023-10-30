@@ -224,12 +224,15 @@ window.onload = async () => {
             wrapper.append(item);
           });
 
+          FAQSArray = FAQSArray.filter(function( element ) {
+            return element !== undefined;
+         });
+
           setTimeout(() => {
             const contentWrapper = document.querySelectorAll('.faqs_render');
 
             contentWrapper.forEach(render => {
                 FAQSArray.forEach((faq, index) => {
-                    if(!faq.Title[index] == undefined) {
                     let createElement = document.createElement("div");
                     createElement.innerHTML = 
                     `<div class="accordion style-2">
@@ -244,7 +247,6 @@ window.onload = async () => {
                         </div>
                     </div>`
                     render.append(createElement);
-                    }
                 })
                 Webflow.require("ix2").init();
             });
