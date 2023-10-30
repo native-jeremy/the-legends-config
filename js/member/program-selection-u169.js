@@ -243,7 +243,7 @@ window.onload = async () => {
                 }
                 Webflow.require("ix2").init();
             });
-          }, 6000);
+          }, 2000);
   
           setTimeout(() => {
             let selectionButton = document.querySelectorAll(".selection_button");
