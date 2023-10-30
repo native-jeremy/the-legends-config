@@ -233,12 +233,12 @@ window.onload = async () => {
 
     exerciseData = mainResponse.data[parseInt(exercisesParam)];
 
-    console.log("---------------------------------------");
+    /*console.log("---------------------------------------");
     console.log("All Rounds:", mainResponse);
     console.log("---------------------------------------");
     console.log("Current Round:", mainResponse.data[parseInt(roundParam)]);
     console.log("---------------------------------------");
-    console.log("Current Exercise Amount:", mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises[parseInt(exercisesParam)]);
+    console.log("Current Exercise Amount:", mainResponse.data[parseInt(roundParam)].Amounts_Name_Linked_Exercises[parseInt(exercisesParam)]);*/
 
     let audioSrc = document.getElementById("voiceSrc");
     let audioIndex = parseInt(exerciseParam);
@@ -269,8 +269,8 @@ window.onload = async () => {
             
             secondaryResponse = response;
             
-            console.log("---------------------------------------");
-            console.log("Exercise Diff Info Response TEMP! ", secondaryResponse);
+            //console.log("---------------------------------------");
+            //console.log("Exercise Diff Info Response TEMP! ", secondaryResponse);
 
 
             exerciseDiffRes = diffRes;
@@ -316,7 +316,7 @@ window.onload = async () => {
             } 
 
             secondaryResponse.data = videoOrderList;
-            console.log("Video Order", videoOrderList);
+            //console.log("Video Order", videoOrderList);
             if (videoSrcIndex.length  <= 0) {
               
               for (let i = 0; i < amrapLength; i++)
@@ -338,11 +338,10 @@ window.onload = async () => {
                 amrapBlock.innerHTML = amrapBlock.innerHTML + renderHeadings
               }
 
-              console.log("Default Video Length",videoSrcIndex);
-              console.log("Default Res Level: ", videoSrcIndex)
-              console.log("amrapLength: ", amrapLength)
+              //console.log("Default Video Length",videoSrcIndex);
+              //console.log("Default Res Level: ", videoSrcIndex)
+              //console.log("amrapLength: ", amrapLength)
             }
-            //vidSrc.src = secondaryResponse.data[videoIndex].Video[currentNumber].url;
 
             if (videoSrcIndex.length > 0) {
               for (let i = 0; i < amrapLength; i++) {
@@ -485,8 +484,6 @@ window.onload = async () => {
                 let trackerTime = 0;
                 vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
 
-                console.log("Diff Level: ", videoSrcIndex);
-
                 checkAmrapVideo = setInterval(() => {
 
                   if(!vidSrc.paused)
@@ -513,26 +510,21 @@ window.onload = async () => {
                 {
                     srcIndex++;
                     if (srcIndex < amrapLength) {
-                      //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                      vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
-                     //setTimeout(function () {      
+                      vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;   
                         vidSrc.play();
-                    // }, 1);
                     }
                     else if (srcIndex >= amrapLength)
                     {
                         srcIndex = 0;
-                        //videoCurrentSrc = secondaryResponse.data[videoIndex].Video[currentNumber].url;
-                        vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
-                        //setTimeout(function () {      
-                          vidSrc.play();
-                       //}, 1);
+                        vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;    
+                        vidSrc.play();
                     }
+                    console.log = function() {} 
                 }
               }
             }
-            console.log("---------------------------------------");
-            console.log("Current Diff:", secondaryResponse);
+            //console.log("---------------------------------------");
+            //console.log("Current Diff:", secondaryResponse);
           });
         }
       } else {
@@ -615,8 +607,8 @@ window.onload = async () => {
               });
             }
 
-            console.log("---------------------------------------");
-            console.log("Current Diff:", secondaryResponse);
+            //console.log("---------------------------------------");
+            //console.log("Current Diff:", secondaryResponse);
           });
         }
       }
@@ -710,8 +702,8 @@ window.onload = async () => {
       } else if (repType === "Reps") {
         repCount();
       }
-      console.log("---------------------------------------");
-      console.log(repType, "Applied To The Exercise");
+      //console.log("---------------------------------------");
+      //console.log(repType, "Applied To The Exercise");
     }
 
     function timer() {
@@ -732,8 +724,8 @@ window.onload = async () => {
             }, 1000);
             clearInterval(timer);
             clearInterval(checkAmrap);
-            console.log("---------------------------------------");
-            console.log("Completed");
+            //console.log("---------------------------------------");
+            //console.log("Completed");
           }
         }
       }, 1000);
@@ -760,8 +752,8 @@ window.onload = async () => {
         video.play();
         playButton.classList.toggle("pause");
         timerText.classList.remove("pausetime");
-        console.log("---------------------------------------");
-        console.log("Video Duration", video.duration + "s");
+        //console.log("---------------------------------------");
+        //console.log("Video Duration", video.duration + "s");
       } else {
         video.pause();
         playButton.classList.toggle("pause");
@@ -775,8 +767,8 @@ window.onload = async () => {
         video.pause();
         playButton.classList.toggle("pause");
         timerText.classList.add("pausetime");
-        console.log("---------------------------------------");
-        console.log("Video Duration", video.duration + "s");
+        //console.log("---------------------------------------");
+        //console.log("Video Duration", video.duration + "s");
       }
     }
 
@@ -870,9 +862,9 @@ window.onload = async () => {
 
     // Development Purposes (DEBUGGING)
     let sirenUpdatedCookie = Wized.data.get("c.sirenmute");
-    console.log("---------------------------------------");
+    /*console.log("---------------------------------------");
     console.log("mute cookie changed to: ", sirenUpdatedCookie);
-    console.log("---------------------------------------");
+    console.log("---------------------------------------");*/
   }
 
   function voiceEnableClick() {
@@ -888,9 +880,9 @@ window.onload = async () => {
 
     // Development Purposes (DEBUGGING)
     const voiceUpdatedCookie = Wized.data.get("c.voicemute");
-    console.log("---------------------------------------");
+    /*console.log("---------------------------------------");
     console.log("mute cookie changed to: ", voiceUpdatedCookie);
-    console.log("---------------------------------------");
+    console.log("---------------------------------------");*/
   }
 
   function sirenEnableLoad() {
