@@ -220,26 +220,27 @@ window.onload = async () => {
             wrapper.append(item);
           });
 
+          const renderLength = programArray.FAQs.length;
+
           setTimeout(() => {
             const contentWrapper = document.querySelectorAll('.faqs_render');
-
             contentWrapper.forEach(render => {
-                FAQSArray.FAQS.forEach((faq, index) => {
+                for (let i = 0; i < renderLength; i++) {
                     let createElement = document.createElement("div");
                     createElement.innerHTML = 
                     `<div class="accordion style-2">
                         <div data-w-id="318dd5d4-e2e9-7095-276c-a871128f0316" class="accordion-header style-2">
-                            <h2 class="generic-text-style-6 non-caps">${FAQSArray[index].Title[index]}</h2>
+                            <h2 class="generic-text-style-6 non-caps">${FAQSArray[0].Title[index]}</h2>
                             <div class="accordion-header-arrow">
                                 <div class="accordion-arrow-icon"></div>
                             </div>
                         </div>
                         <div class="accordion-body style-2">
-                            <p class="body-copy-text-style-1">${FAQSArray[index].Description[index]}</p>
+                            <p class="body-copy-text-style-1">${FAQSArray[0].Description[index]}</p>
                         </div>
                     </div>`
                     render.append(createElement);
-                })
+                }
                 Webflow.require("ix2").init();
             });
           }, 6000);
