@@ -220,7 +220,7 @@ window.onload = async () => {
             wrapper.append(item);
           });
 
-          const renderLength = programArray.FAQs.length;
+          const renderLength = programArray.FAQS.length;
 
           setTimeout(() => {
             const contentWrapper = document.querySelectorAll('.faqs_render');
