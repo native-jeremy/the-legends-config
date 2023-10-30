@@ -229,7 +229,7 @@ window.onload = async () => {
 
             contentWrapper.forEach(render => {
                 FAQSArray.forEach((faq, index) => {
-                    let createElement = createElement("div");
+                    let createElement = document.createElement("div");
                     createElement = `<div class="accordion style-2">
                         <div data-w-id="318dd5d4-e2e9-7095-276c-a871128f0316" class="accordion-header style-2">
                             <h2 class="generic-text-style-6 non-caps">${faq.Title}</h2>
