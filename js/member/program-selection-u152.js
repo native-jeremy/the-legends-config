@@ -211,17 +211,17 @@ window.onload = async () => {
                                         <h2 class="main-heading-style-2">FAQs</h2>
                                     </div>
                                     ${FAQSArray.forEach((faq, index) => {
-                                    <div class="accordion style-2">
+                                    `<div class="accordion style-2">
                                         <div data-w-id="318dd5d4-e2e9-7095-276c-a871128f0316" class="accordion-header style-2">
-                                            <h2 class="generic-text-style-6 non-caps">faq.Title</h2>
+                                            <h2 class="generic-text-style-6 non-caps">${faq.Title}</h2>
                                             <div class="accordion-header-arrow">
                                                 <div class="accordion-arrow-icon"></div>
                                             </div>
                                         </div>
                                         <div class="accordion-body style-2">
-                                            <p class="body-copy-text-style-1">faq.Description</p>
+                                            <p class="body-copy-text-style-1">${faq.Description}</p>
                                         </div>
-                                    </div>
+                                    </div>`
                                     })}
                                 </div>
                                 <a data-w-id="318dd5d4-e2e9-7095-276c-a871128f0341" href="#" w-el="program_add" class="button-style-1 w-button selection_button">Let’s get started</a>
