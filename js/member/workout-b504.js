@@ -158,7 +158,7 @@ window.onload = async () => {
   })
 
   Wized.request.await("Load Round Info", (response) => {
-    console.clear();
+    setTimeout(() => {console.clear();}, 2000);
     const mainResponse = response;
     const repDataInt = response;
     let repAmount;
