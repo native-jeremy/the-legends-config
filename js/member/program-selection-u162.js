@@ -228,6 +228,8 @@ window.onload = async () => {
             return element !== undefined;
          });
 
+         console.log('FAQS', FAQSArray)
+
           setTimeout(() => {
             const contentWrapper = document.querySelectorAll('.faqs_render');
 
