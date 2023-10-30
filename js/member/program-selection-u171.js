@@ -33,7 +33,7 @@ window.onload = async () => {
     // Program Selection Request
     Wized.request.await("Load Users Program", (response) => {
       user = response.data;
-      console.log(user);
+      //console.log(user);
       if (user.Questionnaire == "Not Completed")
       {
           errorModal.style.display = "flex";
@@ -292,7 +292,7 @@ window.onload = async () => {
 
           setTimeout(() => {
             console.clear();
-          }, 6000)
+          }, 3000)
   
           Wized.data.listen("v.programMatch", async () => {
             const programMatch = await Wized.data.get("v.program"); // Get new value
