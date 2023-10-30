@@ -158,10 +158,6 @@ window.onload = async () => {
   })
 
   Wized.request.await("Load Round Info", (response) => {
-    writeConsoleLog = console.log; //save the log function in your own function
-    console.log = function(){} //override the original log function
-    console.log("Text"); //does nothing
-    writeConsoleLog("Text");
     const mainResponse = response;
     const repDataInt = response;
     let repAmount;
