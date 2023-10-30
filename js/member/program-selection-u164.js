@@ -118,10 +118,6 @@ window.onload = async () => {
                       }
                       FAQSArray.push({ID: programArray[i].FAQS, Title: programArray[i].Heading_FAQS, Description: programArray[i].Description_FAQS});
                     }
-                    programArray.forEach((item) => {
-                      console.log("Item In Array", item);
-                      console.log("Image In Program Array", item.Image);
-                    });
                     /////////////////////////////////////////
                   }
                 }
@@ -224,28 +220,22 @@ window.onload = async () => {
             wrapper.append(item);
           });
 
-          FAQSArray = FAQSArray.filter(function( element ) {
-            return element !== undefined;
-         });
-
-         console.log('FAQS', FAQSArray)
-
           setTimeout(() => {
             const contentWrapper = document.querySelectorAll('.faqs_render');
 
             contentWrapper.forEach(render => {
-                FAQSArray.forEach((faq, index) => {
+                FAQSArray.FAQS.forEach((faq, index) => {
                     let createElement = document.createElement("div");
                     createElement.innerHTML = 
                     `<div class="accordion style-2">
                         <div data-w-id="318dd5d4-e2e9-7095-276c-a871128f0316" class="accordion-header style-2">
-                            <h2 class="generic-text-style-6 non-caps">${faq.Title[index]}</h2>
+                            <h2 class="generic-text-style-6 non-caps">${FAQSArray[index].Title[index]}</h2>
                             <div class="accordion-header-arrow">
                                 <div class="accordion-arrow-icon"></div>
                             </div>
                         </div>
                         <div class="accordion-body style-2">
-                            <p class="body-copy-text-style-1">${faq.Description[index]}</p>
+                            <p class="body-copy-text-style-1">${FAQSArray[index].Description[index]}</p>
                         </div>
                     </div>`
                     render.append(createElement);
