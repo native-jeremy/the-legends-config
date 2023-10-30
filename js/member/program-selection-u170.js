@@ -2,9 +2,6 @@ window.onload = async () => {
     //Element Variables
     const sliderControls = document.querySelector(".slider-controls");
     const errorModal = document.getElementById("errorModal");
-    const annualBuyLink = document.getElementById("annualBuyLink");
-    const quarterlyBuyLink = document.getElementById("quarterlyBuyLink");
-    const monthlyBuyLink = document.getElementById("monthlyBuyLink");
     //let triggerLoader = document.getElementById("trigger");
     const wrapper = document.querySelector(".swiper-wrapper");
     const stateLoader = document.querySelector('.loading-state')
@@ -21,12 +18,7 @@ window.onload = async () => {
     let WeeksEl = [];
     let FAQSArray = [];
     let num = 0;
-    let stripeBuyLinks = [
-      "https://buy.stripe.com/test_cN2cPM10l4h7fkY002",
-      "https://buy.stripe.com/test_3csg1YfVfdRH7SwaEF",
-      "https://buy.stripe.com/test_6oE3fc10lcNDdcQ8ww",
-    ];
-    const value = await Wized.data.get("v.date");
+    /*const value = await Wized.data.get("v.date");
        // Get current date
       let date = new Date();
       // Add five days to current date
@@ -36,7 +28,7 @@ window.onload = async () => {
       let day = date.getDate();
       let fullDate = year + "/" + month + "/" + day;
       console.log(fullDate);
-      Wized.data.setVariable("date", fullDate);
+      Wized.data.setVariable("date", fullDate);*/
   
     // Program Selection Request
     Wized.request.await("Load Users Program", (response) => {
@@ -45,23 +37,22 @@ window.onload = async () => {
       if (user.Questionnaire == "Not Completed")
       {
           errorModal.style.display = "flex";
-          console.log("Selected!")
+          //console.log("Selected!")
       }
   
       Wized.request.await("Load Program Selection", (response) => {
         programData = response.data;
-        console.log(programData);
+        //console.log(programData);
         const dateButton = document.getElementById("dateButton");
         dateButton.addEventListener("click", () => {
           // Get current date
-          let date = new Date();
-          // Add five days to current date
+          /*let date = new Date();
           date.setDate(date.getDate() + 14);
           let year = date.getFullYear();
           let month = date.getMonth() + 1;
           let day = date.getDate();
           let fullDate = day + "/" + month + "/" + year;
-          console.log(day + "/" + month + "/" + year);
+          console.log(day + "/" + month + "/" + year);*/
         });
   
         for (let i = 0; i < programData.length; i++) {
@@ -73,7 +64,7 @@ window.onload = async () => {
             if (program.Q3.includes(user.Q3)) {
               //////////////////////////////////////////////////////////
               if (program.Q4.some((item) => user.Q4.includes(item))) {
-                console.log("Found A Match! Continuing With Conditional Match");
+                //console.log("Found A Match! Continuing With Conditional Match");
                 ////////////////////////////////////////////////////
                 if (program.Q5.includes(user.Q5)) {
                   //////////////////////////////////////////////
@@ -101,10 +92,10 @@ window.onload = async () => {
                         program.Description_FAQS,
                       )
                     );
-                    console.log(
+                    /*console.log(
                       "Found A Match Here Is Your Program! =",
                       `[ ${programArray} ]`
-                    );
+                    );*/
   
                     for (let i = 0; i < programArray.length; i++) {
                       IdEl.push(programArray[i].ID);
@@ -249,28 +240,22 @@ window.onload = async () => {
             let selectionButton = document.querySelectorAll(".selection_button");
             selectionButton.forEach((button, num) => {
               button.addEventListener("click", () => {
-                console.log("Clicked This Button!", button + " " + num);
+                //console.log("Clicked This Button!", button + " " + num);
                 Wized.data.setVariable("programid", `${programArray[num].ID}`);
                 const checkSelection = Wized.data.get("v.program");
-                  console.log("Selected Program id", checkSelection);
+                  //console.log("Selected Program id", checkSelection);
               });
             });
           }, 1000);
   
-          /*setTimeout(() => { 
-            annualBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[0]}`});
-            quarterlyBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[1]}`});
-            monthlyBuyLink.addEventListener("click", () => {window.location.href = `${stripeBuyLinks[2]}`});
-          },1000)*/
-  
           Wized.data.listen("v.programid", async () => {
             const changedId = await Wized.data.get("v.programid");
-            console.log("Program Selection changed to: ", changedId);
+            //console.log("Program Selection changed to: ", changedId);
           });
   
           Wized.data.setVariable("program", programMatch);
             const id = Wized.data.get("v.program");
-            console.log("Program Variable! =", id);
+            //console.log("Program Variable! =", id);
           setTimeout(() => {
             filterState.remove();
             stateLoader.remove();
@@ -278,7 +263,7 @@ window.onload = async () => {
   
           setTimeout(() => {
             /////////////////////////////////////////
-            console.log("Programs", programArray)
+            //console.log("Programs", programArray)
   
             const swiper = new Swiper(".swiper", {
               // Optional parameters
@@ -304,10 +289,14 @@ window.onload = async () => {
                 slideBtn_Right.classList.remove("swiper-button-lock");*/
             });
           }, 2000);
+
+          setTimeout(() => {
+            console.clear();
+          }, 6000)
   
           Wized.data.listen("v.programMatch", async () => {
             const programMatch = await Wized.data.get("v.program"); // Get new value
-            console.log("Program Match: ", programMatch); // Console log new value
+            //console.log("Program Match: ", programMatch); // Console log new value
           });
         }
       });
