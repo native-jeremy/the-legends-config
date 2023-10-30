@@ -88,7 +88,9 @@ let amount = 0;
 currentNum.innerHTML = amount;
 
 let refreshNum = 0;
-
+setTimeout(() => {
+  console.clear();
+}, 2000);
 window.onload = async () => {
   const cookieIndex = await Wized.data.get("c.cookieindex");
   const dataIndex = await Wized.data.get("v.dataindex");
@@ -143,6 +145,7 @@ window.onload = async () => {
   }
 
   Wized.request.await("Load Round Info", (response) => {
+    
     roundRes = response;
     roundInfo = roundRes.data[parseInt(roundParam)];
 
