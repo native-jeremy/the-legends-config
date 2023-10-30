@@ -84,6 +84,9 @@ window.onload = async () => {
                       this.Title = program.Title;
                       this.Description = program.Description;
                       this.Image = program.Image[0].url;
+                      this.FAQS = program.FAQS;
+                      this.Heading_FAQS = program.Heading_FAQS;
+                      this.Description_FAQS = program.Description_FAQS;
                     }
   
                     //programObject.push(program);
