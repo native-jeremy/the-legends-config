@@ -510,16 +510,33 @@ window.onload = async () => {
                 {
                     srcIndex++;
                     if (srcIndex < amrapLength) {
-                      vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;  
-                      vidSrc.play();
-                      console.log = function() {} 
+                      vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;
+ 
+                      let playPromise = vidSrc.play();
+
+                      if (playPromise !== undefined) {
+                        playPromise.then(_ => {
+                          vidSrc.play();
+                        })
+                        .catch(error => {
+                          console.log = function() {} 
+                        });
+                      }
                     }
                     else if (srcIndex >= amrapLength)
                     {
                       srcIndex = 0;
                       vidSrc.src = secondaryResponse.data[srcIndex].Video[videoSrcIndex[srcIndex] - 1].url;    
-                      vidSrc.play();
-                      console.log = function() {} 
+                      let playPromise = vidSrc.play();
+
+                      if (playPromise !== undefined) {
+                        playPromise.then(_ => {
+                          vidSrc.play();
+                        })
+                        .catch(error => {
+                          console.log = function() {} 
+                        });
+                      }
                     }
                 }
               }
