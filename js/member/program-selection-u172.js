@@ -74,6 +74,7 @@ window.onload = async () => {
                       this.Weeks = program.Count_weeks;
                       this.Title = program.Title;
                       this.Description = program.Description;
+                      this.Key_Points = program.Key_Points;
                       this.Image = program.Image[0].url;
                       this.FAQS = program.FAQS;
                       this.Heading_FAQS = program.Heading_FAQS;
@@ -86,6 +87,8 @@ window.onload = async () => {
                         program.ID,
                         program.Weeks,
                         program.Title,
+                        program.Description,
+                        program.Key_Points = program.Key_Points,
                         program.Image,
                         program.FAQS,
                         program.Heading_FAQS,
@@ -171,7 +174,7 @@ window.onload = async () => {
                                     </div>
                                     <div class="content-block-body">
                                         <div class="content-block-body-copy">
-                                            <p class="body-copy-text-style-1">${programArray[index].Title}</p>
+                                            <p class="body-copy-text-style-1">${programArray[index].Key_Points}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -184,7 +187,7 @@ window.onload = async () => {
                                             <h3 class="generic-text-style-6 non-caps">Core Workouts</h3>
                                         </div>
                                         <div class="content-block-body-copy">
-                                            <p class="body-copy-text-style-1">${programArray[index].Title}</p>
+                                            <p class="body-copy-text-style-1">${programArray[index].Key_Points}</p>
                                         </div>
                                     </div>
                                     <div class="content-block-body margin-top">
