@@ -178,7 +178,7 @@ window.onload = async () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="content-block">
+                                <!--<div class="content-block">
                                     <div class="content-block-header">
                                         <h2 class="main-heading-style-2">Workout Structure (Weekly)</h2>
                                     </div>
@@ -187,7 +187,7 @@ window.onload = async () => {
                                             <h3 class="generic-text-style-6 non-caps">Core Workouts</h3>
                                         </div>
                                         <div class="content-block-body-copy">
-                                            <p class="body-copy-text-style-1">${programArray[index].Key_Points}</p>
+                                            <p class="body-copy-text-style-1">${programArray[index].Title}</p>
                                         </div>
                                     </div>
                                     <div class="content-block-body margin-top">
@@ -198,7 +198,7 @@ window.onload = async () => {
                                             <p class="body-copy-text-style-1">${programArray[index].Title}</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="content-block faqs_render">
                                     <div class="content-block-header">
                                         <h2 class="main-heading-style-2">FAQs</h2>
