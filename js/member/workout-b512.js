@@ -694,6 +694,7 @@ window.onload = async () => {
         //checkParam()
       }
 
+      //AUTOPLAYER
       /*if ((parseInt(exercisesParam) > 0 && amrapBool == "False") || (parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0)) 
       {
         setTimeout(autoPlayVideo, 5000);
@@ -738,9 +739,7 @@ window.onload = async () => {
           setProgress(counter);
           if (counter < 0) {
             playSiren();
-            setTimeout(() => {
               nextButton.click();
-            }, 1000);
             clearInterval(timer);
             clearInterval(checkAmrap);
             //console.log("---------------------------------------");
