@@ -810,7 +810,7 @@ window.onload = async () => {
       } else {
         sirenSrc.pause();
       }*/
-    }
+    }}
 
     function playVoice() {
       let voiceSrc = document.getElementById("voiceSrc");
@@ -832,7 +832,7 @@ window.onload = async () => {
           voiceSrc.pause();
         }
       }, 150);*/
-    }
+    
     }}
   });
   
