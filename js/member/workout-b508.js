@@ -804,7 +804,7 @@ window.onload = async () => {
       let voiceSrc = document.getElementById("voiceSrc");
 
       setTimeout(() => {
-      let promise = voiceSrc.play();
+      let promise = document.getElementById("voiceSrc").play();
       if (promise !== undefined) {
         promise.then(_ => {
           voiceSrc.play();
@@ -812,9 +812,6 @@ window.onload = async () => {
           // Autoplay was prevented.
           // Show a "Play" button so that user can start playback.
         });
-      }
-      else {
-        voiceSrc.pause();
       }
       }, 150);
     }
