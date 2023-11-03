@@ -158,7 +158,7 @@ window.onload = async () => {
   })
 
   Wized.request.await("Load Round Info", (response) => {
-    setTimeout(() => {console.clear();}, 2000);
+    //setTimeout(() => {console.clear();}, 2000);
     const mainResponse = response;
     const repDataInt = response;
     let repAmount;
@@ -802,11 +802,14 @@ window.onload = async () => {
 
     function playVoice() {
       let voiceSrc = document.getElementById("voiceSrc");
-      if (voiceSrc.paused) {
-        voiceSrc.play();
-      } else {
-        voiceSrc.pause();
-      }
+
+      setTimeout(() => {
+        if (voiceSrc.paused) {
+          voiceSrc.play();
+        } else {
+          voiceSrc.pause();
+        }
+      }, 150);
     }
   });
   
