@@ -131,22 +131,32 @@ window.onload = async () => {
 setTimeout(() => {
    const timeConvert = document.querySelectorAll('.convert_time');
    timeConvert.forEach(time => {
-    if(parseInt(time.textContent) < 60)
-    {   time.textContent = time.textContent + " seconds";
-        //console.log("Standard Time Not Over 60 seconds", time.textContent);
-    }
-    else {
-        let timer = parseInt(time.textContent)
-        let convertedTime = Math.floor(timer/ 60)
-        let extraSeconds = timer % 60;
-        if(!extraSeconds > 0)
-        {
-            time.textContent = convertedTime + " minutes";
+     if(time.textContent.includes('Reps'))
+     {
+        time.textContent = time.textContent + " Reps";
+     }
+     else {
+        if(parseInt(time.textContent) < 60)
+        {   
+            const newText = time.textContent.replace('Time', '');
+            time.textContent = newText + " seconds";
+            //console.log("Standard Time Not Over 60 seconds", time.textContent);
         }
-        else {
-            time.textContent = convertedTime + " minutes " + extraSeconds + " seconds";
+        else 
+        {   
+            const newText = time.textContent.replace('Time', '');
+            let timer = parseInt(newText)
+            let convertedTime = Math.floor(timer/ 60)
+            let extraSeconds = timer % 60;
+            if(!extraSeconds > 0)
+            {
+                time.textContent = convertedTime + " minutes";
+            }
+            else {
+                time.textContent = convertedTime + " minutes " + extraSeconds + " seconds";
+            }
+            //console.log("Correct Converted Time", convertedTime + " minutes " + extraSeconds + " seconds");
         }
-        //console.log("Correct Converted Time", convertedTime + " minutes " + extraSeconds + " seconds");
-    }
+     }
    });
 }, 3000);
