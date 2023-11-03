@@ -679,7 +679,7 @@ window.onload = async () => {
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         window.location.href = url.toString();
         }
-        }, 5000);
+        }, 3000);
       }
 
       function backTrackParams() {
