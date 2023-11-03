@@ -130,6 +130,8 @@ window.onload = async () => {
     roundNumHeader.innerHTML = "";
       let lengthApply = response.data.length 
 
+      console.log("Overall Data", response)
+
       let clickNum = 0;
 
       playButton.addEventListener("click", function () {
