@@ -696,9 +696,9 @@ window.onload = async () => {
 
       if ((parseInt(exercisesParam) > 0 && amrapBool == "False") || (parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0)) 
       {
-        setTimeout(autoPlayVideo, 2000);
+        setTimeout(autoPlayVideo, 5000);
       } else if ((parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0) || exerciseParam === 0) {
-        setTimeout(autoPlayVideo, 2000);
+        setTimeout(autoPlayVideo, 5000);
       }
 
       //let counter = repAmount;
