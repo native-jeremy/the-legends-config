@@ -742,7 +742,7 @@ window.onload = async () => {
           counter--;
           setProgress(counter);
           if (counter < 0) {
-            playSiren();
+              playSiren();
               nextButton.click();
             clearInterval(timer);
             clearInterval(checkAmrap);
@@ -796,24 +796,44 @@ window.onload = async () => {
 
     function playSiren() {
       let sirenSrc = document.getElementById("sirenSrc");
-      if (sirenSrc.paused) {
+      let playPromise = sirenSrc.play();
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          sirenSrc.play();
+        })
+        .catch(error => {
+          console.log = function() {} 
+        });
+
+      /*if (sirenSrc.paused) {
         sirenSrc.play();
       } else {
         sirenSrc.pause();
-      }
+      }*/
     }
 
     function playVoice() {
       let voiceSrc = document.getElementById("voiceSrc");
 
-      setTimeout(() => {
+      let playPromise = voiceSrc.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          voiceSrc.play();
+        })
+        .catch(error => {
+          console.log = function() {} 
+        });
+
+      /*setTimeout(() => {
         if (voiceSrc.paused) {
           voiceSrc.play();
         } else {
           voiceSrc.pause();
         }
-      }, 150);
+      }, 150);*/
     }
+    }}
   });
   
   //roundEnableLoad();
