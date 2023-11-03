@@ -804,11 +804,18 @@ window.onload = async () => {
       let voiceSrc = document.getElementById("voiceSrc");
 
       setTimeout(() => {
-        if (voiceSrc.paused) {
+      let promise = voiceSrc.play();
+      if (promise !== undefined) {
+        promise.then(_ => {
           voiceSrc.play();
-        } else {
-          voiceSrc.pause();
-        }
+        }).catch(error => {
+          // Autoplay was prevented.
+          // Show a "Play" button so that user can start playback.
+        });
+      }
+      else {
+        voiceSrc.pause();
+      }
       }, 150);
     }
   });
