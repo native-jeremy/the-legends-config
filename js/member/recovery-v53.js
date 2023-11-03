@@ -264,6 +264,14 @@ window.onload = async () => {
           window.location.href = "/recovery-overview?recovery=" + recoveryParam;
         }
       }
+
+      if ((parseInt(exercisesParam) > 0)) 
+      {
+        setTimeout(autoPlayVideo, 2000);
+      } else {
+        return false;
+      }
+      
       {{Sub_Title_Award[index]}}
       function roundType() {
         if (repType === "Time") {
