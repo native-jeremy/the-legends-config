@@ -133,8 +133,7 @@ setTimeout(() => {
    timeConvert.forEach(time => {
      if(time.textContent.includes('Reps'))
      {
-        const newText = time.textContent.replace('Reps', '');
-        time.textContent = newText + " Reps";
+        time.textContent = time.textContent + " Reps";
      }
      else {
         if(parseInt(time.textContent) < 60)
