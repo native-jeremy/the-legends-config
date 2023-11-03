@@ -128,7 +128,7 @@ window.onload = async () => {
     RoundNumberText.innerHTML = "Recovery!";
     roundTitle.innerHTML = "Let's begin your";
     roundNumHeader.innerHTML = "";
-      let lengthApply = response.data.length 
+      let lengthApply = response.data[0].Recovery_Exercise_Selected.length 
 
       console.log("Overall Data", response)
 
