@@ -696,9 +696,9 @@ window.onload = async () => {
 
       if ((parseInt(exercisesParam) > 0 && amrapBool == "False") || (parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0)) 
       {
-        setTimeout(autoPlayVideo, 5000);
+        setTimeout(autoPlayVideo, 2000);
       } else if ((parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0) || exerciseParam === 0) {
-        setTimeout(autoPlayVideo, 5000);
+        setTimeout(autoPlayVideo, 2000);
       }
 
       //let counter = repAmount;
@@ -804,15 +804,11 @@ window.onload = async () => {
       let voiceSrc = document.getElementById("voiceSrc");
 
       setTimeout(() => {
-      let promise = document.getElementById("voiceSrc").play();
-      if (promise !== undefined) {
-        promise.then(_ => {
+        if (voiceSrc.paused) {
           voiceSrc.play();
-        }).catch(error => {
-          // Autoplay was prevented.
-          // Show a "Play" button so that user can start playback.
-        });
-      }
+        } else {
+          voiceSrc.pause();
+        }
       }, 150);
     }
   });
