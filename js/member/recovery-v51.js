@@ -148,15 +148,16 @@ window.onload = async () => {
       {
         localStorage.setItem("length", lengthApply);
       }
-      const dataSrc = response.data[parseInt(exercisesParam)];
+      const dataSrc = response.data[0];
+      const dataSrcIndex = parseInt(exercisesParam);
       const mainResponse = response;
       const repDataInt = response;
       let repAmount;
       let repType;
       const singleTitle = document.getElementById("single-title");
       const displaySingleTitle = document.getElementById("display_single_title");
-      singleTitle.textContent = dataSrc.Exercise_Category[0];
-      displaySingleTitle.textContent = dataSrc.Exercise_Category[0];
+      singleTitle.textContent = dataSrc.Exercise_Category[dataSrcIndex];
+      displaySingleTitle.textContent = dataSrc.Exercise_Category[dataSrcIndex];
 
       if (repDataInt.status === 200) {
         loaderTrigger.click();
@@ -175,8 +176,8 @@ window.onload = async () => {
       let vidSrc = document.getElementById("video");
 
       //if (exerciseData !== undefined) {
-      repAmount = dataSrc.Exercise_Amount[0];
-      repType = dataSrc.Rep_Type[0];
+      repAmount = dataSrc.Exercise_Amount[dataSrcIndex];
+      repType = dataSrc.Rep_Type[dataSrcIndex];
 
       timerConversion(repAmount);
 
