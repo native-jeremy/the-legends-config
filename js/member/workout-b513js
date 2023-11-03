@@ -639,7 +639,9 @@ window.onload = async () => {
         clearTimeout(clearStates);
       }, 1500);
 
-      nextButton.addEventListener("click", updateParams);
+      nextButton.addEventListener("click", () => {
+        updateParams();
+      });
 
       prevButton.addEventListener("click", backTrackParams);
 
@@ -650,6 +652,7 @@ window.onload = async () => {
       }
 
       function updateParams() {
+        setTimeout(() => {
         if(mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises.includes("True"))
         {
           if(parseInt(exercisesParam) < mainResponse.data[parseInt(roundParam)].Amrap_Linked_Exercises.length - 1)
@@ -676,6 +679,7 @@ window.onload = async () => {
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         window.location.href = url.toString();
         }
+        }, 5000);
       }
 
       function backTrackParams() {
