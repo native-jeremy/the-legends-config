@@ -694,12 +694,12 @@ window.onload = async () => {
         //checkParam()
       }
 
-      if ((parseInt(exercisesParam) > 0 && amrapBool == "False") || (parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0)) 
+      /*if ((parseInt(exercisesParam) > 0 && amrapBool == "False") || (parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0)) 
       {
         setTimeout(autoPlayVideo, 5000);
       } else if ((parseInt(exercisesParam) > 0 && amrapBool == "True" && videoIndex === 0) || exerciseParam === 0) {
         setTimeout(autoPlayVideo, 5000);
-      }
+      }*/
 
       //let counter = repAmount;
       let clickNum = 0;
