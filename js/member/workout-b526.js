@@ -795,9 +795,7 @@ window.onload = async () => {
     function playSiren() {
       let sirenSrc = document.getElementById("sirenSrc");
       if (sirenSrc.paused) {
-        sirenSrc.oncanplaythrough = function() {
         sirenSrc.play();
-        }
       } else {
         sirenSrc.pause();
       }
@@ -806,9 +804,7 @@ window.onload = async () => {
     function playVoice() {
       let voiceSrc = document.getElementById("voiceSrc");
         if (voiceSrc.paused) {
-          voiceSrc.oncanplaythrough = function() {
           voiceSrc.play();
-          }
         } else {
           voiceSrc.pause();
         }
