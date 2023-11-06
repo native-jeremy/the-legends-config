@@ -679,15 +679,12 @@ window.onload = async () => {
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
         window.location.href = url.toString();
         }
-        }, 3000);
+        }, 1000);
       }
 
       function backTrackParams() {
+        setTimeout(() => {
         if (parseInt(exercisesParam) < mainResponse.data[parseInt(roundParam)].Diff_ID_Linked_Exercises.length - 1) {
-        /*getExercisesNum = checkurl.get("exercises");
-        getExercisesNum = parseInt(getExercisesNum) - 1;
-        setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());*/
-
         getExercisesNum = checkurl.get("exercises");
         getExercisesNum = parseInt(getExercisesNum) - 1;
         setExercisesNum = checkurl.set("exercises", getExercisesNum.toString());
@@ -696,6 +693,7 @@ window.onload = async () => {
         window.location.href = url.toString();
         //window.history.replaceState(null, null, url.toString());
         //checkParam()
+      }, 1000);
       }
 
       //AUTOPLAYER
