@@ -794,44 +794,25 @@ window.onload = async () => {
 
     function playSiren() {
       let sirenSrc = document.getElementById("sirenSrc");
-      let playPromise = sirenSrc.play();
-      if (playPromise !== undefined) {
-        playPromise.then(_ => {
-          sirenSrc.play();
-        })
-        .catch(error => {
-          console.log = function() {} 
-        });
-
-      /*if (sirenSrc.paused) {
+      if (sirenSrc.paused) {
+        sirenSrc.oncanplaythrough = function() {
         sirenSrc.play();
+        }
       } else {
         sirenSrc.pause();
-      }*/
-    }}
+      }
+    }
 
     function playVoice() {
       let voiceSrc = document.getElementById("voiceSrc");
-
-      let playPromise = voiceSrc.play();
-      
-      if (playPromise !== undefined) {
-        playPromise.then(_ => {
-          voiceSrc.play();
-        })
-        .catch(error => {
-          console.log = function() {} 
-        });
-
-      /*setTimeout(() => {
         if (voiceSrc.paused) {
+          voiceSrc.oncanplaythrough = function() {
           voiceSrc.play();
+          }
         } else {
           voiceSrc.pause();
         }
-      }, 150);*/
-    
-    }}
+    }
   });
   
   //roundEnableLoad();
