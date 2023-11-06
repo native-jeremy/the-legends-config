@@ -814,8 +814,10 @@ window.onload = async () => {
 
     function playVoice() {
       let voiceSrc = document.getElementById("voiceSrc");
+      voice.setAttribute("autoplay", "true");
+      voice.muted = false;
 
-      let playPromise = voiceSrc.play();
+      /*let playPromise = voiceSrc.play();
       
       if (playPromise !== undefined) {
         playPromise.then(_ => {
@@ -823,7 +825,7 @@ window.onload = async () => {
         })
         .catch(error => {
           console.log = function() {} 
-        });
+        });*/
 
       /*setTimeout(() => {
         if (voiceSrc.paused) {
@@ -833,7 +835,8 @@ window.onload = async () => {
         }
       }, 150);*/
     
-    }}
+    //}
+  }
   });
   
   //roundEnableLoad();
