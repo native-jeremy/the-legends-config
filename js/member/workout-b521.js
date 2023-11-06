@@ -233,6 +233,9 @@ window.onload = async () => {
       //----------------------------------------------------------------
 
     exerciseData = mainResponse.data[parseInt(exercisesParam)];
+    let voiceAuto = document.getElementById("voiceSrc");
+
+    voiceAuto.setAttribute("autoplay", "true");
 
     /*console.log("---------------------------------------");
     console.log("All Rounds:", mainResponse);
